@@ -1,0 +1,79 @@
+### YamlMime:Landing
+title: Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuus
+summary: Nouda, yhtenäistä ja järjestä asiakastietoja useista lähteistä. Luo ja hallitse asiakasprofiileja ja reaaliaikaista segmentointia. Integroi asiakastiedot muihin järjestelmiin, mikä parantaa niiden käyttöä toimintojen perusteena.
+metadata:
+  title: Käyttäjäryhmän merkityksellisten tietojen dokumentaatio
+  description: Ohjekeskus, jossa on käyttäjäryhmän merkityksellisten tietojen tärkeimmät linkit.
+  ms.service: customer-insights
+  ms.subservice: audience-insights
+  ms.topic: landing-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.date: 10/16/2020
+  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: fi-FI
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4405615"
+landingContent:
+- title: Tietoja käyttäjäryhmän merkityksellisistä tiedoista
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Tuotteen yleiskatsaus
+      url: overview.md
+    - text: Uudet ja päivitetyt toiminnot
+      url: whats-new-audience-insights.md
+    - text: Yhteisösivusto
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+- title: Tietolähteiden käyttäminen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tietolähteiden lisääminen
+      url: data-sources.md
+    - text: Lisäävä päivitys
+      url: incremental-refresh-data-sources.md
+    - text: Tietoja entiteeteistä
+      url: entities.md
+- title: Tietojen yhdistäminen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Liitä
+      url: map-entities.md
+    - text: Täsmäytä
+      url: match-entities.md
+    - text: Yhdistä
+      url: merge-entities.md
+- title: Asiakasprofiilien tarkentaminen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Suhteiden määrittäminen
+      url: relationships.md
+    - text: Asiakkaan aktiviteettien luettelo
+      url: activities.md
+    - text: Omien koneoppimismallien käyttäminen
+      url: custom-models.md
+- title: Asiakastietojen vieminen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Vientikohteiden määrittäminen
+      url: export-destinations.md
+    - text: Dynamics 365 -sovellusten asiakaskortit
+      url: customer-card-add-in.md
+    - text: Power BI -yhdistin
+      url: export-power-bi.md
+- title: Sovelluksen hallinta
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Järjestelmän määrittäminen
+      url: system.md
+    - text: Käyttöoikeuksien määrittäminen
+      url: permissions.md
+    - text: Useiden ympäristöjen hallinta
+      url: manage-environments.md
