@@ -5,72 +5,75 @@ ms.date: 10/26/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: edff494f6edf26a8b641cb1d788a715389ddb346
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2b465b32fa956e3f45a23f471dc3a3183def16ef
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405585"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267169"
 ---
-# <a name="connector-for-mailchimp-preview"></a><span data-ttu-id="54393-103">Mailchimp-yhdistin (esiversio)</span><span class="sxs-lookup"><span data-stu-id="54393-103">Connector for Mailchimp (preview)</span></span>
+# <a name="connector-for-mailchimp-preview"></a><span data-ttu-id="294ff-103">Mailchimp-yhdistin (esiversio)</span><span class="sxs-lookup"><span data-stu-id="294ff-103">Connector for Mailchimp (preview)</span></span>
 
-<span data-ttu-id="54393-104">Uutiskirjeiden ja sähköpostikampanjoiden luonti viemällä yhtenäistettyjä asiakasprofiilisegmenttejä Mailchimpiin.</span><span class="sxs-lookup"><span data-stu-id="54393-104">Export segments of unified customer profiles to Mailchimp to create newsletters and email campaigns.</span></span>
+<span data-ttu-id="294ff-104">Uutiskirjeiden ja sähköpostikampanjoiden luonti viemällä yhtenäistettyjä asiakasprofiilisegmenttejä Mailchimpiin.</span><span class="sxs-lookup"><span data-stu-id="294ff-104">Export segments of unified customer profiles to Mailchimp to create newsletters and email campaigns.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="54393-105">Edellytykset</span><span class="sxs-lookup"><span data-stu-id="54393-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="294ff-105">Edellytykset</span><span class="sxs-lookup"><span data-stu-id="294ff-105">Prerequisites</span></span>
 
--   <span data-ttu-id="54393-106">[Mailchimp-tili](https://mailchimp.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="54393-106">You have a [Mailchimp account](https://mailchimp.com/) and corresponding administrator credentials.</span></span>
--   <span data-ttu-id="54393-107">Mailchimpissa on aiemmin luotuja käyttäjäryhmiä ja vastaavia tunnuksia.</span><span class="sxs-lookup"><span data-stu-id="54393-107">There are existing audiences in Mailchimp and the corresponding IDs.</span></span> <span data-ttu-id="54393-108">Lisätietoja on kohdassa [Mailchimp-käyttäjäryhmät](https://mailchimp.com/help/create-audience/).</span><span class="sxs-lookup"><span data-stu-id="54393-108">For more information, see [Mailchimp audiences](https://mailchimp.com/help/create-audience/).</span></span>
--   <span data-ttu-id="54393-109">[Segmentit on määritetty](segments.md)</span><span class="sxs-lookup"><span data-stu-id="54393-109">You have [configured segments](segments.md)</span></span>
--   <span data-ttu-id="54393-110">Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.</span><span class="sxs-lookup"><span data-stu-id="54393-110">Unified customer profiles in the exported segments contain a field representing an email address.</span></span>
+-   <span data-ttu-id="294ff-106">[Mailchimp-tili](https://mailchimp.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="294ff-106">You have a [Mailchimp account](https://mailchimp.com/) and corresponding administrator credentials.</span></span>
+-   <span data-ttu-id="294ff-107">Mailchimpissa on aiemmin luotuja käyttäjäryhmiä ja vastaavia tunnuksia.</span><span class="sxs-lookup"><span data-stu-id="294ff-107">There are existing audiences in Mailchimp and the corresponding IDs.</span></span> <span data-ttu-id="294ff-108">Lisätietoja on kohdassa [Mailchimp-käyttäjäryhmät](https://mailchimp.com/help/create-audience/).</span><span class="sxs-lookup"><span data-stu-id="294ff-108">For more information, see [Mailchimp audiences](https://mailchimp.com/help/create-audience/).</span></span>
+-   <span data-ttu-id="294ff-109">[Segmentit on määritetty](segments.md)</span><span class="sxs-lookup"><span data-stu-id="294ff-109">You have [configured segments](segments.md)</span></span>
+-   <span data-ttu-id="294ff-110">Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.</span><span class="sxs-lookup"><span data-stu-id="294ff-110">Unified customer profiles in the exported segments contain a field representing an email address.</span></span>
 
-## <a name="connect-to-mailchimp"></a><span data-ttu-id="54393-111">Yhdistä Mailchimpiin</span><span class="sxs-lookup"><span data-stu-id="54393-111">Connect to Mailchimp</span></span>
+## <a name="connect-to-mailchimp"></a><span data-ttu-id="294ff-111">Yhdistä Mailchimpiin</span><span class="sxs-lookup"><span data-stu-id="294ff-111">Connect to Mailchimp</span></span>
 
-1. <span data-ttu-id="54393-112">Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.</span><span class="sxs-lookup"><span data-stu-id="54393-112">Go to **Admin** > **Export destinations**.</span></span>
+1. <span data-ttu-id="294ff-112">Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.</span><span class="sxs-lookup"><span data-stu-id="294ff-112">Go to **Admin** > **Export destinations**.</span></span>
 
-1. <span data-ttu-id="54393-113">Valitse **Mailchimp**-kohdassa **Määritä**.</span><span class="sxs-lookup"><span data-stu-id="54393-113">Under **Mailchimp**, select **Set up**.</span></span>
+1. <span data-ttu-id="294ff-113">Valitse **Mailchimp**-kohdassa **Määritä**.</span><span class="sxs-lookup"><span data-stu-id="294ff-113">Under **Mailchimp**, select **Set up**.</span></span>
 
-1. <span data-ttu-id="54393-114">Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.</span><span class="sxs-lookup"><span data-stu-id="54393-114">Give your export destination a recognizable name in the **Display name** field.</span></span>
+1. <span data-ttu-id="294ff-114">Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.</span><span class="sxs-lookup"><span data-stu-id="294ff-114">Give your export destination a recognizable name in the **Display name** field.</span></span>
 
-1. <span data-ttu-id="54393-115">Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).</span><span class="sxs-lookup"><span data-stu-id="54393-115">Select **I agree** to confirm the **Data privacy and compliance**.</span></span>
+1. <span data-ttu-id="294ff-115">Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).</span><span class="sxs-lookup"><span data-stu-id="294ff-115">Select **I agree** to confirm the **Data privacy and compliance**.</span></span>
 
-1. <span data-ttu-id="54393-116">Käynnistä yhteys Mailchimpiin antamalla **[Mailchimp-käyttäjäryhmän tunnus](https://mailchimp.com/help/find-audience-id/)** ja valitsemalla **Yhdistä**.</span><span class="sxs-lookup"><span data-stu-id="54393-116">Enter your **[Mailchimp audience ID](https://mailchimp.com/help/find-audience-id/)** and select **Connect** to initialize the connection to Mailchimp.</span></span>
+1. <span data-ttu-id="294ff-116">Käynnistä yhteys Mailchimpiin antamalla **[Mailchimp-käyttäjäryhmän tunnus](https://mailchimp.com/help/find-audience-id/)** ja valitsemalla **Yhdistä**.</span><span class="sxs-lookup"><span data-stu-id="294ff-116">Enter your **[Mailchimp audience ID](https://mailchimp.com/help/find-audience-id/)** and select **Connect** to initialize the connection to Mailchimp.</span></span>
 
-1. <span data-ttu-id="54393-117">Valitse **Todenna Mailchimpin avulla** ja anna Mailchimp-tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="54393-117">Select **Authenticate with Mailchimp** and provide your Mailchimp credentials.</span></span>
+1. <span data-ttu-id="294ff-117">Valitse **Todenna Mailchimpin avulla** ja anna Mailchimp-tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="294ff-117">Select **Authenticate with Mailchimp** and provide your Mailchimp credentials.</span></span>
 
-1. <span data-ttu-id="54393-118">Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="54393-118">Select **Add yourself as export user** and provide your Customer Insights credentials.</span></span>
+1. <span data-ttu-id="294ff-118">Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.</span><span class="sxs-lookup"><span data-stu-id="294ff-118">Select **Add yourself as export user** and provide your Customer Insights credentials.</span></span>
 
    :::image type="content" source="media/export-connect-mailchimp.png" alt-text="Näyttökuva viennin MailChimp-yhteydestä":::
 
-1. <span data-ttu-id="54393-120">Määritä vienti valitsemalla **Next**.</span><span class="sxs-lookup"><span data-stu-id="54393-120">Select **Next** to configure the export.</span></span>
+1. <span data-ttu-id="294ff-120">Määritä vienti valitsemalla **Next**.</span><span class="sxs-lookup"><span data-stu-id="294ff-120">Select **Next** to configure the export.</span></span>
 
-## <a name="configure-the-connector"></a><span data-ttu-id="54393-121">Yhdistimen määrittäminen</span><span class="sxs-lookup"><span data-stu-id="54393-121">Configure the connector</span></span>
+## <a name="configure-the-connector"></a><span data-ttu-id="294ff-121">Yhdistimen määrittäminen</span><span class="sxs-lookup"><span data-stu-id="294ff-121">Configure the connector</span></span>
 
-1. <span data-ttu-id="54393-122">Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa.</span><span class="sxs-lookup"><span data-stu-id="54393-122">In the **Data matching** section, in the **Email** field, select the field in your unified customer profile that represents a customer's email address.</span></span> 
+1. <span data-ttu-id="294ff-122">Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa.</span><span class="sxs-lookup"><span data-stu-id="294ff-122">In the **Data matching** section, in the **Email** field, select the field in your unified customer profile that represents a customer's email address.</span></span> 
 
-1. <span data-ttu-id="54393-123">Vaihtoehtoisesti voit viedä **Etunimi**- ja **Sukunimi**-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa.</span><span class="sxs-lookup"><span data-stu-id="54393-123">Optionally, you can export **First name** and **Last name** as additional fields to create more personalized emails.</span></span> <span data-ttu-id="54393-124">Yhdistä nämä kenttä valitsemalla **Lisää määrite**.</span><span class="sxs-lookup"><span data-stu-id="54393-124">Select **Add attribute** to map these fields.</span></span>
+1. <span data-ttu-id="294ff-123">Vaihtoehtoisesti voit viedä **Etunimi**- ja **Sukunimi**-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa.</span><span class="sxs-lookup"><span data-stu-id="294ff-123">Optionally, you can export **First name** and **Last name** as additional fields to create more personalized emails.</span></span> <span data-ttu-id="294ff-124">Yhdistä nämä kenttä valitsemalla **Lisää määrite**.</span><span class="sxs-lookup"><span data-stu-id="294ff-124">Select **Add attribute** to map these fields.</span></span>
 
-1. <span data-ttu-id="54393-125">Valitse segmentit, jotka haluat viedä.</span><span class="sxs-lookup"><span data-stu-id="54393-125">Select the segments you want to export.</span></span> <span data-ttu-id="54393-126">Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia MailChimpiin.</span><span class="sxs-lookup"><span data-stu-id="54393-126">You can export up to 1 million customer profiles in total to Mailchimp.</span></span>
+1. <span data-ttu-id="294ff-125">Valitse segmentit, jotka haluat viedä.</span><span class="sxs-lookup"><span data-stu-id="294ff-125">Select the segments you want to export.</span></span> <span data-ttu-id="294ff-126">Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia MailChimpiin.</span><span class="sxs-lookup"><span data-stu-id="294ff-126">You can export up to 1 million customer profiles in total to Mailchimp.</span></span>
 
    :::image type="content" source="media/export-segments-mailchimp.png" alt-text="Mailchimpiin vietävien kenttien ja segmenttien valitseminen":::
 
-1. <span data-ttu-id="54393-128">Valitse **Tallenna**.</span><span class="sxs-lookup"><span data-stu-id="54393-128">Select **Save**.</span></span>
+1. <span data-ttu-id="294ff-128">Valitse **Tallenna**.</span><span class="sxs-lookup"><span data-stu-id="294ff-128">Select **Save**.</span></span>
 
-## <a name="export-the-data"></a><span data-ttu-id="54393-129">Tietojen vieminen</span><span class="sxs-lookup"><span data-stu-id="54393-129">Export the data</span></span>
+## <a name="export-the-data"></a><span data-ttu-id="294ff-129">Tietojen vieminen</span><span class="sxs-lookup"><span data-stu-id="294ff-129">Export the data</span></span>
 
-<span data-ttu-id="54393-130">Voit [viedä tietoja tarvittaessa](export-destinations.md).</span><span class="sxs-lookup"><span data-stu-id="54393-130">You can [export data on demand](export-destinations.md).</span></span> <span data-ttu-id="54393-131">Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.</span><span class="sxs-lookup"><span data-stu-id="54393-131">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span> <span data-ttu-id="54393-132">Mailchimpin segmentit ovat nyt [Mailchimp-käyttäjäryhmissä](https://mailchimp.com/help/create-audience/).</span><span class="sxs-lookup"><span data-stu-id="54393-132">In Mailchimp, you can now find your segments under [Mailchimp audiences](https://mailchimp.com/help/create-audience/).</span></span>
+<span data-ttu-id="294ff-130">Voit [viedä tietoja tarvittaessa](export-destinations.md).</span><span class="sxs-lookup"><span data-stu-id="294ff-130">You can [export data on demand](export-destinations.md).</span></span> <span data-ttu-id="294ff-131">Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.</span><span class="sxs-lookup"><span data-stu-id="294ff-131">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span> <span data-ttu-id="294ff-132">Mailchimpin segmentit ovat nyt [Mailchimp-käyttäjäryhmissä](https://mailchimp.com/help/create-audience/).</span><span class="sxs-lookup"><span data-stu-id="294ff-132">In Mailchimp, you can now find your segments under [Mailchimp audiences](https://mailchimp.com/help/create-audience/).</span></span>
 
-## <a name="known-limitations"></a><span data-ttu-id="54393-133">Tunnetut rajoitukset</span><span class="sxs-lookup"><span data-stu-id="54393-133">Known limitations</span></span>
+## <a name="known-limitations"></a><span data-ttu-id="294ff-133">Tunnetut rajoitukset</span><span class="sxs-lookup"><span data-stu-id="294ff-133">Known limitations</span></span>
 
-- <span data-ttu-id="54393-134">Enintään 1 miljoona profiilia kussakin Mailchimp-viennissä.</span><span class="sxs-lookup"><span data-stu-id="54393-134">Up to 1 million profiles per export to Mailchimp.</span></span>
-- <span data-ttu-id="54393-135">MailChimp-vienti on rajoitettu segmentteihin</span><span class="sxs-lookup"><span data-stu-id="54393-135">Exporting to Mailchimp is limited to segments.</span></span>
-- <span data-ttu-id="54393-136">Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää kolme tuntia palveluntoimittajan rajoitusten vuoksi.</span><span class="sxs-lookup"><span data-stu-id="54393-136">Exporting segments with a total of 1 million profiles can take up to three hours due to limitations on the provider side.</span></span> 
-- <span data-ttu-id="54393-137">Mailchimpiin vietävien profiilien määrä määräytyy Mailchimp-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.</span><span class="sxs-lookup"><span data-stu-id="54393-137">The number of profiles that you can export to Mailchimp is dependent and limited on your contract with Mailchimp.</span></span>
+- <span data-ttu-id="294ff-134">Enintään 1 miljoona profiilia kussakin Mailchimp-viennissä.</span><span class="sxs-lookup"><span data-stu-id="294ff-134">Up to 1 million profiles per export to Mailchimp.</span></span>
+- <span data-ttu-id="294ff-135">MailChimp-vienti on rajoitettu segmentteihin</span><span class="sxs-lookup"><span data-stu-id="294ff-135">Exporting to Mailchimp is limited to segments.</span></span>
+- <span data-ttu-id="294ff-136">Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää kolme tuntia palveluntoimittajan rajoitusten vuoksi.</span><span class="sxs-lookup"><span data-stu-id="294ff-136">Exporting segments with a total of 1 million profiles can take up to three hours due to limitations on the provider side.</span></span> 
+- <span data-ttu-id="294ff-137">Mailchimpiin vietävien profiilien määrä määräytyy Mailchimp-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.</span><span class="sxs-lookup"><span data-stu-id="294ff-137">The number of profiles that you can export to Mailchimp is dependent and limited on your contract with Mailchimp.</span></span>
 
-## <a name="data-privacy-and-compliance"></a><span data-ttu-id="54393-138">Tietojen yksityisyys ja vaatimustenmukaisuus</span><span class="sxs-lookup"><span data-stu-id="54393-138">Data privacy and compliance</span></span>
+## <a name="data-privacy-and-compliance"></a><span data-ttu-id="294ff-138">Tietojen yksityisyys ja vaatimustenmukaisuus</span><span class="sxs-lookup"><span data-stu-id="294ff-138">Data privacy and compliance</span></span>
 
-<span data-ttu-id="54393-139">Kun tietojen lähetys Mailchimpiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja.</span><span class="sxs-lookup"><span data-stu-id="54393-139">When you enable Dynamics 365 Customer Insights to transmit data to Mailchimp, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="54393-140">Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Mailchimp noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita.</span><span class="sxs-lookup"><span data-stu-id="54393-140">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that Mailchimp meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="54393-141">Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="54393-141">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
-<span data-ttu-id="54393-142">Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.</span><span class="sxs-lookup"><span data-stu-id="54393-142">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
+<span data-ttu-id="294ff-139">Kun tietojen lähetys Mailchimpiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja.</span><span class="sxs-lookup"><span data-stu-id="294ff-139">When you enable Dynamics 365 Customer Insights to transmit data to Mailchimp, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="294ff-140">Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Mailchimp noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita.</span><span class="sxs-lookup"><span data-stu-id="294ff-140">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that Mailchimp meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="294ff-141">Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="294ff-141">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
+<span data-ttu-id="294ff-142">Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.</span><span class="sxs-lookup"><span data-stu-id="294ff-142">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,0 +1,102 @@
+---
+title: Vuorovaikutuksen verkkotietojen integroiminen kohdeyleisön tietojen kanssa
+description: Asiakkaiden verkkotietojen tuominen vuorovaikutuksen tiedoista kohdeyleisön tietoihin.
+ms.date: 12/17/2020
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: mukeshpo
+manager: shellyha
+ms.openlocfilehash: ba1cf6c7e85b8fe90baf34018f1309095573adf1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267672"
+---
+# <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a><span data-ttu-id="c3d81-103">Vuorovaikutuksen verkkotietojen integroiminen kohdeyleisön tietojen kanssa</span><span class="sxs-lookup"><span data-stu-id="c3d81-103">Integrate web data from engagement insights with audience insights</span></span>
+
+<span data-ttu-id="c3d81-104">Asiakkaat tekevät usein päivittäisiä tapahtumia verkossa sivustojen avulla.</span><span class="sxs-lookup"><span data-stu-id="c3d81-104">Customers often do their day to day transactions online using web sites.</span></span> <span data-ttu-id="c3d81-105">Dynamics 365 Customer Insightsin vuorovaikutusominaisuus on kätevä ratkaisu verkkotietojen integroimiseksi lähteenä.</span><span class="sxs-lookup"><span data-stu-id="c3d81-105">The engagement insights capability in Dynamics 365 Customer Insights is a handy solution to integrate web data as a source.</span></span> <span data-ttu-id="c3d81-106">Tapahtuma- ja toimintatietojen ja demografisten tietojen lisäksi aktiviteetteja nähdään verkossa yhdistetyissä asiakasprofiileissa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-106">In addition to transactional, demographic, or behavioral data we can see activities on the web in unified customer profiles.</span></span> <span data-ttu-id="c3d81-107">Profiilin avulla voi hankkia lisää tietoja, kuten segmenttejä, mittareita tai ennusteita käyttäjäryhmän aktivoinnista.</span><span class="sxs-lookup"><span data-stu-id="c3d81-107">We can use this profile to gain additional insights like segments, measures, or predictions for audience activation.</span></span>
+
+<span data-ttu-id="c3d81-108">Tässä artikkelissa kuvataan asiakkaiden verkkoaktiviteettitietojen tuominen vuorovaikutuksen tietoihin olemassa olevan käyttäjäryhmän tietojen ympäristöstä.</span><span class="sxs-lookup"><span data-stu-id="c3d81-108">This article describes the steps to bring your customers’ web activity data from engagement insights into your existing audience insights environment.</span></span>
+
+<span data-ttu-id="c3d81-109">Tässä esimerkissä oletetaan, että ympäristössä on yhdistettyjä asiakasprofiileja.</span><span class="sxs-lookup"><span data-stu-id="c3d81-109">In this example, we assume an environment that contains unified customer profiles.</span></span> <span data-ttu-id="c3d81-110">Profiilit yhdistettiin lähteisiin kyselyissä, vähittäismyynnissä ja pääsylippujärjestelmässä.</span><span class="sxs-lookup"><span data-stu-id="c3d81-110">The profiles were unified with sources from surveys, retail sales, and a ticketing system.</span></span> <span data-ttu-id="c3d81-111">Siinä näkyvät myös asiakkaisiin liittyvät aktiviteetit.</span><span class="sxs-lookup"><span data-stu-id="c3d81-111">It also shows the related activities of the customers.</span></span> 
+
+<span data-ttu-id="c3d81-112">Haluamme nyt tietää, käyttääkö asiakas verkossa olevia ominaisuuksia ja onko tällä tietoja aktiviteeteista.</span><span class="sxs-lookup"><span data-stu-id="c3d81-112">We now want to know if a customer visits our web properties and understand their activities.</span></span> <span data-ttu-id="c3d81-113">Aktiviteetteja ovat esimerkiksi sivustot, joilla on käyty, ja sähköpostitse vastaanotettujen linkkien avulla tarkastellut tuotesivut.</span><span class="sxs-lookup"><span data-stu-id="c3d81-113">Activities include, for example, visited websites or viewed product pages from a link received in an email.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="c3d81-114">Edellytykset</span><span class="sxs-lookup"><span data-stu-id="c3d81-114">Prerequisites</span></span>
+
+<span data-ttu-id="c3d81-115">Tietojen integroiminen vuorovaikutuksen tiedoista vaatii seuraavien edellytysten täyttämistä:</span><span class="sxs-lookup"><span data-stu-id="c3d81-115">To integrate data from engagement insights, a few prerequisites need to be met:</span></span> 
+
+- <span data-ttu-id="c3d81-116">Vuorovaikutuksen tietojen SDK on integroitava sivustossa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-116">Integrate the engagement insights SDK with your website.</span></span> <span data-ttu-id="c3d81-117">Lisätietoja on kohdassa [Verkon SDK:n käytön aloittaminen](../engagement-insights/instrument-website.md).</span><span class="sxs-lookup"><span data-stu-id="c3d81-117">For more information, see [Get started with the web SDK](../engagement-insights/instrument-website.md).</span></span>
+- <span data-ttu-id="c3d81-118">Verkkotapahtumien vieminen vuorovaikutuksen tiedoista edellyttää ADLS Gen 2:n tallennustilin käyttämistä. Käyttäjäryhmän tietojen verkkotapahtumat siirretään tilille.</span><span class="sxs-lookup"><span data-stu-id="c3d81-118">Exporting web events from engagement insights requires access to an ADLS Gen 2 storage account that will be used to ingest the web events data to audience insights.</span></span> <span data-ttu-id="c3d81-119">Lisätietoja on aiheessa [Tapahtumien vieminen](../engagement-insights/export-events.md).</span><span class="sxs-lookup"><span data-stu-id="c3d81-119">For more information, see [Export events](../engagement-insights/export-events.md).</span></span>
+
+## <a name="configure-refined-events-in-engagement-insights"></a><span data-ttu-id="c3d81-120">Tarkennettujen tapahtumien määrittäminen vuorovaikutuksen tiedoissa</span><span class="sxs-lookup"><span data-stu-id="c3d81-120">Configure refined events in engagement insights</span></span>
+
+<span data-ttu-id="c3d81-121">Kun järjestelmänvalvoja muokkaa sivustoa, jolla on vuorovaikutuksen tietojen SDK, *perustapahtumat* kerätään käyttäjän tarkastellessa verkkosivua tai napsauttaessa sivun jotain osaa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-121">After an administrator instrumented a website with the engagement insights SDK, *base events* are gathered when a user views a web page or clicks somewhere.</span></span> <span data-ttu-id="c3d81-122">Perustapahtumat sisältävät yleensä runsaasti yksityiskohtia.</span><span class="sxs-lookup"><span data-stu-id="c3d81-122">Base events tend to contain numerous details.</span></span> <span data-ttu-id="c3d81-123">Tapauksesta riippuen tarvitaan vain perustapahtuman tietojen alijoukko.</span><span class="sxs-lookup"><span data-stu-id="c3d81-123">Depending on your use case, you only need a subset of the data in a base event.</span></span> <span data-ttu-id="c3d81-124">Vuorovaikutuksen tietojen avulla voit luoda *tarkennettuja tapahtumia*, jotka sisältävät vain valitun perustapahtuman ominaisuuksia.</span><span class="sxs-lookup"><span data-stu-id="c3d81-124">Engagement insights let you create *refined events* that contain only the properties of a base event that you select.</span></span>     
+
+<span data-ttu-id="c3d81-125">Lisätietoja on kohdassa [Tarkennettujen tapahtumien luominen ja muokkaaminen](../engagement-insights/refined-events.md).</span><span class="sxs-lookup"><span data-stu-id="c3d81-125">For more information, see [Create and modify refined events](../engagement-insights/refined-events.md).</span></span>
+
+<span data-ttu-id="c3d81-126">Tarkennettujen tapahtumien luomisessa huomioon otettavia seikkoja:</span><span class="sxs-lookup"><span data-stu-id="c3d81-126">Considerations when creating refined events:</span></span> 
+
+- <span data-ttu-id="c3d81-127">Anna tarkennetulle tapahtumalle merkityksellinen nimi.</span><span class="sxs-lookup"><span data-stu-id="c3d81-127">Provide a meaningful name for the refined event.</span></span> <span data-ttu-id="c3d81-128">Sitä käytetään käyttäjäryhmän tietojen aktiviteetin nimenä.</span><span class="sxs-lookup"><span data-stu-id="c3d81-128">It's be used as an activity name in audience insights.</span></span>
+- <span data-ttu-id="c3d81-129">Valitse vähintään seuraavat ominaisuudet, jos haluat luoda aktiviteetin käyttäjäryhmän tiedoissa:</span><span class="sxs-lookup"><span data-stu-id="c3d81-129">Select at least the following properties to create an activity in audience insights:</span></span> 
+    - <span data-ttu-id="c3d81-130">Signal.Action.Name - osoittaa aktiviteetin tiedot</span><span class="sxs-lookup"><span data-stu-id="c3d81-130">Signal.Action.Name - indicating the activity details</span></span>
+    - <span data-ttu-id="c3d81-131">Signal.User.Id - käytetään asiakastunnuksen yhdistämisessä</span><span class="sxs-lookup"><span data-stu-id="c3d81-131">Signal.User.Id - used to map with the customer ID</span></span>
+    - <span data-ttu-id="c3d81-132">Signal.View.Uri - käytetään verkko-osoitteessa segmenttien tai mittareiden perustana</span><span class="sxs-lookup"><span data-stu-id="c3d81-132">Signal.View.Uri - used as a web address as a basis for segments or measures</span></span>
+    - <span data-ttu-id="c3d81-133">Signal.Export.Id - käytetään tapahtumien ensisijaisena avaimena</span><span class="sxs-lookup"><span data-stu-id="c3d81-133">Signal.Export.Id - to use as a primary key for events</span></span> <!-- system generated, do we need to list?-->
+    - <span data-ttu-id="c3d81-134">Signal.Timestamp - aktiviteetin päivämäärän ja ajan määrittäminen</span><span class="sxs-lookup"><span data-stu-id="c3d81-134">Signal.Timestamp - to determine the date and time for the activity</span></span>
+
+<span data-ttu-id="c3d81-135">Valitse käyttötapauksen tapahtumien ja sivujen suodattimet.</span><span class="sxs-lookup"><span data-stu-id="c3d81-135">Select the filters to focus on the events and pages that matter for your use case.</span></span> <span data-ttu-id="c3d81-136">Tässä esimerkissä käytetään Sähköpostikampanja-toiminnon nimeä.</span><span class="sxs-lookup"><span data-stu-id="c3d81-136">In this example, we'll use the "Email promotion" action name.</span></span>
+
+## <a name="export-the-refined-web-events"></a><span data-ttu-id="c3d81-137">Tarkennettujen verkkotapahtumien vieminen</span><span class="sxs-lookup"><span data-stu-id="c3d81-137">Export the Refined Web Events</span></span> 
+
+<span data-ttu-id="c3d81-138">Kun tarkennettu tapahtuma on määritetty, tapahtuman tietojen vienti on määritettävä Azure Data Lake Storageen. Tämä voidaan määrittää tietolähteeksi käyttäjäryhmän tietojen siirtämistä varten.</span><span class="sxs-lookup"><span data-stu-id="c3d81-138">After defining the refined event is defined, you have to configure the export of the event data to an Azure Data Lake Storage, that can be set as a data source for ingestion in audience insights.</span></span> <span data-ttu-id="c3d81-139">Vientiä tapahtuu jatkuvasti, kun tapahtumia siirretään verkko-ominaisuudesta.</span><span class="sxs-lookup"><span data-stu-id="c3d81-139">Exports happen constantly as the events flow from the web property.</span></span>
+
+<span data-ttu-id="c3d81-140">Lisätietoja on aiheessa [Tapahtumien vieminen](../engagement-insights/export-events.md).</span><span class="sxs-lookup"><span data-stu-id="c3d81-140">For more information, see [Export events](../engagement-insights/export-events.md).</span></span>
+
+## <a name="ingest-event-data-to-audience-insights"></a><span data-ttu-id="c3d81-141">Tapahtuman tietojen siirtäminen käyttäjäryhmän tietoihin</span><span class="sxs-lookup"><span data-stu-id="c3d81-141">Ingest event data to audience insights</span></span>
+
+<span data-ttu-id="c3d81-142">Nyt, kun tarkennettu tapahtuma ja sen vienti on määritetty, siirretään tietoja käyttäjäryhmän tietoihin.</span><span class="sxs-lookup"><span data-stu-id="c3d81-142">Now that you have defined the refined event and configured its export, we move on to ingesting the data to audience insights.</span></span> <span data-ttu-id="c3d81-143">Luodaan uusi tietolähde Common Data Model -kansion perusteella.</span><span class="sxs-lookup"><span data-stu-id="c3d81-143">You need to create a new data source based on a Common Data Model folder.</span></span> <span data-ttu-id="c3d81-144">Syötä sen tallennustilin tiedot, johon tapahtumat viedään.</span><span class="sxs-lookup"><span data-stu-id="c3d81-144">Enter the details for the storage account you export the events to.</span></span> <span data-ttu-id="c3d81-145">Valitse *default.cdm.json*-tiedostossa tarkennettu tapahtuma siirtämistä varten ja luo entiteetti käyttäjäryhmän tietoihin.</span><span class="sxs-lookup"><span data-stu-id="c3d81-145">In the *default.cdm.json* file, select the refined event to ingest and create the entity in audience insights.</span></span>
+
+<span data-ttu-id="c3d81-146">Lisätietoja on kohdassa [Yhteyden muodostaminen Common Data Model -kansioon Azure Data Lake -tilin avulla](connect-common-data-model.md)</span><span class="sxs-lookup"><span data-stu-id="c3d81-146">For more information, see [Connect to a Common Data Model folder using an Azure Data Lake account](connect-common-data-model.md)</span></span>
+
+
+## <a name="relate-refined-event-data-as-an-activity-of-a-customer-profile"></a><span data-ttu-id="c3d81-147">Tarkennetun tapahtuman tietojen liittäminen asiakasprofiiliin aktiviteettina</span><span class="sxs-lookup"><span data-stu-id="c3d81-147">Relate refined event data as an activity of a customer profile</span></span>
+
+<span data-ttu-id="c3d81-148">Kun entiteetti on siirretty, voit määrittää aktiviteetin asiakasprofiilia varten.</span><span class="sxs-lookup"><span data-stu-id="c3d81-148">After completing the entity ingestion, you can configure the activity for the customer profile.</span></span>
+
+<span data-ttu-id="c3d81-149">Lisätietoja on kohdassa [Asiakasaktiviteetit](activities.md).</span><span class="sxs-lookup"><span data-stu-id="c3d81-149">For more information, see [Customer activities](activities.md).</span></span>
+
+:::image type="content" source="media/web-event-activity.png" alt-text="Aktiviteetit-sivu ja laajennettu Muokkaa aktiviteettia -ruutu sekä täytetyt kentät.":::
+
+<span data-ttu-id="c3d81-151">Määritä uusi aktiviteetti seuraavilla yhdistämismäärityksillä:</span><span class="sxs-lookup"><span data-stu-id="c3d81-151">Configure the new activity with the following mapping:</span></span> 
+
+- <span data-ttu-id="c3d81-152">**Perusavain:** Signal.Export.Id, yksilöllinen tunnus, joka on käytettävissä jokaisessa tapahtumatietueessa vuorovaikutuksen tiedoissa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-152">**Primary Key:** Signal.Export.Id, a unique ID that is available for every event record in engagement insights.</span></span> <span data-ttu-id="c3d81-153">Tämä ominaisuus luodaan automaattisesti.</span><span class="sxs-lookup"><span data-stu-id="c3d81-153">This property is automatically generated.</span></span>
+
+- <span data-ttu-id="c3d81-154">**Aikaleima:** Signal.Timestamp tapahtuman ominaisuudessa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-154">**Timestamp:** Signal.Timestamp in the event property.</span></span>
+
+- <span data-ttu-id="c3d81-155">**Tapahtuma:** Signal.Name, seurattavan tapahtuman nimi.</span><span class="sxs-lookup"><span data-stu-id="c3d81-155">**Event:** Signal.Name, the event name that you want to track.</span></span>
+
+- <span data-ttu-id="c3d81-156">**WWW-osoite:** Signal.View.Uri viittaa tapahtuman luoneen sivun URI-tunnukseen.</span><span class="sxs-lookup"><span data-stu-id="c3d81-156">**Web address:** Signal.View.Uri referring to the uri of the page that created the event.</span></span>
+
+- <span data-ttu-id="c3d81-157">**Tiedot:** Signal.Action.Name esittää tapahtumaan liitettävät tiedot.</span><span class="sxs-lookup"><span data-stu-id="c3d81-157">**Details:** Signal.Action.Name to represent the information to associate with the event.</span></span> <span data-ttu-id="c3d81-158">Tässä tapauksessa valittu ominaisuus osoittaa, että tapahtuma liittyy sähköpostikampanjaan.</span><span class="sxs-lookup"><span data-stu-id="c3d81-158">The selected property in this case indicates that the event is for email promotion.</span></span>
+
+- <span data-ttu-id="c3d81-159">**Aktiviteettityyppi:** Tässä esimerkissä valitaan olemassa olevan aktiviteettityyppi Verkkoloki.</span><span class="sxs-lookup"><span data-stu-id="c3d81-159">**Activity type:** In this example, we choose the exsting activity type WebLog.</span></span> <span data-ttu-id="c3d81-160">Tämä valinta on hyödyllinen suodatusvaihtoehto, jos suoritetaan ennustemallit tai luodaan segmenttejä tämän aktiviteettityypin perusteella.</span><span class="sxs-lookup"><span data-stu-id="c3d81-160">This selection is a useful filter option to run prediction models or create segments based on this activity type.</span></span>
+
+- <span data-ttu-id="c3d81-161">**Määritä suhde:** Tämä tärkeä asetus yhdistää aktiviteetin olemassa oleviin asiakasprofiileihin.</span><span class="sxs-lookup"><span data-stu-id="c3d81-161">**Set up relationship:** This important setting ties the activity to existing customer profiles.</span></span> <span data-ttu-id="c3d81-162">**Signal.User.Id** on SDK:ssa määritetty kerättävä tunnus. Se liittyy käyttäjätunnukseen muissa tietolähteissä, jotka on määritetty käyttäjäryhmän tiedoissa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-162">**Signal.User.Id** is the identifier configured in the SDK to be collected and that relates to the user ID in other data sources that are configured in audience insights.</span></span> <span data-ttu-id="c3d81-163">Tässä esimerkissä määritetään suhde Signal.User.Id- ja RetailCustomers:CustomerRetailId-tunnuksen välille. Jälkimmäinen on ensisijainen avain, joka määritettiin tietojen yhdistämisprosessin yhdistämisvaiheessa.</span><span class="sxs-lookup"><span data-stu-id="c3d81-163">In this example, we configure the relationship between Signal.User.Id and RetailCustomers:CustomerRetailId, which is the primary key that was deinfed in the map step of the data unification process.</span></span>
+
+
+<span data-ttu-id="c3d81-164">Aktiviteettien käsittelemisen jälkeen voit tarkastella asiakastietueita ja avata asiakaskortin. Näin näet vuorovaikutuksen tietojen aktiviteetit aikajanalla.</span><span class="sxs-lookup"><span data-stu-id="c3d81-164">After processing the activities, you can review customer records and open a customer card to see activities from engagement insights in the timeline.</span></span> 
+
+> [!TIP]
+> <span data-ttu-id="c3d81-165">Jos haluat etsiä asiakastunnuksen, jolla on vuorovaikutuksen tietojen aktiviteetti, siirry kohtaan **Entiteetit** ja esikatsele UnifiedActivity-entiteetin tietoja.</span><span class="sxs-lookup"><span data-stu-id="c3d81-165">To find a customer id that has an engagement insights activity, go to **Entities** and preview the data for the UnifiedActivity entity.</span></span> <span data-ttu-id="c3d81-166">ActivityTypeDisplay = WebLog sisältää yllä olevassa esimerkissä määritetyn vuorovaikutuksen tietojen aktiviteetin.</span><span class="sxs-lookup"><span data-stu-id="c3d81-166">ActivityTypeDisplay = WebLog contain the engagement insights activity configured in the example above.</span></span> <span data-ttu-id="c3d81-167">Kopioi asiakastunnus jostain tietueesta **Asiakkaat** -sivun tunnukseksi.</span><span class="sxs-lookup"><span data-stu-id="c3d81-167">Copy the customer ID for one of those records and for that ID on the **Customers** page.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="c3d81-168">Seuraavat vaiheet</span><span class="sxs-lookup"><span data-stu-id="c3d81-168">Next Steps</span></span>
+
+<span data-ttu-id="c3d81-169">Nyt voit luoda [segmenttejä](segments.md), [mittareita](measures.md) ja [ennusteita](predictions.md). Niiden avulla voit luoda merkityksellisen suhteen asiakkaisiin.</span><span class="sxs-lookup"><span data-stu-id="c3d81-169">You can now create [segments](segments.md), [measures](measures.md), and [predictions](predictions.md) to make a meaningful connection with your customers.</span></span>
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
