@@ -1,20 +1,20 @@
 ---
 title: Customer Insights -tietojen vienti Dynamics 365 Salesiin
 description: Tutustu Dynamics 365 Sales -yhteyden määrittämiseen.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 0013c4e6a96401d6cdbea55ed38f85f5e10dcc56
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643814"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269004"
 ---
 # <a name="connector-for-dynamics-365-sales-preview"></a>Dynamics 365 Salesin yhdistin (esikatselu)
 
@@ -24,7 +24,10 @@ Asiakastietojen avulla voit luoda markkinointiluetteloita, seurata työnkulkuja 
 
 ## <a name="prerequisite"></a>Edellytykset
 
-[Common Data Servicella käytetyt Dynamics 365 Salesin](connect-power-query.md) yhteyshenkilötietueet.
+1. Dynamics 365 Salesissa on oltava yhteyshenkiötietueita, ennen kuin voit viedä segmentin Customer Insightsista Salesiin. Lisätietoja yhteyshenkilöiden käyttämisestä [Dynamics 365 Salesissa Common Data Servicesin avulla](connect-power-query.md).
+
+   > [!NOTE]
+   > Segmenttien vieminen käyttäjäryhmän tiedoista Salesiin ei luo Sales-esiintymiin uusia yhteyshenkilötietueita. Salesin yhteyshenkilötietueet on käsiteltävä käyttäjäryhmän tiedoissa, ja niitä on käytettävä tietolähteenä. Ne on myös sisällytettävä yhdistettyyn asiakasentiteettiin, jotta asiakastunnukset voidaan yhdistää yhteyshenkilötunnuksiin ennen segmenttien viemistä.
 
 ## <a name="configure-the-connector-for-sales"></a>Määritä Salesin yhdistin
 
@@ -49,3 +52,6 @@ Asiakastietojen avulla voit luoda markkinointiluetteloita, seurata työnkulkuja 
 ## <a name="export-the-data"></a>Tietojen vieminen
 
 Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

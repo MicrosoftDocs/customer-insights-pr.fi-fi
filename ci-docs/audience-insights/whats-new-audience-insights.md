@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 11/02/2020
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 07b4bee0445f9cd7d53a37cd405af839feb07ae3
-ms.sourcegitcommit: 4004eadac7a65e50e0a409cb925958523c2b6348
+ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "4650000"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270428"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -30,6 +30,77 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="january-2021-updates"></a>Tammikuun 2021 päivitykset
+
+Tammikuun 2021 päivitykset sisältävät useita toimintoja, suorituskykypäivityksiä ja virheiden korjauksia.
+
+#### <a name="extensibility"></a>Laajennettavuus
+
+- **SFTP-viennin laajennetut toiminnot ja laajennettu suorituskyky** Voit nyt viedä kaikki tulosentiteetit Customer Insightsista SFTP-isäntään. Aiemmin vienti rajoittui segmenttientiteetteihin. Lisäksi SFTP-viennin suorituskyky mahdollistaa aiempaa suuremman datamäärän käsittelemisen aiempaa lyhyemmässä ajassa SFTP-isännän suorituskyvystä riippuen.    
+  Lisätietoja on kohdassa [SFTP-yhdistin (esiversio)](export-sftp.md).  
+
+#### <a name="segments"></a>Segmentit
+
+- **Koneoppimisen tehostamat ehdotetut segmentit mittareiden parantamiseksi** Tämä on uusi tapa segmenttien etsimiseen ja luomiseen. Järjestelmä käyttää tekoälymallia segmenttien ehdottamisessa. Tämä auttaa jo seurannassa olevien KPI-luvun (mittarin) parantamisessa. Näkyvissä on niiden määritteiden vaikutuksen määrä, jotka ovat valittavissa mittaria tai toista ensisijaista määritettä varten. Nämä tiedot auttavat nykyisten mahdollisuuksien mahdollisten segmenttien etsimisessä.    
+  Lisätietoja on kohdassa [Ehdotetut segmentit (esiversio)](suggested-segments.md).
+
+#### <a name="data-unification"></a>Tietojen yhdistäminen
+
+- **Tehostettu vastaavuuskokemus** Vastaavuuskokemus päivitettiin tietojen yhdistämisen alueessa. Sen avulla voit määrittää ja tarkastella vastaavuussääntöjä, esimerkiksi yksityiskohtaisia tilastoja vastaavuudesta ja sen käyttämisestä. Vastaavuussäännön voi myös poistaa käytöstä, jolloin se ei ole enää aktiivinen. Samalla määrityksen ja vedä ja pudota -toiminnon vastaavuussäännöt säilytetään.
+  Lisätietoja on aiheessa [Entiteettien vastaavuuden määrittäminen](match-entities.md).
+
+- **Kaksoiskappaleiden poiston tulos vastaavuusprosessissa on käytettävissä entiteettinä** Kaksoiskappaleiden poistoprosessin tulos vastaavuusprosessissa on nyt kirjoitettu erilliseen entiteettiin lisäanalyysia varten. Tämä entiteetti sisältää kaksoiskappaleiden poistoprosessissa käytetyt kentät sekä voittaneen tietueen että vastaavat vaihtoehtoiset tietueet, jotka yhdistettiin voittaneeseen tietueeseen.
+  Lisätietoja on kohdassa [Kaksoiskappaleiden poiston tulos entiteettinä](match-entities.md#deduplication-output-as-an-entity).
+
+#### <a name="system-administration"></a>Järjestelmän hallinta
+
+- **Jaa tiedot saumattomasti Microsoft Dataversen kanssa** Voit nyt jakaa Customer Insightsin tuloksen Microsoft Dataverse -sovellusten kanssa käyttämällä Microsoft Dataversen hallittua Data Lakea. Kun Dataverse-ympäristö liitetään Customer Insightsiin, voit ottaa käyttöön tietojen jakamisen.
+  Lisätietoja on kohdassa [Ympäristöjen hallinta](manage-environments.md).
+
+
+## <a name="december-2020-updates"></a>Joulukuun 2020 päivitykset
+
+Joulukuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäivityksiä ja virheiden korjauksia.
+
+### <a name="new-and-updated-features-in-december-2020"></a>Uudet ja päivitetyt ominaisuudet joulukuussa 2020
+
+#### <a name="data-enrichment"></a>Tietojen rikastaminen
+
+- **Parannettu tuotemerkin ja kiinnostusten kohteiden affiniteettien rikastamisetf**
+  
+  Affiniteettipisteitä yksinkertaistettiin, jotta niitä olisi aiempaa helpompi ymmärtää ja käyttää. Nyt voit nopeasti tunnistaa asiakkaat sen perusteella, kuinka paljon affiniteettia näillä on tiettyä tuotemerkkiä tai kiinnostuksen kohdetta kohtaan.
+
+  Lisäksi olemme lisänneet uusia määritysvaihtoehtoja, jotka ohjaavat paremmin asiakasprofiilien rikastamista. 
+
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md).
+
+- **Rikastettavien profiilien määrittäminen**
+
+  Nyt voit rikastaa vain asiakasprofiilien alijoukkoa ja valita segmenttientiteetin oletusasiakasentiteetin sijaan. Luo segmentti, joka sisältää rikastettavat asiakasprofiilit, ja valitse se asiakastietojoukon rikastuksen määrityksessä.
+  Tämä ominaisuus on tällä hetkellä käytettävissä vain Experian- ja HERE Technologies -rikastuksille. Tätä ominaisuutta rikastetaan pian.
+
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen Experianin demografiatiedoilla](enrichment-experian.md) tai [Asiakasprofiilien rikastaminen HERE Technologies -tiedoilla](enrichment-here.md).
+
+#### <a name="extensibility"></a>Laajennettavuus
+
+- **Segmenttien aktivointi Autopilotin kautta**
+
+  Vie segmenttejä Autopilotiin ja käytä niitä markkinointiin. Lisätietoja on kohdassa [Autopilot-yhdistin (esiversio)](export-autopilot.md).
+
+- **Segmenttien aktivointi SendGridin kautta**
+
+  Vie segmenttejä SendGridiin ja käytä niitä markkinointiin. Lisätietoja on kohdassa [SendGrid-yhdistin](export-sendgrid.md).
+
+#### <a name="system-administration"></a>Järjestelmän hallinta
+
+- **Päivitetty ympäristön hallintakokemus**
+  
+  Nyt voit luoda, muokata, poistaa ja palauttaa ympäristöjä suoraan sovelluksen otsikon ympäristön valitsijasta. 
+  
+  Lisäksi käytössäsi olevan ympäristön kiinnitetty ympäristö on ympäristöpaneelin yläosassa, joten sitä ei enää tarvitse hakea.
+
+  Lisätietoja on kohdassa [Ympäristöjen hallinta](manage-environments.md).
 
 ## <a name="november-2020-updates"></a>Marraskuun 2020 päivitykset
 
@@ -165,7 +236,7 @@ Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen Experianin demografiati
 Tehtävän tietoruudussa on tietoja järjestelmän suorittamista tehtävistä. Se on kätevä tapa selvittää määrityksessä olevia ongelmia ja etsiä ratkaisuja.
 Virhesanomia tarkastelemalla saa ohjeita mahdollisten ongelmien korjaamiseen.
  
-- **Lisäsivuille lisättyjen tietojen käsitteleminen**
+- **Useille sivuille lisättyjen tietojen käsitteleminen**
 
 Tämä parannus lisää tietoja **Entiteetit**- ja **Asiakkaat**-sivulla olevien entiteettien tilasta.
  
@@ -200,11 +271,11 @@ Elokuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivityk
   - Yhdistämissivun parannetut hakuominaisuudet
   - Ehdotetun kenttätyypin visuaalinen ja helppo tunnistus
 
-#### <a name="enrichment"></a>Rikastaminen
+#### <a name="enrichment"></a>Rikastus
 
-- **Kiinnostuksen kohteiden mieltymysten rikastaminen saatavana uusilla markkina-alueilla**
+- **Kiinnostuksen kohteiden affiniteettien rikastaminen käytettävissä useilla markkinoilla**
 
-  Kiinnostuksen kohteiden mieltymysten rikastaminen laajennetaan Yhdysvaltojen lisäksi viidelle muulle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen myötä asiakastietoja voi rikastaa näitä markkinoita koskevien kiinnostuksen lisäkohteiden avulla. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
+  Olemme laajentamassa kiinnostuksen kohteiden affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla voit rikastaa asiakastietoja niin, että ne ottavat huomioon nämä markkinat aiempaa paremmin. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
   Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md)
 
 
@@ -221,11 +292,11 @@ Heinäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivi
   Power Automate -käynnistimiä on laajennettu ja on annettu mahdollisuus luoda ilmoitus tai toiminto, kun jonkin yhdistämisprosessin päivitys on valmis.    
   Lisätietoja on kohdassa [Power Automate -yhdistin](export-power-automate.md).
 
-#### <a name="enrichment"></a>Rikastaminen
+#### <a name="enrichment"></a>Rikastus
 
-- **Tuotemerkin affiniteettien rikastaminen on laajennuttu uusille markkina-alueille**
+- **Tuotemerkin affiniteettien rikastaminen käytettävissä useilla markkinoilla**
 
-  Tuotemerkin affiniteettien saatavuutta laajennetaan Yhdysvaltojen lisäksi viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt Kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla asiakastietoja voi rikastaa näiden markkinoiden paikallisilla tuotemerkeillä. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
+  Olemme laajentamassa tuotemerkin affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla asiakastietoja voi rikastaa näiden markkinoiden paikallisilla tuotemerkeillä. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
   Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md)
 
 ## <a name="june-2020-updates"></a>Kesäkuun 2020 päivitykset
@@ -238,7 +309,7 @@ Kesäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivit
 
 - **Yritystietojen rikastaminen Leadspacesta**
   
-  Määritä yhdistetyissä asiakasprofiileissa kentät, joilla haetaan liittyviä yritystietoja Leadspacesta. Rikastamisprosessin suorittamisen jälkeen yritystenvälisiä profiileja rikastetaan lisämääritteillä, kuten yrityksen koko, sijainti ja toimiala.    
+  Määritä yhdistetyissä asiakasprofiileissa kentät, joilla haetaan liittyviä yritystietoja Leadspacesta. Kun rikastusprosessi on suoritettu, yritystenväliset profiilit rikastetaan määritteillä, kuten yrityksen koko, sijainti ja toimiala.    
   Tämä yhteistyön avulla voi parantaa tietojen laatua kolmen osapuolen palveluista saatavilla tiedoilla. Tämän rikastamisen käyttöön tarvitaan Leadspacen käyttöoikeus, jolla voi käyttää sen yritystenvälisiä yritystietoja. Järjestelmä käyttää kyseistä käyttöoikeutta tietojen jatkuvaan rikastamiseen.    
   Lisätietoja on kohdassa [Yritysprofiilien rikastaminen Leadspacen avulla](enrichment-leadspace.md).
 
@@ -264,7 +335,7 @@ Kesäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivit
   Dynamics 365:n asiakaskortin apuohjelman uudella ohjausobjektilla voi näyttää tuotemerkin ja kiinnostuksen kohteiden rikastamiset, jotka on tehty Dynamics 365:n asiakkaan osallistamissovellusten yhteyshenkilöissä.    
   Lisätietoja on kohdassa [Asiakasortti-apuohjelma](customer-card-add-in.md).
 
-- **Power Automate -lisäkäynnistimiä**
+- **Lisää Power Automate -käynnistimiä**
 
   Power Automate -käynnistimiä on laajennettu ja seuraavat käynnistimet on lisätty:
   - Ilmoitus tai toiminnon suorittaminen, kun automaattinen täydellinen päivitys (tietolähteissä, yhdistämisessä, segmenteissä, mittareissa, viennissä) valmistuu
@@ -295,12 +366,12 @@ Kesäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivit
   
   Etsi samankaltaisia asiakkaita asiakaskunnasta tekoälyn avulla. Koneoppimismallin binaariluokitus määrittää samankaltaisuuspistemäärän asiakkaille laajennetussa segmentissä. Pistemäärä perustuu lähdesegmentin asiakkaiden samankaltaisuuteen. Asiakasprofiilit lisätään samankaltaisuuspistemäärän perusteella juuri luotuun segmenttiin.
 
-  Digitaalisessa markkinoinnissa joskus samanlaisuusmallinnukseksi kutsuttu menetelmä etsii tekoälymallin avulla lisämääritteitä käyttämällä asiakkaita, jotka ovat samankaltaisia kuin toisen segmentin asiakkaat. Määritteiden valinnan lisäksi voit myös määrittää asiakkaiden enimmäismäärän uuteen segmenttiin. Tekoälymalli laskee sitten samankaltaisuuspistemäärän kullekin asiakkaalle valittujen määritteiden perusteella ja etsii asiakkaat, joilla on korkea keskimääräinen samankaltaisuuspistemäärä. Tuloksena on segmentti, joka sisältää alkuperäisessä segmentissä ollutta asiakasta muistuttavia asiakkaita.    
+  Sitä kutsutaan joskus digitaalisessa markkinoinnissa samankaltaisuuden mallintamiseksi ja se käyttää tekoälymallia etsiessään asiakkaita, jotka ovat samanlaisia kuin toisen segmentin asiakkaat. Tämä saadaan aikaan tekemällä lisää määritteitä. Määritteiden valinnan lisäksi voit myös määrittää asiakkaiden enimmäismäärän uuteen segmenttiin. Tekoälymalli laskee sitten samankaltaisuuspistemäärän kullekin asiakkaalle valittujen määritteiden perusteella ja etsii asiakkaat, joilla on korkea keskimääräinen samankaltaisuuspistemäärä. Tuloksena on segmentti, joka sisältää alkuperäisessä segmentissä ollutta asiakasta muistuttavia asiakkaita.    
   Lisätietoja on kohdassa [Samankaltaiset asiakkaat](find-similar-customer-segments.md).
 
 - **Segmentin päällekkäisyys ja erottavat tekijät**
 
-  Segmentin päällekkäisyyden avulla nähdään, kuinka paljon vähintään kahdella segmentillä on samoja asiakkaita ja keitä nämä asiakkaat ovat. Esimerkkejä ovat esimerkiksi paljon kuluttavien segmentin päällekkäisyys erittäin tyytyväisten asiakkaiden segmentin kanssa tai asiakkaiden vaihtuvuussegmentin päällekkäisyys tyytymättömien asiakkaiden segmentin kanssa. Lisäksi voidaan analysoida, miten päällekkäisyys muuttuu valitun lisämääritteen perusteella.
+  Segmentin päällekkäisyyden avulla nähdään, kuinka paljon vähintään kahdella segmentillä on samoja asiakkaita ja keitä nämä asiakkaat ovat. Esimerkkejä ovat esimerkiksi paljon kuluttavien segmentin päällekkäisyys erittäin tyytyväisten asiakkaiden segmentin kanssa tai asiakkaiden vaihtuvuussegmentin päällekkäisyys tyytymättömien asiakkaiden segmentin kanssa. Voit myös analysoida, miten päällekkäisyys muuttuu valitsemasi lisämääritteen perusteella.
 
   Segmentin erottavat tekijät paljastavat, mikä erottaa segmentin muista asiakkaista tai toisesta segmentistä. Sinun ei tarvitse tehdä muuta kuin määrittää segmentti. Järjestelmä määrittää sitten profiilin määritteet ja mittaa, mikä erottaa segmentin, käyttämällä erottavien tekijöiden luettelon, joka on järjestetty merkittävimmästä erottavasta tekijästä heikoimpaan erottavaan tekijään.    
   Lisätietoja on kohdassa [Segmentin tiedot (esiversio)](segment-insights.md).
@@ -333,7 +404,7 @@ Toukokuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäi
 
 - **Päivitetty aikajana ja sivutus asiakaskortin apuohjelmassa**
 
-  Asiakaskortin apuohjelmaratkaisun aikajana vastaa aktiviteetin aikajanaa. Aikajanan sivutus parani ja jopa 50 aktiviteettia näkyy samalla kertaa. Se mahdollistaa myös lisäaktiviteettien lataamisen aikajanalle.    
+  Asiakaskortin apuohjelmaratkaisun aikajana vastaa aktiviteetin aikajanaa. Aikajanan sivutus parani ja jopa 50 aktiviteettia näkyy samalla kertaa. Se sallii myös useampien aktiviteettien lataamisen aikajanalle.    
   Lisätietoja on kohdassa [Asiakasortti-apuohjelma](customer-card-add-in.md).
 
 - **Power Automate -käynnistin segmenttimuutoksille**
@@ -412,7 +483,7 @@ Huhtikuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäi
 
 - **Vie LiveRampiin**
 
-  Aktivoi tietosi LiveRamp® -ratkaisussa muodostaaksesi yhteyden yli 500 ympäristöön digitaalisissa, yhteisöllisissä ja television ekosysteemeissä. Hyödynnä LiveRamp-tietoja mainoskampanjoiden kohdentamiseen, rajoittamiseen ja räätälöintiin.    
+  Aktivoi tietosi LiveRamp® -ratkaisussa muodostaaksesi yhteyden yli 500 ympäristöön digitaalisissa, yhteisöllisissä ja television ekosysteemeissä. Käytä LiveRamp-tietoja mainoskampanjoiden kohdistamisessa, estämisessä ja mukauttamisessa.    
   Lisätietoja: [LiveRamp&reg; -yhdistin](export-liveramp.md).
 
 - **Customer Insightsin Teams-laajennus**
@@ -433,7 +504,7 @@ Huhtikuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäi
 
 #### <a name="segments"></a>Segmentit
 
-- **Lisäoperaattori**
+- **Toinen operaattori**
   
   In-set -operaattori sallii asiakkaiden segmentoinnin useilla mahdollisilla merkkijonoarvoilla. Ennen tämän operaattorin lisäämistä sinun oli rakennettava tällaiset segmentit useilla OR-ehdoilla. In-set -operaattorin avulla voit tehdä sen yhdellä ehdolla.    
   Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
@@ -444,3 +515,6 @@ Huhtikuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäi
   
   Kopioi määritys ympäristöstä toiseen. Kun luot uutta ympäristöä, voit valita aiemmin luodun ympäristön, josta haluat kopioida määrityksen. Tällä hetkellä kopioinnissa tuetaan tietolähteitä, tietojen yhdistämistä, suhteita, mittareita ja segmenttejä. Tietolähteen tunnistetietoja ja itse tietoja ei kopioida.    
   Lisätietoja on kohdassa [Ympäristöjen hallinta](manage-environments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 11/12/2020
 ms.reviewer: zacook
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f3cbbf99a6cecba2aab2cf85428d53e5df8346e4
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: af461d290c69687fb47bacfcff446a0c62978383
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644399"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268314"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tapahtuman vaihtuvuusennuste (esiversio)
 
@@ -96,6 +96,8 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
 1. Vaihtoehtoisesti voit valita **Lisää tiedot** **Asiakasaktiviteetit**-kohdassa. Valitse entiteetti, jossa on asiakasaktiviteetin tiedot, edellytyksissä kuvatulla tavalla.
 
 1. Yhdistä semanttiset kentät määritteisiin asiakasaktiviteettientiteetissä ja valitse **Seuraava**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
+
+   :::image type="content" source="media/map-transaction-data-fields.png" alt-text="Yhdistä tapahtumatietojen asiakaskentät.":::
 
 1. Valitse aktiviteettityyppi, joka vastaa määrittämiesi asiakkaan aktiviteetin tyyppiä. Valitse **Luo uusi** ja valitse käytettävissä oleva aktiviteettityyppi tai luo uusi tyyppi.
 
@@ -185,3 +187,6 @@ Ennusteen poistaminen poistaa myös sen tuloste-entiteetin.
 1. Valitse poistettavan ennusteen vieressä olevat allekkaiset pisteet.
 
 1. Valitse **Poista**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 055708ed3f9f468cad83ecf976a460814bf05199
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 81540ad2f490cf566f031233543b3cb6aa838033
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643589"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269786"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Tapahtuman vaihtuvuusennusteen (esiversio) näyteopas
 
@@ -49,7 +49,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    [!div class="mx-imgBorder"]
    ![Syntymäpäivän muuttaminen päivämääräksi](media/ecommerce-dob-date.PNG "syntymäpäivän muuntaminen päivämääräksi")
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
+1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommerceContacts**-arvo
 
 1. Tallenna tietolähde.
 
@@ -66,7 +66,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **PurchasedOn**: päivämäärä ja aika
    - **TotalPrice**: valuutta
    
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommercePurchases**.
+1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommercePurchases**-arvo.
 
 1. Tallenna tietolähde.
 
@@ -84,7 +84,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **loyCustomers**.
+1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
 
 1. Tallenna tietolähde.
 
@@ -166,7 +166,7 @@ Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan ny
 
      :::image type="content" source="media/model-levers.PNG" alt-text="Mallin ennusteikkunan ja vaihtuvuusmääritelmän valitseminen":::
 
-1. Valitse **Ostohistoria (pakollinen)** ja valitse tilaushistorian osalta **Lisää tiedot**.
+1. Valitse **Ostohistoria (pakollinen)** ja valitse ostohistorialle **Lisää tiedot** -arvo.
 
 1. Lisää **eCommercePurchases : eCommerce** -entiteetti ja yhdistä eCommercen kentät vastaaviin mallin edellyttämiin kenttiin.
 
@@ -204,3 +204,6 @@ Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

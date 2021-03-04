@@ -1,7 +1,7 @@
 ---
-title: Mittareiden luominen ja mukauttaminen
-description: Määritä asiakkaaseen liittyvät mittarit tiettyjen liiketoiminta-alueiden suorituskyvyn analysointia ja kuvailua varten.
-ms.date: 10/15/2020
+title: Mittareiden luominen ja hallinta
+description: Määritä yrityksen suorituskyvyn analysoimiseen ja kuvaamiseen liittyvät mittarit.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405622"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269924"
 ---
 # <a name="define-and-manage-measures"></a>Mittojen määrittäminen ja hallinta
 
-**Mittarit** edustavat tunnuslukuja, jotka kuvaavat tiettyjen liiketoiminta-alueiden suorituskykyä ja tilaa. Mittareiden luonti käyttäjäryhmän merkityksellisissä tiedoissa tapahtuu intuitiivisesti kyselyn muodostimessa, jossa ei tarvitse käyttää koodia eikä vahvistaa mittareita manuaalisesti. Voit seurata liiketoiminnan mittareita **aloitussivulla**, katsoa tiettyjen asiakkaiden mittareita **asiakaskortin** avulla ja käyttää mittareita asiakassegmenttien määrittämisessä **Segmentit**-sivulla.
+Mittareiden avulla saat lisätietoja asiakkaan toiminnasta ja liiketoiminnan suorituskyvystä noutamalla olennaisia arvoja [yhdistetyistä profiileista](data-unification.md). Esimerkissä yritys haluaa lisätietoja yksittäisen asiakkaan ostohistoriasta *asiakaskohtaisen kokonaiskulutuksen* avulla. Vaihtoehtoisesti halutaan tietoja koko yrityksen koostetusta myyntituotosta *yrityksen kokonaismyyntiä* kuvaavan mittarin avulla.  
+
+Mittarit luodaan käyttämällä mittareiden luontiohjelmaa. Se on tietojen kysely-ympäristö, jossa on useita operaattoreita ja yksinkertaiset yhdistämisvalinnat. Sen avulla voi suodattaa tietoja, ryhmitellä tuloksia, havaita [entiteettisuhteiden polkuja](relationships.md) ja esikatsella tulosta.
+
+Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon, mutta tekevät myös paljon palautuksia. Voit [luoda segmentin](segments.md) seuraavien parhaiden toimintojen suorittamiseksi. 
 
 ## <a name="create-a-measure"></a>Luo mittari
 
-Tässä osassa luodaan mittari alusta alkaen. Voit luoda mittareita useiden asiakasentiteetin kautta yhdistettyjen tietolähteiden tiedoista. Käytössä on jotakin [palvelurajoituksia](service-limits.md).
+Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mittarin ja tietomääritteet tietoentiteeteistä, joille on määritetty suhde yhteyden muodostamiseksi asiakasentiteettiin. 
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
 
-2. Valitse **Uusi mittari**.
+1. Valitse **Uusi**.
 
-3. Valitse mittarin **tyyppi** seuraavasti:
-
-   - **Asiakasmäärite**: Asiakkaan yksittäinen kenttä, joka näyttää asiakkaan pisteet, arvon tai tilan. Asiakkaan määritteet luodaan määritteinä uudessa järjestelmän luomassa entiteetissä, jonka nimi on **Customer_Measure**.
-
-   - **Asiakasmittari**: Tietoja asiakkaan toiminnasta eriteltynä valittujen dimensioiden mukaan. Jokaiselle mittarille luodaan uusi entiteetti. Se sisältää mahdollisesti useita tietueita asiakasta kohti.
-
-   - **Liiketoiminnan mittari**: Seuraa liiketoiminnan suorituskykyä ja tilaa. Liiketoiminnan mittareilla voi olla kaksi eri tulostetta: numeerinen tuloste, joka osoittaa **aloitussivun** tai uuden entiteetin, joka löytyy **Entiteetit**-sivulta.
-
-4. Anna **nimi** ja valinnainen **näyttönimi** ja valitse **Seuraava**.
-
-5. Valitse **Entiteetit**-osassa ensin entiteetti avattavasta luettelosta. Tässä vaiheessa sinun on päätettävä, tarvitaanko mittarin määrityksessä useampia entiteettejä.
-
-   > [!div class="mx-imgBorder"]
-   > ![Mittarin määritys](media/measure-definition.png "Mittarin määritys")
-
-   Jos lisäät entiteettejä, valitse **Lisää entiteetti** ja valitse mittarissa käytettävät entiteetit.
-
+1. Valitse **Muokkaa nimeä** ja anna mittarille **nimi**. 
    > [!NOTE]
-   > Voit valita vain entiteettejä, joilla on suhde aloittavaan entiteettiin. Lisätietoja suhteiden määrittämisestä on kohdassa [Suhteet](relationships.md).
+   > Jos uudella mittarin määrityksellä on vain kaksi kenttää, esimerkiksi CustomerID ja yksi laskelma, tulos lisätään uudeksi sarakkeeksi järjestelmän luomaan entiteettiin nimeltä Customer_Measure. Voit myös nähdä mittarin arvon yhdistetyssä asiakasprofiilissa. Muut mittarit luovat omat entiteetit.
 
-6. Vaihtoehtoisesti voit määrittää muuttujia. Valitse **Muuttujat**-osassa **Uusi muuttuja**.
+1. Valitse määritysalueessa koostetoiminto avattavasta **Valitse toiminto** -valikosta. Koostetoimintoja ovat seuraavat: 
+   - **Sum**
+   - **Keskiarvo**
+   - **Määrä**
+   - **Yksilöllinen määrä**
+   - **Enintään**
+   - **Min**
+   - **Ensimmäinen**: ottaa tietueen ensimmäisen arvon
+   - **Viimeinen**: ottaa tietueeseen lisätyn viimeisen arvon
 
-   Muuttujat ovat laskelmia, jotka tehdään jokaiselle valitulle tietueelle. Voit esimerkiksi laskea yhteen myyntipisteen verkkomyynnin jokaiselle asiakastietueelle.
+   :::image type="content" source="media/measure-operators.png" alt-text="Mittarin laskelmien operaattorit.":::
 
-7. Anna muuttujalle **nimi**.
+1. Valitse **Lisää määrite**, jos haluat valita tälle mittarille luotavat tiedot.
+   
+   1. Valitse **Määritteet**-välilehti. 
+   1. Tietoentiteetti: valitse entiteetti, joka sisältää mitattavan määritteen. 
+   1. Tietomäärite: valitse määrite, jota haluat käyttää koostetoiminnossa mittarin laskemiseksi. Voit valita vain yhden määritteen kerrallaan.
+   1. Voit valita myös tietomääritteen olemassa olevasta mittarista valitsemalla **Mittarit**-välilehden. Vaihtoehtoisesti voit hakea mitä tahansa entiteetin tai mittarin nimeä. 
+   1. Valitse **Lisää**, jos haluat lisätä valitun määritteen mittariin.
 
-8. Valitse **Lauseke**-alueessa kenttä, jonka aloittaa laskelman.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Valitse laskelmissa käytettävä määrite.":::
 
-9. Kirjoita lauseke **Lauseke**-alueeseen ja valitse lisää laskelmaan lisättäviä kenttiä.
+1. Jos haluat luoda monimutkaisia mittareita, voit lisätä määritteiden määrää tai käyttää mittarin toiminnossa matemaattisia operaattoreita.
 
-   > [!NOTE]
-   > Tällä hetkellä tuetaan vain aritmeettisia lausekkeita. Lisäksi muuttujan laskelma ei tue muiden [entiteettipolkujen](relationships.md) entiteettejä.
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Luo monimutkainen mittari, jossa on matemaattisia operaattoreita.":::
 
-10. Valitse **Valmis**.
+1. Jos haluat lisätä suodattimia, valitse määritysalueen **Suodatin**-kohta. 
+  
+   1. Valitse **Suodattimet**-ruudun **Lisää määrite** -osassa määrite, jota haluat käyttää suodattimien luomisessa.
+   1. Aseta suodatinoperaattorit, jos haluat määrittää jokaiselle valitulle määritteelle suodattimen.
+   1. Valitse **Käytä**, jos haluat lisätä suodattimet mittariin.
 
-11. **Mittarin määritys** -osassa määritetään, miten valitut entiteetit ja lasketut muuttujat yhdistetään uudessa mittarientiteetissä tai määritteessä.
+1. Jos haluat lisätä dimensioita, valitse määritysalueen **Dimensio**-kohta. Dimensiot näkyvät mittarin tulosentiteetin sarakkeina.
+   1. Valitse **Muokkaa dimensioita**, jos haluat lisätä tietomääritteitä, joiden mukaan mittarin arvot ryhmitellään. Tämä voi olla esimerkiksi kaupunki tai sukupuoli. Oletusarvoisesti valitaan *CustomerID*-dimensio *asiakastason mittareiden* luomiseksi. Voit poistaa oletusdimension, jos haluat luoda *yritystason mittareita*.
+   1. Valitse **Valmis**, jos haluat lisätä dimensiot mittariin.
 
-12. Valitse **Uusi dimensio**. Dimension voi ajatella olevan *ryhmittelytoiminto*. Mittarientiteetin tai -määritteen tietotuloste ryhmitellään kaikkien määritettyjen dimensioiden mukaan.
+1. Jos yhdistetyn tietoentiteetin ja asiakasentiteetin välillä on useita polkuja, tulee valita jokin määritetyistä [entiteettisuhteen poluista](relationships.md). Mittarin tulokset voivat vaihdella valitun polun mukaan.
+   1. Valitse **Tietomääritteet** ja valitse sitten entiteettipolku, jota käytetään mittarin tunnistamisessa.
+   1. Ota valinta käyttöön valitsemalla **Valmis**. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Valitse yhdistämisjakso](media/measures-businessreport-measure-definition2.png "Valitse yhdistämisjakso")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Valitse mittarin entiteettipolku.":::
 
-    Valitse tai syötä seuraavat tiedot dimension määrityksen osaksi:
+1. Jos haluat lisätä mittarille lisää laskelmia, valitse **Uusi laskelma**. Uusissa laskelmissa voi käyttää vain saman entiteettipolun entiteettejä. Lisälaskelmat näkyvät uusina sarakkeina mittarin tulosentiteetissä.
 
-    - **Entiteetti**: Jos määrität mittarientiteetin, sisällytä vähintään yksi määrite. Jos määrität mittarimääritteen, se sisältää oletusarvoisesti vain yhden määritteen. Tämä valinta koskee sellaisen entiteetin valitsemista, joka sisältää kyseisen määritteen.
-    - **Kenttä**: Valitse tietty määrite, joka sisällytetään joko mittarientiteettiin tai -määritteeseen.
-    - **Säilö**: Määritä, haluatko yhdistää tiedot päivittäin, kuukausittain vai vuosittain. Se on pakollinen valinta vain, jos olet valinnut päivämäärätyyppimääritteen.
-    - **Kohteena**: Määrittää uuden kentän nimen.
-    - **Näyttönimi**: Määrittää kentän näyttönimen.
+1. Valitse laskelman **...**-kohta, jos haluat **monistaa**, **uudelleennimetä** tai **poistaa** laskelman mittarista.
 
-    > [!NOTE]
-    > Liiketoiminnan mittari tallennetaan yksinumeroisena entiteettinä. Se näkyy **aloitussivulla**, jos et lisää muita dimensioita mittariin. Kun olet lisännyt dimensioita, mittari *ei* näy **aloitussivulla**.
+1. **Esiversio**-alueessa on näkyvissä mittarin tulosentiteetin tietorakenne, myös suodattimet ja dimensiot. Esiversio readoi dynaamisesti määrityksen muutoksiin.
 
-13. Vaihtoehtoisesti voit lisätä yhdistämistoimintoja. Kaikki luodut yhdistämiset luovat uuden arvon mittarientiteettiin tai -määritteeseen. Tuettuja yhdistämistoimintoja ovat seuraavat: **Vähintään**, **Enintään**, **Keskiarvo**, **Mediaani**, **Summa**, **Yksilöllinen määrä**, **Ensimmäinen** (poimii dimension arvon ensimmäisen tietueen) ja **Viimeinen** (poimii viimeisen dimension arvoon lisätyn tietueen).
+1. Laske määritetyn mittarin tulokset valitsemalla **Suorita**. Valitse **Tallenna ja sulje**, jos haluat pitää nykyisen määrityksen ja suorittaa mittarin myöhemmin.
 
-14. Valitse **Tallenna**, kun haluat ottaa muutokset käyttöön mittarissa.
+1. Siirry **Mittarit**-kohtaan, jos haluat nähdä juuri luodun mittarin luettelossa.
 
 ## <a name="manage-your-measures"></a>Hallitse mittoja
 
-Sen jälkeen kun vähintään yksi mittari on luotu, **Mittarit**-sivulla on mittariluettelo.
+Kun [mittari on luotu](#create-a-measure), **Mittarit**-sivulla näkyy mittariluettelo.
 
-Löydät tietoja mittarin tyypistä, tekijästä, luontipäivämäärästä ja -ajasta, edellisestä muokkauspäivämäärästä ja -ajasta, tilasta (mittarin tila voi olla Aktiivinen, Passiivinen tai Epäonnistunut) ja edellisestä päivityspäivämäärästä ja -ajasta. Kun valitset mitan luettelosta, näet esikatselun sen tulosteesta.
+Saat tietoja mittarityypistä, tekijästä, luontipäivästä ja tilasta. Jos valitset mittarin luettelosta, voit esikatsella tulostetta ja ladata .CSV-tiedoston.
 
 Jos haluat päivittää kaikki mitat samalla kertaa, valitse **Päivitä kaikki** valitsematta tiettyä mittaa.
 
 > [!div class="mx-imgBorder"]
 > ![Yksittäisten mittojen hallintatoiminnot](media/measure-actions.png "Yksittäisten mittojen hallintatoiminnot")
 
-Voit vaihtoehtoisesti valita mitan luettelosta ja suorittaa jonkin seuraavista toiminnoista:
+Valitse seuraaville vaihtoehdoille mittari luettelosta:
 
 - Voit tarkastella tietoja valitsemalla mitan nimen.
 - **Muokkaa** mitan määritystä.
+- **Päivitä** mittari uusimpien tietojen perusteella.
 - **Nimeä uudelleen** mitta.
 - **Poista** mitta.
-- Valitse kolme pistettä (...) ja sitten **Päivitä**, kun haluat aloittaa mitan päivitysprosessin.
-- Valitse kolme pistettä (...) ja sitten **Lataa** saadaksesi mitan .CSV-tiedoston.
+- **Aktivoi** tai **poista aktivointi**. Passiivisia mittareita ei päivitetä [aikataulutetun päivityksen](system.md#schedule-tab) aikana.
 
 > [!TIP]
 > Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
 
 ## <a name="next-step"></a>Seuraava vaihe
 
-Voit luoda ensimmäisen asiakassegmentin **Segmentit**-sivulla olemassa olevien mittareiden avulla. Lisätietoja on kohdassa [Segmentit](segments.md).
+Voit luoda [asiakassegmentin](segments.md) olemassa olevien mittareiden avulla.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

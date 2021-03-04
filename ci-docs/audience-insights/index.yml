@@ -6,16 +6,16 @@ metadata:
   description: Ohjekeskus, jossa on käyttäjäryhmän merkityksellisten tietojen tärkeimmät linkit.
   ms.service: customer-insights
   ms.subservice: audience-insights
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.date: 10/16/2020
-  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
-  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.openlocfilehash: ba5229067c7c338b4f8d0503aaf80f25b6c4002c
+  ms.sourcegitcommit: a8f7d5d0008b2d7d0ff0daeb746126abfc82c253
   ms.translationtype: HT
   ms.contentlocale: fi-FI
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "4405615"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "4745717"
 landingContent:
 - title: Tietoja käyttäjäryhmän merkityksellisistä tiedoista
   linkLists:
@@ -27,36 +27,36 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Yhteisösivusto
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-- title: Tietolähteiden käyttäminen
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Tietolähteiden lisääminen
-      url: data-sources.md
-    - text: Lisäävä päivitys
-      url: incremental-refresh-data-sources.md
-    - text: Tietoja entiteeteistä
-      url: entities.md
 - title: Tietojen yhdistäminen
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Liitä
-      url: map-entities.md
-    - text: Täsmäytä
-      url: match-entities.md
-    - text: Yhdistä
-      url: merge-entities.md
-- title: Asiakasprofiilien tarkentaminen
+    - text: Tietolähteiden yleiskatsaus
+      url: data-sources.md
+    - text: Yhdistämisen yleiskatsaus
+      url: data-unification.md
+    - text: Tietoja entiteeteistä
+      url: entities.md
+- title: Tietojen rikastaminen ja tarkentaminen
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Asiakasprofiilien rikastaminen
+      url: enrichment-hub.md
     - text: Suhteiden määrittäminen
       url: relationships.md
     - text: Asiakkaan aktiviteettien luettelo
       url: activities.md
-    - text: Omien koneoppimismallien käyttäminen
-      url: custom-models.md
+- title: Hanki tiedot
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Segmenttien luominen
+      url: segments.md
+    - text: Mittarien luominen
+      url: measures.md
+    - text: Tietojen täydentäminen ennusteilla
+      url: predictions.md
 - title: Asiakastietojen vieminen
   linkLists:
   - linkListType: how-to-guide

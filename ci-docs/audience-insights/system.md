@@ -1,7 +1,7 @@
 ---
 title: Järjestelmän määrittäminen käyttäjäryhmän merkityksellisissä tiedoissa
 description: Tietoja Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuden järjestelmäasetuksista.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405623"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267336"
 ---
 # <a name="system-configuration"></a>Järjestelmän kokoonpano
 
-**Järjestelmä**-sivulla on neljä välilehteä: **Tila**, **Ajoitus**, **Tietoja** ja **Yleiset**.
+**Järjestelmä**-sivu sisältää seuraavat välilehdet:
+- [Tila](#status-tab)
+- [Aikatauluta](#schedule-tab)
+- [Ohjelmointirajapinnan käyttö](#api-usage-tab)
+- [Tietoja](#about-tab)
+- [Yhteiset](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Järjestelmä-sivu](media/system-tabs.png "Järjestelmä-sivu")
 
 ## <a name="status-tab"></a>Tila-välilehti
 
-**Tila**-välilehden avulla voit seurata tietojen käyttämisen edistymistä, tietojen vientejä ja useita tärkeitä tuoteprosesseja. Tarkistamalla tämän välilehden tiedot voit varmistaa, että aktiiviset prosessit ovat valmiita.
+**Tila-välilehdessä** voit seurata tietojen käsittelyn, tietojen vientien ja useiden muiden tärkeiden tuoteprosessien edistymistä. Tarkistamalla tämän välilehden tiedot voit varmistaa, että aktiiviset prosessit ovat valmiita.
 
-Tämä välilehti sisältää tilataulukot **Tietolähteille**, **Järjestelmäprosesseille** ja **Tietojen valmistelulle**. Kukin taulukko seuraa tehtävän **nimeä** ja sen vastaavaa entiteettiä, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**.
+Tässä välilehdessä on taulukoita, joissa on tila- ja käsittelytietoja eri prosesseja varten. Kukin taulukko seuraa tehtävän **nimeä** ja sen vastaavaa entiteettiä, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**.
 
 Tarkastele tehtävän viimeisimpien suoritusten tietoja valitsemalla tehtävän nimi.
 
@@ -40,7 +45,7 @@ Tehtävillä on kuusi tilatyyppiä. Seuraavat tilatyypit näkyvät myös sivuill
 - **Ohitettu:** Tehtävä ohitettiin. Vähintään yksi palvelimelta siirrettävä prosessi, josta tämä tehtävä on riippuvainen, on epäonnistumassa tai se ohitettiin.
 - **Epäonnistunut:** tehtävän käsitteleminen epäonnistui.
 - **Peruutettu:** Käyttäjä peruutti käsittelyn, ennen kuin se valmistui.
-- **Jonossa:** käsittely on jonossa ja käynnistyy, kun kaikki loppuvaiheen tehtävät on suoritettu. Lisätietoja: [Päivityskäytännöt](#refresh-policies).
+- **Jonossa:** Käsittely asetetaan jonoon, ja se käynnistyy, kun kaikki yläpuolella olevat tehtävät on suoritettu. Lisätietoja: [Päivityskäytännöt](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Päivityskäytännöt
 
@@ -89,4 +94,17 @@ Valitse **Tallena** valintojen vahvistamiseksi.
 
 ## <a name="api-usage-tab"></a>Ohjelmointirajapinnan käyttö -välilehti
 
-Etsi tietoja reaaliaikaisesta ohjelmointirajapinnan käytöstä ja katso, mitä tapahtumia annetulla aikavälillä on ollut. Lisätietoja on kohdassa [Reaaliaikainen tietojen käyttö](real-time-data-ingestion.md).
+Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, mitä tapahtumia tiettynä aikavälinä on suoritettu. Aikaväli valitaan avattavassa **Valitse aikaväli** -valikossa. 
+
+**Ohjelmointirajapinnan käyttö** sisältää seuraavat kolme osaa: 
+- **Ohjelmointirajapinnan kutsut** - kaavio, joka visualisoi ohjelmointirajapinnan koostettujen kutsujen määrän valittuna aikavälinä.
+
+- **Tietojen siirto** - kaavio, joka näyttää valitun ohjelmointirajapinnan kautta siirrettyjen tietojen määrän valittuna aikavälinä.
+
+-  **Toiminnot** - taulukko, jossa on rivejä kullekin käytettävissä olevalle ohjelmointirajapinnan toiminnolle sekä toimintojen käyttöä koskevat tiedot. Voit valita toiminnon nimen ja siirtyä [ohjelmointirajapinnan viitteeseen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Toiminnot, joissa käytetään [reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md), sisältävät kiikarisymbolin. Sen avulla voi tarkastella reaaliaikaista ohjelmointirajapinnan käyttöä. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.   
+   Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Reaaliaikainen ohjelmointirajapinnan käyttö** -ruudun **Ryhmittely**-ruudun avulla. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

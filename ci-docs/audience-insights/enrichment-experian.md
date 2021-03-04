@@ -1,20 +1,20 @@
 ---
 title: Rikastaminen kolmannen osapuolen Experian-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Experian-rikastamisesta.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668806"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269556"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Asiakasprofiilien rikastaminen Experianin demografiatiedoilla (esiversio)
 
@@ -41,7 +41,9 @@ Experianin määrittäminen edellyttää seuraavien edellytysten toteutumista:
 
 ## <a name="map-your-fields"></a>Yhdistä kenttäsi
 
-1. Valitse **Lisää tiedot** ja valitse **Nimi ja osoite**-, **Sähköposti**- tai **Puhelin**-kohdista avaintunnisteet, jotka lähetetään Experianiin käyttäjätietojen selvitystä varten.
+1.  Valitse **Lisää tiedot** ja valitse **asiakastietojoukko**, jota haluat rikastaa Experianin demografiatiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+1. Valitse avaintunnisteet **Nimi ja osoite**-, **Sähköposti**- tai **Puhelin**-kohdasta ja lähetä ne Experianille ratkaisun määrittämistä varten.
 
    > [!TIP]
    > Mitä enemmän avaintunnisteiden määritteitä lähetetään Experianiin, sitä korkeampi vastaavuusaste on.
@@ -52,8 +54,8 @@ Experianin määrittäminen edellyttää seuraavien edellytysten toteutumista:
 
 1.  Viimeistele kenttien yhdistäminen valitsemalla **Tallenna**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experianin kenttämääritys](media/experian-field-mapping.png "Experianin kenttämääritys")
+    > [!div class="mx-imgBorder"]
+    > ![Experianin kenttämääritys](media/experian-field-mapping.png "Experianin kenttämääritys")
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
@@ -71,3 +73,6 @@ Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettu
 
 Kun tietojen lähetys Experianiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Experian noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -4,16 +4,16 @@ description: Azuren automaattianalyysipalvelujen mukautettujen mallien käyttäm
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668899"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267230"
 ---
 # <a name="custom-machine-learning-models"></a>Mukautetut koneoppimisen mallit
 
@@ -46,15 +46,15 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 
 1. Valitse Koneoppimisstudio (perinteinen) -verkkopalvelu tai Azuren automaattianalyysipalvelut -putki avattavassa **WWW-palvelu, joka sisältää mallin** -luettelossa. Valitse sitten **Seuraava**.
    - Lisätietoja [verkkopalvelun julkaisemisesta koneoppimisstudiossa (perinteinen)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Lisätietoja [jakson julkaisemisesta Azuren automaattianalyysipalveluissa suunnitteluohjelman](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) tai [SDK:n](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk) avulla. 
-     > [!NOTE]
-     > Jakso on julkaistava [jakson päätepisteessä](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Lisätietoja [jakson julkaisemisesta Azuren automaattianalyysipalveluissa suunnitteluohjelman](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) tai [SDK:n](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk) avulla. Jakso on julkaistava [jakson päätepisteessä](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. Valitse kullekin **verkkopalvelun syötteelle** vastaava **Entiteetti** käyttäjäryhmän merkityksellisissä tiedoissa ja valitse sitten **Seuraava**.
+   > [!NOTE]
+   > Mukautettu mallityönkulku käyttää heuristiikkaa verkkopalvelun syöttökenttien yhdistämisessä entiteettimääritteisiin kentän nimen ja tietotyypin perusteella. Näkyviin tulee virhe, jos verkkopalvelun kenttää ei voi yhdistää entiteettiin.
 
    > [!div class="mx-imgBorder"]
    > ![Työnkulun määrittäminen](media/intelligence-screen2-updated.png "Työnkulun määrittäminen")
-
+   
 1. Määritä seuraavat ominaisuudet **Mallin tulosteparametrit** -vaiheessa:
    - Koneoppimisstudio (perinteinen)
       1. Anna sen tulosteen **entiteetin nimi**, johon haluat verkkopalvelun tulosten siirtyvän.
@@ -112,3 +112,6 @@ Työnkulku suoritetaan myös automaattisesti jokaisen ajoitetun päivityksen yht
 1. Valitse **Poista** ja vahvista poistaminen.
 
 Työnkulku poistetaan. [Entiteetti](entities.md), joka luotiin työnkulun yhteydessä, on yhä olemassa. Voit tarkastella sitä **Entiteetit**-sivulla.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

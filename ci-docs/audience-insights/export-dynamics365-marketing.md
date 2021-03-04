@@ -1,20 +1,20 @@
 ---
 title: Customer Insights -tietojen vienti Dynamics 365 Marketingiin
 description: Tutustu Dynamics 365 Marketing -yhteyden määrittämiseen.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 163387779b64bd78ef08e2d96a5f1c9615062f28
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a06920b8ff25d7102ccd14ae68cf42fe91fa1ee6
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643769"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269050"
 ---
 # <a name="connector-for-dynamics-365-marketing-preview"></a>Dynamics 365 Marketingin yhdistin (esikatselu)
 
@@ -24,7 +24,10 @@ Luo [segmenttien](segments.md) avulla kampanjoita ja ota yhteyttä tiettyihin as
 
 ## <a name="prerequisite"></a>Edellytykset
 
-[Common Data Servicea käyttäneet Dynamics 365 Marketingin](connect-power-query.md) yhteyshenkilötietueet
+- Yhteyshenkilötietueiden on oltava Dynamics 365 Marketingissa, ennen kuin segmentti voidaan viedä Customer Insightsista Marketingiin. Lisätietoja yhteyshenkilöiden käyttämisestä [Dynamics 365 Marketingissa Common Data Servicesin avulla](connect-power-query.md).
+
+  > [!NOTE]
+  > Segmenttien vieminen käyttäjäryhmän tiedoista Marketingiin ei luo Marketing-esiintymiin uusia yhteyshenkilötietueita. Marketingin yhteyshenkilötietueet on käsiteltävä käyttäjäryhmän tiedoissa, ja niitä on käytettävä tietolähteenä. Ne on myös sisällytettävä yhdistettyyn asiakasentiteettiin, jotta asiakastunnukset voidaan yhdistää yhteyshenkilötunnuksiin ennen segmenttien viemistä.
 
 ## <a name="configure-the-connector-for-marketing"></a>Määritä Marketingin yhdistin
 
@@ -49,3 +52,6 @@ Luo [segmenttien](segments.md) avulla kampanjoita ja ota yhteyttä tiettyihin as
 ## <a name="export-the-data"></a>Tietojen vieminen
 
 Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -4,17 +4,17 @@ description: Aiemmin luotujen segmenttien merkityksellisten tietojen erot ja yht
 ms.date: 06/10/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: article
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: jimsonc
 manager: shellyha
-ms.openlocfilehash: 92e1b05dd08588a5da446af5b17b2d6ce57490ce
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d731d21462b5a31aba0653f87e299d98373bbf49
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405624"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270016"
 ---
 # <a name="segment-insights-preview"></a>Segmentin merkitykselliset tiedot (esiversio)
 
@@ -91,3 +91,6 @@ Voit käyttää seuraavia vaihtoehtoja komentopalkissa oivallusten käsittelyyn:
 - **Palaa**, kun haluat palauta mekrkityksellisten tietojen luetteloon
 - **Päivitä**, jos haluat suorittaa analyysin uudelleen
 - **Poista**, jos haluat poistaa tämän merkityksellisen tiedon
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

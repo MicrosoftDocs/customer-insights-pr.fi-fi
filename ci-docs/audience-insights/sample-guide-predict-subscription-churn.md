@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653976"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269832"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Tilauksen vaihtuvuusennusteen (esiversio) näyteopas
 
@@ -29,7 +29,7 @@ Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimi�
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
 - Seuraavat vaiheet on suositeltavaa toteuttaa [uudessa ympäristössä](manage-environments.md).
 
-## <a name="task-1---ingest-data"></a>Tehtävä 1 – tietojen käsitteleminen
+## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
 
 Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisestä Power Query -yhdistimiä](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua. 
 
@@ -46,10 +46,9 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **DateOfBirth**: päivämäärä
    - **CreatedOn**: päivämäärä, aika ja aikavyöhyke
 
-   [!div class="mx-imgBorder"]
-   ![Syntymäpäivän muuttaminen päivämääräksi](media/ecommerce-dob-date.PNG "syntymäpäivän muuntaminen päivämääräksi")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
+1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommerceContacts**-arvo
 
 1. Tallenna tietolähde.
 
@@ -67,7 +66,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **loyCustomers**.
+1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
 
 1. Tallenna tietolähde.
 
@@ -90,7 +89,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **Is_auto_renew**: tosi, epätosi
    - **RecurringFrequencyInMonths**: kokonaisluku
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
+1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
 
 1. Tallenna tietolähde.
 
@@ -230,3 +229,6 @@ Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

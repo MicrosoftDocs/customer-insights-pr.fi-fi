@@ -4,17 +4,17 @@ description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden a
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405620"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267474"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -22,7 +22,7 @@ Kun olet tehnyt yhdistämisvaiheen, voit täsmäyttää entiteetit. Täsmäytysv
 
 ## <a name="specify-the-match-order"></a>Määritä täsmäytysjärjestys.
 
-Siirry kohtaan **Yhdistä** > **Täsmäytä** ja valitse **Määritä järjestys**. Täsmäytysvaihe alkaa.
+Siirry kohtaan **Tiedot** > **Yhdistä** > **Määritä vastaavuus** ja valitse **Määritä järjestys**, kun haluat aloittaa vastaavuuden määrityksen.
 
 Kukin täsmäytys yhdistää kaksi entiteettiä tai useampia entiteettejä yhdeksi entiteetiksi. Samalla säilytetään kukin yksittäinen asiakastietue. Seuraavassa esimerkissä valitaan seuraavat kolme entiteettiä: **ContactCSV: TestData** **ensisijaiseksi** entiteetiksi, **WebAccountCSV: TestData** **entiteetiksi 2** ja **CallRecordSmall: TestData** **entiteetiksi 3**. Valintojen alla olevassa kaaviossa on kuva siitä, miten täsmäytysjärjestys suoritetaan.
 
@@ -136,7 +136,7 @@ Kun kaksoiskappaleiden poistotietue on määritetty, kyseistä tietuetta käytet
 
 1. Vastaavuusprosessin suorittaminen ryhmittelee nyt tietueet kaksoiskappaleiden poistosäännöissä määritettyjen ehtojen perusteella. Kun tietueet on ryhmitelty, voittajatietue määritetään käyttämällä vastaavuuskäytäntöä.
 
-1. Voittajatietue siirretään sitten entiteettien väliseen vastaavuuden etsimiseen.
+1. Tämän jälkeen tämä voittanut tietue välitetään entiteettien väliseen vastaavuuden määritykseen. Muut kuin voittaneet tietueet (esimerkiksi vaihtoehtoiset tunnukset) parantavat vastaavuuden laatua.
 
 1. Mahdolliset mukautetut aina vastattava- ja ei koskaan vastaa -säännöille ohittavat kaksoiskappaleiden poistosäännöt. Jos kaksoiskappaleiden poistosääntö määrittää vastaavia tietueita ja mukautetuksi vastaavuussääntönä on, etteivät tietueet saa koskaan vastata toisiin, näille kahdelle tietueelle ei etsitä vastaavuutta.
 
@@ -157,6 +157,17 @@ Ensimmäisen täsmäytysprosessin tuloksena luodaan yhdistetty pääentiteetti. 
 
 > [!TIP]
 > Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+
+## <a name="deduplication-output-as-an-entity"></a>Kaksoiskappaleiden poiston tulos entiteettinä
+Sen lisäksi, että entiteettien välisen vastaavuuden määrittämisessä luodaan yhdistetty pääentiteetti, kaksoiskappaleiden poistoprosessi luo myös uuden entiteetin jokaiselle entiteetille vastaavuusjärjestyksestä. Näin tunnistetaan tietueet kaksoiskappaleiden poistossa. Nämä entiteetit löytyvät yhdessä **ConflationMatchPairs:CustomerInsights**-entiteetin kanssa **Järjestelmä**-osasta **Entiteetit**-sivulta nimellä **Deduplication_Datasource_Entity**.
+
+Kaksoiskappaleiden poiston tulosentiteetti sisältää seuraavat tiedot:
+- Tunnukset/avaimet
+  - Perusavaimen kenttä ja sen vaihtoehtoisten tunnusten kenttä. Vaihtoehtoisten tunnusten kenttä sisältää kaikki tietueen vaihtoehtoiset tunnukset.
+  - Deduplication_GroupId-kentässä on ryhmä tai klusteri, joka sellainen entiteetti määrittää, joka ryhmittelee kaikki samanlaiset tietueet määritettyjen kaksoiskappaleiden poiston kenttien perusteella. Tätä käytetään järjestelmän käsittelyssä. Jos manuaalisia kaksoiskappaleiden poiston sääntöjä ei ole määritetty, ja järjestelmän määrittämät kaksoiskappaleiden poiston säännöt on otettu käyttöön, tätä kenttää ei ehkä löydy kaksoiskappaleiden poiston tulosentiteetistä.
+  - Deduplication_WinnerId: Tämä kenttä sisältää määritettyjen ryhmien tai klustereiden voittaneen tunnuksen. Jos Deduplication_WinnerId on sama kuin tietueen ensisijaisen avaimen arvo, tietue on voittanut tietue.
+- Kenttiä käytetään kaksoiskappaleiden poiston sääntöjen määrittämisessä.
+- Sääntö- ja Pistemäärä-kentät määrittävät, mitä kaksoiskappaleiden poiston sääntöjä noudatetaan. Ne määrittävät myös vastaavan algoritmin palauttaman pistemäärän.
 
 ## <a name="review-and-validate-your-matches"></a>Täsmäytysten tarkistaminen ja vahvistaminen
 
@@ -200,6 +211,11 @@ Paranna laatua määrittämällä joitakin täsmäytysparametreja uudelleen seur
   > [!div class="mx-imgBorder"]
   > ![Monista sääntö](media/configure-data-duplicate-rule.png "Monista sääntö")
 
+- **Poista säännön aktivointi**, jos haluat säilyttää vastaavuussäännön, mutta poistaa sen vastaavuusprosessista.
+
+  > [!div class="mx-imgBorder"]
+  > ![Poista säännön aktivointi](media/configure-data-deactivate-rule.png "Poista säännön aktivointi")
+
 - **Muokkaa sääntöjä** valitsemalla **Muokkaa**-symboli. Voit ottaa käyttöön myös seuraavat muutokset:
 
   - Muuta ehdon määritteitä: Valitse uudet määritteet tietyltä ehtoriviltä.
@@ -229,10 +245,12 @@ Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joit
     - Entiteetti2avain: 34567
 
    Sama mallitiedosto voi määrittää mukautetut täsmäytystietueet useista entiteeteistä.
+   
+   Jos haluat määrittää mukautetun vastaavuuden entiteetin kaksoiskappaleiden poistolle, määritä sama entiteetti sekä kohtaan Entiteetti1 ja Entiteetti2 ja määritä erilaisetn ensisijaisen avaimen arvot.
 
 5. Kun olet lisännyt kaikki haluamasi korvaukset, tallenna mallitiedosto.
 
-6.Valitse **Tiedot** > **Tietolähteet** ja käsittele mallitiedostot uusina entiteetteinä. Kun ne on käsitelty, voit käyttää niitä täsmäytyskokoonpanon määrityksessä.
+6. Valitse **Tiedot** > **Tietolähteet** ja käsittele mallitiedostot uusina entiteetteinä. Kun ne on käsitelty, voit käyttää niitä täsmäytyskokoonpanon määrityksessä.
 
 7. Kun tiedostot on ladattu ja entiteetit ovat käytettävissä, valitse uudelleen **Mukautettu täsmäytys** -vaihtoehto. Näkyviin tulee vaihtoehtoja, joilla määritetään sisällytettävät kohteet. Valitse vaaditut entiteetit avattavasta valikosta.
 
@@ -250,3 +268,6 @@ Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joit
 ## <a name="next-step"></a>Seuraava vaihe
 
 Kun olet suorittanyt vähintään yhden täsmäytysparin täsmäytysprosessin, voit ratkaista mahdolliset tietojen ristiriidat siirtymällä [**Täsmäytys**](merge-entities.md)-ohjeaiheeseen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

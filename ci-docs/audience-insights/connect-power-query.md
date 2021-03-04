@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405603"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267764"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhteyden muodostaminen Power Query -tietolähteeseen
 
@@ -28,7 +28,10 @@ Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimi
 
 1. Valitse **Tuo tiedot** -menetelmä ja valitse sitten **Seuraava**.
 
-1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**.
+1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**. Nimen ohjeet: 
+   - Alussa on oltava kirjain.
+   - Käytä vain kirjaimia ja numeroita. Erikoismerkit ja välilyönnit eivät ole sallittuja.
+   - Käytä 3–64 merkkiä.
 
 1. Valitse jokin [käytettävissä olevista yhdistimistä](#available-power-query-data-sources). Tässä esimerkissä valitaan **Text/CSV**-yhdistin.
 
@@ -77,3 +80,6 @@ Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamer
 3. Lisätietoja muutosten ja muunnosten käyttämisestä **Power Query – Muokkaa kyselyjä** -ikkunassa on kohdassa [Uuden tietolähteen luominen](#create-a-new-data-source).
 
 4. Kun lopetat muokkaamisen, tallenna muutokset valitsemalla **Tallenna** Power Queryssä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

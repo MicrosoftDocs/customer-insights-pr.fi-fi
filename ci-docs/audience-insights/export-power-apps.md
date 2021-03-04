@@ -1,20 +1,20 @@
 ---
 title: Power Apps -yhdistin
 description: Power Appsin ja Power Automaten yhdistäminen.
-ms.date: 08/21/2020
+ms.date: 01/19/2021
 ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b6ec103e29e218b2f27bfc1193300ea793a6b30b
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5a8bbb9a09218d54228589d43c21c8894680b56e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405581"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268912"
 ---
 # <a name="microsoft-power-apps-connector-preview"></a>Microsoft Power Apps -yhdistin (esiversio)
 
@@ -31,7 +31,7 @@ Katso Power Apps -dokumentaatiosta, miten voit [lisätä tietoyhteyden sovelluks
 Kun Customer Insights on lisätty tietoyhteydeksi, voit valita seuraavat entiteetit Power Appsissa:
 
 - Asiakas: tietojen käyttäminen [yhdistetystä asiakasprofiilista](customer-profiles.md).
-- Yhdistetty asiakasaktiviteetti: yhdistetyn [aktiviteetin aikajanan](activities.md) näyttäminen sovelluksessa.
+- UnifiedActivity: [aktiviteetin aikajanan](activities.md) näyttäminen sovelluksessa.
 
 ## <a name="limitations"></a>Rajoitukset
 
@@ -72,3 +72,6 @@ Asiakasprofiileja voi lisätä esimerkiksi [valikoiman ohjausobjektissa](https:/
 1. Jos haluat näyttää asiakkaan yhdistetyn aikajanan, lisää valikoimaelementti ja lisää sitten nimikkeiden ominaisuus: **Filter('UnifiedActivity', CustomerId = {Customer_Id})**
 
     Esimerkki: Filter('UnifiedActivity', CustomerId = Gallery1.Selected.CustomerId)
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

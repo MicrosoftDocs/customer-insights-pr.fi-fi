@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 295c372bb452e7c40aa950506dc494d4a2de1108
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405625"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269870"
 ---
 # <a name="relationships-between-entities"></a>Entiteettien väliset suhteet
 
@@ -28,8 +28,8 @@ Tärsmäytys- ja yhdistämisprosessien aikana taustalla luodaan järjestelmän s
 > ![Suhteen luominen](media/relationships-entities-merge.png "Suhteen luominen")
 
 - ***CustomerToContact*-suhde** luotiin asiakasentiteetin ja yhteyshenkilöentiteetin välille. Asiakasentiteetti saa avainkentän **Contact_contactId**, joka liitetään yhteyshenkilöentiteetin avainkenttään **contactId**.
-- **_CustomerToAccount_-suhde** luotiin asiakasentiteetin ja tilientiteetin välille. Asiakasentiteetti saa avainkentän **Account_accountId**, joka liitetään tilientiteetin avainkenttään **accountId**.
-- **_CustomerToWebAccount_-suhde** luotiin asiakasentiteetin ja verkkotilientiteetin välille. Asiakasentiteetti saa avainkentän **WebAccount_webaccountId**, joka liitetään verkkotilientiteetin avainkenttään **webaccountId**.
+- ***CustomerToAccount*-suhde** luotiin asiakasentiteetin ja tilientiteetin välille. Asiakasentiteetti saa avainkentän **Account_accountId**, joka liitetään tilientiteetin avainkenttään **accountId**.
+- ***CustomerToWebAccount*-suhde** luotiin asiakasentiteetin ja verkkotilientiteetin välille. Asiakasentiteetti saa avainkentän **WebAccount_webaccountId**, joka liitetään verkkotilientiteetin avainkenttään **webaccountId**.
 
 ## <a name="create-a-relationship"></a>Suhteen luominen
 
@@ -69,3 +69,6 @@ Määritä mukautetut suhteet **Suhteet**-sivulla. Jokainen suhde sisältää l�
 ## <a name="next-step"></a>Seuraava vaihe
 
 Järjestelmän suhteita ja mukautettuja suhteita käytetään luotaessa segmenttejä sellaisten useiden tietolähteiden perusteella, jotka eivät ole enää siilossa. Lisätietoja on kohdassa [Segmentit](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

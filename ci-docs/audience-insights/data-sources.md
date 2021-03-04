@@ -9,14 +9,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: a720641f7499fc71ff5bceeba48d296c51f77242
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 68aa1b56fb634da80a0c64db72f778d57507104d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643949"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269694"
 ---
-# <a name="overview-about-data-sources"></a>Tietolähteiden yleiskatsaus
+# <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
@@ -49,7 +49,7 @@ Näkyvissä on kunkin käsitellyn tietolähteen nimi, sen tilan ja kyseisen tiet
 |Päivittää    |Tietoja käsittely on meneillään. Voit peruuttaa tämän toiminnon valitsemalla **Pysäytä päivittäminen** **Toiminnot**-sarakkeessa. Tietolähteen päivittämisen pysäyttäminen palauttaa sen tilaan, jossa se on viimeksi päivitetty.       |
 |Epäonnistunut     |Tietojen käsittelyssä havaittiin virheitä.         |
 
-Valitsemalla **Päivityksen tila** voit tarkastella lisätietoja päivityksen tilasta, kuten virhetiedot ja jäljempänä tapahtuvat prosessipäivitykset.
+Valitse jonkin tietolähteen **Tila**-sarakkeen arvo, jos haluat tarkastella lisätietoja. Laajenna **Edistymisen tiedot** -ruudussa **Tietolähteet**-kohta. Valitsemalla **Katso tiedot** -kohdan voit tarkastella lisätietoja päivityksen tilasta, kuten virhetiedot ja jäljempänä tapahtuvat prosessipäivitykset.
 
 Tietojen lataaminen voi kestää jonkin aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella **Entiteetit**-sivulla. Lisätietoja on kohdassa [Entiteetit](entities.md).
 
@@ -76,3 +76,6 @@ Tietolähde päivitetään tarvittaessa seuraavasti:
 2. Valitse poistettavan tietolähteen vieressä olevat pystysuorat kolme pistettä ja valitse avattavasta valikosta **Poista**.
 
 3. Vahvista poisto.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

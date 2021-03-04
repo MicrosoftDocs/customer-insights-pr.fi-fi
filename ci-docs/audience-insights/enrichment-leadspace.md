@@ -5,16 +5,16 @@ ms.date: 11/24/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1b5c6e46e8e424df83e855d81fc4dd7ecb394e3c
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668719"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269418"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
 
@@ -38,7 +38,11 @@ Voit määrittää Leadspacen, jos seuraavat edellytykset täyttyvät:
 
 1. Valitse **Aloita** ja anna sitten aktiivinen **Leadspace-tunnus** (pysyvä avain). Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu. Vahvista molemmat syötteet valitsemalla **Yhdistä Leadspaceen**.
 
-1. Valitse **Yhdistä tiedot** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään vastaavien yritystietojen hakemiseen Leadspacesta. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
+1. Valitse **Yhdistä tiedot** ja valitse sitten tietojoukko, jota haluat rikastaa Leadspacen yritystiedoilla. Voit valita *asiakasentiteetin*, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Valitse asiakasprofiilin tai segmentin rikastaminen.":::
+
+1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään vastaavien yritystietojen hakemiseen Leadspacesta. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu":::
    
@@ -62,3 +66,6 @@ Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettu
 
 Kun tietojen lähetys Leadspaceen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Leadspace noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

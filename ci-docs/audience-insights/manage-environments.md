@@ -1,20 +1,20 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 11/10/2020
+ms.date: 02/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: nimagen
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 010336445d0825a7ff82d1b7a65702fc12245788
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 744f0bcbf5d2700363180f44e38d6dee9bf5df63
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644129"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270108"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -46,9 +46,9 @@ Uusi ympäristö voidaan luoda kahdella tavalla. Voit joko määrittää kokonaa
 
 Ympäristön luominen:
 
-1. Valitse sovelluksen otsikossa **Asetukset**-kuvake.
+1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 
-1. Valitse **Uusi ympäristö**.
+1. Valitse **Uusi**.
 
    > [!div class="mx-imgBorder"]
    > ![Ympäristön asetukset](media/environment-settings-dialog.png)
@@ -75,7 +75,14 @@ Ympäristön luominen:
 
    - Voit valita Azure Data Lake Storage Gen2 -vaihtoehdossa, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilön** nimeä ei voi muuttaa, ja se on customerinsights.
    
-   - Jos haluat käyttää [ennusteita](predictions.md), anna Common Data Service -esiintymän URL-osoite **Käytä ennusteita** -kohdan **Palvelimen osoite** -kentässä.
+   - Jos haluat käyttää [ennusteita](predictions.md) tai määrittää tietojen jakamisen sovelluksissa ja ratkaisuissa Microsoft Dataversen perusteella, anna Microsoft Dataverse -ympäristön URL-osoite kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien käyttöönotto**. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
+
+     > [!NOTE]
+     > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
+     > - [Entiteetin puuttuvien arvojen ennustetta](predictions.md) ei tueta tällä hetkellä, jos tietojen jakaminen Microsoft Dataversen hallitun Data Laken kanssa otetaan käyttöön.
+
+     > [!div class="mx-imgBorder"]
+     > ![Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa](media/Datasharing-with-DataverseMDL.png)
 
    Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostoja ja model.json-tiedostoja luodaan ja lisätään asianmukaisiin alikansioihin suorittamasi prosessin perusteella.
 
@@ -86,7 +93,7 @@ Ympäristön luominen:
 Seuraavat määritysasetukset kopioidaan:
 
 - Toiminnon määritykset
-- Tuodut tietolähteet
+- Käsitellyt/tuodut tietolähteet
 - Tietojen yhtenäistämisen (yhdistäminen, vastaavuus) määritys
 - Segmentit
 - Mittarit
@@ -120,11 +127,11 @@ Kun tietojen yhtenäistäminen on valmis, päivitä myös kohdat **Mittarit** ja
 
 Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 
-1. Valitse **Hallinta** > **Järjestelmä** > **Tietoja**.
+1.  Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 
-2. Valitse **muokkaa**.
+2.  Valitse **Muokkaa**-kuvake.
 
-3. Voit päivittää ympäristön **näyttönimen**, mutta et voi päivittää **aluetta** tai **tyyppiä**.
+3. **Muokkaa ympäristöä** -ruudussa voit päivittää ympäristön **näyttönimen**, mutta et voi muuttaa **aluetta** tai **tyyppiä**.
 
 4. Jos ympäristö on määritetty tallentamaan tiedot Azure Data Lake Storage Gen2:ään, voit päivittää **tiliavaimen**. Et voi kuitenkaan muuttaa **tilin nimeä** tai **säilön** nimeä.
 
@@ -132,19 +139,27 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 
 ## <a name="reset-an-existing-environment"></a>Aiemmin luodun ympäristön palauttaminen
 
-Ympäristö voidaan palauttaa tyhjään tilaan, jos haluat poistaa kaikki määritykset ja käsitellyt tiedot.
+Järjestelmänvalvoja voi palauttaa ympäristön tyhjään tilaan, jos haluat poistaa kaikki määritykset ja käsitellyt tiedot.
 
-1.  Valitse **Hallinta** > **Järjestelmä** > **Tietoja**.
+1.  Valitse sovelluksen otsikossa **Ympäristö**-valitsin. 
 
-2.  Valitse **Palauta**. 
+2.  Valitse ympäristö, jonka haluat palauttaa, ja valitse sitten kolme pistettä eli **...**. 
 
-3.  Vahvista poisto antamalla ympäristön nimi ja valitsemalla **Palauta**.
+3. Valitse **Palauta**-vaihtoehto. 
+
+4.  Vahvista poisto antamalla ympäristön nimi ja valitsemalla **Palauta**.
+
+## <a name="delete-an-existing-environment-available-only-for-admins"></a>Aiemmin luodun ympäristön poistaminen (käytettävissä vain järjestelmänvalvojille)
+
+Järjestelmänvalvoja voi poistaa myös hallitsemasi ympäristön.
+
+1.  Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
+
+2.  Valitse ympäristö, jonka haluat palauttaa, ja valitse sitten kolme pistettä eli **...**. 
+
+3. Valitse **Poista**-vaihtoehto. 
+
+4.  Vahvista poisto antamalla ympäristön nimi ja valitsemalla **Poista**.
 
 
-## <a name="delete-an-existing-environment"></a>Olemassa olevan ympäristön poistaminen
-
-1. Valitse **Hallinta** > **Järjestelmä** > **Tietoja**.
-
-1. Valitse **Poista**.
-
-1. Vahvista poisto antamalla ympäristön nimi ja valitsemalla **Poista**.
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

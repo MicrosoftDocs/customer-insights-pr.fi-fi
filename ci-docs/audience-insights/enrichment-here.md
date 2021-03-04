@@ -1,20 +1,20 @@
 ---
 title: Rikastaminen kolmannen osapuolen HERE Technologies -rikastamisella
 description: Yleisiä tietoja HERE Technologiesin kolmannen osapuolen rikastamisesta.
-ms.date: 10/27/2020
+ms.date: 12/10/2020
 ms.reviewer: jodahl
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 7082fcfec099c3c9436b233c193be23625f6691a
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668674"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269510"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
@@ -43,7 +43,11 @@ HERE Technologiesin rikastamisen määrittämiselle on seuraavat edellytykset:
 
 1. Vahvista molemmat syötteet valitsemalla **Yhdistä HERE-palveluun**.
 
-1. Valitse **Lisää tiedot** ja valitse, yhdistetäänkö kentät ensi- ja/tai toissijaiseen osoitteeseen. Voit määrittää kummankin osoitteen (kuten koti- ja työosoitteen) kentän yhdistämismäärityksen ja rikastaa profiileja molemmilla osoitteilla erikseen. Valitse **Seuraava**.
+1.  Valitse **Lisää tiedot** ja valitse sitten **Asiakastietojoukko**, jota haluat rikastaa HERE Technologies -ratkaisun sijaintitiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+    :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
+
+1. Määritä, yhdistetäänkö kentät ensi- ja/tai toissijaiseen osoitteeseen. Voit määrittää kummankin osoitteen (kuten koti- ja työosoitteen) kentän yhdistämismäärityksen ja rikastaa profiileja molemmilla osoitteilla erikseen. Valitse **Seuraava**.
 
 1. Määritä, mitä yhtenäistettyjen profiilien kenttiä käytetään hakemaan vastaavia sijaintitietoja HERE Technologies -palvelusta. **Lähiosoite 1** ja **Postinumero** ovat pakollisia kenttiä valitussa ensi- ja/tai toissijaisen osoitteessa. Vastaavuuden tarkkuutta voi parantaa lisäämällä kenttiä.
 
@@ -68,3 +72,6 @@ Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettu
 
 Kun tietojen lähetys HERE Technologiesiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että HERE Technologies noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

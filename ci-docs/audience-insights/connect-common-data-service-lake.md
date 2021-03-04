@@ -4,17 +4,17 @@ description: Tietojen tuominen Common Data Servicen hallitusta Data Lake -tallen
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643394"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267809"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Common Data Service Data Lake -tallennustilan tietoihin
 
@@ -34,7 +34,10 @@ Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat ta
 
 3. Valitse **Yhdistä Common Data Serviceeen** ja sitten **Seuraava**.
 
-4. Anna tietolähteen **nimi** ja valitse **Seuraava**.
+4. Anna tietolähteen **nimi** ja valitse **Seuraava**. Nimen ohjeet: 
+   - Alussa on oltava kirjain.
+   - Käytä vain kirjaimia ja numeroita. Erikoismerkit ja välilyönnit eivät ole sallittuja.
+   - Käytä 3–64 merkkiä.
 
 5. Anna Common Data Service -organisaatiosi **Palvelinosoite** ja valitse **Kirjaudu sisään**.
 
@@ -65,3 +68,6 @@ Jos haluat muodostaa yhteyden eri Common Data Serviceen, [luo uusi tietolähde](
 3. Valitse luettelossa **Muokkaa**-vaihtoehto.
 
 4. Valitse lisäentiteetit käytettävissä olevien entiteettien luettelosta ja valitse **Tallenna**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

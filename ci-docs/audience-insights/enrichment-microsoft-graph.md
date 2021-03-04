@@ -1,26 +1,26 @@
 ---
 title: Asiakasprofiilien rikastaminen Microsoft Graphin avulla
 description: Käytä Microsoft Graphin tarjoamia tietoja, kun haluat rikastuttaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla.
-ms.date: 09/28/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4f93a2337815f76b98185ecb3755e08443031748
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405591"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269326"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Asiakasprofiilien täydentäminen tuotemerkillä ja kiinnostuksen kohteilla (esiversio)
 
 Käytä Microsoft Graphin tarjoamia tietoja, kun haluat rikastuttaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla. Nämä affiniteetit määritetään asiakkaiden demografiatietoja muistuttavia ihmisiä koskevien tietojen perusteella. Nämä tiedot auttavat ymmärtämään ja segmentoimaan asiakkaita paremmin sen perusteella, mikä on heidän affiniteettinsa tiettyjen brändien ja kiinnostuksenkohteiden osalta.
 
-Voit [määrittää ja näyttää rikastamiset](enrichment-hub.md) valitsemalla käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Rikastaminen**.
+Valitse käyttäjäryhmän merkityksillisissä tiedoissa **Tiedot** > **Rikastaminen**, jos haluat [määrittää ja tarkastella rikastuksia](enrichment-hub.md).
 
 Jos haluat määrittää tuotemerkin affiniteettien täydentämisen, siirry **Tutustu**-välilehteen ja valitse **Täydennä omat tiedot** **Tuotemerkit**-ruudussa.
 
@@ -35,16 +35,21 @@ Microsoft Graphissa käytetään online-hakutietoja, joiden avulla voit etsiä e
 
 [Lisätietoja Microsoft Graphista](https://docs.microsoft.com/graph/overview)
 
-## <a name="affinity-score-and-confidence"></a>Affiniteetin pistemäärä ja luotettavuus
+## <a name="affinity-level-and-score"></a>Affiniteettitaso ja pistemäärä
 
-**Affiniteetin pistemäärä** lasketaan 100 pisteen asteikolla, jossa 100 ilmaisee segmentin, jonka affiniteetti brändiin tai kiinnostuksenkohteen osalta on korkein.
+Jokaisessa rikastetussa asiakasprofiilissa on kaksi toisiinsa liittyvää arvoa. Ne ovat affiniteettitaso ja affiniteettipisteet. Nämä arvot määrittävät, miten vahva tuotemerkin tai kiinnostuksen kohteen kyseisen profiilin demografisen segmentin affiniteetti on verrattuna muihin demografisiin segmentteihin.
 
-**Affiniteetin luottamus** lasketaan myös 100 pisteen asteikolla. Se osoittaa järjestelmän luotettavuustason, jolla segmentillä on tuotemerkin tai kiinnostuksen affiniteetti. Luotettavuustaso perustuu segmentin kokoon ja rakeisuuteen. Segmentin koko määräytyy tiettyä segmenttiä koskevien tietojen määrän mukaan. Segmentin rakeisuus määräytyy sen mukaan, kuinka monta määritettä (ikä, sukupuoli, sijainti) on käytettävissä profiilissa.
+*Affiniteettitaso* koostuu neljästä tasosta. *Affiniteettipisteet* lasketaan 100 pisteen aseteikolla, joka yhdistetään affiniteettitasoihin.
 
-Tietojoukko pistemääriä ei normalisoida. Tämän vuoksi kaikki mahdolliset tietojoukon affiniteetti pistemäärät eivät ehkä ole näkyvissä. Esimerkiksi tiedoissasi ei ehkä ole rikastettua asiakasprofiilia, jonka affiniteettipisteet olisivat 100. Se on mahdollista silloin, kun demografisesta segmentistä ei löydy asiakkaita, jotka saivat 100 pistettä tietyn tuotemerkin tai kiinostksen kohteen vuoksi.
 
-> [!TIP]
-> Kun [segmenttejä luodaan](segments.md) käyttämällä affiniteetin pistemääriä, affiniteetin pistemäärien jakautuminen tietojoukossa on syytä tarkistaa ennen käytettävien pisterajojen määrittämistä. Esimerkiksi affiniteetin pistemäärää 10 voidaan pitää merkittävänä tietojoukossa, jonka korkein annetun brändin tai kiinnostuksenkohteen affiniteetin pistemäärä on 25.
+|Affiniteettitaso |Affiniteetin pistemäärä  |
+|---------|---------|
+|Erittäin korkea     | 85–100       |
+|Suuri     | 70–84        |
+|Keskikokoinen     | 35–69        |
+|Matala     | 1–34        |
+
+Affiniteettia mittaavan tarkkuuden mukaan voit käyttää affiniteettitasoa tai pistemäärää. Affiniteettipisteet antavat aiempaa tarkemman hallinnan.
 
 ## <a name="supported-countriesregions"></a>Tuetut maat ja alueet
 
@@ -54,17 +59,13 @@ Valitse maa avaamalla **Tuotemerkkien rikastus** tai **Kiinnostuksen kohteiden r
 
 ### <a name="implications-related-to-country-selection"></a>Maan valintaan liittyvät vaikutukset
 
-- Kun [valitset omia tuotemerkkejä](#define-your-brands-or-interests), saat ehdotuksia valitun maan tai alueen perusteella.
+- Kun [valitset omia tuotemerkkejä](#define-your-brands-or-interests), järjestelmä antaa ehdotuksia valitun maan tai alueen perusteella.
 
-- [Toimialaa valittaessa](#define-your-brands-or-interests) määritetään kiinnostavimmat brändit tai kiinnostuksenkohteet valitun maan tai alueen perusteella.
+- Kun [valitset toimialaa](#define-your-brands-or-interests), saat tärkeimmät tuotemerkit tai kiinnostusten kohteet valitun maan tai alueen perusteella.
 
-- Kun [yhdistät kenttiä](#map-your-fields) eikä Maa tai alue -kenttä ole yhdistetty, asiakasprofiileja rikastetaan valitun maan tai alueen Microsoft Graph data -tietojen perusteella. Kyseisellä valinnalla rikastetaan myös asiakasprofiileja, joiden maa- tai aluetietoja ei ole saatavana.
-
-- Kun [profiileja rikastetaan](#refresh-enrichment), kaikkia niitä asiakasprofiileja rikastetaan, joissa valittujen tuotemerkkien ja kiinnostuksen kohteiden Microsoft Graph -tiedot ovat käytettävissä. Tämä koskee myös profiileja, jotka eivät ole valitussa maassa tai valitulla alueella. Jos valitsit esimerkiksi Saksan, Yhdysvalloissa sijaitsevat profiilit rikastetaan, jos valittujen yhdysvaltalaisten tuotemerkkien ja kiinnostuksen kohteiden Microsoft Graph -tiedot ovat käytettävissä.
+- Kun [rikastat profiileja](#refresh-enrichment), rikastetaan kaikki asiakasprofiilit, joiden tiedot saadaan valituista tuotemerkeistä ja kiinnostusten kohteista. Mukaan lukien profiilit, joita valittu maa tai alue ei sisällä. Jos valitsit esimerkiksi Saksan, Yhdysvalloissa sijaitsevat profiilit rikastetaan, jos valittujen yhdysvaltalaisten tuotemerkkien ja kiinnostuksen kohteiden Microsoft Graph -tiedot ovat käytettävissä.
 
 ## <a name="configure-enrichment"></a>Rikastaminen määritys
-
-Tuotemerkkien tai kiinnostuksen kohteiden täydentämisen määrittäminen sisältää seuraavat kaksi vaihetta:
 
 ### <a name="define-your-brands-or-interests"></a>Määritä tuotemerkit tai kiinnostuksen kohteet
 
@@ -75,9 +76,19 @@ Mahdolliset vaihtoehdot:
 
 Voit lisätä tuotemerkin tai kiinnostuksen kohteen kirjoittamalla sen syötealueeseen, jolloin saat ehdotuksia hakuehtojen perusteella. Jos etsimääsi tuotemerkkiä tai kiinnostuksen kohteita ei luetella, lähetä meille palautetta **Ehdota**-linkin avulla.
 
+### <a name="review-enrichment-preferences"></a>Rikastusasetusten tarkasteleminen
+
+Tarkista oletusarvoiset rikastusasetukset ja päivitä ne tarpeen mukaan.
+
+:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Näyttökuva rikastusasetusten ikkunasta.":::
+
+### <a name="select-entity-to-enrich"></a>Rikastettavan entiteetin valitseminen
+
+Valitse **Rikastettu entiteetti** ja valitse sitten tietojoukko, jota haluat rikastaa Microsoft Graphin yritystietojen avulla. Voit valita asiakasentiteetin, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
 ### <a name="map-your-fields"></a>Yhdistä kenttäsi
 
-Yhdistä yhdistetyn asiaksentiteetin kentät vähintään kahteen määritteeseen, jotta voit määrittää demografisen segmentin, jota haluat käyttää asiakastietojen rikastuttamisessa. Määritä kenttien yhdistämismääritykset valitsemalla **Yhdistä**. Valitse **Käytä**, kun olet valmis. Viimeistele kenttien yhdistäminen valitsemalla **Tallenna**.
+Yhdistä yhdistetyn asiakasentiteetin kentät, jos haluat määrittää demografisen segmentin, jota haluat järjestelmän käyttävän asiakastietojen rikastamisessa. Yhdistä maa/alue ja vähintään syntymäaika- tai sukupuolimääritteet. Lisäksi sinun on yhdistettävä vähintään yksi postitoimipaikka (ja osavaltio/provinssi) tai postinumero. Määritä kenttien yhdistämismääritykset valitsemalla **Yhdistä**. Valitse **Käytä**, kun olet valmis. Viimeistele kenttien yhdistäminen valitsemalla **Tallenna**.
 
 Seuraavia muotoja ja arvoja tuetaan, kirjainkokoa ei oteta huomioon arvoissa:
 
@@ -120,3 +131,6 @@ Brändien ja kiinnostuksenkohteiden affiniteetteja voi tarkastella myös yksitt�
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
 Voit hyödyntää rikastettuja asiakastietoja. Voit tarjota asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

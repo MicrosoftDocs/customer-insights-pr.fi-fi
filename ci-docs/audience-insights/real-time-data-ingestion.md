@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689171"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270276"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Reaaliaikainen tietojen käsittely (esiversio)
 
@@ -83,6 +83,7 @@ Tietoja tästä ohjelmointirajapinnasta, kuten parametrit ja vastaukset, on **En
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Tietoja reaaliaikaisesta käytöstä telemetriatietojen avulla
 
-Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#api-usage-tab) siirtymällä kohtaan **Järjestelmänvalvoja** > **Järjestelmä** > **Ohjelmointirajapinnan käyttö**. **Toiminnot**-taulukossa on niille ohjelmointirajapinnan toimintojen riveillä, joissa käytetään reaaliaikaisia menetelmiä, on painike, jolla voi tarkastella reaaliaikaisen ohjelmointirajapinnan käyttöä. Painikkeen visualisointina on kiikarisymboli. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.
+Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#api-usage-tab). 
 
-Valitse **Ryhmittelyperuste**-valitsimen avulla tapa, jolla reaaliaikainen vuorovaikutus esitetään aikajanalla edellisten 24 tunnin ja edellisen 30 päivän välillä. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

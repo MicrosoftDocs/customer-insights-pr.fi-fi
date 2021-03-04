@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667225"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267428"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
@@ -44,13 +44,13 @@ Tietolähteet sisältävät entiteettejä, joissa on tapahtuma- ja aktiviteettit
 
 1. Määritä **Määritä suhde** -osassa tiedot, jotka yhdistävät aktiviteettitiedot vastaavaan asiakkaaseen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen](media/activities-entities-define.png "Entiteettisuhteen määrittäminen")
-
     - **Aktiviteetin entiteettikenttä**: Valitse aktiviteettikohteen kenttä, jonka avulla luodaan suhde toiseen entiteettiin.
     - **Asiakasentiteetti**: Valitse vastaava lähdeasiakas-entiteetti, johon aktiviteettikohde on suhteessa. Voit liittyä vain sellaisiin lähdeasiakaskohteisiin, joita käytetään tietojen yhdistämisprosessissa.
     - **Asiakkaan entiteettikenttä**: Tässä kentässä näkyy lähdeasiakasentiteetin ensisijainen avain, joka on valittu yhdistämisprosessissa. Tämän lähdeasiakaskohteen perusavainkentän avulla luodaan suhde aktiviteettientiteettiin.
     - **Nimi**: Jos tämän aktiviteettikohteen ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole olemassa, luodaan uusi suhde, jolla on tässä annettu nimi.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Entiteettisuhteen määrittäminen](media/activities-entities-define.png "Entiteettisuhteen määrittäminen")
 
 1. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
@@ -82,3 +82,6 @@ Tietolähteet sisältävät entiteettejä, joissa on tapahtuma- ja aktiviteettit
 3. Valitse **Poista**-kuvake.
 
 4. Vahvista poisto.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

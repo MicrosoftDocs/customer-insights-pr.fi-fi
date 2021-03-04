@@ -4,17 +4,17 @@ description: Common Data Model -tietojen käyttäminen Azure Data Lake Storagen 
 ms.date: 05/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 25de23e615704a72f6b41d98ae9418beb338e77e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 247e4d9c47ff2373065ebf3c6d554323e45a120b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643454"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267856"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Common Data Model -kansioon yhdistäminen Azure Data Lake -tilillä
 
@@ -38,17 +38,25 @@ Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemi
 
 1. Valitse **Lisää tietolähde**.
 
-1. Valitse **Muodosta yhteys Common Data Model -kansioon**, anna tietolähteelle **Nimi** ja valitse **Seuraava**.
+1. Valitse **Muodosta yhteys Common Data Model -kansioon**, anna tietolähteelle **Nimi** ja valitse **Seuraava**. Nimen ohjeet: 
+   - Alussa on oltava kirjain.
+   - Käytä vain kirjaimia ja numeroita. Erikoismerkit ja välilyönnit eivät ole sallittuja.
+   - Käytä 3–64 merkkiä.
 
 1. Voit valita, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). Anna **säilön** tiedot ja valitse **Seuraava**.
    > [!div class="mx-imgBorder"]
-   > ![Valintaikkuna Azure Data Laken yhteystietojen antamiseen](media/enter-new-storage-details.png)
-
-1. Valitse **Common Data Model -kansion valitseminen** -valintaikkunassa model.json-tiedosto, josta tietoja tuodaan, ja valitse sitten **Seuraava**.
+   > ![Valintaikkuna, jossa voit lisätä Azure Data Laken uuden yhteyden tiedot](media/enter-new-storage-details.png)
    > [!NOTE]
-   > Toiseen ympäristön tietolähteeseen liitetyt model.json-tiedostot eivät näy luettelossa.
+   > Yhteyden muodostaminen ja tietolähteen luominen edellyttää säilön tai tallennustilin jotakin seuraavaa roolia:
+   >  - Tallennustilan Blob-tietojen lukija
+   >  - Tallennustilan Blob-tietojen omistaja
+   >  - Tallennustilan Blob-tietojen osallistuja
 
-1. Näkyviin tulee luettelo valitussa model.json-tiedoston käytettävissä olevista entiteeteistä. Voit tarkistaa sen ja valita käytettävissä olevien entiteettien luettelosta. Valitse sitten **Tallenna**. Kaikki valitut entiteetit käsitellään uudesta tietolähteestä.
+1. Valitse **Common Data Model -kansion valitseminen** -valintaikkunassa model.json- tai manifest.json-tiedosto, josta tietoja tuodaan, ja valitse sitten **Seuraava**.
+   > [!NOTE]
+   > Toiseen ympäristön tietolähteeseen liitetyt model.json- tai manifest.json-tiedostot eivät näy luettelossa.
+
+1. Näkyviin tulee luettelo valitussa model.json- tai manifest.json-tiedoston käytettävissä olevista entiteeteistä. Voit tarkistaa sen ja valita käytettävissä olevien entiteettien luettelosta. Valitse sitten **Tallenna**. Kaikki valitut entiteetit käsitellään uudesta tietolähteestä.
    > [!div class="mx-imgBorder"]
    > ![Valintaikkuna, jossa on model.json-tiedostosta saatu entiteettiluettelo](media/review-entities.png)
 
@@ -59,11 +67,11 @@ Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemi
 9. Kun olet tallentanut valinnat, näkyviin tulee **Tietolähteet**-sivu. Sinun pitäisi nyt nähdä Common Data Model -kansion yhteys tietolähteenä.
 
 > [!NOTE]
-> Model.json-tiedosto voidaan liittää vain yhteen tietolähteeseen samassa ympäristössä. Samaa model.json-tiedostoa voi kuitenkin käyttää tietolähteissä useissa ympäristöissä.
+> Model.json- tai manifest.json-tiedosto voidaan liittää vain yhteen tietolähteeseen samassa ympäristössä. Samaa model.json- tai manifest.json-tiedostoa voi kuitenkin käyttää tietolähteissä useissa ympäristöissä.
 
 ## <a name="edit-a-common-data-model-folder-data-source"></a>Common Data Model -kansion tietolähteen muokkaaminen
 
-Voit päivittää Common Data Model -kansion sisältävän tallennustilin käyttöoikeusavaimen. Voit myös vaihtaa model.json-tiedoston. Jos haluat muodostaa yhteyden toiseen säilöön tallennustilatililtä tai muuttaa tilin nimeä, sinun on [luotava uusi tietolähdeyhteys](#connect-to-a-common-data-model-folder).
+Voit päivittää Common Data Model -kansion sisältävän tallennustilin käyttöoikeusavaimen. Voit myös muuttaa model.json- tai manifest.json-tiedostoa. Jos haluat muodostaa yhteyden toiseen säilöön tallennustilatililtä tai muuttaa tilin nimeä, sinun on [luotava uusi tietolähdeyhteys](#connect-to-a-common-data-model-folder).
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Tietolähteet**.
 
@@ -77,13 +85,24 @@ Voit päivittää Common Data Model -kansion sisältävän tallennustilin käytt
 
 5. Voit myös tehdä päivityksen käyttöoikeusavaimen yhteydessä resurssi- tai tilausperusteiseen yhteyteen. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilö**-tietoja ei voi muuttaa yhteyttä päivitettäessä.
    > [!div class="mx-imgBorder"]
-   > ![Valintaikkuna Azure Data Laken yhteystietojen antamiseen](media/enter-existing-storage-details.png)
 
-6. Valinnaisesti voit valita säilössä toisen model.json-tiedoston, jossa on erilainen entiteettijoukko.
+   > ![Valintaikkuna, jossa annetaan Azure Data Laken yhteystiedot olemassa olevaan tallennustiliin](media/enter-existing-storage-details.png)
+
+   > [!NOTE]
+   > Yhteyden muodostaminen ja tietolähteen luominen edellyttää säilön tai tallennustilin jotakin seuraavaa roolia:
+   >  - Tallennustilan Blob-tietojen lukija
+   >  - Tallennustilan Blob-tietojen omistaja
+   >  - Tallennustilan Blob-tietojen osallistuja
+
+
+6. Voit vaihtoehtoisesti valita toisen model.json- tai manifest.json-tiedoston, jolla on eri entiteettijoukko säilössä.
 
 7. Voit myös valita lisää käsiteltäviä entiteettejä. Voit myös poistaa kaikki jo valitut entiteetit, jos riippuvuuksia ei ole.
 
    > [!IMPORTANT]
-   > Jos nykyisessä model.json-tiedostossa ja entiteettijoukossa on riippuvuuksia, näkyviin tulee virhesanoma eikä toista model.json-tiedostoa voi valita. Poista kyseiset riippuvuudet ennen model.json-tiedoston vaihtamista tai luo uusi tietolähde, joka sisältää haluamasi model.json-tiedoston, jolloin riippuvuuksia ei tarvitse poistaa.
+   > Jos aiemmin luodussa model.json- tai manifest.json-tiedostossa ja entiteettijoukkossa on riippuvuuksia, näkyviin tulee virhesanoma, eikä toista model.json- tai manifest.json-tiedostoa voi valita. Poista nämä riippuvuudet, ennen kuin muutat model.json- tai manifest.json-tiedostoa, tai luo uusi tietolähde sillä model.json- tai manifest.json-tiedostolla, jota haluat käyttää. Tällöin riippuvuuksia ei tarvitse poistaa.
 
 8. Voit myös valita lisää määritteitä tai entiteettejä, jossa tietojen profilointi otetaan käyttöön tai poistaa jo valitut käytöstä.   
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

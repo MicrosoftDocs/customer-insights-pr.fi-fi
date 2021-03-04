@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 63caa2ebdd7d637d14ac9c9cc7972095803aee2f
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643859"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477129"
 ---
-# <a name="export-destinations-preview"></a>Vientikohteet (esiversio)
+# <a name="export-destinations-preview-overview"></a>Vientikohteiden (esiversio) yleiskuvaus
 
 **Vientikohteet**-sivulla näkyvät kaikki sijainnit, joihin olet määrittänyt tietojen viemisen. Voit myös lisätä uusia kohteita vientiä varten. Lisäksi se näyttää viennissä valittavissa olevat vaihtoehdot. Saat nopeasti yleiskuvan, kuvauksen ja tietoja siitä, mitä kullakin laajennettavuusvaihtoehdolla voi tehdä. Vie yhtenäiset profiilit, mitat ja segmentit yrityksen kannalta merkityksellisiin sovelluksiin.
 
@@ -27,10 +27,13 @@ Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet** ja etsi seuraavat l
 - [Power Automateyhdistin](export-power-automate.md)
 - [Power Appsyhdistin](export-power-apps.md)
 - [Power BIyhdistin](export-power-bi.md)
+- [Autopilot](export-autopilot.md)
 - [DotDigital](export-dotdigital.md)
 - [Dynamics 365 Sales](export-dynamics365-sales.md)
 - [Dynamics 365 Marketing](export-dynamics365-marketing.md)
 - [Azure Blob -säilö](export-azure-blob-storage.md)
+- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
+- [SendGrid](export-sendgrid.md)
 - [LiveRamp&reg;-yhdistin](export-liveramp.md)
 - [Microsoft Teams -botti](export-teams-bot.md)
 - [Mailchimp](export-mailchimp.md)
@@ -95,3 +98,6 @@ Vientikohteen poistaminen aloitetaan **Vientikohde**-pääsivulta.
 2. Valitse avattavassa valikossa **Poista**.
 
 3. Vahvista poisto valitsemalla **Poista** vahvistusnäytössä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -5,16 +5,16 @@ ms.date: 11/12/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 34ccee2894f1f2b552d0c6a88a6810e2dfc677a3
-ms.sourcegitcommit: 0b1d3ca11b8ba362a959da0eea15c37e9cdba084
+ms.openlocfilehash: e0245f2d01aabc86f43532822c056965ff7ae67a
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "4570399"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267077"
 ---
 # <a name="connector-for-marketo-preview"></a>Marketo-yhdistin (esiversio)
 
@@ -74,3 +74,6 @@ Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan m
 
 Kun tietojen lähetys Marketoon otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Marketo noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

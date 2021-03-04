@@ -1,20 +1,20 @@
 ---
 title: Yhteyden muodostaminen Azure Data Lake Storage Gen2 -tiliin palveluobjektia käyttämällä
-description: Käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektin käyttäminen muodostamaan yhteys omaan Data Lake -tallennustilaan, kun se liitetään käyttäjäryhmän merkityksellisiin tietoihin.
-ms.date: 11/24/2020
+description: Käytä käyttäjäryhmän tietojen Azure-palveluobjektia muodostamaan yhteys omaan Data Lake -tallennustilaan, kun se liitetään käyttäjäryhmän tietoihin.
+ms.date: 02/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c2fae278d34fa02b9168ac70dfa8dd351653245e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644084"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267718"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Yhteyden muodostaminen Azure Data Lake Storage Gen2 -tiliin käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektilla
 
@@ -22,7 +22,9 @@ Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoi
 
 Palveluobjektin avulla voi turvallisesti [lisätä Common Data Model -kansion tietolähteenä tai muokata sitä](connect-common-data-model.md) tai [luoda uuden ympäristön tai päivittää aiemmin luotua ympäristöä](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-Palveluobjektin luontiin tarvitaan Azure-tilauksen järjestelmänvalvojan oikeudet.
+> [!IMPORTANT]
+> - Azure Data Lake Gen2 -tallennustilillä, joka yrittää käyttää palveluobjektia, on [oltava käytössä hierarkkinen nimitila (HNS)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Palveluobjektin luontiin tarvitaan Azure-tilauksen järjestelmänvalvojan oikeudet.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektin luominen
 
@@ -83,7 +85,7 @@ Liitä käyttäjäryhmän merkityksellisten tietojen Azure Data Lake -tallennust
 
 Anna valitussa menettelytavassa tarvittavat tiedot seuraavien ohjeiden mukaisesti.
 
-### <a name="resounce-based-storage-account-connection"></a>Resurssipohjainen tallennustiliyhteys
+### <a name="resource-based-storage-account-connection"></a>Resurssipohjainen tallennustiliyhteys
 
 1. Siirry [Azure-hallintaportaaliin](https://portal.azure.com), kirjaudu tilaukseen ja avaa tallennustili.
 
@@ -108,7 +110,8 @@ Anna valitussa menettelytavassa tarvittavat tiedot seuraavien ohjeiden mukaisest
 1. Varmista, että valitset oikeat tiedot käyttäjäryhmän merkityksellisissä tiedoissa tarkista tallennustilin **Tilaus**-, **Resurssiryhmä**- ja **Nimi**-kohtien tiedot.
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa arvot tai vastaavat kentät tallennustiliä liitettäessä.
-
-   :::image type="content" source="media/ADLS-SP-SubscriptionConnection.png" alt-text="Tallennustilin resurssitunnuksen tietojen antaminen":::
    
 1. Liitä tallennustili suorittamalla jäljellä olevat vaiheet käyttäjäryhmän merkityksellisissä tiedoissa.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

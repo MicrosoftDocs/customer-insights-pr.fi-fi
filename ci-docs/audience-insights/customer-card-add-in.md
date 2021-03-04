@@ -1,7 +1,7 @@
 ---
 title: Asiakaskortin apuohjelman asentaminen ja määrittäminen
 description: Dynamics 365 Customer Insightsin asiakaskortin apuohjelman asentaminen ja määrittäminen.
-ms.date: 08/04/2020
+ms.date: 01/20/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: aab5deaf89b4b019f6688a1bca950ec2277ad5fb
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a6d5b49380ed129cf147698a16f5f3f597bf7fbc
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644039"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268040"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
@@ -28,7 +28,7 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 - Asiakasprofiilit [käsitellään Dynamics 365 -sovelluksessa Common Data Servicen avulla](connect-power-query.md).
 - Asiakaskortin lisäosan käyttäjät on [lisättävä käyttäjinä](permissions.md) käyttäjäryhmän merkityksellisissä tiedoissa.
 - [Määritetyt haku- ja suodatusominaisuudet ](search-filter-index.md).
-- Demografiatietojen ohjausobjekti: demografiset kentät, kuten ikä tai sukupuoli, ovat käytettävissä yhtenäisessä asiakasprofiilissa.
+- Demografiatietojen ohjausobjekti: demografiset kentät (kuten ikä tai sukupuoli), ovat käytettävissä yhdistetyssä asiakasprofiilissa.
 - Rikastus-ohjausobjekti: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
 - Analytiikan ohjausobjekti: edellyttää tietoja, jotka on luotu käyttämällä Azuren automaattianalyysipalveluita ([ennusteet](predictions.md) tai [mukautetut mallit](custom-models.md))
 - Mittarin ohjausobjekti: edellyttää [määritettyjä mittareita](measures.md).
@@ -92,10 +92,26 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 
 1. Poista **Kentän ominaisuudet** -valintaikkunassa **Näytä otsikko lomakkeessa** -valintaruudun valinta.
 
-1. Valitse ohjausobjektille asetus **WWW**. Jos kyseessä on rikastusohjausobjekti, valitse näytettävä rikastustyyppi määrittämällä **enrichmentType**-kenttä. Kullekin rikastustyypille on lisättävä erillinen rikastusohjausobjekti.
+1. Valitse ohjausobjektille asetus **WWW**. Jos kyseessä on rikastusohjausobjekti, valitse näytettävä rikastustyyppi määrittämällä **enrichmentType**-kenttä. Lisää jokaiselle rikastustyypille erillinen rikastusohjausobjekti.
 
 1. Julkaise päivitetty yhteyshenkilölomake valitsemalla **Tallenna** ja **Julkaise**.
 
 1. Siirry julkaistuun yhteyshenkilölomakkeeseen. Näet juuri lisätyn ohjausobjektin. Kirjautuminen voi olla välttämätöntä, kun sitä käytetään ensimmäisen kerran.
 
 1. Voit mukauttaa mukautetussa ohjausobjektissa näkyviä tietoja valitsemalla muokkauspainikkeen oikeassa yläkulmassa.
+
+## <a name="upgrade-customer-card-add-in"></a>Asiakaskortin apuohjelman päivittäminen
+Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Voit päivittää uusimman version toimimalla seuraavasti Dynamics 365 -sovelluksessa, johon apuohjelma on asennettu.
+
+1. Siirry Dynamics 365 -sovelluksissa kohtaan **Asetukset** > **Mukauttaminen** ja valitse **Ratkaisut**.
+
+1. Etsi apuohjelmien taulukosta **CustomerInsightsCustomerCard** ja valitse rivi.
+
+1. Valitse **Ota ratkaisun päivitys käyttöön** toimintorivillä.
+
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Ratkaisun päivittäminen Dynamics 365 -sovellusten Mukauttaminen-alueella":::
+
+1. Kun olet käynnistänut päivityksen, latausilmaisin näkyy päivityksen valmistumiseen asti. Jos uudempia versioja ei ole, päivitys näyttää virhesanoman.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

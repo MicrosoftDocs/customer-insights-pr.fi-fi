@@ -5,16 +5,16 @@ ms.date: 06/05/2020
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8260e3b5e529f3d54678d9d6e11aebb2795e27fd
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: c839f9dc7e403412c0e3d936392d45a43bc63545
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643679"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269970"
 ---
 # <a name="connector-for-facebook-ads-manager-preview"></a>Yhdistä Facebook Ads Manageriin (esiversio)
 
@@ -62,7 +62,16 @@ Voit luoda kampanjoita Facebookissa ja Instagramissaa viemällä yhdistettyjen a
 
 Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
 
+## <a name="known-limitations"></a>Tunnetut rajoitukset
+
+- Enintään 10 miljoonaa asiakasprofiilia Facebookin mainosten hallintaan 
+- Vienti Facebookin mainosten hallintaan on rajoitettu segmentteihin
+- Yhteensä 10 miljoonan profiilin segmenttien vienti voi kestää 90 minuuttia
+
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
 Kun tietojen lähetys Facebookin mainosten hallintaan otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Facebook Ads noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
