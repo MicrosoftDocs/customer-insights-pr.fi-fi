@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 02/02/2021
+ms.date: 03/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,18 +9,18 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270428"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598427"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Olemme innoissamme voidessamme ilmoittaa uusimmista päivityksistämme! Tässä artikkelissa on yhteenveto yleisen esiversion ominaisuuksista, yleisen saatavuuden parannuksista ja ominaisuuksien päivityksistä. Katso ominaisuuksien pitkäaikaiset suunnitelmat [Dynamics 365- ja Power Platform -julkaisusuunnitelmista](https://docs.microsoft.com/dynamics365/release-plans/).
+Olemme innoissamme voidessamme ilmoittaa uusimmista päivityksistämme! Tässä artikkelissa on yhteenveto yleisen esiversion ominaisuuksista, yleisen saatavuuden parannuksista ja ominaisuuksien päivityksistä. Katso ominaisuuksien pitkäaikaiset suunnitelmat [Dynamics 365- ja Power Platform -julkaisusuunnitelmista](/dynamics365/release-plans/).
 
 Lisäksi seuraavassa videossa on tietoja kuluneille kuudelle kuukaudelle suunnitelluista ominaisuuksista.
 
@@ -30,6 +30,40 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="february-2021-updates"></a>Helmikuun 2021 päivitykset
+
+Helmikuun 2021 päivitykset sisältävät useita toimintoja, suorituskykypäivityksiä ja virheiden korjauksia.
+
+#### <a name="extensibility"></a>Laajennettavuus
+
+- **Segmenttien vieminen AdRoll-sovellukseen**
+
+  Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään AdRoll. Nyt voit viedä segmenttejä Customer Insightsista AdRoll-käyttäjäryhmille ja käyttää niitä mainonnan lähtökohtana. Lisätietoja on kohdassa [AdRoll-yhdistin](export-adroll.md).
+
+#### <a name="segments"></a>Segmentit
+ 
+- **Kopioi segmentti**
+  
+  Jos haluat luoda uuden segmentin aiemmin luodun perusteella, voit nyt kopioida segmentin ja muokata sen kaksoiskappaletta, jotta voit parannella sitä tarkemmin. 
+
+- **Lisämääritteiden lisääminen segmenttiin**
+
+  Nyt voit lisätä määritteitä segmentin tulosteeseen, vaikka nämä määritteet eivät kuulu asiakasprofiiliin. Voit esimerkiksi sisällyttää tilaustunnukset segmenttiin, vaikka se kuuluu tilausentiteettiin, jolla on M:1-suhde asiakasentiteettiin. Jos määrite kuuluu asiakasentiteettiin liittyvään entiteettiin, voit nyt sisällyttää nämä määritteet.  
+
+#### <a name="predictions"></a>Ennusteet
+
+- **Ennakoivien tuotesuositusten luominen**
+
+  Sen ymmärtäminen, mitä asiakkaat ovat kiinnostuneita ostamaan, on yksi ensimmäisistä vaiheista, joita tarvitaan liiketoiminnan tuoton parantamiseen ja asiakasuskollisuuden rakentamiseen personoinnin ja sitoutumisen avulla. Suositusten antaminen tuotteille, jotka eivät ole sopusoinnussa asiakkaasi etujen kanssa, voi katkaista asiakkaan ja yrityksesi välisen yhteyden ja lopulta rajoittaa asiakkaan potentiaalista kokonaistuloa ja kokemusta. 
+
+  Omien tietojen avulla voit nyt luoda ennusteita siitä, mitä tuotteita asiakkaat todennäköisesti ostavat tulevaisuudessa. Lisätietoja on ohjeaiheessa [Tuotesuositusennuste](predict-product-recommendation.md).
+
+#### <a name="system-administration"></a>Järjestelmän hallinta
+
+- **Ympäristön kopioiminen tukee useampia tietolähteiden tyyppejä**
+
+  Järjestelmänvalvojat voivat kopioida ympäristömäärityksiä uuteen ympäristöön samassa organisaatiossa. Tämä ominaisuus laajentaa kopiointiympäristön toimintoja niissä tapauksissa, joissa tietolähteitä käytetään Common Data Service Data Lake -tallennustilan tai Common Data Model -kansion perusteella.
 
 ## <a name="january-2021-updates"></a>Tammikuun 2021 päivitykset
 

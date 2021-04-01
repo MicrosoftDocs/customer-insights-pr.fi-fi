@@ -2,19 +2,19 @@
 title: Asiakkaan elinkaaren arvon (CLV) ennuste
 description: Ennakoi aktiivisten asiakkaiden myyntituoton potentiaali tulevaisuudessa.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268590"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595802"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Asiakkaan elinkaaren arvon (CLV) ennuste (esiversio)
 
@@ -194,11 +194,11 @@ Tulossivulla on kolme ensisijaista tieto-osaa.
   
   - **Korkean lisäarvon asiakkaiden ennustamisen onnistumisaste**
 
-  Katso ero ennustettaessa korkean lisäarvon asiakkaat tekoälymallin ja perusmallin avulla. Esimerkiksi 84 prosentin onnistumisaste tarkoittaa sitä, että opetusmallin kaikista korkean lisäarvon asiakkaista tekoälymalli löysi 84 %. Tämän jälkeen onnistumisastetta verrataan perusmallin onnistumisasteeseen ja suhteellinen muutos raportoidaan. Tätä arvoa käytetään määritettäessä mallille luokka.
+    Katso ero ennustettaessa korkean lisäarvon asiakkaat tekoälymallin ja perusmallin avulla. Esimerkiksi 84 prosentin onnistumisaste tarkoittaa sitä, että opetusmallin kaikista korkean lisäarvon asiakkaista tekoälymalli löysi 84 %. Tämän jälkeen onnistumisastetta verrataan perusmallin onnistumisasteeseen ja suhteellinen muutos raportoidaan. Tätä arvoa käytetään määritettäessä mallille luokka.
 
   - **Virhemittarit**
     
-  Toisen mittarin avulla voit tarkastella malin yleistä suorituskykyä tulevien arvojen ennustamisen virheiden perusteella. Tämän virheen arvioinnissa käytetään neliöllistä keskiarvoa (root mean squared error, RMSE). RMSE on kvantitatiivisten tietojen mallin virheen mittauksen vakiomenetelmä. Tekoälymallin RMSE-arvoa verrataan perusmallin RMSE-arvoon. Lopuksi raportoidaan suhteellinen ero.
+    Toisen mittarin avulla voit tarkastella malin yleistä suorituskykyä tulevien arvojen ennustamisen virheiden perusteella. Tämän virheen arvioinnissa käytetään neliöllistä keskiarvoa (root mean squared error, RMSE). RMSE on kvantitatiivisten tietojen mallin virheen mittauksen vakiomenetelmä. Tekoälymallin RMSE-arvoa verrataan perusmallin RMSE-arvoon. Lopuksi raportoidaan suhteellinen ero.
 
   Tekoälymalli priorisoi asiakkaiden tarkan luokittelun sen mukaan, millaista lisäarvoa he tuovat yritykselle. Korkean lisäarvon asiakkaiden ennustamisessa käytetään siis vain onnistumisastetta. Sen avulla johdetaan mallin lopullinen luokka. RMSE-mittari on herkkä poikkeaville arvoille. Skenaarioissa, joissa pieni prosenttiosuus erittäin korkean ostoarvon omaavia asiakkaita, yleinen RMSE-mittari ei ehkä annan todellista kuvaa mallin suorituskyvystä.   
 

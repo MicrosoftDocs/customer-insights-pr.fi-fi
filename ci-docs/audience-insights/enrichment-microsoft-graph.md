@@ -2,19 +2,19 @@
 title: Asiakasprofiilien rikastaminen Microsoft Graphin avulla
 description: Käytä Microsoft Graphin tarjoamia tietoja, kun haluat rikastuttaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla.
 ms.date: 12/10/2020
-ms.reviewer: kishorem
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: kishorem-MS
+ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 2c95369c778f592bc1460799aca0fa8cff813d68
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: aa46dac4f9c0d27881371877b14a92a6725710da
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269326"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596449"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Asiakasprofiilien täydentäminen tuotemerkillä ja kiinnostuksen kohteilla (esiversio)
 
@@ -33,7 +33,7 @@ Jos haluat määrittää kiinnostuksen kohteen affiniteettien täydentämisen, s
 
 Microsoft Graphissa käytetään online-hakutietoja, joiden avulla voit etsiä erilaisia tuotemerkkejä ja kiinnostuksen kohteita eri demografisista segmenteistä (iän, sukupuolen tai sijainnin mukaan). Tuotemerkin tai kiinnostuksen kohteiden online-hakujen määrä määrittää, kuinka paljon demografisessa segmentissä on verrattuna muihin segmentteihin kyseisen tuotemerkin tai kiinnotuksen kohteen merkitystä.
 
-[Lisätietoja Microsoft Graphista](https://docs.microsoft.com/graph/overview)
+[Lisätietoja Microsoft Graphista](/graph/overview)
 
 ## <a name="affinity-level-and-score"></a>Affiniteettitaso ja pistemäärä
 

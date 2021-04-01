@@ -1,133 +1,137 @@
 ---
 title: Tietojen yhtenäistäminen entiteettien vastaavuuden avulla
 description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden avulla.
-ms.date: 10/14/2020
+ms.date: 02/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: adkuppa
+author: adkuppa
+ms.author: adkuppa
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267474"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595560"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
-Kun olet tehnyt yhdistämisvaiheen, voit täsmäyttää entiteetit. Täsmäytysvaihe määrittää, miten tietojoukot yhdistetään yhdistetyksi asiakasprofiilin tietojoukoksi. Täsmäytysvaihe edellyttää vähintään [kahta yhdistettyä entiteettiä](map-entities.md).
+Täsmäytysvaihe määrittää, miten tietojoukot yhdistetään yhdistetyksi asiakasprofiilin tietojoukoksi. Kun [yhdistämisvaihe](map-entities.md) tietojen yhdistämisessä on valmis, voit yhdistää kaikki entiteetit. Täsmäytysvaihe edellyttää vähintään kahta yhdistettyä entiteettiä.
+
+Hakusivu koostuu kolmesta osasta: 
+- Tärkeimmät mittausarvot, jotka tiivistävät yhdistettyjen tietueiden määrän
+- Täsmäytä järjestys ja säännöt entiteettienvälistä täsmäytystä varten
+- Yhdistettyjen entiteettien kaksoiskappaleiden poistamissäännöt
 
 ## <a name="specify-the-match-order"></a>Määritä täsmäytysjärjestys.
 
 Siirry kohtaan **Tiedot** > **Yhdistä** > **Määritä vastaavuus** ja valitse **Määritä järjestys**, kun haluat aloittaa vastaavuuden määrityksen.
 
-Kukin täsmäytys yhdistää kaksi entiteettiä tai useampia entiteettejä yhdeksi entiteetiksi. Samalla säilytetään kukin yksittäinen asiakastietue. Seuraavassa esimerkissä valitaan seuraavat kolme entiteettiä: **ContactCSV: TestData** **ensisijaiseksi** entiteetiksi, **WebAccountCSV: TestData** **entiteetiksi 2** ja **CallRecordSmall: TestData** **entiteetiksi 3**. Valintojen alla olevassa kaaviossa on kuva siitä, miten täsmäytysjärjestys suoritetaan.
+Kukin vastine yhdistää vähintään kaksi entiteettiä yhdeksi konsolidoiduksi entiteetiksi. Samalla se säilyttää yksilölliset asiakastietueet. Valitsimme esimerkiksi kaksi entiteettiä: **eCommerce:eCommerceContacts** ensisijaisena entiteettinä ja **LoyaltyScheme:loyCustomers** toisena entiteettinä. Entiteettien järjestys määrittää, missä järjestyksessä järjestelmä yrittää yhdistää tietueet.
 
-> [!div class="mx-imgBorder"]
-> ![Muokkaa tietojen täsmäytysjärjestystä](media/configure-data-match-order-edit-page.png "Muokkaa tietojen täsmäytysjärjestystä")
+:::image type="content" source="media/match-page.png" alt-text="Näyttökuva tietojen yhdistämisprosessin yhdistämisalueen vastaavuussivusta.":::
   
-**Ensisijainen** entiteetti täsmäytetään **entiteetin 2** kanssa. Tietojoukko, joka saadaan ensimmäisen täsmäytyksen tuloksena, täsmäytetään **entiteetin 3** kanssa.
-Tässä esimerkissä valittiin vain kaksi täsmäytystä. Järjestelmä tukee kuitenkin useampia täsmäytyksiä.
+Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *LoyaltyScheme:loyCustomers*-entiteettiin. Tietojoukko, jonka ensimmäisen vaiheen tulokset vastaavat seuraavaa entiteettiä, jos entiteettejä on enemmän kuin kaksi.
 
 > [!IMPORTANT]
-> Entiteetti, jonka valitset **ensisijaiseksi** entiteetiksi, toimii yhdistetyn päätietojoukon perustana. Täsmäytysvaiheen aikana valitut lisäentiteetit lisätään tähän entiteettiin. Tämä ei kuitenkaan tarkoita sitä, että yhdistetty entiteetti sisältää *kaikki* tähän entiteettiin sisältyvät tiedot.
+> Entiteetti, jonka valitset ensisijaiseksi entiteetiksi, toimii yhdistettyjen profiilien perustana. Täsmäytysvaiheen aikana valitut lisäentiteetit lisätään tähän entiteettiin. Tämä ei tarkoita, että yhtenäinen entiteetti sisältää *kaikki* entiteettiin sisältyvät tiedot.
 >
 > Seuraavat kaksi seikkaa auttavat entiteettihierarkian valinnassa:
 >
-> - Missä entiteetissä on täydellisimmät ja luotettavimmat asiakastiedot?
-> - Onko juuri määrittämälläsi entiteetillä määritteitä, jotka on jaettu muiden entiteettien kanssa (esimerkiksi nimi, puhelinnumero tai sähköpostiosoite)? Jos näin ei ole, valitse seuraavaksi luotettavin entiteetti.
+> - Valitse entiteetti, jolla on täydellisimmät ja luotettavat profiilitiedot asiakkaistasi ensisijaisena entiteettinä.
+> - Valitse ensisijaiseksi entiteetiksi entiteetti, jolla on useita yhteisiä määritteitä (esimerkiksi nimi, puhelinnumero tai sähköpostiosoite).
 
-Valitse **Valmis**, kun haluat tallentaa täsmäytysjärjestyksen.
+Kun olet määrittänyt vastinejärjestyksen, näet määritetyt vastaavuusparit **Täsmäytettyjen tietueiden tiedot** -osassa kohdassa **Tiedot** > **Yhtenäistä** > **Täsmäytä**. Tärkeimmät mittausarvot ovat tyhjiä, kunnes vastineprosessi on valmis.
 
-## <a name="define-rules-for-your-first-match-pair"></a>Ensimmäisen täsmäytysparin sääntöjen määrittäminen
+## <a name="define-rules-for-match-pairs"></a>Vastaavuusparien sääntöjen määritteleminen
 
-Kun olet määrittänyt täsmäytysjärjestyksen, määritetyt täsmäytykset näkyvät **Täsmäytys**-sivulla. Näytön yläreunassa olevat ruudut ovat tyhjiä, kunnes olet suorittanut täsmäytysjärjestyksen.
+Täsmäytyssäännöt määrittävät logiikan, jonka avulla määritetty entiteettipari täsmäytetään.
 
-> [!div class="mx-imgBorder"]
-> ![Määritä säännöt](media/configure-data-match-need-rules.png "Määritä säännöt")
+Entiteetin nimen vieressä on **Tarvesäännöt**-varoitus, joka viittaa siihen, että vastineparille ei ole määritetty vastaavuussääntöä. 
 
-**Tarvitsee säännöt** -varoitus tarkoittaa sitä, että täsmäytysparille ei ole määritetty täsmäytyssääntöä. Täsmäytyssäännöt määrittävät logiikan, jonka avulla määritetty entiteettipari täsmäytetään.
+:::image type="content" source="media/match-rule-add.png" alt-text="Näyttökuva Täsmäytettyjen tietueiden tiedot -osasta, jossa on ohjausobjekti, jolla lisätään korostettuja sääntöjä.":::
 
-1. Jos haluat määrittää ensimmäisen säännön, avaa **Säännön määritys** -ruutu valitsemalla vastaava täsmäytysrivi täsmäytystaulukossa (1) ja valitsemalla sitten **Luo uusi sääntö** (2).
+1. Määritä vastaavuussäännöt valitsemalla **Täsmäytettyjen tietueiden tiedot** -osassa **Lisää säännöt**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Luo uusi sääntö](media/configure-data-match-new-rule2.png "Luo uusi sääntö")
+1. Määritä **Luo sääntö** -ruudussa säännön ehdot.
 
-2. Määritä **Muokkaa sääntöä** -ruudussa säännön ehdot. Kutakin ehtoa vastaa kaksi riviä, jotka sisältävät pakolliset valinnat.
+   :::image type="content" source="media/match-rule-conditions.png" alt-text="Näyttökuva avatun vastaavuussäännön ehdoista.":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Uusi sääntö -ruutu](media/configure-data-match-new-rule-condition.png "Uusi sääntö -ruutu")
+   - **Entiteetti/kenttä (ensimmäinen rivi)**: Valitse liittyvä entiteetti ja määrite, jos haluat määrittää tietueen ominaisuuden, joka on todennäköisesti yksilöllinen asiakkaalle. Esimerkiksi puhelinnumero tai sähköpostiosoite. Vältä yhdistämistä aktiviteettityyppisten määritteiden mukaan. Esimerkiksi ostotunnus ei todennäköisesti vastaa muita tietuetyyppejä.
 
-   Entiteetti/kenttä (ensimmäinen) - määrite, jota käytetään ensimmäisen täsmäytysparientiteetin täsmäytyksessä. Esimerkkejä ovat puhelinnumero ja sähköpostiosoite. Valitse määrite, joka on todennäköisesti asiakkaan yksilöllinen määrite.
+   - **Entiteetti/kenttä (toinen rivi)**: Valitse määrite, joka liittyy ensimmäisellä rivillä määritetyn entiteetin määritteeseen.
 
-   > [!TIP]
-   > Vältä täsmäyttämistä aktiviteettityyppisten määritteiden perusteella. Eli jos määrite näyttää olevan aktiviteetti, sitä ei ehkä kannata käyttää täsmäytyksen ehtona.  
+   - **Normalisoi**: Valitse seuraavista normalisointivaihtoehdoista valituille määritteille. 
+     - Tyhjä tila: poistaa kaikki välilyönnit. *Hello Worldista* tulee *HelloWorld*.
+     - Symbolit: poistaa kaikki symbolit ja erikoismerkit. *Head&Shoulder* muuttuu muotoon *HeadShoulder*.
+     - Teksti pieniksi kirjaimiksi: Muuntaa kaikki merkit pieniksi. *KAIKKI ISOLLA- ja Ensimmäiset Kirjaimet Isolla* -tapaukset muuttuvat muotoon *kaikki isolla- ja ensimmäiset kirjaimet isolla*.
+     - Unicode ASCII-muotoon: muuntaa unicode-merkinnät ASCII-merkeiksi. */u00B2* muuttuu muotoon *2*.
+     - Numeraalit: muuntaa muut numerojärjestelmät, kuten roomalaiset numerot arabialaisiksi numeroiksi. *VIII* muuttuu muotoon *8*.
+     - Semanttiset tyypit: standardoi nimet, otsikot, puhelinnumerot ja osoitteet, yms. 
 
-   Entiteetti/kenttä (toinen) - määrite, jota käytetään toisen täsmäytysparientiteetin täsmäytyksessä.
+   - **Tarkkuus**: Määritä tässä ehdossa käyttöönotettu tarkkuustaso. 
+     - **Perustiedot**: Valitse arvoksi *Matala*, *Keskitaso*, *Korkea* ja *Tarkka*. Valitse **Tarkka** vain, jos haluat täsmäyttää tietueita, joiden täsmäävyys on 100 prosenttia. Valitse jokin toinen taso, jos haluat täsmäyttää tietueita, jotka eivät ole täysin identtisiä.
+     - **Mukautettu**: Määritä prosenttiluku, jota tietueiden on vastattava. Järjestelmä yhdistää vain tämän raja-arvon ohittavat tietueet.
 
-   Normalisoi - **normalisointimenetelmä**: Valituille määritteille on käytettävissä useita normalisointivaihtoehtoja. Esimerkiksi välimerkkien tai välilyöntien poistaminen
+1. Anna säännön **Nimi**.
 
-   Organisaation nimen normalisoimista (esikatselua) varten voit valita myös **Tyyppi (puhelin, nimi, organisaatio)** -kohdan
+1. [Lisää ehtoja](#add-conditions-to-a-rule) tai viimeistele sääntö valitsemalla **Valmis**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Normalisointi - yritysten välinen](media/match-normalization-b2b.png "Normalisointi - yritysten välinen")
+1. Voit myös [lisätä muita sääntöjä](#add-rules-to-a-match-pair).
 
-   Tarkkuustaso - tässä ehdossa käytettävän tarkkuuden taso. Täsmäytysehdon tarkkuustason määrityksessä voi käyttää seuraavia kahta tyyppiä: **Perus** ja **Mukautettu**.  
-   - Perus: Sisältää neljä vaihtoehtoa: matala, keskitaso, korkea ja tarkka. Valitse **Tarkka** vain, jos haluat täsmäyttää tietueita, joiden täsmäävyys on 100 prosenttia. Valitse jokin toinen taso, jos haluat täsmäyttää tietueita, jotka eivät ole täysin identtisiä.
-   - Mukautettu: Määritä niille tietueille mukautettu prosenttiosuus liukusäätimellä, jotka on täsmäytettävä, tai anna arvo **Mukautettu**-kenttään. Järjestelmä täsmäyttää vain tietueet, jotka läpäisevät tämän raja-arvon yhdistettyinä täsmäytyspareina. Liukusäätimen arvot ovat välillä 0–1. Eli 0,64 tarkoittaa 64 prosenttia.
+1. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
-3. Tallenna sääntö valitsemalla **Valmis**.
+### <a name="add-conditions-to-a-rule"></a>Lisää säännön ehdot
 
-### <a name="add-multiple-conditions"></a>Useiden ehtojen lisääminen
+Jos haluat yhdistää entiteetit vain, jos määritteet vastaavat useita ehtoja, lisää vastaavalle säännölle ehtoja. Ehdot yhdistetään loogiseen JA-operaattoriin, joten ne suoritetaan vain, jos kaikki ehdot täyttyvät.
 
-Jos haluat täsmäyttää entiteetit vain, jos useat ehdot täyttyvät, lisää ehtoja, jotka on linkitetty JA-operaattorin avulla.
+1. Siirry kohtaan **Tiedot** > **Yhdenmukaista** > **Täsmäytä** ja valitse **Muokkaa** sääntöä, johon haluat lisätä ehtoja.
 
-1. Valitse **Muokkaa sääntöä** -ruudussa **Lisää ehto**. Voit myös poistaa ehtoja valitsemalla olemassa olevan ehdon vieressä olevan Poista-painikkeen.
+1. Valitse **Muokkaa sääntöä** -ruudussa **Lisää ehto**.
 
-2. Tallenna sääntö valitsemalla **Valmis**.
+1. Tallenna sääntö valitsemalla **Valmis**.
 
-## <a name="add-multiple-rules"></a>Useiden sääntöjen lisääminen
+### <a name="add-rules-to-a-match-pair"></a>Sääntöjen lisääminen vastinepariin
 
-Kukin ehto koskee yhtä määriteparia. Sääntö taas edustaa ehtojoukkoja. Jos haluat, että entiteetit täsmäytetään eri määritejoukkojen avulla, voit lisätä sääntöjä.
+Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttääksesi entiteettejä useiden määritteiden perusteella
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Yhtenäistä** > **Täsmäytä**.
+1.  Siirry kohtaan **Tiedot** > **Yhdenmukaista** > **Täsmäytä** ja valitse **Lisää sääntö** entiteettiin, johon haluat lisätä sääntöjä.
 
-2. Valitse päivitettävä entiteetti ja valitse sitten **Lisää säännöt**.
-
-3. Noudata kohdassa [Ensimmäisen täsmäytysparin sääntöjen määrittäminen](#define-rules-for-your-first-match-pair) olevia ohjeita.
+2. Noudata ohjeita kohdassa [Vastaavuusparien sääntöjen määrittäminen](#define-rules-for-match-pairs).
 
 > [!NOTE]
-> Sääntöjen järjestys on tärkeä. Täsmäytysalgoritmi yrittää täsmäyttää ensimmäisen säännön perusteella ja jatkaa toiseen sääntöön vain, jos ensimmäisen säännön avulla ei löytynyt vastaavuuksia.
+> Sääntöjen järjestys on tärkeä. Vastaava algoritmi yrittää suorittaa vastineen ensimmäisen säännön perusteella ja jatkaa toista sääntöä vain, jos ensimmäisellä säännöllä ei ole määritetty vastaavuuksia.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Vastaavan entiteetin kaksoiskappaleiden poistaminen
 
-Sen lisäksi että entiteettien väliset vastaavuussäännöt määritetään edellä kuvatuilla tavoilla, myös kaksoiskappaleiden poistosäännöt voidaan määrittää. *Kaksoiskappaleiden poisto* on prosessi. Se määrittää tietueiden kaksoiskappaleet, yhdistää ne yhdeksi tietueeksi ja linkittää kaikki lähdetietueet kyseiseen yhdistettyyn tietueeseen käyttämällä vaihtoehtoisia tunnuksia yhdistettyyn tietueeseen.
+[Entiteettien ristiintaulukointisääntöjen](#define-rules-for-match-pairs) lisäksi voit myös määrittää kaksoiskappaleiden poistamissääntöjä. *Kaksoiskappaleiden poistaminen* on myös yksi prosessi tietueita täsmäytettäessä. Se tunnistaa tietueiden kaksoiskappaleet ja yhdistää ne yhteen tietueeseen. Lähdetietueet linkitetään yhdistettyyn tietueeseen vaihtoehtoisilla tunnuksilla.
 
-Kun kaksoiskappaleiden poistotietue on määritetty, kyseistä tietuetta käytetään entiteettien välisessä vastaavuusprosessissa. Kaksoiskappaleiden poisto toteutetaan entiteettitasolla, ja sitä voidaan käyttää jokaisessa vastaavuusprosessissa käytetyssä entiteetissä.
+Tietueita, joista on poistettu kaksoiskappaleet, käytetään sitten entiteettien välisessä vastaavuusprosessissa. Kaksoiskappaleiden poistaminen tapahtuu yksittäisille entiteeteille ja voidaan määrittää jokaiselle kohteelle, jota käytetään vastineparissa.
+
+Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos kyseisiä sääntöjä ei ole määritetty, järjestelmän määrittämiä sääntöjä käytetään. Ne yhdistävät kaikki tietueet yhdeksi tietueeksi, ennen kuin ne välittyvät entiteettienväliseen vastaavuuteen suorituskyvyn parantamiseksi.
 
 ### <a name="add-deduplication-rules"></a>Kaksoiskappaleiden poistosääntöjen lisääminen
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Yhtenäistä** > **Täsmäytä**.
+1. Valitse **Tiedot** > **Yhtenäistä** > **Täsmäytä**.
 
-1. Valitse **Yhdistetyt kaksoiskappaleet** -osassa **Määritä entiteetit**.
+1. Valitse **Yhdistetyt kaksoiskappaleet** -osassa **Määritä entiteetit**. Jos kaksoiskappaleiden poistamisen säännöt on jo luotu, valitse **Muokkaa**.
 
-1. Valitse **Yhdistä asetukset** -osassa entiteetit, joissa käytetään kaksoiskappaleiden poistoa.
+1. Valitse **Yhdistä asetukset** -ruudussa entiteetit, joissa haluat suorittaa kaksoiskappaleiden poiston.
 
 1. Määritä, miten kaksoiskappaletietueet yhdistetään, ja valitse jokin kolmesta yhdistämisvaihtoehdosta:
-   - *Useimmat täytetyt*: Määrittää voittavaksi tietueeksi tietueen, jossa on eniten täytettyjä tietueita. Tämä on yhdistämisen oletusasetus.
-   - *Uusin*: Määrittää voittajatietueeksi uusimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
-   - *Vähiten viimeaikaiset*: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
+   - **Useimmat täytetyt**: Määrittää voittavaksi tietueeksi tietueen, jossa on eniten täytettyjä määritekenttiä. Se on yhdistämisen oletusasetus.
+   - **Uusin**: Määrittää voittajatietueeksi uusimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
+   - **Vähiten viimeaikaiset**: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
  
    > [!div class="mx-imgBorder"]
    > ![Kaksoiskappaleiden poistosääntöjen vaihe 1](media/match-selfconflation.png "Kaksoiskappaleiden poistosääntöjen vaihe 1")
  
-1. Kun entiteetit on valittu ja niiden yhdistämisasetus on määritetty, määritä kaksoiskappaleiden poistosäännöt entiteettitasoalla valitsemalla **Luo uusi sääntö**.
-   - **Valitse kenttä** sisältää luettelon kaikista sen entiteetin käytettävissä olevista kentistä, jonka lähdetietojen kaksoiskappaleet halutaan poistaa.
-   - Määritä normalisointi- ja tarkkuusasetukset samoin kuin ne määritetään entiteettien välisessä vastaavuudessa.
-   - Lisäehtoja voi määrittää valitsemalla **Lisää ehto**.
+1. Kun entiteetit on valittu ja niiden yhdistämisasetus on määritetty, määritä kaksoiskappaleiden poistosäännöt entiteettitasolla valitsemalla **Lisää sääntö**.
+   - **Valitse kenttä** sisältää kaikki entiteetin käytettävissä olevat kentät. Valitse kenttä, jonka haluat tarkistaa kaksoiskappaleiden varalta. Valitse kentät, jotka ovat todennäköisesti yksilöllisiä jokaiselle asiakkaalle. Esimerkiksi sähköpostiosoite tai nimen, postiosoitteen ja puhelinnumeron yhdistelmä.
+   - Määritä normalisointi- ja tarkkuusasetukset.
+   - Määritä lisäehtoja valitsemalla **Lisää ehto**.
  
    > [!div class="mx-imgBorder"]
    > ![Kaksoiskappaleiden poistosääntöjen vaihe 2](media/match-selfconflation-rules.png "Kaksoiskappaleiden poistosääntöjen vaihe 2")
@@ -138,107 +142,86 @@ Kun kaksoiskappaleiden poistotietue on määritetty, kyseistä tietuetta käytet
 
 1. Tämän jälkeen tämä voittanut tietue välitetään entiteettien väliseen vastaavuuden määritykseen. Muut kuin voittaneet tietueet (esimerkiksi vaihtoehtoiset tunnukset) parantavat vastaavuuden laatua.
 
-1. Mahdolliset mukautetut aina vastattava- ja ei koskaan vastaa -säännöille ohittavat kaksoiskappaleiden poistosäännöt. Jos kaksoiskappaleiden poistosääntö määrittää vastaavia tietueita ja mukautetuksi vastaavuussääntönä on, etteivät tietueet saa koskaan vastata toisiin, näille kahdelle tietueelle ei etsitä vastaavuutta.
+1. Mukautetut vastaavuussäännöt korvaavat kaksoiskappaleiden poistamisen säännöt. Jos kaksoiskappaleiden poistosääntö määrittää vastaavia tietueita ja mukautetuksi vastaavuussääntönä on, etteivät tietueet saa koskaan vastata toisiin, näille kahdelle tietueelle ei etsitä vastaavuutta.
 
-1. Kun vastaavuusprosessi on suoritettu, kaksoiskappaleiden poistotilastot ovat näkyvissä.
-   
-> [!NOTE]
-> Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos kyseisiä sääntöjä ei ole määritetty, järjestelmän määrittämiä sääntöjä käytetään. Ne kutistavat kaikki tietueet, jotka jakavat saman arvoyhdistelmän (tarkka vastine) perusavaimesta ja vastaavuussääntöjen kentät, yhdeksi tietueeksi ennen entiteettitietojen siirtämistä entiteettien väliseen vastaavuuksien etsimiseen. Tämä parantaa suorituskykyä ja järjestelmän toimintaa.
+1. Kun [vastaavuusprosessi on suoritettu](#run-the-match-process), kaksoiskappaleiden poistotilastot ovat näkyvissä keskeisissä mittausruuduissa.
 
-## <a name="run-your-match-order"></a>Täsmäytysjärjestyksen suorittaminen
+### <a name="deduplication-output-as-an-entity"></a>Kaksoiskappaleiden poiston tulos entiteettinä
 
-Kun vastaavuussäännöt, mukaan lukien entiteettien välinen vastaavuuksien etsiminen ja kaksoiskappaleiden poistosäännöt, on määritetty, voit suorittaa täsmäytysjärjestyksen. Valitse **Täsmäytys**-sivulla **Suorita**, kun haluat aloittaa prosessin. Täsmäytysalgoritmin suorittamiseen voi mennä aikaa. Ominaisuuksia voi muuttaa **Täsmäytys**-sivulla vasta, kun täsmäytysprosessi on valmis. Löydät yhdistetyn asiakasprofiilientiteetin, joka luotiin **Entiteetit**-sivulla. Yhdistettyä asiakasentiteettiä kutsutaan nimellä **ConflationMatchPairs : CustomerInsights**.
-
-Jos haluat tehdä lisää muutoksia ja suorittaa vaiheen uudelleen, voit peruuttaa meneillään olevan vastaavuuden. Valitse **Pävitetään...**-teksti ja valitse sitten **Peruuta työ** näkyviin tulevan reunaruudun alaosasta.
-
-Kun vastaavuusprosessi on valmis, **Päivitetään...** teksti muuttuu tekstiksi **Onnistui** ja voit käyttää kaikkia sivun toimintoja uudelleen.
-
-Ensimmäisen täsmäytysprosessin tuloksena luodaan yhdistetty pääentiteetti. Kaikkien seuraavien täsmäytysten suoritusten tuloksena on tämän entiteetin laajennus.
-
-> [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
-
-## <a name="deduplication-output-as-an-entity"></a>Kaksoiskappaleiden poiston tulos entiteettinä
-Sen lisäksi, että entiteettien välisen vastaavuuden määrittämisessä luodaan yhdistetty pääentiteetti, kaksoiskappaleiden poistoprosessi luo myös uuden entiteetin jokaiselle entiteetille vastaavuusjärjestyksestä. Näin tunnistetaan tietueet kaksoiskappaleiden poistossa. Nämä entiteetit löytyvät yhdessä **ConflationMatchPairs:CustomerInsights**-entiteetin kanssa **Järjestelmä**-osasta **Entiteetit**-sivulta nimellä **Deduplication_Datasource_Entity**.
+Kaksoiskappaleiden poistamisprosessi luo uuden entiteetin jokaiselle entiteetille vastineparien avulla, jotta tunnistetaan pois jätetyt tietueet. Nämä entiteetit löytyvät yhdessä **ConflationMatchPairs:CustomerInsights**-entiteetin kanssa **Järjestelmä**-osasta **Entiteetit**-sivulta nimellä **Deduplication_DataSource_Entity**.
 
 Kaksoiskappaleiden poiston tulosentiteetti sisältää seuraavat tiedot:
 - Tunnukset/avaimet
   - Perusavaimen kenttä ja sen vaihtoehtoisten tunnusten kenttä. Vaihtoehtoisten tunnusten kenttä sisältää kaikki tietueen vaihtoehtoiset tunnukset.
-  - Deduplication_GroupId-kentässä on ryhmä tai klusteri, joka sellainen entiteetti määrittää, joka ryhmittelee kaikki samanlaiset tietueet määritettyjen kaksoiskappaleiden poiston kenttien perusteella. Tätä käytetään järjestelmän käsittelyssä. Jos manuaalisia kaksoiskappaleiden poiston sääntöjä ei ole määritetty, ja järjestelmän määrittämät kaksoiskappaleiden poiston säännöt on otettu käyttöön, tätä kenttää ei ehkä löydy kaksoiskappaleiden poiston tulosentiteetistä.
+  - Deduplication_GroupId-kentässä on ryhmä tai klusteri, joka sellainen entiteetti määrittää, joka ryhmittelee kaikki samanlaiset tietueet määritettyjen kaksoiskappaleiden poiston kenttien perusteella. Sitä käytetään järjestelmän käsittelyssä. Jos manuaalisia kaksoiskappaleiden poiston sääntöjä ei ole määritetty, ja järjestelmän määrittämät kaksoiskappaleiden poiston säännöt on otettu käyttöön, tätä kenttää ei ehkä löydy kaksoiskappaleiden poiston tulosentiteetistä.
   - Deduplication_WinnerId: Tämä kenttä sisältää määritettyjen ryhmien tai klustereiden voittaneen tunnuksen. Jos Deduplication_WinnerId on sama kuin tietueen ensisijaisen avaimen arvo, tietue on voittanut tietue.
 - Kenttiä käytetään kaksoiskappaleiden poiston sääntöjen määrittämisessä.
 - Sääntö- ja Pistemäärä-kentät määrittävät, mitä kaksoiskappaleiden poiston sääntöjä noudatetaan. Ne määrittävät myös vastaavan algoritmin palauttaman pistemäärän.
+   
+## <a name="run-the-match-process"></a>Suorita täsmäytysprosessi
+
+Määritetyillä vastaavuussäännöillä, mukaan lukien entiteettien välinen vastaavuuksien etsiminen ja kaksoiskappaleiden poistosäännöt, on määritetty, voit suorittaa täsmäytysprosessin. 
+
+Siirry kohtaan **Tiedot** > **Yhdistä** > **Täsmäytä** ja aloita prosessi valitsemalla **Suorita**. Vastaavan algoritmin valmistuminen kestää jonkin aikaa, eikä määritystä voi muuttaa, ennen kuin se on valmis. Tehdäksesi muutoksia sinun tulee peruuttaa suoritus. Valitse työn tila ja valitse sitten **Peruuta työ** **Edistymisen tiedot** -ruudussa.
+
+Onnistuneen suorituksen eli yhtenäisen asiakasprofiilientiteetin tulokset ovat **Entiteetit**-sivulla. Yhdistettyä asiakasentiteettiä kutsutaan **Profiilit**-osassa nimellä **Asiakkaat**. Ensimmäinen onnistunut täsmäytetty kohde luo yhtenäisen *Asiakas*-entiteetin. Kaikki myöhemmät vastineet laajentavat tätä entiteettiä.
+
+> [!TIP]
+> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
 
 ## <a name="review-and-validate-your-matches"></a>Täsmäytysten tarkistaminen ja vahvistaminen
 
-Arvioi täsmäytysparien laatu ja tarkenna sitä seuraavasti:
+Siirry kohtaan **Tiedot** > **Yhdistä** > **Täsmäytä**, jotta voit arvioida vastaavuusparien laatua ja tarkentaa niitä tarvittaessa.
 
-- **Täsmäytys**-sivulla on kaksi ruutua, joissa on alkuperäiset tiedot.
+Sivun yläreunassa olevassa ruudussa näkyvät tärkeimmät mittausarvot, joissa yhteenvedossa on täsmäytettyjen tietueiden ja kaksoiskappaleiden määrä.
 
-  - **Yksittäiset asiakkaat**: Näyttää järjestelmän määrittämien yksittäisten profiilien määrän.
-  - **Täsmäytetyt tietueet**: Näyttää kaikkien täsmäytysparien täsmäytysten määrän.
+:::image type="content" source="media/match-KPIs.png" alt-text="Rajattu näyttökuva vertailusivun mittausarvoista lukujen ja tietojen kanssa.":::
 
-- **Täsmäytysjärjestys**-taulukossa voi käyttää kunkin täsmäytysparin tuloksia vertailemalla niiden tietueiden määrää, jotka saatiin tästä täsmäytysparientiteetin ja onnistuneesti täsmäytettyjen tietueiden prosenttiosuuden vertailusta.
+- **Yksilöllisissä lähdetietueissa** näkyy viime hakusuorituksessa käsiteltyjen yksittäisten lähdetietueiden määrä.
+- **Täsmäytettyjen ja yhdistätyjen tietueiden** perusteella voidaan korostaa, kuinka monta yksilöllistä tietuetta on jäljellä vastaavuussääntöjen käsittelyn jälkeen.
+- **Vain täsmäytetyt tietueet** osoittavat vain kaikkien vastineparien vastaavuudet.
 
-- Entiteetin **Säännöt**-osassa **Täsmäytysjärjestys**-taulukossa on sääntötasolla onnistuneesti täsmäytettyjen tietueiden prosenttiosuus. Kun valitset säännön vieressä olevan taulukkosymbolin, voit tarkastella kaikkia näitä sääntöjä sääntötasolla. Tietueiden osajoukko kannattaa tarkistaa ja näin varmistaa, että tietueet on täsmäytetty oikein.
+Voit arvioida kunkin vastaavuusparin ja sen sääntöjen tuloksia **Täsmäytettyjen tietueiden tiedot** -taulukossa. Vertaa vastineparista tulleiden tietueiden määrää niiden tietueiden prosenttiosuuteen, jotka on hyväksytty.
 
-- Kokeilemalla ehdoille erilaisia tarkkuusrajoja voit määrittää optimaalisen arvon.
+Tarkista vastineparin säännöt, jotta näet, kuinka monta prosenttia onnistuneesti liitetyistä tietueista on säännön tasolla. Valitse kolme pistettä (...) ja valitse sitten **Vastineen esikatselu**, jotta voit tarkastella kaikkia tietueita sääntötasolla. Suosittelemme, että joitakin tietueita tarkistetaan, että ne on määritetty oikein.
 
-  1. Valitse sen täsmäytysparin kolme pistettä (...), jota haluat kokeilla, ja valitse sitten **Muokkaa**.
+Yritä etsiä optimaalinen arvo eri tarkkuuskynnyksillä.
 
-  2. Valitse ehto, jota haluat kokeilla. Jokaista ehtoa edustaa yksi rivi **Täsmäytyssääntö**-ruudussa.
+  1. Valitse sen säännön kolme pistettä (...), jota haluat kokeilla, ja valitse sitten **Muokkaa**.
 
-  3. **Ehtojen esikatselu** -sivun näkymän sisältö riippuu ehdolle valitusta tarkkuustasosta. Etsi valitun ehdon täsmättyjen ja ei-täsmättyjen tietueiden määrä.
+  2. Vaihda tarkkuusarvot niiden ehtojen osalta, joita haluat tarkistella.
 
-     Tutustu eri raja-arvotasojen vaikutuksiin. Voit verrata eri raja-arvotasoilla täsmättävien tietueiden määrää ja tarkastella kunkin vaihtoehdon tietueita. Valitse kaikki ruudut ja tarkista taulukko-osan tiedot.
+  3. Valitse **Esikatselu**, jotta näet valitun ehdon täsmäyttämättömien ja vertaamattomien tietueiden määrän.
 
-## <a name="optimize-your-matches"></a>Täsmäytysten optimoiminen
+## <a name="manage-match-rules"></a>Täsmäytyssääntöjen hallinta
 
-Paranna laatua määrittämällä joitakin täsmäytysparametreja uudelleen seuraavasti:
+Voit määrittää ja hienosäätää useimpia vastineparametreja.
 
-- **Vaihda täsmäytysjärjestystä** valitsemalla **Muokkaa** ja muuttamalla täsmäytysjärjestyksen kenttiä.
+:::image type="content" source="media/match-rules-management.png" alt-text="Näyttökuva avattavasta valikosta, jossa on vastinesäännön asetukset.":::
 
-  > [!div class="mx-imgBorder"]
-  > ![Muokkaa tietojen täsmäytysjärjestystä](media/configure-data-match-order-edit.png "Muokkaa tietojen täsmäytysjärjestystä")
+- **Muuta sääntöjen järjestystä**, jos määritit useita sääntöjä. Voit järjestää vastaavuussäännöt uudelleen valitsemalla **Siirrä ylöspäin**- ja **Siirrä alaspäin**  -vaihtoehdot tai vetämällä ja pudottamalla.
 
-- **Muuta sääntöjen järjestystä**, jos määritit useita sääntöjä. Voit järjestää täsmäytyssäännöt uudelleen valitsemalla **Siirrä ylös**- ja **Siirrä alas** -vaihtoehdon täsmäytyssääntöjen ruudukossa.
-
-  > [!div class="mx-imgBorder"]
-  > ![Muuta sääntöjärjestystä](media/configure-data-change-rule-order.png "Muuta sääntöjärjestystä")
-
-- **Monista säännöt**, jos olet määrittänyt täsmäytyssäännön ja haluat luoda samanlaisen säännön, jota muokkaat. Voit tehdä niin valitsemalla **Monista**.
-
-  > [!div class="mx-imgBorder"]
-  > ![Monista sääntö](media/configure-data-duplicate-rule.png "Monista sääntö")
+- **Muuta säännön ehtoja** valitsemalla **Muokkaa** ja valitse sitten eri kentät.
 
 - **Poista säännön aktivointi**, jos haluat säilyttää vastaavuussäännön, mutta poistaa sen vastaavuusprosessista.
 
-  > [!div class="mx-imgBorder"]
-  > ![Poista säännön aktivointi](media/configure-data-deactivate-rule.png "Poista säännön aktivointi")
+- **Kopioi säännöt**, jos olet määrittänyt vastaavuussäännön ja haluat luoda samanlaisen säännön muokkauksin, valitse **Kopioi**.
 
-- **Muokkaa sääntöjä** valitsemalla **Muokkaa**-symboli. Voit ottaa käyttöön myös seuraavat muutokset:
+- **Poista sääntö** valitsemalla **Poista**-symboli.
 
-  - Muuta ehdon määritteitä: Valitse uudet määritteet tietyltä ehtoriviltä.
-  - Muuta ehdon raja-arvoa: Muokkaa tarkkuuden liukusäädintä.
-  - Muuta ehdon normalisointimenetelmää: Päivitä normalisointimenetelmä.
+## <a name="specify-custom-match-conditions"></a>Mukautettujen täsmäytysehtojen määritteleminen
 
-## <a name="specify-your-custom-match-records"></a>Mukautettujen täsmäytystietueiden määrittäminen
+Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joita ne eivät voi koskaan vastata. Nämä säännöt voidaan ladata korvaamaan vakiomuotoinen täsmäytysprosessi. Jos tietueissamme on esimerkiksi John Doe I ja John Doe II, järjestelmä voi täsmäyttää ne yhtenä henkilönä. Mukautettujen täsmäytyssääntöjen avulla voit määrittää, että profiilit viittaavat eri ihmisiin. 
 
-Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joita ne eivät voi koskaan vastata. Nämä säännöt voidaan joukkoladata täsmäytysprosessissa.
+1. Siirry kohtaan **Tiedot** > **yhdistä** > **Täsmäytä** ja valitse **Mukautettu vastine** **Täsmäytettyjen tietueiden tiedot** -osassa.
 
-1. Valitse **Mukauta täsmäytys** -vaihtoehto **Täsmäytysjärjestys**-näytössä.
+  :::image type="content" source="media/custom-match-create.png" alt-text="Näyttökuva täsmäytyssääntöosasta, jossa on mukautettu täsmäytyksen hallinta korostettuna.":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Luo mukautettu täsmäytys](media/custom-match-create.png "Luo mukautettu täsmäytys")
+1. Jos mukautettuja vastaavuussääntöjä ei ole määritetty, näet uuden **mukautettu vastine** -ruudun, jossa on lisätietoja.
 
-2. Jos sinulla ei ole ladattuja entiteettejä, näkyvissä on uusi **Mukautettu täsmäytys** -valintaikkuna, johon on annettava tietoja. Jos olet antanut nämä tiedot aiemmin, siirry vaiheeseen 8.
+1. Valitse **Täytä malli**, jos haluat hakea mallitiedoston, joka voi määrittää entiteetit ja niiden tietueet, joiden on aina vastattava toisiaan tai jotka eivät koskaan saa vastata toisiaan. Täytä vastaa aina- ja ei vastaa koskaan -tietueet erikseen kahdessa eri tiedostossa.
 
-   > [!div class="mx-imgBorder"]
-   > ![Uusi mukautettu täsmäytys -valintaikkuna](media/custom-match-new-dialog-box.png "Uusi mukautettu täsmäytys -valintaikkuna")
-
-3. Valitse **Täytä malli**, jos haluat hakea mallitiedoston, joka voi määrittää entiteetit ja niiden tietueet, joiden on aina vastattava toisiaan tai jotka eivät koskaan saa vastata toisiaan. Täytä vastaa aina- ja ei vastaa koskaan -tietueet erikseen kahdessa eri tiedostossa.
-
-4. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Jos haluat esimerkiksi, että myyntientiteetin ensisijainen avain 12345 vastaa aina yhteyshenkilöentiteetin ensisijaista avainta 34567, määritä seuraavat arvot:
+1. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Jos esimerkiksi haluat, että *Myynti*-kohteen perusavain *12345* vastaa aina *Yhteyshenkilö*-kohteen perusavainta *34567*, täytä malli:
     - Entiteetti1: Myynti
     - Entiteetti1Avain: 12345
     - Entiteetti2: Yhteyshenkilö
@@ -248,22 +231,22 @@ Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joit
    
    Jos haluat määrittää mukautetun vastaavuuden entiteetin kaksoiskappaleiden poistolle, määritä sama entiteetti sekä kohtaan Entiteetti1 ja Entiteetti2 ja määritä erilaisetn ensisijaisen avaimen arvot.
 
-5. Kun olet lisännyt kaikki haluamasi korvaukset, tallenna mallitiedosto.
+1. Kun olet lisännyt kaikki haluamasi korvaukset, tallenna mallitiedosto.
 
-6. Valitse **Tiedot** > **Tietolähteet** ja käsittele mallitiedostot uusina entiteetteinä. Kun ne on käsitelty, voit käyttää niitä täsmäytyskokoonpanon määrityksessä.
+1. Valitse **Tiedot** > **Tietolähteet** ja käsittele mallitiedostot uusina entiteetteinä. Kun ne on käsitelty, voit käyttää niitä täsmäytyskokoonpanon määrityksessä.
 
-7. Kun tiedostot on ladattu ja entiteetit ovat käytettävissä, valitse uudelleen **Mukautettu täsmäytys** -vaihtoehto. Näkyviin tulee vaihtoehtoja, joilla määritetään sisällytettävät kohteet. Valitse vaaditut entiteetit avattavasta valikosta.
+1. Kun tiedostot on ladattu ja entiteetit ovat käytettävissä, valitse uudelleen **Mukautettu täsmäytys** -vaihtoehto. Näkyviin tulee vaihtoehtoja, joilla määritetään sisällytettävät kohteet. Valitse vaaditut entiteetit avattavasta valikosta.
 
-   > [!div class="mx-imgBorder"]
-   > ![Mukautetun täsmäytyksen korvaukset](media/custom-match-overrides.png "Mukautetun täsmäytyksen korvaukset")
+   :::image type="content" source="media/custom-match-overrides.png" alt-text="Näyttökuva dialogista, kun haluat valita mukautetun vastineen skenaarion ohitukset.":::
 
-8. Valitse entiteetit, joita haluat käyttää **Täsmäytä aina**- ja **Älä täsmäytä koskaan** -kohdissa. Valitse sitten **Valmis**.
+1. Valitse entiteetit, joita haluat käyttää **Täsmäytä aina**- ja **Älä täsmäytä koskaan** -kohdissa. Valitse sitten **Valmis**.
 
-9. Valitse **Tallenna** juuri määritetyn mukautetun täsmäytyskokoonpanon **Täsmäytä**-sivulla.
+1. Ota mukautettu täsmäytysmääritys käyttöön valitsemalla **Täsmäytys**-sivulla **Tallenna**.
 
-10. Aloita täsmäytysprosessi valitsemalla **Suorita** **Täsmäytys**-sivulla. Mukautettu täsmäytyskokoonpano tulee voimaan. Järjestelmän täsmäyttämät säännöt korvataan määritetyllä kokoonpanolla.
+1. Aloita vastaava prosessi valitsemalla **Täsmäytys**-sivulla **Suorita**. Mukautettu täsmäytysmääritys ohittaa muut määritetyt vastaavuussäännöt.
 
-11. Kun täsmäytys on tehty, voit tarkistaa **ConflationMatchPair**-entiteetin ja vahvistaa, että korvaukset on otettu käyttöön yhdistämisen täsmäytyksissä.
+> [!TIP]
+> Mene kohtaan **Tieto** > **Entiteetit** ja tarkista **ConflationMatchPair**-entiteetti varmistaaksesi, että ohitukset otetaan käyttöön.
 
 ## <a name="next-step"></a>Seuraava vaihe
 

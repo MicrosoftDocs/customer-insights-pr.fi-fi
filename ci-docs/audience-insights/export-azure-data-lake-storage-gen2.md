@@ -2,19 +2,19 @@
 title: Customer Insightsin tietojen vieminen Azure Data Lake Storage Gen2:een
 description: Tietoja yhteyden määrittämisestä Azure Data Lake Storage Gen2:een.
 ms.date: 02/04/2021
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: b00c3d6178150cbc93fe800779f094809d4dc67b
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 7c0eef575f745efa6312d7141a6dd96607f9797e
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477175"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596633"
 ---
 # <a name="connector-for-azure-data-lake-storage-gen2-preview"></a>Azure Data Lake Storage Gen2 -yhdistin (esiversio)
 
@@ -29,8 +29,8 @@ Tallenna Customer Insightsin tiedot Azure Data Lake Storage Gen2:een tai käytä
 1. Anna kohteelle tunnistettava nimi **Näyttönimi**-kentässä.
 
 1. Anna Azure Data Lake Storage Gen2:lle **tilin nimi**, **tilin avain** ja **säilö**.
-    - Lisätietoja tallennustilin luomisesta Azure Data Lake Storage Gen2:ssa on kohdassa [Tallennustilin luominen](https://docs.microsoft.com/azure/storage/blobs/create-data-lake-storage-account). 
-    - Lisätietoja Azure Data Lake Gen2:n tallennustilin nimestä ja tilin avaimesta on kohdassa [Azure-portaalin tallennustilin asetusten hallinta](https://docs.microsoft.com/azure/storage/common/storage-account-manage).
+    - Lisätietoja tallennustilin luomisesta Azure Data Lake Storage Gen2:ssa on kohdassa [Tallennustilin luominen](/azure/storage/blobs/create-data-lake-storage-account). 
+    - Lisätietoja Azure Data Lake Gen2:n tallennustilin nimestä ja tilin avaimesta on kohdassa [Azure-portaalin tallennustilin asetusten hallinta](/azure/storage/common/storage-account-manage).
 
 1. Valitse **Seuraava**.
 

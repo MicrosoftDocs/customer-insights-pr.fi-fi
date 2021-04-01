@@ -2,19 +2,19 @@
 title: Yritysprofiilien rikastaminen kolmannen osapuolen Leadspace-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
 ms.date: 11/24/2020
-ms.reviewer: kishorem
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: kishorem-MS
+ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 41c56aece043c2d7658fd2655713e1e98775edec
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269418"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597645"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
 

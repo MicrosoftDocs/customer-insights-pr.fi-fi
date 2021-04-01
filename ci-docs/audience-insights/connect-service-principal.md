@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267718"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596495"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Yhteyden muodostaminen Azure Data Lake Storage Gen2 -tiliin käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektilla
 
@@ -23,7 +23,7 @@ Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoi
 Palveluobjektin avulla voi turvallisesti [lisätä Common Data Model -kansion tietolähteenä tai muokata sitä](connect-common-data-model.md) tai [luoda uuden ympäristön tai päivittää aiemmin luotua ympäristöä](manage-environments.md#create-an-environment-in-an-existing-organization).
 
 > [!IMPORTANT]
-> - Azure Data Lake Gen2 -tallennustilillä, joka yrittää käyttää palveluobjektia, on [oltava käytössä hierarkkinen nimitila (HNS)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Azure Data Lake Gen2 -tallennustilillä, joka yrittää käyttää palveluobjektia, on [oltava käytössä hierarkkinen nimitila (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
 > - Palveluobjektin luontiin tarvitaan Azure-tilauksen järjestelmänvalvojan oikeudet.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektin luominen
@@ -48,7 +48,7 @@ Tarkista ennen uuden käyttäjäryhmän merkityksellisten tietojen palveluobjekt
 
 ### <a name="create-a-new-service-principal"></a>Uuden palveluobjektin luominen
 
-1. Asenna uusin **Azure Active Directory PowerShell for Graph** -versio. Lisätietoja on kohdassa [Azure Active Directory PowerShell for Graphin asentaminen](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Asenna uusin **Azure Active Directory PowerShell for Graph** -versio. Lisätietoja on kohdassa [Azure Active Directory PowerShell for Graphin asentaminen](/powershell/azure/active-directory/install-adv2).
    - Valitse tietokoneessa näppäimistön Windows-avain, tee haku hakusanalla **Windows PowerShell** ja **suorita järjestelmänvalvojana**.
    
    - Anna avautuvassa PowerShell-ikkunassa `Install-Module AzureAD`.

@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267902"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597415"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen
 
@@ -29,9 +29,9 @@ Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppim
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Azuren automaattianalyysipalvelujen työtilan määrittäminen
 
-1. [Azuren automaattianalyysipalvelujen työtilan luonti](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) sisältää lisätietoja työtilan luontivaihtoehdoista. Paras tulos saadaan luomalla työtila sillä Azure-alueella, joka on maantieteellisesti lähinnä Customer Insights -ympäristöä.
+1. [Azuren automaattianalyysipalvelujen työtilan luonti](/azure/machine-learning/concept-workspace#-create-a-workspace) sisältää lisätietoja työtilan luontivaihtoehdoista. Paras tulos saadaan luomalla työtila sillä Azure-alueella, joka on maantieteellisesti lähinnä Customer Insights -ympäristöä.
 
-1. Työtilaa käytetään [Azuren koneoppimisstudion](https://ml.azure.com/) kautta. Työtilaa voi [käyttää eri tavoin](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
+1. Työtilaa käytetään [Azuren koneoppimisstudion](https://ml.azure.com/) kautta. Työtilaa voi [käyttää eri tavoin](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Azuren automaattianalyysipalvelujen suunnitteluohjelman käyttäminen
 
@@ -39,13 +39,13 @@ Azuren automaattianalyysipalvelujen suunnitteluohjelma on visuaalinen kaavio, jo
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Azuren automaattianalyysipalvelujen SDK:n käyttäminen
 
-Data-analyytikot ja tekoälykehittäjät luovat koneoppisen työnkulkuja käyttämällä [Azuren automaattianalyysipalvelujen SDK:ta](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true). Tällä hetkellä SDK:lla koulutettuja malleja ei voi integroida suoraan Customer Insightsiin. Customer Insights -integrointiin tarvitaan mallia käyttävä eräpäättelyjakso.
+Data-analyytikot ja tekoälykehittäjät luovat koneoppisen työnkulkuja käyttämällä [Azuren automaattianalyysipalvelujen SDK:ta](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). Tällä hetkellä SDK:lla koulutettuja malleja ei voi integroida suoraan Customer Insightsiin. Customer Insights -integrointiin tarvitaan mallia käyttävä eräpäättelyjakso.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Customer Insights -integroinnin eräjaksovaatimukset
 
 ### <a name="dataset-configuration"></a>Tietojoukon määritys
 
-Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja eräpäättelyjaksoon. Nämä tietojoukot on rekisteröitävä työtilassa. Tällä tuetaan vain [taukokkomuotoisia tietojoukkoja](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset), joiden muoto on.csv. Entiteettitietoja vastaavat tietojoukot on muutettava jaksoparametreiksi.
+Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja eräpäättelyjaksoon. Nämä tietojoukot on rekisteröitävä työtilassa. Tällä tuetaan vain [taukokkomuotoisia tietojoukkoja](/azure/machine-learning/how-to-create-register-datasets#tabulardataset), joiden muoto on.csv. Entiteettitietoja vastaavat tietojoukot on muutettava jaksoparametreiksi.
    
 * Suunnitteluohjelman tietojoukkoparametrit
    
@@ -76,7 +76,7 @@ Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja 
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Jaksotietojen tuominen Customer Insightsiin
 
-* Suunnitteluohjelmassa on [tietojen vientimoduuli](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data), jolla jakson tuloste voidaan viedä Azure-tallennustilaan. Tällä hetkellä moduulin tietosäilön tyypin on oltava **Azure Blob -säilö**, minkä lisäksi **tietosäilö** ja suhteellinen **polku** on muutettava parametreiksi. Customer Insights korvaa nämä molemmat parametrit suorituksen aikana tietosäilöllä ja polulla, jota tuote voi käyttää.
+* Suunnitteluohjelmassa on [tietojen vientimoduuli](/azure/machine-learning/algorithm-module-reference/export-data), jolla jakson tuloste voidaan viedä Azure-tallennustilaan. Tällä hetkellä moduulin tietosäilön tyypin on oltava **Azure Blob -säilö**, minkä lisäksi **tietosäilö** ja suhteellinen **polku** on muutettava parametreiksi. Customer Insights korvaa nämä molemmat parametrit suorituksen aikana tietosäilöllä ja polulla, jota tuote voi käyttää.
    > [!div class="mx-imgBorder"]
    > ![Tietojen vientimoduulin määritys](media/intelligence-designer-importdata.png "Tietojen vientimoduulin määritys")
    

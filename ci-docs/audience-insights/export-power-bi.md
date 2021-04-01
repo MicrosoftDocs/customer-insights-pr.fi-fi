@@ -2,19 +2,19 @@
 title: Power BI -yhdistin
 description: Tietoja Dynamics 365 Customer Insights -yhdistimen käytöstä Power BI:ssä.
 ms.date: 09/21/2020
-ms.reviewer: sthe
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5477084"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596035"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI -yhdistin (esiversio)
 
@@ -23,7 +23,7 @@ Tietojen visualisointien luominen Power BI Desktopin avulla. Voit luoda lisää 
 ## <a name="prerequisites"></a>Edellytykset
 
 - Käytössä on yhtenäistetyt asiakasprofiilit.
-- Tietokoneellasi on asennettuna [Microsoft Power BI Desktopin](https://powerbi.microsoft.com/desktop/) viimeisin versio. [Lisätietoja aiheesta: Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-what-is-desktop).
+- Tietokoneeseen on asennettu uusin [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/). [Lisätietoja aiheesta: Power BI Desktop](/power-bi/desktop-what-is-desktop).
 
 ## <a name="configure-the-connector-for-power-bi"></a>Määritä Power BI -yhdistin
 
@@ -47,7 +47,7 @@ Tietojen visualisointien luominen Power BI Desktopin avulla. Voit luoda lisää 
 
 ## <a name="large-data-sets"></a>Suuret tietojoukot
 
-Power BI:n Customer Insights -yhdistin on suunniteltu toimimaan tietojoukoilla, jotka sisältävät enintään 1 miljoonaa asiakasprofiilia. Suurempien tietojoukkojen tuominen saattaa toimia, mutta se kestää kauan. Lisäksi prosessi saattaa saavuttaa aikakatkaisun Power BI -rajoitusten vuoksi. Lisätietoja: [Power BI: Suuria tietojoukkoja koskevat suositukset](https://docs.microsoft.com/power-bi/admin/service-premium-what-is#large-datasets). 
+Power BI:n Customer Insights -yhdistin on suunniteltu toimimaan tietojoukoilla, jotka sisältävät enintään 1 miljoonaa asiakasprofiilia. Suurempien tietojoukkojen tuominen saattaa toimia, mutta se kestää kauan. Lisäksi prosessi saattaa saavuttaa aikakatkaisun Power BI -rajoitusten vuoksi. Lisätietoja: [Power BI: Suuria tietojoukkoja koskevat suositukset](/power-bi/admin/service-premium-what-is#large-datasets). 
 
 ### <a name="work-with-a-subset-of-data"></a>Alitietojoukon käsitteleminen
 
@@ -70,4 +70,3 @@ Voit tunnistaa ja poistaa kaksoiskappaleiden suhteita.
 Kun olet poistanut suhteiden kaksoiskappaleet, yritä määrittää Power BI -yhdistin uudelleen. Ympäristön tulisi nyt olla käytettävissä.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
-

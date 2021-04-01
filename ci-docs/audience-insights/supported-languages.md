@@ -1,31 +1,31 @@
 ---
 title: Käyttäjäryhmän merkityksellisten tietojen tuetut kielet
 description: Tietoja kielituesta ja sen määrittäminen.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268176"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595468"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>Käyttäjäryhmän merkityksellisten tietojen kielien tukiominaisuus
 
-Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuus tukee useita kieliä. Tässä aiheessa on luettelo käytettävissä olevista kielistä, ja se antaa ohjeet niiden vaihtamiseen sekä yleiskuvan siitä, mitä sisältöä käännetään.
+Dynamics 365 Customer Insightsin käyttäjäryhmän merkitykselliset tiedot on käännetty useille kielille. Seuraavassa luettelossa on saatavilla olevia kieliä ja tietoja siitä, mitä on käännetty. Saat lisätietoja myös kieliasetusten muuttamisesta. 
 
 ## <a name="languages"></a>Kielivaihtoehdot
 
 | Kielen nimi (englanti)|  Kielennimi (äidinkieli) |
 | ------------- | ------------- |
 | baski | euskara |
-| bulgaria | Български |
+| bulgaria | български |
 | katalaani | català |
 | kiina (yksinkertaistettu) | 中文(简体) |
 | kiina (perinteinen) | 中文(繁體) |
@@ -42,20 +42,20 @@ Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen o
 | kreikka | Ελληνικά |
 | hindi | हिंदी |
 | unkari | magyar |
-| indonesia | Bahasa Indonesia |
+| indonesia | Indonesia |
 | italia | italiano |
 | japani | 日本語 |
-| kazakki | Қазақ |
+| kazakki | қазақ тілі |
 | korea | 한국어 |
 | latvia | latviešu |
 | liettua | lietuvių |
-| malaiji | Bahasa Melayu |
-| norja (bokmål) | norsk (bokmål) |
+| malaiji | Melayu |
+| norja (bokmål) | norsk bokmål |
 | puola | polski |
 | portugali (Brasilia) | português |
 | portugali (Portugali) | português |
 | romania | română |
-| venäjä | русский |
+| venäjä | pусский |
 | serbia (kyrillinen) | српски |
 | serbia (latinalainen) | srpski |
 | slovakki | slovenčina |

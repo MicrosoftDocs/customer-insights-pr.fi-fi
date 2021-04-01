@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270200"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598335"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Azuren koneoppimisstudioon (perinteinen) perustuvien mallien käyttäminen
 
@@ -37,7 +37,7 @@ Ensimmäisessä vaiheessa luodaan koneoppimisstudiolle (perinteinen) työtila ja
 
 1. Hae **Koneoppimisstudion työtila** ja valitse **Luo**.
 
-1. Anna [työtilan luontiin](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace) tarvittavat tiedot. Valitse **Verkkopalvelusuunnitelman hinnoittelutaso** sen perusteella, kuinka paljon tietoja suunnittelet tuovasi. Paras tulos saadaan valitsemalla maantieteellisesti lähin **sijainti**.
+1. Anna [työtilan luontiin](/azure/machine-learning/studio/create-workspace) tarvittavat tiedot. Valitse **Verkkopalvelusuunnitelman hinnoittelutaso** sen perusteella, kuinka paljon tietoja suunnittelet tuovasi. Paras tulos saadaan valitsemalla maantieteellisesti lähin **sijainti**.
 
 1. Koneoppimisstudion työtilan koontinäyttö avautuu, kun resurssi on luotu. Valitse **Käynnistä koneoppimisstudio**.
 
@@ -65,7 +65,7 @@ Voit nyt luoda uuden kokeilun tai tuoda aiemmin luodun kokeilumallin esimerkkiva
 
    ![Ennakoivan verkkopalvelun määrittäminen](media/predictive-webservice-control.png)
 
-1. Kun ennakoiva verkkokokeilu toimii oikein, se voidaan ottaa käyttöön automaattisessa aikataulutuksessa. Verkkopalvelun käyttäminen Customer Insightsin kanssa määritetään valitsemalla **Ota verkkopalvelu käyttöön** > **Ota verkkopalvelu käyttöön [uusi] – esiversio**. [Lisätietoja verkkopalvelun käyttöönottamisesta](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
+1. Kun ennakoiva verkkokokeilu toimii oikein, se voidaan ottaa käyttöön automaattisessa aikataulutuksessa. Verkkopalvelun käyttäminen Customer Insightsin kanssa määritetään valitsemalla **Ota verkkopalvelu käyttöön** > **Ota verkkopalvelu käyttöön [uusi] – esiversio**. [Lisätietoja verkkopalvelun käyttöönottamisesta](/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
 
    ![Ennakoivan verkkopalvelun käyttöönottaminen](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ Seuraava kuvassa näkyy Azuren koneoppimisstudion mallin kouluttaminen ja arvioi
 
 ![Azuren koneoppimisstudion vaihtuvuusmalli](media/azure-machine-learning-model.png)
 
-Lisäksi käytetään **permutaatio-ominaisuuden tärkeys** -tekniikkaa, mikä on tärkeä osa mallin optimointia. Valmiissa malleissa ei ole juuri käsitystä siitä, millainen vaikutus tietyllä ominaisuudella on lopulliseen ennusteeseen. Ominaisuuden tärkeyslaskin laskee mukautetulla algoritmilla yksittäisten ominaisuuksien vaikutuksen tietyn mallin lopputulokseen. Ominaisuuden tärkeys normalisoidaan arvojen +1ja -1 välille. Negatiivinen vaikutus tarkoittaa, että vastaava ominaisuus vaikuttaa yleisen käsityksen vastaisesti tulokseen, minkä vuoksi se pitäisi poistaa mallista. Positiivinen vaikutus ilmaisee, että ominaisuus vaikuttaa merkittävästi ennusteen suuntaan. Nämä arvot eivät ole korrelaatiokertoimia, sillä ne ovat erilaisia mittareita. Lisätietoja on kohdassa [Permutaatio-ominaisuuden tärkeys](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Lisäksi käytetään **permutaatio-ominaisuuden tärkeys** -tekniikkaa, mikä on tärkeä osa mallin optimointia. Valmiissa malleissa ei ole juuri käsitystä siitä, millainen vaikutus tietyllä ominaisuudella on lopulliseen ennusteeseen. Ominaisuuden tärkeyslaskin laskee mukautetulla algoritmilla yksittäisten ominaisuuksien vaikutuksen tietyn mallin lopputulokseen. Ominaisuuden tärkeys normalisoidaan arvojen +1ja -1 välille. Negatiivinen vaikutus tarkoittaa, että vastaava ominaisuus vaikuttaa yleisen käsityksen vastaisesti tulokseen, minkä vuoksi se pitäisi poistaa mallista. Positiivinen vaikutus ilmaisee, että ominaisuus vaikuttaa merkittävästi ennusteen suuntaan. Nämä arvot eivät ole korrelaatiokertoimia, sillä ne ovat erilaisia mittareita. Lisätietoja on kohdassa [Permutaatio-ominaisuuden tärkeys](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 Koko [vaihtuvuuskokemus on saatavana Azure AI Galleryssä](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ Koko [tuotesuosituskokeilu on saatavana Azure AI Galleryssä.](https://gallery.a
 
 ## <a name="integrate-custom-models"></a>Mukautettujen mallien integrointi
 
-Näiden ennusteiden käyttö Customer Insightsissa edellyttää, että ennusteet ja asiakastunnukset **viedään**. [Vie ne samaan Azure Blob -säilösijaintiin](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs), johon veit lähdetiedot. Ennakoiva verkkopalvelu voidaan aikatauluttaa päivittämään pistemäärät säännöllisesti.
+Näiden ennusteiden käyttö Customer Insightsissa edellyttää, että ennusteet ja asiakastunnukset **viedään**. [Vie ne samaan Azure Blob -säilösijaintiin](/azure/storage/common/storage-import-export-data-from-blobs), johon veit lähdetiedot. Ennakoiva verkkopalvelu voidaan aikatauluttaa päivittämään pistemäärät säännöllisesti.
 
 Mukautetun mallin luomia tietoja voidaan käyttää rikastuttamaan asiakastietoja entisestään. Lisätietoja on aiheessa [Mukautetut koneoppimismallit](custom-models.md).
 
