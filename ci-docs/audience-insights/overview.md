@@ -2,19 +2,19 @@
 title: Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus
 description: Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus.
 ms.date: 01/18/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5476991"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598626"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus
 
@@ -25,7 +25,7 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
 - **Tietosiilojen poistaminen ja asiakastietojen yhtenäistäminen**
 
   - Tiedot on helppo yhdistää ja yhtenäistää. Tapahtuma-, havainto- ja toimintatiedot voidaan tuoda suosituista [tietolähteistä valmiiden yhdistimien avulla](data-sources.md).
-  - Asiakastiedot voidaan muuntaa älykkäästi muodostamalla yhtenäisiä asiakasprofiileja, jotka ovat [Common Data Modelin](https://docs.microsoft.com/common-data-model/) mukaisia. Asiakkaiden tunnistamisen ratkaiseminen AI/ML-pohjaisilla suosituksilla.
+  - Asiakastiedot voidaan muuntaa älykkäästi muodostamalla yhtenäisiä asiakasprofiileja, jotka ovat [Common Data Modelin](/common-data-model/) mukaisia. Asiakkaiden tunnistamisen ratkaiseminen AI/ML-pohjaisilla suosituksilla.
 
 - **Microsoft Graphiin sisältyvien älykkäiden käyttäjäryhmätietojen rikastaminen**
 
@@ -42,7 +42,7 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
 - **Data-analyytikot/järjestelmänvalvojat:**
 
   - Mahdollisuus käyttää monipuolista yhdistinvalikoimaa kaikkien asiakastietojen käsittelyyn.
-  - Mahdollisuus yhtenäistää asiakastiedot ja muuntaa ne [Common Data Model](https://docs.microsoft.com/common-data-model/) -muotoon.
+  - Mahdollisuus yhtenäistää asiakastiedot ja muuntaa ne [Common Data Model](/common-data-model/) -muotoon.
   - Asiakastietojen rikastaminen Microsoft Graphiin sisältävillä älykkäille kohdeyleisötiedoilla, kuten tuotemerkkien affiniteetilla ja kiinnostuksenkohteilla.
   - Napsautuksiin eikä koodin perustuva määritys- ja virheenkorjauskokemus helpottaa käyttäjäryhmän merkityksellisten tietojen määrittämistä ja mahdollisten ongelmien tunnistamista.
   - Eri lähteistä peräisin olevien asiakastietojen siistiminen ja standardointi tekoälyyn perustuvilla suosituksilla.  

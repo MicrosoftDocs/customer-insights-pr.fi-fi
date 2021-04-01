@@ -2,19 +2,19 @@
 title: Reaaliaikainen tietojen käsittely ja rajoitukset
 description: Yleisiä tietoja käyttäjäryhmän merkityksellisten tietojen reaaliaikaisista ominaisuuksista
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270276"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598565"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Reaaliaikainen tietojen käsittely (esiversio)
 
@@ -54,7 +54,7 @@ Reaaliaikaisen ohjelmointirajapinnan avulla voi julkaista uuden aktiviteetin lä
 
 Reaaliaikainen ohjelmointirajapinta voidaan yhdistää kahdella tavalla:
 
-- [epäsuorasti](#connect-via-the-dynamics-365-customer-insights-connector) käyttämällä [Dynamics 365 Customer Insights -liitintä](https://docs.microsoft.com/connectors/customerinsights/)
+- [epäsuorasti](#connect-via-the-dynamics-365-customer-insights-connector) käyttämällä [Dynamics 365 Customer Insights -liitintä](/connectors/customerinsights/)
 - [suoraan](#connect-directly-to-the-real-time-api) koodin kautta
 
 Seuraavat edellytykset koskevat molempia tapoja:
@@ -66,13 +66,13 @@ Seuraavat edellytykset koskevat molempia tapoja:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Yhdistä Dynamics 365 Customer Insights -liittimen kautta
 
-Reaaliaikainen ohjelmointirajapinta voi käsitellä tietoja erityisestä Power Platform -liittimestä, [Dynamics 365 Customer Insights -liittimestä](https://docs.microsoft.com/connectors/customerinsights/), ilman että sinun tarvitsee kirjoittaa ja ottaa käyttöön mitään koodia.    
-Yhdistin voi tehdä samat reaaliaikaiset toiminnot kuin ohjelmointirajapinta. Tarvitset kelvollisen käyttöoikeuden premium-liittimiin. Lisätietoja:[Power Appsin ja Power Automaten käyttöoikeuksien usein kysytyt kysymykset](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+Reaaliaikainen ohjelmointirajapinta voi käsitellä tietoja erityisestä Power Platform -liittimestä, [Dynamics 365 Customer Insights -liittimestä](/connectors/customerinsights/), ilman että sinun tarvitsee kirjoittaa ja ottaa käyttöön mitään koodia.    
+Yhdistin voi tehdä samat reaaliaikaiset toiminnot kuin ohjelmointirajapinta. Tarvitset kelvollisen käyttöoikeuden premium-liittimiin. Lisätietoja:[Power Appsin ja Power Automaten käyttöoikeuksien usein kysytyt kysymykset](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps ja/tai Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic-sovellukset](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps ja/tai Power Automate](/connectors/)
+- Azure [Logic-sovellukset](/azure/connectors/apis-list)
 
-Lisätietoja virtojen luomisesta on [Power Automate -ohjeessa](https://docs.microsoft.com/power-automate/).
+Lisätietoja virtojen luomisesta on [Power Automate -ohjeessa](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Yhteyden muodostaminen suoraan reaaliaikaiseen ohjelmointirajapintaan
 
