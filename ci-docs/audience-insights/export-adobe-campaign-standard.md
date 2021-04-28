@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Adobe Campaign Standardiin
 description: Lisätietoja käyttäjäryhmän merkityksellisten tietojen segmenttien käytöstä Adobe Campaign Standardissa.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: a5d0154c3d7c473dcba03fac0847bafcf97de2f2
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596311"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760277"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insightsin segmenttien käyttö Adobe Campaign Standardissa (esiversio)
 
@@ -48,15 +48,21 @@ Lähetettävässä tarjoussähköpostiviestissä on asiakkaan etunimi, sukunimi 
 
 ## <a name="export-your-target-audience"></a>Kohdekäyttäjäryhmän vieminen
 
+### <a name="configure-a-connection"></a>Yhteyden määrittäminen
+
 Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäjäryhmän merkityksellisistä tiedoista Azure Blob -tallennustilatilille.
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
+1. Siirry kohdeyleisön merkityksellisissä tiedoissa kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Adobe-kampanja**-ruudussa **Määritä**.
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Adobe Campaign** tai valitse **Adobe Campaign** -ruudussa **Määritä**
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Adobe Campaign Standardin määritysruutu.":::
 
-1. Anna **näyttönimi** uudelle vientikohteelle ja kirjoita sitten sen Azure Blob -tallennustilatilin **Tilin nimi**, **Tiliavain** ja **Säilö**, johon haluat viedä segmentin.  
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Kirjoita sen Azure Blob -tallennustilatilin **Tilin nimi**, **Tilin avain** ja **Säilö**, johon haluat viedä segmentin.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Näyttökuva varastotilin määrityksestä. "::: 
 
@@ -64,7 +70,17 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
    - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Valitse **Seuraava**.
+1. Viimeistele yhteys valitsemalla **Tallenna**.
+
+### <a name="configure-an-export"></a>Viennin määrittäminen
+
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää vienti**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Adobe Campaign -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
 1. Valitse segmentti, jonka haluat viedä. Tässä esimerkissä se on **ChurnProneCustomers**.
 
@@ -83,11 +99,9 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
 1. Valitse **Tallenna**.
 
-Kun olet tallentanut vientikohteen, löydät sen kohdasta **Järjestelmänvalvoja** > **Viennit** > **Omat vientikohteet**.
+Kun olet tallentanut vientikohteen, löydät sen kohdasta **Tiedot** > **Viennit**.
 
-:::image type="content" source="media/export-destination-adobe-campaign-standard.png" alt-text="Näyttökuva, jossa vienti- ja näytesegmentti on korostettu.":::
-
-Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#export-data-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
+Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#run-exports-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
 
 > [!NOTE]
 > Varmista, että viedyn segmentin tietueiden määrä on Adobe Campaign Standard -käyttöoikeutesi sallitun rajan sisällä.

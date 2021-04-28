@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen DotDigitaliin
-description: Tietoja yhteyden määrittämisestä DotDigitaliin.
-ms.date: 11/14/2020
+description: Tietoja yhteyden määrittämisestä ja viennistä DotDigitaliin.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,33 +9,40 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 51a28bdf0de34f0555d8ad7e3d13b2ef8911d417
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 235bcdfa4a7c4c1a382778bd4f66c1a9f5b7beb1
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598013"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759955"
 ---
-# <a name="connector-for-dotdigital-preview"></a>DotDigital-yhdistin (esiversio)
+# <a name="export-segment-lists-to-dotdigital-preview"></a>Segmenttiluetteloiden vieminen DotDigitaliin (esiversio)
 
 Vie yhtenäistettyjen asiakasprofiilien segmentit DotDigital-osoitekirjoihin ja käytä niitä kampanjoissa, sähköpostimarkkinoinnissa ja asiakassegmenttien muodostamisessa DotDigitalin kanssa. 
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
 -   [DotDigital-tili](https://dotdigital.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 -   DotDigitalissa on aiemmin luotuja osoitekirjoja ja vastaavia tunnuksia. Tunnus saadaan URL-osoitteesta, kun valitset ja avaat osoitekirjan. Lisätietoja on kohdassa [DotDigital-osoitekirjat](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Käyttäjäryhmän merkityksellisissä tiedoissa on [määritettyjä segmenttejä](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
-## <a name="connect-to-dotdigital"></a>Yhdistäminen DotDigitaliin
+## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
+- Enintään 1 miljoona profiilia kussakin DotDigital-viennissä.
+- DotDigital-vienti on rajoitettu segmentteihin.
+- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 3 tuntia palveluntoimittajan rajoitusten vuoksi. 
+- DotDigitaliin vietävien profiilien määrä määräytyy DotDigital-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
 
-1. Valitse **DotDigital**-kohdassa **Määritä**.
+## <a name="set-up-connection-to-dotdigital"></a>Määritä yhteys DotDigitaliin
 
-1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-   :::image type="content" source="media/DotDigital_config.PNG" alt-text="DotDigital-viennin määritysruutu":::
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **DotDigital**.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Anna **DotDigitalin käyttäjänimi ja salasana**.
 
@@ -47,9 +54,18 @@ Vie yhtenäistettyjen asiakasprofiilien segmentit DotDigital-osoitekirjoihin ja 
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
-1. Määritä vienti valitsemalla **Next**.
+1. Viimeistele yhteys valitsemalla **Tallenna**. 
 
-## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
+## <a name="configure-an-export"></a>Viennin määrittäminen
+
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys DotDigital-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
 
 1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**, **Koko nimi**, **Sukupuoli** ja **Postinumero**.
 
@@ -57,16 +73,12 @@ Vie yhtenäistettyjen asiakasprofiilien segmentit DotDigital-osoitekirjoihin ja 
 
 1. Valitse **Tallenna**.
 
-## <a name="export-the-data"></a>Tietojen vieminen
+Viennin tallentaminen ei suorita vientiä heti.
 
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä. DotDigitalissa voi etsiä nyt segmenttejä [DotDigital-osoitekirjoissa](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+ 
+DotDigitalissa voi etsiä nyt segmenttejä [DotDigital-osoitekirjoissa](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 
-## <a name="known-limitations"></a>Tunnetut rajoitukset
-
-- Enintään 1 miljoona profiilia kussakin DotDigital-viennissä.
-- DotDigital-vienti on rajoitettu segmentteihin.
-- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 3 tuntia palveluntoimittajan rajoitusten vuoksi. 
-- DotDigitaliin vietävien profiilien määrä määräytyy DotDigital-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

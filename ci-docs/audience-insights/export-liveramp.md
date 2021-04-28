@@ -1,7 +1,7 @@
 ---
 title: LiveRamp-yhdistin
-description: Tietoja tietojen viennistä LiveRampiin.
-ms.date: 12/02/2020
+description: Tietoja yhteyden määrittämisestä ja viennistä LiveRampiin.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,29 +9,31 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 6ef4388b0e8ba8bc5866807765d8a872d41c9c14
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 987457966fe1fc034d9e3cd2a1ce33902c7a84f4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597553"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760323"
 ---
-# <a name="liverampreg-connector-preview"></a>LiveRamp&reg; yhdistin (esikatselu)
+# <a name="export-segments-to-liverampreg-preview"></a>Segmenttien vieminen LiveRampiin&reg; (esiversio)
 
-Aktivoi tietosi LiveRampissa muodostaaksesi yhteyden yli 500 ympäristöön digitaalisissa, yhteisöllisissä ja television ekosysteemeissä. Työstä tietojasi LiveRampissa kohdistaaksesi, estääksesi ja yksilöllistääksesi mainoskampanjoita.
+Aktivoi tiedot LiveRampissa, jotta voit muodostaa yhteyden yli 500 ympäristöön digitaalisissa kanavissa, yhteisöpalveluissa ja televisioissa. Työstä tietojasi LiveRampissa kohdistaaksesi, estääksesi ja yksilöllistääksesi mainoskampanjoita.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
 - Tämän yhdistimen käyttö edellyttää LiveRamp-tilausta.
 - Hanki tilaus [ottamalla suoraan yhteyttä LiveRampiin](https://liveramp.com/contact/). [Lisätietoja LiveRamp-käyttöönotosta](https://liveramp.com/our-platform/data-onboarding/).
 
-## <a name="connect-to-liveramp"></a>LiveRampiin yhdistäminen
+## <a name="set-up-connection-to-liveramp"></a>Määritä yhteys LiveRampiin
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **LiveRamp**-ruudussa **Määritä**.
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **LiveRamp**.
 
-1. Anna kohteelle tunnistettava nimi **Näyttönimi**-kentässä.
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Anna LiveRamp Secure FTP (SFTP) -tilillesi **Käyttäjänimi** ja **Salasana**.
 Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
@@ -40,15 +42,25 @@ Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
 
 1. Kun yhteys on tarkistettu, hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu.
 
-1. Määritä LiveRamp-yhdistin valitsemalla **Seuraava**.
+1. Viimeistele yhteys valitsemalla **Tallenna**.
 
-## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
+## <a name="configure-an-export"></a>Viennin määrittäminen
+
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys LiveRamp-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
 1. Valitse **Valitse avaintunniste** -kentässä **Sähköposti**, **Nimi ja osoite** tai **Puhelin** lähetettäväksi LiveRampille käyttäjätietojen ratkaisemiseksi.
+   > [!div class="mx-imgBorder"]
+   > ![LiveRamp-yhdistin ja määritteiden yhdistämismääritys](media/export-liveramp-segments.png "LiveRamp-yhdistin ja määritteiden yhdistämismääritys")
 
 1. Yhdistä yhdistetyn asiakasentiteetin vastaavat määritteet valittua avaintunnistetta varten.
 
-1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä LiveRampille lähetettäväksi.
+1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä lähetettäväksi LiveRampiin.
 
    > [!TIP]
    > Useiden avaintunnistemääritteiden lähettäminen LiveRampille tuottaa todennäköisesti suuremman vastaavuuden.
@@ -57,13 +69,10 @@ Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
 
 1. Valitse **Tallenna**.
 
-> [!div class="mx-imgBorder"]
-> ![LiveRamp-yhdistin ja määritteiden yhdistämismääritys](media/export-liveramp-segments.png "LiveRamp-yhdistin ja määritteiden yhdistämismääritys")
+Viennin tallentaminen ei suorita vientiä heti.
 
-## <a name="export-the-data"></a>Tietojen vieminen
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
-Vienti käynnistyy pian, jos kaikki viennin edellytykset täyttyvät. Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
-Kun vienti on suoritettu onnistuneesti, voit kirjautua LiveRampin käyttöönottoon tietojesi aktivointia ja jakelu varten.
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

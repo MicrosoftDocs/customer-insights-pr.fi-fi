@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597185"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906852"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tapahtuman vaihtuvuusennuste (esiversio)
 
@@ -46,6 +46,14 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
         - **Aikaleima:** Ensisijaisen avaimen tunnistaman tapahtuman päivämäärä ja aika.
         - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi elintarvikemyymälän UserAction-kenttä voisi olla asiakkaan käyttämä kuponki.
         - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi elintarvikemyymälän CouponValue-kenttä voisi olla kupongin valuutta-arvo.
+- Ehdotetut tietojen ominaisuudet:
+    - Riittävät historiatiedot: Tapahtumatiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Tilaustietoja ovat mielellään 2–3 vuoden ajalta. 
+    - Useita ostoja asiakasta kohden: Parhaimmillaan vähintään kaksi tapahtumaa asiakasta kohden
+    - Asiakkaiden määrä: vähintään 10 asiakasprofiilia, mielellään yli 1 000 yksilöllistä asiakasta. Malli epäonnistuu, jos asiakkaita on alle 10 ja historiatiedot ovat puutteellisia.
+    - Tietojen täydellisyys: Puuttuvia arvoja alle 20 % määritetyn entiteetin tietokentässä.
+
+> [!NOTE]
+> Jos asiakkaan ostoväli on suuri (muutaman viikon välein), on suositeltavaa valita lyhyempi ennusteen aikaväli ja vaihtuvuusmääritys. Jos ostoväli on alhainen (muutaman kuukauden välein tai kerran vuodessa), valitse pitkä ennusteen aikaväli ja vaihtuvuusmääritys.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Tapahtuman vaihtuvuusennusteen luominen
 
@@ -129,7 +137,9 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
 1. Valitse ennuste, jota haluat tarkastella.
    - **Ennusteen nimi:** ennusteelle luotaessa annettu nimi.
    - **Ennustetyyppi:** ennusteessa käytetyn mallin tyyppi
-   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.
+   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.    
+     Tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen otsikko. Oletusraja-arvo ei ehkä toimi skenaariossasi. [Luo uusi segmentti](segments.md#create-a-new-segment), jolla on haluamasi raja-arvo.
+     Kaikki asiakkaat eivät ole välttämättä aktiivisia asiakkaita. Joillakin niistä ei ehkä ole ollut pitkään aikaan mitään aktiviteettia, ja niitä pidetään jo poistuneina perustuen vaihtuvuusmääritykseen. Jo poistuneiden asiakkaiden vaihtuvuusriskien ennustaminen ei ole hyödyllistä, koska ne eivät ole haluttu kohdeyleisö.
    - **Ennustettu kenttä:** tämä kenttä täytetään vain tietyissä ennustetyypeissä eikä sitä käytetä vaihtuvuusennusteessa.
    - **Tila:** ennusten suorituksen tila.
         - **Jonossa:** ennuste odottaa muiden prosessien suorittamista.

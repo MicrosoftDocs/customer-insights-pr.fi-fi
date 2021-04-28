@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 02/01/2021
+ms.date: 03/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1c2dfdd2889b5cb6c5285b4d7cc7f52a3d6de4d1
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598289"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887982"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -44,6 +44,9 @@ Tässä artikkelissa käsitellään uuden organisaation luontia ja ympäristön 
 
 Uusi ympäristö voidaan luoda kahdella tavalla. Voit joko määrittää kokonaan uuden määrityksen tai voit kopioida joitakin määritysasetuksia aiemmin luodusta ympäristöstä.
 
+> [!NOTE]
+> Organisaatiot voivat luoda *kaksi* ympäristöä jokaista Customer Insights -käyttöoikeutta varten. Jos organisaatiosi ostaa useamman kuin yhden käyttöoikeuden, [ota yhteyttä tukiryhmäämme](https://go.microsoft.com/fwlink/?linkid=2079641), jotta käytettävissä olevien ympäristöjen määrää voidaan lisätä. Lisätietoja kapasiteetista ja lisäkapasiteetista on [Dynamics 365:n käyttöoikeusoppaassa](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 Ympäristön luominen:
 
 1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
@@ -55,14 +58,14 @@ Ympäristön luominen:
 
 1. Valitse **Luo uusi ympäristö** -valintaikkunassa **Uusi ympäristö**.
 
-   Jos haluat [kopioida tietoja nykyisestä ympäristöstä](#additional-considerations-for-copy-configuration-preview), valitse **Kopioi aiemmasta ympäristöstä**. Näkyviin tulee luettelo kaikista organisaation käytettävissä olevista ympäristöistä, joista voit kopioida tietoja.
+   Jos haluat [kopioida tietoja nykyisestä ympäristöstä](#considerations-for-copy-configuration-preview), valitse **Kopioi aiemmasta ympäristöstä**. Näkyviin tulee luettelo kaikista organisaation käytettävissä olevista ympäristöistä, joista voit kopioida tietoja.
 
 1. Anna seuraavat tiedot:
    - **Nimi**: Ympäristön nimi. Tämä kenttä on jo täytetty, jos kopioit tietoja aiemmin luodusta ympäristöstä, mutta voit muuttaa sitä.
    - **Alue**: Alue, jossa palvelu otetaan käyttöön ja jossa sitä isännöidään.
    - **Tyyppi**: Määritä, haluatko luoda tuotanto- vai eristysympäristön.
 
-2. Valinnaisesti voit valita **Lisäasetukset**:
+1. Valinnaisesti voit valita **Lisäasetukset**:
 
    - **Tallenna kaikki tiedot kohteeseen**: Määrittää, minne haluat tallentaa Customer Insightsin tulostiedot. Vaihtoehtoja on kaksi: **Customer Insights -tallennustila** (Customer Insights -ryhmän hallitsema Azure Data Lake) ja **Azure Data Lake Storage Gen2** (oma Azure Data Lake Storage). Oletusarvoisesi Customer Insights -tallennustila -vaihtoehto on valittu.
 
@@ -75,20 +78,20 @@ Ympäristön luominen:
 
    - Voit valita Azure Data Lake Storage Gen2 -vaihtoehdossa, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilön** nimeä ei voi muuttaa, ja se on customerinsights.
    
-   - Jos haluat käyttää [ennusteita](predictions.md) tai määrittää tietojen jakamisen sovelluksissa ja ratkaisuissa Microsoft Dataversen perusteella, anna Microsoft Dataverse -ympäristön URL-osoite kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien käyttöönotto**. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
+   - Jos haluat käyttää [ennusteita](predictions.md), määritä tietojen jakaminen sovellusten ja ratkaisujen kanssa Microsoft Dataversen perusteella tai ota käyttöön tietojen käsittely paikallisista tietolähteistä, anna Microsoft Dataverse -ympäristön URL-osoite kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien ottaminen käyttöön**. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
 
      > [!NOTE]
      > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
      > - [Entiteetin puuttuvien arvojen ennustetta](predictions.md) ei tueta tällä hetkellä, jos tietojen jakaminen Microsoft Dataversen hallitun Data Laken kanssa otetaan käyttöön.
 
      > [!div class="mx-imgBorder"]
-     > ![Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa](media/Datasharing-with-DataverseMDL.png)
+     > ![Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa](media/datasharing-with-DataverseMDL.png)
 
    Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostoja ja model.json-tiedostoja luodaan ja lisätään asianmukaisiin alikansioihin suorittamasi prosessin perusteella.
 
    Jos luot useita Customer Insights -ympäristöjä ja valitset kyseisten ympäristöjen tuloste-entiteettien tallentamisen tallennustilille, kullekin ympäristölle luodaan erilliset kansiot siten, että säilössä on ci_<environmentid>.
 
-### <a name="additional-considerations-for-copy-configuration-preview"></a>Muita määrityksen kopioinnissa huomioon otettavia seikkoja (esikatselu)
+### <a name="considerations-for-copy-configuration-preview"></a>Määrityksien kopiointiin liittyviä näkökohtia (esiversio)
 
 Seuraavat määritysasetukset kopioidaan:
 
@@ -136,6 +139,18 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 4. Jos ympäristö on määritetty tallentamaan tiedot Azure Data Lake Storage Gen2:ään, voit päivittää **tiliavaimen**. Et voi kuitenkaan muuttaa **tilin nimeä** tai **säilön** nimeä.
 
 5. Voit myös tehdä päivityksen käyttöoikeusavaimeen perustuvassa yhteydessä resurssi- tai tilausperusteiseen yhteyteen. Päivitykseen jälkeen ei ole mahdollista palata käyttöoikeusavaimeen. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilö**-tietoja ei voi muuttaa yhteyttä päivitettäessä.
+
+6. Vaihtoehtoisesti voit määrittää Microsoft Dataverse -ympäristön URL-osoitteen kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien ottaminen käyttöön**. Nämä ominaisuudet sisältävät tietojen jakamisen sovelluksiin ja ratkaisuihin Microsoft Dataverseen perusteella,tietojen käsittelyn paikallisistas tietolähteistä, tai käytä [ennusteita](predictions.md). Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
+
+   > [!NOTE]
+   > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
+   > - [Entiteettien puuttuvien arvojen ennustetta](predictions.md) ei tueta tällä hetkellä, kun otat tietojen jakamisen käyttöön Microsoft Dataversen hallitun Data Laken kanssa.
+
+   Kun otat käyttöön tietojen jakamisen Microsoft Dataversen kansa, käynnistetään tietolähteiden ja muiden prosessien täydellinen päivitys. Jos prosesseja tällä hetkellä suoritetaan ja asetetaan jonoon, et näe mahdollisuutta ottaa tietojen jakamista käyttöön Microsoft Dataversen kanssa. Voit odottaa, että prosessit valmistuvat tai peruutat ne, jotta tietojen jakaminen voidaan ottaa käyttöön. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
+   
+   Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostot ja model.json-tiedostot luodaan ja lisätään vastaaviin alikansioihin suoritettavan prosessin mukaan.
 
 ## <a name="reset-an-existing-environment"></a>Aiemmin luodun ympäristön palauttaminen
 

@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen Mailchimpiin
-description: Tietoja yhteyden määrittämisestä MailChimpiin.
-ms.date: 10/26/2020
+description: Tietoja yhteyden määrittämisestä ja viennistä Mailchimpiin.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,71 +9,78 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9f86616731c3cc3d26370727103ea9c5d4288c8d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b94a8e8b6bb867ca04a64007d592b22fbd700618
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598197"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759874"
 ---
-# <a name="connector-for-mailchimp-preview"></a>Mailchimp-yhdistin (esiversio)
+# <a name="export-segment-lists-to-mailchimp-preview"></a>Segmenttiluetteloiden vieminen Mailchimpiin (esiversio)
 
 Uutiskirjeiden ja sähköpostikampanjoiden luonti viemällä yhtenäistettyjä asiakasprofiilisegmenttejä Mailchimpiin.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
 -   [Mailchimp-tili](https://mailchimp.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 -   Mailchimpissa on aiemmin luotuja käyttäjäryhmiä ja vastaavia tunnuksia. Lisätietoja on kohdassa [Mailchimp-käyttäjäryhmät](https://mailchimp.com/help/create-audience/).
 -   [Segmentit on määritetty](segments.md)
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
-## <a name="connect-to-mailchimp"></a>Yhdistä Mailchimpiin
+## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
+- Enintään 1 miljoona profiilia kussakin Mailchimp-viennissä.
+- MailChimp-vienti on rajoitettu segmentteihin
+- Miljoonan profiilin viennissä voi kestää kolme tuntia. 
+- Mailchimpiin vietävien profiilien määrä määräytyy Mailchimp-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
 
-1. Valitse **Mailchimp**-kohdassa **Määritä**.
+## <a name="set-up-connection-to-mailchimp"></a>Määritä yhteys Mailchimpiin
 
-1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
+
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Autopilot**.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
 
-1. Käynnistä yhteys Mailchimpiin antamalla **[Mailchimp-käyttäjäryhmän tunnus](https://mailchimp.com/help/find-audience-id/)** ja valitsemalla **Yhdistä**.
+1. Alusta yhteys Mailchimpiin valitsemalla **Yhdistä**.
 
 1. Valitse **Todenna Mailchimpin avulla** ja anna Mailchimp-tunnistetiedot.
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
-   :::image type="content" source="media/export-connect-mailchimp.png" alt-text="Näyttökuva viennin MailChimp-yhteydestä":::
-
-1. Määritä vienti valitsemalla **Next**.
+1. Viimeistele yhteys valitsemalla **Tallenna**. 
 
 ## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
 
-1. Vaihtoehtoisesti voit viedä **Etunimi**- ja **Sukunimi**-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
+1. Siirry kohtaan **Tiedot**> **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Mailchimp-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
+1. Anna **[Mailchimp-käyttäjäryhmän tunnus](https://mailchimp.com/help/find-audience-id/)**
+
+3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+
+1. Voit myös viedä **etunimen** ja **sukunimen** yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 
 1. Valitse segmentit, jotka haluat viedä. Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia MailChimpiin.
 
-   :::image type="content" source="media/export-segments-mailchimp.png" alt-text="Mailchimpiin vietävien kenttien ja segmenttien valitseminen":::
-
 1. Valitse **Tallenna**.
 
-## <a name="export-the-data"></a>Tietojen vieminen
+Viennin tallentaminen ei suorita vientiä heti.
 
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä. Mailchimpin segmentit ovat nyt [Mailchimp-käyttäjäryhmissä](https://mailchimp.com/help/create-audience/).
-
-## <a name="known-limitations"></a>Tunnetut rajoitukset
-
-- Enintään 1 miljoona profiilia kussakin Mailchimp-viennissä.
-- MailChimp-vienti on rajoitettu segmentteihin
-- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää kolme tuntia palveluntoimittajan rajoitusten vuoksi. 
-- Mailchimpiin vietävien profiilien määrä määräytyy Mailchimp-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
 Kun tietojen lähetys Mailchimpiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Mailchimp noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

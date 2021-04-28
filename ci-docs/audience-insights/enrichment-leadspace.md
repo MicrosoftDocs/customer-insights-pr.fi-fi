@@ -1,7 +1,7 @@
 ---
 title: Yritysprofiilien rikastaminen kolmannen osapuolen Leadspace-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
-ms.date: 11/24/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,46 +9,67 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 41c56aece043c2d7658fd2655713e1e98775edec
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597645"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5895909"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
 
-Leadspace on tietotekniikkayritys, joka tarjoaa yritysten välisten asiakastietojen ympäristön. Sen avulla voidaan täydentää niiden asiakkaiden tietoja, joilla on yhtenäiset asiakasprofiilit yrityksissä. Rikastamiset sisältävät lisämääritteitä, kuten yrityksen koko, sijainti ja toimiala.
+Leadspace on tietotekniikkayritys, joka tarjoaa yritysten välisten asiakastietojen ympäristön. Sen avulla voidaan täydentää niiden asiakkaiden tietoja, joilla on yhtenäiset asiakasprofiilit yrityksissä. Rikastuksissa on enemmän määritteitä, kuten esim. yrityksen koko, sijainti ja toimiala.
 
 ## <a name="prerequisites"></a>Edellytykset
 
 Voit määrittää Leadspacen, jos seuraavat edellytykset täyttyvät:
 
-- Aktiivinen Leadspace-käyttöoikeus ja pysyvä avain (johon viitataan **Leadspace-tunnuksena**). Saat lisätietoja tuotteesta ottamalla yhteyttä suoraan [Leadspaceen](https://www.leadspace.com/products/leadspace-on-demand/).
-- [Järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet.
+- Sinulla on aktiivinen Leadspace-käyttöoikeus.
 - Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md) yrityksiä varten.
+- Leadspace-yhteys on jo määritetty järjestelmänvalvojan toimesta tai sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja "pysyvä avain" (**Leadspace-tunnus**). Jos haluat lisätietoja tuotteesta, ota suoraan yhteyttä [Leadspaceen](https://www.leadspace.com/products/leadspace-on-demand/).
 
-## <a name="configuration"></a>Määritys
+## <a name="configure-the-enrichment"></a>Määritä rikastus
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Rikastaminen**.
 
-1. Valitse **Rikasta tietojani** Leadspace-ruudussa.
+1. Valitse Leadspace-ruudussa **Rikasta tietojani** ja valitse **Aloita**.
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Näyttökuvassa Leadspace-ruutu":::
 
-1. Valitse **Aloita** ja anna sitten aktiivinen **Leadspace-tunnus** (pysyvä avain). Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu. Vahvista molemmat syötteet valitsemalla **Yhdistä Leadspaceen**.
+1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** ja sitten **Leadspace**. 
 
-1. Valitse **Yhdistä tiedot** ja valitse sitten tietojoukko, jota haluat rikastaa Leadspacen yritystiedoilla. Voit valita *asiakasentiteetin*, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+1. Vahvista yhteys valitsemalla **Yhdistä Leadspaceen**.
 
-   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Valitse asiakasprofiilin tai segmentin rikastaminen.":::
+1. Valitse **Seuraava** ja valitse **Asiakastietojoukko**, jonka haluat rikastaa Leadspacen yritystiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
-1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään vastaavien yritystietojen hakemiseen Leadspacesta. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
+    :::image type="content" source="media/enrichment-Leadspace-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
+
+1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään Leadspacen vastaavien yritystietojen etsimiseen. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu":::
-   
-1. Viimeistele kentän yhdistämismääritys valitsemalla **Käytä**.
 
-1. Valitse **Suorita**, jos haluat täydentää yritysprofiileja. Rikastamisen kesto määräytyy yhtenäisten asiakasprofiilien määrän mukaan.
+1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
+
+1. Anna rikastusta varten nimi ja valitse vaihtoehtojen tarkistamisen jälkeen **Tallenna rikastus**.
+
+
+## <a name="configure-the-connection-for-leadspace"></a>Leadspace-yhteyden määrittäminen 
+
+Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse rikastusta määritettäessä **Lisää yhteys** *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse Leadspace-ruudussa **Määritä**.
+
+1. Valitse **Aloita** 
+
+1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
+
+1. Anna voimassa oleva Leadspace-tunnus.
+
+1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu
+
+1. Tarkista määritys valitsemalla **Tarkista**.
+
+1. Kun tarkistus on suoritettu, valitse **Tallenna**.
+   
+   :::image type="content" source="media/enrichment-Leadspace-connection.png" alt-text="Leadspace-yhteyden määrityssivu.":::
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 

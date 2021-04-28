@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595652"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906898"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
 
@@ -49,6 +49,12 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
         - **Aikaleima:** Ensisijaisen avaimen tunnistaman tapahtuman päivämäärä ja aika.
         - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Käyttäjän toiminto, voi saada arvon Katsottu.
         - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Ohjelman nimi, voi saada arvoksi asiakkaan katsoman videon.
+- Ehdotetut tietojen ominaisuudet:
+    - Riittävät historiatiedot: Tilaustiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Tilaustietoja ovat mielellään 2–3 vuoden ajalta.
+    - Tilauksen tila: Tiedot sisältävät kunkin asiakkaan aktiiviset ja passiiviset tilaukset, joten kutakin asiakastunnusta kohti on useita merkintöjä.
+    - Asiakkaiden määrä: vähintään 10 asiakasprofiilia, mielellään yli 1 000 yksilöllistä asiakasta. Malli epäonnistuu, jos asiakkaita on alle 10 ja historiatiedot ovat puutteellisia.
+    - Tietojen täydellisyys: Puuttuvia arvoja alle 20 % määritetyn entiteetin tietokentässä.
+   
    > [!NOTE]
    > Tarvitset vähintään kaksi aktiviteettitietuetta 50 prosentille asiakkaista, joiden vaihtuvuuden haluat laskea.
 
@@ -67,7 +73,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 ### <a name="define-customer-churn"></a>Määritä asiakasvaihtuvuus
 
 1. Anna **Päivät tilauksen päättymisestä** -kohtaan arvo, jonka jälkeen yritys pitää asiakasta menetettynä. Tämä kausi linkittyy yleensä yrityksen aktiviteetteihin, kuten tarjouksiin tai muihin markkinointitoimintoihin, joiden avulla yritetään estää asiakkaiden menettäminen.
-1. Määritä **Vaihtuvuuden ennustamisessa huomioon otettavat päivät** -määrä määrittääksesi aikavälin vaihtuvuuden ennustamiselle. Voit esimerkiksi ennustaa asiakkaiden vaihtuvuusriskin seuraavan 90 päivän aikana, jotta voit mukauttaa asiakkaiden säilyttämiseen tähtääviä markkinointiponnistelujasi. Vaihtuvuusriskin ennustaminen pidemmillä tai lyhyemmillä aikaväleillä voi vaikeuttaa asiakasvaihtuvuuden riskiprofiilin tekijöiden käsittelemistä, mutta tämä määräytyy pitkälti omien liiketoimintatarpeidesi perustella. Jatka valitsemalla **Seuraava**
+1. Määritä **Vaihtuvuuden ennustamisessa huomioon otettavat päivät** -määrä määrittääksesi aikavälin vaihtuvuuden ennustamiselle. Voit esimerkiksi ennustaa asiakkaiden vaihtuvuusriskin seuraavan 90 päivän aikana, jotta voit mukauttaa asiakkaiden säilyttämiseen tähtääviä markkinointiponnistelujasi. Asiakaspoistuman riskin ennustaminen pitkällä tai lyhyemmällä ajanjaksolla voi vaikeuttaa riskiprofiilin tekijöiden käsittelyä yrityksesi tarpeista riippuen. Jatka valitsemalla **Seuraava**
    >[!TIP]
    > Voit valita **Tallenna ja sulje** milloin tahansa, jos haluat tallentaa ennusteen luonnokseksi. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
 
@@ -113,7 +119,8 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 1. Valitse ennuste, jota haluat tarkastella.
    - **Ennusteen nimi:** Ennusteelle luomisen yhteydessä annettu nimi.
    - **Ennustetyyppi:** Ennusteessa käytetyn mallin tyyppi.
-   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.
+   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.    
+     Tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen otsikko. Oletusraja-arvo ei ehkä toimi skenaariossasi. [Luo uusi segmentti](segments.md#create-a-new-segment), jolla on haluamasi raja-arvo.
    - **Ennustettu-kenttä:** Tämä kenttä täytetään vain tietyn tyyppisille ennusteille. Sitä ei käytetä tilausten vaihtuvuusennusteessa.
    - **Tila:** Ennusteen suoritumisen nykyinen tila.
         - **Jonossa:** Ennuste odottaa parhaillaan muiden prosessien suorittamista.

@@ -1,7 +1,7 @@
 ---
 title: Tietojen käsitteleminen tietolähteiden avulla
 description: Tietoja tietojen tuomisesta eri lähteistä.
-ms.date: 11/03/2020
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 780dc61a82d6ed9856a37dc8f164fa946d982bbe
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595943"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887890"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -32,8 +32,15 @@ Tietolähde voidaan lisätä pääasiassa kolmella tavalla:
 - [Common Data Model -kansiosta](connect-common-data-model.md)
 - [Omasta Common Data Servicen Data Lake -tallennustilasta](connect-common-data-service-lake.md)
 
-> [!NOTE]
-> Tietoja ei voi vielä listä paikallisista tietolähteistä.
+## <a name="add-data-from-on-premises-data-sources"></a>Tietojen lisääminen paikallisista tietolähteistä
+
+Tietojen käsittelyä paikallisista tietolähteistä Audience Insightsissa tuetaan Power Platform -tietovirtojen perusteella. Tietovirtaukset voidaan ottaa käyttöön Customer Insightsissa [antamalla Microsoft Dataverse -ympäristön URL-osoite](manage-environments.md#create-an-environment-in-an-existing-organization) ympäristöä määritettäessä.
+
+Kun Dataverse-ympäristö on liitetty Customer Insights -tietoihin, luodut tietolähteet käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovirtaukset tukevat paikallisia yhteyksiä tietoyhdyskäytävien avulla. Poista ja luo uudelleen tietolähteet, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä paikallisen tietoyhdyskäytävien käyttöön.
+
+Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä, ja voit käyttää niitä uudelleen Customer Insightsissa. Tietolähteiden sivulla on linkkejä Power Platform -ympäristöön, jossa voit tarkastella ja määrittää paikallisia yhdyskäytäviä.
+
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Näyttökuva tietolähteiden sivusta, jossa on Power Platform -ympäristöön osoittavat linkit.":::
 
 ## <a name="review-ingested-data"></a>Käsiteltyjen tietojen tarkistaminen
 
@@ -65,7 +72,7 @@ Tietolähde päivitetään tarvittaessa seuraavasti:
 
 2. Valitse päivitettävän tietolähteen vieressä kolme allekkaista pistettä ja valitse sitten avattavassa luettelossa **Päivitä**.
 
-3. Tietolähde on nyt valmis manuaaliseen päivitykseen. Tietolähteen päivittäminen päivittää sekä entiteettirakenteen että kaikkien tietolähteessä määritettyjen entiteettien tiedot.
+3. Tietolähde on nyt valmis manuaaliseen päivitykseen. Jos päivität tietolähteen, päivitetään tietolähteessä määritettyjen entiteettien sekä tiedot että entiteettirakenne.
 
 4. Valitse **Pysäytä päivittäminen**, jos haluat peruuttaa nykyisen päivityksen, jolloin tietolähde palautuu viimeksi päivitettyyn tilaan.
 

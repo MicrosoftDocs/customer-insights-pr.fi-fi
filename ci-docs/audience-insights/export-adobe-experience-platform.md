@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Adobe-ympäristöpalvelimeen
 description: Lisätietoja käyttäjäryhmän merkityksellisten tietojen segmenttien käytöstä Adobe-ympäristöpalvelimessa.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: d1856861562be55c6d1d051050fe965560fa42f8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596265"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760097"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insightsin segmenttien käyttö Adobe Experience Platformissa (esiversio)
 
@@ -51,21 +51,36 @@ Lähetettävässä tarjoussähköpostiviestissä on asiakkaan etunimi, sukunimi 
 
 Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäjäryhmän merkityksellisistä tiedoista Azure Blob -tallennustilatilille.
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
+### <a name="configure-a-connection"></a>Yhteyden määrittäminen
 
-1. Valitse **Azure Blob -säilö** -ruudussa **Määritä**.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Azure Blob -tallennustilan määritysruutu.":::
+1. Valitse **Lisää yhteys** ja valitse **Azure Blob Storage** tai valitse **Määritys** **Azure Blob Storage** -ruudussa:
 
-1. Anna **näyttönimi** uudelle vientikohteelle ja kirjoita sitten sen Azure Blob -tallennustilatilin **Tilin nimi**, **Tiliavain** ja **Säilö**, johon haluat viedä segmentin.  
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Azure Blob -tallennustilan määritysruutu."::: yhteyden määrittäminen.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Kirjoita Blob-tallennustilatilin **Tilin nimi**, **Tilin avain** ja **Säilö**, johon haluat viedä segmentin.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Näyttökuva varastotilin määrityksestä. "::: 
+   
+    - Lisätietoja Blob-tallennustilatilin nimen ja tiliavaimen löytämisestä on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
+    - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-   - Lisätietoja Azure Blob -säilön tilinimen ja käyttöoikeusavaimen etsimisestä on kohdassa [Tallennustilatilin asetusten hallinta Azure-portaalissa](/azure/storage/common/storage-account-manage).
+1. Viimeistele yhteys valitsemalla **Tallenna**. 
 
-   - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
+### <a name="configure-an-export"></a>Viennin määrittäminen
 
-1. Valitse **Seuraava**.
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää vienti**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Azure Blob Storage -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
 1. Valitse segmentti, jonka haluat viedä. Tässä esimerkissä se on **ChurnProneCustomers**.
 
@@ -73,11 +88,9 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
 1. Valitse **Tallenna**.
 
-Kun olet tallentanut vientikohteen, löydät sen kohdasta **Järjestelmänvalvoja** > **Viennit** > **Omat vientikohteet**.
+Kun olet tallentanut vientikohteen, löydät sen kohdasta **Tiedot** > **Viennit**.
 
-:::image type="content" source="media/export-destination-azure-blob-storage.png" alt-text="Näyttökuva, jossa vienti- ja näytesegmentti on korostettu.":::
-
-Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#export-data-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
+Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#run-exports-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
 
 > [!NOTE]
 > Varmista, että viedyn segmentin tietueiden määrä on Adobe Campaign Standard -käyttöoikeutesi sallitun rajan sisällä.

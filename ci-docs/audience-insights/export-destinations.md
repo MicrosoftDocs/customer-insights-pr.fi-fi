@@ -1,7 +1,7 @@
 ---
-title: Vientikohteet
-description: Tietojen vienti ja vientikohteiden hallinta.
-ms.date: 07/21/2020
+title: Tietojen vieminen Customer Insightsista
+description: Jaa tietoja hallitsemalla vientejä.
+ms.date: 03/25/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,102 +9,73 @@ ms.topic: conceptual
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5557442983f8c48cd46387009e0060beb6e764bb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 354ce9ef30fe918975d06290430996c84f8bd3f7
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596081"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896139"
 ---
-# <a name="export-destinations-preview-overview"></a>Vientikohteiden (esiversio) yleiskuvaus
+# <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
-**Vientikohteet**-sivulla näkyvät kaikki sijainnit, joihin olet määrittänyt tietojen viemisen. Voit myös lisätä uusia kohteita vientiä varten. Lisäksi se näyttää viennissä valittavissa olevat vaihtoehdot. Saat nopeasti yleiskuvan, kuvauksen ja tietoja siitä, mitä kullakin laajennettavuusvaihtoehdolla voi tehdä. Vie yhtenäiset profiilit, mitat ja segmentit yrityksen kannalta merkityksellisiin sovelluksiin.
+**Viennit**-sivulla näkyvät kaikki määritetyt viennit. Viennit jakavat tiettyjä tietoja eri sovellusten kanssa. Ne voivat sisältää asiakasprofiileja tai entiteettejä, rakenteita ja yhdistämistietoja. Kukin vienti edellyttää [yhteyttä, jonka määrittää järjestelmänvalvoja todennuksen ja käytön hallitsemiseksi](connections.md).
 
-Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet** ja etsi seuraavat laajennettavuusvaihtoehdot:
+> [!NOTE]
+> Maaliskuuhun 2021 asti vienti loi automaattisesti yhteyden vastaavaan palveluun. Vienti edellyttää nyt [yhteyttä, joka on luotu ja jaettu järjestelmänvalvojan toimesta](connections.md) ennen viennin luomista.
 
-- [Adobe Campaign Standard](export-adobe-campaign-standard.md)
-- [Adobe Experience Platform](export-adobe-experience-platform.md)
-- [AdRoll](export-adroll.md)
-- [Autopilot](export-autopilot.md)
-- [Azure Blob -säilö](export-azure-blob-storage.md)
-- [Azure Data Lake Storage Gen2](export-azure-data-lake-storage-gen2.md)
-- [Microsoft Teams -botti](export-teams-bot.md)
-- [Customer Insights API](apis.md)
-- [DotDigital](export-dotdigital.md)
-- [Dynamics 365 Customer Service (Asiakaskortin apuohjelma)](customer-card-add-in.md)
-- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
-- [Dynamics 365 Sales](export-dynamics365-sales.md)
-- [Dynamics 365 -myyntikeskus (Asiakaskortin apuohjelma)](customer-card-add-in.md)
-- [Facebook-mainosten hallinta](export-facebook.md)
-- [Google Ads](export-google-ads.md)
-- [LiveRamp&reg;](export-liveramp.md)
-- [Mailchimp](export-mailchimp.md)
-- [Marketo](export-marketo.md)
-- [Power Automate](export-power-automate.md)
-- [Power Apps](export-power-apps.md)
-- [Power BI](export-power-bi.md)
-- [SendGrid](export-sendgrid.md)
-- [SFTP](export-sftp.md)
+Siirry kohtaan **Tiedot** > **Viennit**, kun haluat tarkastella vientisivua. Kaikilla käyttäjärooleilla on määritettyjen vientien tarkastelemisen oikeus. Käyttämällä komentopalkin hakukenttää voit etsiä viennit nimen, yhteyden nimen tai yhteystyypin mukaan.
 
-## <a name="add-a-new-export-destination"></a>Uuden vientikohteen lisääminen
+## <a name="set-up-a-new-export"></a>Määritä uusi vienti
 
-Vientikohteiden lisäämistä varten on [järjestelmänvalvojan käyttöoikeudet](permissions.md). Jos viet tietoja Microsoft-palveluihin, oletamme, että molemmat palvelut ovat samassa organisaatiossa.
+Jotta voit määrittää tai muokata vientiä, sinulla on oltava käytettävissä yhteydet. Yhteydet määräytyvät [käyttäjäroolisi](permissions.md) mukaan:
+- Järjestelmänvalvojat voivat käyttää kaikkia yhteyksiä. He voivat myös luoda uusia yhteyksiä viennin määrittämisen jälkeen.
+- Osallistujat voivat käyttää tiettyjä yhteyksiä. Järjestelmänvalvojat voivat määrittää ja jakaa osallistujille yhteyksiä. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Katsojat voivat tarkastella vain aiemmin luotuja vientejä, mutta eivät luoda niitä.
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
+1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Siirry **Omat vientikohteet** -välilehteen.
+1. Luo uusi vientikohde valitsemalla **Lisää vienti**.
 
-1. Luo uusi vientikohde valitsemalla **Lisää kohde**.
+1. Valitse **Määritä vienti** -ruudussa käytettävä yhteys. [Yhteydet](connections.md) ovat järjestelmänvalvojien hallitsemia. 
 
-1. Valitse **Lisää kohde** -ruudun avattavasta luettelosta vientikohteen **Tyyppi**.
+1. Anna tarvittavat tiedot ja luo vienti valitsemalla **Tallenna**.
 
-1. Luo vientikohde antamalla tarvittavat tiedot ja valitsemalla **Seuraava**.
-
-Voit myös valita **Määritä** **Tutustu**-välilehden ruudussa.
-
-## <a name="view-export-destinations"></a>Vientikohteiden näyttäminen
-
-Kun olet luonut vientikohteita, ne löytyvät taulukosta **Omat vientikohteet** -välilehdessä. Tässä taulukossa on kolme saraketta:
-
-- **Näyttönimi**: kohdetta luotaessa annettu nimi.
-- **Tyyppi**: Kohdetta luotaessa määritetty vientikohteen tyyppi.
-- **Luotu**: päivämäärä, jolloin kohde luotiin.
-
-## <a name="edit-an-export-destination"></a>Vientikohteen lisääminen
+### <a name="edit-an-export"></a>Muokkaa vientiä
 
 1. Valitse muokattavan vientikohteen kohdalla kolme allekkaista pistettä.
 
-   > [!div class="mx-imgBorder"]
-   > ![Kolme pistettä allekkain](media/export-destinations-page-ellipsis.png "Kolme pistettä allekkain")
-
-1. Valitse avattavassa valikossa **Muokkaa**.
+1. Valitse avattavasta valikosta **Muokkaa**.
 
 1. Muuta päivitettävät arvot ja valitse **Tallenna**.
 
-## <a name="export-data-on-demand"></a>Tietojen vienti tarvittaessa
+## <a name="view-exports-and-export-details"></a>Viennin ja viennin tietojen tarkasteleminen
 
-Kun vientikohteelle on määritetty yhdistin, vientejä suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) yhteydessä.
+Kun olet luonut vientikohteet, ne näkyvät kohdassa **Tiedot** > **Viennit**. Kaikki käyttäjät näkevät jaetut tiedot ja niiden uusimman tilan.
 
-Jos haluat viedä tietoja odottamatta ajoitettua päivitystä, siirry **Omat vientikohteet** -välilehteen kohdassa **Järjestelmänvalvoja** > **Vientikohteet**.
+1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-> [!div class="mx-imgBorder"]
-> ![Kolme pistettä allekkain](media/export-destinations-page-ellipsis.png "Kolme pistettä allekkain")
+1. Käyttäjät, joilla ei ole muokkausoikeutta, valitsevat **Näytä** (ei **Muokkaa**) nähdäkseen viennin tiedot.
 
-- Voit suorittaa viennin kaikkiin vientikohteisiin samanaikaisesti valitsemalla luettelon yläpuolella **Vie**.
-- Valitse kolmen pisteen painike (...) luettelokohdan perästä ja suorita vienti yksittäiseen vientikohteeseen valitsemalla **Vie**.
+1. Tämä sivuruutu näyttää tämän viennin määrityksen. Arvoja ei voi muuttaa ilman muokkausoikeutta. Palaa vientisivulle valitsemalla **Sulje**.
 
-## <a name="remove-an-export-destination"></a>Vientikohteen poistaminen
+## <a name="run-exports-on-demand"></a>Suorita vientejä tarvittaessa
 
-Vientikohteen poistaminen aloitetaan **Vientikohde**-pääsivulta.
+Kun olet määrittänyt viennin, se suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) yhteydessä niin kauan kuin sillä on toimiva yhteys.
 
-1. Valitse poistettavan vientikohteen kohdalla kolme allekkaista pistettä.
+Jos haluat viedä tietoja odottamatta ajoitettua päivitystä, siirry kohtaan **Tiedot** > **Viennit**. Sinulla on kaksi vaihtoehtoa:
 
-   > [!div class="mx-imgBorder"]
-   > ![Kolme pistettä allekkain](media/export-destinations-page-ellipsis.png "Kolme pistettä allekkain")
+- Jos haluat suorittaa kaikki viennit, valitse komentopalkissa **Suorita kaikki**. 
+- Jos haluat suorittaa yksittäisen viennin, valitse luettelokohteesta kolme pistettä (...) ja valitse sitten **Suorita**.
 
-2. Valitse avattavassa valikossa **Poista**.
+## <a name="remove-an-export"></a>Viennin poistaminen
 
-3. Vahvista poisto valitsemalla **Poista** vahvistusnäytössä.
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Valitse poistettavan viennin kohdalla kolme allekkaista pistettä.
+
+1. Valitse avattavassa valikossa **Poista**.
+
+1. Vahvista poisto valitsemalla **Poista** vahvistusnäytössä.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

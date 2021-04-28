@@ -1,7 +1,7 @@
 ---
 title: Mittareiden luominen ja hallinta
 description: Määritä yrityksen suorituskyvyn analysoimiseen ja kuvaamiseen liittyvät mittarit.
-ms.date: 02/02/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,28 +9,28 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
-ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
+ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "5654728"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887936"
 ---
 # <a name="define-and-manage-measures"></a>Mittojen määrittäminen ja hallinta
 
-Mittareiden avulla saat lisätietoja asiakkaan toiminnasta ja liiketoiminnan suorituskyvystä noutamalla olennaisia arvoja [yhdistetyistä profiileista](data-unification.md). Esimerkissä yritys haluaa lisätietoja yksittäisen asiakkaan ostohistoriasta *asiakaskohtaisen kokonaiskulutuksen* avulla. Vaihtoehtoisesti halutaan tietoja koko yrityksen koostetusta myyntituotosta *yrityksen kokonaismyyntiä* kuvaavan mittarin avulla.  
+Mittarien avulla ymmärrät paremmin asiakkaiden käyttäytymistä ja liiketoiminnan suorituskykyä. Ne näyttävät olennaiset arvot [yhtenäisistä profiileista](data-unification.md). Yritys haluaa esimerkiksi nähdä *kokonaissumman asiakasta kohden*, kun halutaan ymmärtää yksittäisen asiakkaan ostohistoria tai mitata *yrityksen kokonaismyyntiä* koko liiketoiminnan kokonaistuottoa varten.  
 
 Mittarit luodaan käyttämällä mittareiden luontiohjelmaa. Se on tietojen kysely-ympäristö, jossa on useita operaattoreita ja yksinkertaiset yhdistämisvalinnat. Sen avulla voi suodattaa tietoja, ryhmitellä tuloksia, havaita [entiteettisuhteiden polkuja](relationships.md) ja esikatsella tulosta.
 
 Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon, mutta tekevät myös paljon palautuksia. Voit [luoda segmentin](segments.md) seuraavien parhaiden toimintojen suorittamiseksi. 
 
-## <a name="create-a-measure"></a>Luo mittari
+## <a name="build-your-own-measure-from-scratch"></a>Rakenna oma mittari tyhjästä
 
 Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mittarin ja tietomääritteet tietoentiteeteistä, joille on määritetty suhde yhteyden muodostamiseksi asiakasentiteettiin. 
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
 
-1. Valitse **Uusi**.
+1. Valitse **Uusi** ja valitse **Luo oma**.
 
 1. Valitse **Muokkaa nimeä** ja anna mittarille **nimi**. 
    > [!NOTE]
@@ -72,6 +72,8 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
    1. Valitse **Muokkaa dimensioita**, jos haluat lisätä tietomääritteitä, joiden mukaan mittarin arvot ryhmitellään. Tämä voi olla esimerkiksi kaupunki tai sukupuoli. Oletusarvoisesti valitaan *CustomerID*-dimensio *asiakastason mittareiden* luomiseksi. Voit poistaa oletusdimension, jos haluat luoda *yritystason mittareita*.
    1. Valitse **Valmis**, jos haluat lisätä dimensiot mittariin.
 
+1. Jos tiedoissa on arvoja, jotka on korvattava kokonaisluvulla, korvaa esimerkiksi *tyhjäarvo* arvolla *0*, valitse **Säännöt**. Määritä sääntö ja varmista, että valitset korvaavaksi arvoksi vain kokonaislukuja.
+
 1. Jos yhdistetyn tietoentiteetin ja *asiakas*-entiteetin välillä on useita polkuja, tulee valita jokin määritetyistä [entiteettisuhteen poluista](relationships.md). Mittarin tulokset voivat vaihdella valitun polun mukaan. 
    1. Valitse **Tietomääritteet** ja valitse sitten entiteettipolku, jota käytetään mittarin tunnistamisessa. Jos *Asiakas*-entiteetissä on vain yksi polku, ohjausobjektia ei näy.
    1. Ota valinta käyttöön valitsemalla **Valmis**. 
@@ -88,9 +90,57 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
 
 1. Siirry **Mittarit**-kohtaan, jos haluat nähdä juuri luodun mittarin luettelossa.
 
+## <a name="use-a-template-to-build-a-measure"></a>Mittarin luominen mallin avulla
+
+Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä mittoja. Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
+
+Käytettävissä olevat mittarimallit: 
+- Keskimääräinen tapahtuman arvo (ATV)
+- Tapahtuman kokonaisarvo
+- Keskimääräinen päivätuotto
+- Keskimääräinen vuosituotto
+- Tapahtumien määrä
+- Ansaitut kanta-asiakaspisteet
+- Lunastetut kanta-asiakaspisteet
+- Kanta-asiakaspisteiden saldo
+- Aktiivisen asiakkaan elinkaari
+- Kanta-asiakkuuden kesto
+- Aika viime ostosta
+
+Seuraavassa ohjeessa on kuvattu, miten uusi mittari voidaan luoda mallin avulla.
+
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
+
+1. Valitse ensin **Uusi** ja sitten **Valitse malli**.
+
+   :::image type="content" source="media/measure-use-template.png" alt-text="Näyttökuva avattavasta valikosta luotaessa uutta mittaria, jossa on korostettuna malli.":::
+
+1. Etsi tarpeisiisi sopiva malli ja valitse **Valitse malli**.
+
+1. Tarkista tarvittavat tiedot ja valitse **Aloitus**, jos kaikki tiedot ovat paikoillaan.
+
+1. Määritä **Muokkaa nimeä** -ruudussa mittarin ja tulosentiteetin nimi. 
+
+1. Valitse **Valmis**.
+
+1. Määritä **Määritä ajanjakso** -osassa aikaväli käytettäville tiedoille. Valitse, kattaako uusi mittari koko tietojoukon, valitsemalla **Kaikki aikavälit**. Jos haluat, että mittari keskittyy **tiettyyn ajanjaksoon**.
+
+   :::image type="content" source="media/measure-set-time-period.png" alt-text="Näyttökuva, jossa näkyy ajanjakso-osa, kun mittaria määritetään mallista.":::
+
+1. Valitse seuraavassa osassa **Lisää tiedot**, jos haluat valita aktiviteetit ja yhdistää vastaavat *Yhdistetty aktiviteetti* -kohteen tiedot.
+
+    1. Vaihe 1/2: Valitse **Aktiviteettityyppi**-kohdassa haluamasi entiteetin tyyppi. Valitse **Aktiviteetit**-kohdassa entiteetit, jotka haluat yhdistää.
+    1. Vaihe 2/2: Valitse määrite *Yhdistetty aktiviteetti* -entiteetistä komponentille, jota kaava edellyttää. Esimerkiksi Keskimääräinen tapahtuman arvo on määrite, joka vastaa tapahtuman arvoa. Valitse **Aktiviteetin aikaleima** -kohdassa Yhdistetty aktiviteetti -kohteen määrite, joka kuvaa aktiviteetin päivämäärää ja aikaa.
+   
+1. Kun tietojen yhdistäminen on onnistunut, voit nähdä tilan **Valmis** ja yhdistettyjen aktiviteettien ja määritteiden nimen.
+
+   :::image type="content" source="media/measure-template-configured.png" alt-text="Näyttökuva valmiin mittarimallin määrityksestä.":::
+
+1. Nyt voit laskea mittarin tulokset valitsemalla **Suorita**. Jos haluat tarkentaa sitä myöhemmin, valitse **Tallenna luonnos**.
+
 ## <a name="manage-your-measures"></a>Hallitse mittoja
 
-Kun [mittari on luotu](#create-a-measure), **Mittarit**-sivulla näkyy mittariluettelo.
+**Mittarit**-sivulla on mittarien luettelo.
 
 Saat tietoja mittarityypistä, tekijästä, luontipäivästä ja tilasta. Jos valitset mittarin luettelosta, voit esikatsella tulostetta ja ladata .CSV-tiedoston.
 

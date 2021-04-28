@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen Marketoon
-description: Tietoja yhteyden määrittämisestä Marketoon.
-ms.date: 11/12/2020
+description: Tietoja yhteyden määrittämisestä ja viennistä Marketoon.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,59 +9,23 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 74d19a0448123904210c26f7b8760d00296c9cfd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 01290d5fae7af1737b73373d75e334ae1ed67d37
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597967"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759817"
 ---
-# <a name="connector-for-marketo-preview"></a>Marketo-yhdistin (esiversio)
+# <a name="export-segments-to-marketo-preview"></a>Segmenttien vieminen Marketoon (esiversio)
 
 Viemällä yhtenäisten asiakasprofiilien segmenttejä voit luoda kampanjoita, tuottaa sähköpostimarkkinointia ja käyttää tiettyjä asiakasryhmiä Marketon avulla.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
 -   [Marketo-tili](https://login.marketo.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 -   Marketossa on aiemmin luotuja luetteloja ja vastaavia tunnuksia. Lisätietoja on kohdassa [Marketo-luettelot](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 -   [Segmentit on määritetty](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
-
-## <a name="connect-to-marketo"></a>Yhteyden muodostaminen Marketoon
-
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
-
-1. Valitse **Marketo**-kohdassa **Määritä**.
-
-1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
-
-1. Anna **[Marketon asiakastunnus, asiakasohjelman salasana ja REST-päätepisteen isäntänimi](https://developers.marketo.com/rest-api/authentication/)**.
-
-1. Anna **[Marketo-luettelon tunnus](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
-
-1. Vahvista **Tietojen yksityisyys ja vaatimustenmukaisuus** valitsemalla **Hyväksyn** ja käynnistä Marketo-yhteys valitsemalla **Yhdistä**.
-
-1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
-
-   :::image type="content" source="media/export-connect-marketo.png" alt-text="Näyttökuva viennin Marketo-yhteydestä":::
-
-1. Määritä vienti valitsemalla **Next**.
-
-## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
-
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
-
-1. Vaihtoehtoisesti voit viedä **Etunimi**-, **Sukunimi**-, **Kaupunki**-, **Osavaltio**- ja **Maa tai alue** -kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
-
-1. Valitse segmentit, jotka haluat viedä. Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia Marketoon.
-
-   :::image type="content" source="media/export-segment-marketo.png" alt-text="Marketoon vietävien kenttien ja segmenttien valitseminen":::
-
-1. Valitse **Tallenna**.
-
-## <a name="export-the-data"></a>Tietojen vieminen
-
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä. Marketon segmentit ovat nyt [Marketo-luetteloissa](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
@@ -69,6 +33,49 @@ Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan m
 - Marketo-vienti on rajoitettu segmentteihin
 - Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 3 tuntia. 
 - Marketoon vietävien profiilien määrä määräytyy Marketo-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+
+## <a name="set-up-connection-to-marketo"></a>Määritä yhteys Marketoon
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
+
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Marketo**.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Anna **[Marketon asiakastunnus, asiakasohjelman salasana ja REST-päätepisteen isäntänimi](https://developers.marketo.com/rest-api/authentication/)**.
+
+1. Vahvista **Tietojen yksityisyys ja vaatimustenmukaisuus** valitsemalla **Hyväksyn** ja käynnistä Marketo-yhteys valitsemalla **Yhdistä**.
+
+1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
+
+1. Viimeistele yhteys valitsemalla **Tallenna**.
+
+## <a name="configure-an-export"></a>Viennin määrittäminen
+
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Marketo-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
+1. Anna **[Marketo-luettelon tunnus](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+
+1. Voit myös viedä **etunimen**, **sukunimen**, **paikkakunnan**, **osavaltion** ja **maan/alueen** yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
+
+1. Valitse segmentit, jotka haluat viedä. Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia Marketoon.
+
+1. Valitse **Tallenna**.
+
+Viennin tallentaminen ei suorita vientiä heti.
+
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). Marketon segmentit ovat nyt [Marketo-luetteloissa](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
+
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

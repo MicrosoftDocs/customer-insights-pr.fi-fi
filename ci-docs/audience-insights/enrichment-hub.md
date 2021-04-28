@@ -1,7 +1,7 @@
 ---
 title: Yhtenäisten asiakasprofiilien rikastaminen
 description: Asiakastietojen rikastaminen ominaisuuksien avulla.
-ms.date: 11/02/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 36e6f7f8fcd64fc2591e913910918b83bf27567b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 10c338b89a6f9971912d05986c105cba1221b01b
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597691"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896001"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
 
@@ -27,8 +27,8 @@ Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jos haluat l
 
 **Tutustu**-välilehdessä ovat seuraavat täydennykset:
 
-- Microsoft Graphin toimittamat [tuotemerkit](enrichment-microsoft-graph.md)
-- Microsoft Graphin toimittamat [kiinnostuksen kohteet](enrichment-microsoft-graph.md)
+- [Tuotemerkit](enrichment-microsoft.md), jotka toimittaa Microsoft
+- [Kiinnostuksen kohteet](enrichment-microsoft.md), jotka toimittaa Microsoft
 - Leadspacen toimittamat [yritystiedot](enrichment-leadspace.md)
 - Experianin toimittamat [demografiatiedot](enrichment-experian.md)
 - HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md)
@@ -40,7 +40,7 @@ Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jos haluat l
 
 Saat kaikki määritetyt rikastukset käyttöön valitsemalla **Omat rikastukset**. Kullakin rikastuksella on rivi, joka sisältää lisätietoja rikastamisesta.
 
-Saat käytettävissä olevat vaihtoehdot näkyviin valitsemalla rikastuksen. Vaihtoehtoisesti saat vaihtoehdot näkyviin valitsemalla luettelossa kolme pistettä (...).
+Saat käytettävissä olevat vaihtoehdot näkyviin valitsemalla rikastuksen. Voit myös valita luettelokohteesta kolme pistettä (...), kun haluat nähdä vaihtoehdot.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Rikastusten hallinta-asetukset rikastamisluettelossa":::
 
@@ -52,5 +52,12 @@ Saat käytettävissä olevat vaihtoehdot näkyviin valitsemalla rikastuksen. Vai
 
 Useita rikastamisia voi suorittaa tai poistaa käytöstä samanaikaisesti valitsemalla ne luettelossa. Näyttämis- ja muokkausvaihtoehtoja ei voi käyttää joukkotoimintoja, vaan niitä voi käyttää kerralla vain yhdessä rikastamisessa.
 
+## <a name="enrichments-and-connections"></a>Rikastukset ja yhteydet
+
+Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](connections.md), jotka järjestelmänvalvoja tunnistetiedoilla ja antaa tietojen siirron hyväksynnän. Tämän jälkeen sekä järjestelmänvalvojat että osallistujat voivat käyttää yhteyttä rikastusten määrittämiseen.  
+
+## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
+
+Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Voit rikastaa tiedot esim. vain tiettyä segmenttiä varten. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajoitukset ja nykyinen käyttö näkyy **Rikastus**-sivulla.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

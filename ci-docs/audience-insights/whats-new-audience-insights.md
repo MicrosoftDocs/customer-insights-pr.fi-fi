@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 03/08/2021
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2159481f9355de738a7b457dcf0849a45c3e08db
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598427"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896231"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -22,14 +22,51 @@ ms.locfileid: "5598427"
 
 Olemme innoissamme voidessamme ilmoittaa uusimmista päivityksistämme! Tässä artikkelissa on yhteenveto yleisen esiversion ominaisuuksista, yleisen saatavuuden parannuksista ja ominaisuuksien päivityksistä. Katso ominaisuuksien pitkäaikaiset suunnitelmat [Dynamics 365- ja Power Platform -julkaisusuunnitelmista](/dynamics365/release-plans/).
 
-Lisäksi seuraavassa videossa on tietoja kuluneille kuudelle kuukaudelle suunnitelluista ominaisuuksista.
-
-> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
-
 Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä ominaisuuksia ennen muita. Ellei toisin määritetä, sinun ei tarvitse tehdä mitään, vaan päivitämme sovelluksen automaattisesti ilman käyttökatkoja.
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="march-2021-updates"></a>Maaliskuun 2021 päivitykset
+
+Maaliskuun 2021 päivityksessä on useita ominaisuuksia, suorituskykypäivityksiä ja ohjelmavirheiden korjauksia.
+
+### <a name="activities"></a>Aktiviteetit
+
+- **Aktiviteetin ohjattu toiminto ja semanttiset tyypit** Aktiviteettien yhdistämiskokemusta on parannettu ja päivitetty, jotta aktiviteettien yhdistämismääritysten luontia voidaan opastaa ja yksinkertaistaa. Tässä uudessa käyttökokemuksessa käyttäjät saavat ohjatun käyttökokemuksen, joka auttaa prosessin jokaisen vaiheen suorittamisessa. Aktiviteettien yhdistämisvaiheessa käyttäjä voi useista aktiviteettityypeistä valinnan lisäksi yhdistää *Subscription* ja/tai *SalesOrderLine*-tiedot semanttisesti toimialan vakiorakenteisiin, joita voidaan käyttää prosessissa myöhemmin.    
+  Lisätietoja on kohdassa [Asiakasaktiviteetit](activities.md).
+
+### <a name="data-ingestion"></a>Tietojen käsittely
+
+- **Muodosta yhteys paikallisiin tietolähteisiin käyttämällä Power Platform tietovirtoja ja yhdyskäytäviä** Olemme iloisia siitä, että voimme ilmoittaa Power Platform -tietovirtojen ja paikallisten yhteyksien esiversion Customer Insights -yhdyskäytävien käytölle yhdessä Power Platform- tai Dataverse-ympäristöjen kanssa. Kaikki linkitetyn Dataverse-ympäristön Customer Insights -ympäristössä luodut uudet tietolähteet käyttävät oletusarvon mukaan Power Platform- tietovirtoja hyödyntäen paikallisia tietojen yhteyksiä sekä monipuolisia yhdistin- ja muunnosominaisuuksia.
+
+### <a name="extensibility"></a>Laajennettavuus
+
+- **Yhteyksiin ja vienteihin järjestetyt viennit** Olemme muuttaneet **Vientikohteet**-sivun nimeksi **Yhteydet** ja lisänneet erillisen **Viennit**-sivun. Tässä päivityksessä siirrämme aiemmin luodut viennit yhteyden ja yhteyttä käyttävän viennin pareiksi. Järjestelmänvalvojat näkevät nyt selkeämmin lähtevät tiedot **Yhteydet**-sivulla. Kaikilla käyttäjärooleilla on **Viennit**-sivun käyttöoikeus, mutta vain järjestelmänvalvojat voivat sallia osallistujien muokata tiettyjä vientejä jaetuilla yhteyksillä.     
+  Lisätietoja on ohjeaiheessa [Yhteyksien yleiskuvaus](connections.md) ja [Vientien yleiskatsaus](export-destinations.md).
+
+- **Vie segmentit Campaign Monitoriin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Campaign Monitor. Nyt voit viedä segmenttejä Customer Insightsista Campaign Monitor -luetteloihin ja käyttää niitä markkinointikampanjoiden lähtökohtana.    
+   Lisätietoja on aiheessa [Vienti Campaign Monitoriin](export-campaign-monitor.md).
+
+- **Vie segmentit Constant Contactiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Constant Contact. Nyt voit viedä segmenttejä Customer Insightsista Constant Contact -luetteloihin ja käyttää niitä markkinointikampanjoiden lähtökohtana.   
+   Lisätietoja on aiheessa [Vienti Constant Contactiin](export-constant-contact.md).
+
+- **Vie segmentit RollWorksiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään RollWorks. Nyt voit viedä segmenttejä Customer Insightsista RollWorks-kohdeyleisöihin ja käyttää niitä B2B-mainonnan lähtökohtana.    
+   Lisätietoja on aiheessa [Vienti RollWorksiin](export-rollworks.md).
+
+- **Vie segmentit Snapchatiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Snapchat. Nyt voit viedä segmenttejä Customer Insightsista Snapchat-kohdeyleisöihin ja käyttää niitä mainonnan lähtökohtana.     
+   Lisätietoja on aiheessa [Vienti Snapchatiin](export-snapchat.md).
+
+### <a name="predictions"></a>Ennusteet
+
+- **Käytä tuotesuodattimia tuotesuositusten ennustavassa käytössä** Tuotesuositusmalliin on lisätty tuotesuodattimien käyttömahdollisuus. Nyt voit luoda ennusteen, joka käyttää vain osaa tuotteistasi.    
+   Lisätietoja on ohjeaiheessa [Tuotesuodattimien määrittäminen](predict-product-recommendation.md#configure-product-filters).
+
+- **Luo segmenttejä mallin ennusteista** Olemme lisänneet nopean tavan luoda segmenttejä käyttämällä ennustemallin tuloksia. Mallin tulossivulla voit helposti luoda uuden segmentin valitsemalla uuden **Luo segmentti** -vaihtoehdon.    
+  Lisätietoja on ohjeaiheessa [Luo segmentti ennustemallin perusteella](prediction-based-segment.md).
+
+- **Tuotesuositusten selitykset** Olemme lisänneet tietoja siitä, mitä tärkeitä tekijöitä tekoälymallissa on opittu tuotesuositusten tuottamiseksi ja missä määrin nämä tekijät vaikuttavat tuotesuosituksiin. Nämä tiedot lisätään mallin tulosnäyttöön.    
+   Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-product-recommendation.md#review-a-prediction-status-and-results).
 
 ## <a name="february-2021-updates"></a>Helmikuun 2021 päivitykset
 
@@ -107,7 +144,7 @@ Joulukuun 2020 päivitykset sisältävät useita ominaisuuksia, suorituskykypäi
 
   Lisäksi olemme lisänneet uusia määritysvaihtoehtoja, jotka ohjaavat paremmin asiakasprofiilien rikastamista. 
 
-  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md).
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md).
 
 - **Rikastettavien profiilien määrittäminen**
 
@@ -309,8 +346,8 @@ Elokuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivityk
 
 - **Kiinnostuksen kohteiden affiniteettien rikastaminen käytettävissä useilla markkinoilla**
 
-  Olemme laajentamassa kiinnostuksen kohteiden affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla voit rikastaa asiakastietoja niin, että ne ottavat huomioon nämä markkinat aiempaa paremmin. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
-  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md)
+  Olemme laajentamassa kiinnostuksen kohteiden affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla voit rikastaa asiakastietoja niin, että ne ottavat huomioon nämä markkinat aiempaa paremmin. Rikastamme myös näillä markkina-alueilla olevia asiakasprofiileja käyttämällä Microsoftin omistamia paikallisia tietoja.
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md)
 
 
 ## <a name="july-2020-updates"></a>Heinäkuun 2020 päivitykset
@@ -330,8 +367,8 @@ Heinäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivi
 
 - **Tuotemerkin affiniteettien rikastaminen käytettävissä useilla markkinoilla**
 
-  Olemme laajentamassa tuotemerkin affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla asiakastietoja voi rikastaa näiden markkinoiden paikallisilla tuotemerkeillä. Lisäksi rikastetaan näillä markkinoilla sijaitsevia asiakasprofiileja käyttämällä Microsoft Graphin paikallisia tietoja.
-  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md)
+  Olemme laajentamassa tuotemerkin affiniteettien rikastamisen saatavuutta Yhdysvaltojen ulkopuolelle viidelle markkina-alueelle: Kanada, Australia, Yhdistynyt kuningaskunta, Ranska ja Saksa. Tämän laajennuksen avulla asiakastietoja voi rikastaa näiden markkinoiden paikallisilla tuotemerkeillä. Rikastamme myös näillä markkina-alueilla olevia asiakasprofiileja käyttämällä Microsoftin omistamia paikallisia tietoja.
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md)
 
 ## <a name="june-2020-updates"></a>Kesäkuun 2020 päivitykset
 
@@ -355,7 +392,7 @@ Kesäkuun 2020 päivitykset sisältävät useita toimintoja, suorituskykypäivit
 - **Erillinen tuotemerkin ja kiinnostuksen kohteiden affiniteetin rikastaminen**
 
   Tuotemerkkien ja kiinnostuksen kohteiden affiniteetit ovat nyt saatavana kahtena erillisenä rikastamisena. Koska rikastamiset ovat erillisiä, niitä voi määrittää ja hallita joustavasti liiketoiminnan tarpeiden mukaan.    
-  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md).
+  Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md).
 
 #### <a name="extensibility"></a>Laajennettavuus
 

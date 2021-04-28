@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596863"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896323"
 ---
 # <a name="customer-profiles"></a>Asiakasprofiilit
 
@@ -59,7 +59,7 @@ Asiakastietoja ovat esimerkiksi seuraavat:
 
 -   **Asiakasprofiili-ruutu:** Tässä ruudussa näkyy erilaisia yhtenäisen asiakasprofiilientiteetin arvoja. Näitä tietoja ovat esimerkiksi sähköpostiosoite, nimi ja kaupunki. 
 
--   **Mahdolliset kiinnostuksen kohteet, Mahdolliset tuotemerkit:** Osoittaa, onko ensimmäisen osapuolen rikastaminen määritetty. Ilmaisee mahdolliset kiinnostuksen kohteet ja brändiaffiniteetit, joita voi olla tämän asiakkaan profiilia muistuttavalla asiakkaalla. Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft-graph.md).
+-   **Mahdolliset kiinnostuksen kohteet, Mahdolliset tuotemerkit:** Osoittaa, onko ensimmäisen osapuolen rikastaminen määritetty. Ilmaisee mahdolliset kiinnostuksen kohteet ja brändiaffiniteetit, joita voi olla tämän asiakkaan profiilia muistuttavalla asiakkaalla. Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md).
 
 -   **Mittarit:** Näyttää tietyn tyyppisen mittareiden määrittäminen: asiakasmääritemittarit. Ne sisältävät asiakkaisiin liittyvät lasketut tunnusluvut yksittäisen asiakkaan tasolla. Lisätietoja on kohdassa [Mittarien määrittäminen ja hallinta](measures.md).
 

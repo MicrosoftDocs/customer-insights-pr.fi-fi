@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen SFTP-isäntiin
-description: Opettele määrittämään yhteys SFTP-palvelimeen.
-ms.date: 01/27/2021
+description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,61 +9,70 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9ec14fafa8f99e34b95349371298082e166535d0
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96c6026aded315008439740646827ca910cead90
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598381"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760415"
 ---
-# <a name="connector-for-sftp-preview"></a>SFTP-yhdistin (esiversio)
+# <a name="export-segment-lists-and-other-data-to-sftp-preview"></a>Segmenttiluetteloiden ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)
 
-Asiakastietojen käyttäminen kolmansien osapuolten sovelluksissa viemällä ne SFTP (Secure File Transfer Protocol) -isäntään.
+Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secure File Transfer Protocol (SFTP) -sijaintiin.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
 - SFTP-isännän ja vastaavien valtuustietojen käytettävyys.
-
-## <a name="connect-to-sftp"></a>Muodosta yhteys SFTP:hen
-
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
-
-1. Valitse kohdassa **SFTP** **Määritä**.
-
-1. Anna kohteelle tunnistettava nimi **Näyttönimi**-kentässä.
-
-1. Anna SFTP-tilille **Käyttäjänimi**, **Salasana**, **Isäntänimi** ja **Vientikansio**.
-
-1. Valitse **Tarkista** yhteyden testausta varten.
-
-1. Kun tarkistus on tehty, määritä, viedäänkö tiedot **Gzip-pakattuina** vai **purettuina**. Valitse sitten vietyjen tiedostojen **kentän erotin**.
-
-1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
-
-1. Aloita viennin määrittäminen valitsemalla **Seuraava**.
-
-## <a name="configure-the-export"></a>Viennin määrittäminen
-
-1. Valitse vietävät entiteetit, esimerkiksi segmentit.
-
-   > [!NOTE]
-   > Kukin valittu entiteetti sisältää enintään viisi tulostetiedostoa vietäessä. 
-
-1. Valitse **Tallenna**.
-
-## <a name="export-the-data"></a>Tietojen vieminen
-
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia. 
 - Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia. 
 
+## <a name="set-up-connection-to-sftp"></a>Määritä SFTP-yhteydet
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
+
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **SFTP**.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Anna SFTP-tilille **Käyttäjänimi**, **Salasana**, **Isäntänimi** ja **Vientikansio**.
+
+1. Valitse **Tarkista** yhteyden testausta varten.
+
+1. Valitse, haluatko viedä tiedot **gzip**-muodossa vai **pakkaamattomina** sekä vietävien tiedostojen **kenttäerotin**.
+
+1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
+
+1. Viimeistele yhteys valitsemalla **Tallenna**.
+
+## <a name="configure-an-export"></a>Viennin määrittäminen
+
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys SFTP-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
+1. Valitse vietävät entiteetit, esimerkiksi segmentit.
+
+   > [!NOTE]
+   > Kukin valittu kohde jaetaan enintään viiteen tulostiedostoon vietäessä. 
+
+1. Valitse **Tallenna**.
+
+Viennin tallentaminen ei suorita vientiä heti.
+
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
 Kun tietojen lähetys SFTP:n kautta otetaan käyttöön Dynamics 365 Customer Insightsissa, tietojen siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että vientikohde noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

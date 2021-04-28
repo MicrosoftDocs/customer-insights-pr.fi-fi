@@ -9,12 +9,12 @@ ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8fdfe16d609fbebd53703b56f4e0252125bedf8f
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598626"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896461"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus
 
@@ -27,9 +27,9 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
   - Tiedot on helppo yhdistää ja yhtenäistää. Tapahtuma-, havainto- ja toimintatiedot voidaan tuoda suosituista [tietolähteistä valmiiden yhdistimien avulla](data-sources.md).
   - Asiakastiedot voidaan muuntaa älykkäästi muodostamalla yhtenäisiä asiakasprofiileja, jotka ovat [Common Data Modelin](/common-data-model/) mukaisia. Asiakkaiden tunnistamisen ratkaiseminen AI/ML-pohjaisilla suosituksilla.
 
-- **Microsoft Graphiin sisältyvien älykkäiden käyttäjäryhmätietojen rikastaminen**
+- **Rikasta kohdeyleisötiedoilla**
 
-  - Asiakasprofiilien rikastaminen [sisällyttämällä Microsoft Graphiin sisältyvät älykkäät käyttäjäryhmätiedot](enrichment-microsoft-graph.md).  
+  - Voit luoda monipuolisempia asiakasprofiileja [sisällyttämällä rikastettuja tietoja](enrichment-hub.md).  
 
 - **Liiketoimintaprosessien ja personoitujen asiakaskokemusten tehostaminen**
 
@@ -43,7 +43,7 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
 
   - Mahdollisuus käyttää monipuolista yhdistinvalikoimaa kaikkien asiakastietojen käsittelyyn.
   - Mahdollisuus yhtenäistää asiakastiedot ja muuntaa ne [Common Data Model](/common-data-model/) -muotoon.
-  - Asiakastietojen rikastaminen Microsoft Graphiin sisältävillä älykkäille kohdeyleisötiedoilla, kuten tuotemerkkien affiniteetilla ja kiinnostuksenkohteilla.
+  - Asiakastietojen rikastaminen kohdeyleisötiedoilla, kuten tuotemerkkien affiniteetilla ja kiinnostuksenkohteilla.
   - Napsautuksiin eikä koodin perustuva määritys- ja virheenkorjauskokemus helpottaa käyttäjäryhmän merkityksellisten tietojen määrittämistä ja mahdollisten ongelmien tunnistamista.
   - Eri lähteistä peräisin olevien asiakastietojen siistiminen ja standardointi tekoälyyn perustuvilla suosituksilla.  
 

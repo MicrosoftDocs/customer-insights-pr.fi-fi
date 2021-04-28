@@ -1,7 +1,7 @@
 ---
 title: Asiakasaktiviteetit
 description: Asiakasaktiviteettien määrittäminen ja niiden näyttäminen asiakkaan aikajanalla.
-ms.date: 10/13/2020
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,79 +9,88 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: fbfa9d7e00859cc80c24b98bd2dc806f1fda7803
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
+ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596725"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "5866403"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
-Yhdistämällä asiakasaktiviteetteja Dynamics 365 Customer Insightsin [eri tietolähteistä](data-sources.md) voidaan luoda asiakkaan aikajana, jolla aktiviteetit ovat kronologisessa järjestyksessä. Voit sisällyttää aikajanan Dynamics 365:n asiakkaan osallistamissovelluksiin [asiakaskortin apuohjelmalla](customer-card-add-in.md) tai Power BI -koontinäytön avulla.
+Yhdistämällä [eri tietolähteiden](data-sources.md) asiakasaktiviteetteja Dynamics 365 Customer Insightsissa voit luoda aikajanan, jossa aktiviteetit näkyvät aikajärjestyksessä. Sisällytä aikajana Dynamics 365 -sovelluksiin [Asiakaskortin-apuohjelma](customer-card-add-in.md) -ratkaisulla tai Power BI -koontinäytön avulla.
 
 ## <a name="define-an-activity"></a>Aktiviteetin määrittäminen
 
-Tietolähteet sisältävät entiteettejä, joissa on tapahtuma- ja aktiviteettitietoja useita tietolähteistä. Määritä, mitä nämä entiteetit ovat, ja valitse aktiviteetit, joita haluat tarkastella asiakkaan aikajanalla. Valitse entiteetti, joka sisältää kohdeaktiviteetit.
+Tietolähteet voivat sisältää entiteettejä, joissa on tapahtuma- ja aktiviteettitietoja useita tietolähteistä. Määritä, mitä nämä entiteetit ovat, ja valitse aktiviteetit, joita haluat tarkastella asiakkaan aikajanalla. Valitse entiteetti, joka sisältää kohdeaktiviteetit.
+
+> [!NOTE]
+> Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäärä**, jotta se voidaan sisällyttää asiakkaan aikajanaa, eikä entiteettejä, joissa ei ole **Päivämäärä**-kenttiä, voi lisätä. **Lisää aktiviteetti** -ohjausobjekti poistetaan käytöstä, jos kyseistä entiteettiä ei löydy.
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Aktiviteetit**.
 
-1. Valitse **Lisää aktiviteetti**.
+1. Valitse **Lisää aktiviteetti**, jos haluat aloittaa ohjatun käyttökokemuksen aktiviteetin määritysprosessille.
 
-   > [!NOTE]
-   > Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäärä**, jotta se voidaan sisällyttää asiakkaan aikajanaa, eikä entiteettejä, joissa ei ole **Päivämäärä**-kenttiä, voi lisätä. **Lisää aktiviteetti** -ohjausobjekti poistetaan käytöstä, jos kyseistä entiteettiä ei löydy.
+1. Määritä **Aktiviteettitiedot**-vaiheessa seuraavien kenttien arvot:
 
-1. Määritä **Lisää aktiviteetti** -ruudussa seuraavien kenttien arvot:
-
+   - **Aktiviteetin nimi**: Valitse aktiviteetille nimi.
    - **Entiteetti**: valitse tapahtuma-tai aktiviteettitietoja sisältävä entiteetti.
    - **Perusavain**: Valitse kenttä, joka yksilöi tietueen. Siinä ei saa olla arvojen kaksoiskappaleita, tyhjiä arvoja eikä puuttuvia arvoja.
-   - **Aikaleima**: valitse kenttä, joka ilmaisee aktiviteetin aloitusajan.
-   - **Tapahtuma**: valitse kenttä, joka on aktiviteetin tapahtuma.
-   - **WWW-osoite**: Valitse kenttä, joka kuvaa URL-osoitetta ja sisältää tämän aktiviteetin lisätiedot. Esimerkiksi tapahtumajärjestelmä, joka on tämän aktiviteetin aiheuttaja. Tämä URL-osoite voi olla mikä tahansa tietolähteen kenttä, tai se voidaan muodostaa uutena kenttänä käyttämällä Power Query -muunnosta. Nämä URL-tiedot tallennetaan Unified Activity -kohteeseen, joka voidaan käyttää siirtämällä palvelimelta ohjelmointirajapintojen avulla.
-   - **Tiedot**: vaihtoehtoisesti voit valita lisätietoja varten lisättävän kentän.
-   - **Kuvake**: vaihtoehtoisesti voit valita tämän aktiviteetin ilmaisevan kuvakkeen.
-   - **Aktiviteetin tyyppi**: Määritä sellainen aktiviteetin tyypin viittaus Common Data Modeliin, joka parhaiten kuvaa aktiviteetin semanttista määritelmää.
 
-1. Määritä **Määritä suhde** -osassa tiedot, jotka yhdistävät aktiviteettitiedot vastaavaan asiakkaaseen.
+   :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Määritä aktiviteettitiedot: nimi, entiteetti ja perusavain.":::
 
-    - **Aktiviteetin entiteettikenttä**: Valitse aktiviteettikohteen kenttä, jonka avulla luodaan suhde toiseen entiteettiin.
-    - **Asiakasentiteetti**: Valitse vastaava lähdeasiakas-entiteetti, johon aktiviteettikohde on suhteessa. Voit liittyä vain sellaisiin lähdeasiakaskohteisiin, joita käytetään tietojen yhdistämisprosessissa.
-    - **Asiakkaan entiteettikenttä**: Tässä kentässä näkyy lähdeasiakasentiteetin ensisijainen avain, joka on valittu yhdistämisprosessissa. Tämän lähdeasiakaskohteen perusavainkentän avulla luodaan suhde aktiviteettientiteettiin.
-    - **Nimi**: Jos tämän aktiviteettikohteen ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole olemassa, luodaan uusi suhde, jolla on tässä annettu nimi.
+1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**.
+
+1. Määritä **Suhde**-vaiheessa tiedot, jotka yhdistät aktiviteettitiedot vastaavaan asiakkaaseen. Tässä vaiheessa visualisoidaan entiteettien väliset yhteydet.  
+
+   - **Ensimmäinen**: Aktiviteettientiteetin viitekenttä, jonka avulla luodaan suhde toiseen entiteettiin.
+   - **Toinen**: Vastaava lähdeasiakasentiteetti, johon aktiviteettientiteetti on suhteessa. Voit liittää tietoja vain lähdeasiakasentiteetteihin, joita käytetään tietojen yhdistämisprosessissa.
+   - **Kolmas**: Jos tämän aktiviteettientiteetin ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole, uusi suhde luodaan tässä ruudussa annettavalla nimellä.
+
+   :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Entiteettisuhteen määrittäminen.":::
+
+1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. 
+
+1. Valitse **Aktiviteetin yhdistäminen** -vaiheessa aktiviteettitapahtuma ja aktiviteetin aloitusaika. 
+   - **Pakolliset kentät**
+      1. **Tapahtuma-aktiviteetti**: kenttä, joka on tämän aktiviteetin tapahtuma
+      2. **Aikaleima**: Kenttä, joka edustaa aktiviteetin aloitusaikaa.
+
+   - **Valinnaiset kentät**
+      1. **Lisätietoja**: Kenttä, jossa on tähän aktiviteettiin liittyviä tietoja.
+      2. **Kuvake**: kuvake, joka parhaiten edustaa tätä aktiviteettityyppiä.
+      3. **WWW-osoite**: Kenttä, joka sisältää tätä aktiviteettia koskevat tiedot sisältävän URL-osoitteen. Esimerkiksi tapahtumajärjestelmä, joka on tämän aktiviteetin aiheuttaja. Tämä URL-osoite voi olla mikä tahansa tietolähteen kenttä, tai se voidaan muodostaa uutena kenttänä käyttämällä Power Query -muunnosta. URL-osoitteen tiedot tallennetaan *Yhdistetty aktiviteetti* -entiteettiin, jota voidaan käyttää [ohjelmointirajapintojen](apis.md) käytön jälkeen.
    
-   > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen](media/activities-entities-define.png "Entiteettisuhteen määrittäminen")
+   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Määritä asiakasaktiviteetin tiedot Yhdistetty aktiviteetti -entiteetissä.":::
 
-1. Ota muutokset käyttöön valitsemalla **Tallenna**.
+1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. Voit tallentaa aktiviteetin nyt valitsemalla **Viimeistele ja tarkista**, kun aktiviteettityypiksi on määritetty **Muu**. 
 
-1. Valitse **Aktiviteetit**-sivulla **Suorita**.
+1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. *Subscription* & *SalesOrderLine* -aktiviteettityypit voidaan tällä hetkellä yhdistää semanttisesti, kun kenttien yhdistämiseen suostutaan. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
+
+1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. 
+
+1. Tarkista valinnat **Tarkista**-vaiheessa. Voit palata mihin tahansa edellä kuvattuun vaiheeseen ja päivittää tiedot tarvittaessa.
+
+   :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Tarkista aktiviteetin määritetyt kentät.":::
+   
+1. Valitse **Tallenna aktiviteetti**, jos haluat ottaa muutokset käyttöön ja palata kohtaan **Tiedot** > **Aktiviteetit** valitsemalla **Valmis**. Tässä näet aikajanalla näytettävät aktiviteetit. 
+
+1. Käsittele aktiviteetti valitsemalla **Aktiviteetit**-sivulla **Suorita**. 
 
 > [!TIP]
 > Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
 
-## <a name="edit-an-activity"></a>Aktiviteetin muokkaaminen
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Aktiviteetit**.
+## <a name="manage-existing-activities"></a>Aiemmin luotujen aktiviteettien hallinta
 
-2. Valitse aktiviteettientiteetti, jota haluat muokata ja valitse **Muokkaa**. Voit myös siirtää kohdistimen entiteettirivin kohdalle ja valita **Muokkaa**-kuvakkeen.
+Kohdassa **Tiedot** > **Aktiviteetit** voit tarkastella kaikkia tallennettuja aktiviteetteja ja hallita niitä. Kutakin aktiviteettia edustaa rivi, joka sisältää myös lähdettä, entiteettiä ja aktiviteettityyppiä koskevat tiedot.
 
-3. Napsauta **Muokkaa**-kuvaketta.
+Seuraavat toiminnot ovat käytettävissä, kun valitset aktiviteetin. 
 
-4. Päivitä **Muokkaa aktiviteettia** -ruudussa arvot ja valitse **Tallenna**.
+- **Muokkaa**: avaa aktiviteettiasetukset tarkistusvaiheessa. Voit muuttaa mitä tahansa tai kaikkia nykyisiä määrityksiä tässä vaiheessa. Kun olet muuttanut kokoonpanoa, valitse **Tallenna aktiviteetti** ja käsittele sitten muutokset valitsemalla **Suorita**.
 
-5. Valitse **Aktiviteetit**-sivulla **Suorita**.
+- **Nimeä uudelleen**: avaa dialogin, jossa voit kirjoittaa valitulle aktiviteetille toisen nimen. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
-## <a name="delete-an-activity"></a>Aktiviteetin poistaminen
-
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Aktiviteetit**.
-
-2. Valitse aktiviteettientiteetti, jonka haluat poistaa ja valitse **Poista**. Voit myös siirtää kohdistimen entiteettirivin kohdalle ja valita **Poista**-kuvakkeen. Voit myös valita useita aktiviteettikohteita poistettavaksi kerralla.
-   > [!div class="mx-imgBorder"]
-   > ![Muokkaa tai poista entiteettisuhde](media/activities-entities-edit-delete.png "Muokkaa tai poista entiteettisuhde").
-
-3. Valitse **Poista**-kuvake.
-
-4. Vahvista poisto.
-
+- **Poista**: avaa dialogin, joka vahvistaa valitun aktiviteetin poistamisen. Voit myös poistaa useita aktiviteetteja kerralla valitsemalla aktiviteetit ja valitsemalla sitten poistokuvakkeen. Vahvista poisto valitsemalla **Poista**.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

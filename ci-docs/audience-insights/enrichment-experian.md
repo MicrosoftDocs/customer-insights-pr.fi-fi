@@ -1,7 +1,7 @@
 ---
 title: Rikastaminen kolmannen osapuolen Experian-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Experian-rikastamisesta.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597783"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896369"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Asiakasprofiilien rikastaminen Experianin demografiatiedoilla (esiversio)
 
@@ -25,10 +25,10 @@ Experian on maailman johtava kuluttaja- ja yritysluottojen raportointi- ja markk
 Experianin määrittäminen edellyttää seuraavien edellytysten toteutumista:
 
 - Aktiivinen Experian-tilaus. Tilaus tehdään suoraan [Experianilta](https://www.experian.com/marketing-services/contact). [Lisätietoja Experianin tietojen rikastamisesta](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Sinulla on Experianin luoma SSH-yhteensopivan ST (Secure Transport) -tilin käyttäjätunnus, osapuolen tunnus ja mallinumero.
-- Sinulla on käyttäjäryhmän merkityksellisten tietojen [järjestelmänvalvojan](permissions.md#administrator) oikeudet.
 
-## <a name="configuration"></a>Määritys
+- Järjestelmänvalvoja on jo määrittänyt Experian-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet. Tarvitset myös käyttäjätunnuksen, osapuolen tunnuksen ja mallinumeron sinulle luomallesi SSH-yhteensopivalle Secure Transport (ST) -tilille, jonka Experian loi.
+
+## <a name="configure-the-enrichment"></a>Määritä rikastus
 
 1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
 
@@ -36,26 +36,46 @@ Experianin määrittäminen edellyttää seuraavien edellytysten toteutumista:
 
    > [!div class="mx-imgBorder"]
    > ![Experian-ruutu](media/experian-tile.png "Experian-ruutu")
+   > 
 
-1. Valitse **Aloita** ja Experianin ST (Secure Transport) -tilin käyttäjätunnus, osapuolen tunnus ja mallinumero. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu. Vahvista kaikki syötteet valitsemalla **Käytä**:
+1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** ja valitsemalla avattavasta valikosta Experian. 
 
-## <a name="map-your-fields"></a>Yhdistä kenttäsi
+1. Vahvista valinta valitsemalla **Yhdistä Experianiin**.
 
-1.  Valitse **Lisää tiedot** ja valitse **asiakastietojoukko**, jota haluat rikastaa Experianin demografiatiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+1.  Valitse **Seuraava** ja valitse **Asiakastietojoukko**, jonka haluat rikastaa Experianin demografiatiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
-1. Valitse avaintunnisteet **Nimi ja osoite**-, **Sähköposti**- tai **Puhelin**-kohdasta ja lähetä ne Experianille ratkaisun määrittämistä varten.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
 
-   > [!TIP]
-   > Mitä enemmän avaintunnisteiden määritteitä lähetetään Experianiin, sitä korkeampi vastaavuusaste on.
+1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttätyyppejä pitäisi käyttää Experianin vastaavien demografiatietojen etsimiseen. Vähintään yksi kenttä seuraavista vaaditaan: **Nimi ja osoite**, **Puhelin** tai **Sähköposti**. Jotta vastineen tarkkuus olisi suurempi, voit lisätä enintään kaksi muuta kenttää. Valinta vaikuttaa seuraavassa vaiheessa käytettävissä oleviin yhdistämiskenttiin.
 
-1. Valitse **Seuraava** ja yhdistä vastaavat määritteet valittujen avaintunnistekenttien yhdistetystä asiakasentiteetistä.
+    > [!TIP]
+    > Mitä enemmän avaintunnisteiden määritteitä lähetetään Experianiin, sitä korkeampi vastaavuusaste on.
 
-1. Valitsemalla **Lisää määrite** voit yhdistää lisämääritteet, jotka halutaan lähettää Experianiin.
+1. Aloita kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
-1.  Viimeistele kenttien yhdistäminen valitsemalla **Tallenna**.
+1. Määritä, mitä yhtenäisten profiilien kenttiä pitäisi käyttää Experianin vastaavien demografiatietojen etsimiseen. Pakolliset kentät on merkitty.
 
-    > [!div class="mx-imgBorder"]
-    > ![Experianin kenttämääritys](media/experian-field-mapping.png "Experianin kenttämääritys")
+1. Anna rikastuksen ja tulosentiteetin nimi.
+
+1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
+
+## <a name="configure-the-connection-for-experian"></a>Experian-yhteyden määrittäminen 
+
+Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse rikastusta määritettäessä **Lisää yhteys** *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse Experian-ruudussa **Määritä**.
+
+1. Valitse **Aloita**.
+
+1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
+
+1. Anna Experianin Secure Transport -tilisi voimassa oleva käyttäjätunnus, osapuolitunnus ja mallinumero.
+
+1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu
+
+1. Tarkista määritys valitsemalla **Tarkista**.
+
+1. Kun tarkistus on suoritettu, valitse **Tallenna**.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Experian-yhteyden määritysruutu.":::
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
