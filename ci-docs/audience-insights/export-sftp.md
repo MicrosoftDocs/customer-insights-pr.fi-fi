@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen SFTP-isäntiin
-description: Opettele määrittämään yhteys SFTP-palvelimeen.
-ms.date: 01/27/2021
+description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,61 +9,70 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 9ec14fafa8f99e34b95349371298082e166535d0
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96c6026aded315008439740646827ca910cead90
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598381"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760415"
 ---
-# <a name="connector-for-sftp-preview"></a><span data-ttu-id="0e773-103">SFTP-yhdistin (esiversio)</span><span class="sxs-lookup"><span data-stu-id="0e773-103">Connector for SFTP (preview)</span></span>
+# <a name="export-segment-lists-and-other-data-to-sftp-preview"></a><span data-ttu-id="c1bd8-103">Segmenttiluetteloiden ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)</span><span class="sxs-lookup"><span data-stu-id="c1bd8-103">Export segment lists and other data to SFTP (preview)</span></span>
 
-<span data-ttu-id="0e773-104">Asiakastietojen käyttäminen kolmansien osapuolten sovelluksissa viemällä ne SFTP (Secure File Transfer Protocol) -isäntään.</span><span class="sxs-lookup"><span data-stu-id="0e773-104">Use your customer data in third-party applications by exporting them to a Secure File Transfer Protocol (SFTP) host.</span></span>
+<span data-ttu-id="c1bd8-104">Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secure File Transfer Protocol (SFTP) -sijaintiin.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-104">Use your customer data in third-party applications by exporting them to a Secure File Transfer Protocol (SFTP) location.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="0e773-105">Edellytykset</span><span class="sxs-lookup"><span data-stu-id="0e773-105">Prerequisites</span></span>
+## <a name="prerequisites-for-connection"></a><span data-ttu-id="c1bd8-105">Yhteyden edellytykset</span><span class="sxs-lookup"><span data-stu-id="c1bd8-105">Prerequisites for connection</span></span>
 
-- <span data-ttu-id="0e773-106">SFTP-isännän ja vastaavien valtuustietojen käytettävyys.</span><span class="sxs-lookup"><span data-stu-id="0e773-106">Availability of an SFTP host and corresponding credentials.</span></span>
+- <span data-ttu-id="c1bd8-106">SFTP-isännän ja vastaavien valtuustietojen käytettävyys.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-106">Availability of an SFTP host and corresponding credentials.</span></span>
 
-## <a name="connect-to-sftp"></a><span data-ttu-id="0e773-107">Muodosta yhteys SFTP:hen</span><span class="sxs-lookup"><span data-stu-id="0e773-107">Connect to SFTP</span></span>
+## <a name="known-limitations"></a><span data-ttu-id="c1bd8-107">Tunnetut rajoitukset</span><span class="sxs-lookup"><span data-stu-id="c1bd8-107">Known limitations</span></span>
 
-1. <span data-ttu-id="0e773-108">Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.</span><span class="sxs-lookup"><span data-stu-id="0e773-108">Go to **Admin** > **Export destinations**.</span></span>
+- <span data-ttu-id="c1bd8-108">Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-108">The runtime of an export depends on your system performance.</span></span> <span data-ttu-id="c1bd8-109">Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-109">We recommend two CPU cores and 1 Gb of memory as minimal configuration of your server.</span></span> 
+- <span data-ttu-id="c1bd8-110">Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-110">Exporting entities with up to 100 million customer profiles can take 90 minutes when using the recommended minimal configuration of two CPU cores and 1 Gb of memory.</span></span> 
 
-1. <span data-ttu-id="0e773-109">Valitse kohdassa **SFTP** **Määritä**.</span><span class="sxs-lookup"><span data-stu-id="0e773-109">Under **SFTP**, select **Set up**.</span></span>
+## <a name="set-up-connection-to-sftp"></a><span data-ttu-id="c1bd8-111">Määritä SFTP-yhteydet</span><span class="sxs-lookup"><span data-stu-id="c1bd8-111">Set up connection to SFTP</span></span>
 
-1. <span data-ttu-id="0e773-110">Anna kohteelle tunnistettava nimi **Näyttönimi**-kentässä.</span><span class="sxs-lookup"><span data-stu-id="0e773-110">Give your destination a recognizable name in the **Display name** field.</span></span>
+1. <span data-ttu-id="c1bd8-112">Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-112">Go to **Admin** > **Connections**.</span></span>
 
-1. <span data-ttu-id="0e773-111">Anna SFTP-tilille **Käyttäjänimi**, **Salasana**, **Isäntänimi** ja **Vientikansio**.</span><span class="sxs-lookup"><span data-stu-id="0e773-111">Provide a **Username**, **Password**, **Hostname**, and **Export folder** for your SFTP account.</span></span>
+1. <span data-ttu-id="c1bd8-113">Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **SFTP**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-113">Select **Add connection** and choose **SFTP** to configure the connection.</span></span>
 
-1. <span data-ttu-id="0e773-112">Valitse **Tarkista** yhteyden testausta varten.</span><span class="sxs-lookup"><span data-stu-id="0e773-112">Select **Verify** to test the connection.</span></span>
+1. <span data-ttu-id="c1bd8-114">Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-114">Give your connection a recognizable name in the **Display name** field.</span></span> <span data-ttu-id="c1bd8-115">Yhteyden nimi ja tyyppi kuvaavat yhteyttä.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-115">The name and the type of the connection describe this connection.</span></span> <span data-ttu-id="c1bd8-116">On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-116">We recommend choosing a name that explains the purpose and target of the connection.</span></span>
 
-1. <span data-ttu-id="0e773-113">Kun tarkistus on tehty, määritä, viedäänkö tiedot **Gzip-pakattuina** vai **purettuina**. Valitse sitten vietyjen tiedostojen **kentän erotin**.</span><span class="sxs-lookup"><span data-stu-id="0e773-113">After successful verification, choose if you want to export your data **Gzipped** or **Unzipped**, and select the **field delimiter** for the exported files.</span></span>
+1. <span data-ttu-id="c1bd8-117">Valitse, kuka voi käyttää tätä yhteyttä.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-117">Choose who can use this connection.</span></span> <span data-ttu-id="c1bd8-118">Jos et tee mitään, oletusarvo on Järjestelmänvalvojat.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-118">If you take no action, the default will be Administrators.</span></span> <span data-ttu-id="c1bd8-119">Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).</span><span class="sxs-lookup"><span data-stu-id="c1bd8-119">For more information, see [Allow contributors to use a connection for exports](connections.md#allow-contributors-to-use-a-connection-for-exports).</span></span>
 
-1. <span data-ttu-id="0e773-114">Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).</span><span class="sxs-lookup"><span data-stu-id="0e773-114">Select **I agree** to confirm the **Data privacy and compliance**.</span></span>
+1. <span data-ttu-id="c1bd8-120">Anna SFTP-tilille **Käyttäjänimi**, **Salasana**, **Isäntänimi** ja **Vientikansio**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-120">Provide a **Username**, **Password**, **Hostname**, and **Export folder** for your SFTP account.</span></span>
 
-1. <span data-ttu-id="0e773-115">Aloita viennin määrittäminen valitsemalla **Seuraava**.</span><span class="sxs-lookup"><span data-stu-id="0e773-115">Select **Next** to start configuring the export.</span></span>
+1. <span data-ttu-id="c1bd8-121">Valitse **Tarkista** yhteyden testausta varten.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-121">Select **Verify** to test the connection.</span></span>
 
-## <a name="configure-the-export"></a><span data-ttu-id="0e773-116">Viennin määrittäminen</span><span class="sxs-lookup"><span data-stu-id="0e773-116">Configure the export</span></span>
+1. <span data-ttu-id="c1bd8-122">Valitse, haluatko viedä tiedot **gzip**-muodossa vai **pakkaamattomina** sekä vietävien tiedostojen **kenttäerotin**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-122">Choose if you want to export your data **Gzipped** or **Unzipped** and the **field delimiter** for the exported files.</span></span>
 
-1. <span data-ttu-id="0e773-117">Valitse vietävät entiteetit, esimerkiksi segmentit.</span><span class="sxs-lookup"><span data-stu-id="0e773-117">Select the entities, for example segments, you want to export.</span></span>
+1. <span data-ttu-id="c1bd8-123">Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).</span><span class="sxs-lookup"><span data-stu-id="c1bd8-123">Select **I agree** to confirm the **Data privacy and compliance**.</span></span>
+
+1. <span data-ttu-id="c1bd8-124">Viimeistele yhteys valitsemalla **Tallenna**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-124">Select **Save** to complete the connection.</span></span>
+
+## <a name="configure-an-export"></a><span data-ttu-id="c1bd8-125">Viennin määrittäminen</span><span class="sxs-lookup"><span data-stu-id="c1bd8-125">Configure an export</span></span>
+
+<span data-ttu-id="c1bd8-126">Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-126">You can configure this export if you have access to a connection of this type.</span></span> <span data-ttu-id="c1bd8-127">Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).</span><span class="sxs-lookup"><span data-stu-id="c1bd8-127">For more information, see [Permissions needed to configure an export](export-destinations.md#set-up-a-new-export).</span></span>
+
+1. <span data-ttu-id="c1bd8-128">Siirry kohtaan **Tiedot** > **Viennit**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-128">Go to **Data** > **Exports**.</span></span>
+
+1. <span data-ttu-id="c1bd8-129">Luo uusi vienti valitsemalla **Lisää kohde**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-129">To create a new export, select **Add destination**.</span></span>
+
+1. <span data-ttu-id="c1bd8-130">Valitse **Yhteys vientiä varten** -kentässä yhteys SFTP-osasta.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-130">In the **Connection for export** field, choose a connection from the SFTP section.</span></span> <span data-ttu-id="c1bd8-131">Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-131">If you don't see this section name, there are no connections of this type available to you.</span></span>
+
+1. <span data-ttu-id="c1bd8-132">Valitse vietävät entiteetit, esimerkiksi segmentit.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-132">Select the entities, for example segments, you want to export.</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="0e773-118">Kukin valittu entiteetti sisältää enintään viisi tulostetiedostoa vietäessä.</span><span class="sxs-lookup"><span data-stu-id="0e773-118">Each selected entity will be up to five output files when exported.</span></span> 
+   > <span data-ttu-id="c1bd8-133">Kukin valittu kohde jaetaan enintään viiteen tulostiedostoon vietäessä.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-133">Each selected entity will be split up into up to five output files when exported.</span></span> 
 
-1. <span data-ttu-id="0e773-119">Valitse **Tallenna**.</span><span class="sxs-lookup"><span data-stu-id="0e773-119">Select **Save**.</span></span>
+1. <span data-ttu-id="c1bd8-134">Valitse **Tallenna**.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-134">Select **Save**.</span></span>
 
-## <a name="export-the-data"></a><span data-ttu-id="0e773-120">Tietojen vieminen</span><span class="sxs-lookup"><span data-stu-id="0e773-120">Export the data</span></span>
+<span data-ttu-id="c1bd8-135">Viennin tallentaminen ei suorita vientiä heti.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-135">Saving an export doesn't run the export immediately.</span></span>
 
-<span data-ttu-id="0e773-121">Voit [viedä tietoja tarvittaessa](export-destinations.md).</span><span class="sxs-lookup"><span data-stu-id="0e773-121">You can [export data on demand](export-destinations.md).</span></span> <span data-ttu-id="0e773-122">Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.</span><span class="sxs-lookup"><span data-stu-id="0e773-122">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span>
+<span data-ttu-id="c1bd8-136">Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-136">The export runs with every [scheduled refresh](system.md#schedule-tab).</span></span> <span data-ttu-id="c1bd8-137">Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand).</span><span class="sxs-lookup"><span data-stu-id="c1bd8-137">You can also [export data on demand](export-destinations.md#run-exports-on-demand).</span></span> 
 
-## <a name="known-limitations"></a><span data-ttu-id="0e773-123">Tunnetut rajoitukset</span><span class="sxs-lookup"><span data-stu-id="0e773-123">Known limitations</span></span>
+## <a name="data-privacy-and-compliance"></a><span data-ttu-id="c1bd8-138">Tietojen yksityisyys ja vaatimustenmukaisuus</span><span class="sxs-lookup"><span data-stu-id="c1bd8-138">Data privacy and compliance</span></span>
 
-- <span data-ttu-id="0e773-124">Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan.</span><span class="sxs-lookup"><span data-stu-id="0e773-124">The runtime of an export depends on your system performance.</span></span> <span data-ttu-id="0e773-125">Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia.</span><span class="sxs-lookup"><span data-stu-id="0e773-125">We recommend two CPU cores and 1 Gb of memory as minimal configuration of your server.</span></span> 
-- <span data-ttu-id="0e773-126">Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia.</span><span class="sxs-lookup"><span data-stu-id="0e773-126">Exporting entities with up to 100 million customer profiles can take 90 minutes when using the recommended minimal configuration of two CPU cores and 1 Gb of memory.</span></span> 
-
-## <a name="data-privacy-and-compliance"></a><span data-ttu-id="0e773-127">Tietojen yksityisyys ja vaatimustenmukaisuus</span><span class="sxs-lookup"><span data-stu-id="0e773-127">Data privacy and compliance</span></span>
-
-<span data-ttu-id="0e773-128">Kun tietojen lähetys SFTP:n kautta otetaan käyttöön Dynamics 365 Customer Insightsissa, tietojen siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja.</span><span class="sxs-lookup"><span data-stu-id="0e773-128">When you enable Dynamics 365 Customer Insights to transmit data via SFTP, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="0e773-129">Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että vientikohde noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita.</span><span class="sxs-lookup"><span data-stu-id="0e773-129">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that the export destination meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="0e773-130">Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="0e773-130">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
-<span data-ttu-id="0e773-131">Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.</span><span class="sxs-lookup"><span data-stu-id="0e773-131">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
-
+<span data-ttu-id="c1bd8-139">Kun tietojen lähetys SFTP:n kautta otetaan käyttöön Dynamics 365 Customer Insightsissa, tietojen siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-139">When you enable Dynamics 365 Customer Insights to transmit data via SFTP, you allow transfer of data outside of the compliance boundary for Dynamics 365 Customer Insights, including potentially sensitive data such as Personal Data.</span></span> <span data-ttu-id="c1bd8-140">Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että vientikohde noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-140">Microsoft will transfer such data at your instruction, but you are responsible for ensuring that the export destination meets any privacy or security obligations you may have.</span></span> <span data-ttu-id="c1bd8-141">Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).</span><span class="sxs-lookup"><span data-stu-id="c1bd8-141">For more information, see [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?linkid=396732).</span></span>
+<span data-ttu-id="c1bd8-142">Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.</span><span class="sxs-lookup"><span data-stu-id="c1bd8-142">Your Dynamics 365 Customer Insights Administrator can remove this export destination at any time to discontinue use of this functionality.</span></span>
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
