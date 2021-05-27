@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 3c0b4690e18285aa37eef481b3cfac951884ead6
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887890"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085526"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -36,11 +36,9 @@ Tietolähde voidaan lisätä pääasiassa kolmella tavalla:
 
 Tietojen käsittelyä paikallisista tietolähteistä Audience Insightsissa tuetaan Power Platform -tietovirtojen perusteella. Tietovirtaukset voidaan ottaa käyttöön Customer Insightsissa [antamalla Microsoft Dataverse -ympäristön URL-osoite](manage-environments.md#create-an-environment-in-an-existing-organization) ympäristöä määritettäessä.
 
-Kun Dataverse-ympäristö on liitetty Customer Insights -tietoihin, luodut tietolähteet käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovirtaukset tukevat paikallisia yhteyksiä tietoyhdyskäytävien avulla. Poista ja luo uudelleen tietolähteet, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä paikallisen tietoyhdyskäytävien käyttöön.
+Kun Dataverse-ympäristö on liitetty Customer Insights -tietoihin, luodut tietolähteet käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovuot tukevat paikallisia yhteyksiä tietoyhdyskäytävän avulla. Poista ja luo uudelleen tietolähteet, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä [paikallisten tietoyhdyskäytävien käyttöön](/powerapps/maker/data-platform/using-dataflows-with-on-premises-data.md).
 
 Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä, ja voit käyttää niitä uudelleen Customer Insightsissa. Tietolähteiden sivulla on linkkejä Power Platform -ympäristöön, jossa voit tarkastella ja määrittää paikallisia yhdyskäytäviä.
-
-:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Näyttökuva tietolähteiden sivusta, jossa on Power Platform -ympäristöön osoittavat linkit.":::
 
 ## <a name="review-ingested-data"></a>Käsiteltyjen tietojen tarkistaminen
 

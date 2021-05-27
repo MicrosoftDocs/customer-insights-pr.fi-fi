@@ -1,7 +1,7 @@
 ---
 title: Ohjelmointirajapintojen käsitteleminen
 description: Ohjelmointirajapintojen käyttäminen ja tietoja niiden rajoituksista.
-ms.date: 03/10/2021
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 59161456914df84d7e72402ed1f5faf70a5119ba
-ms.sourcegitcommit: a39e00a50ad3eda820fd756c5611081f0ca04662
+ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
+ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "5873658"
+ms.lasthandoff: 05/10/2021
+ms.locfileid: "6016588"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights -ohjelmointirajapintojen käyttäminen
 
@@ -90,19 +90,13 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakaskirjastojen kanssa 
 
 1. Valitse Azure-portaalin sovelluksen rekisteröinnissä **Ohjelmointirajapinnan käyttöoikeudet**.
 
-1. Valitse **Lisää käyttöoikeus** ja valitse sitten sivuruudussa **Customer Insights**.
+1. Valitse **Lisää oikeus**. 
+
+1. Valitse **API-rajapinnat, joita organisaationi käyttää** -välilehti, ja valitse luettelosta **Dynamics 365 AI for Customer Insights**. 
 
 1. Valitse **Käyttöoikeustyyppi**-kohdassa **Sovelluksen käyttöoikeudet** ja valitse sitten **CustomerInsights.Api.All**-oikeus.
 
 1. Valitse **Lisää käyttöoikeudet**.
-
-1. Järjestelmänvalvojan hyväksynnän antaminen tässä sovelluksen käyttöoikeudessa edellyttää palveluobjektin lisäämistä.
-
-   1. Asenna Azure Active Directoryn (AD) PowerShell-moduuli: `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Muodosta yhteys AD-tiliin: `Connect-AzureAD -TenantId <your tenant id>`. Voit etsiä vuokraajan tunnuksen valitsemalla **Yleiskuvaus** > **Azure Active Directory**.
-   1. Lisää Azure AD -palveluobjekti suorittamalla seuraavan komento: `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"` AppId-parametri viittaa Customer Insightsin ohjelmointirajapintasovellukseen.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Palveluobjektinäyte":::
 
 1. Palaa sovellusrekisteröinnin **Ohjelmointirajapinnan oikeuksiin**.
 

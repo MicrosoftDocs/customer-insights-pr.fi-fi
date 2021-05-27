@@ -1,7 +1,7 @@
 ---
-title: Segmenttien luonti ja hallinta
-description: Luo asiakassegmenttejä ja ryhmittele ne eri määritteiden perusteella.
-ms.date: 03/02/2021
+title: Käyttäjäryhmien merkityksellisten tietojen segmentit
+description: Yleiskatsaus segmenteistä ja niiden luomisesta ja hallinnasta.
+ms.date: 05/03/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,79 +9,42 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a7fa6515bd6e79dedfb21aa0f0b8e24b873a6771
+ms.sourcegitcommit: 8341fa964365c185b65bc4b71fc0c695ea127dc0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597047"
+ms.lasthandoff: 05/14/2021
+ms.locfileid: "6034008"
 ---
-# <a name="create-and-manage-segments"></a>Segmenttien luonti ja hallinta
+# <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
 Segmenttien avulla asiakkaita ryhmitellä demografia-, tapahtuma- tai toimintamääritteiden perusteella. Segmenttejä käyttämällä voit kohdistaa markkinointikampanjoita, myyntiaktiviteetteja ja asiakastukitoimintoja liiketoiminnan tavoitteiden saavuttamiseksi.
 
-Voit määrittää asiakasprofiilientiteetin ja sen liittyvien entiteettien ympärille monimutkaisia suodattimia. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja. Käytössä on jotakin [palvelurajoituksia](service-limits.md).
-
-Ellei toisin mainita, kaikki segmentit ovat **dynaamisia segmenttejä**, jotka päivitetään toistuvan aikataulun mukaisesti.
-
-Seuraava esimerkki kuvaa segmentointiominaisuutta. Olemme määritelleet segmentin asiakkaille, jotka tilasivat vähintään 500 dollarilla tavaraa viimeisen 90 päivän aikana *ja* jotka olivat mukana eskaloidussa asiakaspalvelupuhelussa.
-
-> [!div class="mx-imgBorder"]
-> ![Useita ryhmiä](media/segmentation-group1-2.png "Useita ryhmiä")
+Segmenttimäärityksen suodattimia vastaavia asiakasprofiileita kutsutaan segmentin *jäseniksi*. Käytössä on jotakin [palvelurajoituksia](service-limits.md).
 
 ## <a name="create-a-new-segment"></a>Luo uusi segmentti
 
-Segmenttejä hallitaan **Segmentit**-sivulla.
+Uuden segmentin voi luoda useilla tavoilla: 
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Segmentit**-sivu.
+- Monimutkainen segmentti segmentin muodostimella: [Tyhjä segmentti](segment-builder.md#create-a-new-segment)
+- Yksinkertaiset segmentit yhdellä operaattorilla: [Pikasegmentti](segment-builder.md#quick-segments)
+- Tekoälyä käyttävä tapa löytää samanlaisia asiakkaita: [Samanlaiset asiakkaat](find-similar-customer-segments.md)
+- Tekoälypohjaiset ehdotukset, jotka perustuvat mittareihin tai määritteisiin: [Ehdotetut segmentit mittareiden parantamiseksi](suggested-segments.md)
+- Aktiviteetteihin perustuvat ehdotukset: [Asiakasaktiviteettien perusteella ehdotetut segmentit](suggested-segments-activity.md)
 
-1. Valitse **Uusi** > **Tyhjä segmentti**.
+## <a name="get-insights-on-existing-segments"></a>Merkityksellisten tietojen saaminen olemassa olevista segmenteistä
 
-1. Valitse **Uusi segmentti** -ruudussa segmentin tyyppi ja anna **nimi**.
+Lisätietoja olemassa olevista segmenteistä on saatavilla [Segmenttien merkityksellisten tietojen](segment-insights.md) avulla. Selvitä, mikä erottaa toisistaan kaksi segmenttiä tai mitä yhteistä niillä on.
 
-   Vaihtoehtoisesti voit antaa näyttönimen ja kuvauksen, joiden avulla segmentin voi tunnistaa.
+## <a name="find-similar-customers"></a>Etsi samankaltaisia asiakkaita
 
-1. Kun valitset **Seuraava**, näyttöön avautuu **Segmentin muodostin** -sivu, jolla voit määrittää ryhmän. Ryhmä on joukko asiakkaita.
-
-1. Valitse sen määritteen sisältävä entiteetti, jonka mukaan segmentointi tehdään.
-
-1. Valitse segmentointiperusteen määrite. Tällä määritteellä voi olla jokin neljästä arvotyypistä: numeerinen, merkkijono, päivämäärä tai totuusarvo.
-
-1. Valitse operaattori ja arvo valitulle määritteelle.
-
-   > [!div class="mx-imgBorder"]
-   > ![Mukautettu ryhmäsuodatin](media/customer-group-numbers.png "Asiakkaan ryhmäsuodatin")
-
-   |Luku |Määritelmä  |
-   |---------|---------|
-   |1     |Entity          |
-   |2     |Määrite          |
-   |3    |Operaattori         |
-   |4    |Arvo         |
-
-8. Jos entiteetti on yhdistetty yhdistettyyn asiakaskohteeseen [suhteen](relationships.md) kautta , sinun täytyy määrittää suhdepolku, jotta voit luoda kelvollisen segmentin. Lisää entiteetit suhdepolusta, kunnes voit valita **Asiakas : CustomerInsights** -entiteetin avattavasta luettelosta. Valitse sitten jokaisessa ehdossa **Kaikki tietueet**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Suhdepolku segmentin luonnin aikana](media/segments-multiple-relationships.png "Suhdepolku segmentin luonnin aikana")
-
-1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet.  
-
-   
-   Esimerkki: Segmentti perustuu entiteettiin, joka sisältää *Asiakas*-entiteettiin liittyviä asiakasaktiviteettitietoja. Segmentti etsii kaikkia asiakkaita, jotka ovat soittaneet tukipalveluun viimeisen 60 päivän aikana. Voit liittää puhelun keston ja puheluiden määrän kaikkiin tulosentiteetin vastaaviin asiakastietueisiin. Nämä tiedot voivat olla hyödyllisiä, jos haluat lähettää sähköpostia, jossa on hyödyllisiä linkkejä online-ohjeartikkeleihin ja usein kysyttyihin kysymyksiin asiakkaille, jotka ovat soittaneet usein.
-
-1. Tallenna segmentti valitsemalla **Tallenna**. Segmentti tallennetaan ja käsitellään, jos kaikki vaatimukset on vahvistettu. Muussa tapauksessa se tallennetaan luonnoksena.
-
-1. Valitse **Palaa segmentteihin**, jos haluat siirtyä takaisin **Segmentit**-sivulle.
+Etsi tekoälyn avulla asiakkaita, jotka muistuttavat valitun segmentin jäseniä. Lisätietoja on kohdassa [samankaltaiset asiakkaat](find-similar-customer-segments.md).
 
 ## <a name="manage-existing-segments"></a>Aiemmin luotujen segmenttien hallinta
 
-**Segmentit**-sivulla voit tarkastella kaikkia tallennettuja segmenttejä ja hallita niitä.
+Siirry **Segmentit**-sivulle nähdäksesi kaikki tallennetut segmentit ja hallitaksesi niitä.
 
 Jokaista segmenttiä edustaa rivi, joka sisältää segmentin lisätietoja.
-
-Voit lajitella sarakkeen segmentit valitsemalla sarakeotsikon.
-
-Voit suodattaa segmenttejä oikeassa yläkulmassa olevan **Haku**-ruudun avulla.
 
 > [!div class="mx-imgBorder"]
 > ![Aiemmin luodun segmentin hallintavaihtoehdot](media/segments-selected-segment.png "Aiemmin luodun segmentin hallintavaihtoehdot")
@@ -106,71 +69,6 @@ Voit päivittää kaikki segmentit kerralla valitsemalla **Päivitä kaikki** **
 > [!TIP]
 > Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
 
-## <a name="download-and-export-segments"></a>Segmenttien lataaminen ja vieminen
-
-Voit ladata segmenttejäsi CSV-tiedostoon tai viedä ne Dynamics 365 Salesiin.
-
-### <a name="download-segments-to-a-csv-file"></a>Segmenttien lataaminen CSV-tiedostoon
-
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Segmentit**-sivu.
-
-2. Valitse tietyn segmentin ruudussa kolme pistettä.
-
-3. Valitse **Lataa CSV-tiedostona** toimintojen avattavasta luettelosta.
-
-### <a name="export-segments-to-dynamics-365-sales"></a>Segmenttien vieminen Dynamics 365 Salesiin
-
-Ennen segmenttien viemistä Dynamics 365 Salesiin järjestelmänvalvojan on [luotava vientikohde](export-destinations.md) Dynamics 365 Salesille.
-
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Segmentit**-sivu.
-
-2. Valitse tietyn segmentin ruudussa kolme pistettä.
-
-3. Valitse **Lisää kohteeseen** avattavasta toimintoluettelosta ja valitse sitten vientikohde, johon haluat lähettää tiedot.
-
-## <a name="draft-mode-for-segments"></a>Segmenttien luonnostila
-
-Jos kaikkia segmentin käsittelyssä tarvittavat vaatimukset eivät täyty, voit tallentaa segmentin luonnoksena ja käyttää sitä **Segmentit**-sivulla.
-
-Se tallennetaan passiivisena segmenttinä, eikä sitä voi aktivoida, ennen kuin se on kelvollinen.
-
-## <a name="add-more-conditions-to-a-group"></a>Lisää ryhmään ehtoja
-
-Jos haluat lisätä ryhmään ehtoja, voit käyttää seuraavaa kahta loogista operaattoria:
-
-- **JA**-operaattori: Molempien ehtojen on täytyttävä segmentointiprosessin aikana. Tämä vaihtoehto on hyödyllinen, kun määrität ehtoja eri entiteeteille.
-
-- **TAI**-operaattori: Jommankumman ehdoista on täytyttävä segmentointiprosessin aikana. Tämä vaihtoehto on hyödyllinen, kun määrität useita ehtoja samalle entiteetille.
-
-   > [!div class="mx-imgBorder"]
-   > ![TAI-operaattori, jossa jommankumman ehdoista on täytyttävä](media/segmentation-either-condition.png "TAI-operaattori, jossa jommankumman ehdoista on täytyttävä")
-
-Tällä hetkellä on mahdollista upottaa **TAI**-operaattoria **JA**-operaattorin sisään, mutta ei toisin päin.
-
-## <a name="combine-multiple-groups"></a>Yhdistä useita ryhmiä
-
-Kukin ryhmä tuottaa tietyn asiakasjoukon. Voit yhdistää nämä ryhmät niin, että ne sisältävät liiketoimintatapaukseesi tarvittavat asiakkaat.
-
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Segmentit**-sivu ja valitse sitten segmentti.
-
-2. Valitse **Lisää ryhmä**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Asiakasryhmä - lisää ryhmä](media/customer-group-add-group.png "Asiakasryhmä - lisää ryhmä")
-
-3. Valitse jokin seuraavista operaattoreista: **Unioni**, **Leikkaus** tai **Lukuun ottamatta**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Asiakasryhmä - lisää liitos](media/customer-group-union.png "Asiakasryhmä - lisää liitos")
-
-   Määritä uusi ryhmä valitsemalla joukko-operaattori. Eri ryhmien tallentaminen määrittää säilytettävät tiedot:
-
-   - **Liitos** yhdistää kaksi ryhmää.
-
-   - **Leikkaa** asettaa kaksi ryhmää päällekkäin. Vain molemmille ryhmille *yhteiset* tiedot säilytetään yhdistetyssä ryhmässä.
-
-   - **Lukuun ottamatta** yhdistää kaksi ryhmää. Vain ryhmän A tiedot, jotka *eivät ole yhteisiä* ryhmän B tietojen kanssa, säilytetään.
-
 ## <a name="view-processing-history-and-segment-members"></a>Tarkastele käsittelyhistoriaa ja segmentin jäseniä
 
 Voit tarkastella segmentin yhdistettyjä tietoja tarkastelemalla sen tietoja.
@@ -191,43 +89,4 @@ Alaosassa on luettelo segmentin jäsenistä.
 >
 >Luettelo on täsmäävien segmentin jäsenten esikatselu. Siinä näkyvät segmentin ensimmäiset 100 tietuetta, joten voit nopeasti arvioida segmentin ja tarkistaa sen määritykset tarpeen mukaan. Jos haluat nähdä kaikki täsmäävät tietueet, sinun on [vietävä segmentti](export-destinations.md).
 
-## <a name="quick-segments"></a>Pikasegmentit
-
-Segmentin muodostimen lisäksi segmenttejä voi luoda myös toisella tavalla. Pikasegmenttien avulla voit luoda yksinkertaisia segmenttejä yhdellä operaattorilla nopeasti ja saat analyysit heti käyttöösi.
-
-1. Valitse **Segmentit**-sivulla **Uusi** > **Pikaluontilomake**.
-
-   - Valitse **Profiilit**-vaihtoehto, jos haluat muodostaa segmentin, joka perustuu yhdistettyyn asiakasentiteettiin.
-   - Valitse **Mittarit**-vaihtoehto, jos haluat muodostaa segmentin kunkin aiemmin **Mittarit**-sivulla luotujen asiakasmääritetyyppisten mittareiden ympärille.
-   - Valitse **Analytiikka**-asetus, jos haluat luoda segmentin, joka on luotu käyttämällä joko **Ennusteet**-tai **Mukautetut mallit** -ominaisuuden avulla luotuja tuloskohteita.
-
-2. Valitse **Uusi pikasegmentti** -valintaikkunasta määrite avattavasta **Kenttä**-valikosta.
-
-3. Järjestelmä tarjoaa lisätietoja, joiden avulla voit aiempaa helpommin luoda asiakkaille segmenttejä.
-   - Luokkakentille näytetään 10 parasta asiakasmäärää. Valitse **Arvo** ja valitse sitten **Tarkista**.
-
-   - Jos määrite on numeerinen, järjestelmä näyttää, mikä määrite kuuluu mihinkin asiakasprosenttipisteeseen. Valitse **Operaattori** ja **Arvo** ja valitse sitten **Tarkista**.
-
-4. Järjestelmä näyttää **arvioidun segmentin koon**. Voit määrittää, luodaanko määritetty segmentti vai avataanko sen ensin, jolloin voit määrittää toisen segmentin koon.
-
-    > [!div class="mx-imgBorder"]
-    > ![Nopean segmentin nimi ja arvioi](media/quick-segment-name.png "Nopean segmentin nimi ja arvioi")
-
-5. Anna segmentille **nimi**. Vaihtoehtoisesti voit antaa **näyttönimen**.
-
-6. Luo segmentti valitsemalla **Tallenna**.
-
-7. Kun segmentin käsittely on valmis, voit tarkistaa sen kuten minkä tahansa luodun segmentin.
-
-Seuraavissa skenaarioissa suosittelemme käyttämään segmentin muodostinta suositeltujen segmentin ominaisuuksien sijaan seuraavalla tavalla:
-
-- Luodaan segmenttejä suodattimien avulla kategorisissa kentissä, joissa operaattori on eri kuin **On**-operaattori
-- Luodaan segmenttejä suodattimien avulla numeerisissa kentissä, joissa operaattori on eri kuin **Välissä**, **Suurempi kuin**- ja **Pienempi kuin** -operaattorit
-- Sellaisten segmenttien luominen, joissa on suodattimia päivämäärätyyppikentissä
-
-## <a name="next-steps"></a>Seuraavat vaiheet
-
-[Vie segmentti](export-destinations.md) ja tutustu [asiakaskorttiin](customer-card-add-in.md) ja [yhdistimiin](export-power-bi.md), jotta saat asiakastason tietoja.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+[!INCLUDE[footer-include](../includes/footer-banner.md)] 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595802"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954575"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Asiakkaan elinkaaren arvon (CLV) ennuste (esiversio)
 
@@ -38,11 +38,11 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
 - Asiakkaan tunnus: Yksilöllinen tunnus, joka yhdistää tapahtumat yksittäiseen asiakkaaseen
 
 - Tapahtumahistoria: Historiallisten tapahtumien loki ja semanttinen tietorakenne alapuolella
-    - Tapahtuma tunnus: Kunkin tapahtuman yksilöivä tunnus
-    - Tapahtuman päivämäärä: Päivämäärä, mieluummin kunkin tapahtuman aikaleima
-    - Tapahtuman summa: Kunkin tapahtuman rahasumma (esimerkiksi myyntituotto tai katetuotto)
-    - Palautuksille määritetty otsikko (valinnainen): Totuusarvo, joka osoittaa, onko tapahtuma palautus 
-    - Tuotetunnus (valinnainen): Tapahtumaan osallistuvan tuotteen tuotetunnus
+    - **Tapahtuman tunnus**: Kunkin tapahtuman yksilöivä tunnus
+    - **Tapahtuman päivämäärä**: Päivämäärä, mieluiten kunkin tapahtuman aikaleima
+    - **Tapahtuman summa**: Kunkin tapahtuman rahasumma (esimerkiksi myyntituotto tai katetuotto)
+    - **Palautuksille määritetty otsikko** (valinnainen): Totuusarvo, joka osoittaa, onko tapahtuma palautus 
+    - **Tuotetunnus** (valinnainen): Tapahtumaan osallistuvan tuotteen tuotetunnus
 
 - Lisätiedot (valinnainen), esimerkiksi
     - Verkkoaktiviteetit: Sivuston vierailuhistoria, sähköpostihistoria
@@ -53,10 +53,20 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
     - Asiakastunnisteet, joiden avulla aktiviteetit yhdistetään asiakkaisiin
     - Aktiviteetin tiedot, jotka sisältävät aktiviteetin nimen ja päivämäärän
     - Aktiviteettien semanttinen tietorakenne sisältää seuraavat tiedot: 
-        - Perusavain: Aktiviteetin yksilöllinen tunniste
-        - Aikaleima: Ensisijaisen avaimen tunnistaman tapahtuman päivämäärä ja aika
-        - Tapahtuma (aktiviteetin nimi): Sen tapahtuman nimi, jota haluat käyttää
-        - Tiedot (summa tai arvo): Tietoja asiakasaktiviteettista
+        - **Perusavain:** Aktiviteetin yksilöivä tunnus
+        - **Aikaleima**: Perusavaimen tunnistaman tapahtuman päivämäärä ja aika
+        - **Tapahtuma (aktiviteetin nimi)**: Sen tapahtuman nimi, jota haluat käyttää
+        - **Tiedot (summa tai arvo)**: Tietoja asiakasaktiviteettista
+
+- Ehdotetut tietojen ominaisuudet:
+    - Riittävät historiatiedot: Tapahtumatiedot vähintään vuoden ajalta. Mieluiten 2–3 vuoden transaktiotiedot CLV:n ennustamiseksi vuodeksi.
+    - Useita ostoksia asiakasta kohti: Mieluiten vähintään 2–3 tapahtumaa asiakastunnusta kohden, mieluiten useana päivämääränä.
+    - Asiakkaiden määrä: Vähintään 100 eri asiakasta, mielellään yli 10 000 asiakasta. Malli epäonnistuu, jos asiakkaita on alle 100 ja historiatiedot ovat puutteellisia
+    - Tietojen täydellisyys: Vähemmän kuin 20 % arvoista puutuu syötetietojen pakollisissa kentissä   
+
+> [!NOTE]
+> - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos osto- tai tapahtumaentiteettejä on useita, ne voidaan yhdistää Power Queryssä ennen tietojen käsittelyä.
+> - Jos haluat lisää asiakkaan aktiviteettitietoja (valinnaisia), voit kuitenkin lisätä mallin käsiteltäväksi niin monta asiakasaktiviteettientiteettiä kuin haluat.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Asiakkaan elinkaaren arvon ennusteen luominen
 
@@ -76,7 +86,7 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
    Oletusarvoisesti arvoksi määritetään kuukausia. Voit muuttaa arvoksi vuodet, jos haluat tarkastella tilannetta tulevaisuudessa.
 
    > [!TIP]
-   > Jotta asiakkaan elinkaaren arvo voidaan ennustaa määrittämällesi ajanjaksolle, tarvitset historiallisten tietojen vertailtavissa olevan kauden. Jos esimerkiksi haluat ennustaa seuraavien 12 kuukauden jakson, on suositeltavaa, että sinulla on vähintään 18–24 kuukauden historiatiedot.
+   > Jotta asiakkaan elinkaaren arvo voidaan ennustaa määrittämällesi ajanjaksolle, tarvitset historiallisten tietojen vertailtavissa olevan kauden. Jos esimerkiksi haluat ennustaa asiakkaan elinkaaren arvon seuraavien 12 kuukauden jaksolle, on suositeltavaa, että sinulla on vähintään 18–24 kuukauden historiatiedot.
 
 1. Määritä, mitä **aktiiviset asiakkaat** tarkoittavat liiketoiminnassa. Määritä aikaväli, jonka aikana asiakkaalla on oltava vähintään yksi tapahtuma, jotta asiakasta pidetään aktiivisena. Malli ennustaa vain aktiivisten asiakkaiden asiakkaan elinkaaren arvon. 
    - **Salli mallin laskea ostoväli (suositus)**: Malli analysoi tiedot ja määrittää ajanjakson ostohistorian perusteella.
@@ -181,14 +191,14 @@ Tulossivulla on kolme ensisijaista tieto-osaa.
   Jos korkean lisäarvon asiakkaiden määritystä käytetään ennusteen määrittämisessä, järjestelmä arvioi, miten tekoälymalli suoriutui korkean lisäarvon asiakkaiden ennustamisessa perusmalliin verrattuna.    
 
   Luokat määritetään seuraavien sääntöjen perusteella:
-  - A, kun mallin tarkkuus ennusti vähintään 5 % enemmän korkean lisäarvon asiakkaita kuin perusmalli.
-  - B, kun mallin tarkkuus ennusti 0-5 % enemmän korkean lisäarvon asiakkaita kuin perusmalli.
-  - C, kun mallin tarkkuus ennusti vähemmän korkean lisäarvon asiakkaita kuin perusmalli.
+  - **A**, kun malli ennusti tarkasti vähintään 5 % enemmän korkean lisäarvon asiakkaita kuin perusmalli.
+  - **B**, kun malli ennusti tarkasti 0-5 % enemmän korkean lisäarvon asiakkaita kuin perusmalli.
+  - **C**, kun malli ennusti tarkasti vähemmän korkean lisäarvon asiakkaita kuin perusmalli.
 
   **Malliluokitus**-ruudussa näkyvät tekoälymallin suorituskyvyn ja perusmallin lisätiedot. Perusmallissa käytetään muuta kuin tekoälyyn perustuvaa tapaa laskea asiakkaan elinkaaren arvo ensisijaisesti asiakkaiden tekemien aiempien ostojen perusteella.     
   Vakiokaava, jonka avulla asiakkaan elinkaaren arvo lasketaan perusmallin mukaan:    
 
-  *Asiakkaan elinkaaren arvo jokaiselle asiakkaalle = asiakkaan kuukauden keskimääräiset ostot aktiivisessa asiakasikkunassa * asiakkaan elinkaaren arvon ennustejakson kuukausien määrä * kaikkien asiakkaiden yleinen pidätysprosentti*
+  _**Asiakkaan elinkaaren arvo kullekin asiakkaalle** = Asiakkaan kuukauden keskimääräiset ostot aktiivisessa asiakasikkunassa * Asiakkaan elinkaaren arvon ennustejakson kuukausien määrä * Kaikkien asiakkaiden yleinen uskollisuusprosentti*_
 
   Tekoälymallia verrataan perusmalliin kahden mallin suorituskykymittareiden perusteella.
   

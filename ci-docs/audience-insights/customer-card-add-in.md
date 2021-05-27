@@ -1,7 +1,7 @@
 ---
-title: Asiakaskortin apuohjelman asentaminen ja määrittäminen
-description: Dynamics 365 Customer Insightsin asiakaskortin apuohjelman asentaminen ja määrittäminen.
-ms.date: 01/20/2021
+title: Asiakaskortti-apuohjelma Dynamics 365 -sovelluksiin
+description: Näytä käyttäjäryhmän merkitykselliset tiedot Dynamics 365 -sovelluksissa tämän apuohjelman avulla.
+ms.date: 05/18/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,30 +9,31 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f3c4a01f9ce7749eeee72f7901620dae7cb9b8d3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
+ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597323"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059584"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Tarkastele demografiatietoja, näkemyksiä ja aktiviteettiaikajanoja asiakaskortin apuohjelman avulla.
+Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Kun Asiakaskortti-apuohjelma on asennettu tuettuun Dynamics 365 -sovellukseen, voit näyttää demografiset tiedot, kävijätiedot ja aktiivisuuden aikajanat. Apuohjelma hakee tietoja Customer Insights -sovelluksesta vaikuttamatta yhdistetyn Dynamics 365 -sovelluksen tietoihin. 
 
 ## <a name="prerequisites"></a>Edellytykset
 
-- Dynamics 365 -sovellus (kuten myyntikeskus tai asiakaspalvelukeskus), versio 9.0 tai uudempi, jossa Unified Interface käytössä.
-- Asiakasprofiilit [käsitellään Dynamics 365 -sovelluksessa Common Data Servicen avulla](connect-power-query.md).
-- Asiakaskortin lisäosan käyttäjät on [lisättävä käyttäjinä](permissions.md) käyttäjäryhmän merkityksellisissä tiedoissa.
-- [Määritetyt haku- ja suodatusominaisuudet ](search-filter-index.md).
-- Demografiatietojen ohjausobjekti: demografiset kentät (kuten ikä tai sukupuoli), ovat käytettävissä yhdistetyssä asiakasprofiilissa.
-- Rikastus-ohjausobjekti: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
-- Analytiikan ohjausobjekti: edellyttää tietoja, jotka on luotu käyttämällä Azuren automaattianalyysipalveluita ([ennusteet](predictions.md) tai [mukautetut mallit](custom-models.md))
-- Mittarin ohjausobjekti: edellyttää [määritettyjä mittareita](measures.md).
-- Aikajanan ohjausobjekti: edellyttää [määritettyjä aktiviteetteja](activities.md).
+- Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
+- Jotta Dynamics 365 -tiedot voidaan yhdistää kohdeyleisön merkistyksellisten tietojen siakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Common Data Service -yhdistimen avulla](connect-power-query.md).
+- Kaikki Asiakaskortti-apuohjelman Dynamics 365 -käyttäjät [on lisättävä käyttäjiksi](permissions.md) kohdeyleisön merkityksellisissä tiedoissa, jotta tiedot näkyvät heille.
+- [Haku- ja suodatustoiminnot](search-filter-index.md) kohdeyleisön merkityksellisissä tiedoissa vaaditaan, jotta tietojen haku toimii.
+- Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin kohdeyleisön merkityksellisissä tiedoissa:
+  - Mittarin ohjausobjekti: edellyttää [määritettyjä mittareita](measures.md).
+  - Älykkyyden hallinta: Edellyttää [ennusteiden](predictions.md) tai [mukautettujen mallien](custom-models.md) avulla luotuja tietoja.
+  - Demografiatietojen ohjausobjekti: demografiset kentät (kuten ikä tai sukupuoli), ovat käytettävissä yhdistetyssä asiakasprofiilissa.
+  - Rikastus-ohjausobjekti: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
+  - Aikajanan ohjausobjekti: edellyttää [määritettyjä aktiviteetteja](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Asiakaskortin apuohjelman asentaminen
 
@@ -56,9 +57,9 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
    > [!NOTE]
    > Tarkista, että selaimen ponnahdusikkunoiden estotoiminto ei estä todennusikkunan avautumista, kun valitset **Kirjaudu sisään**-painikkeen.
 
-1. Valitse ympäristö, josta tietoja noudetaan.
+1. Valitse se Customer Insights -ympäristö, josta haluat noutaa tietoja.
 
-1. Määritä, mikä kenttä yhdistetään tietueisiin Dynamics 365 -sovelluksessa.
+1. Määritä Dynamics 365 -sovelluksen tietueiden kenttien yhdistämismääritys. Customer Insights -tiedoistasi riippuen voit valita seuraavista yhdistämisvaihtoehdoista:
    - Yhteyshenkilö yhdistetään valitsemalla asiakasentiteetissä kenttä, joka vastaa yhteyshenkilöentiteetin tunnusta.
    - Tili yhdistetään valitsemalla asiakasentiteetissä kenttä, joka vastaa tilientiteetin tunnusta.
 

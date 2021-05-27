@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595560"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085618"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -103,6 +103,18 @@ Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttä�
 
 > [!NOTE]
 > Sääntöjen järjestys on tärkeä. Vastaava algoritmi yrittää suorittaa vastineen ensimmäisen säännön perusteella ja jatkaa toista sääntöä vain, jos ensimmäisellä säännöllä ei ole määritetty vastaavuuksia.
+
+### <a name="change-the-entity-order-in-match-rules"></a>Entiteettijärjestyksen muuttaminen vastaavuussäännöissä
+
+Voit järjestää entiteetit uudelleen vastaavuussäännöille, jos haluat muuttaa niiden käsittelyjärjestystä. Säännöt, jotka ovat ristiriidassa muuttuneen järjestyksen vuoksi, poistetaan. Poistetut säännöt täytyy luoda uudelleen päivitetyllä määrityksellä.
+
+1. Siirry kohtaan **Tiedot** > **Yhdistäminen** > **Yhdistä** ja valitse **Muokkaa**.
+
+1. Valitse **Muokkaa sääntöä** -ruudussa **Siirrä ylös/alas** -ohjausobjekti, tai vedä ja pudota entiteettejä järjestyksen vaihtamiseksi.
+
+   :::image type="content" source="media/reorder-match-rules.png" alt-text="Vaihtoehdot, joilla voidaan muuttaa sitä, missä järjestyksessä entiteetit käsitellään yhdistämisvaiheessa.":::
+
+1. Tallenna sääntö valitsemalla **Valmis**.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Vastaavan entiteetin kaksoiskappaleiden poistaminen
 

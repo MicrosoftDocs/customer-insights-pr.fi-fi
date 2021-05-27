@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887936"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049246"
 ---
 # <a name="define-and-manage-measures"></a>Mittojen määrittäminen ja hallinta
 
@@ -34,7 +34,7 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
 
 1. Valitse **Muokkaa nimeä** ja anna mittarille **nimi**. 
    > [!NOTE]
-   > Jos uudella mittarin määrityksellä on vain kaksi kenttää, esimerkiksi CustomerID ja yksi laskelma, tulos lisätään uudeksi sarakkeeksi järjestelmän luomaan entiteettiin nimeltä Customer_Measure. Voit myös nähdä mittarin arvon yhdistetyssä asiakasprofiilissa. Muut mittarit luovat omat entiteetit.
+   > Jos uuden mittarin määrityksellä on vain kaksi kenttää, esimerkiksi asiakastunnus ja yksi laskenta, tulos lisätään uudena sarakkeena järjestelmän luomaan entiteettiin, jota jonka nimi on mukautettu mittari. Voit myös nähdä mittarin arvon yhdistetyssä asiakasprofiilissa. Muut mittarit luovat omat entiteetit.
 
 1. Valitse määritysalueessa koostetoiminto avattavasta **Valitse toiminto** -valikosta. Koostetoimintoja ovat seuraavat: 
    - **Sum**
