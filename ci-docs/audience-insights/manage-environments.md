@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 03/26/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 06310ea6fc72f26e21e185a6abcb5d19d4b201f6
+ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887982"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6259095"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -76,9 +76,9 @@ Ympäristön luominen:
    > Vain sellaisia Azure Data Lake Gen2 -tallennustilejä tuetaan, jotka ovat ympäristöä luotaessa valitulla Azure-alueella.
    > Vain sellaisia tallennustilatilejä tuetaan, joissa on otettu käyttöön Azure Data Lake Gen2:n hierarkkinen nimitila.
 
-   - Voit valita Azure Data Lake Storage Gen2 -vaihtoehdossa, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilön** nimeä ei voi muuttaa, ja se on customerinsights.
+   - Voit valita Azure Data Lake Storage Gen2 -vaihtoehdossa, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilön** nimeä ei voi muuttaa, ja se tulee olemaan `customerinsights`.
    
-   - Jos haluat käyttää [ennusteita](predictions.md), määritä tietojen jakaminen sovellusten ja ratkaisujen kanssa Microsoft Dataversen perusteella tai ota käyttöön tietojen käsittely paikallisista tietolähteistä, anna Microsoft Dataverse -ympäristön URL-osoite kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien ottaminen käyttöön**. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
+   - Jos haluat käyttää [ennusteita](predictions.md), määritä tietojen jakaminen Microsoft Dataversen kanssa tai ota käyttöön tietojen käsittely paikallisista tietolähteistä, anna Microsoft Dataverse -ympäristön URL-osoite kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien ottaminen käyttöön**. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
 
      > [!NOTE]
      > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
@@ -87,7 +87,7 @@ Ympäristön luominen:
      > [!div class="mx-imgBorder"]
      > ![Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa](media/datasharing-with-DataverseMDL.png)
 
-   Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostoja ja model.json-tiedostoja luodaan ja lisätään asianmukaisiin alikansioihin suorittamasi prosessin perusteella.
+   Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostot ja model.json-tiedostot luodaan ja lisätään kansioihin, jotka perustuvat prosessin nimeen.
 
    Jos luot useita Customer Insights -ympäristöjä ja valitset kyseisten ympäristöjen tuloste-entiteettien tallentamisen tallennustilille, kullekin ympäristölle luodaan erilliset kansiot siten, että säilössä on ci_<environmentid>.
 
@@ -146,7 +146,7 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
    > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
    > - [Entiteettien puuttuvien arvojen ennustetta](predictions.md) ei tueta tällä hetkellä, kun otat tietojen jakamisen käyttöön Microsoft Dataversen hallitun Data Laken kanssa.
 
-   Kun otat käyttöön tietojen jakamisen Microsoft Dataversen kansa, käynnistetään tietolähteiden ja muiden prosessien täydellinen päivitys. Jos prosesseja tällä hetkellä suoritetaan ja asetetaan jonoon, et näe mahdollisuutta ottaa tietojen jakamista käyttöön Microsoft Dataversen kanssa. Voit odottaa, että prosessit valmistuvat tai peruutat ne, jotta tietojen jakaminen voidaan ottaa käyttöön. 
+   Kun tietojen jakaminen Microsoft Dataversen kanssa on otettu käyttöön, aloitetaan tietolähteiden ja muiden prosessien täydellinen päivitys. Jos prosesseja tällä hetkellä suoritetaan, et näe mahdollisuutta ottaa tietojen jakamista käyttöön Microsoft Dataversen kanssa. Odota, että prosessit valmistuvat tai peruutat ne, jotta tietojen jakaminen voidaan ottaa käyttöön. 
    
    :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
    

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906852"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095598"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tapahtuman vaihtuvuusennuste (esiversio)
 
@@ -144,7 +144,7 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
    - **Tila:** ennusten suorituksen tila.
         - **Jonossa:** ennuste odottaa muiden prosessien suorittamista.
         - **Päivittyy:** suoritettavan ennusteen tulokset siirretään tuloste-entiteettiin.
-        - **Epäonnistui:** Ennusteen suorittaminen epäonnistui. Lisätietoja saa [lokeja tarkastelemalla](#troubleshoot-a-failed-prediction).
+        - **Epäonnistui:** Ennusteen suorittaminen epäonnistui. Lisätietoja saa [lokeja tarkastelemalla](manage-predictions.md#troubleshoot-a-failed-prediction).
         - **Onnistui:** Ennuste onnistui. Valitse allekkaisten pisteiden alla oleva **Tarkastele**-kohta, jos haluat tarkastella ennustetta.
    - **Muokattu:** Ennusteen määrityksen muutospäivämäärä.
    - **Viimeinen päivitys:** Päivämäärä, jona ennuste päivitti tulokset tulosentiteettiin.
@@ -168,35 +168,9 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
        
     1. **Tärkeimmät tekijät:** Ennusteen luomisessa otetaan huomioon useita tekijöitä. Kunkin tekijän tärkeys lasketaan mallin luomille kooste-ennusteille. Näiden tekijöiden avulla voit tarkistaa ennusteen tulokset. Tai voit käyttää näitä tietoja myöhemmin ja [luoda segmenttejä](segments.md), joiden avulla voit vaikuttaa asiakkaiden vaihtuvuusriskiin.
 
-## <a name="troubleshoot-a-failed-prediction"></a>Epäonnistuneen ennusteen vianmääritys
+## <a name="manage-predictions"></a>Hallitse ennusteita
 
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-
-1. Valitse kolme allekkain olevaa pistettä sen ennusteen vieressä, jonka virhelokeja haluat tarkastella.
-
-1. Valitse **Lokit**.
-
-1. Tarkastele kaikkia virheitä. Mahdollisia virhe tyyppejä on useita. Ne osoittavat, mikä ehto aiheutti virheen. Esimerkiksi virhe, joka osoittaa olemassa olevien tietojen olevan riittämättömät tarkan ennusteen luomiseksi, ratkaistaan yleensä lataamalla lisää tietoja Customer Insightsiin.
-
-## <a name="refresh-a-prediction"></a>Ennusteen päivittäminen
-
-Ennusteet päivittyvät automaattisesti saman [aikataulun mukaan kuin tiedot päivitetään](system.md#schedule-tab) asetuksissa määritetyllä tavalla. Voit päivittää ne myös manuaalisesti.
-
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-
-1. Valitse päivitettävän ennusteen vieressä olevat allekkaiset pisteet.
-
-1. Valitse **Päivitä**.
-
-## <a name="delete-a-prediction"></a>Ennusteen poistaminen
-
-Ennusteen poistaminen poistaa myös sen tuloste-entiteetin.
-
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-
-1. Valitse poistettavan ennusteen vieressä olevat allekkaiset pisteet.
-
-1. Valitse **Poista**.
+Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

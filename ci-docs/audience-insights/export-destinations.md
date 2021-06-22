@@ -1,7 +1,7 @@
 ---
 title: Tietojen vieminen Customer Insightsista
 description: Jaa tietoja hallitsemalla vientejä.
-ms.date: 03/25/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c1078ed0ba259a6e9cde3c7ede3570890ae48e67
-ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
+ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
+ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/10/2021
-ms.locfileid: "6016610"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6253036"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
@@ -26,22 +26,36 @@ Siirry kohtaan **Tiedot** > **Viennit**, kun haluat tarkastella vientisivua. Kai
 
 Jotta voit määrittää tai muokata vientiä, sinulla on oltava käytettävissä yhteydet. Yhteydet määräytyvät [käyttäjäroolisi](permissions.md) mukaan:
 - Järjestelmänvalvojat voivat käyttää kaikkia yhteyksiä. He voivat myös luoda uusia yhteyksiä viennin määrittämisen jälkeen.
-- Osallistujat voivat käyttää tiettyjä yhteyksiä. Järjestelmänvalvojat voivat määrittää ja jakaa osallistujille yhteyksiä. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Osallistujat voivat käyttää tiettyjä yhteyksiä. Järjestelmänvalvojat voivat määrittää ja jakaa osallistujille yhteyksiä. Vientiluettelossa näkyvät osallistujat, voivatko he muokata tai vain tarkastella vientiä **Oikeutesi**-sarakkeessa. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 - Katsojat voivat tarkastella vain aiemmin luotuja vientejä, mutta eivät luoda niitä.
+
+### <a name="define-a-new-export"></a>Määritä uusi vienti
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vientikohde valitsemalla **Lisää vienti**.
+1. Valitse **Lisää vienti** luodaksesi uuden viennin.
 
 1. Valitse **Määritä vienti** -ruudussa käytettävä yhteys. [Yhteydet](connections.md) ovat järjestelmänvalvojien hallitsemia. 
 
 1. Anna tarvittavat tiedot ja luo vienti valitsemalla **Tallenna**.
 
+### <a name="define-a-new-export-based-on-an-existing-export"></a>Uuden viennin määritteleminen aiemmin luodun viennin perusteella
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Valitse vientiluettelosta vienti, jonka haluat kopioida.
+
+1. Valitse komentopalkissa **Luo kaksoiskappale**, jos haluat avata **Määritä vienti** -ruudun, jossa on valitun viennin tiedot.
+
+1. Tarkista ja mukauta vienti ja valitse **Tallenna**, jos haluat luoda uuden viennin.
+
 ### <a name="edit-an-export"></a>Muokkaa vientiä
 
-1. Valitse muokattavan vientikohteen kohdalla kolme allekkaista pistettä.
+1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Valitse avattavasta valikosta **Muokkaa**.
+1. Valitse vientiluettelosta vienti, jonka haluat muokata.
+
+1. Valitse komentopalkissa **Muokkaa**.
 
 1. Muuta päivitettävät arvot ja valitse **Tallenna**.
 
@@ -53,24 +67,48 @@ Kun olet luonut vientikohteet, ne näkyvät kohdassa **Tiedot** > **Viennit**. K
 
 1. Käyttäjät, joilla ei ole muokkausoikeutta, valitsevat **Näytä** (ei **Muokkaa**) nähdäkseen viennin tiedot.
 
-1. Tämä sivuruutu näyttää tämän viennin määrityksen. Arvoja ei voi muuttaa ilman muokkausoikeutta. Palaa vientisivulle valitsemalla **Sulje**.
+1. Sivuruudussa näkyy viennin määritys. Arvoja ei voi muuttaa ilman muokkausoikeutta. Palaa vientisivulle valitsemalla **Sulje**.
 
-## <a name="run-exports-on-demand"></a>Suorita vientejä tarvittaessa
+## <a name="schedule-and-run-exports"></a>Aikatauluta ja suorita useita vientejä
 
-Kun olet määrittänyt viennin, se suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) yhteydessä niin kauan kuin sillä on toimiva yhteys.
+Jokaisella määritetyllä viennillä on päivitysaikataulu. Päivityksen aikana järjestelmä etsii uusia tai päivitettyjä tietoja, jotka sisällytetään vientiin. Vieminen suoritetaan oletusarvoisesti jokaisen [ajoitetun järjestelmän päivityksen](system.md#schedule-tab) yhteydessä. Voit mukauttaa päivitysaikataulua tai poistaa sen käytöstä, jos haluat suorittaa viennit manuaalisesti.
 
-Jos haluat viedä tietoja odottamatta ajoitettua päivitystä, siirry kohtaan **Tiedot** > **Viennit**. Sinulla on kaksi vaihtoehtoa:
+Vientiaikataulut määräytyvät ympäristön tilan mukaan. Jos aikataulutetun viennin käynnistyessä on käynnissä [riippuvuuksien](system.md#refresh-policies) päivityksiä, järjestelmä suorittaa ensin riippuvuudet ja suorittaa sitten viennin. Voit nähdä, milloin vienti on viimeksi päivitetty sarakkeessa **Päivitetty**.
 
-- Jos haluat suorittaa kaikki viennit, valitse komentopalkissa **Suorita kaikki**. 
-- Jos haluat suorittaa yksittäisen viennin, valitse luettelokohteesta kolme pistettä (...) ja valitse sitten **Suorita**.
+### <a name="schedule-exports"></a>Aikataulun viennit
+
+Voit määrittää mukautettuja päivitysaikatauluja yksittäiselle viennille tai usealle viennille samalla kertaa. Tällä hetkellä määritetty aikataulu näkyy vientiluettelon **Aikataulu**-sarakkeessa. Aikataulun muutosoikeus on sama kuin [viennin muokkaamiseen ja määrittämiseen](export-destinations.md#set-up-a-new-export). 
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Valitse vienti, jonka haluat aikatauluttaa.
+
+1. Valitse komentopalkista **Aikatauluta**.
+
+1. Määritä **Aikatauluta vienti** -ruudussa **Suoritettava aikataulu** -arvoksi **Käytössä**, jotta vienti voidaan suorittaa automaattisesti. Valitse **Ei käytössä**, jos haluat päivittää sen manuaalisesti.
+
+1. Jos haluat päivittää viennit automaattisesti, valitse **Toistumisarvo** ja määritä sen tiedot. Määritetty aika koskee kaikkia toistumisen esiintymiä. Tämä on aika, jolloin viennin pitäisi alkaa päivittyä.
+
+1. Ota muutokset käyttöön ja aktivoi ne valitsemalla **Tallenna**.
+
+Kun muokkaat useiden vientien aikataulua, valitse **Säilytä tai korvaa aikataulut** -kohdassa:
+- **Säilytä yksittäiset aikataulut**: Jatka valitun viennin aiemmin määritettyä aikataulua ja poista ne vain käytöstä tai ota ne käyttöön.
+- **Määritä uusi aikataulu kaikille valituille viennille**: ohita valittujen vientien aiemmin luodut aikataulut.
+
+### <a name="run-exports-on-demand"></a>Suorita vientejä tarvittaessa
+
+Jos haluat viedä tietoja odottamatta ajoitettua päivitystä, siirry kohtaan **Tiedot** > **Viennit**.
+
+- Jos haluat suorittaa kaikki viennit, valitse komentopalkissa **Suorita kaikki**. Tämä toiminto suorittaa vain viennit, jotka ovat aktiivisia aikatauluja.
+- Jos haluat suorittaa yksittäisen viennin, valitse se luettelosta ja valitse komentopalkissa **Suorita**. Näin viennit suoritetaan ilman aktiivista aikataulua. 
 
 ## <a name="remove-an-export"></a>Viennin poistaminen
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Valitse poistettavan viennin kohdalla kolme allekkaista pistettä.
+1. Valitse poistettava vienti.
 
-1. Valitse avattavassa valikossa **Poista**.
+1. Valitse komentopalkissa **Poista**.
 
 1. Vahvista poisto valitsemalla **Poista** vahvistusnäytössä.
 

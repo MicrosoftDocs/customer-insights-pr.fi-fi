@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a7fa6515bd6e79dedfb21aa0f0b8e24b873a6771
-ms.sourcegitcommit: 8341fa964365c185b65bc4b71fc0c695ea127dc0
+ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
+ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/14/2021
-ms.locfileid: "6034008"
+ms.lasthandoff: 05/27/2021
+ms.locfileid: "6111383"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -32,22 +32,13 @@ Uuden segmentin voi luoda useilla tavoilla:
 - Tekoälypohjaiset ehdotukset, jotka perustuvat mittareihin tai määritteisiin: [Ehdotetut segmentit mittareiden parantamiseksi](suggested-segments.md)
 - Aktiviteetteihin perustuvat ehdotukset: [Asiakasaktiviteettien perusteella ehdotetut segmentit](suggested-segments-activity.md)
 
-## <a name="get-insights-on-existing-segments"></a>Merkityksellisten tietojen saaminen olemassa olevista segmenteistä
-
-Lisätietoja olemassa olevista segmenteistä on saatavilla [Segmenttien merkityksellisten tietojen](segment-insights.md) avulla. Selvitä, mikä erottaa toisistaan kaksi segmenttiä tai mitä yhteistä niillä on.
-
-## <a name="find-similar-customers"></a>Etsi samankaltaisia asiakkaita
-
-Etsi tekoälyn avulla asiakkaita, jotka muistuttavat valitun segmentin jäseniä. Lisätietoja on kohdassa [samankaltaiset asiakkaat](find-similar-customer-segments.md).
-
 ## <a name="manage-existing-segments"></a>Aiemmin luotujen segmenttien hallinta
 
 Siirry **Segmentit**-sivulle nähdäksesi kaikki tallennetut segmentit ja hallitaksesi niitä.
 
 Jokaista segmenttiä edustaa rivi, joka sisältää segmentin lisätietoja.
 
-> [!div class="mx-imgBorder"]
-> ![Aiemmin luodun segmentin hallintavaihtoehdot](media/segments-selected-segment.png "Aiemmin luodun segmentin hallintavaihtoehdot")
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valittu segmentti, jossa on avattava vaihtoehtoluettelo ja käytettävissä olevat vaihtoehdot.":::
 
 Seuraava toiminto on käytettävissä, kun valitse segmentin:
 
@@ -59,7 +50,7 @@ Seuraava toiminto on käytettävissä, kun valitse segmentin:
   Voit vaihtoehtoisesti määrittää tulevan päivämäärän ja kellonajan tietyn segmentin aktivointiin ja aktivoinnin poistamiseen avattavan **Aktivoi / Poista aktivointi** -valikon **Ajoita myöhemmin** -toiminnolla.
 - **Nimeä uudelleen** segmentti.
 - **Lataa** jäsenten luettelo CSV-tiedostona.
-- **Lisää kohteeseen** -vaihtoehto lähettää segmentin asiakastunnusten luettelon toiseen sovelluksen käsiteltäväksi.
+- **Hallitse vientiä** tarkastellaksesi vientiin liittyviä segmenttejä ja hallita niitä. [Lisätietoja vienneistä.](export-destinations.md)
 - **Poista** segmentti.
 
 ## <a name="refresh-segments"></a>Päivitä segmentit
@@ -68,6 +59,24 @@ Voit päivittää kaikki segmentit kerralla valitsemalla **Päivitä kaikki** **
 
 > [!TIP]
 > Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+
+## <a name="export-segments"></a>Segmenttien vienti
+
+Voit viedä segmentin segmenttisivulta tai [vientisivulta](export-destinations.md). 
+
+1. Siirry **Segmentit**-sivulle.
+
+1. Valitse **Näytä lisää [...]** segmentistä, jonka haluat viedä.
+
+1. Valitse **Hallitse vientejä** avattavasta toimintoluettelosta.
+
+1. **Segmentin vienti (esikatselu)** -sivu avautuu. Voit nähdä kaikki määritetyt viennit ryhmiteltyinä viennin mukaan, joka sisältää nykyisen segmentin tai ei sisällä sitä.
+
+   1. Jos haluat lisätä valitun segmentin vientiin, valitse vienti luettelosta ja valitse **Lisää segmentti**.
+
+   1. Jos haluat luoda uuden viennin valitulla segmentillä, valitse **Lisää vienti**. Lisätietoja viennin luomisesta on ohjeaiheessa [Uuden viennin luominen](export-destinations.md#set-up-a-new-export).
+
+1. Palaa segmenttien pääsivulle valitsemalla **Takaisin**.
 
 ## <a name="view-processing-history-and-segment-members"></a>Tarkastele käsittelyhistoriaa ja segmentin jäseniä
 

@@ -1,74 +1,110 @@
 ---
 title: Entiteettien entiteettipolkujen väliset suhteet
 description: Useita lähteistä peräisin olevien entiteettien keskinäisten suhteiden luominen ja hallinta.
-ms.date: 04/14/2020
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: mukeshpo
-ms.author: mukeshpo
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: c25bfcb8e2a8223498dd1a5e8cfb3712a40ab85e
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595208"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171160"
 ---
 # <a name="relationships-between-entities"></a>Entiteettien väliset suhteet
 
-Suhteiden avulla voit yhdistää entiteettejä ja luoda kaavion tiedoista, kun entiteetit jakavat yhteisen tunnuksen (viiteavaimen), johon entiteetit voivat viitata. Yhdistettyjen entiteettien avulla voit määrittää segmentit ja mittarit useiden tietolähteiden avulla.
+Suhteet yhdistää entiteetit ja määrittää kaavion tiedoista, kun entiteeteille on yhteinen tunnus, viiteavain. Tähän viiteavaimeen voidaan viitata entiteetistä toiseen. Yhdistetyt entiteetit mahdollistavat segmenttien ja mittojen määrittelyn useiden tietolähteiden perusteella.
 
-Suhdetyyppejä on kaksi. Ei-muokattavat järjestelmän suhteet, jotka luodaan automaattisesti, ja käyttäjien luomat ja määrittämät mukautetut suhteet.
+Suhteita on kolmea tyyppiä: 
+- Ei-muokattavissa olevat järjestelmäsuhteet, jonka järjestelmä luo tietojenyhdistämisprosessin yhteydessä
+- Ei-muokattavissa olevat perityt suhteet, jotka luodaan automaattisesti tietolähteestä 
+- Muokattavat mukautetut suhteet, jotka käyttäjät ovat luoneet ja määrittäneet
 
-Tärsmäytys- ja yhdistämisprosessien aikana taustalla luodaan järjestelmän suhteet älykkään täsmäytystoiminnon perusteella. Nämä suhteet auttavat liittämään asiakasprofiilitietueet muihin vastaaviin entiteettitietueisiin. Seuraavassa kaaviossa on kuva, jossa esitetään kolmen järjestelmän suhteen luominen, kun asiakasentiteetti täsmäytetään lisäentiteetteihin lopullisen asiakasprofiilientiteetin muodostamista varten.
+## <a name="non-editable-system-relationships"></a>Ei-muokattavissa olevat järjestelmäsuhteet
 
-> [!div class="mx-imgBorder"]
-> ![Suhteen luominen](media/relationships-entities-merge.png "Suhteen luominen")
+Tietojen yhdistämisen aikana järjestelmäsuhteet luodaan automaattisesti älykkään vastaavuuden perusteella. Nämä suhteet auttavat liittämään asiakasprofiilitietueet vastaaviin tietueisiin. Seuraavassa kaaviossa on kuvattu kolmen järjestelmäpohjaisen suhteen luonti. Asiakasentiteetti on yhdistetty muihin entiteetteihin, jotta saadaan aikaan yhtenäinen *Asiakas*-entiteetti.
 
-- ***CustomerToContact*-suhde** luotiin asiakasentiteetin ja yhteyshenkilöentiteetin välille. Asiakasentiteetti saa avainkentän **Contact_contactId**, joka liitetään yhteyshenkilöentiteetin avainkenttään **contactId**.
-- ***CustomerToAccount*-suhde** luotiin asiakasentiteetin ja tilientiteetin välille. Asiakasentiteetti saa avainkentän **Account_accountId**, joka liitetään tilientiteetin avainkenttään **accountId**.
-- ***CustomerToWebAccount*-suhde** luotiin asiakasentiteetin ja verkkotilientiteetin välille. Asiakasentiteetti saa avainkentän **WebAccount_webaccountId**, joka liitetään verkkotilientiteetin avainkenttään **webaccountId**.
+:::image type="content" source="media/relationships-entities-merge.png" alt-text="Kaavio kolmen 1-n-suhteen sisältävän asiakasyksikön suhdepoluista.":::
 
-## <a name="create-a-relationship"></a>Suhteen luominen
+- ***CustomerToContact* -suhde** luotiin *asiakas*-entiteetin ja *yhteyshenkilö*-entiteetin välille. *Asiakas*-entiteetti saa avainkentän **Contact_contactId**, joka liitetään *yhteyshenkilö*-entiteetin avainkenttään **contactId**.
+- ***CustomerToAccount*-suhde** luotiin *asiakas*-entiteetin ja *tili*-entiteetin välille. *Asiakas*-entiteetti saa avainkentän **Account_accountId**, joka liitetään *tili*-entiteetin avainkenttään **accountId**.
+- ***CustomerToWebAccount*-suhde** luotiin *asiakas*-entiteetin ja *verkkotili*-entiteetin välille. *Asiakas*-entiteetti saa avainkentän **WebAccount_webaccountId**, joka liitetään *verkkotili*-entiteetin avainkenttään **webaccountId**.
 
-Määritä mukautetut suhteet **Suhteet**-sivulla. Jokainen suhde sisältää lähde-entiteetin (entiteetti, jossa on viiteavain) ja kohde-entiteetin (entiteetti, johon lähde-entiteetin viiteavain osoittaa).
+## <a name="non-editable-inherited-relationships"></a>Ei-muokattavissa olevat perityt suhteet
+
+Tietojen käytön aikana järjestelmä tarkistaa, onko tietolähteitä olemassa oleville suhteille. Jos suhdetta ei ole, järjestelmä luo ne automaattisesti. Näitä suhteita käytetään myös jatkoprosesseissa.
+
+## <a name="create-a-custom-relationship"></a>Luo muokattu suhde
+
+Suhde koostuu *lähde-entiteetistä*, joka sisältää viiteavaimen ja *kohde-entiteetistä*, johon lähde-entiteetin viite-avain osoittaa. 
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Suhteet**.
 
 2. Valitse **Uusi suhde**.
 
-3. Anna **Lisää suhde** -ruutuun seuraavat tiedot:
+3. Kirjoita **Uusi suhde** -ruutuun seuraavat tiedot:
 
-   > [!div class="mx-imgBorder"]
-   > ![Anna suhteen tiedot](media/relationships-add.png "Anna suhteen tiedot")
+   :::image type="content" source="media/relationship-add.png" alt-text="Uusi suhdesivuruutu, jossa on tyhjät syöttökentät.":::
 
-   - **Suhteen nimi**: Nimi, joka vastaa suhteen tarkoitusta (esimerkiksi **Tilin verkkolokit**).
+   - **Suhteen nimi**: Nimi, joka vastaa suhteen tarkoitusta. Esimerkki: CustomerToSupportCase.
    - **Kuvaus**: Suhteen kuvaus.
-   - **Lähde-entiteetti**: Valitse entiteetti, jota käytetään suhteen lähteenä (esimerkiksi verkkoloki).
-   - **Kardinaliteetti**: Valitse lähde-entiteettitietueiden kardinaliteetti. Esimerkiksi "useita" tarkoittaa, että yhteen verkkotiliin liittyy useita verkkolokitietueita.
-   - **Lähteen avainkenttä**: Tämä kuvaa lähde-entiteetin viiteavainkenttää. Esimerkiksi verkkolokilla on **accountId**-viiteavainkenttä.
-   - **Kohde-entiteetti**: Valitse entiteetti, jota käytetään suhteen kohteena (esimerkiksi verkkotili).
-   - **Kohdekardinaliteetti**: Valitse kohde-entiteettitietueiden kardinaliteetti. Esimerkiksi "yksi" tarkoittaa, että yhteen verkkotiliin liittyy useita verkkolokitietueita.
-   - **Kohdeavainkenttä**: Tämä kenttä edustaa kohde-entiteetin avainkenttää. Esimerkiksi verkkotilillä on **accountId**-avainkenttä.
+   - **Lähde-entiteetti**: Entiteetti, jota käytetään suhteen lähteenä. Esimerkki: SupportCase.
+   - **Kohde-entiteetti**: Entiteetti, jota käytetään kohteen lähteenä. Esimerkki: Asiakas.
+   - **Lähteen kardinaliteetti**: Määritä lähde-entiteetin kardinaliteetti. Kardinaliteetti kuvaa joukon mahdollisten elementtien määrää. Se liittyy aina kohdekardinaliteettiin. Voit valita **yhden** tai **usean** välillä. Vain monta yhteen- ja yksi yhteen -suhteita tuetaan.  
+     - Monta yhteen: useat lähdetietueet voivat liittyä yhteen kohdetietueeseen. Esimerkki: yhden asiakkaan tukitapauksia on useita.
+     - Yksi yhteen: yksi lähdetietue liittyy yhteen kohdetietueeseen. Esimerkki: yksi uskollisuustunnus yhdelle asiakkaalle.
 
-> [!NOTE]
-> Vain monta yhteen- ja yksi yhteen -suhteita tuetaan. Monta moneen -suhteita voi luoda käyttämällä kahta monta yhteen -suhdetta ja linkittämällä entiteetin (joka on sama, jota käytettiin lähde- ja kohde-entiteetin yhdistämisessä).
+     > [!NOTE]
+     > Monta moneen -suhteet voidaan luoda käyttämällä kahta monta-yhteen-suhdetta ja linkitysentiteettiä, joka yhdistää lähde-entiteetin ja kohde-entiteetin.
 
-## <a name="delete-a-relationship"></a>Poista suhde
+   - **Kohdekardinaliteetti**: Valitse kohde-entiteettitietueiden kardinaliteetti. 
+   - **Lähdeavainkenttä**: lähde-entiteetin viiteavainkenttä. Esimerkki: SupportCase voi käyttää CaseID-tunnusta viiteavaimena.
+   - **Kohdeavainkenttä**: Kohde-entiteetin avainkenttä. Esimerkiksi Asiakas voi käyttää **CustomerID**-avainkenttä.
 
-1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Suhteet**.
+4. Valitse **Tallenna** luodaksesi asiakassuhteen.
 
-2. Valitse sen suhteen valintaruudut, jonka haluat poistaa.
+## <a name="view-relationships"></a>Tarkastele suhteita
 
-3. Valitse **Poista** **Suhteet**-taulukon yläosassa.
+Tässä Suhteet-sivulla on kaikki luodut suhteet. Kullakin rivillä on suhde, joka sisältää myös tietoja lähde-entiteetistä, kohde-entiteetistä ja suhteesta. 
 
-4. Vahvista poisto.
+:::image type="content" source="media/relationships-list.png" alt-text="Luettelo suhteista ja asetuksista suhteet-sivun toimintopalkissa.":::
+
+Tämä sivu tarjoaa joukon vaihtoehtoja nykyisille ja uusille suhteille: 
+- **Uusi suhde**: Valitse [Luo mukautettu suhde](#create-a-custom-relationship).
+- **Visualisointi**: [Tutustu suhteeseen visualisointitehosteen](#explore-the-relationship-visualizer) avulla, niin näet verkkokaavion aiemmin luoduista suhteista ja niiden kardinaliteetista.
+- **Suodatus**: Valitse suhdetyyppi, jonka haluat näyttää luettelossa.
+- **Hae suhteet**: Käytä suhdeominaisuuksien tekstipohjaista hakua.
+
+### <a name="explore-the-relationship-visualizer"></a>Tutustu suhteeseen visualisointitehosteena
+
+Suhteen visualisointi näyttää verkkokaavion yhdistettyjen entiteettien välisistä suhteista ja niiden kardinaliteetista.
+
+Jos haluat mukauttaa näkymää, voit muuttaa ruutujen sijaintia vetämällä ne kaavioon.
+
+:::image type="content" source="media/relationship-visualizer.png" alt-text="Näyttökuva suhdevisualisointiverkkokaaviosta, johon on liitetty toisiinsa liittyviä kokonaisuuksia.":::
+
+Käytettävissä olevat asetukset: 
+- **Vie kuvana**: Tallenna nykyinen näkymä kuvatiedostona.
+- **Vaihda vaaka- tai pystysuuntaiseksi asetteluksi**: muuta entiteettien ja suhteiden asettelu.
+- **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
+
+## <a name="manage-existing-relationships"></a>Olemassa olevien suhteiden hallinta 
+
+Suhteet-sivulla kutakin suhdetta edustaa rivi. 
+
+Valitse suhde ja valitse jokin seuraavista vaihtoehdoista: 
+ 
+- **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
+- **Poista**: Poista mukautetut suhteet.
+- **Näkymä**: Näytä järjestelmän luomat ja perityt suhteet. 
 
 ## <a name="next-step"></a>Seuraava vaihe
 
-Järjestelmän suhteita ja mukautettuja suhteita käytetään luotaessa segmenttejä sellaisten useiden tietolähteiden perusteella, jotka eivät ole enää siilossa. Lisätietoja on kohdassa [Segmentit](segments.md).
-
+Järjestelmän suhteita ja mukautettuja suhteita käytetään [luotaessa segmenttejä](segments.md) sellaisten useiden tietolähteiden perusteella, jotka eivät ole enää siilossa.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

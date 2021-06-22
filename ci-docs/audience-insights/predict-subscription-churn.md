@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906898"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095644"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
 
@@ -147,30 +147,9 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
        > [!div class="mx-imgBorder"]
        > ![Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa](media/subscription-churn-influentialfactors.PNG "Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa")
 
-## <a name="fix-a-failed-prediction"></a>Epäonnistuneen ennusteen korjaaminen
+## <a name="manage-predictions"></a>Hallitse ennusteita
 
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-1. Valitse ennuste, jonka virhelokeja haluat tarkastella. Valitse sitten **Lokit**.
-   > [!div class="mx-imgBorder"]
-   > ![Tarkastele tulosten valikkoriviä, jolla ovat esimerkiksi Sulje-, Muokkaa mallia- ja Lokit-painikkeet](media/subscription-churn-logsbutton.PNG "Tarkastele tulosten valikkoriviä, jolla ovat esimerkiksi Sulje-, Muokkaa mallia- ja Lokit-painikkeet")
-1. Tarkastele kaikkia virheitä. Mahdollisia virhe tyyppejä on useita. Ne osoittavat, mikä ehto aiheutti virheen. Esimerkiksi virhe, jonka mukaan tietoja ei ole riittävästi tarkkaan ennusteeseen, ratkaistaan tyypillisesti lataamalla lisää tietoja.
-
-## <a name="refresh-a-prediction"></a>Ennusteen päivittäminen
-
-Ennusteet päivittyvät automaattisesti saman [aikataulun mukaan kuin tiedot päivitetään](system.md#schedule-tab) asetuksissa määritetyllä tavalla.
-
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-1. Valitse päivitettävän ennusteen vieressä olevat allekkaiset pisteet.
-1. Valitse **Päivitä**.
-
-## <a name="delete-a-prediction"></a>Ennusteen poistaminen
-
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-1. Valitse poistettavan ennusteen vieressä olevat allekkaiset pisteet.
-1. Valitse **Poista**.
-
-> [!NOTE]
-> Ennusteen poistaminen poistaa sen tulosentiteetin.
+Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

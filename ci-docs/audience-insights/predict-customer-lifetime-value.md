@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: e2f92a64d01a443bcf3c1605621abe045b93ee5e
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954575"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095506"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Asiakkaan elinkaaren arvon (CLV) ennuste (esiversio)
 
@@ -149,7 +149,6 @@ Tärkeisiin asiakastapahtumiin (kuten verkko-, asiakaspalvelu- ja tapahtumalokit
 
 1. Valitse **Seuraava**.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>Mallimäärityksen tarkasteleminen ja suoritaminen
 
 1. Voit tarkastella ennusteen määritystä **Tarkastele mallin tietoja** -vaiheessa. Voit palata mihin tahansa ennustemäärityksen osaan valitsemalla **Muokkaa** annetun arvon kohdassa. Voit myös valita määritysvaiheen edistymisen ilmaisimessa.
@@ -170,11 +169,10 @@ Tärkeisiin asiakastapahtumiin (kuten verkko-, asiakaspalvelu- ja tapahtumalokit
 - **Tila**: Ennusten suorituksen tila.
     - **Jonossa**: Ennuste odottaa muiden prosessien valmistumista.
     - **Päivittyy**: Ennustetta suoritetaan parhaillaan, jotta luodaan tulosentiteettiin siirrettävät tulokset.
-    - **Epäonnistui**: Ennusteen suorittaminen epäonnistui. Lisätietoja saa [lokeja tarkastelemalla](#troubleshoot-a-failed-prediction).
+    - **Epäonnistui**: Ennusteen suorittaminen epäonnistui. Lisätietoja saa [lokeja tarkastelemalla](manage-predictions.md#troubleshoot-a-failed-prediction).
     - **Onnistui**: Ennuste onnistui. Valitse kolmen pystysuuntaisen pisteen alapuolella oleva **Näytä**-kohta, jos haluat tarkastella ennusteen tuloksia.
 - **Muokattu**: Ennusteen määrityksen muutospäivämäärä.
 - **Viimeinen päivitys**: Päivämäärä, jona ennuste päivitti tulokset tulosentiteettiin.
-
 
 ### <a name="review-prediction-results"></a>Ennusteen tulosten tarkasteleminen
 
@@ -216,28 +214,8 @@ Tulossivulla on kolme ensisijaista tieto-osaa.
 
 - **Vaikuttavimmat tekijät**: Huomioon otetaan eri tekijöitä, kun asiakkaan elinkaaren arvon ennuste luodaan tekoälymallille annettujen syötetietojen perusteella. Kunkin tekijän tärkeys on laskettu mallin luomille yhdistellyille ennusteille. Näiden tekijöiden avulla voit tarkistaa ennusteen tulokset. Nämä tekijät antavat myös enemmän tietoja tekijöistä, jotka vaikuttivat eniten kaikkien asiakkaiden asiakkaan elinkaaren arvon ennustamiseen.
 
-## <a name="refresh-a-prediction"></a>Ennusteen päivittäminen
+## <a name="manage-predictions"></a>Hallitse ennusteita
 
-Ennusteet päivittyvät automaattisesti asetuksissa määritetyllä [aikataululla, jolla tiedotkin päivitetään](system.md#schedule-tab). Voit päivittää ne myös manuaalisesti.
-
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-2. Valitse päivitettävän ennusteen vieressä olevat allekkaiset pisteet.
-3. Valitse **Päivitä**.
-
-## <a name="delete-a-prediction"></a>Ennusteen poistaminen
-
-Ennusteen poistaminen poistaa myös sen tuloste-entiteetin.
-
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-2. Valitse poistettavan ennusteen vieressä olevat allekkaiset pisteet.
-3. Valitse **Poista**.
-
-## <a name="troubleshoot-a-failed-prediction"></a>Epäonnistuneen ennusteen vianmääritys
-
-1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
-2. Valitse kolme allekkain olevaa pistettä sen ennusteen vieressä, jonka virhelokeja haluat tarkastella.
-3. Valitse **Lokit**.
-4. Tarkastele kaikkia virheitä. Mahdollisia virhe tyyppejä on useita. Ne osoittavat, mikä ehto aiheutti virheen. Esimerkiksi virhe, jonka mukaan tietoja ei ole riittävästi tarkkaan ennusteeseen, ratkaistaan tyypillisesti lataamalla lisää tietoja käyttäjäryhmän merkityksellisiin tietoihin.
-
+Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

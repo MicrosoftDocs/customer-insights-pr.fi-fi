@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595269"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129895"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Tuotesuositusten ennusteen (esiversio) näyteopas
 
@@ -22,7 +22,7 @@ Aiheessa käsitellään kattavasti tuotesuosituksen ennusteen esimerkkiä käytt
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Tavoitteena on ymmärtää, mitä tuotteita tulisi suositella toistuville asiakkaille. Jos tiedetään, mitä asiakkaat **todennäköisesti ostavat**, markkinointiponnisteluissa voidaan keskittyä näihin tiettyihin nimikkeisiin.
+Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet, joita he myyvät Contoso Coffee -verkkosivustonsa kautta. Tavoitteena on ymmärtää, mitä tuotteita tulisi suositella toistuville asiakkaille. Jos tiedetään, mitä asiakkaat **todennäköisesti ostavat**, markkinointiponnisteluissa voidaan keskittyä näihin tiettyihin nimikkeisiin.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -65,7 +65,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
 
 1. Vaihda sivuruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommercePurchases**.
 
-1. Tallenna tietolähde.
+1. **Tallenna** tietolähde.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Asiakastietojen käyttäminen kanta-asiakasrakenteesta
@@ -83,11 +83,11 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
 
 1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
 
-1. Tallenna tietolähde.
+1. **Tallenna** tietolähde.
 
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
-Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuuden, yhdistämisen** prosessilla luodaan yhtenäistetty asiakasprofiili. Lisätietoja on kohdassa [Tietojen yhtenäistäminen](data-unification.md).
+Tietojen purkamisen jälkeen aloitetaan nyt tietojen yhdistäminen ja luodaan yhtenäinen asiakasprofiili. Lisätietoja on kohdassa [Tietojen yhtenäistäminen](data-unification.md).
 
 ### <a name="map"></a>Liitä
 
@@ -156,7 +156,7 @@ Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan ny
 
    - **Tuotteiden määrä**: Määritä arvoksi **5**. Tämä asetus määrittää, miten montaa tuotetta haluat suositella asiakkaillesi.
 
-   - **Ehdotetaanko tuotteita, joita asiakkaat ovat ostaneet lähiaikoina?**: Valitse **Kyllä**, jos haluat sisällyttää asiakkaiden aiemmin ostamia tuotteita suositukseen.
+   - **Toista odotetut ostot**: Valitse **Kyllä**, jos haluat sisällyttää tuotteet asiakkaiden aiemmin ostamaan suositukseen.
 
    - **Katso taaksepäin -ikkuna:** Valitse vähintään **365 päivää**. Tämä asetus määrittää, miten pitkälle menneisyyteen asiakkaan aktiviteetteja tarkastellaan, kun sitä käytetään suositusten syötteenä.
    

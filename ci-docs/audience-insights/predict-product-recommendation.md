@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906760"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095552"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Tuotesuosituksen ennuste (esiversio)
 
@@ -205,33 +205,9 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
        > [!div class="mx-imgBorder"]
        > ![Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle](media/product-recommendation-highconfidence.PNG "Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle")
 
-## <a name="fix-a-failed-prediction"></a>Epäonnistuneen ennusteen korjaaminen
+## <a name="manage-predictions"></a>Hallitse ennusteita
 
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-
-1. Valitse ennuste, jonka virhelokeja haluat tarkastella. Valitse sitten **Lokit**.
-
-1. Tarkastele kaikkia virheitä. Mahdollisia virhe tyyppejä on useita. Ne osoittavat, mikä ehto aiheutti virheen. Esimerkiksi virhe, että tietoja ei ole riittävästi täsmälliseen ennustamiseen, on yleensä ratkaistavissa lataamalla lisää tietoja Customer Insightsiin.
-
-## <a name="refresh-a-prediction"></a>Ennusteen päivittäminen
-
-Ennusteet päivittyvät automaattisesti asetuksissa määritetyllä [aikataululla, jolla tiedotkin päivitetään](system.md#schedule-tab).
-
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-
-1. Valitse päivitettävän ennusteen vieressä olevat allekkaiset pisteet.
-
-1. Valitse **Päivitä**.
-
-## <a name="delete-a-prediction"></a>Ennusteen poistaminen
-
-Ennusteen poistaminen poistaa myös sen tuloste-entiteetin.
-
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-
-1. Valitse poistettavan ennusteen vieressä olevat allekkaiset pisteet.
-
-1. Valitse **Poista**.
+Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 05/06/2021
+ms.date: 06/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: c66b37d6e4d6ed830238566fbc09934832892b34
-ms.sourcegitcommit: 3f9981df97fa7b1f432a446d3f11936ea4cfbde5
+ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
+ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "5988916"
+ms.lasthandoff: 06/15/2021
+ms.locfileid: "6263247"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -26,6 +26,37 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="may-2021-updates"></a>Toukokuun 2021 päivityksey
+
+Toukokuun 2021 päivityksessä on useita ominaisuuksia, suorituskykypäivityksiä ja ohjelmavirheiden korjauksia.
+
+### <a name="data-ingestion"></a>Tietojen käsittely
+
+- **Voit tarkastella tai muokata metatietoja tai entiteettimääritystä, kun liität tietoja Azure Data Lake Storagesta**, voit tarkastella ja muokata metatietoja tai entiteettimääritystä käyttäjäryhmän merkityksellisissä tiedoissa, kun liität tietoja Common Data Model -kansiosta Azure Data Lake Storagessa. Tämä ominaisuus tarjoaa reaaliaikaista palautetta, mallin tarkistamista ja virheiden tarkistusta. Sen avulla voit muokata sekä model.json-tiedoston että manifest.json-tiedoston saumattomasti.
+
+### <a name="extensibility"></a>Laajennettavuus
+
+- **Parannettu segmenttien vienti, mukautettu aikataulu ja kaksoiskappaleet** Voit nyt [nähdä luettelon tietyn segmentin kaikki viennit](export-destinations.md#view-exports-and-export-details). Tämä uusi näkymä auttaa hallitsemaan tietyn segmentin käyttötegmenttiä ja mukauttamaan olemassa olevia tai luomaan uusia vientejä.    
+  Voit [määrittää mukautettuja päivitysaikatauluja](export-destinations.md#schedule-and-run-exports) yksittäiselle viennille tai usealle viennille samalla kertaa. Tähän asti kaikki viennit on nyt suoritettava jokaisen järjestelmän päivityksen yhteydessä.    
+  Sen sijaan, että loisit uuden viennin alusta, voit säästää aikaa, kun aloitat aiemmin luodun viennin perusteella.
+
+- **Vie segmentit Microsoft Advertisingiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Microsoft Advertising. Luo kohdeyleisöjä Microsoft Advertisingissa yhtenäisten asiakasprofiilitietojen avulla ja käytä näitä kohdeyleisöjä mainoskampanjoissasi. Lisätietoja on ohjeaiheessa [Segmenttien vieminen Microsoft Advertisingiin](export-microsoft-advertising.md).
+
+- **Vie segmentit LinkedIn Adsiin** Olemme laajentaneet vientikohteitamme niin, että ne sisältävät LinkedIn Adsit, ja voit avata yhteyshenkilöiden kohdistamisen lukituksen sekä yritys kohdistamisen LinkedInin kautta viemällä yhdistetyt asiakasprofiilisi tiedot. Lisätietoja on ohjeaiheessa [Segmenttien vieminen LinkedIn Adsiin](export-linkedin-ads.md).
+
+
+- **Vie segmentit Omnisendiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Omnisend. Käytä käyttäjäryhmän merkityksellisissä tiedoissa luotuja segmenttejä luodaksesi kampanjoita, tarjotaksesi sähköpostimarkkinointia ja käyttääksesi tiettyjä asiakasryhmiä Omnisend-toiminnolla. Lisätietoja on ohjeaiheessa [Segmenttien vieminen Omnisendiin](export-omnisend.md)
+
+### <a name="predictions"></a>Ennusteet
+
+- **Syöttötietojen käytettävyysraportti** Syöttötietojen käytettävyysraportti sisältää koosteen virheistä ja varoituksia, joita valmiit ennusteet saattavat tuottaa. Se antaa myös suosituksia mallin suorituskyvyn parantamista varten.    
+  Raportti on käytettävissä sen jälkeen, kun malli on suorittanut sen koulutusprosessin. Se luodaan kullekin mallille erikseen riippumatta siitä, onnistuiko malli.
+  Tämä ominaisuus on tällä hetkellä käytettävissä vain tapahtumavaihtuvuusmallissa. Lisätietoja on ohjeaiheessa [Syöttötietojen käytettävyysraportti](manage-predictions.md#input-data-usability-report).
+
+### <a name="relationships"></a>Suhteet
+
+- **Suhteen visualisointi** Suhteen visualisointinäkymässä voit nähdä kaikki olemassa olevat suhteet entiteettien välillä ja niiden kardinaalisuuden. Suhteet on nyt järjestetty ryhmiin: käyttäjän luomat, järjestelmät ja perityt suhteet. Voit myös viedä näkymän kuvana. Lisätietoja on aiheessa [Suhteiden tarkastelu](relationships.md#view-relationships). 
 
 ## <a name="april-2021-updates"></a>Huhtikuun 2021 päivitykset
 
