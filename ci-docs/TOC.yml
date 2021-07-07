@@ -72,7 +72,7 @@
           href: audience-insights/enrichment-here.md
         - name: Täydennä Leadspacen avulla
           href: audience-insights/enrichment-leadspace.md
-        - name: Rikastuttaminen Experianin avulla
+        - name: Rikastaminen Experianin avulla
           href: audience-insights/enrichment-experian.md
         - name: Rikastaminen mukautetun SFTP-tuonnin avulla
           href: audience-insights/enrichment-SFTP-custom-import.md
@@ -136,6 +136,8 @@
           items:
             - name: Yleiskatsaus vienteihin
               href: audience-insights/export-destinations.md
+            - name: Aktiivinen kampanja
+              href: audience-insights/export-active-campaign.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
             - name: Autopilot
@@ -178,8 +180,12 @@
               href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
+            - name: Salesforce Marketing Cloud
+              href: audience-insights/export-salesforce.md
             - name: SendGrid
               href: audience-insights/export-sendgrid.md
+            - name: SendInBlue
+              href: audience-insights/export-sendinblue.md
             - name: Snapchat
               href: audience-insights/export-snapchat.md
             - name: SFTP
@@ -238,17 +244,17 @@
       items:
         - name: Aloitusopas
           href: engagement-insights/get-started.md
-        - name: Työtilan luominen
+        - name: Luo työtila
           href: engagement-insights/create-workspace.md
-        - name: Sivuston varustaminen mittareilla
-          href: engagement-insights/instrument-website.md
+        - name: Tapahtumien sieppaaminen sivustoista ja mobiilisovelluksista
+          href: engagement-insights/developer-resources.md
         - name: Käsitteet ja terminologia
           href: engagement-insights/glossary.md
     - name: Tapahtumat
       items:
         - name: Tapahtumien luominen ja muokkaaminen
           href: engagement-insights/refined-events.md
-        - name: Tapahtumien vieminen
+        - name: Vie tapahtumat
           href: engagement-insights/export-events.md
     - name: Raportoi
       items:
@@ -272,11 +278,19 @@
       items:
         - name: Kehittäjien resurssien yleiskatsaus
           href: engagement-insights/developer-resources.md
-        - name: Web SDK -opasohjelma
+        - name: 'SDK:n verkkosovelluksen tutoriaali'
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Web SDK -näyte
           href: engagement-insights/websdk-sample.md
-    - name: Hallinta
+        - name: 'Android SDK:n opasohjelma'
+          href: engagement-insights/get-started-android.md
+        - name: 'Android SDK:n esimerkki'
+          href: engagement-insights/androidsdk-sample.md
+        - name: iOS SDK -opastus
+          href: engagement-insights/get-started-ios.md
+        - name: 'iOS SDK:n esimerkki'
+          href: engagement-insights/iossdk-sample.md
+    - name: Hallinto
       items:
         - name: Roolit ja oikeudet
           href: engagement-insights/user-roles.md
