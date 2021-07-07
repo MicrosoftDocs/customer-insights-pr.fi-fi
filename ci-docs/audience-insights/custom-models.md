@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700664"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305624"
 ---
 # <a name="custom-machine-learning-models"></a>Mukautetut koneoppimisen mallit
 
@@ -72,7 +72,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
       > [!div class="mx-imgBorder"]
       > ![Mallin tulosteparametri -ruutu](media/intelligence-screen3-outputparameters.png "Mallin tulosteparametri -ruutu")
 
-1. Valitse vastaava määrite siinä avattavassa **Asiakastunnus tuloksissa** -luettelossa, joka määrittää asiakkaat, ja valitse **Tallenna**.
+1. Valitse vastaava määrite asiakkaat määrittävästä avattavasta **Asiakastunnus tuloksissa** -luettelosta ja valitse sitten **Tallenna**.
 
    > [!div class="mx-imgBorder"]
    > ![Tulosten liittäminen Asiakastiedot-ruutuun](media/intelligence-screen4-relatetocustomer.png "Tulosten liittäminen Asiakastiedot-ruutuun")
@@ -100,7 +100,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
       1. Valitse testijaksolle **Tulostetietosäilön parametrin nimi**.
       1. Valitse testijaksolle **Tulostepolun parametrin nimi**.
 
-1. Valitse vastaava määrite siinä avattavassa **Asiakastunnus tuloksissa** -luettelossa, joka määrittää asiakkaat, ja valitse **Tallenna**.
+1. Valitse vastaava määrite asiakkaat määrittävästä avattavasta **Asiakastunnus tuloksissa** -luettelosta ja valitse sitten **Tallenna**.
    Päättelytulosteesta on valittava määrite, jossa on samankaltaiset arvot kuin asiakasentiteetin Asiakastunnus-sarakkeessa. Jos tietojoukossa ei ole kyseistä saraketta, valitse määrite, joka määrittää rivin yksilöivästi.
 
 ## <a name="run-a-workflow"></a>Työnkulun suorittaminen

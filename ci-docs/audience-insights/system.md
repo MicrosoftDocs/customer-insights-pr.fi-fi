@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 87bf8d7b9c23633ebdc929e15ac645c55cc21e4a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 09d449e51a3a47ec916ab3d017419c9d9be1ffcf
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595376"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305706"
 ---
 # <a name="system-configuration"></a>Järjestelmän kokoonpano
 
@@ -94,7 +94,7 @@ Valitse **Tallena** valintojen vahvistamiseksi.
 
 ## <a name="api-usage-tab"></a>Ohjelmointirajapinnan käyttö -välilehti
 
-Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, mitä tapahtumia tiettynä aikavälinä on suoritettu. Aikaväli valitaan avattavassa **Valitse aikaväli** -valikossa. 
+Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, mitä tapahtumia tiettynä aikavälinä on suoritettu. Valitse aikaväli avattavasta **Valitse aikaväli** -valikosta. 
 
 **Ohjelmointirajapinnan käyttö** sisältää seuraavat kolme osaa: 
 - **Ohjelmointirajapinnan kutsut** - kaavio, joka visualisoi ohjelmointirajapinnan koostettujen kutsujen määrän valittuna aikavälinä.

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 07271d491460764f2c738e760e41c3492f2b6de9
-ms.sourcegitcommit: 27f9dd837304ef9fc00f055a6e900fbf6fce1429
+ms.openlocfilehash: e0ca731f944da9a7eaae7c2dc2d7568b6386089f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "5965574"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305428"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Asiakasprofiilien rikastaminen parannetuilla osoitteilla
 
@@ -22,11 +22,11 @@ Tietojen osoitteet voivat olla rakenteettomia, epätäydellisiä tai virheellisi
 
 ## <a name="how-we-enhance-addresses"></a>Miten parannamme osoitteita
 
-Mallimme käy läpi kaksivaiheisen prosessin osoitteen parantamiseksi. Ensinnäkin se jäsentää osoitteen tunnistaakseen sen komponentit ja asettaa ne jäsenneltyyn muotoon. Sitten käytämme tekoälyä osoitteen arvojen korjaamiseen, täydentämiseen ja standardointiin.
+Mallimme käy läpi kaksivaiheisen prosessin osoitteen parantamiseksi. Ensinnäkin se jäsentää osoitteen tunnistaakseen sen komponentit ja asettaa ne jäsenneltyyn muotoon. Tämän jälkeen osoitteen arvot voi korjata, määrittää valmiiksi ja standardisoida tekoälyn avulla.
 
 ### <a name="example"></a>Esimerkiksi
 
-Osoitetiedot saattavat olla epästandardissa muodossa ja sisältää kirjoitusvirheitä. Malli voi korjata nämä ongelmat ja luoda yhdenmukaisia osoitteita yhtenäisiin asiakasprofiileihin.
+Osoitetiedot voivat olla muussa kuin standardimuodossa. Niissä voi myös olla kirjoitusvirheitä. Malli voi korjata nämä ongelmat ja luoda yhdenmukaisia osoitteita yhtenäisiin asiakasprofiileihin.
 
 ```Input
 4567 w main stret californa missouri 54321 us
@@ -50,7 +50,7 @@ Parannetut osoitteet toimivat vain niiden arvojen kanssa, joka ovat jo olemassa 
 2. Tarkista, onko mitkään arvoista, kuten postinumerot tai katujen nimet, kelvollisia.
 3. Muuta arvoja, joita se ei tunnista.
 
-Malli käyttää koneoppimiseen perustuvia tekniikoita osoitteiden parantamiseen. Vaikka käytämme korkeaa luottamuskynnystä, kun malli muuttaa syöttöarvoa 100%: n tarkkuutta ei taata, kuten ei missään koneoppimismallissa.
+Malli käyttää koneoppimiseen perustuvia tekniikoita osoitteiden parantamiseen. Käytössä on korkea luotettavuusraja. Se tarkoittaa sitä, että kun mallin syöttöarvo muuttuu, kuten missä tahansa koneoppimiseen perustuvassa mallissa, 100 prosentin tarkkuutta ei taata.
 
 ## <a name="supported-countries-or-regions"></a>Tuetut maat tai alueet
 
@@ -76,7 +76,7 @@ Osoitteissa on oltava maa- tai aluearvo. Emme käsittele osoitteita maille tai a
 1. Valitse, kuinka osoitteet muotoillaan tietojoukossa. Valitse **Yksimääritteinen osoite**, jos tietojen osoitteet käyttävät yhtä kenttää. Valitse **Monimääritteinen osoite**, jos tietojen osoitteet käyttävät useampaa kuin yhtä kenttää.
 
    > [!NOTE]
-   > Maa tai alue on pakollinen sekä yhden että usean määritteen osoitteessa. Osoitteita, jotka eivät sisällä kelvollisia tai tuettuja maan tai alueen arvoja, ei rikasteta
+   > Maa ja alue ovat pakollisia sekä yhden määritteen että useiden määritteiden osoitteissa. Osoitteita, jotka eivät sisällä kelvollisia tai tuettuja maan tai alueen arvoja, ei rikasteta.
 
 1.  Yhdistä yhdistetyn asiakasentiteetin osoitekentät.
 
@@ -98,6 +98,6 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

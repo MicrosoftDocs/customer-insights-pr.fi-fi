@@ -9,21 +9,21 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
-ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
+ms.openlocfilehash: 9326f821f9970ba2254ab804814e369abb677eb0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/10/2021
-ms.locfileid: "6016588"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304738"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights -ohjelmointirajapintojen käyttäminen
 
-Dynamics 365 Customer Insightsissa on ohjelmointirajapintoja, joilla voi muodostaa omia Customer Insightsissa oleviin tietoihin perustuvia sovelluksia.
+Dynamics 365 Customer Insights määrittää ohjelmointirajapinnat, jotta voit luoda omia sovelluksia Customer Insights -sovelluksen tietojen perusteella.
 
 > [!IMPORTANT]
 > Kyseisten ohjelmointirajapintojen tiedot ovat [Customer Insightsin ohjelmointirajapintojen viitteessä](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). Niissä on lisätietoja toiminnoista, parametreista ja vastauksista.
 
-Tässä artikkelissa on ohjeita Customer Insightsin ohjelmointirajapintojen käytöstä ja Azure-sovelluksen rekisteröinnin luonnista. Lisäksi siinä opastetaan käytettävissä olevien asiakasohjelmakirjastojen käytön aloittamisessa.
+Tässä artikkelissa kerrotaan Customer Insightsin ohjelmointirajapintojen käyttämisestä, Azure-sovelluksen rekisteröinnin luomisesta ja käytettävissä olevien asiakasohjelmakirjastojen käytön aloittamisesta.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Customer Insightsin ohjelmistorajapintojen käytön kokeilemisen aloittaminen
 
@@ -32,6 +32,7 @@ Tässä artikkelissa on ohjeita Customer Insightsin ohjelmointirajapintojen käy
 1. Ota ohjelmointirajapinnat käyttöön Customer Insights -ympäristössä valitsemalla **Hallinta** > **Käyttöoikeudet**. Sitä varten tarvitaan järjestelmänvalvojan oikeudet.
 
 1. Siirry **Ohjelmointirajapinnat**-välilehteen ja valitse **Ota käyttöön** -painike.    
+ 
    Ohjelmointirajapintojen ottaminen käyttöön luo sen esiintymän ensisijaisen ja toissijaisen tilausavaimen, jota käytetään ohjelmointirajapintapyynnöissä. Voit luoda avaimet uudelleen valitsemalla **Luo ensisijainen uudelleen** tai **Luo toissijainen uudelleen**, kun olet valinnut ensin **Hallinta** > **Käyttöoikeudet** > **Ohjelmointirajapinnat**.
 
    :::image type="content" source="media/enable-apis.gif" alt-text="Customer Insightsin ohjelmointirajapintojen ottaminen käyttöön":::
@@ -40,7 +41,7 @@ Tässä artikkelissa on ohjeita Customer Insightsin ohjelmointirajapintojen käy
 
 1. Valitse ohjelmointirajapintatoiminto ja valitse sitten **Kokeile**.
 
-1. Määritä sivuruudussa avattavan **Valtuutus**-valikon arvoksi **implisiittinen**. `Authorization`-otsikkoon lisätään haltijatunnus. Tilausavain täytetään automaattisesti.
+1. Määritä sivupaneelissa avattava **Valtuutus**-valikon arvoksi **Implisiittinen**. Otsikko `Authorization` lisätään haltijatunnukseen. Tilausavain täytetään automaattisesti.
   
 1. Vaihtoehtoisesti voit lisätä kaikki tarvittavat kyselyparametrit.
 
@@ -48,27 +49,27 @@ Tässä artikkelissa on ohjeita Customer Insightsin ohjelmointirajapintojen käy
 
 HTTP-vastaus tulee pian näkyviin alapuolelle.
 
-
-   :::image type="content" source="media/try-apis.gif" alt-text="Animoitu gif, joka näyttää, miten ohjelmointirajapintojen testaaminen valitaan.":::
+   :::image type="content" source="media/try-apis.gif" alt-text="Ohjelmointirajapintojen testaaminen.":::
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Uuden sovellusrekisteröinnin luominen Azure-portaalissa
 
-Näiden ohjeiden avulla aloitetaan Customer Insightsin ohjelmointirajapintojen käyttö Azure-sovelluksessa delegoituja oikeuksia käyttämällä. Varmista, että olet suorittanut ensin [Aloittaminen-osan](#get-started-trying-the-customer-insights-apis) toimet.
+Näiden vaiheiden avulla voit aloittaa Customer Insightsin ohjelmointirajapintojen käyttämisen Azure-sovelluksessa delegoitujen oikeuksien avulla. Varmista, että [Aloittaminen-osa](#get-started-trying-the-customer-insights-apis) on tehty ensin.
 
 1. Käytä [Azure-portaaliin](https://portal.azure.com) kirjautumiseen tiliä, jolla voi käyttää Customer Insightsin tietoja.
 
 1. Valitse vasemmalla **Sovelluksen rekisteröinnit**.
 
 1. Valitse **Uusi rekisteröinti**, anna sovelluksen nimi ja valitse tilityyppi.
+ 
    Voit lisätä myös uudelleenohjauksen URL-osoitteen (valinnainen). http://localhost on riittävä sovelluksen kehittämiseen paikallisessa tietokoneessa.
 
 1. Valitse uudessa sovellusrekisteröinnissä **Ohjelmointirajapinnan oikeudet**.
 
-   :::image type="content" source="media/app-registration-1.gif" alt-text="Animoitu gif, joka määrittää ohjelmointirajapinnan oikeudet sovelluksen rekisteröinnissä.":::
+   :::image type="content" source="media/app-registration-1.gif" alt-text="Ohjelmointirajapinnan oikeuksien määrittäminen sovelluksen rekisteröinnin yhteydessä.":::
 
 1. Valitse **Lisää käyttöoikeus** ja valitse sitten sivuruudussa **Customer Insights**.
 
-1. Valitse **Käyttöoikeustyyppi**-kohdassa **Delegoidut käyttöoikeudet** ja valitse sitten **user_impersonation**-oikeus.
+1. Valitse **Oikeustyyppi**-kohdassa **Delegoidut oikeudet**. Valitse lopuksi **user_impersonation**-oikeus.
 
 1. Valitse **Lisää käyttöoikeudet**. Jos tarvitse ohjelmointirajapinnan käyttöoikeuden ilman käyttäjän kirjautumista, lisätietoja on osiossa [Palvelinten väliset sovelluksen käyttöoikeudet](#server-to-server-application-permissions).
 
@@ -76,13 +77,13 @@ Näiden ohjeiden avulla aloitetaan Customer Insightsin ohjelmointirajapintojen k
 
 Voit käyttää tämän sovelluksen rekisteröinnin sovellus- tai asiakastunnusta MSAL (Microsoft Authentication Library) -kirjastossa. Tällä tavoin saadaan pyynnön kanssa ohjelmointirajapintaan lähetettävä haltijatunnus.
 
-:::image type="content" source="media/grant-admin-consent.gif" alt-text="Animoitu gif järjestelmänvalvojan hyväksynnän myöntämiseksi.":::
+:::image type="content" source="media/grant-admin-consent.gif" alt-text="Järjestelmänvalvojan suostumuksen myöntäminen.":::
 
 Lisätietoja MSAL-kirjastosta on kohdassa [MSAL (Microsoft Authentication Library) -kirjaston yleiskatsaus](/azure/active-directory/develop/msal-overview).
 
-Lisätietoja sovelluksen rekisteröinnistä Azuressa on kohdassa [Azure-portaalin uusi sovelluksen rekisteröintikokemus](/azure/active-directory/develop/app-registration-portal-training-guide).
+Lisätietoja sovelluksen rekisteröimisestä Azuressa on kohdassa [Sovelluksen rekisteröiminen](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
 
-Lisätietoja ohjelmointirajapintojen käyttämisestä asiakaskirjastojen kanssa on kohdassa [Customer Insightsin asiakaskirjastot](#customer-insights-client-libraries).
+Lisätietoja ohjelmointirajapintojen käyttämisestä asiakasohjelmakirjastoissa on kohdassa [Customer Insightsin asiakasohjelmakirjastot](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Palvelinten väliset sovelluksen käyttöoikeudet
 
@@ -94,7 +95,7 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakaskirjastojen kanssa 
 
 1. Valitse **API-rajapinnat, joita organisaationi käyttää** -välilehti, ja valitse luettelosta **Dynamics 365 AI for Customer Insights**. 
 
-1. Valitse **Käyttöoikeustyyppi**-kohdassa **Sovelluksen käyttöoikeudet** ja valitse sitten **CustomerInsights.Api.All**-oikeus.
+1. Valitse **Oikeustyyppi**-kohdassa **Sovelluksen oikeudet**. Valitse lopuksi **CustomerInsights.Api.All**-oikeus.
 
 1. Valitse **Lisää käyttöoikeudet**.
 
@@ -102,9 +103,10 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakaskirjastojen kanssa 
 
 1. Viimeistele sovelluksen rekisteröinti valitsemalla **Myönnä järjestelmänvalvojan hyväksyntä kohteelle...**.
 
-   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Animoitu gif järjestelmänvalvojan hyväksynnän myöntämiseksi.":::
+   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Järjestelmänvalvojan suostumuksen myöntäminen.":::
 
-1. Lopuksi on vielä lisättävä sovellusrekisteröinnin nimi Customer Insightsin käyttäjänä.    
+1. Lopuksi on vielä lisättävä sovellusrekisteröinnin nimi Customer Insightsin käyttäjänä.  
+   
    Avaa Customer Insights, valitse **Hallinta** > **Käyttöoikeudet** ja valitse lopuksi **Lisää käyttäjä**.
 
 1. Hae sovellusrekisteröinnin nimi, valitse se hakutuloksissa ja valitse **Tallenna**.
@@ -124,6 +126,7 @@ Lisätietoja NuGet.orgin C#-asiakaskirjastojen käytön aloittamisesta. Lisätie
 1. Tee hakua hakuehdolla **Microsoft.Dynamics.CustomerInsights.Api**.
 
 1. Lisää paketti projektiin valitsemalla **Asenna**.
+ 
    Vaihtoehtoisesti voit suorittaa seuraavan komennon **NuGet Package Manager Consolessa**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
    :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="NuGet-paketin lisääminen Visual Studio projektiin":::
@@ -132,16 +135,18 @@ Lisätietoja NuGet.orgin C#-asiakaskirjastojen käytön aloittamisesta. Lisätie
 
 1. Hae `AccessToken` [MSAL (Microsoft Authentication Library) -kirjaston](/azure/active-directory/develop/msal-overview) avulla käyttämällä aiemmin luotua [Azure-sovelluksen rekisteröintiä](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Kun tunnuksen todennus ja hankkiminen on tehty, luo uusi tai ota käyttöön aiemmin luotu `HttpClient` jossa **DefaultRequestHeaders "Authorization"**-lisäasetuksen arvona on **Haltijan <access token>** ja **Ocp-Apim-Subscription-Key**-määrityksenä on [Customer Insights -ympäristön **tilausavain**](#get-started-trying-the-customer-insights-apis).    
+1. Kun tunnuksen todennus ja hankkiminen on tehty, luo uusi tai ota käyttöön aiemmin luotu `HttpClient` jossa **DefaultRequestHeaders "Authorization"**-lisäasetuksen arvona on **Haltijan <access token>** ja **Ocp-Apim-Subscription-Key**-määrityksenä on [Customer Insights -ympäristön **tilausavain**](#get-started-trying-the-customer-insights-apis).   
+ 
    Palauta **Valtuutus**-otsikko tarvittaessa. Esimerkki: tunnus on vanhentunut.
 
 1. Välitä tämä `HttpClient` `CustomerInsights`-asiakkaan muodostukseen.
 
    :::image type="content" source="media/httpclient-sample.png" alt-text="Httpclient-näyte":::
 
-1. Tee asiakasohjelmasta kutsuja laajennusmenetelmiin, kuten `GetAllInstancesAsync`. Jos taustalla olevaa `Microsoft.Rest.HttpOperationResponse`-käyttöä suositeen, käytä http-sanomamenetelmiä, kuten `GetAllInstancesWithHttpMessagesAsync`.
+1. Tee asiakasohjelmasta kutsuja laajennusmenetelmiin, esimerkiksi `GetAllInstancesAsync`. Jos taustalla oleva `Microsoft.Rest.HttpOperationResponse` on ensisijainen vaihtoehto, käytä http-sanomamenetelmiä, esimerkiksi `GetAllInstancesWithHttpMessagesAsync`.
 
 1. Vastauksen tyyppi on todennäköisesti `object`, koska menetelmä voi palauttaa useita tyyppejä (kuten `IList<InstanceInfo>` ja `ApiErrorResult`). Voit tarkistaa palautustyypin tekemällä turvallisesti objektien tyyppimuunnokset kyseisen toiminnon [ohjelmointirajapinnan tietosivulla](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) määritettyihin vastaustyyppeihin.    
+   
    Jos pyynnössä tarvitaan enemmän tietoja, käytä raakavastausobjektia **http-sanomamenetelmillä**.
 
 ### <a name="nodejs-package"></a>NodeJS-paketti

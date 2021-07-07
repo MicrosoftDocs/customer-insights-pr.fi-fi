@@ -1,6 +1,6 @@
 ---
 title: Customer Insights -tietojen vieminen Adobe-ympäristöpalvelimeen
-description: Lisätietoja käyttäjäryhmän merkityksellisten tietojen segmenttien käytöstä Adobe-ympäristöpalvelimessa.
+description: Lisätietoja Adobe Experience Platformin käyttäjäryhmien merkityksellisten tietojen segmenttien käyttämisestä.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760097"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305520"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insightsin segmenttien käyttö Adobe Experience Platformissa (esiversio)
 
-Dynamics 365 Customer Insights -yleisötietojen käyttäjänä olet saattanut luoda segmenttejä markkinointikampanjoidesi tehostamiseksi kohdistamalla ne oleellisiin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
+Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen käyttäjä on voinut luoda segmenttejä markkinointikampanjoiden tehostamiseksi kohdistamalla kampanjat liittyviin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Tässä artikkelissa kuvattujen vaiheiden prosessikaavio.":::
 
@@ -55,19 +55,19 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja valitse **Azure Blob Storage** tai valitse **Määritys** **Azure Blob Storage** -ruudussa:
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Azure Blob Storage**. Vaihtoehtoisesti voit valita **Azure Blob Storage** -ruudussa **Määritä**.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Azure Blob -tallennustilan määritysruutu."::: yhteyden määrittäminen.
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Azure Blob -tallennustilan määritysruutu."::: 
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
 1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Kirjoita Blob-tallennustilatilin **Tilin nimi**, **Tilin avain** ja **Säilö**, johon haluat viedä segmentin.  
+1. Kirjoita Blob Storage -tilille **Tilin nimi**, **Tilin avain** ja **Säilö**, johon haluat viedä segmentin.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Näyttökuva varastotilin määrityksestä. "::: 
    
-    - Lisätietoja Blob-tallennustilatilin nimen ja tiliavaimen löytämisestä on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
+    - Lisätietoja Blob Storage -tilin nimen ja tiliavaimen löytämisestä on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
     - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
 1. Viimeistele yhteys valitsemalla **Tallenna**. 
@@ -80,7 +80,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Azure Blob Storage -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Azure Blob Storage -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
 1. Valitse segmentti, jonka haluat viedä. Tässä esimerkissä se on **ChurnProneCustomers**.
 
@@ -121,9 +121,10 @@ Kun olet määrittänyt lähdeyhteyden, [määritä tietovirta](https://experien
 
 ## <a name="create-an-audience-in-adobe-campaign-standard"></a>Luo kohdeyleisö Adobe Campaign Standardissa
 
-Tämän kampanjan sähköpostiviestin lähettämiseen käytetään Adobe Campaign Standardia. Kun tiedot on tuotu Adobe Experience Platformiin, Adobe Campaign Standardissa on [luotava käyttäjäryhmä](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) Adobe-ympäristöpalvelimen tietojen avulla.
+Voit lähettää sähköpostia tähän kampanjaan käyttämällä Adobe Campaign Standardia. Kun tiedot on tuotu Adobe Experience Platformiin, Adobe Campaign Standardissa on [luotava käyttäjäryhmä](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) Adobe-ympäristöpalvelimen tietojen avulla.
 
-Opettele määrittämään kohdeyleisö Adobe-ympäristöpalvelimen tietojen perusteella Adobe Campaign Standardissa [segmentin muodostimen avulla](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/working-with-adobe-experience-platform/aep-using-segment-builder.html#building-a-segment).
+
+Opettele määrittämään kohdeyleisö Adobe-ympäristöpalvelimen tietojen perusteella Adobe Campaign Standardissa [segmentin muodostimen avulla](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html).
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Sähköpostin luominen ja lähettäminen Adobe Campaign Standardilla
 

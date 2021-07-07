@@ -9,20 +9,20 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 251bc26246cee16952e8e4cb08e2ed7aa4d18488
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595422"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306116"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Tapahtuman vaihtuvuusennusteen (esiversio) näyteopas
 
-Oppaassa käsitellään kattavasti tapahtuman vaihtuvuusennuste-esimerkki Customer Insightsissa käyttämällä alla olevia tietoja. Mitkään tässä oppaassa käytetyt tiedot eivät ole todellisia asiakastietoja. Ne ovat osa Contoso-tietojoukkoa, joka sijaitsee Customer Insights -tilauksen *Esittely*-ympäristössä.
+Oppaassa käsitellään kattavasti tapahtuman vaihtuvuusennuste-esimerkki Customer Insightsissa käyttämällä alla olevia tietoja. Mitkään tässä oppaassa käytetyt tiedot eivät ole todellisia asiakastietoja. Ne ovat osa Contoson tietojoukkoa, joka löytyy Customer Insights -tilauksen *esittely-ympäristöstä*.
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Yrityksen tavoitteena on saada tietää, ketkä asiakkaat tyypillisesti ostavat heidän tuotteitaan säännöllisesti, eivät ole enää asiakkaita seuraavan 60 päivän kuluttua. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
+Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet, joita he myyvät Contoso Coffee -verkkosivustonsa kautta. Yrityksen tavoitteena on saada tietää, ketkä asiakkaat tyypillisesti ostavat heidän tuotteitaan säännöllisesti, eivät ole enää asiakkaita seuraavan 60 päivän kuluttua. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -109,9 +109,9 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
 
-1. Valitse avattavassa **Ensisijainen**-luettelossa **eCommerceContacts : eCommerce** ensisijaiseksi lähteeksi ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
 
-1. Valitse avattavassa **Entiteetti 2** -luettelossa **loyCustomers : LoyaltyScheme** ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
 
@@ -119,16 +119,16 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Lisää ensimmäinen ehto FullName-kentässä.
 
-   * eCommerceContacts: valitse **FullName** avattavassa kentässä.
-   * loyCustomers: valitse **FullName** avattavassa kentässä.
+   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
+   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
    * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
 1. Anna uuden säännön **FullName, Email**.
 
    * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entiteetin eCommerceContacts-asetukseksi avattavassa luettelossa **EMail**.
-   * Valitse entiteetin loyCustomers-asetukseksi avattavassa luettelossa **EMail**. 
+   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
+   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
    * Jätä Normalisoi-kohta tyhjäksi. 
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 

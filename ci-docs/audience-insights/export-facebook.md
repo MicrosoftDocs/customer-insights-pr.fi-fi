@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 37d25aa038ea32b98f2d1850d7b42b701292438d
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: e20c7b7fd3989d7621cb7765f38b85c8ab4adfcb
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976038"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305106"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Segmenttiluettelon vieminen Facebook Ads Manageriin (esiversio)
 
@@ -22,12 +22,12 @@ Voit luoda kampanjoita Facebookissa ja Instagramissaa viemällä yhdistettyjen a
 
 ## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
-- Sinulla on oltava [**Facebook-mainostili**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), joka sisältää [**Facebook-yritystilin**](https://business.facebook.com/).
-- Sinun on oltava [**Facebook Ad -tilin**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) järjestelmänvalvoja.
+- Tarvitset [**Facebook Ads -tilin**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), joka sisältää [**Facebookin yritystilin**](https://business.facebook.com/).
+- Sinun on oltava [**Facebook Ads -tilin**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) järjestelmänvalvoja.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Enintään 10 miljoonaa asiakasprofiilia yhdessä viennissä Facebook Ads Manageriin.
+- Jopa 10 miljoonaa asiakasprofiilia vientiä kohden Facebook Ads -ratkaisun hallinnassa.
 - Vienti Facebook Ads Manageriin on rajoitettu segmentteihin.
 - Voit luoda tai päivittää Facebookissa mukautettuja kohderyhmiä vain *asiakasluettelo*-tyypeille.
 - Yhteensä 10 miljoonan profiilin segmenttien vienti voi kestää 90 minuuttia.
@@ -42,19 +42,19 @@ Ennen kuin käyttäjät voivat luoda viennin, järjestelmänvalvojan on määrit
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on **Järjestelmänvalvojat**. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Todenna Facebook Adsin avulla: 
 
-   1. Valitse **Continue with Facebook** kirjautuaksesi Facebook Ad -tiliisi.
+   1. Valitse **Jatka Facebookilla**, jos haluat kirjautua sisään Facebook Ads -tilillä.
 
    1. Salli **ads_management**-oikeus Facebook-todennuksen jälkeen.
 
    1. Valitse **Facebook Ad -tili**, jota haluat käyttää.
 
-   1. Valitse yleisö avattavasta **Existing custom audience** -valikosta tai luo uusi **New custom audience** -kohdassa. Lisätietoja on kohdassa [**Kohdeyleisöt Facebook Ads Managerissa**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+   1. Valitse **aiemmin luotu mukautettu käyttäjäryhmä** avattavasta luettelosta tai luo **uusi mukautettu käyttäjäryhmä**. Lisätietoja on kohdassa [**Kohdeyleisöt Facebook Ads Managerissa**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
       > [!NOTE]
-      > Voit luoda tai päivittää Facebookissa mukautettuja kohderyhmiä vain *asiakasluettelo*-tyypille tämän viennin yhteydessä. Joissakin tapauksissa avattavasta luettelosta näet erityyppisiä mukautettuja kohdeyleisöjä. Jos valitset jonkin toisen tyypin kuin *asiakasluettelo*, vienti epäonnistuu. 
+      > Voit luoda tai päivittää Facebookissa mukautettuja kohderyhmiä vain *asiakasluettelo*-tyypille tämän viennin yhteydessä. Joissakin tapauksissa avattavassa luettelossa ovat eri tyyppiset mukautetut käyttäjäryhmät. Jos valitset jonkin toisen tyypin kuin *asiakasluettelo*, vienti epäonnistuu. 
 
 1. Tarkista tietojen **Tietosuoja ja vaatimustenmukaisuus** ja valitse **Hyväksyn**.
 
@@ -68,16 +68,17 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää kohde**. 
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys **Facebook Ads Manager** -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys **Facebook Ads Manager** -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
 1. Valitse **Choose your key identifier** -kentässä **Email**, **Name and address** tai **Phone**, jonka avulla lähetetään Facebook Ads Manageriin. 
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä.
 
 1. Yhdistä yhdistetyn asiakasentiteetin vastaavat määritteet valittua avaintunnistetta varten.
-   > [VIHJE] Paras vaihtoehtosi on se, että valitaan **Email** tunnukseksi. Lisätunnusten lisääminen voi parantaa vastaavuutta.
+   > [!TIP]
+   > Parhaat vastaavuudet saat, jos valitset avaintunnisteeksi **sähköpostin**. Lisätunnusten lisääminen voi parantaa vastaavuutta.
 
-1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä lähetettäväksi Facebook Ads Manageriin. Facebook Ads Managerin määritteet yhdistetään seuraaviin kenttien lyhyisiin nimiin: **FN** = **First Name**, **LN** = **Last Name**, **FI** = **First Initial**, **PHONE** = **Phone**, **GEN** = **Gender**, **DOB** = **Date of birth**, **ST** = **State**, **CT** = **City**, **ZIP** = **Postal code / Zip code**, **COUNTRY** = **Country / Region**
+1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä lähetettäväksi Facebook Ads Manageriin. Facebook Ads -ratkaisun hallinnan määritteiden vastaavuus määritetään seuraaviin käyttäjän määrittämiin kutsumanimiin: **FN** = **etunimi**, **LN** = **sukunimi**, **FI** = **ensimmäinen alkukirjain**, **PHONE** = **puhelin**, **GEN** = **sukupuoli**, **DOB** = **syntymäaika**, **ST** = **osavaltio**, **CT** = **kaupunki**, **ZIP** = **postinumero**, **COUNTRY** = **maa tai alue**
 
 1. Valitse segmentit, jotka haluat viedä.
 
@@ -85,7 +86,9 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. 
+
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

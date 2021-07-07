@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129941"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306345"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Asiakkaan elinkaariarvoennuste (CLV) esimerkkioppaassa
 
@@ -123,9 +123,9 @@ Tietojen purkamisen jälkeen aloitetaan nyt tietojen yhdistäminen ja luodaan yh
 
 1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
 
-1. Valitse avattavassa **Ensisijainen**-luettelossa **eCommerceContacts : eCommerce** ensisijaiseksi lähteeksi ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
 
-1. Valitse avattavassa **Entiteetti 2** -luettelossa **loyCustomers : LoyaltyScheme** ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
 
    ![eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen](media/unify-match-order.png)
 
@@ -133,16 +133,16 @@ Tietojen purkamisen jälkeen aloitetaan nyt tietojen yhdistäminen ja luodaan yh
 
 1. Lisää ensimmäinen ehto FullName-kentässä.
 
-   - eCommerceContacts: valitse **FullName** avattavassa kentässä.
-   - loyCustomers: valitse **FullName** avattavassa kentässä.
-   - Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
+   - Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
+   - Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
+   - Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite,...)**.
    - Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
 1. Anna uuden säännön **FullName, Email**.
 
    - Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   - Valitse entiteetin eCommerceContacts-asetukseksi avattavassa luettelossa **EMail**.
-   - Valitse entiteetin loyCustomers-asetukseksi avattavassa luettelossa **EMail**.
+   - Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
+   - Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**.
    - Jätä Normalisoi-kohta tyhjäksi.
    - Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 

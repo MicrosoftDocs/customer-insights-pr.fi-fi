@@ -9,22 +9,22 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896277"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304646"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Asiakasprofiilien rikastaminen mukautetuilla tiedoilla (esiversio)
 
-Mukautetun Secure File Transfer Protocol (SFTP) -tuonnin avulla voit tuoda tietoja, joita ei tarvitse käyttää tietojen yhdistämisprosessissa. Se on joustava, turvallinen ja helppo tapa tuoda tietoja. Mukautettua SFTP-tuontia voidaan käyttää yhdessä [SFTP-viennin](export-sftp.md) kanssa. Kyseisellä toiminnolla voi viedä rikastamiseen tarvittavia asiakasprofiilitietoja. Tiedot voidaan sitten käsitellä ja rikastaa ja mukautettua SFTP-tuontia voidaan käyttää tuomaan rikastetut tiedot takaisin Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuudella.
+Mukautetun SFTP (Secure File Transfer Protocol) -tuonnin avulla voidaan tuoda tietoja, joille ei tarvitse tehdä tietojen yhtenäistämisprosessia. Se on joustava, turvallinen ja helppo tapa tuoda tietoja. Mukautettua SFTP-tuontia voidaan käyttää yhdessä [SFTP-viennin](export-sftp.md) kanssa. Kyseisellä toiminnolla voi viedä rikastamiseen tarvittavia asiakasprofiilitietoja. Tiedot voidaan tämän jälkeen käsitellä ja rikastaa. Rikastetut tiedot voidaan tuoda takaisin Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuteen mukautetun SFTP-tuonnin avulla.
 
 ## <a name="prerequisites"></a>Edellytykset
 
 Mukautetun SFTP-tuonnin määritykselle on seuraavat edellytykset:
 
-- Sinulla on tuotavan tiedoston tiedostonimi ja sijainti (polku) SFTP-palvelimella.
+- Tiedossa on SFTP-isäntään tuotavan tiedoston nimi ja sijainti (polku).
 - *model.json*-tiedosto määrittää tuotavien tietojen [Common Data Model -rakenteen](/common-data-model/). Tiedoston on oltava samassa kansiossa kuin tuotava tiedosto.
 - Järjestelmänvalvoja on jo määrittänyt SFTP-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet. Tarvitset sen SFTP-sijainnin käyttäjän tunnistetiedot, URL-osoitteen ja portin numeron, josta haluat tuoda tietoja.
 
@@ -37,11 +37,11 @@ Mukautetun SFTP-tuonnin määritykselle on seuraavat edellytykset:
 
    :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Mukautettu SFTP-tuonti -ruutu.":::
 
-1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** ja valitsemalla avattavasta valikosta **Mukautettu SFTP-tuonti**.
+1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** -kohdan ja valitsemalla sitten avattavasta luettelosta **Mukautettu SFTP-tuonti** -kohdan.
 
 1. Vahvista valittu yhteys valitsemalla **Yhdistä mukautettuun tuontiin**.
 
-1.  Valitse **Seuraava** ja kirjoita tuodun datatiedoston **Tiedostonimi** ja **Polku**.
+1.  Valitse **Seuraava** ja syötä tuotavan datatiedoston **polku** ja **tiedostonimi**.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Näyttökuva tietojen sijainnin syöttämisestä.":::
 
@@ -55,21 +55,21 @@ Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse 
 
 1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
 
-1. Anna tuotavien tietojen SFTP-palvelimen kelvollinen käyttäjänimi, salasana ja URL-osoite.
+1. Anna sen SFTP-palvelimen sallittu käyttäjänimi, salasana ja isännän URL-osoite, jossa tuotavat tiedot ovat.
 
 1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu.
 
 1. Tarkista määritys valitsemalla **Tarkista**.
 
-1. Kun tarkistus on valmis, yhteys voidaan tallentaa valitsemalla **Tallenna**.
+1. Kun tarkistus on tehty, yhteys tallennetaan valitsemalla **Tallenna**.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![Experian-yhteyden määrityssivu](media/enrichment-SFTP-connection.png "Experian-yhteyden määrityssivu")
 
 
 ## <a name="defining-field-mappings"></a>Kenttien yhdistämismääritysten määrittäminen 
 
-SFTP-palvelimeen tuotavan tiedoston sisältävässä hakemistossa on oltava myös *model.json*-tiedosto. Tämä tiedosto määrittää rakenteen, jota käytetään tietojen tuontiin. Rakenteen on käytettävä [Common Data Modelia](/common-data-model/) kentän yhdistämismäärityksen määrittämiseen. Yksinkertainen esimerkki model.json-tiedostosta:
+SFTP-palvelimeen tuotavan tiedoston sisältävässä hakemistossa on oltava myös *model.json*-tiedosto. Tämä tiedosto määrittää rakenteen, jota käytetään tietojen tuontiin. Rakenteessa on oltava käytössä [Common Data Model](/common-data-model/), jotta voidaan määrittää kentän vastaavuusmääritys. Yksinkertainen esimerkki model.json-tiedostosta:
 
 ```
 {
@@ -123,6 +123,6 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit tuottaa mukautettuja kokemuksia asiakkaille luomalla [segmenttejä](segments.md) ja [mittareita](measures.md) sekä [viedä tietoja](export-destinations.md).
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

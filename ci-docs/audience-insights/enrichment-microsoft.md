@@ -9,16 +9,16 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
-ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6245703"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305152"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Asiakasprofiilien täydentäminen tuotemerkillä ja kiinnostuksen kohteilla (esiversio)
 
-Microsoftin omistamista tiedoista voit rikastaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla. Nämä affiniteetit määritetään asiakkaiden demografiatietoja muistuttavia ihmisiä koskevien tietojen perusteella. Nämä tiedot auttavat ymmärtämään ja segmentoimaan asiakkaita paremmin sen perusteella, mikä on heidän affiniteettinsa tiettyjen brändien ja kiinnostuksenkohteiden osalta.
+Microsoftin omistamista tiedoista voit rikastaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla. Nämä affiniteetit perustuvat sellaisten henkilöiden tietoihin, joilla on samanlaiset demografiatiedot kuin asiakkailla. Nämä tiedot auttavat ymmärtämään ja segmentoimaan asiakkaita paremmin sen perusteella, mikä on heidän affiniteettinsa tiettyjen brändien ja kiinnostuksenkohteiden osalta.
 
 Valitse käyttäjäryhmän merkityksillisissä tiedoissa **Tiedot** > **Rikastaminen**, jos haluat [määrittää ja tarkastella rikastuksia](enrichment-hub.md).
 
@@ -27,7 +27,7 @@ Jos haluat määrittää tuotemerkin affiniteettien täydentämisen, siirry **Tu
 Jos haluat määrittää kiinnostuksen kohteen affiniteettien täydentämisen, siirry **Tutustu**-välilehteen ja valitse **Täydennä omat tiedot** **Kiinnostuksen kohteet** -ruudussa.
 
    > [!div class="mx-imgBorder"]
-   > ![Tuotemerkit- ja Kiinnostuksen kohteet -ruudut](media/BrandsInterest-tile-Hub.png "Tuotemerkit- ja Kiinnostuksen kohteet -ruudut")
+   > ![Tuotemerkit- ja Kiinnostuksen kohteet -ruudut](media/BrandsInterest-tile-Hub.png "Tuotemerkit- ja Kiinnostuksen kohde -ruudut")
 
 ## <a name="how-we-determine-affinities"></a>Miten määritetään affiniteetit
 
@@ -35,7 +35,7 @@ Microsoftin online-hakutietojen avulla voidaan etsiä affiniteetteja tuotemerkke
 
 ## <a name="affinity-level-and-score"></a>Affiniteettitaso ja pistemäärä
 
-Jokaisessa rikastetussa asiakasprofiilissa on kaksi toisiinsa liittyvää arvoa. Ne ovat affiniteettitaso ja affiniteettipisteet. Nämä arvot määrittävät, miten vahva tuotemerkin tai kiinnostuksen kohteen kyseisen profiilin demografisen segmentin affiniteetti on verrattuna muihin demografisiin segmentteihin.
+Jokaisessa rikastetussa asiakasprofiilissa on kaksi toisiinsa liittyvää arvoa: affiniteettitaso ja affiniteettipisteet. Nämä arvot määrittävät, miten vahva tuotemerkin tai kiinnostuksen kohteen kyseisen profiilin demografisen segmentin affiniteetti on verrattuna muihin demografisiin segmentteihin.
 
 *Affiniteettitaso* koostuu neljästä tasosta. *Affiniteettipisteet* lasketaan 100 pisteen aseteikolla, joka yhdistetään affiniteettitasoihin.
 
@@ -53,7 +53,7 @@ Affiniteettia mittaavan tarkkuuden mukaan voit käyttää affiniteettitasoa tai 
 
 Seuraavia maita ja alueita tuetaan tällä hetkellä: Australia, Kanada (englanti), Ranska, Saksa, Yhdistyneet kuningaskunta tai Yhdysvallat (englanti).
 
-Valitse maa avaamalla **Tuotemerkkien rikastus** tai **Kiinnostuksen kohteiden rikastus** ja valitse **Vaihda** **Maa tai alue** -kohdan vieressä. Valitse **Maa- ja alueasetukset** -ruudussa vaihtoehto ja valitse **Käytä**.
+Jos haluat valita maan tai alueen, avaa **Tuotemerkkien rikastaminen** tai **Kiinnostuksen kohteen rikastaminen** ja valitse **Maa/alue**-kohdan vieressä oleva **Muuta**. Valitse **Maa- ja alueasetukset** -ruudussa vaihtoehto ja valitse **Käytä**.
 
 ### <a name="implications-related-to-country-selection"></a>Maan valintaan liittyvät vaikutukset
 
@@ -61,9 +61,9 @@ Valitse maa avaamalla **Tuotemerkkien rikastus** tai **Kiinnostuksen kohteiden r
 
 - Kun [valitset toimialaa](#define-your-brands-or-interests), saat tärkeimmät tuotemerkit tai kiinnostusten kohteet valitun maan tai alueen perusteella.
 
-- Kun [rikastat profiileja](#refresh-enrichment), rikastetaan kaikki asiakasprofiilit, joiden tiedot saadaan valituista tuotemerkeistä ja kiinnostusten kohteista. Mukaan lukien profiilit, joita valittu maa tai alue ei sisällä. Jos esimerkiksi valitsit Saksa, Yhdysvalloissa sijaitsevat profiilit rikastetaan, jos valituista tuotemerkeistä ja kiinnostuksen merkeistä on saatavilla tietoja Yhdysvalloissa.
+- [Profiileja rikastettaessa](#refresh-enrichment) rikastetaan kaikki asiakasprofiilit, joihin haetaan tietoja valittuja tuotemerkkejä ja kiinnostuksen kohteita varten. Näihin kuuluvat myös profiilit, jotka eivät kuulu valittuun maahan tai alueeseen. Jos esimerkiksi valitsit Saksa, Yhdysvalloissa sijaitsevat profiilit rikastetaan, jos valituista tuotemerkeistä ja kiinnostuksen merkeistä on saatavilla tietoja Yhdysvalloissa.
 
-## <a name="configure-enrichment"></a>Rikastaminen määritys
+## <a name="configure-enrichment"></a>Rikastamisen määrittäminen
 
 Ohjattu kokemus auttaa sinua rikastuksien määrityksessä. 
 
@@ -71,7 +71,7 @@ Ohjattu kokemus auttaa sinua rikastuksien määrityksessä.
 
 Valitse enintään viisi tuotemerkkiä tai kiinnostuksen kohdetta käyttämällä yhtä tai molempia seuraavista vaihtoehdoista:
 
-- **Toimiala**: Valitse toimiala avattavasta luettelosta ja valitse sitten toimialan suosituimmat tuotemerkit tai kiinnostuksen kohteet.
+- **Toimiala**: Valitse avattavasta luettelosta toimiala ja valitse sitten kyseisen toimialan suosituimmat tuotemerkit tai kiinnostuksen kohteet.
 - **Valitse oma**: kirjoita organisaatiotasi kiinnostava tuotemerkki tai kiinnostuksen kohde ja valitse sitten vastaavat ehdotukset. Jos etsimääsi tuotemerkkiä tai kiinnostuksen kohteita ei luetella, lähetä meille palautetta **Ehdota**-linkin avulla.
 
 ### <a name="review-enrichment-preferences"></a>Rikastusasetusten tarkasteleminen
@@ -88,19 +88,19 @@ Valitse **Rikastettu entiteetti** ja valitse tietojoukko, jonka haluat rikastaa 
 
 Yhdistä yhdistetyn asiakasentiteetin kentät, jos haluat määrittää demografisen segmentin, jota haluat järjestelmän käyttävän asiakastietojen rikastamisessa. Yhdistä maa/alue ja vähintään syntymäaika- tai sukupuolimääritteet. Lisäksi sinun on yhdistettävä vähintään yksi postitoimipaikka (ja osavaltio/provinssi) tai postinumero. Määritä kenttien yhdistämismääritykset valitsemalla **Yhdistä**. Valitse **Käytä**, kun olet valmis. Viimeistele kenttien yhdistäminen valitsemalla **Tallenna**.
 
-Seuraavia muotoja ja arvoja tuetaan, kirjainkokoa ei oteta huomioon arvoissa:
+Seuraavia muotoja ja arvoja tuetaan (kirjainkokoa ei oteta huomioon arvoissa):
 
-- **Syntymäaika**: Syntymäaika kannattaa muuntaa DateTime-tyypiksi tietojen käsittelyn aikana. Vaihtoehtoisesti se voi olla [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) -muotoinen merkkijono vvvv-KK-pp tai vvvv-KK-ppTHH:mm:ssZ".
-- **Sukupuoli**: mies, nainen, tuntematon
-- **Postinumero**: Yhdysvalloissa viisinumeroinen postinumero, vakiopostinumero kaikkialla muualla
-- **Kaupunki**: kaupungin englanninkielinen nimi
+- **Syntymäaika**: Syntymäaika kannattaa muuntaa DateTime-tyypiksi tietojen käsittelyn aikana. Vaihtoehtoisesti se voi olla merkkijono [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) -muodossa, eli vvvv-KK-pp tai vvvv-KK-ppTHH:mm:ss.
+- **Sukupuoli**: mies, nainen, tuntematon.
+- **Postinumero**: Viisinumeroinen postinumero Yhdysvalloissa, vakiopostinumero muualla.
+- **Kaupunki**: Kaupungin englanninkielinen nimi.
 - **Osavaltio/provinssi** : Kahden kirjaimen lyhenne Yhdysvalloissa ja Kanadassa. Kahden tai kolmen kirjaimen lyhenne Australiassa. Ei koske Ranskaa, Saksaa tai Yhdistynyttä kuningaskuntaa.
 - **Maa tai alue**:
 
   - US: Amerikan Yhdysvallat, Yhdysvallat, USA, US, Amerikka
   - CA: Kanada, CA
   - GB: Yhdistynyt kuningaskunta, UK, Iso-Britannia, GB, Ison-Britannian ja Pohjois-Irlannin yhdistynyt kuningaskunta, Ison-Britannian yhdistynyt kuningaskunta.
-  - AU: Australia, AU, Australian liittovaltio
+  - AU: Australia, AU, Australian yhteisö
   - FR: Ranska, FR, Ranskan tasavalta
   - DE: Saksa, saksa, Deutschland, Allemagne, DE, Saksan liittotasavalta, Saksan tasavalta
 
@@ -113,10 +113,11 @@ Lopuksi pääset tarkistamaan tiedot ja antamaan rikastukselle nimen.
 ## <a name="refresh-enrichment"></a>Rikastuksen päivittäminen
 
 Suorita rikastus, kun olet konfiguroinut tuotemerkit, kiinnostuksen kohteet ja demografisten tietojen kenttien yhdistämismääritykset. Aloita prosessi valitsemalla tuotemerkin tai kiinnostuksen kohteen määrityssivulla **Suorita**. Voit lisäksi jättää rikastamisen suoritettavaksi automaattisesti aikataulutetun päivityksen osana.
+
 Asiakastietojen koon mukaan rikastusaika voi kestää useita minuutteja.
 
 > [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun olet valinnut jollekin työn tehtävälle **Katso tiedot** -kohdan, näkyvissä ovat lisätiedot. Niitä ovat käsittelyaika, edellinen käsittelypäivä ja kaikki tehtävään liittyvät virheet ja varoitukset.
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
@@ -134,7 +135,7 @@ Brändien ja kiinnostuksenkohteiden affiniteetteja voi tarkastella myös yksitt�
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit tarjota asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

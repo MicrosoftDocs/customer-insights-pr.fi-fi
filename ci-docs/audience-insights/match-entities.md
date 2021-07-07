@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085618"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306024"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -209,7 +209,7 @@ Yritä etsiä optimaalinen arvo eri tarkkuuskynnyksillä.
 
 Voit määrittää ja hienosäätää useimpia vastineparametreja.
 
-:::image type="content" source="media/match-rules-management.png" alt-text="Näyttökuva avattavasta valikosta, jossa on vastinesäännön asetukset.":::
+:::image type="content" source="media/match-rules-management.png" alt-text="Näyttökuva avattavasta valikosta ja vastaavuussääntövaihtoehdoista.":::
 
 - **Muuta sääntöjen järjestystä**, jos määritit useita sääntöjä. Voit järjestää vastaavuussäännöt uudelleen valitsemalla **Siirrä ylöspäin**- ja **Siirrä alaspäin**  -vaihtoehdot tai vetämällä ja pudottamalla.
 
@@ -247,7 +247,7 @@ Voit määrittää ehdot, joita tiettyjen tietueiden on aina vastattava tai joit
 
 1. Valitse **Tiedot** > **Tietolähteet** ja käsittele mallitiedostot uusina entiteetteinä. Kun ne on käsitelty, voit käyttää niitä täsmäytyskokoonpanon määrityksessä.
 
-1. Kun tiedostot on ladattu ja entiteetit ovat käytettävissä, valitse uudelleen **Mukautettu täsmäytys** -vaihtoehto. Näkyviin tulee vaihtoehtoja, joilla määritetään sisällytettävät kohteet. Valitse vaaditut entiteetit avattavasta valikosta.
+1. Kun tiedostot on ladattu ja entiteetit ovat käytettävissä, valitse uudelleen **Mukautettu täsmäytys** -vaihtoehto. Näkyviin tulee vaihtoehtoja, joilla määritetään sisällytettävät kohteet. Valitse pakolliset entiteetit avattavasta valikosta.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Näyttökuva dialogista, kun haluat valita mukautetun vastineen skenaarion ohitukset.":::
 

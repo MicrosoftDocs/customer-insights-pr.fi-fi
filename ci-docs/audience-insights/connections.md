@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896093"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304968"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
@@ -74,7 +74,9 @@ Kun määrität tai muokkaat vientiyhteyttä, valitse käyttäjät, joilla on oi
 
 ## <a name="remove-a-connection"></a>Yhteyden poistaminen
 
-Jos poistettavaa yhteyttä käyttävät rikastukset tai viennit, ne on ensin irrotettava tai poistettava. Poistoikkuna opastaa sinut liittyviin rikastuksiin tai vienteihin. irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uudelleen lisäämällä niihin toisen yhteyden [Rikastus](enrichment-hub.md)- tai [Viennit](export-destinations.md)-sivulla.
+Jos poistettavaa yhteyttä käyttävät rikastukset tai viennit, ne on ensin irrotettava tai poistettava. Poistoikkuna opastaa sinut liittyviin rikastuksiin tai vienteihin. 
+
+irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uudelleen lisäämällä niihin toisen yhteyden [Rikastus](enrichment-hub.md)- tai [Viennit](export-destinations.md)-sivulla.
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet (esiversio)**.
 

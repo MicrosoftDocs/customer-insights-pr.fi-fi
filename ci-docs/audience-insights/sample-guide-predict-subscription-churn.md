@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595514"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306299"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Tilauksen vaihtuvuusennusteen (esiversio) näyteopas
 
@@ -22,7 +22,7 @@ Aiheessa käsitellään kattavasti tilauksen vaihtuvuusennuste-esimerkki käytt�
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
+Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet, joita he myyvät Contoso Coffee -verkkosivustonsa kautta. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -128,9 +128,9 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
 
-1. Valitse avattavassa **Ensisijainen**-luettelossa **eCommerceContacts : eCommerce** ensisijaiseksi lähteeksi ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
 
-1. Valitse avattavassa **Entiteetti 2** -luettelossa **loyCustomers : LoyaltyScheme** ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
 
@@ -138,16 +138,16 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Lisää ensimmäinen ehto FullName-kentässä.
 
-   * eCommerceContacts: valitse **FullName** avattavassa kentässä.
-   * loyCustomers: valitse **FullName** avattavassa kentässä.
+   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
+   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
    * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
 1. Anna uuden säännön **FullName, Email**.
 
    * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entiteetin eCommerceContacts-asetukseksi avattavassa luettelossa **EMail**.
-   * Valitse entiteetin loyCustomers-asetukseksi avattavassa luettelossa **EMail**. 
+   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
+   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
    * Jätä Normalisoi-kohta tyhjäksi. 
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 

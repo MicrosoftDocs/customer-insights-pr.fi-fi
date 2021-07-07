@@ -1,5 +1,5 @@
 ---
-title: Rikastaminen kolmannen osapuolen HERE Technologies -rikastamisella
+title: Rikastaminen kolmannen osapuolen rikastamisen HERE Technologies -ratkaisun avulla
 description: Yleisiä tietoja HERE Technologiesin kolmannen osapuolen rikastamisesta.
 ms.date: 04/09/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896047"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305290"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
@@ -26,7 +26,7 @@ HERE Technologiesin rikastamisen määrittämiselle on seuraavat edellytykset:
 
 - Aktiviinen HERE Technologies -tilaus. Voit tehdä tilauksen [rekisteröitymällä täällä](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) tai ottamalla suoraan [yhteyttä HERE Technologiesiin](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you). [Lisätietoja HERE Technologiesin sijaintitietojen rikastamisesta.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Käytettävissä on HERE-[yhteys](connections.md) *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja HERE Technologiesin API-avain.
+- [HERE-yhteys](connections.md) on käytettävissä *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja HERE Technologies -ohjelmointirajapinnan avain.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 
@@ -66,13 +66,13 @@ Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse 
 
 1. Anna kelvollinen HERE Technologiesin API-avain.
 
-1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu
+1. Tarkista **Tietojen yksityisyys ja vaatimustenmukaisuus** -kohta ja hyväksy se valitsemalla **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Tarkista**.
 
 1. Kun tarkistus on suoritettu, valitse **Tallenna**.
 
-> [!div class="mx-imgBorder"]
+   > [!div class="mx-imgBorder"]
    > ![HERE Technologies -yhteyden määrityssivu](media/enrichment-HERE-connection.png "HERE Technologies -yhteyden määrityssivu")
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
@@ -85,7 +85,7 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

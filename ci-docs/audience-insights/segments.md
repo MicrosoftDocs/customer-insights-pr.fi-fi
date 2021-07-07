@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
-ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
+ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/27/2021
-ms.locfileid: "6111383"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306253"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -38,7 +38,7 @@ Siirry **Segmentit**-sivulle nähdäksesi kaikki tallennetut segmentit ja hallit
 
 Jokaista segmenttiä edustaa rivi, joka sisältää segmentin lisätietoja.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Valittu segmentti, jossa on avattava vaihtoehtoluettelo ja käytettävissä olevat vaihtoehdot.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valittu segmentti sekä vaihtoehtojen avattava luettelo ja käytettävissä olevat vaihtoehdot.":::
 
 Seuraava toiminto on käytettävissä, kun valitse segmentin:
 
@@ -68,7 +68,7 @@ Voit viedä segmentin segmenttisivulta tai [vientisivulta](export-destinations.m
 
 1. Valitse **Näytä lisää [...]** segmentistä, jonka haluat viedä.
 
-1. Valitse **Hallitse vientejä** avattavasta toimintoluettelosta.
+1. Valitse **Hallitse vientejä** toimintojen avattavasta luettelosta.
 
 1. **Segmentin vienti (esikatselu)** -sivu avautuu. Voit nähdä kaikki määritetyt viennit ryhmiteltyinä viennin mukaan, joka sisältää nykyisen segmentin tai ei sisällä sitä.
 

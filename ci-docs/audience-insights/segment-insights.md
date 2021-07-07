@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 90ebcaab896c628b04e751ad9857e924749895e7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595330"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306070"
 ---
 # <a name="segment-insights-preview"></a>Segmentin merkitykselliset tiedot (esiversio)
 
@@ -50,7 +50,7 @@ Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset:
 
 - Niiden jäsenten määrä, jotka ovat päällekkäisiä analysoitavaksi valittujen segmenttien kanssa.
 - Niiden jäsenien määrä, jotka sisältyvät yhteen segmentteihin mutta eivät muihin segmentteihin.
-- Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Avattavan suodattimen avulla voit valita minkä tahansa määritteen kiinnostavuustason, ja alareunassa olevasta taulukosta näkyvät vastaavat tiedot.
+- Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Voit valita minkä tahansa määritteen kiinnostuksen tason suodattimen avattavan valikon avulla. Alla olevassa taulukossa näkyvät vastaavat tiedot.
 
 ## <a name="segment-differentiators"></a>Segmentin erottimet
 

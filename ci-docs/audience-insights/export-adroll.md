@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: dbebc3ee3978ca6ee9d1ad1c15c226479876709f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 67bfa23d56b26ae592efa4d7197713664bb02623
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124361"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304812"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Segmenttien vieminen AdRolliin (esiversio)
 
@@ -28,11 +28,11 @@ Vie yhtenäisten asiakasprofiilien segmentit AdRolliin ja käytä niitä mainost
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä yhteensä enintään 250 000 asiakasprofiilia per vienti AdRolliin.
+- Voit viedä jopa 250 000 profiilia kerralla AdRoll-ratkaisuun.
 - Alle 100 profiilin segmenttejä ei voi viedä AdRolliin. 
 - AdRoll-vienti on rajoitettu segmentteihin.
-- Jopa 250 000 profiilin vieminen AdRolliin voi kestää 10 minuuttia. 
-- AdRolliin vietävien profiilien määrä määräytyy AdRoll-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+- 250 000 profiilin vieminen AdRolliin voi kestää 10 minuuttia. 
+- AdRoll-ratkaisuun vietävien profiilien enimmäismäärä riippuu AdRoll-sopimuksesta.
 
 ## <a name="set-up-connection-to-adroll"></a>Määritä yhteys AdRolliin
 
@@ -62,9 +62,9 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää kohde**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys AdRoll-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys AdRoll-osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
-1. Anna **AdRoll-mainostajatunnus**. Lisätietoja: [AdRoll-mainostajaprofiilit](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Syötä **AdRoll-mainostajan tunnus**. Lisätietoja on kohdassa [AdRoll-mainostajien profiilit](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
 3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Segmenttejä on vietävä AdRolliin.
 
@@ -74,7 +74,9 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. 
+
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus

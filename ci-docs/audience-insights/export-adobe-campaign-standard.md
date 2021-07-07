@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 917ab9559416f3ee0ffd66e471e590e8da3faffc
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760277"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305382"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insightsin segmenttien käyttö Adobe Campaign Standardissa (esiversio)
 
-Dynamics 365 Customer Insights -yleisötietojen käyttäjänä olet saattanut luoda segmenttejä markkinointikampanjoidesi tehostamiseksi kohdistamalla ne oleellisiin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
+Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen käyttäjä on voinut luoda segmenttejä markkinointikampanjoiden tehostamiseksi kohdistamalla kampanjat liittyviin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Tässä artikkelissa kuvattujen vaiheiden prosessikaavio.":::
 
@@ -54,7 +54,7 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
 1. Siirry kohdeyleisön merkityksellisissä tiedoissa kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Adobe Campaign** tai valitse **Adobe Campaign** -ruudussa **Määritä**
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Adobe Campaign**. Vaihtoehtoisesti voit valita **Adobe Campaign** -ruudussa **Määritä**.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Adobe Campaign Standardin määritysruutu.":::
 
@@ -80,7 +80,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Adobe Campaign -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Adobe Campaign -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
 1. Valitse segmentti, jonka haluat viedä. Tässä esimerkissä se on **ChurnProneCustomers**.
 
@@ -118,7 +118,7 @@ Kun käyttäjäryhmän merkityksellisiä tietoja sisältävä segmentti viedää
 
 Adobe Campaign Standardin segmentin käyttöä varten Adobe Campaign Standardin profiilirakenne on laajennettava niin, että se sisältää kaksi lisäkenttää. Opettele [laajentamaan profiiliresurssia](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) Adobe Campaign Standardin uusilla kentillä.
 
-Esimerkissämme nämä kentät ovat *Segmentin nimi ja Segmentin päivämäärä (valinnainen).*
+Esimerkissämme nämä kentät ovat *Segmentin nimi ja Segmentin päivämäärä (valinnainen)*.
 
 Näiden kenttien avulla määritetään profiileja Adobe Campaign Standardissa, jonka haluamme kohdistaa tähän kampanjaan.
 
@@ -128,7 +128,7 @@ Jos Adobe Campaign Standardissa ei ole muita tietueita kuin mitä aiot tuoda, vo
 
 Nyt kun kaikki on valmista, meidän on tuotava valmiit käyttäjäryhmän tiedot käyttäjäryhmän merkityksellisistä tiedoista Adobe Campaign Standardiin profiilien luontia varten. Opettele [tuomaan profiileja Adobe Campaign Standardissa](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) työnkulun avulla.
 
-Alla olevassa kuvassa oleva tuonnin työnkulku on määritetty suoritettavaksi 8 tunnin välein ja se etsii vietyjä käyttäjäryhmien merkityksellisiä tietoja (.csv-tiedosto Azure Blob -säilössä). Työnkulku poimii .csv-tiedoston sisällön määritetyssä sarakejärjestyksessä. Työnkulku on luotu suorittamaan virheiden peruskäsittely ja varmistamaan, että jokaisella tietueella on sähköpostiosoite ennen tietojen tallentamista Adobe Campaign Standardiin. Työnkulku poimii myös segmentin nimen tiedostonimestä, ennen kuin se upottaa ACS-profiilin tiedot.
+Alla olevassa kuvassa oleva tuonnin työnkulku on määritetty suoritettavaksi kahdeksan tunnin välein. Se etsii vietyjä käyttäjäryhmän merkityksellisten tietojen segmenttejä (.csv-tiedosto Azure Blob Storagessa). Työnkulku poimii .csv-tiedoston sisällön määritetyssä sarakejärjestyksessä. Työnkulku on luotu suorittamaan virheiden peruskäsittely ja varmistamaan, että jokaisella tietueella on sähköpostiosoite ennen tietojen tallentamista Adobe Campaign Standardiin. Työnkulku poimii myös segmentin nimen tiedostonimestä, ennen kuin se lisää tai päivittää Adobe Campaign Standard -profiilin tiedot.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Näyttökuva tuonnin työnkulusta Adobe Campaign Standard -käyttöliittymässä.":::
 

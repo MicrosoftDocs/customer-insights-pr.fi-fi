@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866403"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304922"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
@@ -45,7 +45,7 @@ Tietolähteet voivat sisältää entiteettejä, joissa on tapahtuma- ja aktivite
 
    - **Ensimmäinen**: Aktiviteettientiteetin viitekenttä, jonka avulla luodaan suhde toiseen entiteettiin.
    - **Toinen**: Vastaava lähdeasiakasentiteetti, johon aktiviteettientiteetti on suhteessa. Voit liittää tietoja vain lähdeasiakasentiteetteihin, joita käytetään tietojen yhdistämisprosessissa.
-   - **Kolmas**: Jos tämän aktiviteettientiteetin ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole, uusi suhde luodaan tässä ruudussa annettavalla nimellä.
+   - **Kolmas**: Jos tämän aktiviteettientiteetin ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole, luodaan uusi suhde. Sen nimeksi tulee tähän ruutuun määritetty nimi.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Entiteettisuhteen määrittäminen.":::
 
@@ -53,23 +53,23 @@ Tietolähteet voivat sisältää entiteettejä, joissa on tapahtuma- ja aktivite
 
 1. Valitse **Aktiviteetin yhdistäminen** -vaiheessa aktiviteettitapahtuma ja aktiviteetin aloitusaika. 
    - **Pakolliset kentät**
-      1. **Tapahtuma-aktiviteetti**: kenttä, joka on tämän aktiviteetin tapahtuma
-      2. **Aikaleima**: Kenttä, joka edustaa aktiviteetin aloitusaikaa.
+      - **Tapahtuma-aktiviteetti**: kenttä, joka on tämän aktiviteetin tapahtuma.
+      - **Aikaleima**: Kenttä, joka edustaa aktiviteetin aloitusaikaa.
 
    - **Valinnaiset kentät**
-      1. **Lisätietoja**: Kenttä, jossa on tähän aktiviteettiin liittyviä tietoja.
-      2. **Kuvake**: kuvake, joka parhaiten edustaa tätä aktiviteettityyppiä.
-      3. **WWW-osoite**: Kenttä, joka sisältää tätä aktiviteettia koskevat tiedot sisältävän URL-osoitteen. Esimerkiksi tapahtumajärjestelmä, joka on tämän aktiviteetin aiheuttaja. Tämä URL-osoite voi olla mikä tahansa tietolähteen kenttä, tai se voidaan muodostaa uutena kenttänä käyttämällä Power Query -muunnosta. URL-osoitteen tiedot tallennetaan *Yhdistetty aktiviteetti* -entiteettiin, jota voidaan käyttää [ohjelmointirajapintojen](apis.md) käytön jälkeen.
+      - **Lisätietoja**: Kenttä, jossa on tähän aktiviteettiin liittyviä tietoja.
+      - **Kuvake**: kuvake, joka parhaiten edustaa tätä aktiviteettityyppiä.
+      - **WWW-osoite**: Kenttä, joka sisältää tätä aktiviteettia koskevat tiedot sisältävän URL-osoitteen. Esimerkiksi tapahtumajärjestelmä, joka on tämän aktiviteetin aiheuttaja. Tämä URL-osoite voi olla mikä tahansa tietolähteen kenttä, tai se voidaan muodostaa uutena kenttänä käyttämällä Power Query -muunnosta. URL-osoitteen tiedot tallennetaan *Yhdistetty aktiviteetti* -entiteettiin, jota voidaan käyttää [ohjelmointirajapintojen](apis.md) käytön jälkeen.
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Määritä asiakasaktiviteetin tiedot Yhdistetty aktiviteetti -entiteetissä.":::
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. Voit tallentaa aktiviteetin nyt valitsemalla **Viimeistele ja tarkista**, kun aktiviteettityypiksi on määritetty **Muu**. 
 
-1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. *Subscription* & *SalesOrderLine* -aktiviteettityypit voidaan tällä hetkellä yhdistää semanttisesti, kun kenttien yhdistämiseen suostutaan. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
+1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. Tällä hetkellä *Subscription*- ja *SalesOrderLine*-aktiviteettityypit voidaan yhdistää semanttisesti sen jälkeen, kun on tehty päätös kenttien yhdistämisestä. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. 
 
-1. Tarkista valinnat **Tarkista**-vaiheessa. Voit palata mihin tahansa edellä kuvattuun vaiheeseen ja päivittää tiedot tarvittaessa.
+1. Tarkista valinnat **Tarkista**-vaiheessa. Palaa mihin tahansa edellä esitettyyn vaiheeseen ja päivitä tiedot tarvittaessa.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Tarkista aktiviteetin määritetyt kentät.":::
    
@@ -89,7 +89,7 @@ Seuraavat toiminnot ovat käytettävissä, kun valitset aktiviteetin.
 
 - **Muokkaa**: avaa aktiviteettiasetukset tarkistusvaiheessa. Voit muuttaa mitä tahansa tai kaikkia nykyisiä määrityksiä tässä vaiheessa. Kun olet muuttanut kokoonpanoa, valitse **Tallenna aktiviteetti** ja käsittele sitten muutokset valitsemalla **Suorita**.
 
-- **Nimeä uudelleen**: avaa dialogin, jossa voit kirjoittaa valitulle aktiviteetille toisen nimen. Ota muutokset käyttöön valitsemalla **Tallenna**.
+- **Nimeä uudelleen**: Avaa valintaikkunan, jossa voit syöttää valitulle aktiviteetille eri nimen. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
 - **Poista**: avaa dialogin, joka vahvistaa valitun aktiviteetin poistamisen. Voit myös poistaa useita aktiviteetteja kerralla valitsemalla aktiviteetit ja valitsemalla sitten poistokuvakkeen. Vahvista poisto valitsemalla **Poista**.
 

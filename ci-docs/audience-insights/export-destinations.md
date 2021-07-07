@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
-ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
+ms.openlocfilehash: 28563e3a76535cb0c92bfcda4ef5037430d00cfa
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6253036"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305474"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
 **Viennit**-sivulla näkyvät kaikki määritetyt viennit. Viennit jakavat tiettyjä tietoja eri sovellusten kanssa. Ne voivat sisältää asiakasprofiileja tai entiteettejä, rakenteita ja yhdistämistietoja. Kukin vienti edellyttää [yhteyttä, jonka määrittää järjestelmänvalvoja todennuksen ja käytön hallitsemiseksi](connections.md).
 
-Siirry kohtaan **Tiedot** > **Viennit**, kun haluat tarkastella vientisivua. Kaikilla käyttäjärooleilla on määritettyjen vientien tarkastelemisen oikeus. Käyttämällä komentopalkin hakukenttää voit etsiä viennit nimen, yhteyden nimen tai yhteystyypin mukaan.
+Siirry kohtaan **Tiedot** > **Viennit**, kun haluat tarkastella vientisivua. Kaikki käyttäjäroolit voivat tarkastella määritettyjä raportteja. Etsi komentopalkin hakukentän avulla vientejä nimen, yhteyden nimen tai yhteystyypin mukaan.
 
 ## <a name="set-up-a-new-export"></a>Määritä uusi vienti
 
@@ -65,7 +65,7 @@ Kun olet luonut vientikohteet, ne näkyvät kohdassa **Tiedot** > **Viennit**. K
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Käyttäjät, joilla ei ole muokkausoikeutta, valitsevat **Näytä** (ei **Muokkaa**) nähdäkseen viennin tiedot.
+1. Käyttäjät, joilla ei ole muokkausoikeuksia, valitsevat **Näytä**-kohdan **Muokkaa**-kohdan sijaan, kun he haluavat katsoa viennin tietoja.
 
 1. Sivuruudussa näkyy viennin määritys. Arvoja ei voi muuttaa ilman muokkausoikeutta. Palaa vientisivulle valitsemalla **Sulje**.
 
@@ -73,7 +73,7 @@ Kun olet luonut vientikohteet, ne näkyvät kohdassa **Tiedot** > **Viennit**. K
 
 Jokaisella määritetyllä viennillä on päivitysaikataulu. Päivityksen aikana järjestelmä etsii uusia tai päivitettyjä tietoja, jotka sisällytetään vientiin. Vieminen suoritetaan oletusarvoisesti jokaisen [ajoitetun järjestelmän päivityksen](system.md#schedule-tab) yhteydessä. Voit mukauttaa päivitysaikataulua tai poistaa sen käytöstä, jos haluat suorittaa viennit manuaalisesti.
 
-Vientiaikataulut määräytyvät ympäristön tilan mukaan. Jos aikataulutetun viennin käynnistyessä on käynnissä [riippuvuuksien](system.md#refresh-policies) päivityksiä, järjestelmä suorittaa ensin riippuvuudet ja suorittaa sitten viennin. Voit nähdä, milloin vienti on viimeksi päivitetty sarakkeessa **Päivitetty**.
+Vientiaikataulut määräytyvät ympäristön tilan mukaan. Jos [riippuvuuksilla](system.md#refresh-policies) on käynnissä olevia päivityksiä ajoitetun viennin käynnistymisen aikana, järjestelmä tekee päivityksen valmiiksi ennen viennin suorittamista. Voit nähdä, milloin vienti on viimeksi päivitetty sarakkeessa **Päivitetty**.
 
 ### <a name="schedule-exports"></a>Aikataulun viennit
 
