@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 7ee57aa9e86ebf9bd1989d88750642f0b01bd4bf
+ms.sourcegitcommit: f18635c29bb25d9e424a3f5825dc2696278450cf
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5977373"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "6327360"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Vie tietoja Azure Synapse -analytiikkaan (esiversio)
 
@@ -74,8 +74,10 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 1. Anna viennille tunnistettava **Näyttönimi** ja **Tietokannan nimi**.
 
 1. Valitse Azure Synapse -analytiikkaan vietävät entiteetit.
+   > [!NOTE]
+   > [Common Data Model -kansioon](connect-common-data-model.md) perustuvia tietolähteitä ei tueta.
 
-1. Valitse **Tallenna**.
+2. Valitse **Tallenna**.
 
 Viennin tallentaminen ei suorita vientiä heti.
 

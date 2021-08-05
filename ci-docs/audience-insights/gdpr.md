@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9c453c9b416bff0e6362a8ccf7ff534f4efa1e00
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e832fbbdfb59cb06d98715223edca438d2c3a7f2
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597507"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554309"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan
 
@@ -40,7 +40,7 @@ Customer Insightsin järjestelmänvalvoja voi seurata näitä vaiheita ja poista
    2. Tarkista tietolähteen tila **Tila**-kohdassa. Valintamerkki osoittaa, että päivitys onnistui. Varoituskolmio osoittaa, että päivitys ei onnistunut. Jos varoituskolmion näkyy, ota yhteys osoitteen D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
-> ![Asiakastietojen GDPR-poistopyyntöjen käsittely](media/gdpr-data-sources.png "Asiakastietojen GDPR-poistopyyntöjen käsittely")
+> ![Asiakastietojen GDPR-poistopyyntöjen käsittely.](media/gdpr-data-sources.png "Asiakastietojen GDPR-poistopyyntöjen käsittely")
 
 #### <a name="manage-delete-requests-for-user-data"></a>Käyttäjätietojen poistopyyntöjen hallinta
 
@@ -52,7 +52,7 @@ Customer Insightsin järjestelmänvalvoja voi poistaa Customer Insightsin käytt
 4. Valitse **Poista**.
 
 > [!div class="mx-imgBorder"]
-> ![Käyttäjätietojen poistopyyntöjen käsittely GDPR:n mukaisesti](media/gdpr-permissions.png "Käyttäjätietojen poistopyyntöjen käsittely GDPR:n mukaisesti")
+> ![Käyttäjätietojen poistopyyntöjen käsittely GDPR:n mukaisesti.](media/gdpr-permissions.png "Käyttäjätietojen poistopyyntöjen käsittely GDPR:n mukaisesti")
 
 ## <a name="responding-to-gdpr-data-subject-export-requests"></a>Rekisteröityjen vientipyyntöihin vastaaminen GDPR:n mukaisesti
 

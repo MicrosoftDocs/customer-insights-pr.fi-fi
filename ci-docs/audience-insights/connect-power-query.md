@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: b37bb5dfeed2326784ef276a93a04bec626aaf6e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305887"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554679"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhteyden muodostaminen Power Query -tietolähteeseen
 
@@ -42,7 +42,7 @@ Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimi
 1. Voit tarkistaa tiedot ja tarkentaa niitä **Power Query – Muokkaa kyselyjä** -valintaikkunassa. Vasemmassa ruudussa näkyvät ne entiteetit, jotka järjestelmät tunnistivat valitussa tietolähteessä.
 
    > [!div class="mx-imgBorder"]
-   > ![Muokkaa kyselyjä -ikkuna](media/data-manager-configure-edit-queries.png "Muokkaa kyselyjä -ikkuna")
+   > ![Muokkaa kyselyjä -ikkuna.](media/data-manager-configure-edit-queries.png "Muokkaa kyselyjä -ikkuna")
 
 1. Voit myös muuntaa tietoja. Valitse muokattava tai muunnettava entiteetti. Tee muunnokset Power Query -ikkunassa olevilla asetuksilla. Jokainen muunnos mainitaan **Käytössä olevat vaiheet** -luettelossa. Power Query sisältää useita valmiita muunnosvaihtoehtoja. Lisätietoja on kohdassa [Power Query -muunnokset](/power-query/power-query-what-is-power-query#transformations).
 
@@ -75,7 +75,7 @@ Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamer
 2. Valitse vaihdettavan tietolähteen vieressä pystysuunnassa olevat kolme pistettä ja valitse sitten **Muokkaa** avattavasta valikosta.
 
    > [!div class="mx-imgBorder"]
-   > ![Muokkaa-asetus](media/edit-option-data-sources.png "Muokkaa-asetus")
+   > ![Muokkaa-asetus.](media/edit-option-data-sources.png "Muokkaa-asetus")
 
 3. Lisätietoja muutosten ja muunnosten käyttämisestä **Power Query – Muokkaa kyselyjä** -ikkunassa on kohdassa [Uuden tietolähteen luominen](#create-a-new-data-source).
 

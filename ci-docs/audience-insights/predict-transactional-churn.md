@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095598"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559401"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Tapahtuman vaihtuvuusennuste (esiversio)
 
@@ -47,7 +47,7 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
         - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi elintarvikemyymälän UserAction-kenttä voisi olla asiakkaan käyttämä kuponki.
         - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi elintarvikemyymälän CouponValue-kenttä voisi olla kupongin valuutta-arvo.
 - Ehdotetut tietojen ominaisuudet:
-    - Riittävät historiatiedot: Tapahtumatiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Tilaustietoja ovat mielellään 2–3 vuoden ajalta. 
+    - Riittävät historiatiedot: Tapahtumatiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Mieluiten 2-3 vuoden tapahtumahistoria. 
     - Useita ostoja asiakasta kohden: Parhaimmillaan vähintään kaksi tapahtumaa asiakasta kohden
     - Asiakkaiden määrä: vähintään 10 asiakasprofiilia, mielellään yli 1 000 yksilöllistä asiakasta. Malli epäonnistuu, jos asiakkaita on alle 10 ja historiatiedot ovat puutteellisia.
     - Tietojen täydellisyys: Puuttuvia arvoja alle 20 % määritetyn entiteetin tietokentässä.

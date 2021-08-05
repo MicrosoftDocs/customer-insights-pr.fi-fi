@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 29f4320c798db62609283e3c48f0b47a4f0b982f
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: b54659f028a141fe8f351645d96e933d47568a39
+ms.sourcegitcommit: adb9c43ddaba25e511535d78a4bcf8815f154a7b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124269"
+ms.lasthandoff: 07/06/2021
+ms.locfileid: "6362414"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Segmenttien vieminen Constant Contactiin (esiversio)
 
@@ -47,7 +47,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 1. Alusta yhteys Constant Contactiin valitsemalla **Yhdistä**.
 
-1. Valitse **Todenna AdRollin avulla** ja anna Constant Contactin järjestelmänvalvojan tunnistetiedot. 
+1. Valitse **Todenna vakioyhteyshenkilöllä** ja anna vakioyhteyshenkilön järjestelmänvalvojan tunnistetiedot. 
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 

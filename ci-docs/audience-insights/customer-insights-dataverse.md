@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7157ad930f3cea17c12bd4f95028d291483329d3
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259187"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650038"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
@@ -24,11 +24,11 @@ Customer Insights -vaihtoehdossa tulosentiteetit voi ottaa käyttöön [Microsof
 
 **Organisaatiot, joissa on käytössä olevia Dataverse-ympäristöjä**
 
-Organisaatiot, joilla on jo Dataverse käytössä, voivat [käyttää aiemmin luotua Dataverse-ympäristöä](manage-environments.md#create-an-environment-in-an-existing-organization), kun Järjestelmänvalvoja määrittää kohdeyleisön tietoja. Antamalla URL-osoitteen Dataverse-ympäristöön se liitetään ympäristön uuteen kohdeyleisöön. Jotta Customer Insights ja Dataverse-ympäristöt toimisivat parhaalla mahdollisella tavalla, niitä on isännöitävä samalla alueella.
+Organisaatiot, joilla on jo Dataverse käytössä, voivat [käyttää aiemmin luotua Dataverse-ympäristöä](get-started-paid.md), kun Järjestelmänvalvoja määrittää kohdeyleisön tietoja. Antamalla URL-osoitteen Dataverse-ympäristöön se liitetään ympäristön uuteen kohdeyleisöön. Jotta Customer Insights ja Dataverse-ympäristöt toimisivat parhaalla mahdollisella tavalla, niitä on isännöitävä samalla alueella.
 
 Jos haluat liittää Dataverse-ympäristön, laajenna **Lisäasetukset**, kun luot kohdeyleisön käyttöympäristöä. Anna **Microsoft Dataverse -ympäristön URL-osoite** ja valitse valintaruutu, jos haluat **Ottaa käyttöön tietojen jakamisen**.
 
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt":::
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt.":::
 
 **Uusi organisaatio**
 

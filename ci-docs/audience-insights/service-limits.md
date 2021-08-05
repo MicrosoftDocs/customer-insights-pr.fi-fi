@@ -1,7 +1,7 @@
 ---
 title: Palvelurajoitukset
 description: Tietoja rajoista ja rajoituksista.
-ms.date: 10/15/2020
+ms.date: 07/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b68ab833538db7020c8be8be7658c86f083f137a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 81253332cbea3110c0b3804db3a4d03b514f92d4
+ms.sourcegitcommit: 9a99e48e96dfb3d895db428f37c30ae55eea66b7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598506"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6604365"
 ---
 # <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Dynamics 365 Customer Insightsin käyttäjäryhmäominaisuuden palvelurajat
 
@@ -23,6 +23,7 @@ Tässä artikkelissa on tietoja Customer Insights -palvelun sisältämistä rajo
 | Alue  | Rajoitukset  | Huomautuksia |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
 | Segmentit ja mittarit | 100 segmentit tai mittaria. | Aktiivisten [segmenttien](segments.md) ja [mittareiden](measures.md) yhteismäärä saa olla enintään 100.  |
+| Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](segments.md) tai [mittareita](measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

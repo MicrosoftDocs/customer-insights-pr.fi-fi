@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: bcbafa513c2c61b0280c91aa7ed71e211c32c35c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095552"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556120"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Tuotesuosituksen ennuste (esiversio)
 
@@ -64,7 +64,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 1. Valitse **Tuotesuositusten malli (esiversio)** -ruudussa **Käytä tätä mallia**.
    > [!div class="mx-imgBorder"]
-   > ![Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike](media/product-recommendation-usethismodel.PNG "Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike")
+   > ![Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike.](media/product-recommendation-usethismodel.PNG "Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike")
 
 1. Tutustu mallivaatimusten tietoihin. Jos sinulla on tarvittavat tiedot, valitse **Aloitus**.
 
@@ -93,7 +93,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 1. Yhdistä semanttiset kentät määritteisiin ostohistoriaentiteetissä ja valitse **Seuraava**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen](media/product-recommendation-purchasehistorymapping.PNG "Ostohistoria-sivulla näkyvät semanttiset määritteet, jotka on yhdistetty valitun ostohistoriaentiteetin kenttiin")
+   > ![Entiteettisuhteen määrittäminen.](media/product-recommendation-purchasehistorymapping.PNG "Ostohistoria-sivulla näkyvät semanttiset määritteet, jotka on yhdistetty valitun ostohistoriaentiteetin kenttiin")
 
 1. Jos alla olevia kenttiä ei ole täytetty, määritä ostohistoriaentiteetin suhde *asiakasentiteettiin*.
     1. Valitse **Ostohistorian entiteetti**.
@@ -101,7 +101,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
     1. Valitse **Asiakasentiteetti**, joka vastaa ensisijaista asiakasentiteettiä.
     1. Anna suhdetta kuvaava nimi.
        > [!div class="mx-imgBorder"]
-       > ![Ostohistoriasivu, jossa näkyy suhteen luominen asiakkaaseen](media/model-purchase-join.png "Ostohistoriasivu, jossa näkyy suhteen luominen asiakkaaseen")
+       > ![Ostohistoriasivu, jossa näkyy suhteen luonti asiakkaaseen](media/model-purchase-join.png "Ostohistoriasivu, jossa näkyy suhteen luominen asiakkaaseen")
 
 1. Valitse **Tallenna**.
 
@@ -145,7 +145,7 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
 
 1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
    > [!div class="mx-imgBorder"]
-   > ![Omat ennusteet -sivun tarkasteleminen](media/product-recommendation-mypredictions.PNG "Omat ennusteet -sivun tarkasteleminen")
+   > ![Omat ennusteet -sivun tarkasteleminen.](media/product-recommendation-mypredictions.PNG "Omat ennusteet -sivun tarkasteleminen")
 
 1. Valitse ennuste, jota haluat tarkastella.
    - **Ennusteen nimi:** Ennusteelle luomisen yhteydessä annettu nimi.
@@ -163,7 +163,7 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
 
 1. Valitse sen ennusteen vieressä olevat allekkaiset pisteet, jonka tuloksia haluat tarkastella, ja valitse **Näytä**.
    > [!div class="mx-imgBorder"]
-   > ![Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista](media/product-recommendation-verticalellipses.PNG "Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista")
+   > ![Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista.](media/product-recommendation-verticalellipses.PNG "Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista")
 
 1. Tulossivulla on viisi ensisijaista tieto-osaa:
     1. **Opetusmallin suorituskyky:** A, B ja C ovat mahdollisia pistemääriä. Tämä pistemäärä osoittaa ennusteen suorituskyvyn. Sen avulla voit tehdä päätöksen tulosentiteettiin tallennettujen tulosten käyttämisestä.
@@ -173,13 +173,13 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
             - **C** Mallia pidetään **C**-laatuna, jos Menestys @ K -mittarin arvo on vähemmän kuin perustaso.
                
                > [!div class="mx-imgBorder"]
-               > ![Tarkastele mallin suorituskyvyn tulosta](media/product-recommendation-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
+               > ![Tarkastele mallin suorituskyvyn tulosta.](media/product-recommendation-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
             - **Perustaso**: Malli käyttää kaikkien asiakkaiden ostomäärien mukaisia suositelluimpia tuotteita ja mallin määrittämiä opittuja sääntöjä asiakkaiden suositusjoukon luomisessa. Ennusteita vertaillaan sen jälkeen myydyimpiin tuotteisiin tuotteen ostaneiden asiakkaiden määrän mukaan laskettuna. Jos asiakkaan suositelluissa tuotteissa on vähintään yksi tuote, joka on myös myydyimpien tuotteiden joukossa, heitä pidetään perustason asiakkaina. Jos 10 asiakasta yhteensä 100 asiakkaasta on suositellut ostettua tuotetta, perustaso on 10 %.
             - **Menestys @ K**: Suositukset luodaan kaikille asiakkaille käyttämällä tapahtumien ajanjakson tarkistusjoukkoa. Tämän jälkeen niitä verrataan tapahtumien tarkistusjoukkoihin. Esimerkiksi 12 kuukauden jakson aikana kuukausi 12 voidaan jättää pois tietojen tarkistusjoukoksi. Jos malli ennustaa vähintään yhden oston kuukauden 12 aikana edellisten 11 kuukauden tietojen perusteella, asiakas kasvattaa Menestys @ K -mittarin arvoa.
     
     1. **Useimmin ehdotetut tuotteet (laskurin kanssa)**: viisi yleisintä asiakkaille ennustettua tuotetta.
        > [!div class="mx-imgBorder"]
-       > ![Kaavio, jossa on 5 eniten suositeltua tuotetta](media/product-recommendation-topproducts.PNG "Kaavio, jossa on 5 eniten suositeltua tuotetta")
+       > ![Kaavio, jossa on 5 eniten suositeltua tuotetta.](media/product-recommendation-topproducts.PNG "Kaavio, jossa on 5 eniten suositeltua tuotetta")
     
     1. **Tärkeimmät suositustekijät:** malli antaa tuotesuosituksia asiakkaiden tapahtumahistorian perusteella. Se oppii aiemmin tehtyihin ostoihin perustuvia malleja ja löytää samankaltaisuuksia asiakkaiden ja tuotteiden välillä. Näiden samankaltaisuuksien avulla luodaan tuotesuosituksia.
     Seuraavassa on tekijöitä, jotka voivat vaikuttaa mallin tuottamaan tuotesuositukseen. 
@@ -190,20 +190,20 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
         Yksi tai useampi näistä tekijöistä vaikuttaa kaikkiin tuotesuosituksiin. Niiden suositusten prosenttiosuus, joissa jokaisella tekijällä on ollut rooli, visualisoidaan kaaviossa. Seuraavassa esimerkissä aiemmat tapahtumat vaikuttavat 100 prosenttiin suosituksista, asiakkaan samankaltaisuus 60 prosenttiin suosituksista ja tuotteiden samankaltaisuus 22 prosenttiin suosituksista. Vie osoitin kaavion palkkien päälle nähdäksesi, minkä tarkan prosenttiosuuden vaikuttavat tekijät ovat vaikuttaneet.
 
         > [!div class="mx-imgBorder"]
-        > ![Tärkeimmät suosittelukriteerit](media/product-recommendation-keyrecommendationfactors.png "Tärkeimmät suositustekijät, joita malli oppi tuotesuositusten tuottamiseksi")
+        > ![Tärkeimmät suosittelukriteerit.](media/product-recommendation-keyrecommendationfactors.png "Tärkeimmät suositustekijät, joita malli oppi tuotesuositusten tuottamiseksi")
        
      
    1. **Tietotilastot**: Antaa yleiskuvan käytettävän mallin tapahtumien, asiakkaiden ja tuotteiden lukumäärästä. Se perustuu syötetietoihin, joita käytettiin kaavojen oppimiseen ja tuotesuositusten luomiseen.
 
       > [!div class="mx-imgBorder"]
-      > ![Tietotilastot](media/product-recommendation-datastatistics.png "Mallin käyttämät syöte-/tulostietojen tilastot, joita käytetään mallissa kaavojen oppimiseen")
+      > ![Tietotilastot.](media/product-recommendation-datastatistics.png "Mallin käyttämät syöte-/tulostietojen tilastot, joita käytetään mallissa kaavojen oppimiseen")
 
       Tässä osassa on esitetty tilastot arvopisteistä, joita malli käyttää kaavojen opettelemiseen ja tuotesuositusten luomiseen. Mallimäärityksessä määritetty suodatus koskee mallin luomaa tulosta. Malli käyttää kuitenkin kaikkia käytettävissä olevia tietoja kaavojen oppimiseen. Jos siis käytät tuotesuodatusta mallimäärityksessä, tässä osassa näkyy mallin analysoimien tuotteiden kokonaismäärä mallien oppimiseksi, mikä voi poiketa määritettyjä suodatusehtoja vastaavien tuotteiden lukumäärästä.
 
    1. **Erittäin luotettavat tuotesuositukset:** Asiakkaille annettujen suositusten esimerkki tuotteista, joita malli olettaa asiakkaan ostavan.    
       Jos tuoteluettelo on lisätty, tuotetunnukset korvataan tuotenimillä. Tuotteiden nimet antavat käyttökelpoisempia ja intuitiivisempia tietoja ennusteista.
        > [!div class="mx-imgBorder"]
-       > ![Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle](media/product-recommendation-highconfidence.PNG "Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle")
+       > ![Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle.](media/product-recommendation-highconfidence.PNG "Luettelo, jossa näkyvät erittäin luotettavat suositukset valitulle yksittäisten asiakkaiden joukolle")
 
 ## <a name="manage-predictions"></a>Hallitse ennusteita
 

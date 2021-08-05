@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 6e2080b4ad19f6f57f60da591345e80ce9083e8a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306253"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554063"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -89,7 +89,7 @@ Sivun yläosassa on trendikaavio, joka visualisoi jäsenmäärän muutokset. Vie
 Voit päivittää visualisoinnin aikavälin.
 
 > [!div class="mx-imgBorder"]
-> ![Segmentin aikaväli](media/segment-time-range.png "Segmentin aikaväli")
+> ![Segmentin aikaväli.](media/segment-time-range.png "Segmentin aikaväli")
 
 Alaosassa on luettelo segmentin jäsenistä.
 

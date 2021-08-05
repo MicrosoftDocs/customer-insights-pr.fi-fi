@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 00be15367001a5f4342d60bb284726ef7154d05c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305290"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555303"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
@@ -35,7 +35,7 @@ HERE Technologiesin rikastamisen määrittämiselle on seuraavat edellytykset:
 1. Valitse HERE Technologies -ruudussa **Rikasta tietojani** ja valitse **Aloita**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies -ruutu](media/HERE-tile.png "HERE Technologies -ruutu")
+   > ![HERE Technologies -ruutu.](media/HERE-tile.png "HERE Technologies -ruutu")
 
 1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys**. Valitse avattavasta luettelosta **HERE Technologies**. 
 
@@ -50,7 +50,7 @@ HERE Technologiesin rikastamisen määrittämiselle on seuraavat edellytykset:
 1. Määritä, mitä yhtenäistettyjen profiilien kenttiä käytetään hakemaan vastaavia sijaintitietoja HERE Technologies -palvelusta. **Lähiosoite 1** ja **Postinumero** ovat pakollisia kenttiä valitussa ensi- ja/tai toissijaisen osoitteessa. Vastaavuuden tarkkuutta voi parantaa lisäämällä kenttiä.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies -rikastamisen määrityssivu](media/enrichment-HERE-configuration.png "HERE Technologies -rikastamisen määrityssivu")
+   > ![HERE Technologies -rikastamisen määrityssivu.](media/enrichment-HERE-configuration.png "HERE Technologies -rikastamisen määrityssivu")
 
 1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
@@ -73,7 +73,7 @@ Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse 
 1. Kun tarkistus on suoritettu, valitse **Tallenna**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies -yhteyden määrityssivu](media/enrichment-HERE-connection.png "HERE Technologies -yhteyden määrityssivu")
+   > ![HERE Technologies -yhteyden määrityssivu.](media/enrichment-HERE-connection.png "HERE Technologies -yhteyden määrityssivu")
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 

@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 06/15/2021
+ms.date: 07/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 355dc22ac381145b231848830cefc47eda7968f4
-ms.sourcegitcommit: 6944c1592877eb92ec789df5f2e0dbecef638837
+ms.openlocfilehash: 1c54d74c999eb4776074951a129019843017964e
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6263247"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692385"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -26,6 +26,28 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2021-updates"></a>Kesäkuun 2021 päivitykset
+
+Kesäkuun 2021 päivitykset sisältävät useita toimintoja, suorituskykypäivityksiä ja virheiden korjauksia.
+
+### <a name="data-ingestion"></a>Tietojen käsittely
+
+- **Parannetut tietojen yhdistymisen edistymispäivitykset** Voit nyt tarkastella yksityiskohtaisempia ja parannettuja dynaamisia tilapäivityksiä [tietojen yhdistymisprosessin](data-unification.md) vaiheissa. Tämän ominaisuuden avulla voit seurata yksityiskohtaista edistymistä prosessivirran ymmärtämiseksi ja ryhtyä toimiin, jos jokin vaihe tarvitsee huomiota.
+
+### <a name="extensibility"></a>Laajennettavuus
+
+- **Segmenttien ja muiden tietojen vienti Salesforce Marketing Cloudiin** Olemme laajentaneet vientikohteitamme sisältämään [Salesforce Marketing Cloudin](export-salesforce.md). Voit nyt viedä segmenttejä ja muun tyyppisiä tietoja Salesforce Marketing Cloudiin brändätyn SFTP-viennin kautta. Tietojen tuonti voidaan automatisoida Salesforcessa täysin, ja sitä voidaan käyttää tehokkaampien markkinointikampanjoiden luomiseen.  
+ 
+- **Vientisegmentit ActiveCampaigniin** Olemme laajentaneet vientikohteitamme sisältämään [Aktiivisen kampanjan](export-active-campaign.md). Voit nyt tuoda segmenttejä luodaksesi kampanjoita, suorittaaksesi sähköpostimarkkinointia ja työstääksesi tiettyjä asiakasryhmiä ActiveCampaign-toiminnossa.
+ 
+- **Vientisegmentit Sendinblueen** Olemme laajentaneet vientikohteitamme sisältämään [Sendinbluen](export-sendinblue.md). Voit nyt tuoda segmenttejä luodaksesi kampanjoita, suorittaaksesi sähköpostimarkkinointia ja työstääksesi tiettyjä asiakasryhmiä Sendinblue-toiminnolla.
+ 
+### <a name="ux-updates"></a>UX-päivitykset 
+
+- **Uusi ja parannettu Asiakkaat-sivu ja profiilin tietosivu** Olemme uudistaneet Asiakkaat-sivun ja profiilin tietosivut käyttökokemuksen ja suorituskyvyn parantamiseksi. Näiden muutosten avulla voit tarkastella, lajitella, etsiä ja suodattaa asiakkaita. URL-osoitteessa on nyt suodattimia, joiden avulla hakutulokset voidaan jakaa saumattomasti muiden käyttäjien kanssa. Hakutulokset voidaan tallentaa myös segmenttinä.    
+  Asiakasprofiilien tietosivulla on nyt ryhmitelty tiedot eri alaluokkiin, kuten väestötiedot, tunnukset ja muut profiilimääritteet luettavuuden parantamiseksi. Muut profiilin tietosivun osat ovat nyt vuorovaikutteisempia. Esimerkiksi Aktiviteetteja-osa sallii nyt suodatuksen ja lajittelun.
+
 
 ## <a name="may-2021-updates"></a>Toukokuun 2021 päivityksey
 
@@ -170,7 +192,7 @@ Helmikuun 2021 päivitykset sisältävät useita toimintoja, suorituskykypäivit
 
 - **Ympäristön kopioiminen tukee useampia tietolähteiden tyyppejä**
 
-  Järjestelmänvalvojat voivat kopioida ympäristömäärityksiä uuteen ympäristöön samassa organisaatiossa. Tämä ominaisuus laajentaa kopiointiympäristön toimintoja niissä tapauksissa, joissa tietolähteitä käytetään Common Data Service Data Lake -tallennustilan tai Common Data Model -kansion perusteella.
+  Järjestelmänvalvojat voivat kopioida ympäristömäärityksiä uuteen ympäristöön samassa organisaatiossa. Tämä ominaisuus laajentaa kopiointiympäristötoimintoa tapauksissa, joissa käytetään Microsoft Dataversen hallitsemaan tietojärveen tai Common Data Model -kansioon perustuvia tietolähteitä.
 
 ## <a name="january-2021-updates"></a>Tammikuun 2021 päivitykset
 

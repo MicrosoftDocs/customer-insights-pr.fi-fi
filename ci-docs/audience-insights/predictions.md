@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595897"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692523"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Osittaisten tietojen viimeisteleminen ennusteiden avulla
 
@@ -31,11 +31,11 @@ Ennusteiden avulla voit helposti luoda ennustettuja arvoja, jotka auttavat ymmä
 
 Ennen kuin organisaatio voi käyttää ennustetoimintoa, seuraavien edellytykset on toteuduttava:
 
-1. Organisaatiossa on [Common Data Servicessa määritetty](/ai-builder/build-model#prerequisites) esiintymä, joka on samassa organisaatiossa kuin Customer Insights.
+1. Organisaatiossasi on esiintymä, joka on [määritetty Microsoft Dataversessä](/ai-builder/build-model#prerequisites) ja se on samassa organisaatiossa kuin Customer Insights.
 
-2. Ympäristö on liitetty Common Data Service -esiintymään.
+2. Käyttäjäryhmäsi tiedot on liitetty Dataverse-esiintymääsi.
 
-Jos olet [luomassa ensimmäistä ympäristöä](manage-environments.md), määritä se **Luo ympäristö** -valintaikkunassa ja valitse **Lisäasetukset**. Jos olet jo luonut ympäristön, siirry sen asetuksiin ja valitse **Lisäasetukset**. Anna kummassakin tapauksessa **Käytä ennusteita** -osassa sen Common Data Service -esiintymän URL-osoite, johon haluat liittää ympäristön.
+Jos olet [luomassa ensimmäistä ympäristöä](get-started-paid.md), määritä se **Luo ympäristö** -valintaikkunassa ja valitse **Lisäasetukset**. Jos olet jo luonut ympäristön, siirry sen asetuksiin ja valitse **Lisäasetukset**. Anna kummassakin tapauksessa **Käytä ennusteita** -osassa sen Dataverse -esiintymän URL-osoite, johon haluat liittää ympäristön.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Ennusteen luominen asiakasentiteetissä
 
@@ -47,17 +47,17 @@ Jos olet [luomassa ensimmäistä ympäristöä](manage-environments.md), määri
 
 4. Etsi sen määritteen nimi, jolle haluat ennustaa arvot, ja valitse sitten **Yleiskatsaus**-kuvake **Yhteenveto**-sarakkeessa.
    > [!div class="mx-imgBorder"]
-   > ![Yleiskatsaus-kuvake](media/intelligence-overviewicon.png "Yleiskatsaus-kuvake")
+   > ![Yleiskatsaus-kuvake.](media/intelligence-overviewicon.png "Yleiskatsaus-kuvake")
 
 5. Jos määritteeltä puuttuu paljon arvoja, valitse **Ennusta puuttuvat arvot** ja jatka ennusteen määrittämistä.
    > [!div class="mx-imgBorder"]
-   > ![Yleiskatsauksen tila ja ennusteen puuttuvat arvot -painike näkyvissä](media/intelligence-overviewpredictmissingvalues.png "Yleiskatsauksen tila ja ennusteen puuttuvat arvot -painike näkyvissä")
+   > ![Yleiskatsauksen tila ja ennusteen puuttuvat arvot -painike näkyvissä.](media/intelligence-overviewpredictmissingvalues.png "Yleiskatsauksen tila ja ennusteen puuttuvat arvot -painike näkyvissä")
 
 6. Anna **näyttönimi** ja **tulosentiteetin nimi** ennusteen tuloksia varten.
 
 7. Näkyviin tulee valmiiksi määritetty asetusluettelo, jossa voit yhdistää arvot ennustettua luokkaa varten. Tässä tapauksessa luokan asetuksia ovat vain 0 ja 1, koska ne vastaavat tosi-/epätosi-arvoja tai ennusteen binaarista luonnetta. Yhdistä Luokka-sarakkeessa kentän arvot, jotka haluat luokitella arvolla 0 lopullisessa ennusteessa, ja nimikkeet, jotka haluat luokitella arvolla 1 lopullisessa ennusteessa.
    > [!div class="mx-imgBorder"]
-   > ![Esimerkki kentän arvojen ja luokkien yhdistämisestä](media/intelligence-categorymapping.png "Esimerkki kentän arvojen ja luokkien yhdistämisestä")
+   > ![Esimerkki kentän arvojen ja luokkien yhdistämisestä.](media/intelligence-categorymapping.png "Esimerkki kentän arvojen ja luokkien yhdistämisestä")
 
 8. Valitse **Valmis**. Ennustetta aletaan käsitellä. Käsittelyn kesto riippuu tietojen koosta ja monimuotoisuudesta. Tulokset ovat käytettävissä uudessa entiteetissä luodun ennusteen **tulosentiteetin nimen** perusteella.
 
@@ -77,7 +77,7 @@ Tämän prosessin osana valitaan tietty määrite, johon segmentti perustuu. Se 
 
 5. Jos luodun segmentin lähdekentän tiedot ovat vaillinaiset, voit valita puuttuvien arvojen ennustamisen.
    > [!div class="mx-imgBorder"]
-   > ![Ennuste-painike](media/segments-predictoption.png "Ennuste-painike")
+   > ![Ennuste-painike.](media/segments-predictoption.png "Ennuste-painike")
 
 6. Anna **näyttönimi** ja **tulosentiteetin nimi** ennusteen tuloksia varten.
 
@@ -93,7 +93,7 @@ Tämän prosessin osana valitaan tietty määrite, johon segmentti perustuu. Se 
 
 4. Näkyviin tulee arvopisteiden määrä ennustenäkymässä.
    > [!div class="mx-imgBorder"]
-   > ![Ennusteet-sivu](media/intelligence-predictionsviewpage.png "Ennusteet-sivu")
+   > ![Ennusteet-sivu.](media/intelligence-predictionsviewpage.png "Ennusteet-sivu")
 
    - **Ennustetut arvot** osoittavat täsmäytyksen, joka luotiin kentän arvon ja luokan täsmäytysvaiheessa. Ne ovat tietojoukon arvoja, jotka on yhdistetty tiettyyn luokkaan.
    -**Tärkeimmät vaikuttajat** ovat tietojoukon tekijöitä, jotka todennäköisimmin vaikuttavat ennusteen luotettavuuteen kentän arvon ja tietyn luokan täsmäytyksessä.
@@ -139,7 +139,7 @@ Ennusteen seuraava suoritus käyttää luomaasi päivitettyä mallia.
 
 ## <a name="troubleshooting"></a>Vianmääritys
 
-Jos Common Data Servicen liittämisprosessia ei voi suorittaa virheen vuoksi, voit yrittää suorittaa prosessin manuaalisesti. Liittämisprosessissa voi esiintyä kaksi tunnettua ongelmaa:
+Jos Dataversen liittämisprosessia ei voi suorittaa virheen vuoksi, voit yrittää suorittaa prosessin manuaalisesti. Liittämisprosessissa voi esiintyä kaksi tunnettua ongelmaa:
 
 - Asiakaskortin apuohjelmaratkaisua ei ole asennettu.
     1. [Asenna ja määritä ratkaisu noudattamalla ohjeita](customer-card-add-in.md).

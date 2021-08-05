@@ -1,7 +1,7 @@
 ---
 title: Segmenttien luonti ja hallinta
 description: Luo asiakassegmenttejä ja ryhmittele ne eri määritteiden perusteella.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064933"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685458"
 ---
 # <a name="create-and-manage-segments"></a>Segmenttien luonti ja hallinta
+
+> [!IMPORTANT]
+> Segmentin luontikokemukseen on tehty useita muutoksia syyskuussa 2021: 
+> - Segmentin muodostaja näyttää hieman erilaiselta uudelleen tyyliteltyjen elementtien ja parannetun käyttäjätyönkulun kanssa.
+> - Uudet datetime-operaattorit ja parannettu päivämäärävalitsin ovat käytössä segmentin muodostimessa.
+> - Voit lisätä tai poistaa ehtoja ja sääntöjä segmenteistä. 
+> - Sisäkkäisiä sääntöjä, jotka alkavat OR-ehdolla, tulee saataville. Et enää tarvitse AND-ehtoa uloimmassa kerroksessa.
+> - Sivuruutu määritteiden valitsemista varten on jatkuvasti käytettävissä.
+> - Entiteettisuhteiden polkujen valitseminen.
+> Jos haluat kokeilla uutta segmentinmuodostinta, lähetä sähköpostiviesti, jonka aihe on "Pyyntö uuden segmentinmuodostimen ottamiseksi käyttöön" osoitteeseen cihelp [at] microsoft.com. Sisällytä organisaatiosi nimi ja hiekkalaatikkoympäristön tunnus.
 
 Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja. Segmenttejä hallitaan **Segmentit**-sivulla. 
 
@@ -50,7 +60,7 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Se tallentuu passiiviseksi seg
 1. Valitse operaattori ja arvo valitulle määritteelle.
 
    > [!div class="mx-imgBorder"]
-   > ![Mukautettu ryhmäsuodatin](media/customer-group-numbers.png "Asiakkaan ryhmäsuodatin")
+   > ![Mukautettu ryhmäsuodatin.](media/customer-group-numbers.png "Asiakkaan ryhmäsuodatin")
 
    |Määrä |Määritelmä  |
    |---------|---------|
@@ -66,7 +76,7 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Se tallentuu passiiviseksi seg
       - **TAI**-operaattori: Jommankumman ehdoista on täytyttävä segmentointiprosessin aikana. Tämä vaihtoehto on hyödyllinen, kun määrität useita ehtoja samalle entiteetille.
 
       > [!div class="mx-imgBorder"]
-      > ![TAI-operaattori, jossa jommankumman ehdoista on täytyttävä](media/segmentation-either-condition.png "TAI-operaattori, jossa jommankumman ehdoista on täytyttävä")
+      > ![TAI-operaattori, jossa jommankumman ehdoista on täytyttävä.](media/segmentation-either-condition.png "TAI-operaattori, jossa jommankumman ehdoista on täytyttävä")
 
       Tällä hetkellä on mahdollista upottaa **TAI**-operaattoria **JA**-operaattorin sisään, mutta ei toisin päin.
 
@@ -74,12 +84,12 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Se tallentuu passiiviseksi seg
    Valitse **Lisää ryhmä**.
 
       > [!div class="mx-imgBorder"]
-      > ![Asiakasryhmä - lisää ryhmä](media/customer-group-add-group.png "Asiakasryhmä - lisää ryhmä")
+      > ![Asiakasryhmä - lisää ryhmä.](media/customer-group-add-group.png "Asiakasryhmä - lisää ryhmä")
 
    1. Valitse jokin joukko-operaattoreista: **Unioni**, **Leikkaus** tai **Paitsi**.
 
    > [!div class="mx-imgBorder"]
-   > ![Asiakasryhmä - lisää liitos](media/customer-group-union.png "Asiakasryhmä - lisää liitos")
+   > ![Asiakasryhmä - lisää liitos.](media/customer-group-union.png "Asiakasryhmä - lisää liitos")
 
    - **Liitos** yhdistää kaksi ryhmää.
 
@@ -90,7 +100,7 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Se tallentuu passiiviseksi seg
 1. Jos entiteetti on yhdistetty yhdistettyyn asiakaskohteeseen [suhteen](relationships.md) kautta , sinun täytyy määrittää suhdepolku, jotta voit luoda kelvollisen segmentin. Lisää entiteetit suhdepolusta, kunnes voit valita **Asiakas : CustomerInsights** -entiteetin avattavasta luettelosta. Valitse sitten jokaiselle vaiheelle **Kaikki tietueet**.
 
    > [!div class="mx-imgBorder"]
-   > ![Suhdepolku segmentin luonnin aikana](media/segments-multiple-relationships.png "Suhdepolku segmentin luonnin aikana")
+   > ![Suhdepolku segmentin luonnin aikana.](media/segments-multiple-relationships.png "Suhdepolku segmentin luonnin aikana")
 
 1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet.  
   
@@ -127,7 +137,7 @@ Pikasegmenttien avulla voidaan nopeasti luoda yksinkertaisia segmenttejä yhdell
 4. Järjestelmä näyttää **arvioidun segmentin koon**. Voit määrittää, luodaanko määritetty segmentti vai avataanko sen ensin, jolloin voit määrittää toisen segmentin koon.
 
     > [!div class="mx-imgBorder"]
-    > ![Nopean segmentin nimi ja arvioi](media/quick-segment-name.png "Nopean segmentin nimi ja arvioi")
+    > ![Nopean segmentin nimi ja arvioi.](media/quick-segment-name.png "Nopean segmentin nimi ja arvioi")
 
 5. Anna segmentille **nimi**. Vaihtoehtoisesti voit antaa **näyttönimen**.
 

@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306070"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554981"
 ---
 # <a name="segment-insights-preview"></a>Segmentin merkitykselliset tiedot (esiversio)
 
@@ -44,7 +44,7 @@ Voit myös analysoida, miten päällekkäisyys muuttuu tietyillä määritteill�
 Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot.":::
 
 Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset:
 
@@ -77,7 +77,7 @@ Segmentin erot auttaa sinua saamaan selville, mikä erottaa segmentin muista asi
 Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot.":::
 
 Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset. Erilaisuusanalyysi sisältää kaksi välilehteä. **Määritteet**-välilehdessä on luettelo profiilimääritteistä, joita pidetään erottavinä tekijöinä. **Mittarit**-välilehdessä on lueteltu erottavat tekijät. Jokaisessa välilehdessä on seuraavat tiedot:
 

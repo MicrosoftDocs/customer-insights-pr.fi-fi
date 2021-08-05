@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597415"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554431"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen
 
@@ -52,7 +52,7 @@ Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja 
      Avaa suunnitteluohjelmassa **Valitse tietojoukon sarakkeet** ja valitse **Määritä jaksoparametrina**, jossa annetaan parametrin nimi.
 
      > [!div class="mx-imgBorder"]
-     > ![Suunnitteluohjelman tietojoukon muuttaminen parametreiksi](media/intelligence-designer-dataset-parameters.png "Tietojoukon muuttaminen parametreiksi suunnitteluohjelmassa")
+     > ![Suunnitteluohjelman tietojoukon muuttaminen parametreiksi.](media/intelligence-designer-dataset-parameters.png "Tietojoukon muuttaminen parametreiksi suunnitteluohjelmassa")
    
 * SDK:n tietojoukkoparametri (Python)
    
@@ -78,7 +78,7 @@ Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja 
 
 * Suunnitteluohjelmassa on [tietojen vientimoduuli](/azure/machine-learning/algorithm-module-reference/export-data), jolla jakson tuloste voidaan viedä Azure-tallennustilaan. Tällä hetkellä moduulin tietosäilön tyypin on oltava **Azure Blob -säilö**, minkä lisäksi **tietosäilö** ja suhteellinen **polku** on muutettava parametreiksi. Customer Insights korvaa nämä molemmat parametrit suorituksen aikana tietosäilöllä ja polulla, jota tuote voi käyttää.
    > [!div class="mx-imgBorder"]
-   > ![Tietojen vientimoduulin määritys](media/intelligence-designer-importdata.png "Tietojen vientimoduulin määritys")
+   > ![Tietojen vientimoduulin määritys.](media/intelligence-designer-importdata.png "Tietojen vientimoduulin määritys")
    
 * Kun päättelytulosteen kirjoittamiseen käytetään koodia, tuloste voidaan ladata polkuun työtilan *rekisteröidyssä tietosäilössä*. Jos polku ja tietosäilö on muutettu parametreiksi jaksossa, Customer insights voi lukea ja tuoda päättelytulosteen. Tällä hetkellä tuetaan yhtä taulukkomuotoista tulostetta, jonka muoto on csv. Polun on sisällettävä hakemisto ja tiedostonimi.
 

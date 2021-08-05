@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f588f45ed11efffbb335003642a4b92810153017
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 96fbd18a20e0df7abd4e79ff77e2c3a396e33ccc
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596771"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554201"
 ---
 # <a name="similar-customers-preview"></a>Samankaltaiset asiakkaat (esiversio)
 
@@ -50,7 +50,7 @@ Tämän ominaisuuden avulla voit etsiä samanlaisia asiakkaita asiakaskunnasta k
 Kun olet käsitellyt samankaltaisen segmentin, löydät uuden segmentin **Segmentit**-sivulta.
 
 > [!div class="mx-imgBorder"]
-> ![Samankaltainen asiakassegmentti](media/expanded-segment.png "Samankaltainen asiakassegmentti")
+> ![Samankaltainen asiakassegmentti.](media/expanded-segment.png "Samankaltainen asiakassegmentti")
 
 Avaa segmentin erittely valitsemalla toiminto palkissa **Näytä**. Tässä näkymässä on tietoja [samankaltaisuuksien tulosten](#about-similarity-scores) jakautumisesta. Löydät myös samankaltaisuuksien pistearvot kohdassa **Segmentin jäsenten esikatselu**.
 

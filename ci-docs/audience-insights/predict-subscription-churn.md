@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095644"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556303"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
 
@@ -63,7 +63,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Analytiikka** > **Ennusteet**.
 1. Valitse **Tilausten vaihtuvuusennuste (esikatselu)** -ruutu ja valitse sitten **Käytä tätä mallia**.
    > [!div class="mx-imgBorder"]
-   > ![Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike](media/subscription-churn-usethismodel.PNG "Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike")
+   > ![Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike.](media/subscription-churn-usethismodel.PNG "Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike")
 
 ### <a name="name-model"></a>Nimimalli
 
@@ -86,11 +86,11 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
     1. Valitse **Asiakasentiteetti**, joka vastaa ensisijaista asiakasentiteettiä.
     1. Anna suhdetta kuvaava nimi.
        > [!div class="mx-imgBorder"]
-       > ![Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen](media/subscription-churn-subscriptionhistoryrelationship.PNG "Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen")
+       > ![Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen")
 1. Valitse **Seuraava**.
 1. Yhdistä semanttiset kentät määritteisiin tilaushistoriaentiteetissä ja valitse **Tallenna**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet](media/subscription-churn-subscriptionhistorymapping.PNG "Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet")
+   > ![Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet.](media/subscription-churn-subscriptionhistorymapping.PNG "Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet")
 1. Valitse **Lisää tiedot** **Asiakkaan aktiviteetit** -kohdassa ja valitse entiteetti, joka sisältää asiakkaan aktiviteetin tiedot edellytyksissä kerrotulla tavalla.
 1. Valitse aktiviteettityyppi, joka vastaa määrittämiesi asiakkaan aktiviteetin tyyppiä.  Valitse **Luo uusi** ja anna nimi, jos et näe tarvittavaa aktiviteettityyppiä vastaavaa vaihtoehtoa.
 1. Sinun täytyy määrittää suhde asiakkaan aktiviteetin entiteetistä asiakasentiteettiin.
@@ -101,7 +101,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 1. Yhdistä semanttiset kentät määritteisiin asiakkaan aktiviteetin entiteetissä ja valitse **Tallenna**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
 1. (Valinnainen) Jos tiedossa on muita asiakkaan aktiviteetteja, jotka haluat sisällyttää, toista edellä olevat vaiheet.
    > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen](media/subscription-churn-customeractivitiesmapping.PNG "Asiakkaan aktiviteetit -sivu, jolla näkyvät valitun asiakkaan aktiviteetin entiteetin kenttiin yhdistetyt semanttiset määritteet")
+   > ![Entiteettisuhteen määrittäminen.](media/subscription-churn-customeractivitiesmapping.PNG "Asiakkaan aktiviteetit -sivu, jolla näkyvät valitun asiakkaan aktiviteetin entiteetin kenttiin yhdistetyt semanttiset määritteet")
 1. Valitse **Seuraava**.
 
 ### <a name="set-schedule-and-review-configuration"></a>Määritä aikataulu ja tarkista määritys
@@ -115,7 +115,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 
 1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
    > [!div class="mx-imgBorder"]
-   > ![Omat ennusteet -sivun tarkasteleminen](media/subscription-churn-mypredictions.PNG "Omat ennusteet -sivun tarkasteleminen")
+   > ![Omat ennusteet -sivun tarkasteleminen.](media/subscription-churn-mypredictions.PNG "Omat ennusteet -sivun tarkasteleminen")
 1. Valitse ennuste, jota haluat tarkastella.
    - **Ennusteen nimi:** Ennusteelle luomisen yhteydessä annettu nimi.
    - **Ennustetyyppi:** Ennusteessa käytetyn mallin tyyppi.
@@ -131,7 +131,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
    - **Viimeinen päivitys:** Päivämäärä, jona ennuste päivitti tulokset tulosentiteettiin.
 1. Valitse sen ennusteen vieressä olevat allekkaiset pisteet, jonka tuloksia haluat tarkastella, ja valitse **Näytä**.
    > [!div class="mx-imgBorder"]
-   > ![Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista](media/subscription-churn-verticalellipses.PNG "Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista")
+   > ![Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista.](media/subscription-churn-verticalellipses.PNG "Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista")
 1. Tulossivulla on seuraavat kolme ensisijaista tieto-osaa:
     1. **Opetusmallin suorituskyky:** A, B ja C ovat mahdollisia pistemääriä. Tämä pistemäärä osoittaa ennusteen suorituskyvyn. Sen avulla voit tehdä päätöksen tulosentiteettiin tallennettujen tulosten käyttämisestä.
         - Pistemäärät määritetään seuraavien sääntöjen perusteella:
@@ -139,13 +139,13 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
             - **B** – Kun malli on oikein ennustettu vähintään 50 prosentissa kaikista ennusteista, ja kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on korkeintaan 10 % suurempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
             - **C** – Kun malli on oikein ennustettu vähintään 50 prosentissa kaikista ennusteista, tai kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on pienempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
                > [!div class="mx-imgBorder"]
-               > ![Tarkastele mallin suorituskyvyn tulosta](media/subscription-churn-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
+               > ![Tarkastele mallin suorituskyvyn tulosta.](media/subscription-churn-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
     1. **Vaihtuvuuden todennäköisyys (asiakkaiden määrä):** Asiakasryhmät ennustetun vaihtuvuusriskin perusteella. Nämä tiedot auttavat myöhemmin, jos haluat luoda asiakassegmentin, jolla on suuri vaihtuvuusriski. Tällaiset segmentit auttavat ymmärtämään, missä segmentin jäsenyyden rajan on oltava.
        > [!div class="mx-imgBorder"]
-       > ![Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %](media/subscription-churn-resultdistribution.PNG "Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %")
+       > ![Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %.](media/subscription-churn-resultdistribution.PNG "Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %")
     1. **Tärkeimmät tekijät:** Ennusteen luomisessa otetaan huomioon useita tekijöitä. Kunkin tekijän tärkeys on laskettu mallin luomille yhdistellyille ennusteille. Näiden tekijöiden avulla voit tarkistaa ennusteen tulokset. Tai voit käyttää näitä tietoja myöhemmin ja [luoda segmenttejä](segments.md), joiden avulla voit vaikuttaa asiakkaiden vaihtuvuusriskiin.
        > [!div class="mx-imgBorder"]
-       > ![Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa](media/subscription-churn-influentialfactors.PNG "Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa")
+       > ![Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa.](media/subscription-churn-influentialfactors.PNG "Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa")
 
 ## <a name="manage-predictions"></a>Hallitse ennusteita
 

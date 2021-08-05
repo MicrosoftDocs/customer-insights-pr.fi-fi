@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6667e411a1b56e13105a6b59b7b5d249bc8141ea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596357"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692301"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entiteettirakenteet Common Data Modelissa
 
@@ -24,7 +24,7 @@ ms.locfileid: "5596357"
 
 Tämä on jaettu tietomalli, joka helpottaa sovellusten ja tietointegraattorien välistä yhteistyötä tuottamalla yhtenäisen tietomääritelmän. Common Data model sisältää monipuolisen metatietojärjestelmän, jossa on vakio-entiteettejä, suhteita, hierarkioita, ominaisuuksia ja muuta. Se on peräisin Dynamics 365 -sovelluksista ja se on saatavana avoimena lähdekoodina GitHubissa yli 260 vakioentiteetissä. Suuri sisäisten ja ulkoisten kumppanien järjestelmä tuottaa toimialakohtaisia käsitteitä Common Data Modeliin.
 
-Monet järjestelmät ja ympäristöt soveltavat nykyään Common Data Modelia. Näitä ovat esimerkiksi Power BI -tietovuot ja Azure Data Services. Sitä tuetaan jo Common Data Servicessä, Dynamics 365:ssä, Power Appsissa, Power BI:ssä ja tulevissa Azuren tietopalveluissa, jossa ne keräävät suoraan arvoa [Open Data Initiativeen](https://www.microsoft.com/open-data-initiative).
+Monet järjestelmät ja ympäristöt käyttävät nykyisin Common Data Modelia. Niitä ovat esimerkiksi Power BI:n tiedonkulut ja Azuren tietopalvelut. Sitä tuetaan jo Microsoft Dataversessä, Dynamics 365:ssä, Power Appsissa ja Power BIssä, sekä tulevissa Azure-tietopalveluissa, jotka kerryttävät arvoa suoraan [avointa dataa koskeviin aloitteisiin](https://www.microsoft.com/open-data-initiative).
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insightsin entiteettirakenteet
 
@@ -44,7 +44,7 @@ Lisätietoja on ohjeistuksessa, jossa käsitellään [Customer Insightsin entite
 
 Entiteettejä voi tarkastella [Common Data Modelin taulukossa](https://microsoft.github.io/CDM/). Valitse **Lataa GitHubista** -painike ja valitse **foundationCommon** > **crmCommon** > **solutions** > **customerInsights**, jossa on luettelo Customer Insights -entiteeteistä ja niiden määritelmistä.
 > [!div class="mx-imgBorder"]
-> ![CDM-taulukossa näkyy CustomerActivity-entiteetti](media/CDM-entity-navigator.png "CDM-taulukossa näkyy CustomerActivity-entiteetti")
+> ![CDM-taulukossa näkyy CustomerActivity-entiteetti.](media/CDM-entity-navigator.png "CDM-taulukossa näkyy CustomerActivity-entiteetti")
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

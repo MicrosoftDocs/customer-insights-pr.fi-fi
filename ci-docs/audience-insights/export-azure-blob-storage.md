@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Azure Blob Storage -säilöön
 description: Tietoja yhteyden määrittämisestä ja viennistä Blob-säilöön.
-ms.date: 03/03/2021
+ms.date: 06/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3c19dc6d4956a33a5bd3cea706f8a154198d487f
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: e38fc06a948178fcbc62c08a4cf4816e1d030e79
+ms.sourcegitcommit: 656b1a6cdff37ba4f808311fd0327ab38e02ed13
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976130"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "6318295"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Segmenttiluettelon ja muiden tietojen vieminen Azure Blob Storage -säilöön (esiversio)
 
@@ -31,7 +31,7 @@ Tallenna Customer Insights -tietosi Blob-säilöön, tai käytä sitä tietojesi
 1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Anna **Tilin nimi**, **Tilin avain** ja **Säilö** Blob-tallennustilille.
-    - Lisätietoja Blob-tallennustilatilin nimen ja tiliavaimen löytämisestä on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
+    - Lisätietoja Blob Storage -tilin nimen ja tiliavaimen löytämisestä on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
     - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
 1. Viimeistele yhteys valitsemalla **Tallenna**. 
@@ -40,11 +40,14 @@ Tallenna Customer Insights -tietosi Blob-säilöön, tai käytä sitä tietojesi
 
 Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
 
+> [!IMPORTANT]
+> Jos olet ottanut Azure Blob Storage -tilin pehmeän poistoasetuksen käyttöön, vienti epäonnistuu. Poista pehmeä poisto käytöstä, jos haluat viedä tietoja blob-tiedostoihin. Lisätietoja on kohdassa [Blob-objektin pehmeän poiston ottaminen käyttöön](/azure/storage/blobs/soft-delete-blob-enable.md)
+
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
 1. Luo uusi vienti valitsemalla **Lisää kohde**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Azure Blob Storage -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Azure Blob Storage -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
 1. Valitse tähän kohteeseen vietävien entiteettien vieressä oleva valintaruutu.
 
@@ -53,13 +56,16 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 Viennin tallentaminen ei suorita vientiä heti.
 
 Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.     
+
 Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 Viedyt tiedot tallennetaan määritettyyn Blob-tallennussäilöön. Säilöön luodaan automaattisesti seuraavat kansiopolut:
 
-- Lähde-entiteetit ja järjestelmän luomat entiteetit: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`
+- Lähde-entiteetit ja järjestelmän luomat entiteetit:   
+  `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
   - Esimerkki: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
-- Vietyjen entiteettien model.json-arvo on tasolla %ExportDestinationName%
+ 
+- Vietyjen entiteettien model.json-arvo on tasolla %ExportDestinationName%.  
   - Esimerkki: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

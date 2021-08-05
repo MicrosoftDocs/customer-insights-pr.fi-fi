@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: ameetj
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2eb44604e72b32292f971754d4f8c4fd1988c697
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598335"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555165"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Azuren koneoppimisstudioon (perinteinen) perustuvien mallien käyttäminen
 
@@ -41,7 +41,7 @@ Ensimmäisessä vaiheessa luodaan koneoppimisstudiolle (perinteinen) työtila ja
 
 1. Koneoppimisstudion työtilan koontinäyttö avautuu, kun resurssi on luotu. Valitse **Käynnistä koneoppimisstudio**.
 
-   ![Azuren koneoppimisstudion käyttöliittymä](media/azure-machine-learning-studio.png)
+   ![Azuren koneoppimisstudion käyttöliittymä.](media/azure-machine-learning-studio.png)
 
 ## <a name="work-with-azure-machine-learning-studio"></a>Azuren koneoppimisstudion käyttäminen
 
@@ -55,7 +55,7 @@ Voit nyt luoda uuden kokeilun tai tuoda aiemmin luodun kokeilumallin esimerkkiva
 
 1. Jos luot uuden kokeilun tai käytät valikoiman kokeilumallia, **Tuo tiedot** -ominaisuudet on määritettävä. Siirry tietosi sisältävään Azure Blob -säilöön käyttämällä ohjattua kokemusta tai antamalla tiedot suoraan.  
 
-   ![Azuren koneoppimisstudion kokeilu](media/azure-machine-learning-studio-experiment.png)
+   ![Azuren koneoppimisstudion kokeilu.](media/azure-machine-learning-studio-experiment.png)
 
 1. Voit luoda muodostaa mukautetun käsittelyjakson, joka siistii ja esikäsittelee tiedot, poimii ominaisuudet ja kouluttaa sopivan mallin.
 
@@ -63,15 +63,15 @@ Voit nyt luoda uuden kokeilun tai tuoda aiemmin luodun kokeilumallin esimerkkiva
 
 1. Kun olet tyytyväinen malliin, valitse **Määritä verkkopalvelu** > **Ennakoiva verkkopalvelu**. Tämä vaihtoehto tuo koulutetun mallin ja ominaisuuksien kehitysjakson koulutuskokeilusta ennakoivaan palveluun. Ennakoiva palvelu voi tehdä ennusteita ottamalla käyttöön toisen syötetietojoukon, jossa on koulutuskokeilussa käytetty rakenne.
 
-   ![Ennakoivan verkkopalvelun määrittäminen](media/predictive-webservice-control.png)
+   ![Ennakoivan verkkopalvelun määrittäminen.](media/predictive-webservice-control.png)
 
 1. Kun ennakoiva verkkokokeilu toimii oikein, se voidaan ottaa käyttöön automaattisessa aikataulutuksessa. Verkkopalvelun käyttäminen Customer Insightsin kanssa määritetään valitsemalla **Ota verkkopalvelu käyttöön** > **Ota verkkopalvelu käyttöön [uusi] – esiversio**. [Lisätietoja verkkopalvelun käyttöönottamisesta](/azure/machine-learning/studio/deploy-a-machine-learning-web-service)
 
-   ![Ennakoivan verkkopalvelun käyttöönottaminen](media/predictive-webservice-deploy.png)
+   ![Ennakoivan verkkopalvelun käyttöönottaminen.](media/predictive-webservice-deploy.png)
 
 ## <a name="sample-models-from-the-gallery"></a>Valikoiman esimerkkimallit
 
-Tässä artikkelissa malleissa käytetään kuvitteellista Contoso Hotel -skenaariota. Contoso Hotel kerää seuraavat tiedot:
+Käytämme kuvitteellista Contoso Hotel-skenaariota tämän artikkelin malleille. Contoso Hotel kerää seuraavat tiedot:
 
 - Hotelliyöpymisaktiviteetista koostuvat CRM-tiedot. Tietojoukko sisältää tietojen kunkin rekisteröityneen asiakkaan yöpymispäivämäärät. Siinä on myös tietoja esimerkiksi varauksesta, huonetyypistä ja rahankäytöstä. Tiedot ovat neljän vuoden ajalta tammikuusta 2014 tammikuuhun 2018.
 - Hotellivieraiden asiakasprofiilit. Näissä profiileissa on tietoja kustakin asiakkaasta, kuten nimi, syntymäaika, postiosoite, sukupuoli ja puhelinnumero.
@@ -87,13 +87,13 @@ Vaihtuvuuden määritelmä voi olla erilainen eri skenaarioissa. Tässä esimerk
 
 Kokeilumalli voidaan tuoda valikoimasta. Varmista ensin, että tuot Azure Blob -säilöstä **Hotelliyöpymisaktiviteetti**-, **Asiakastiedot**- ja **Palvelun käyttötiedot** -tiedot.
 
-   ![Vaihtuvuusmallin tietojen tuominen](media/import-data-azure-blob-storage.png)
+   ![Vaihtuvuusmallin tietojen tuominen.](media/import-data-azure-blob-storage.png)
 
 ### <a name="featurization"></a>Ominaisuuksien kehitys
 
 Vaihtuvuuden perusteella määritetään ensin raakaominaisuudet, jotka vaikuttavat selitteeseen. Sen jälkeen nämä raakaominaisuudet käsitellään ominaisuuksiksi, joita voidaan käyttää koneoppimismalleissa. Tiedot integroidaan Customer Insights, joten nämä taulukot voidaan liittää käyttämällä *asiakastunnusta*.
 
-   ![Tuotujen tietojen liittäminen](media/join-imported-data.png)
+   ![Tuotujen tietojen liittäminen.](media/join-imported-data.png)
 
 Vaihtuvuusanalyysimallin muodostamisessa käytettävä ominaisuuksien kehitys voi olla jonkin verran haastavaa. Tieto on aikafunktio, jossa uusi hotelliaktiviteetti kirjataan päivittäin. Ominaisuuksien kehityksen aikana halutaan luoda staattisia ominaisuuksia dynaamisista tiedoista. Tässä tapauksessa hotelliaktiviteetista luodaan useita ominaisuuksista ja liukuvana aikaikkunana on yksi vuosi. Lisäksi laajennetaan luokitellut ominaisuudet, kuten huonetyyppi tai varaustyyppi, erillisiksi ominaisuuksiksi käyttämällä one-hot-koodausta.  
 
@@ -114,7 +114,7 @@ Seuraavaksi valitaan optimaalinen algoritmi. Tässä tapauksessa useimmat ominai
 
 Seuraava kuvassa näkyy Azuren koneoppimisstudion mallin kouluttaminen ja arviointijakso:
 
-![Azuren koneoppimisstudion vaihtuvuusmalli](media/azure-machine-learning-model.png)
+![Azuren koneoppimisstudion vaihtuvuusmalli.](media/azure-machine-learning-model.png)
 
 Lisäksi käytetään **permutaatio-ominaisuuden tärkeys** -tekniikkaa, mikä on tärkeä osa mallin optimointia. Valmiissa malleissa ei ole juuri käsitystä siitä, millainen vaikutus tietyllä ominaisuudella on lopulliseen ennusteeseen. Ominaisuuden tärkeyslaskin laskee mukautetulla algoritmilla yksittäisten ominaisuuksien vaikutuksen tietyn mallin lopputulokseen. Ominaisuuden tärkeys normalisoidaan arvojen +1ja -1 välille. Negatiivinen vaikutus tarkoittaa, että vastaava ominaisuus vaikuttaa yleisen käsityksen vastaisesti tulokseen, minkä vuoksi se pitäisi poistaa mallista. Positiivinen vaikutus ilmaisee, että ominaisuus vaikuttaa merkittävästi ennusteen suuntaan. Nämä arvot eivät ole korrelaatiokertoimia, sillä ne ovat erilaisia mittareita. Lisätietoja on kohdassa [Permutaatio-ominaisuuden tärkeys](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
@@ -148,7 +148,7 @@ Tavoitteeksi määritetään palvelun käytöstä saatavan summan maksimointi ta
 
 Vaihtuvuusmallin tavoin hotellin ServiceCustomerID ja asiakastunnus yhdistetään, jotta asiakastunnuksen perusteella voidaan muodostaa yhdenmukaisia suosituksia.
 
-![Suositusmallin ominaisuuksien kehitys](media/azure-machine-learning-model-featurization.png)
+![Suositusmallin ominaisuuksien kehitys.](media/azure-machine-learning-model-featurization.png)
 
 Tiedot hankitaan kolmesta eri entiteetistä ja ominaisuudet johdetaan niistä. Suositusongelman ominaisuuksien kehitys on erilaista kuin vaihtuvuus- tai CLTV-skenaarioissa. Suositusmalliin tarvitaan tietoja kolmena ominaisuusjoukkona.
 
@@ -156,13 +156,13 @@ Tiedot hankitaan kolmesta eri entiteetistä ja ominaisuudet johdetaan niistä. S
 
 Tuotteita tai palveluja ennustetaan käyttämällä **Train Matchbox Recommender**-algoritmia suositusmallin kouluttamiseen.
 
-![Tuotesuositusalgoritmi](media/azure-machine-learning-model-recommendation-algorithm.png)
+![Tuotesuositusalgoritmi.](media/azure-machine-learning-model-recommendation-algorithm.png)
 
 **Train Matchbox Recommender** -mallin kolmeen syöttöporttiin syötetään koulutuspalvelun käyttötiedot, asiakkaan kuvaus (valinnainen) ja palvelun kuvaus. Malli voidaan pisteyttää kolmella eri tavalla. Yhtä tapaa käytetään arvioimaan mallia, jossa arvioidut nimikkeet sijoitetaan järjestykseen laskemalla NDCG (Normalized Discounted Cumulative Gain) -pistemäärä. Tässä kokeilussa NDCG-pistemäärä on 0,97. Kahdessa muussa vaihtoehdossa malli pisteytetään koko suositeltavan palveluluettelon perusteella tai vain ne nimikkeet pisteytetään, joita käyttäjät eivät ole aiemmin käyttäneet.
 
 Kun koko palveluluettelon suositusten jakautumista tarkastellaan lähemmin, eniten suositeltavia palveluja ovat puhelin-, WiFi- ja kuriiripalvelut. Tämä vastaa sitä, mitä on havaittu palvelujen kulutustietojen jakautumisessa:
 
-![Suositusmallin tulokset](media/azure-machine-learning-model-output.png)
+![Suositusmallin tulokset.](media/azure-machine-learning-model-output.png)
 
 Koko [tuotesuosituskokeilu on saatavana Azure AI Galleryssä.](https://gallery.azure.ai/Experiment/Recommendation-4)
 

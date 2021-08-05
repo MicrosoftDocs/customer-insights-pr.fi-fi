@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596541"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554890"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Common Data Model -kansioon yhdistäminen Azure Data Lake -tilillä
 
@@ -45,7 +45,7 @@ Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemi
 
 1. Voit valita, käytetäänkö todennukseen resurssi- vai tilausperusteista vaihtoehtoa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). Anna **säilön** tiedot ja valitse **Seuraava**.
    > [!div class="mx-imgBorder"]
-   > ![Valintaikkuna, jossa voit lisätä Azure Data Laken uuden yhteyden tiedot](media/enter-new-storage-details.png)
+   > ![Valintaikkuna, jossa voit lisätä Azure Data Laken uuden yhteyden tiedot.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Yhteyden muodostaminen ja tietolähteen luominen edellyttää säilön tai tallennustilin jotakin seuraavaa roolia:
    >  - Tallennustilan Blob-tietojen lukija
@@ -58,11 +58,11 @@ Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemi
 
 1. Näkyviin tulee luettelo valitussa model.json- tai manifest.json-tiedoston käytettävissä olevista entiteeteistä. Voit tarkistaa sen ja valita käytettävissä olevien entiteettien luettelosta. Valitse sitten **Tallenna**. Kaikki valitut entiteetit käsitellään uudesta tietolähteestä.
    > [!div class="mx-imgBorder"]
-   > ![Valintaikkuna, jossa on model.json-tiedostosta saatu entiteettiluettelo](media/review-entities.png)
+   > ![Valintaikkuna, jossa on model.json-tiedostosta saatu entiteettiluettelo.](media/review-entities.png)
 
 8. Määritä, missä tietoyksikköihin tietojen profilointi halutaan ottaa käyttöön ja valitse **Tallenna**. Tietojen profilointi mahdollistaa analytiikan ja muut ominaisuudet. Voit valita koko entiteetin, jolloin kaikki entiteetin määritteet valitaan, tai valita tietyt valitut määritteet. Tietojen profilointi ei ole oletusarvoisesti otettu käyttöön missään entiteetissä.
    > [!div class="mx-imgBorder"]
-   > ![Valintaikkuna, jossa näkyy tietojen profilointi](media/dataprofiling-entities.png)
+   > ![Valintaikkuna, jossa näkyy tietojen profilointi.](media/dataprofiling-entities.png)
 
 9. Kun olet tallentanut valinnat, näkyviin tulee **Tietolähteet**-sivu. Sinun pitäisi nyt nähdä Common Data Model -kansion yhteys tietolähteenä.
 
@@ -81,12 +81,12 @@ Voit päivittää Common Data Model -kansion sisältävän tallennustilin käytt
 
 4. Valinnaisesti voit päivittää **käyttöoikeusavaimen** ja valita **Seuraava**.
 
-   ![Valintaikkuna aiemmin luodun tietolähteen käyttöoikeusavaimen muokkaamiseen ja päivittämiseen](media/edit-access-key.png)
+   ![Valintaikkuna aiemmin luodun tietolähteen käyttöoikeusavaimen muokkaamiseen ja päivittämiseen.](media/edit-access-key.png)
 
 5. Voit myös tehdä päivityksen käyttöoikeusavaimen yhteydessä resurssi- tai tilausperusteiseen yhteyteen. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilö**-tietoja ei voi muuttaa yhteyttä päivitettäessä.
    > [!div class="mx-imgBorder"]
 
-   > ![Valintaikkuna, jossa annetaan Azure Data Laken yhteystiedot olemassa olevaan tallennustiliin](media/enter-existing-storage-details.png)
+   > ![Valintaikkuna, jossa annetaan Azure Data Laken yhteystiedot olemassa olevaan tallennustiliin.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Yhteyden muodostaminen ja tietolähteen luominen edellyttää säilön tai tallennustilin jotakin seuraavaa roolia:

@@ -2,6 +2,8 @@
   href: index.yml
 - name: Tuotteen yleiskatsaus
   href: overview.md
+- name: Luo kokeilu
+  href: audience-insights/get-started-trial.md
 - name: Ympäristön käyttäminen
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Merkityksellisiä tietoja käyttäjäryhmästä
@@ -10,12 +12,10 @@
       href: audience-insights/index.yml
     - name: Ominaisuuksien yleiskatsaus
       href: audience-insights/overview.md
-    - name: Ilmainen kokeiluversio
-      href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Uudet ja päivitetyt toiminnot
       href: audience-insights/whats-new-audience-insights.md
     - name: Luo uusi ympäristö
-      href: audience-insights/home.md
+      href: audience-insights/get-started-paid.md
     - name: Learn-moduulit
       items:
         - name: Tietojen käsitteleminen
@@ -34,8 +34,8 @@
           href: audience-insights/connect-power-query.md
         - name: Common Data Model -kansion lisääminen tietolähteenä
           href: audience-insights/connect-common-data-model.md
-        - name: Hallitun Common Data Service Data Lake -tallennustilan lisääminen
-          href: audience-insights/connect-common-data-service-lake.md
+        - name: Hallitun Dataverse Data Lake -tallennustilan lisääminen
+          href: audience-insights/connect-dataverse-managed-lake.md
         - name: Tietolähteiden lisäävä päivitys
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Reaaliaikainen tietojen käsittely
@@ -76,11 +76,11 @@
           href: audience-insights/enrichment-experian.md
         - name: Rikastaminen mukautetun SFTP-tuonnin avulla
           href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Segmentit ja mittarit
+    - name: Segmentit
       items:
         - name: Segmenttien yleiskatsaus
           href: audience-insights/segments.md
-        - name: Segmenttien ja asiakasryhmien luominen
+        - name: Segmenttien luominen
           href: audience-insights/segment-builder.md
         - name: Mittarien perusteella ehdotetut segmentit
           href: audience-insights/suggested-segments.md
@@ -254,6 +254,8 @@
       items:
         - name: Tapahtumien luominen ja muokkaaminen
           href: engagement-insights/refined-events.md
+        - name: Tunnista aiemmin todennettujen kävijöiden verkkotapahtumat
+          href: engagement-insights/unknown-to-known.md
         - name: Vie tapahtumat
           href: engagement-insights/export-events.md
     - name: Raportoi
@@ -304,7 +306,9 @@
       items:
         - name: Henkilötietojen poistaminen ja vieminen
           href: engagement-insights/delete-export-personal-data.md
+    - name: Alueellinen saatavuus
+      href: engagement-insights/regional-availability.md
     - name: Palvelurajoitukset
       href: engagement-insights/quotas.md
-- name: Ota yhteyttä tukeen
+- name: Yhteyshenkilön tuki
   href: 'https://admin.powerplatform.microsoft.com/support'

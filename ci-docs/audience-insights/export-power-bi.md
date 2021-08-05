@@ -1,7 +1,7 @@
 ---
 title: Power BI -yhdistin
 description: Tietoja Dynamics 365 Customer Insights -yhdistimen käytöstä Power BI:ssä.
-ms.date: 09/21/2020
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: faeb95bd7d2fe3cb220308cdee559b3347c5af54
+ms.sourcegitcommit: f98b6b2058f384365f222d1f9ba0cc9ce801f09d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596035"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6661098"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI -yhdistin (esiversio)
 
@@ -39,7 +39,7 @@ Tietojen visualisointien luominen Power BI Desktopin avulla. Voit luoda lisää 
 
 1. **Siirtyminen**-valintaikkunassa. on luettelo kaikista ympäristöistä, joita voi käyttää. Laajenna ympäristö ja avaa jokin kansioista (entiteetit, mittarit, segmentit, rikastamiset). Avaa esimerkiksi **Entiteetit**-kansio, jotta voit tarkastella kaikkia tuotavia entiteettejä.
 
-   ![Power BI -yhdistintaulukko](media/power-bi-navigator.png "Power BI -yhdistintaulukko")
+   ![Power BI -yhdistintaulukko.](media/power-bi-navigator.png "Power BI -yhdistintaulukko")
 
 1. Valitse sisällytettävien entiteettien valintaruudut ja sitten **Lataa**. Voit valita useita entiteettejä useista ympäristöistä.
 
@@ -68,5 +68,11 @@ Voit tunnistaa ja poistaa kaksoiskappaleiden suhteita.
 3. Poista kaikki tunnistetut suhteiden kaksoiskappaleet.
 
 Kun olet poistanut suhteiden kaksoiskappaleet, yritä määrittää Power BI -yhdistin uudelleen. Ympäristön tulisi nyt olla käytettävissä.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Päivämääräkenttien virheet ladattaessa entiteettejä Power BI Desktopissa
+
+Kun lataat entiteettejä, jotka sisältävät päiväysmuotoisia kenttiä, kuten PP/KK/VVVV, saatat kohdata virheitä, jotka johtuvat virheellisistä aluemuodoista. Tämä ristiriita tapahtuu, kun Power BI Desktop -tiedoston aluekohtaiseksi asetukseksi on määritetty muu kuin englanti (Yhdysvallat), koska käyttäjäryhmätietojen päivämääräkentät tallennetaan Yhdysvaltalaisessa muodossa.
+
+Power BI Desktop -tiedostossa on yksi alueasetus, jota käytetään tietoja noudettaessa. Hakeaksesi nämä päivämääräkentät oikein tulkittuna, määritä BPI-tiedoston aluekohtaiseksi asetukseksi englanti (Yhdysvallat). [Tietoja Power BI -työpöytätiedoston aluekohtaisen asetuksen muuttamisesta](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

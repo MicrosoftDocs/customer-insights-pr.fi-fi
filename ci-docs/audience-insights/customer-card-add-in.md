@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
-ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
+ms.openlocfilehash: 6a7137730ab8cc43bc93daf647d9d55d02d96cd8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/18/2021
-ms.locfileid: "6059584"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692201"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
@@ -25,7 +25,7 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 ## <a name="prerequisites"></a>Edellytykset
 
 - Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
-- Jotta Dynamics 365 -tiedot voidaan yhdistää kohdeyleisön merkistyksellisten tietojen siakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Common Data Service -yhdistimen avulla](connect-power-query.md).
+- Jotta Dynamics 365 -tiedot voidaan yhdistää kohdeyleisön merkistyksellisten tietojen siakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Microsoft Dataverse -yhdistimen avulla](connect-power-query.md).
 - Kaikki Asiakaskortti-apuohjelman Dynamics 365 -käyttäjät [on lisättävä käyttäjiksi](permissions.md) kohdeyleisön merkityksellisissä tiedoissa, jotta tiedot näkyvät heille.
 - [Haku- ja suodatustoiminnot](search-filter-index.md) kohdeyleisön merkityksellisissä tiedoissa vaaditaan, jotta tietojen haku toimii.
 - Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin kohdeyleisön merkityksellisissä tiedoissa:
@@ -50,7 +50,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Valitse **Näyttönimi**-linkki **Dynamics 365 Customer Insights – Asiakaskortti-apuohjelma (esiversio)** -ratkaisulle.
 
    > [!div class="mx-imgBorder"]
-   > ![Näyttönimen valinta](media/select-display-name.png "Näyttönimen valinta")
+   > ![Näyttönimen valinta.](media/select-display-name.png "Näyttönimen valinta")
 
 1. Valitse **Kirjaudu sisään** ja anna sen järjestelmänvalvojatilin tunniste tiedot, jota käytät Customer Insightsin määrittämiseen.
 
@@ -64,7 +64,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
    - Tili yhdistetään valitsemalla asiakasentiteetissä kenttä, joka vastaa tilientiteetin tunnusta.
 
    > [!div class="mx-imgBorder"]
-   > ![Yhteyshenkilön tunnus -kenttä](media/contact-id-field.png "Yhteyshenkilön tunnus -kenttä")
+   > ![Yhteyshenkilön tunnus -kenttä.](media/contact-id-field.png "Yhteyshenkilön tunnus -kenttä")
 
 1. Tallenna asetukset valitsemalla **Tallenna määritys**.
 
@@ -83,7 +83,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Valitse yhteyshenkilölomake, jonka haluat lisätä asiakaskortin ohjausobjekteihin.
 
     > [!div class="mx-imgBorder"]
-    > ![Yhteyshenkilölomakkeen valitseminen](media/contact-active-forms.png "Yhteyshenkilölomakkeen valitseminen")
+    > ![Yhteyshenkilölomakkeen valitseminen.](media/contact-active-forms.png "Yhteyshenkilölomakkeen valitseminen")
 
 1. Voit lisätä ohjausobjektin vetämällä kentän lomake-editorissa **kenttien hallinnasta** kohtaan, johon haluat sijoittaa ohjausobjektin.
 
@@ -110,7 +110,7 @@ Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Voit päivittää uusi
 
 1. Valitse **Ota ratkaisun päivitys käyttöön** toimintorivillä.
 
-   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Ratkaisun päivittäminen Dynamics 365 -sovellusten Mukauttaminen-alueella":::
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Ratkaisun päivittäminen Dynamics 365 -sovellusten Mukauttaminen-alueella.":::
 
 1. Kun olet käynnistänut päivityksen, latausilmaisin näkyy päivityksen valmistumiseen asti. Jos uudempia versioja ei ole, päivitys näyttää virhesanoman.
 

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306024"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650314"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -138,7 +138,7 @@ Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos ky
    - **Vähiten viimeaikaiset**: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
  
    > [!div class="mx-imgBorder"]
-   > ![Kaksoiskappaleiden poistosääntöjen vaihe 1](media/match-selfconflation.png "Kaksoiskappaleiden poistosääntöjen vaihe 1")
+   > ![Kaksoiskappaleiden poistosääntöjen vaihe 1.](media/match-selfconflation.png "Kaksoiskappaleiden poistosääntöjen vaihe 1")
  
 1. Kun entiteetit on valittu ja niiden yhdistämisasetus on määritetty, määritä kaksoiskappaleiden poistosäännöt entiteettitasolla valitsemalla **Lisää sääntö**.
    - **Valitse kenttä** sisältää kaikki entiteetin käytettävissä olevat kentät. Valitse kenttä, jonka haluat tarkistaa kaksoiskappaleiden varalta. Valitse kentät, jotka ovat todennäköisesti yksilöllisiä jokaiselle asiakkaalle. Esimerkiksi sähköpostiosoite tai nimen, postiosoitteen ja puhelinnumeron yhdistelmä.
@@ -146,7 +146,7 @@ Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos ky
    - Määritä lisäehtoja valitsemalla **Lisää ehto**.
  
    > [!div class="mx-imgBorder"]
-   > ![Kaksoiskappaleiden poistosääntöjen vaihe 2](media/match-selfconflation-rules.png "Kaksoiskappaleiden poistosääntöjen vaihe 2")
+   > ![Kaksoiskappaleiden poistosääntöjen vaihe 2.](media/match-selfconflation-rules.png "Kaksoiskappaleiden poistosääntöjen vaihe 2")
 
   Voit luoda entiteetille useita kaksoiskappaleiden poistosääntöjä. 
 
@@ -179,7 +179,9 @@ Siirry kohtaan **Tiedot** > **Yhdistä** > **Täsmäytä** ja aloita prosessi va
 Onnistuneen suorituksen eli yhtenäisen asiakasprofiilientiteetin tulokset ovat **Entiteetit**-sivulla. Yhdistettyä asiakasentiteettiä kutsutaan **Profiilit**-osassa nimellä **Asiakkaat**. Ensimmäinen onnistunut täsmäytetty kohde luo yhtenäisen *Asiakas*-entiteetin. Kaikki myöhemmät vastineet laajentavat tätä entiteettiä.
 
 > [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+> Kun olet suorittanut vastaavuusprosessin, avaa **Tehtävän tiedot** -ruutu valitsemalla prosessin tila. Se antaa yleiskuvan käsittelyajasta, viimeisestä käsittelypäivästä sekä kaikista tehtävään liittyvistä virheistä ja varoituksista. Valitse **Näytä tiedot**, jos haluat nähdä, mitkä entiteetit osallistuivat vastaavuusprosessiin, mitä sääntöjä niihin on sovellettu ja onko päivitysten julkaiseminen onnistunut.  
+> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Porautumispolku, jonka avulla voit käsitellä tehtävän tilalinkin tietoja.":::
 
 ## <a name="review-and-validate-your-matches"></a>Täsmäytysten tarkistaminen ja vahvistaminen
 

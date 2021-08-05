@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72ccb2d86c698939d0ff018b4d36203e793df9ae
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305624"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554844"
 ---
 # <a name="custom-machine-learning-models"></a>Mukautetut koneoppimisen mallit
 
@@ -42,7 +42,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 1. Anna mukautetulle mallille tunnistettava nimi **Nimi**-kentässä.
 
    > [!div class="mx-imgBorder"]
-   > ![Näyttökuva Uusi työnkulku -ruudusta](media/new-workflowv2.png "Näyttökuva Uusi työnkulku -ruudusta")
+   > ![Näyttökuva Uusi työnkulku -ruudusta.](media/new-workflowv2.png "Näyttökuva Uusi työnkulku -ruudusta")
 
 1. Valitse organisaatio, joka sisältää verkkopalvelun **Vuokraaja, joka sisältää verkkopalvelun** -kohdassa.
 
@@ -59,7 +59,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
    > Mukautettu mallityönkulku käyttää heuristiikkaa verkkopalvelun syöttökenttien yhdistämisessä entiteettimääritteisiin kentän nimen ja tietotyypin perusteella. Näkyviin tulee virhe, jos verkkopalvelun kenttää ei voi yhdistää entiteettiin.
 
    > [!div class="mx-imgBorder"]
-   > ![Työnkulun määrittäminen](media/intelligence-screen2-updated.png "Työnkulun määrittäminen")
+   > ![Työnkulun määrittäminen.](media/intelligence-screen2-updated.png "Työnkulun määrittäminen")
 
 1. Määritä seuraavat ominaisuudet **Mallin tulosteparametrit** -vaiheessa:
    - Koneoppimisstudio (perinteinen)
@@ -70,12 +70,12 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
       1. Valitse avattavassa luettelossa eränjakson **Tulostepolun parametrin nimi**.
 
       > [!div class="mx-imgBorder"]
-      > ![Mallin tulosteparametri -ruutu](media/intelligence-screen3-outputparameters.png "Mallin tulosteparametri -ruutu")
+      > ![Mallin tulosteparametri -ruutu.](media/intelligence-screen3-outputparameters.png "Mallin tulosteparametri -ruutu")
 
 1. Valitse vastaava määrite asiakkaat määrittävästä avattavasta **Asiakastunnus tuloksissa** -luettelosta ja valitse sitten **Tallenna**.
 
    > [!div class="mx-imgBorder"]
-   > ![Tulosten liittäminen Asiakastiedot-ruutuun](media/intelligence-screen4-relatetocustomer.png "Tulosten liittäminen Asiakastiedot-ruutuun")
+   > ![Tulosten liittäminen Asiakastiedot-ruutuun.](media/intelligence-screen4-relatetocustomer.png "Tulosten liittäminen Asiakastiedot-ruutuun")
 
 1. Näkyviin tulee **Työnkulku tallennettu** -näyttö, jossa ovat työnkulun tiedot.    
    Azuren automaattianalyysipalvelut -jaksolle määritettiin työnkulku, käyttäjäryhmän merkitykselliset tiedot liitetään jakson sisältävään työtilaan. Käyttäjäryhmän merkityksellisten tietojen rooli Azure-työtilassa on **Osallistuja**.
