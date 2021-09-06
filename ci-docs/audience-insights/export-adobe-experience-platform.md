@@ -1,6 +1,6 @@
 ---
-title: Customer Insights -tietojen vieminen Adobe-ympäristöpalvelimeen
-description: Lisätietoja Adobe Experience Platformin käyttäjäryhmien merkityksellisten tietojen segmenttien käyttämisestä.
+title: Customer Insights -tietojen vieminen Adobe Experience Platform -ratkaisuun
+description: Lue, miten kohdeyleisötietoja käytetään Adobe Experience Platformissa.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,31 +9,31 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: fac976a49b1b5c5485b75e1262135738c913bd2230be7df8aa0ec12c59734053
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305520"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032113"
 ---
-# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insightsin segmenttien käyttö Adobe Experience Platformissa (esiversio)
+# <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Customer Insights -segmenttien käyttäminen Adobe Experience Platformissa (esiversio)
 
-Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen käyttäjä on voinut luoda segmenttejä markkinointikampanjoiden tehostamiseksi kohdistamalla kampanjat liittyviin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
+Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen käyttäjä on voinut luoda segmenttejä markkinointikampanjoiden tehostamiseksi kohdistamalla kampanjat liittyviin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän tietoja Adobe Experience Platformissa ja sovelluksissa, kuten Adobe Campaign Standardissa, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Tässä artikkelissa kuvattujen vaiheiden prosessikaavio.":::
 
 ## <a name="prerequisites"></a>Edellytykset
 
 -   Dynamics 365 Customer Insights -lisenssi
--   Adobe Experience Platform -käyttöoikeus
--   Adobe Campaign Standard -käyttöoikeus
+-   Adobe Experience Platform -lisenssi
+-   Adobe Campaign Standard -lisenssi
 -   Azure Blob -tallennustili
 
 ## <a name="campaign-overview"></a>Kampanjan yleiskatsaus
 
-Katsotaanpa keksityssä esimerkkikampanjassa, miten käyttäjäryhmän merkityksellisten tietojen segmenttejä käytetään Adobe Experience Platformissa.
+Jos haluat lisätietoja siitä, miten voit käyttää segmenttejä käyttäjäryhmätiedoista Adobe Experience Platformissa, tarkastellaanpa fiktiivistä esimerkkikampanjaa.
 
-Oletetaan, että yrityksesi tarjoaa asiakkaillesi kuukausittain tilauspohjaisen palvelun Yhdysvalloissa. Haluat määrittää asiakkaat, joiden tilaukset on määrä uusia seuraavien kahdeksan päivän aikana, mutta jotka eivät ole uusineet tilaustaan. Säilyttääksesi nämä asiakkaat, haluat lähettää heille kampanjatarjouksen sähköpostitse Adobe-ympäristöpalvelimen avulla.
+Oletetaan, että yrityksesi tarjoaa asiakkaillesi kuukausittain tilauspohjaisen palvelun Yhdysvalloissa. Haluat määrittää asiakkaat, joiden tilaukset on määrä uusia seuraavien kahdeksan päivän aikana, mutta jotka eivät ole uusineet tilaustaan. Jos haluat säilyttää nämä asiakkaat, haluat lähettää heille kampanjatarjouksen sähköpostitse Adobe Experience Platformin avulla.
 
 Tässä esimerkissä mainossähköpostikampanja suoritetaan kerran. Tässä artikkelissa ei ole tietoja useammasta kuin yhdestä kampanjan käytön käyttötapauksesta.
 
@@ -105,29 +105,29 @@ Vietyjen entiteettien *model.json*-arvo on tasolla *%ExportDestinationName%*.
 
 Esimerkki: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/ChurnSegmentDemo/model.json
 
-## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Experience Data Model (XDM) -mallin määritteleminen Adobe-ympäristöpalvelimessa
+## <a name="define-experience-data-model-xdm-in-adobe-experience-platform"></a>Määritä kokemustietomalli (XDM) Adobe Experience Platformissa
 
-Ennen kuin käyttäjäryhmän merkityksellisiä tietoja voi käyttää Adobe Experience Platformissa, on määritettävä Experience Data Model -rakenne ja [määritettävä tiedot reaaliaikaista asiakasprofiilia varten](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
+Ennen kuin käyttäjäryhmätietoja voidaan käyttää Adobe Experience Platform -määrityksessä, on määritettävä Kokemustietomallirakenne ja [määritettävä reaaliaikaisen asiakasprofiilin tiedot](https://experienceleague.adobe.com/docs/experience-platform/profile/tutorials/dataset-configuration.html#tutorials).
 
 Tässä on tietoja [XDM:stä](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) ja [rakenteen koostumuksen perusasioista](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#schema).
 
-## <a name="import-data-into-adobe-experience-platform"></a>Tietojen tuominen Adobe-ympäristöpalvelimeen
+## <a name="import-data-into-adobe-experience-platform"></a>Tuo tiedot Adobe Experience Platformen
 
-Nyt kun kaikki on valmista, meidän on tuotava valmiit käyttäjäryhmän tiedot käyttäjäryhmän merkityksellisistä tiedoista Adobe ympäristöpalvelimeen profiilien luontia varten.
+Nyt kun kaikki on valmista, on tuotava valmiit käyttäjäryhmätiedot käyttäjäryhmän merkityksellisistä tiedoista Adobe Experience Platformiin.
 
 Aluksi [luodaan Azure Blob -tallennustilan lähdeyhteys](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/cloud-storage/blob.html#getting-started).    
 
-Kun olet määrittänyt lähdeyhteyden, [määritä tietovirta](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) pilvitallennustilan eräyhteydelle, jotta segmentin tulos tuodaan käyttäjäryhmän Adobeympäristöpalvelimeen.
+Kun olet määrittänyt lähdeyhteyden, [määritä tietovirta](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html#ui-tutorials) pilvitallennustilan eräyhteydelle, jotta segmentin tulos tuodaan käyttäjäryhmätiedoista Adobe Experience Platformiin.
 
-## <a name="create-an-audience-in-adobe-campaign-standard"></a>Luo kohdeyleisö Adobe Campaign Standardissa
+## <a name="create-an-audience-in-adobe-campaign-standard"></a>Luo käyttäjäryhmä Adobe Campaign Standardissa
 
-Voit lähettää sähköpostia tähän kampanjaan käyttämällä Adobe Campaign Standardia. Kun tiedot on tuotu Adobe Experience Platformiin, Adobe Campaign Standardissa on [luotava käyttäjäryhmä](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) Adobe-ympäristöpalvelimen tietojen avulla.
+Voit lähettää sähköpostia tähän kampanjaan käyttämällä Adobe Campaign Standardia. Kun tiedot on tuotu Adobe Experience Platform -ohjelmaan, Adobe Campaign Standardiin on [luotava käyttäjäryhmä](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) Adobe Experience Platformin tietojen perusteella.
 
 
-Opettele määrittämään kohdeyleisö Adobe-ympäristöpalvelimen tietojen perusteella Adobe Campaign Standardissa [segmentin muodostimen avulla](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html).
+Opettele [käyttämään segmentin luontityökalua](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) Adobe Campaign Standardissa käyttäjäryhmän Adobe Experience Platform -tietojen perusteella.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Sähköpostin luominen ja lähettäminen Adobe Campaign Standardilla
 
 Luo sähköpostiviestin sisältö ja [testaa ja lähetä](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) sitten sähköpostiviestisi.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Esimerkki sähköpostista, jossa on tarjous Adobe Campaign Standard -tilauksen uusimisesta.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Esimerkki sähköpostista, jossa on Adobe Campaign Standardin uusimistarjous.":::
