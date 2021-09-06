@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685458"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377784"
 ---
 # <a name="create-and-manage-segments"></a>Segmenttien luonti ja hallinta
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685458"
 > - Sivuruutu määritteiden valitsemista varten on jatkuvasti käytettävissä.
 > - Entiteettisuhteiden polkujen valitseminen.
 > Jos haluat kokeilla uutta segmentinmuodostinta, lähetä sähköpostiviesti, jonka aihe on "Pyyntö uuden segmentinmuodostimen ottamiseksi käyttöön" osoitteeseen cihelp [at] microsoft.com. Sisällytä organisaatiosi nimi ja hiekkalaatikkoympäristön tunnus.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="Segmentin muodostimen elementit." lightbox="media/segment-builder-overview.png":::
+>
+> 1 - Järjestä segmentti sääntöjen ja alisääntöjen avulla. Kukin sääntö tai alisääntö koostuu ehdoista. Ehtojen yhdistäminen loogisiin operaattoreihin
+>
+> 2 - Valitse sääntöä koskeva [suhdepolku](relationships.md) entiteettien välillä. Suhdepolku määrittää, mitä määritteitä ehdossa voi käyttää.
+>
+> 3 - Hallitse sääntöjä ja alisääntöjä. Muuta säännön sijaintia tai poista se.
+>
+> 4 - Ehtojen lisääminen ja oikean kerrosteisuustason muodostaminen alisääntöjen avulla.
+>
+> 5 - Käytä määritettyjä toimintoja yhdistettyihin sääntöihin.
+>
+> 6 - Lisää määriteruudussa käytettävissä olevat entiteettimääritteet tai luo määritteeseen perustuvia ehtoja. Ruudussa näkyy valitun säännön käytettävissä olevien entiteettien ja määritteiden luettelo valitun suhdepolun perusteella.
+>
+> 7 - Voit lisätä määritteitä koskevia ehtoja aiemmin luotuihin sääntöihin ja alisääntöihin tai lisätä ne uuteen sääntöön.
+>
+> 8 - Kumoa muutokset ja tee muutokset uudelleen segmenttiä rakennettaessa.
 
 Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja. Segmenttejä hallitaan **Segmentit**-sivulla. 
 
@@ -147,6 +164,6 @@ Pikasegmenttien avulla voidaan nopeasti luoda yksinkertaisia segmenttejä yhdell
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-[Vie segmentti](export-destinations.md) ja tutustu [asiakaskorttiin](customer-card-add-in.md) ja [yhdistimiin](export-power-bi.md), jotta saat asiakastason tietoja.
+[Vie segmentti](export-destinations.md) ja tutustu [asiakaskorttien integrointiin](customer-card-add-in.md), jotta voit käyttää segmenttejä muissa sovelluksissa.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

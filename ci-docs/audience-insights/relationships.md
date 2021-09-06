@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171160"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035227"
 ---
 # <a name="relationships-between-entities"></a>Entiteettien väliset suhteet
 
@@ -82,7 +82,7 @@ Tämä sivu tarjoaa joukon vaihtoehtoja nykyisille ja uusille suhteille:
 
 ### <a name="explore-the-relationship-visualizer"></a>Tutustu suhteeseen visualisointitehosteena
 
-Suhteen visualisointi näyttää verkkokaavion yhdistettyjen entiteettien välisistä suhteista ja niiden kardinaliteetista.
+Suhteen visualisointi näyttää verkkokaavion yhdistettyjen entiteettien välisistä suhteista ja niiden kardinaliteetista. Se myös visualisoi suhdepolun.
 
 Jos haluat mukauttaa näkymää, voit muuttaa ruutujen sijaintia vetämällä ne kaavioon.
 
@@ -92,6 +92,20 @@ Käytettävissä olevat asetukset:
 - **Vie kuvana**: Tallenna nykyinen näkymä kuvatiedostona.
 - **Vaihda vaaka- tai pystysuuntaiseksi asetteluksi**: muuta entiteettien ja suhteiden asettelu.
 - **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
+
+### <a name="relationship-path"></a>Suhdepolku
+
+Suhdepolku kuvaa entiteetit, jotka liittyvät lähde-entiteetin ja kohde-entiteetin välisiin suhteisiin. Sitä käytetään luotaessa segmenttiä tai mittayksikköä, joka sisältää muita entiteettejä kuin yhdistetyn profiilin entiteetin, ja yhdistetyn profiilin entiteetin tavoittamisessa on useita vaihtoehtoja.
+
+Suhdepolku ilmoittaa järjestelmälle, millä suhteilla yhdistetyn profiilin entiteetti on käytettävissä. Eri suhdepolut voivat tuottaa erilaisia tuloksia.
+
+Esimerkiksi entiteetillä *eCommerce_eCommercePurchases* on seuraavat suhteet yhdistettynä *Asiakas*-entiteettiin:
+
+- eCommerce_eCommercePurchases > Asiakas
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Asiakas
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Asiakas 
+
+Suhdepolku määrittää entiteetit, joita voi käyttää luotaessa yksiköitä tai segmenttejä koskevia sääntöjä. Jos valitset vaihtoehdon, jolla on pisin suhdepolku, tulokset ovat todennäköisesti pienempiä, koska vastaavien tietueiden on kuuluttava kaikkiin entiteetteihin. Tässä esimerkissä asiakkaan on ostettava tavaroita sähköisen kaupankäynnin (eCommerce_eCommercePurchases) kautta myyntipisteestä (POS_posPurchases) ja osallistuttava kanta-asiakasohjelmaamme (loyaltyScheme_loyCustomers). Kun valitset ensimmäisen vaihtoehdon, saat todennäköisesti enemmän tuloksia, koska asiakkaiden on oltava vain yhdessä lisäentiteetissä.
 
 ## <a name="manage-existing-relationships"></a>Olemassa olevien suhteiden hallinta 
 
@@ -105,6 +119,6 @@ Valitse suhde ja valitse jokin seuraavista vaihtoehdoista:
 
 ## <a name="next-step"></a>Seuraava vaihe
 
-Järjestelmän suhteita ja mukautettuja suhteita käytetään [luotaessa segmenttejä](segments.md) sellaisten useiden tietolähteiden perusteella, jotka eivät ole enää siilossa.
+Järjestelmän ja suhteiden avulla [luodaan segmenttejä](segments.md) ja [mittatietoja](measures.md), jotka perustuvat useisiin tietolähteisiin, joita ei enää toimiteta.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vienti Dynamics 365 Marketingiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Dynamics 365 Marketingiin.
-ms.date: 03/03/2021
+ms.date: 08/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
+ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692477"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "7417201"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Käytä segmenttejä Dynamics 365 Marketingissa (esiversio)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Luo [segmenttien](segments.md) avulla kampanjoita ja ota yhteyttä tiettyihin asiakasryhmiin Dynamics 365 Marketingin avulla. Lisätietoja on kohdassa [Dynamics 365 Customer Insightsin segmenttien käyttäminen Dynamics 365 Marketingin kanssa](/dynamics365/marketing/customer-insights-segments)
+Luo [segmenttien](segments.md) avulla kampanjoita ja ota yhteyttä tiettyihin asiakasryhmiin Dynamics 365 Marketingin avulla. Lisätietoja on kohdassa [Dynamics 365 Customer Insightsin segmenttien käyttäminen Dynamics 365 Marketingin kanssa](/dynamics365/marketing/customer-insights-segments).
+
+Jos käytät Dynamics 365 Marketingin uusia ominaisuuksia reaaliaikaiseen asiakassiirtymään Dataverse-organisaatiossa, vakioviennin luominen Dynamics 365 Marketingiin ei ole tarpeen. Yhteyshenkilöt ja segmentit käyttäjäryhmän tiedoista ovat käytettävissä suoraan Dynamics 365 Marketingissa, kun olet yhdistänyt Marketingin ja Customer Insightsin. Ennen kuin poistat aiemmin luodut viennit, tutustu ohjeisiin [miten yhdistää kohdeyleisön tiedot ja Dynamics 365 Marketing -asiakassiirtymän orkestrointi](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Yhteyden edellytykset
 

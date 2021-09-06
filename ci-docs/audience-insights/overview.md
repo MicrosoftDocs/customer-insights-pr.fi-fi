@@ -1,7 +1,7 @@
 ---
 title: Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus
 description: Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus.
-ms.date: 01/18/2021
+ms.date: 08/04/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,16 +10,16 @@ author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 19fc79873d32f268e194c4ebac4cf469a8b9b09f
-ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
+ms.openlocfilehash: 15cc495359af1faefe32225ae490fd7e7b6b08cc7a411e0a9804da6ec704099c
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/12/2021
-ms.locfileid: "6539111"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7034356"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän tietojen yleiskatsaus
 
-Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastuntemusta. Luo kokonaisvaltainen asiakasnäkymä yhdistämällä tietoja eri tapahtuma-, toiminto- ja havaintolähteistä. Voit muodostaa näiden merkityksellisten tietojen avulla asiakaskeskeisiä kokemuksia ja prosesseja. Asiakastietojen yhtenäistäminen ja ymmärtäminen sekä älykkäiden merkityksellisten tietojen ja toimintojen saaminen niiden avulla.
+[Käyttäjäryhmätiedot, Dynamics 365 Customer Insightsin ominaisuus](https://dynamics.microsoft.com/ai/customer-insights/audience-insights-capability/), auttaa sinua rakentamaan syvemmän ymmärryksen asiakkaistasi. Luo kokonaisvaltainen asiakasnäkymä yhdistämällä tietoja eri tapahtuma-, toiminto- ja havaintolähteistä. Voit muodostaa näiden merkityksellisten tietojen avulla asiakaskeskeisiä kokemuksia ja prosesseja. Asiakastietojen yhtenäistäminen ja ymmärtäminen sekä älykkäiden merkityksellisten tietojen ja toimintojen saaminen niiden avulla.
 
 ## <a name="main-benefits"></a>Tärkeimmät edut 
 
@@ -34,9 +34,9 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
 
 - **Liiketoimintaprosessien ja personoitujen asiakaskokemusten tehostaminen**
 
-  - Personoidun osallistamisen edistäminen kanavasta riippumatta. Tällä tavoin markkinoinnin, myynnin ja palvelutoimintojen työntekijät saavat käyttöönsä valmiit, kontekstisidonnaiset asiakastietoja ja räätälöidyt asiakasprofiilikortit päivittäin käyttämissään liiketoimintasovelluksissa.
-  - Asiakaskeskeisten kokemusten ja prosessien automatisointi mukautettavien profiilien, liiketoiminnan mittarien ja segmenttien perusteella.
-  - [Microsoft Power Platformiin](https://powerplatform.microsoft.com/) pohjautuvien toimialakohtaisten kokemusten ottaminen käyttöön ja laajentaminen. Sovellusten muodostaminen nopeasti upotettujen merkityksellisten tietojen avulla käyttämällä PowerAppsin tehokasta vähäisen koodin menetelmää.  
+  - Edistä henkilökohtaista sitoutumista eri kanavien kautta - vahvista markkinointi-, myynti- ja palveluammattilaisia. Voit käyttää valmiiksi suunniteltuja, merkityksellisiä tietoja ja räätälöityjä asiakasprofiilikortteja, jotka integroituvat jo käytössä oleviin yrityssovelluksiin.
+  - Kokemusten ja prosessien automatisointi mukautettavien profiilien, liiketoiminnan mittarien ja segmenttien perusteella.
+  - [Microsoft Power Platformiin](https://powerplatform.microsoft.com/) pohjautuvien toimialakohtaisten kokemusten ottaminen käyttöön ja laajentaminen. Sovellusten muodostaminen nopeasti upotettujen merkityksellisten tietojen avulla käyttämällä Power Appsin tehokasta vähäisen koodin menetelmää.  
 
 ## <a name="key-audiences"></a>Tärkeimmät käyttäjäryhmät
 
@@ -50,13 +50,18 @@ Käyttäjäryhmän merkityksellisillä tiedoilla voidaan syventää asiakastunte
 
 - **Yrityskäyttäjät:**
 
-  - Merkityksellisiä tietoja kattavista asiakasprofiileista ja asiakassiirtymänäkymistä.
+  - Merkityksellisiä tietoja kattavista asiakasprofiileista ja asiakassiirtymistä.
   - Kattava näkymä Dynamics 365:n liiketoimintaprosesseissa oleviin tietoihin valmiiden pakettien avulla.
 
 - **Liiketoiminta-analyytikot:**
 
   - Mukautettavien profiilien muodostaminen, mittarien määrittäminen, segmenttien luominen ja ennakoivan analytiikan hyödyntäminen siten, että niillä saada yrityskohtainen kattava näkymä asiakkaasta.  
-  - Voit käsitellä tietoja käyttämällä useita Microsoftin ja kolmannen osapuolen sovelluksen tai ohjelmointirajapintojen valmiita yhdistimiä.
+  - Voit käsitellä merkityksellisiä tietoja käyttämällä monia Microsoftin ja muiden valmistajien sovelluksia tai ohjelmointirajapintoja.
 
+## <a name="pricing-and-licensing"></a>Hinnoittelusta ja käyttöoikeudet
+
+Customer Insights -asiakkaalla on käyttöoikeus vuokraajaa kohden, ja se sisältää useita ominaisuuksia. Oikeutettu kapasiteetti sisältää joukon profiileja, päivittäisiä päivityksiä, Power Platform -pyyntöjä ja kaksi ympäristöä. Voit ostaa lisäkapasiteettia ja käyttöoikeutta, jos haluat kasvattaa oletuskiintiötä. 
+- Yksityiskohtaiset kapasiteetit ja oikeudet: [Dynamics 365:n käyttöoikeusopas](https://go.microsoft.com/fwlink/?LinkId=866544)
+- Hinnoittelun yleiskatsaus: [Dynamics 365 -hinnoittelu](https://dynamics.microsoft.com/pricing/#CustomerDataPlatform)
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
