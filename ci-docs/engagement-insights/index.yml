@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: Vuorovaikutuksen merkitykselliset tiedot -ominaisuus (esiversio) Dynamics 365 Customer Insightsissa
+summary: Kerää tietoja verkkosivustojasi varten. Hanki tietoja asiakkaiden vuorovaikutuksista ja käytöstä sivustoillasi vuorovaikutteisesti. Käytä vuorovaikutuksen merkityksellisten tietojen ja käyttäjäryhmän merkityksellisten tietojen välistä syvää integrointia monipuolistamaan käyttäytymisen analytiikkaa asiakasprofiiliraporttien avulla. Rikasta asiakasprofiileja verkkoaktiviteetilla, jotta saat reaaliaikaisia käyttäytymistietoja merkityksellisten asiakastietojen lisäksi. Muunna liiketoimintasi siten, että voit välittömästi hyödyntää asiakastietojasi.
+metadata:
+  title: Vuorovaikutuksen merkityksellisten tietojen (esiversio) ohjeet
+  description: Ohjekeskus, jossa on keskeisiä vuorovaikutuksen merkityksellisiin tietoihin liittyviä linkkejä.
+  ms.service: customer-insights
+  ms.subservice: engagement-insights
+  ms.topic: hub-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.reviewer: mhart
+  ms.date: 07/30/2021
+  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.translationtype: HT
+  ms.contentlocale: fi-FI
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036234"
+landingContent:
+- title: Tietoja
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Ominaisuuksien yleiskatsaus
+      url: overview.md
+    - text: Termit ja käsitteet
+      url: glossary.md
+    - text: Löydä merkitykselliset tiedot
+      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+- title: Perehdytys
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Aloitusopas
+      url: get-started.md
+    - text: Luo työtila
+      url: create-workspace.md
+    - text: Sivuston varustaminen mittareilla
+      url: instrument-website.md
+- title: Raportoi
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Näytä raportit
+      url: view-reports.md
+    - text: Luo mukautettuja raportteja
+      url: custom-reports.md
+    - text: Yhtenäistettyjen profiiliraporttien näyttäminen
+      url: profile-reports.md
+    - text: Suppiloraporttien luominen
+      url: funnel-reports.md
+- title: Tapahtumat
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Luo tarkennettuja tapahtumia
+      url: refined-events.md
+    - text: Vie tapahtumat
+      url: export-events.md
+    - text: Henkilötietojen poistaminen ja vieminen
+      url: delete-export-personal-data.md
+- title: Kehittäjien resurssit
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Kehittäjien resurssit
+      url: developer-resources.md
+    - text: WebSDK-näyte
+      url: websdk-sample.md
+    - text: Kehittyneet SDK:n verkkosovelluksen skenaariot
+      url: advanced-SDK-implementation.md
+    - text: Android SDK:n esimerkki
+      url: get-started-android.md
+    - text: iOS SDK:n esimerkki
+      url: get-started-ios.md
+- title: Hallinto
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Ympäristöjen ja työtilojen hallinta
+      url: manage-environments-workspaces.md
+    - text: Muodosta yhteys käyttäjäryhmien merkityksellisiin tietoihin
+      url: configure-connections.md
+    - text: Evästeiden ja käyttäjän suostumuksen hallinta
+      url: user-consent-storage.md
