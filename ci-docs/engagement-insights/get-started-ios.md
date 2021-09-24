@@ -4,17 +4,17 @@ description: Lisätietoja iOS SDK:n mukauttamisesta ja suorittamisesta
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 06/23/2021
+ms.date: 09/15/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: de8291fc429ae6433301a47bfdf9a3271b1b77294fd58448c7aa6bd0783edc97
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f05929435eeee9cf3f891ab18842c5861e39d5ba
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036869"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494226"
 ---
 # <a name="get-started-with-the-ios-sdk"></a>iOS SDK:n käytön aloittaminen
 
@@ -45,11 +45,36 @@ Aloita prosessi valitsemalla käsiteltävä työtila. Valitse sitten iOS-mobiili
 
 - Jos sinulla ei ole vielä työtilaa, valitse **Uusi työtila** ja luo [uusi työtila](create-workspace.md) ohjeiden mukaan.
 
+- Kun työtila on luotu, siirry kohtaan **Hallinta** > **Työtila** ja valitse **Asennusopas**.
+
 ## <a name="configure-the-sdk"></a>SDK:n määrittäminen
 
-Kun olet ladannut SDK:n, voit käyttää sitä Xcoden avulla tapahtumien käyttöönotossa ja määrittämisessä.
+Kun olet ladannut SDK:n, voit käyttää sitä Xcoden avulla tapahtumien käyttöönotossa ja määrittämisessä. Tapoja tehdä on kaksi
 
-1. Kun työtila on luotu, siirry kohtaan **Hallinta** > **Työtila** ja valitse **Asennusopas**.
+### <a name="option-1-using-cocoapods-recommended"></a>Vaihtoehto 1: CocoaPodsin käyttäminen (suositellaan)
+CocoaPods on Swift- ja Objective-C Cocoa -projektien riippuvuuksienhallintaohjelma. Sen käyttö helpottaa sitoutumistietojen SDK:n integrointia iOS:lle. CocoaPodsissa voit myös päivittää sitoutumistiedot SDK:n uusimpaan versioon. Tämän avulla voit käyttää CocoaPodsia integroidaksesi sitoutumistietojen SDK:n Xcode-projektiisi. 
+
+1. Asenna CocoaPods. 
+
+1. Luo projektisi päähakemistoon uusi tiedosto nimeltä Podfile, ja lisää siihen seuraavat lauseet. Korvaa YOUR_TARGET_PROJECT_NAME Xcode-projektin nimellä. 
+```objectivec
+platform :ios, '9.0'  
+
+ target '${YOUR_TARGET_PROJECT_NAME}' do 
+
+     use_frameworks!   
+
+     pod 'EIObjC.framework.debug' 
+
+     pod 'EIObjC.framework.release' 
+
+ end 
+```
+Edellä olevassa määrityksessä on sekä SDK:n debug- että julkaisuversiot. Valitse, kumpi on paras projektillesi.
+
+1. Asenna tiedosto suorittamalla seuraava komento: `pod install --repo-update `
+
+### <a name="option-2-using-download-link"></a>Vaihtoehto 2: Latauslinkin käyttäminen
 
 1. Lataa [vuorovaikutuksen merkityksellisten tietojen iOS SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-ios-sdk.zip) ja aseta tiedosto `EIObjC.xcframework` kansioon `Frameworks`.
 

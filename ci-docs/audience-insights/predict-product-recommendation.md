@@ -1,20 +1,20 @@
 ---
 title: Tuotesuosituksen ennuste
 description: Ennusta tuotteet, joita asiakas todennäköisesti ostaa tai joiden kanssa asiakas on tekemisissä.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034952"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494535"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Tuotesuosituksen ennuste (esiversio)
 
@@ -89,23 +89,24 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 ### <a name="add-required-data"></a>Lisää pakolliset tiedot
 
-1. Valitse **Lisää tiedot** **Asiakkaan tapahtumahistoria** -kohdassa ja valitse entiteetti, josta saadaan tapahtuma- tai ostohistorian tiedot [edellytyksissä](#prerequisites) kuvatulla tavalla.
+1. Valitse **Lisää tiedot** ja valitse sitten sivuruudusta aktiviteetin tyyppi, joka sisältää tarvittavat tapahtuma- tai ostohistoriatiedot.
 
-1. Yhdistä semanttiset kentät määritteisiin ostohistoriaentiteetissä ja valitse **Seuraava**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen.](media/product-recommendation-purchasehistorymapping.PNG "Ostohistoria-sivulla näkyvät semanttiset määritteet, jotka on yhdistetty valitun ostohistoriaentiteetin kenttiin")
+1. Valitse **Valitse aktiviteetit** -kohdassa aktiviteetit, jotka haluat kohdistaa laskutoimitukseen valitusta aktiviteetista.
 
-1. Jos alla olevia kenttiä ei ole täytetty, määritä ostohistoriaentiteetin suhde *asiakasentiteettiin*.
-    1. Valitse **Ostohistorian entiteetti**.
-    1. Valitse **kenttä**, joka määrittää asiakkaan ostohistorian entiteetissä. Sen on liityttävä ensisijaisen asiakkaan tunnukseen *asiakasentiteetissä*.
-    1. Valitse **Asiakasentiteetti**, joka vastaa ensisijaista asiakasentiteettiä.
-    1. Anna suhdetta kuvaava nimi.
-       > [!div class="mx-imgBorder"]
-       > ![Ostohistoriasivu, jossa näkyy suhteen luonti asiakkaaseen](media/model-purchase-join.png "Ostohistoriasivu, jossa näkyy suhteen luominen asiakkaaseen")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sivuruutu, jossa näkyy tiettyjen aktiviteettien valitseminen semanttisen tyypin perusteella.":::
+
+1. Jos et ole vielä yhdistänyt aktiviteettia semanttiseen tyyppiin, valitse **Muokkaa**. Ohjattu kokemus semanttisten aktiviteettien yhdistämiseksi avautuu. Yhdistä tietosi valitun toimintotyypin vastaaviin kenttiin.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sivun asetusaktiviteetin tyyppi.":::
+
+1. Kun aktiviteetti on yhdistetty vastaavaan semanttiseen tyyppiin, jatka valitsemalla **Seuraava** 
+ 
+1. Yhdistä semanttiset määritteet kenttiin, jotka tarvitaan mallin suorittamiseen.
 
 1. Valitse **Tallenna**.
 
 1. Valitse **Seuraava**.
+
 
 ### <a name="configure-product-filters"></a>Tuotesuodattimien määritys
 

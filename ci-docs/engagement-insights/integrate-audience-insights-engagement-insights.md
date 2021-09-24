@@ -1,19 +1,19 @@
 ---
 title: Linkin luominen kohdeyleisön ja sitoutumistietojen välille
 description: Luomalla aktiivisen linkin käyttäjäryhmätietojen ja sitoutumistietojen välille voit mahdollistaa tietojen kaksisuuntaisen jakamisen.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461009"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487103"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Linkin luominen kohdeyleisön ja sitoutumistietojen välille
 
@@ -26,14 +26,14 @@ Käyttämällä yhtenäisiä profiileja ja segmenttejä saat käyttäjäryhmäti
 ## <a name="prerequisites"></a>Edellytykset
 
 - Käyttäjäryhmätiedot on tallennettava Azure Data Lake Storage -tilillesi tai [Microsoft Dataversen](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;hallitsemaan Data Lake -tallennustilaan. 
-
+- Käyttäjäryhmätietojen tulisi olla liitetty Dataverse-ympäristöön. Jos ympäristö käyttää myös Dataverseä tietojen tallennustilana, varmista, että valitset **Ota tietojen jakaminen käyttöön** -asetuksen käyttäjäryhmän merkityksellisissä tiedoissa. Lue lisätietoja kohdasta [Maksetun ympäristön luominen ja määrittäminen kohdeyleisön merkityksellisissä tiedoissa](../audience-insights/get-started-paid.md).
 - Tarvitset järjestelmänvalvojan oikeudet sekä sitouttamistieto- että käyttäjäryhmän tietoympäristöihin.
-
 - Linkitettyjen ympäristöjen on oltava samalla maantieteellisellä alueella.
 
 > [!NOTE]
 > - Jos käyttäjäryhmätiedot-tilauksesi on kokeiluversio, joka käyttää käyttäjäryhmätietoja sisäisesti hallitussa Data Lake -tallennustilassa, ota yhteyttä osoitteeseen [pirequest@microsoft.com](mailto:pirequest@microsoft.com) saadaksesi apua. 
-> - Jos käyttäjäryhmän tietoympäristö käyttää omaa Azure Data Lake Storageasi tietojen tallentamiseen, sinun on lisättävä tallennustilatiliisi sitouttamistietojen Azure-palvelun pääkäyttäjä. Lisätietoja on kohdassa [Yhteyden muodostaminen Azure Data Lake Storage -tiliin, jolla on Azure-palvelun käyttäjäryhmätietoja](../audience-insights/connect-service-principal.md). Myös käyttäjäryhmätietojen on oltava liitetty [Dataverse-ympäristöön](../audience-insights/get-started-paid.md). 
+> - Jos käyttäjäryhmän tietoympäristö käyttää omaa Azure Data Lake Storageasi tietojen tallentamiseen, sinun on lisättävä tallennustilatiliisi sitouttamistietojen Azure-palvelun pääkäyttäjä. Lisätietoja on kohdassa [Yhteyden muodostaminen Azure Data Lake Storage -tiliin, jolla on Azure-palvelun käyttäjäryhmätietoja](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Ympäristölinkin luominen
 
@@ -75,6 +75,7 @@ Linkitettyäsi ympäristöt voit valita valinnaisia ominaisuuksia linkitettyihin
 
    > [!IMPORTANT]
    > Jos et lisää käyttäjiä erikseen tässä vaiheessa, tiedot piilotetaan käyttäjiltä sitoutumistiedoissa.
+   > Jotta käyttäjäryhmätietoja ilmestyy sitoutumistietoihin, sinun tulee ensin [suorittaa yhdistämis- ja jatkoprosessit](../audience-insights/merge-entities.md). Myöhemmät prosessit ovat tärkeitä, koska ne luovat ainutlaatuisen taulukon, joka valmistelee käyttäjäryhmien segmentit jaettavaksi sitoutumistietojen kanssa. (Jos järjestelmä päivitetään, se sisältää automaattisesti jatkoprosessit.)
 
 1. Tarkista valinta ja valitse sitten **Valmis**.
 

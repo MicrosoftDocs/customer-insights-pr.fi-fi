@@ -14,8 +14,14 @@
       href: audience-insights/overview.md
     - name: Uudet ja päivitetyt toiminnot
       href: audience-insights/whats-new-audience-insights.md
-    - name: Luo uusi ympäristö
-      href: audience-insights/get-started-paid.md
+    - name: Aloitusopas
+      items:
+        - name: Pikaopas
+          href: audience-insights/get-started.md
+        - name: Luo uusi ympäristö
+          href: audience-insights/get-started-paid.md
+        - name: Tutustu käyttäjäryhmän merkityksellisiin tietoihin
+          href: audience-insights/home.md
     - name: Learn-moduulit
       items:
         - name: Tietojen käsitteleminen
@@ -68,6 +74,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Parannetut osoitteet
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Azure Mapsin rikastaminen
+          href: audience-insights/enrichment-azure-maps.md
         - name: Tietojen rikastaminen HERE Technologiesin avulla
           href: audience-insights/enrichment-here.md
         - name: Täydennä Leadspacen avulla
@@ -230,21 +238,15 @@
           href: audience-insights/apis.md
         - name: Ohjelmointirajapintaviitteet
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-    - name: Palvelurajoitukset
-      href: audience-insights/service-limits.md
-    - name: GDPR-asetuksen DSR-pyynnöt
-      href: audience-insights/gdpr.md
-- name: Seurannan merkityksellisiä tietoja (esiversio)
+- name: Vuorovaikutuksen merkitykselliset tiedot (esiversio)
   items:
     - name: Ohjekeskus
       href: engagement-insights/index.yml
     - name: Ominaisuuksien yleiskatsaus
       href: engagement-insights/overview.md
-    - name: Ilmainen kokeiluversio
-      href: 'https://pi.dynamics.com/'
     - name: Aloitusopas
       items:
-        - name: Aloitusopas
+        - name: Pikaopas
           href: engagement-insights/get-started.md
         - name: Luo työtila
           href: engagement-insights/create-workspace.md
@@ -300,18 +302,10 @@
           href: engagement-insights/user-roles.md
         - name: Ympäristöjen ja työtilojen hallinta
           href: engagement-insights/manage-environments-workspaces.md
-        - name: Yhteyksien määrittäminen
-          href: engagement-insights/configure-connections.md
         - name: Evästeiden ja käyttäjän suostumuksen hallinta
           href: engagement-insights/user-consent-storage.md
-    - name: Yleinen tietosuoja-asetus
-      items:
-        - name: Henkilötietojen poistaminen ja vieminen
-          href: engagement-insights/delete-export-personal-data.md
     - name: Alueellinen saatavuus
       href: engagement-insights/regional-availability.md
-    - name: Palvelurajoitukset
-      href: engagement-insights/quotas.md
 - name: Integroi käyttäjäryhmä- ja sitoutumistiedot
   items:
     - name: Yhdistä käyttäjäryhmätiedot ja sitoutumistiedot
@@ -320,5 +314,9 @@
       href: engagement-insights/integrate-audience-insights-segments.md
     - name: Käyttäytymistietojen jakaminen demografisten dimensioiden avulla
       href: engagement-insights/curate-dimensions.md
+- name: Palvelurajoitukset
+  href: service-limits.md
+- name: DSR-oikeudet ja -pyynnöt
+  href: dsr-rights-requests.md
 - name: Tukipyyntö
-  href: 'https://dynamics.microsoft.com/en-us/support/'
+  href: 'https://dynamics.microsoft.com/support/'

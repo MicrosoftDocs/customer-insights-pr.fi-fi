@@ -1,24 +1,23 @@
 ---
-title: Käyttäjäryhmän merkityksellisten tietojen tuetut kielet
+title: Tuetut kieletDynamics 365 Customer Insightsissa
 description: Tietoja kielituesta ja sen määrittäminen.
-ms.date: 02/26/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
-ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e9161ebbfdf3ae6c48c12cdf7515b77ca49ae8055ae9a69f9ec314bc1247aeaf
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f80c3019df9b5d82273842ca6f6f18bef0239687
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035135"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483338"
 ---
-# <a name="supported-languages-for-audience-insights-capability"></a>Käyttäjäryhmän merkityksellisten tietojen kielien tukiominaisuus
+# <a name="supported-languages-for-dynamics-365-customer-insights"></a>Tuetut kieletDynamics 365 Customer Insightsissa
 
-Dynamics 365 Customer Insightsin käyttäjäryhmän merkitykselliset tiedot on käännetty useille kielille. Seuraavassa luettelossa on saatavilla olevia kieliä ja tietoja siitä, mitä on käännetty. Saat lisätietoja myös kieliasetusten muuttamisesta. 
+Dynamics 365 Customer Insights on käännetty useille kielille. Seuraavassa luettelossa on saatavilla olevia kieliä ja tietoja siitä, mitä on käännetty. Saat lisätietoja myös kieliasetusten muuttamisesta. 
 
 ## <a name="languages"></a>Kielivaihtoehdot
 
@@ -69,7 +68,7 @@ Dynamics 365 Customer Insightsin käyttäjäryhmän merkitykselliset tiedot on k
 
 ## <a name="whats-translated"></a>Käännökset
 
-Sovellus käyttää kieliasetuksia näyttämään elementit, kuten valikon, selitetekstin ja järjestelmän sanomat, ensisijaisella kielellä.
+Customer Insights käyttää kieliasetuksia näyttämään elementit, kuten valikon, selitetekstin ja järjestelmäsanomat, ensisijaisella kielellä.
 
 Koska useimmat ominaisuudet perustuvat tietoihisi, jotkin kohteet säilyvät alkuperäisellä kielellä. Esimerkkejä:
 

@@ -1,7 +1,7 @@
 ---
 title: Entiteettien yhdistäminen tietoja yhtenäistettäessä
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
-ms.date: 05/10/2021
+ms.date: 09/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6e64154dc58f679d13033fa55a60cd0c306f62f31548b8ce98ea1ed5f423b3e9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034998"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494315"
 ---
 # <a name="merge-entities"></a>Entiteettien yhdistäminen
 
@@ -76,17 +76,40 @@ Poista määrite käytöstä yhdistetyssä asiakasprofiilissa. Jos kenttää kä
 
 Valitse **Yhdistä**-sivulla **Käytöstä poistetut kentät** nähdäksesi luettelon kaikista käytöstä poistetuista kentistä. Tämän ruudun avulla käytöstä poistettuja kenttiä voidaan lisätä takaisin.
 
+## <a name="edit-a-merged-field"></a>Muokkaa yhdistettyä kenttää
+
+1.  Valitse yhdistetty kenttä.
+
+1.  Valitse **Näytä lisää** ja valitse sitten **Muokkaa**.
+
+1.  Määritä, miten kentät yhdistetään kolmesta vaihtoehdosta:
+    - **Tärkeys**: määrittää voittajan arvon osallistuvien kenttien tärkeyden mukaan. Se on yhdistämisen oletusasetus. Määritä tärkeysjärjestys valitsemalla **Siirrä ylöspäin/alaspäin**.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Tärkeysasetus yhdistämiskenttien valintaikkunassa."::: 
+    - **Uusin**: määrittää voittajan arvon uusimpien arvojen perusteella. Tasaus edellyttää päivämäärää tai numeerista kenttää jokaiselle yhdistämiskenttien osallistujaentiteetille.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Viimeaikaisuusasetus yhdistämiskenttien valintaikkunassa.":::
+    - **Vähiten uusin**: määrittää voittajan arvon vähiten uusien arvojen perusteella. Tasaus edellyttää päivämäärää tai numeerista kenttää jokaiselle yhdistämiskenttien osallistujaentiteetille.
+
+1.  Voit lisätä yhdistämisprosessiin osallistumista varten lisää kenttiä.
+
+1.  Voit nimetä yhdistetyn kentän uudelleen.
+
+1. Ota muutokset käyttöön valitsemalla **Valmis**.
+
+1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
+
 ## <a name="manually-combine-fields"></a>Yhdistä kentät manuaalisesti
 
 Määritä yhdistetty määrite manuaalisesti. 
 
 1. Valitse **Yhdistä**-sivulla **Yhdistä kentät**.
 
-1. Anna **Nimi** ja **Tulostekentän nimi**.
+1. Määritä yhdistämisen voittajakäytäntö avattavassa **Yhdistä kentät** -luettelossa.
 
 1. Valitse lisättävä kenttä. Valitse **Lisää kenttiä** yhdistääksesi useampia kenttiä.
 
-1. Vahvista käytöstä poisto.
+1. Anna **Nimi** ja **Tulostekentän nimi**.
+
+1. Ota muutokset käyttöön valitsemalla **Valmis**.
 
 1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
 
@@ -103,6 +126,27 @@ Jotkin entiteetit sisältävät enemmän tietoja kuin toiset. Jos entiteetti sis
 1. Vahvista muutos.
 
 1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
+
+## <a name="configure-customer-id-generation"></a>Määritä asiakastunnuksen luonti 
+
+Kun olet määrittänyt yhdistämiskentät, voit määrittää, miten CustomerId-arvot luodaan, yksilölliset asiakasprofiilin tunnukset. Tietojen yhdistämisprosessin yhdistämisvaihe luo yksilöllisen asiakasprofiilin tunnisteen. Tunnus on *Asiakas*-entiteetin CustomerId-tunnus, joka on tulosta tietojen yhdistämisprosessista. 
+
+Asiakas-entiteetin CustomerId-tunnus perustuu ensisijaisen arvon hajautusarvo, joka ei-tyhjäarvoisen voittajan perusavaimilla on. Nämä avaimet tulevat vastine- ja yhdistämisvaiheessa käytetyistä entiteeteistä, ja vastinejärjestys vaikuttaa niihin. Luotu CustomerID voi siis muuttua, kun perusavaimen arvo muuttuu vastinetilauksen ensisijaisessa entiteetissä. Tästä syystä perusavaimen arvo ei aina vastaa samaa asiakasta.
+
+Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymisen.
+
+**Määritä yksilöivä asiakastunnus**
+
+1. Siirry kohtaan **Yhdenmukaista** > **Yhdistä**.
+
+1. Valitse **Yhdistä**-sivulla **Avaimet**-välilehti. 
+
+1. Vie hiiren osoitin **CustomerId**-riville ja valitse **Määritä**-vaihtoehto.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Tunnuksen luonnin mukauttamisen hallinta.":::
+
+1. Valitse enintään viisi kenttää, jotka sisältävät yksilöllisen asiakastunnuksen ja ovat vakaampia. Tietueet, jotka eivät vastaa kokoonpanoa, käyttävät sen sijaan järjestelmän luomaa määritystunnusta.  
+
+1. Ota muutokset käyttöön valitsemalla **Valmis** ja suorita yhdistämisprosessi.
 
 ## <a name="run-your-merge"></a>Suorita yhdistäminen
 

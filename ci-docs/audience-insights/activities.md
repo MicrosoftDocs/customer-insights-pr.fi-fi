@@ -1,20 +1,20 @@
 ---
 title: Asiakasaktiviteetit
-description: Asiakasaktiviteettien määrittäminen ja niiden näyttäminen asiakkaan aikajanalla.
-ms.date: 04/07/2021
+description: Määritä asiakasaktiviteetit ja tarkastele niitä asiakasprofiilien aikajanalla.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033627"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494407"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
@@ -60,12 +60,15 @@ Tietolähteet voivat sisältää entiteettejä, joissa on tapahtuma- ja aktivite
       - **Lisätietoja**: Kenttä, jossa on tähän aktiviteettiin liittyviä tietoja.
       - **Kuvake**: kuvake, joka parhaiten edustaa tätä aktiviteettityyppiä.
       - **WWW-osoite**: Kenttä, joka sisältää tätä aktiviteettia koskevat tiedot sisältävän URL-osoitteen. Esimerkiksi tapahtumajärjestelmä, joka on tämän aktiviteetin aiheuttaja. Tämä URL-osoite voi olla mikä tahansa tietolähteen kenttä, tai se voidaan muodostaa uutena kenttänä käyttämällä Power Query -muunnosta. URL-osoitteen tiedot tallennetaan *Yhdistetty aktiviteetti* -entiteettiin, jota voidaan käyttää [ohjelmointirajapintojen](apis.md) käytön jälkeen.
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Määritä asiakasaktiviteetin tiedot Yhdistetty aktiviteetti -entiteetissä.":::
+
+   - **Näytä aikajanalla**
+      - Valitse näytetäänkö tämä tapahtuma asiakasprofiilien aikajananäkymässä. Valitse **Kyllä**, jos haluat, että aktiviteetti näkyy aikajanalla tai **Ei**, jos haluat piilottaa sen.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Määritä asiakasaktiviteetin tiedot Yhdistetty aktiviteetti -entiteetissä.":::
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. Voit tallentaa aktiviteetin nyt valitsemalla **Viimeistele ja tarkista**, kun aktiviteettityypiksi on määritetty **Muu**. 
 
-1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. Tällä hetkellä *Subscription*- ja *SalesOrderLine*-aktiviteettityypit voidaan yhdistää semanttisesti sen jälkeen, kun on tehty päätös kenttien yhdistämisestä. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
+1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. Tällä hetkellä *Palaute*-, *Uskollisuus*-, *Myyntitilaus*-, *Myyntitilausrivi*-, and *Tilaus*-aktiviteettityypit voidaan yhdistää semanttisesti sen jälkeen, kun on tehty päätös kenttien yhdistämisestä. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. 
 

@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Vuorovaikutuksen merkitykselliset tiedot -ominaisuus (esiversio) Dynamics 365 Customer Insightsissa
+title: Vuorovaikutuksen merkitykselliset tiedot Dynamics 365 Customer Insightsissa (esiversio)
 summary: Kerää tietoja verkkosivustojasi varten. Hanki tietoja asiakkaiden vuorovaikutuksista ja käytöstä sivustoillasi vuorovaikutteisesti. Käytä vuorovaikutuksen merkityksellisten tietojen ja käyttäjäryhmän merkityksellisten tietojen välistä syvää integrointia monipuolistamaan käyttäytymisen analytiikkaa asiakasprofiiliraporttien avulla. Rikasta asiakasprofiileja verkkoaktiviteetilla, jotta saat reaaliaikaisia käyttäytymistietoja merkityksellisten asiakastietojen lisäksi. Muunna liiketoimintasi siten, että voit välittömästi hyödyntää asiakastietojasi.
 metadata:
   title: Vuorovaikutuksen merkityksellisten tietojen (esiversio) ohjeet
@@ -10,24 +10,24 @@ metadata:
   author: m-hartmann
   ms.author: mhart
   ms.reviewer: mhart
-  ms.date: 07/30/2021
-  ms.openlocfilehash: 9951b1834d18acf0c4961a776d9d6247d4ae3505b5721a41314266e41f8ae928
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.date: 09/15/2021
+  ms.openlocfilehash: bf2e40b1ca304e7b26687eaff298d2e70615cd2b
+  ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
   ms.translationtype: HT
   ms.contentlocale: fi-FI
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036234"
+  ms.lasthandoff: 09/15/2021
+  ms.locfileid: "7494180"
 landingContent:
 - title: Tietoja
   linkLists:
   - linkListType: overview
     links:
-    - text: Ominaisuuksien yleiskatsaus
+    - text: Ominaisuuden edut
       url: overview.md
-    - text: Termit ja käsitteet
+    - text: Sanasto
       url: glossary.md
-    - text: Löydä merkitykselliset tiedot
-      url: https://dynamics.microsoft.com/ai/customer-insights/engagement-insights-capability/
+    - text: Uudet ja päivitetyt toiminnot
+      url: /dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Perehdytys
   linkLists:
   - linkListType: how-to-guide
@@ -38,28 +38,30 @@ landingContent:
       url: create-workspace.md
     - text: Sivuston varustaminen mittareilla
       url: instrument-website.md
-- title: Raportoi
+- title: Raporttien tarkasteleminen ja suodattaminen
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Näytä raportit
       url: view-reports.md
-    - text: Luo mukautettuja raportteja
-      url: custom-reports.md
     - text: Yhtenäistettyjen profiiliraporttien näyttäminen
       url: profile-reports.md
-    - text: Suppiloraporttien luominen
-      url: funnel-reports.md
-- title: Tapahtumat
+    - text: Raporttien suodattaminen käyttäjäryhmäsegmenttien avulla
+      url: integrate-audience-insights-segments.md
+- title: Analysoi
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Suppiloraporttien luominen
+      url: funnel-reports.md
+    - text: Käyttäytymistietojen analysoiminen
+      url: curate-dimensions.md
+    - text: Luo mukautettuja raportteja
+      url: custom-reports.md
     - text: Luo tarkennettuja tapahtumia
       url: refined-events.md
     - text: Vie tapahtumat
       url: export-events.md
-    - text: Henkilötietojen poistaminen ja vieminen
-      url: delete-export-personal-data.md
 - title: Kehittäjien resurssit
   linkLists:
   - linkListType: reference
@@ -81,6 +83,10 @@ landingContent:
     - text: Ympäristöjen ja työtilojen hallinta
       url: manage-environments-workspaces.md
     - text: Muodosta yhteys käyttäjäryhmien merkityksellisiin tietoihin
-      url: configure-connections.md
+      url: integrate-audience-insights-engagement-insights.md
     - text: Evästeiden ja käyttäjän suostumuksen hallinta
       url: user-consent-storage.md
+    - text: Henkilötietojen poistaminen ja vieminen
+      url: delete-export-personal-data.md
+    - text: Palvelurajoitukset
+      url: ../service-limits.md

@@ -4,17 +4,17 @@ description: Työtilojen ja ympäristöjen luominen, nimeäminen uudelleen ja po
 author: jusali
 ms.reviewer: mhart
 ms.author: jusali
-ms.date: 07/01/2021
+ms.date: 09/09/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: bf310b1a50ba7baac5d11d5f22ff42003fbba516efd7d165c00b59adc958da2e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a5b48db5ae23ea65bf608d67348d493bfdc7678f
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034038"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486031"
 ---
 # <a name="manage-environments-and-workspaces"></a>Ympäristöjen ja työtilojen hallinta
 
@@ -85,13 +85,11 @@ Työtilan poistaminen poistaa pysyvästi kaiken sen sisällön, tiedot, asetukse
 
 1. Valitse **Lisää jäseniä**, jos haluat antaa käyttöoikeuksia ja [määrittää rooleja](user-roles.md). Tällä hetkellä käytettävissä on vain **Työtilan järjestelmänvalvoja**.
 
-1. Jos määrität [yhteyden kohderyhmän merkityksellisiin tietoihin](configure-connections.md) voit sallia jäsenen tarkastella raportteja [käyttäjäprofiilien](profile-reports.md) perusteella valitsemalla **Salli profiilitietojen käyttö**.
-
 1. Lisää jäseniä työtilaasi valitsemalla **Lisää jäseniä**.
 
 ## <a name="manage-an-environment"></a>Ympäristön hallinta
 
-Ympäristön järjestelmänvalvojana voit käyttää ympäristöä vasemmassa siirtymisruudussa. Voit määrittää ympäristön asetuksia, muita ympäristön järjestelmänvalvojia, työtiloja ja [yhteyksiä kohderyhmän merkityksellisiin tietoihin](configure-connections.md). Voit siirtyä hallintakeskuksen eri alueiden välillä valitsemalla välilehtiä.
+Ympäristön järjestelmänvalvojana voit käyttää ympäristöä vasemmassa siirtymisruudussa. Voit määrittää ympäristön asetukset, muut ympäristön järjestelmänvalvojat ja työtilat. Voit siirtyä hallintakeskuksen eri alueiden välillä valitsemalla välilehtiä.
 
 :::image type="content" source="media/New-environment.png" alt-text="Ympäristön hallintakeskus.":::
 
@@ -123,8 +121,6 @@ Ympäristön järjestelmänvalvojana voit käyttää ympäristöä vasemmassa si
 
 1. Valitse **Lisää jäseniä**, jos haluat antaa päivittää jäseniä ja [määrittää rooleja](user-roles.md). Tällä hetkellä käytettävissä on vain **Ympäristön järjestelmänvalvoja**.
 
-1. Jos määrität [yhteyden kohderyhmän merkityksellisiin tietoihin](configure-connections.md) voit sallia jäsenen tarkastella raportteja [käyttäjäprofiilien](profile-reports.md) perusteella valitsemalla **Salli profiilitietojen käyttö**.
-
 1. Lisää jäseniä ympäristöösi valitsemalla **Lisää jäseniä**.
 
 ### <a name="delete-an-environment"></a>Ympäristön poistaminen
@@ -143,7 +139,7 @@ Ympäristön järjestelmänvalvojat voivat poistaa ympäristöjä. Ennen kuin vo
 
 Yhteyden luominen kohderyhmän merkityksellisiin tietoihin sallii sinun tarkastella raportteja vuorovaikutuksen merkityksellisissä tiedoissa yhdistettyjen asiakasprofiilien perusteella. 
 
-Lisätietoja: [Yhteyksien määrittäminen](configure-connections.md).
+Lue lisätietoja kohdasta [Linkin luominen kohdeyleisön ja sitoutumistietojen välille](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="manage-personal-data"></a>Henkilötietojen hallinta
 

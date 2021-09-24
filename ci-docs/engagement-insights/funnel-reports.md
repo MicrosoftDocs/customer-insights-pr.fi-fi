@@ -4,17 +4,17 @@ description: Suppiloraporttien käyttö sen ymmärtämiseen, miten käyttäjäry
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032251"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498638"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Suppiloraporttien luominen ja hallinta
 
@@ -158,4 +158,21 @@ Voit muuttaa suppiloraportin nimeä, poistaa sen tai muokata raportin vaiheita.
 1. Avaa raportti valitsemalla sen nimi.
 
 1. Valitse ensin poistettava vaihe ja sitten **Poista**.
+
+## <a name="funnel-insights"></a>Suppilon merkitykselliset tiedot 
+
+Osallistumisen merkitykselliset tiedot antavat nyt suppilotietoja asiakkaille. Suppilotietojen avulla saat lisätietoja asiakaskäyttäytymisestä suppiloraportin vaiheissa. Kun luot ja tallennat uuden suppiloraportin, raporttiin luodaan automaattisesti suppilotietoja. 
+
+Voit tarkastella suppilotietoja seuraavista luokista sekä pää- että vaihetasolla: 
+
+ - Muunnosprosentti 
+ - Siirtoaika 
+ - Valmistumisaika 
+
+Näiden näkemysten avulla voit tutkia asiakaskäyttäytymistä ja ymmärtää paremmin suppiloraportin päätepistettä ja muunnoksia. 
+
+Suppilotiedot lasketaan uudelleen 24 tunnin välein tai kun **tallennat** suppiloraportin. 
+
+> [!NOTE]
+> Jotta voit tarkastella suppilosi tietoja, raportti on tallennettava aina, kun teet muutoksia. 
 
