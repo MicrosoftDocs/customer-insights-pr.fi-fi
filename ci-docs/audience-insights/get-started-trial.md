@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: f038dedd369ac9e623146b66528efa87c47a8c23769037d8709fa9b804a0b723
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3a235e924395a606b9332de3d205289288a597a9
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035411"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558819"
 ---
 # <a name="set-up-a-trial-environment"></a>Kokeiluympäristön määrittäminen 
 
@@ -95,7 +95,7 @@ Voit nyt käyttää näitä tietoja Customer Insightsin räätälöintiin skenaa
 
 - Kokeiluversiot ovat oletusarvoisesti aktiivisia 30 päivän ajan. Voit kuitenkin jatkaa niitä päivän 23 jälkeen, kun kirjaudut kokeiluversioon.
 - Et voi käyttää omaa Azure Data Lake -tallennustiliäsi tulostustietojen tallentamiseen kokeilun aikana. Data Laken tallennustililtä voi kuitenkin saada tietoja.
-- Voit tallentaa enintään 3 Gt:a tietoja Dataverse-ympäristöön, joka valmistellaan automaattisesti, kun aloitat Customer Insights -kokeilujakson.
+- Voit tallentaa Dataverse-ympäristöön enintään kolme gigatavua tietoja, jotka valmistellaan automaattisesti, kun käynnistät Customer Insights -kokeiluversion.
 
 ## <a name="copy-data-from-a-trial-to-a-paid-subscription"></a>Tietojen kopioiminen kokeiluversiosta maksettuun tilaukseen
 

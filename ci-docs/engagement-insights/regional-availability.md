@@ -4,16 +4,16 @@ description: Lue lisää alueista ja maantieteellisistä alueista, joilla palvel
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 09/01/2021
+ms.date: 09/28/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
+ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483293"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "7564590"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin alueellinen saatavuus
 
@@ -21,9 +21,9 @@ ms.locfileid: "7483293"
 
 Sitoutumisen merkitykselliset tiedot, Dynamics 365 Customer Insightsin kyky tuoda vähitellen lisää alueita, joilla asiakkaat voivat halutessaan tallentaa tietonsa. Järjestelmänvalvojat voivat valita alueen [luodessaan uuden ympäristön](manage-environments-workspaces.md#create-an-environment). 
 
-Määrittäessäsi sitoutumistietoja ensimmäistä kertaa, voit valita alueen ja käydä läpi [ohjatun ensimmäisen käyttökokemuksen](quickstart.md). Myöhemmin jokainen uusi ympäristö mahdollistaa sen alueen valitsemisen, jossa tiedot tallennetaan.
+Määrittäessäsi sitoutumistietoja ensimmäistä kertaa, voit valita alueen ja käydä läpi [ohjatun ensimmäisen käyttökokemuksen](quickstart.md). Myöhemmin jokaisen uuden ympäristön avulla voit valita alueen, jonne tiedot tallennetaan.
 
-Tällä hetkellä on kaksi maantieteellistä sijaintia: Usa ja Eurooppa. Käyttäjät voivat valita Länsi-Yhdysvaltain alueen ja Pohjois-Euroopan alueen välillä.
+Tällä hetkellä tuemme USA:v ja Euroopan maantieteellisiä alueita. Käyttäjät voivat valita näiden alueiden välillä: Länsi-Yhdysvallat, Itä-Yhdysvallat, Pohjois-Eurooppa ja Länsi-Eurooppa.
 
 Organisaatio voi ylläpitää ympäristöjä eri alueilla. Esimerkiksi Ympäristö A tallentaa tietoja Länsi-Yhdysvalloissa ja ympäristö B Pohjois-Euroopassa.
 

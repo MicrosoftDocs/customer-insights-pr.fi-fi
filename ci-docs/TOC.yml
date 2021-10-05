@@ -242,7 +242,7 @@
   items:
     - name: Ohjekeskus
       href: engagement-insights/index.yml
-    - name: Ominaisuuksien yleiskatsaus
+    - name: Sitouttamisen merkitykselliset tiedot
       href: engagement-insights/overview.md
     - name: Aloitusopas
       items:
@@ -306,7 +306,7 @@
           href: engagement-insights/user-consent-storage.md
     - name: Alueellinen saatavuus
       href: engagement-insights/regional-availability.md
-- name: Integroi käyttäjäryhmä- ja sitoutumistiedot
+- name: Tietojen jakaminen eri ominaisuuksien välillä
   items:
     - name: Yhdistä käyttäjäryhmätiedot ja sitoutumistiedot
       href: engagement-insights/integrate-audience-insights-engagement-insights.md
@@ -318,5 +318,3 @@
   href: service-limits.md
 - name: DSR-oikeudet ja -pyynnöt
   href: dsr-rights-requests.md
-- name: Tukipyyntö
-  href: 'https://dynamics.microsoft.com/support/'

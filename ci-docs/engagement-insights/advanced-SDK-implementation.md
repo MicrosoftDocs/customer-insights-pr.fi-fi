@@ -4,17 +4,17 @@ description: Edistyneitä skenaarioita, jotka kannattaa ottaa huomioon, kun verk
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 11/12/2020
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 7455d276035bfaf1f8a93d0e3b0b0884353a4010715c05d1d696309f7eb4b233
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4c6646ecadbb604000d6c95b685cf6e420969a6d
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036324"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558698"
 ---
 # <a name="advanced-web-sdk-instrumentation"></a>Edistynyt SDK:n verkkosovelluksen käyttö
 
@@ -33,20 +33,20 @@ SDK:n avulla voit määrittää käyttäjätiedot, jotka voidaan lähettää jok
 - **authType**: Käyttäjätunnuksen todennuksessa käytetyn todennuksen tyyppi.
 - **name**: Käyttäjän nimi.
 - **email**: Käyttäjän sähköpostiosoite.
-    
-Seuraavassa esimerkissä on käyttäjätietoja lähettävä koodikatkelma. Jos funktiossa on *-merkintä, korvaa se omalla toteutuksellasi kyseisten arvojen kutsumisesta:  
+
+Seuraavassa esimerkissä on käyttäjätietoja lähettävä koodikatkelma. Jos toimintoa edeltää tähtisymboli *, korvaa toiminto mukautetulla toteutuksella:
 
 ```
 […]
-window, document 
+window, document
 {
-    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
-    name:"myproject",      
-    cfg:{ 
-      ingestionKey:<paste your ingestion key>", 
-      autoCapture:{ 
-        view:true, 
-        click:true 
+    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
+    name:"myproject",
+    cfg:{
+      ingestionKey:<paste your ingestion key>",
+      autoCapture:{
+        view:true,
+        click:true
       }
     },
     user:{
@@ -58,25 +58,25 @@ window, document
 […]
 ```
 
-Voit määrittää käyttäjätietoja myös kutsumalla ohjelmointirajapintaa `setUser(user: IUser)` SDK:ssa. Ohjelmointirajapinnan `setUser API` kutsumisen jälkeen lähetetyt telemetriatiedot sisältävät käyttäjätiedot.
+Voit määrittää käyttäjätiedot myös kutsumalla `setUser(user: IUser)`-ohjelmointirajapintaa. Ohjelmointirajapinnan `setUser` kutsumisen jälkeen lähetetyt telemetriatiedot sisältävät käyttäjätiedot.
 
 ## <a name="adding-custom-properties-for-each-event"></a>Mukautettujen ominaisuuksien lisääminen kuhunkin tapahtumaan
 
-SDK:n avulla voit määrittää mukautettuja ominaisuuksia, jotka voidaan lähettää jokaisen tapahtuman yhteydessä. Voit määrittää mukautetut ominaisuudet avain-arvo-pareja sisältäviksi objekteiksi (arvo voi olla tyyppiä `string | number | boolean`). Objektin voi lisätä ominaisuuteen `props`, joka on samankaltainen kuin ominaisuudet `src`, `name` ja `cfg` koodikatkelman määrityksessä. 
+SDK:n avulla voit määrittää mukautettuja ominaisuuksia, jotka voidaan lähettää jokaisen tapahtuman yhteydessä. Voit määrittää mukautetut ominaisuudet avain-arvo-pareja sisältäviksi objekteiksi (arvo voi olla tyyppiä `string | number | boolean`). Voit lisätä objektin ominaisuuteen, jonka nimi on `props`, ja joka on samanlainen kuin `src`, `name` ja `cfg` koodikatkelmamäärityksessä.
 
 Seuraavassa esimerkissä on mukautettuja ominaisuuksia lähettävä koodikatkelma.
 
 ```
 […]
-window, document 
+window, document
 {
-    src:"https://download.pi.dynamics.com/sdk/web/mspi-0.min.js", 
-    name:"myproject",      
-    cfg:{ 
-      ingestionKey:<paste your ingestion key>", 
-      autoCapture:{ 
-        view:true, 
-        click:true 
+    src:"https://download.pi.dynamics.com/sdk/web/msei-1.min.js",
+    name:"myproject",
+    cfg:{
+      ingestionKey:<paste your ingestion key>",
+      autoCapture:{
+        view:true,
+        click:true
       }
     },
     props:{
@@ -87,7 +87,7 @@ window, document
 […]
 ```
 
-Voit määrittää mukautettuja ominaisuuksia myös yksitellen kutsumalla ohjelmointirajapintaa `setProperty(name: string, value: string | number | boolean)` SDK:ssa.
+Voit määrittää mukautetut ominaisuudet myös kutsumalla `setProperty(name: string, value: string | number | boolean)`-ohjelmointirajapintaa.
 
 ## <a name="sending-custom-events"></a>Mukautettujen tapahtumien lähettäminen
 

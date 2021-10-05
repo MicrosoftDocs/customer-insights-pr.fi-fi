@@ -1,20 +1,20 @@
 ---
 title: Entiteettien entiteettipolkujen väliset suhteet
 description: Useita lähteistä peräisin olevien entiteettien keskinäisten suhteiden luominen ja hallinta.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
+ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035227"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7557348"
 ---
 # <a name="relationships-between-entities"></a>Entiteettien väliset suhteet
 
@@ -93,11 +93,11 @@ Käytettävissä olevat asetukset:
 - **Vaihda vaaka- tai pystysuuntaiseksi asetteluksi**: muuta entiteettien ja suhteiden asettelu.
 - **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
 
-### <a name="relationship-path"></a>Suhdepolku
+## <a name="relationship-paths"></a>Suhdepolut
 
-Suhdepolku kuvaa entiteetit, jotka liittyvät lähde-entiteetin ja kohde-entiteetin välisiin suhteisiin. Sitä käytetään luotaessa segmenttiä tai mittayksikköä, joka sisältää muita entiteettejä kuin yhdistetyn profiilin entiteetin, ja yhdistetyn profiilin entiteetin tavoittamisessa on useita vaihtoehtoja.
+Suhdepolku kuvaa entiteettejä, jotka liittyvät lähde-entiteetin ja kohde-entiteetin välisiin suhteisiin. Sitä käytetään luotaessa segmenttiä tai mittayksikköä, joka sisältää muita entiteettejä kuin yhdistetyn profiilin entiteetin, ja yhdistetyn profiilin entiteetin tavoittamisessa on useita vaihtoehtoja. 
 
-Suhdepolku ilmoittaa järjestelmälle, millä suhteilla yhdistetyn profiilin entiteetti on käytettävissä. Eri suhdepolut voivat tuottaa erilaisia tuloksia.
+Suhdepolku ilmoittaa järjestelmälle mistä suhteesta yhdistettyyn profiilientiteettiin on pääsy. Eri suhdepolut voivat tuottaa erilaisia tuloksia.
 
 Esimerkiksi entiteetillä *eCommerce_eCommercePurchases* on seuraavat suhteet yhdistettynä *Asiakas*-entiteettiin:
 
@@ -106,6 +106,42 @@ Esimerkiksi entiteetillä *eCommerce_eCommercePurchases* on seuraavat suhteet yh
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Asiakas 
 
 Suhdepolku määrittää entiteetit, joita voi käyttää luotaessa yksiköitä tai segmenttejä koskevia sääntöjä. Jos valitset vaihtoehdon, jolla on pisin suhdepolku, tulokset ovat todennäköisesti pienempiä, koska vastaavien tietueiden on kuuluttava kaikkiin entiteetteihin. Tässä esimerkissä asiakkaan on ostettava tavaroita sähköisen kaupankäynnin (eCommerce_eCommercePurchases) kautta myyntipisteestä (POS_posPurchases) ja osallistuttava kanta-asiakasohjelmaamme (loyaltyScheme_loyCustomers). Kun valitset ensimmäisen vaihtoehdon, saat todennäköisesti enemmän tuloksia, koska asiakkaiden on oltava vain yhdessä lisäentiteetissä.
+
+### <a name="direct-relationship"></a>Suora suhde
+
+Suhde luokitellaan **suoraksi suhteeksi**, kun lähde-entiteetti liittyy kohde-entiteettiin, jolla on vain yksi suhde.
+
+Jos esimerkiksi aktiviteettientiteetti nimeltään *eCommerce_eCommercePurchases*, muodostaa yhteyden kohde-entiteettiin *eCommerce_eCommerceContacts* vain *ContactId*:n kautta, se on suora suhde.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Lähde-entiteetti muodostaa yhteyden suoraan kohde-entiteettiin.":::
+
+#### <a name="multi-path-relationship"></a>Monipolkuinen suhde
+
+**Monipolkuinen suhde** on suora suhdetyyppi, joka yhdistää lähde-entiteetin useaan kohde-entiteettiin.
+
+Jos esimerkiksi aktiviteettientiteetti nimeltään *eCommerce_eCommercePurchases*, liittyy kahteen kohde-entiteettiin, *eCommerce_eCommerceContacts* ja *loyaltyScheme_loyCustomers*, se on monipolkuinen suhde.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Lähde-entiteetti muodostaa yhteyden suoraan useaan kohde-entiteettiin monipolkuisen suhteen kautta.":::
+
+### <a name="indirect-relationship"></a>Epäsuora suhde
+
+Suhde luokitellaan **epäsuoraksi suhteeksi**, kun lähde-entiteetti liittyy yhteen tai useampaan entiteettiin ennen kuin liittyy kohde-entiteettiin.
+
+#### <a name="multi-hop-relationship"></a>Monivaiheinen suhde
+
+*Monivaiheinen suhde* on *epäsuora suhde*, jonka avulla lähde-entiteetti voidaan yhdistää kohde-entiteettiin yhden tai usean muun välittäjäentiteetin kautta.
+
+Jos esimerkiksi *eCommerce_eCommercePurchasesWest*-niminen aktiviteettientiteetti muodostaa yhteyden *eCommerce_eCommercePurchasesEast*-nimiseen välittäjäentiteettiin ja muodostaa sitten yhteyden *eCommerce_eCommerceContacts*-nimiseen kohde-entiteettiin, se on monivaiheinen suhde.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Lähde-entiteetti muodostaa yhteyden suoraan kohde-entiteettiin välittäjäentiteetin kanssa.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Monivaiheinen, monipolkuinen suhde
+
+Monivaiheisia ja monipolkuisia suhteita voidaan käyttää yhdessä **monivaiheisten monipolkuisten suhteiden** luomiseen. Tämä erikoistyyppi yhdistää **monivaiheiset** ja **monipolkuiset suhteet**. Sen avulla voit muodostaa yhteyden useampaan kuin yhteen kohde-entiteettiin käytettäessä välittäjäentiteettejä.
+
+Jos esimerkiksi *eCommerce_eCommercePurchasesWest*-niminen aktiviteettientiteetti muodostaa yhteyden *eCommerce_eCommercePurchasesEast*-nimiseen välittäjäentiteettiin ja muodostaa sitten yhteyden kahteen kohde-entiteettiin, sekä *eCommerce_eCommerceContacts*-nimiseen että *loyaltyScheme_loyCustomers* kohde-entiteettiin, se on monivaiheinen, monipolkuinen suhde.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Lähde-entiteetti muodostaa yhteyden suoraan yhteen kohde-entiteettiin ja muodostaa yhteyden toiseen kohde-entiteettiin välittäjäentiteetin kautta.":::
 
 ## <a name="manage-existing-relationships"></a>Olemassa olevien suhteiden hallinta 
 
