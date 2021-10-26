@@ -1,7 +1,7 @@
 ---
 title: Käyttäjäryhmien merkityksellisten tietojen segmentit
 description: Yleiskatsaus segmenteistä ja niiden luomisesta ja hallinnasta.
-ms.date: 05/03/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f1003b53b17e3ba2c37c0f2d94b89f7e97c2b6f10e28b7bbe93160e4c7f08d54
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036369"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617371"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -26,11 +26,19 @@ Segmenttimäärityksen suodattimia vastaavia asiakasprofiileita kutsutaan segmen
 
 Uuden segmentin voi luoda useilla tavoilla: 
 
-- Monimutkainen segmentti segmentin muodostimella: [Tyhjä segmentti](segment-builder.md#create-a-new-segment)
-- Yksinkertaiset segmentit yhdellä operaattorilla: [Pikasegmentti](segment-builder.md#quick-segments)
-- Tekoälyä käyttävä tapa löytää samanlaisia asiakkaita: [Samanlaiset asiakkaat](find-similar-customer-segments.md)
-- Tekoälypohjaiset ehdotukset, jotka perustuvat mittareihin tai määritteisiin: [Ehdotetut segmentit mittareiden parantamiseksi](suggested-segments.md)
-- Aktiviteetteihin perustuvat ehdotukset: [Asiakasaktiviteettien perusteella ehdotetut segmentit](suggested-segments-activity.md)
+# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
+
+- Monimutkainen segmentti segmentin muodostimen avulla: [Luo oma](segment-builder.md#create-a-new-segment) 
+- Yksinkertaiset segmentit yhdellä operaattorilla: [Pikasegmentti](segment-builder.md#quick-segments) 
+- Tekoälyä käyttävä tapa löytää samanlaisia asiakkaita: [Samanlaiset asiakkaat](find-similar-customer-segments.md) 
+- Tekoälypohjaiset ehdotukset, jotka perustuvat mittareihin tai määritteisiin: [Ehdotetut segmentit mittareiden parantamiseksi](suggested-segments.md) 
+- Aktiviteetteihin perustuvat ehdotukset: [Asiakasaktiviteettien perusteella ehdotetut segmentit](suggested-segments-activity.md) 
+
+# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+
+- Monimutkainen segmentti segmentin muodostimen avulla: [Luo oma](segment-builder.md#create-a-new-segment)
+
+---
 
 ## <a name="manage-existing-segments"></a>Aiemmin luotujen segmenttien hallinta
 
@@ -70,9 +78,9 @@ Voit viedä segmentin segmenttisivulta tai [vientisivulta](export-destinations.m
 
 1. Valitse **Hallitse vientejä** toimintojen avattavasta luettelosta.
 
-1. **Segmentin vienti (esikatselu)** -sivu avautuu. Voit nähdä kaikki määritetyt viennit ryhmiteltyinä viennin mukaan, joka sisältää nykyisen segmentin tai ei sisällä sitä.
+1. **Segmentin vienti (esikatselu)** -sivu avautuu. Kaikki määritetyt viennit on ryhmitelty sen mukaan, sisältävätkö ne nykyisen segmentin.
 
-   1. Jos haluat lisätä valitun segmentin vientiin, valitse vienti luettelosta ja valitse **Lisää segmentti**.
+   1. Jos haluat lisätä valitun segmentin vientiin, **Muokkaa** vastaavaa vientiä, jotta voit valita vastaavan segmentin ja sitten tallenna. Yksittäisten asiakkaiden ympäristöissä voit sen sijaan valita viennin luettelosta ja valita **Lisää segmentti**, jolloin saat saman tuloksen.
 
    1. Jos haluat luoda uuden viennin valitulla segmentillä, valitse **Lisää vienti**. Lisätietoja viennin luomisesta on ohjeaiheessa [Uuden viennin luominen](export-destinations.md#set-up-a-new-export).
 

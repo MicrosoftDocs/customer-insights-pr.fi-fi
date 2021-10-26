@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557348"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622997"
 ---
 # <a name="relationships-between-entities"></a>Entiteettien väliset suhteet
 
@@ -67,6 +67,20 @@ Suhde koostuu *lähde-entiteetistä*, joka sisältää viiteavaimen ja *kohde-en
    - **Kohdeavainkenttä**: Kohde-entiteetin avainkenttä. Esimerkiksi Asiakas voi käyttää **CustomerID**-avainkenttä.
 
 4. Valitse **Tallenna** luodaksesi asiakassuhteen.
+
+## <a name="set-up-account-hierarchies"></a>Tilihierarkioiden määrittäminen
+
+Ympäristöt, jotka on määritetty käyttämään yritystilejä ensisijaisena kohdekäyttäjäryhmänä, voivat määrittää tilihierarkiat liittyviä yritystilejä varten. Esimerkiksi yritys, jolla on erilliset liiketoimintayksiköt. 
+
+Organisaatiot luovat tilihierarkioita, joiden avulla voidaan hallita tilejä ja niiden välisiä suhteita paremmin. Käyttäjäryhmän merkitykselliset tiedot -ominaisuus tukee pääkohde-alikohde-tilihierarkioita, jotka ovat jo olemassa käytettävissä asiakastiedoissa. Esimerkiksi tilit Dynamics 365 Salesista. Nämä hierarkiat voi määrittää **Suhteet**-sivulla käyttäjäryhmän merkityksellisien tietojen tilihierarkiavälilehdessä.
+
+1. Siirry kohtaan **Tiedot** > **Suhteet**.
+1. Valitse **Tilihierarkia**-välilehti.
+1. Valitse **Uusi tilihierarkia**. 
+1. Anna **Tilihierarkia**-ruudussa hierarkian nimi. Järjestelmä luo tuloste-entiteetille nimen. Voit muuttaa tuloste-entiteetin nimeä.
+1. Valitse entiteetti, joka sisältää tilihierarkian. Se on yleensä samassa entiteetissä, joka sisältää tilit.
+1. Valitse **Tilin tunnus** ja **Tilin päätunnus** valitusta entiteetistä 
+1. Valitse **Tallenna**, jotta voit ottaa asetukset käyttöön ja viimeistellä tilihierarkian.
 
 ## <a name="view-relationships"></a>Tarkastele suhteita
 

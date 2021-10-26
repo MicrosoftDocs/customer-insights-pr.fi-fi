@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465201"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606062"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -26,6 +26,20 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>Syyskuun 2021 päivitykset
+
+Syyskuun 2021 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="activities"></a>Aktiviteetit
+
+- **Aktiviteettiaikajanan parannukset** Olemme laajentaneet aktiviteettien aikajanan suodattimia asiakasprofiileissa. Lisäksi voit suodattaa uuden suodatinruudun avulla aktiviteettityypin ja päivämäärän mukaan. Päivämääriä voi suodattaa eri ehdoilla. Lisätietoja löytyy kohdasta [Aktiviteettiaikajanojen näyttäminen asiakasprofiileissa](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Suhteet
+
+- **Monen siirtymän suhteiden tuki** Käytä monen siirtymän suhteita, kun määrität aktiviteetteja ja määrittelet entiteettien välisiä suhteita. Monen siirtymän suhteet käyttävät keskitason entiteettiä kahden entiteetin yhdistämiseen. Kun määrität aktiviteettia, voit käyttää monen siirtymän suhdetta muodostaaksesi yhteyden aktiviteettientiteetistä keskitason entiteettiin ja sitten asiakasentiteettiin. Voit yhdistää monen siirtymän suhteet monen polun suhteisiin. Katso lisätietoja kohdasta [Monen siirtymän suhde](relationships.md#multi-hop-relationship).
+
+- **Monen polun suhteiden tuki** Käytä monen polun suhteita, kun määrität aktiviteetteja ja määrittelet entiteettien välisiä suhteita. Monen polun suhteet liittävät lähde-entiteetin enempään kuin yhteen entiteettiin. Kun määrität aktiviteettia, voit käyttää monen polun suhdetta muodostaaksesi yhteyden aktiviteettientiteetistä enempään kuin yhteen asiakasentiteettiin. Voit yhdistää monen polun suhteet monen siirtymän suhteisiin. Katso lisätietoja kohdasta [Monen polun suhde](relationships.md#multi-path-relationship).
 
 ## <a name="august-2021-updates"></a>Elokuun 2021 päivitykset
 
@@ -55,7 +69,7 @@ Kesäkuun 2021 päivitykset sisältävät useita toimintoja, suorituskykypäivit
 ### <a name="ux-updates"></a>UX-päivitykset 
 
 - **Uusi ja parannettu Asiakkaat-sivu ja profiilin tietosivu** Olemme uudistaneet Asiakkaat-sivun ja profiilin tietosivut käyttökokemuksen ja suorituskyvyn parantamiseksi. Näiden muutosten avulla voit tarkastella, lajitella, etsiä ja suodattaa asiakkaita. URL-osoitteessa on nyt suodattimia, joiden avulla hakutulokset voidaan jakaa saumattomasti muiden käyttäjien kanssa. Hakutulokset voidaan tallentaa myös segmenttinä.    
-  Asiakasprofiilien tietosivulla on nyt ryhmitelty tiedot eri alaluokkiin, kuten väestötiedot, tunnukset ja muut profiilimääritteet luettavuuden parantamiseksi. Muut profiilin tietosivun osat ovat nyt vuorovaikutteisempia. Esimerkiksi Aktiviteetteja-osa sallii nyt suodatuksen ja lajittelun.
+  Asiakasprofiilien tietosivulla on nyt ryhmitelty tiedot eri alaluokkiin, kuten väestötiedot, tunnukset ja muut profiilimääritteet luettavuuden parantamiseksi. Muut profiilin tietosivun osat ovat nyt vuorovaikutteisempia. Esimerkiksi aktiviteettien osa sallii nyt suodatuksen ja lajittelun.
 
 
 ## <a name="may-2021-updates"></a>Toukokuun 2021 päivityksey

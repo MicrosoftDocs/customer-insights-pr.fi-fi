@@ -4,23 +4,23 @@ description: Tutustu raporttien luomiseen ja mukauttamiseen.
 author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
-ms.date: 06/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 2540221710786dc1c84b231fbb23b9749b601cc6a2aeb78614e16002302a80a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3fa801bfc8b0aee65c21b90de2423a3d5d5e4e26
+ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036959"
+ms.lasthandoff: 09/30/2021
+ms.locfileid: "7582873"
 ---
 # <a name="create-and-edit-custom-reports"></a>Mukautettujen raporttien luominen ja muokkaaminen
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Valmiiden raporttien lisäksi voit koota mukautetun raportin, jossa on kaavio- ja taulukkovisualisointia, jotka auttavat ymmärtämään käyttäjien käyttäytymistä. Tässä artikkelissa selitetään, miten luodaan raportti tarvitsemillasi tiedoilla käyttäen taulukko- ja kaaviovisualisointeja. 
+Voit valmiiden (out-of-box, OOB) raporttien lisäksi luoda mukautetun raportin, jossa on kaavio- ja taulukkotyyppisiä visualisointeja ymmärtääksesi paremmin asiakkaiden käyttäytymistä. Tässä artikkelissa selitetään, miten luodaan raportti tarvitsemillasi tiedoilla käyttäen taulukko- ja kaaviovisualisointeja. Lisätietoja OOB-raporteista on kohdassa [Raporttien tarkasteleminen](view-reports.md).
 
 ## <a name="create-a-custom-report"></a>Mukautetun raportin luominen
 
@@ -35,11 +35,13 @@ Valmiiden raporttien lisäksi voit koota mukautetun raportin, jossa on kaavio- j
     - Valitsemalla komentopalkista **Lisää visualisointi** voit luoda oletusmuotoisen taulukkovisualisoinnin.
     - Voit myös valita pylväs-, palkki-, viiva-, alue-, ympyrä-, rengas- tai taulukkovisualisoinnin **Raporttieditori**-ruudusta.
 
-1. Valitse **Tiedot**-ruudussa jokin näkyvissä olevista **Mittareista** (kuten sivun katselukerrat). Lisää sitten visualisoinnissa näytettävät **dimensiot** (kuten maa). Lisätietoja lisävaihtoehtojen lisäämisestä on ohjeaiheessa [Mittaustietojen tarkasteleminen ja luominen](metrics.md) sekä [Dimensioiden tarkasteleminen ja luominen](dimensions.md).
+1. Valitse **Tiedot**-osassa **Visualisointieditori**-ruudussa yksi käytössä olevista vaihtoehdoista (esimerkiksi sivunäytöt) avattavasta **Mittaukset** -valikosta. Voit myös lisätä **dimensioita** (esimerkiksi maan), jotka näkyvät visualisoinnissa. Lisätietoja löytyy kohdista [Tarkastele ja luo mittauksia](metrics.md) ja [Tarkastele ja luo dimensioita](dimensions.md).
 
-1. Lisää **Otsikkoteksti** valitsemalla **Visualisointieditori**-ruudussa **Rakenne** ja määritä sitten **Sijainti**, **Tiedostoselitteet** ja **Akseli**.  Voit muuttaa visualisointia myös valitsemalla toisen kaaviotyypin.
+   :::image type="content" source="media/page-views.png" alt-text="Valitse raportille arvo.":::
 
-1. Voit muuttaa visualisoinnin kokoa ja sijaintia:
+1. Valitse **Rakenne**-osa **Visualisointieditori**-ruudusta lisätäksesi **Otsikkotekstin** ja vaihtaaksesi **Otsikon** käyttöön ja pois käytöstä.  Voit myös vaihtaa visualisoinnin tyypin valitsemalla toisen kaavion, esimerkiksi **ympyräkaavion**.
+
+1. Muuta visualisoinnin kokoa ja sijaintia seuraavasti:
    - Valitse visualisointi ja muuta sen kokoa vetämällä sen kulmaa tai reunaa.
    - Valitse visualisointi ja siirrä se uuteen sijaintiin. Voit muuttaa sijaintia myös nuolinäppäimillä.
 1. Voit lisätä visualisoinnin valitsemalla komentopalkista **Lisää visualisointi**.
@@ -47,17 +49,27 @@ Valmiiden raporttien lisäksi voit koota mukautetun raportin, jossa on kaavio- j
 
 1. Anna mukautetulle raportille nimi ja luo se valitsemalla **Tallenna**.
  
+## <a name="filter-a-custom-report"></a>Suodata mukautettu raportti
+
+Voit valita aikavälin tai päivämääräalueen mukautetussa raportissa keskittyäksesi arvoon tai ajanjaksoon.
+
+Jos haluat valita aikavälin, valitse raporttinäkymän oikeasta yläkulmasta arvo. Arvot löytyvät raportin avattavasta luettelosta. Voit valita myös vaihtoehdon *Kiinteä päivämääräalue*.
+
+:::image type="content" source="media/filter-time-date-range.png" alt-text="Suodattaminen ajan tai päivämääräalueen mukaan.":::
+
+Useimmissa raporteissa voit valita kohdan **+ Lisää ehto** valitaksesi dimension tai segmentin suodattamaan raportin. Saat lisätietoja kohdasta [Segmenttien tarkasteleminen ja luominen](segments.md).
+
 ## <a name="edit-a-custom-report"></a>Mukautetun raportin muokkaaminen
 
 1. Mukautettujen raporttien luettelo on kohdassa **Analysoi** > **Mukautettu**.
 
 1. Valitse mukautettujen raporttien luettelosta **Lisää [...]** 
 
-1. Valitse **Muokkaa tietoja**, jos haluat muuttaa raportin nimeä.
+1. Valitse **Muokkaa nimeä** vaihtaaksesi raportin nimeä.
 
-1. Voit lisätä, poistaa tai siirtää visualisointeja tai muuttaa niiden kokoa valitsemalla raportin nimen ja käyttämällä valintoja **Lisää visualisointi** ja **Muokkaa**.
+1. Voit lisätä, poistaa tai siirtää visualisointeja tai muuttaa niiden kokoa valitsemalla raportin nimen ja käyttämällä valintoja **+ Lisää visualisointi** ja **Muokkaa**.
 
-1. Jos haluat muuttaa visualisoinnin ominaisuuksia, valitse **...** ja valitse sitten **Muokkaa visualisointia**.
+1. Muuta visualisoinnin ominaisuuksia valitsemalla visualisointi, valitsemalla **...** ja sitten **Muokkaa visualisointia**.
 
    :::image type="content" source="media/edit-visual-control.png" alt-text="Mukautettujen raporttien kaavio-ominaisuuksien muokkaaminen.":::
 
@@ -72,5 +84,6 @@ Valmiiden raporttien lisäksi voit koota mukautetun raportin, jossa on kaavio- j
 1. Poista raportti valitsemalla **Poista**.
 
 1. Vahvista poisto, jotta raportti poistetaan pysyvästi.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

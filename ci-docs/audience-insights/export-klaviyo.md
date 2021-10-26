@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Klaviyo-ratkaisuun
 description: Lisätietoja yhteyden ja viennin määrittämisestä Klaviyo-ratkaisuun.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 5f7c91afed8eeb1f767f1efc58dceb7782c37bb4
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385784"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619069"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Segmenttiluetteloiden vieminen Klaviyoon (esikatselu)
 
@@ -28,10 +28,10 @@ Vie yhdistettyjen asiakasprofiilien segmentit Klaviyo-ratkaisuun ja käytä niit
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä 100 000 profiilia viennissä Klaviyoon.
+- Voit viedä vientiä kohden enintään 100 000 asiakasprofiilia Klaviyoon.
 - Vieminen Klaviyo-ratkaisuun on rajoitettu segmentteihin.
-- 1 miljoonan profiilin vieminen Klaviyoon voi kestää 20 minuuttia. 
-- Klaviyo-ratkaisuun vietävien profiilien enimmäismäärä riippuu Klaviyo-ratkaisuun liittyvästä sopimuksesta.
+- Enintään yhden miljoonan asiakasprofiilin vieminen Klaviyoon voi kestää 20 minuuttia. 
+- Klaviyoon vietävien asiakasprofiilien määrä riippuu Klaviyo-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Määritä yhteys Klaviyoon
 
@@ -67,7 +67,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Syötä [**Klaviyo-luettelon tunnus**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Segmenttien vieminen Klaviyo-ratkaisuun on pakollista.
+3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Segmenttien vieminen Klaviyo-ratkaisuun on pakollista.
 
 1. Valitse **Tallenna**.
 

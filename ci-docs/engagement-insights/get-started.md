@@ -4,18 +4,18 @@ description: Yhteenveto ohjeresursseista, joiden avulla pääsee nopeasti alkuun
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 08/31/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 644b125f5d140627d357630ded88dd6838d6edb7
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: 3505c15c4319c8cc8823bcd89d3b8adc944a87dd
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494590"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623673"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights-engagement-insights-capability-public-preview"></a>Dynamics 365 Customer Insightsin vuorovaikutuksen merkitykselliset tiedot -ominaisuuden käytön aloittaminen (julkinen esiversio)
 
@@ -43,7 +43,7 @@ Kun käyt ensimmäisen kerran seurantatietojen oivalluksissa, voit määrittää
 
 1. Tutustu tuotteeseen esimerkkitietojoukon avulla.
 
-##  <a name="step-3-set-up-a-workspace-and-add-code-to-your-website"></a>Vaihe 3: Määritä työtila ja lisää koodia verkkosivustollesi
+##  <a name="step-3-set-up-a-workspace-and-create-reports"></a>Vaihe 3: Työtilan määrittäminen ja raporttien luominen
 
 Työtilassa voit tarkastella käyttäjäaktiviteetteja reaaliajassa sekä tallentaa ja hallita raportteja. Lisää verkkosivustollesi koodia alkaaksesi kerätä *tapahtumia* eli käyttäjiltä tulevia aktiviteettitietoja.
 
@@ -52,20 +52,34 @@ Työtilassa voit tarkastella käyttäjäaktiviteetteja reaaliajassa sekä tallen
 1. [Lisää koodi sivustoon](instrument-website.md) tai [mobiilisovellukseen](developer-resources.md#capture-events-from-mobile-apps), jos haluat nähdä työtilaan saapuvan käyttäjän aktiviteetin.
 
 1. Tarkastele [reaaliaikaista raporttia](view-reports.md), jossa näkyvät aktiiviset käyttäjät selaimen, laitteen, käyttöjärjestelmän, sijainnin ja kielen mukaan. Voit myös luoda omia visualisointejasi [mukautettujen raporttien](custom-reports.md) avulla.
+
+1. Luo [dimensioita](dimensions.md), jotta voit lajitella kävijöitä uusien ja palaavien mukaan, [mittareita](metrics.md), jotka auttavat ymmärtämään käyttäjien käyttäytymistä ja [segmenttejä](segments.md), joiden avulla voit tunnistaa käyttäjien alijoukkoja perustuen ominaisuuksiin tai sivustovuorovaikutukseen.
     
 ## <a name="step-4-export-data-to-other-channels"></a>Vaihe 4: Vie tietoja muihin kanaviin
 
-Voit luoda *tarkennettuja tapahtumia* (virtuaalisia näkymiä) verkkoanalytiikkatiedoistasi. Suodata sitten tiedot ja vie ne Azure Data Lake Storageen. Voit lisätä viedyt tiedot tietolähteenä. Lue lisätietoja kohdasta [Linkin luominen kohdeyleisön ja sitoutumistietojen välille](integrate-audience-insights-engagement-insights.md).
+Voit luoda *tarkennettuja tapahtumia* (virtuaalisia näkymiä) verkkoanalytiikkatiedoistasi. Suodata sitten tiedot ja vie ne Azure Data Lake Storageen. Voit lisätä viedyt tiedot tietolähteenä.
 
 1. [Luo tarkennettuja tapahtumia](refined-events.md) vietäväksi.
 
-1. [Vie tiedot](export-events.md) Data Lake Storageen.
+1. [Tietojen vieminen](export-events.md) Azure Data Lake Storageen.
 
 1. [Luo linkki käyttäjäryhmän ja sitoutumisen merkityksellisiin tietoihin](integrate-audience-insights-engagement-insights.md) jakaaksesi tietoja näiden kahden ominaisuuksiin.
 
+1. [Tunnista aiemmin todennettujen käyttäjien verkkotapahtumia](unknown-to-known.md) **tuntemattomasta tunnettuun** -ominaisuuden avulla.
+
 1. Tutustu [henkilötietoja sisältävien tapahtumatietojen poistamiseen ja viemiseen](delete-export-personal-data.md).
+
+## <a name="step-5-create-and-manage-funnel-reports"></a>Vaihe 5: Suppiloraporttien luominen ja hallinta
+
+Suppiloraporttiin kerätään sivuston tai mobiilisovelluksen asiakassiirtymän tietojen vaiheet. Sen lisäksi, että luot valmiita profiiliraportteja ja mukautettuja raportteja, voit luoda suppiloraportin, joka tunnistaa polun, jonka asiakkaat kulkevat ennen ostoa. 
+
+1. [Luo suppiloraportti](funnel-reports.md) päätöksenteon tueksi ja tunnistaaksesi alueet, joissa on optimoinnin ja prosessien parantamisen varaa.
+
+1. Luo kanavien välisiä suppiloraportteja, kun olet varustanut mobiilisovelluksen käyttäjäryhmän merkityksellisillä tiedoilla [Android SDK](get-started-android.md) tai [iOS SDK](get-started-ios.md).
+
+1. Käytä [suppilon merkityksellisiä tietoja](funnel-reports.md#funnel-insights) saadaksesi lisätietoja asiakaskäyttäytymisestä suppiloraportin vaiheissa.
  
-## <a name="step-5-stay-connected"></a>Vaihe 5: Pysy yhteydessä
+## <a name="step-6-stay-connected"></a>Vaihe 6: Pysy yhteydessä
 
 Arvostamme aktiivista osallistumistasi ja harkitsemme kaikkia tärkeitä palautteita uusien julkaisujen kehittämisessä. Anna palautteesi ja ilmoita ongelmista jollakin seuraavista kanavista:
 - [Yhteisö](https://go.microsoft.com/fwlink/?linkid=2141648)

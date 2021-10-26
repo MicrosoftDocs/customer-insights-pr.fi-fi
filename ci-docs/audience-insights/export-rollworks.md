@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen RollWorksiin
 description: Tietoja yhteyden määrittämisestä ja viennistä RollWorksiin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d8ce4d867835dcb7cf56c6fffff4e25d1f5c109af0e401fc0eb8b3a7427c1de4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f8f6a79db9cb4bb109c03a464d9f8c7f3b862ad5
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034586"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617440"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Segmenttien vieminen RollWorksiin (esiversio)
 
@@ -28,11 +28,11 @@ Vie yhtenäisten asiakasprofiilien segmentit RollWorksiin ja käytä niitä main
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä RollWorksiin enintään 250 000 profiilia yhdessä viennissä.
-- Alle 100 profiilin segmenttejä ei voi viedä RollWorksiin. 
+- Voit viedä vientiä kohden enintään 250 000 asiakasprofiilia RollWorksiin.
+- RollWorksiin ei voi viedä segmenttejä, jotka sisältävät vähemmän kuin 100 asiakasprofiilia. 
 - Vieminen RollWorksiin rajoittuu segmentteihin.
-- 250 000 profiilin vienti RollWorksiin saattaa kestää noin 10 minuuttia. 
-- RollWorksiin vietävien profiilien määrä on riippuvainen ja rajoitettu RollWorks-sopimuksen mukaan.
+- Enintään 250 000 asiakasprofiilin vieminen RollWorksiin voi kestää 10 minuuttia. 
+- RollWorksiin vietävien asiakasprofiilien määrä riippuu RollWorks-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-rollworks"></a>Määritä yhteys RollWorksiin
 
@@ -66,7 +66,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna **RollWorks-mainostajatunnus** [RollWorks-mainostettava](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. RollWorksiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. RollWorksiin pitää viedä segmenttejä.
 
 1. Valitse segmentit, jotka haluat viedä. Valitse segmentti, jossa on vähintään 100 jäsentä. Pienempiä segmenttejä ei voi viedä. Lisäksi vietävän segmentin enimmäiskoko on 250 000 jäsentä per vienti. 
 

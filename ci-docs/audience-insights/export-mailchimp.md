@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen Mailchimpiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Mailchimpiin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a6bdf43bb40345b868bf2e7d2c91de169c8ba841ba77f732f455f4c4d496a7f5
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 94a9fead56ce8c40b35d4eb41ebdc0d672798dce
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033535"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618609"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Segmenttien vieminen Mailchimpiin (esiversio)
 
@@ -29,10 +29,10 @@ Uutiskirjeiden ja sähköpostikampanjoiden luonti viemällä yhtenäistettyjä a
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Enintään 1 miljoona profiilia kussakin Mailchimp-viennissä.
+- Enintään miljoona asiakasprofiilia Mailchimp-vientiä kohden.
 - MailChimp-vienti on rajoitettu segmentteihin
-- Miljoonan profiilin viennissä voi kestää kolme tuntia. 
-- Mailchimpiin vietävien profiilien määrä määräytyy Mailchimp-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+- Miljoona asiakasprofiilia sisältävien segmenttien vieminen voi kestää kolme tuntia. 
+- Mailchimpiin vietävien asiakasprofiilien määrä riippuu Mailchimp-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Määritä yhteys Mailchimpiin
 
@@ -66,7 +66,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna **[Mailchimp-käyttäjäryhmän tunnus](https://mailchimp.com/help/find-audience-id/)**
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. 
 
 1. Voit myös viedä **etunimen** ja **sukunimen** yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 

@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen Marketoon
 description: Tietoja yhteyden määrittämisestä ja viennistä Marketoon.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0d5eaa769973c861d89287bba0ed29509ab2efc653bdd8e177cc49b3560c698e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 71a16bd71a58b5cc0a6a2ed421561d91f782dd8e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033489"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619161"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Segmenttien vieminen Marketoon (esiversio)
 
@@ -29,10 +29,10 @@ Viemällä yhtenäisten asiakasprofiilien segmenttejä voit luoda kampanjoita, t
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Enintään 1 miljoona profiilia kussakin Marketo-viennissä.
+- Enintään miljoona asiakasprofiilia Marketo-vientiä kohden.
 - Marketo-vienti on rajoitettu segmentteihin
-- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 3 tuntia. 
-- Marketoon vietävien profiilien määrä määräytyy Marketo-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+- Miljoona asiakasprofiilia sisältävien segmenttien vieminen voi kestää 3 tuntia. 
+- Marketoon vietävien asiakasprofiilien määrä riippuu Marketo-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-marketo"></a>Määritä yhteys Marketoon
 
@@ -64,7 +64,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Syötä **[Marketo-luettelon tunnus](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Luettelon tunnus on pelkästään numeerinen arvo. Jos esimerkiksi Marketo-luettelon tunnus on ST12345A7, poista merkki numeroiden edestä ja jäljestä ja kirjoita `12345`. 
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. 
 
 1. Voit myös viedä **etunimen**, **sukunimen**, **paikkakunnan**, **osavaltion** ja **maan/alueen** yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 

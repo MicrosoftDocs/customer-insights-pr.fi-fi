@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Snapchatiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Snapchatiin.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 421dcd5ba5421597cf9dea71a9f9f25c7972a4f26fb49d4b042f8667a317ab5d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b7a929d65a730b60e77ae111b458c68d3cce2020
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033397"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618656"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Segmenttien vieminen Snapchatiin (esiversio)
 
@@ -29,7 +29,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Snapchatiin ja käytä niitä maino
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Vieminen Snapchatiin rajoittuu segmentteihin.
-- Miljoonan profiilin vienti Snapchatiin saattaa kestää noin 15 minuuttia. 
+- Enintään yhden miljoonan asiakasprofiilin vieminen Snapchatiin voi kestää 15 minuuttia. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Määritä yhteys Snapchatiin
 
@@ -63,7 +63,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna [**Snapchat-kohdeyleisön tunnus**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Snapchatiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Snapchatiin pitää viedä segmenttejä.
 
 1. Valitse segmentit, jotka haluat viedä. 
 

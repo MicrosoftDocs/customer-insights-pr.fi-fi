@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 37c5d152a4cc91a90df8db387d25923ed150e238bc6b54c54f7bba59fbd48c82
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3689c7016454ed44e22b4d4ff5a338836a8fe288
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033214"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7605945"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
@@ -47,6 +47,7 @@ Jotta voit lisätä yhteyksiä, tarvitset [järjestelmänvalvojan käyttöoikeud
 1. Anna **Määritä yhteys** -ruudussa tarvittavat tiedot. 
    1. Yhteyden **Näyttönimi** ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
    1. Täsmälliset kentät määräytyvät sen mukaan, mihin palveluun muodostat yhteyden. Saat tietoja liittyvästä yhteystyypistä kohdepalvelun artikkelista.
+   1. Jos [käytät omaa Key Vaultiasi](use-azure-key-vault.md) salaisien koodien tallentamiseen, aktivoi **Käytä Key Vaultia** ja valitse sitten salainen koodi luettelosta.
 
 1. luo yhteys valitsemalla **Tallenna**.
 
@@ -93,3 +94,6 @@ irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uude
 
 1. Vahvista poisto valitsemalla **Poista**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Määritä yhteydet omassa Key Vaultissa hallitsemiesi salaisten koodien avulla
+
+Jotkin yhteydet tarvitsevat salaisia koodeja kuten ohjelmointirajapinnan avaimia tai salasanoja. Jotkin yhteydet tukevat salaisia koodeja, jotka on tallennettu omaan Key Vaultiisi. Lisätietoja tuetuista yhteyksistä ja määrityksistä on kohdassa [oma Key Vaultisi käyttäjäryhmän merkityksellisiä tietoja varten](use-azure-key-vault.md).

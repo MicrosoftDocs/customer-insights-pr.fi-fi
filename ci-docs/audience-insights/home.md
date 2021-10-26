@@ -1,7 +1,7 @@
 ---
 title: Käyttäjäryhmän merkityksellisten tietojen aloitussivu
 description: Sovellukseen tutustumisen aloittaminen aloitussivulta.
-ms.date: 08/26/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 55c0313d1dbf7fb6774c058a6784cf02821d9133
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 4ab5497024cb15b103e96b0fc9a2e0739fd4691c
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469963"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617690"
 ---
 # <a name="explore-audience-insights"></a>Tutustu käyttäjäryhmän merkityksellisiin tietoihin
 
@@ -23,7 +23,7 @@ Voit [käyttää käyttäjäryhmän tietoja Dynamics 365 Customer Insightsssa](h
 
 :::image type="content" source="media/home-page.png" alt-text="Näyttökuva Aloitus-näytöstä, jossa näkyvät näytetiedot.":::
 
-1 – Vaihda Customer Insights 2 -ominaisuuksiin – Siirry vasemmanpuoleisen ruudun avulla alueiden välillä 3 – Selvitä, missä ympäristössä työskentelet ja hallitset ympäristöjä järjestelmänvalvojana 4 - Henkilökohtaisten asetusten määrittäminen Customer Insightsia varten
+1 – Vaihda Customer Insights -ominaisuuksien välillä 2 – Käytä vasemmanpuoleista ruutua, jotta voit siirtyä eri alueiden välillä ja valita ensisijaisen kohdekäyttäjäryhmän 3 – Selvitä, missä ympäristössä työskentelet ja hallinnoi ympäristöjä järjestelmänvalvojana 4 – Määritä Customer Insightsin henkilökohtaiset asetukset
 
 **Viimeaikaiset segmentit** -kohdassa esitetään asiakasryhmiä määrittämiesi demografia-, käyttäytymis- tai tapahtumamääritteiden perusteella. [Segmenttien luominen](segments.md) auttaa asiakaskannan ryhmittelemisessä ja liiketoiminnan aktiviteettien kohdentamisessa.
 

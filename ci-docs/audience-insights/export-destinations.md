@@ -1,7 +1,7 @@
 ---
 title: Tietojen vieminen Customer Insightsista
 description: Jaa tietoja hallitsemalla vientejä.
-ms.date: 06/14/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,25 +10,48 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: be4d142e0f9f422cac459f603aa5dd8bb490321cfe1b2de58f4a128ae56f4ba3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034678"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623097"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
-**Viennit**-sivulla näkyvät kaikki määritetyt viennit. Viennit jakavat tiettyjä tietoja eri sovellusten kanssa. Ne voivat sisältää asiakasprofiileja tai entiteettejä, rakenteita ja yhdistämistietoja. Kukin vienti edellyttää [yhteyttä, jonka määrittää järjestelmänvalvoja todennuksen ja käytön hallitsemiseksi](connections.md).
+**Viennit**-sivulla näkyvät kaikki määritetyt viennit. Viennit jakavat tiettyjä tietoja eri sovellusten kanssa. Ne voivat sisältää asiakasprofiileja, entiteettejä, rakenteita ja yhdistämistietoja. Kukin vienti edellyttää [yhteyttä, jonka määrittää järjestelmänvalvoja todennuksen ja käytön hallitsemiseksi](connections.md).
 
 Siirry kohtaan **Tiedot** > **Viennit**, kun haluat tarkastella vientisivua. Kaikki käyttäjäroolit voivat tarkastella määritettyjä raportteja. Etsi komentopalkin hakukentän avulla vientejä nimen, yhteyden nimen tai yhteystyypin mukaan.
 
-## <a name="set-up-a-new-export"></a>Määritä uusi vienti
+## <a name="export-types"></a>Vientityypit
 
+Vienneissä on kaksi päätyyppiä:  
+
+- **Lähtevät tiedot -vientien** avulla voit viedä kaikkien tyyppien entiteettejä, jotka ovat käytössä käyttäjäryhmän merkityksellisissä tiedoissa. Vietäväksi valittujen entiteettien mukana viedään kaikki tietokentät, metatiedot, rakenteet ja yhdistämistiedot. 
+- **Segmenttivientien** avulla voit viedä segmenttientiteettejä käyttäjäryhmän merkityksellisistä tiedoista. Segmentit edustavat asiakasprofiilien luetteloa. Kun määrität vientiä, valitse sisältyvät tietokentät sen mukaan, mihin kohdejärjestelmään tiedot viedään. 
+
+### <a name="export-segments"></a>Segmenttien vienti
+
+**Segmenttien vieminen yritystilien (B2B) tai yksittäisten asiakkaiden ympäristöissä (B2C)**  
+Useimmat vientivaihtoehdot tukevat molempia ympäristöjä. Segmenttien viemisellä eri kohdejärjestelmiin on erityisvaatimuksia. Yleisesti segmentin jäsen, asiakasprofiili, sisältää yhteyshenkilön tiedot. Vaikka näin on yleensä yksittäisille asiakkaille (B2C) perustuvien segmenttien tapauksessa, sama ei välttämättä päde segmentteihin, jotka perustuvat yritystileihin (B2B). 
+
+**Segmenttien vienti yritystiliympäristöissä (B2B)**  
+- Yritystilien ympäristöjen segmentit perustuvat *Asiakas*-entiteettiin. Jotta tilin segmenttejä voidaan viedä sellaisenaan, kohdejärjestelmän on tuettava puhtaita tilin segmenttejä. Näin on [LinkedIn](export-linkedin-ads.md)issä, kun valitset **yritys**-vaihtoehdon määrittäessäsi vientiä.
+- Kaikki muut kohdejärjestelmät edellyttävät yhteyshenkilöentiteetin kenttiä. Jotta tilin segmentit voivat hakea tietoja liittyvistä yhteyshenkilöistä, segmentin määrityksen on projisoitava yhteyshenkilöentiteetin määritteet. Lisätietoja [segmenttien ja projektimääritteiden määrittämisestä](segment-builder.md).
+
+**Segmenttien viennit yksittäisten asiakkaiden (B2C) ympäristöissä**  
+- Yksittäisten asiakkaiden ympäristöissä segmentit perustuvat *yhtenäinen asiakasprofiili* -entiteettiin. Kaikki segmentit, jotka vastaavat kohdejärjestelmien vaatimuksia (esimerkiksi sähköpostiosoite), voidaan viedä.
+
+**Segmenttien viennin rajoitukset**  
+- Kolmannen osapuolen kohdejärjestelmät voivat rajoittaa vietävien asiakasprofiilien määrää. 
+- Yksittäisten asiakkaiden kohdalla näytetään segmentin jäsenten todellinen määrä, kun valitset segmentin vietäväksi. Jos segmentti on liian suuri, näyttöön tulee varoitus. 
+- Yritystilien kohdalla näet segmentin tilien määrän. Mahdollisesti projisoitavien yhteyshenkilöiden määrää ei kuitenkaan näy. Joissakin tapauksissa tämä voi johtaa siihen, että vietävässsä segmentissä on enemmän asiakasprofiileja kuin mitä kohdejärjestelmä sallii. Jos kohdejärjestelmän rajoitukset ylittyvät, vienti ohitetaan. 
+
+## <a name="set-up-a-new-export"></a>Määritä uusi vienti  
 Jotta voit määrittää tai muokata vientiä, sinulla on oltava käytettävissä yhteydet. Yhteydet määräytyvät [käyttäjäroolisi](permissions.md) mukaan:
-- Järjestelmänvalvojat voivat käyttää kaikkia yhteyksiä. He voivat myös luoda uusia yhteyksiä viennin määrittämisen jälkeen.
-- Osallistujat voivat käyttää tiettyjä yhteyksiä. Järjestelmänvalvojat voivat määrittää ja jakaa osallistujille yhteyksiä. Vientiluettelossa näkyvät osallistujat, voivatko he muokata tai vain tarkastella vientiä **Oikeutesi**-sarakkeessa. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- Katsojat voivat tarkastella vain aiemmin luotuja vientejä, mutta eivät luoda niitä.
+- **Järjestelmänvalvojat** voivat käyttää kaikkia yhteyksiä. He voivat myös luoda uusia yhteyksiä viennin määrittämisen jälkeen.
+- **Osallistujat** voivat käyttää tiettyjä yhteyksiä. Järjestelmänvalvojat voivat määrittää ja jakaa osallistujille yhteyksiä. Vientiluettelossa näkyvät osallistujat, voivatko he muokata tai vain tarkastella vientiä **Oikeutesi**-sarakkeessa. Lisätietoja löytyy kohdasta [Salli osallistujien käyttää yhteyksiä vientejä varten](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- **Katselijat** voivat tarkastella vain aiemmin luotuja vientejä, eivätkä he voi luoda niitä.
 
 ### <a name="define-a-new-export"></a>Määritä uusi vienti
 

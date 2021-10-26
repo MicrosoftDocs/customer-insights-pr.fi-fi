@@ -1,72 +1,97 @@
 ---
-title: Luo ja muokkaa rakennettuja tapahtumia
-description: Tarkennettujen tapahtumien luominen ja muokkaaminen.
+title: Tapahtumien luominen ja muokkaaminen
+description: Tapahtumien luominen ja muokkaaminen.
 ms.reviewer: mhart
 ms.author: jefhar
 author: mochimochi016
-ms.date: 04/30/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 0344bac5f4d43df853309f43c94d95f962937f77c936ed7305c5de4a08835f04
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 935dc4cd41218842e8406b747daef47de04e337a
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034770"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606202"
 ---
-# <a name="create-and-modify-refined-events"></a>Luo ja muokkaa rakennettuja tapahtumia
+# <a name="create-and-modify-events"></a>Tapahtumien luominen ja muokkaaminen
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
-
 
 Tapahtuma on käyttäjän käyttäytymistä edustavaa tietoa, kuten aktiviteetti verkkosivustolla.
 
 - *Perustason* tapahtuma kirjaa ylös, milloin käyttäjä tarkastelee sivua (katselutapahtuma) tai on vuorovaikutuksessa sen sisällön kanssa (toimintotapahtuma).
 - *Tarkennettu* tapahtuma on perustapahtuman virtuaalinen näkymä. Voit määrittää tarkennettuja tapahtumia poistamalla ja lisäämällä ominaisuuksia tai suodattamalla tapahtumia ominaisuusarvojen perusteella.
 
+## <a name="prerequisites"></a>edellytykset
+
+Jos haluat nähdä tapahtumia, yhdistä verkkosivustosi data seurannan merkityksellisiin tietoihin yksinkertaisella koodikatkelmalla. Lisätietoja on kohdassa [Verkko-SDK:n asentaminen sivustolle](instrument-website.md).
+
+ :::image type="content" source="media/new-events-connect-data.png" alt-text="Yhdistä ensin tiedot.":::
+
+## <a name="create-refined-events"></a>Luo tarkennettuja tapahtumia
+
 Tarkennetuilla tapahtumilla voit pienentää perustapahtuman laajuutta  [vientiä](export-events.md) varten tai poistaa ominaisuuksia, joita ei tarvitse näyttää.
 
-## <a name="create-refined-events"></a>Tarkennettujen tapahtumien luominen
+> [!NOTE]
+> Kun lisäät www-SDK:n verkkosivustoosi, voit tarkastella perustapahtumia ja luoda tarkennettuja tapahtumia. 
 
-Tarkennettu tapahtuma voidaan luoda perustapahtumasta kolmella tavalla. 
+Voit tarkastella perustapahtumiasi seuraavasti:
 
-1. Siirry kohtaan **Tiedot**> **Tapahtumat** ja valitse jokin seuraavista vaihtoehdoista:
-    - Valitse **Uudet tapahtumat** ja valitse sitten **Luo tarkennettuja tapahtumia**.
-    - Avaa yksityiskohtainen näkymä valitsemalla perustapahtuma ja valitse sitten ylimmästä valikosta **Luo tarkennettuja tapahtumia**.
-    - Avaa perustapahtuman pikakuvakevalikko valitsemalla **Lisää [...]**. Valitse sitten **Luo tarkennettuja tapahtumia**.
-    
-    :::image type="content" source="media/create-refined-events-options.png" alt-text="Tarkennettujen tapahtumien luonnin asetukset.":::
+1. Valitse vasemmassa siirtymisruudussa **Tiedot**.
 
-1. Kirjoita **Luo tarkennettuja tapahtumia** -valintaikkunaan seuraavat tiedot:
+1. Valitse **Tapahtumat**, niin näet luettelon työtilan tapahtumista.
 
-- Valitse tapahtuma avattavasta **Perustapahtumat**-luettelosta, jos olet luomassa uutta tapahtumaa.
-- Kirjoita nimi **Tarkennetun tapahtuman näyttönimi** -ruutuun.
-- Voit myös päivittää ehdotetun **Todellinen nimi** -ruudun käyttämättä välilyöntejä.
+    :::image type="content" source="media/data-events.png" alt-text="Näytä tapahtumat.":::
 
-3. Ota asetuksesi käyttöön valitsemalla **Luo**.
+Voit luoda tarkennetun tapahtuman perustapahtumasta näin: 
 
-1. Avaa **Muokkaa ominaisuuksia** -ruutu valitsemalla tarkennetun tapahtuman tietonäkymässä **Lisää ja poista ominaisuuksia**. 
+1. Siirry kohtaan **Tiedot** > **Tapahtumat** ja valitse **+ Uudet tapahtumat** näytön yläosassa.
 
-1. Valitse näytettävät ja piilotettavat ominaisuudet valintaruutujen avulla. 
-   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Tarkennettujen tapahtumien ominaisuuksien muokkaaminen.":::
+1. Valitse **Uudet tapahtumat** -dialogissa **Luo tarkennettuja tapahtumia** ja valitse sitten **Seuraava**.
+   
+     :::image type="content" source="media/new-events-wizard.png" alt-text="Uusien tapahtumien ohjattu toiminto.":::
+     
+1. Syötä **Uudet tapahtumat** -dialogissa seuraavat tiedot:
 
-1. Ota valinta käyttöön valitsemalla **Vahvista**.
+   - Valitse tapahtumat avattavasta **Perustapahtumat**-valikosta.
+   - Kirjoita nimi **Tarkennetun tapahtuman näyttönimi** -ruutuun.
+   - Voit myös päivittää ehdotetun **Todellinen nimi** -ruudun käyttämättä välilyöntejä.
 
-1. Tallenna määritys valitsemalla **Tallenna**.
+1. Ota asetuksesi käyttöön valitsemalla **Luo**.
 
-## <a name="edit-refined-events"></a>Tarkennettujen tapahtumien muokkaaminen
-
-Voit muuttaa tarkennetun tapahtuman nimeä ja ominaisuuksia.
+Tarkennettu tapahtuma näkyy nyt **Tapahtumat**-luettelossa.
 
 ### <a name="edit-event-name"></a>Tapahtuman nimen muokkaaminen
 
-1. Siirry kohtaan **Tiedot** > **Tapahtumat**. 
-1. Valitse tapahtuman kohdalla **Lisää [...]** ja valitse sitten **Muokkaa nimeä**.
-1. Päivitä tapahtuman nimi ja valitse **Nimeä uudelleen**.
+Voit muuttaa perustapahtuman tai tarkennetun tapahtuman nimeä ja ominaisuuksia.
 
-### <a name="edit-selected-properties"></a>Valittujen ominaisuuksien muokkaaminen
+1. Siirry kohtaan **Tiedot** > **Tapahtumat**. 
+
+1. Valitse tapahtuman kohdalla **Lisää [...]** ja valitse sitten **Muokkaa nimeä**.
+    
+     :::image type="content" source="media/create-refined-events-options.png" alt-text="Tarkennettujen tapahtumien luonnin asetukset.":::
+
+3. Päivitä tapahtuman nimi ja valitse **Nimeä uudelleen**.
+
+### <a name="view-the-details-of-a-refined-event"></a>Tarkastele tarkennetun tapahtuman tietoja:
+
+1. Valitse **Tapahtuma**-luettelossa perustapahtuma tai tarkennettu tapahtuma. 
+
+1. Valitse **Ominaisuuksien lisääminen ja poistaminen** näytön yläosassa avataksesi **Muokkaa ominaisuuksia** -ruudun. 
+
+     :::image type="content" source="media/add-remove-properties.png" alt-text="Lisää ja poista ominaisuuksia.":::
+
+1. Valitse näytettävät ja piilotettavat ominaisuudet valintaruutujen avulla. 
+
+   :::image type="content" source="media/edit-properties-refined-events.png" alt-text="Tarkennettujen tapahtumien ominaisuuksien muokkaaminen.":::
+
+1. Valitse **Vahvista** käyttääksesi valintaasi ja valitse sitten **Tallenna**.
+
+
+### <a name="edit-selected-properties-for-a-refined-event"></a>Muokkaa valittuja ominaisuuksia tarkennetussa tapahtumassa
 
 1. Avaa yksityiskohtainen näkymä siirtymällä kohtaan **Tiedot** > **Tapahtumat** ja valitse tarkennetut tapahtumat.
 1. Valitse **Lisää ja poista ominaisuuksia**. 

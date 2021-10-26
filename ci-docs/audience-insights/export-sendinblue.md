@@ -1,7 +1,7 @@
 ---
 title: Asiakkaan merkityksellisten tietojen vieminen Sendinblue-ratkaisuun
 description: Lisätietoja yhteyden ja viennin määrittämisestä Sendinblue-ratkaisuun.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b5924b2d4e7f0b11ce6478a31015fcbaaf44ff93
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036051"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617781"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Segmenttien vieminen Sendinblue-ratkaisuun (esiversio)
 
@@ -29,10 +29,10 @@ Vie yhdistettyjen asiakasprofiilien segmenttejä luodaksesi kampanjoita, tarjota
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Sendinblue-ratkaisu tukee enintään miljoonaa profiilia vientiä kohti.
+- Enintään miljoona asiakasprofiilia Sendinblue-vientiä kohden.
 - Vieminen Sendinblue-ratkaisuun on rajoitettu segmentteihin.
-- Yhteensä miljoona profiilia sisältävien segmenttien vieminen voi kestää 90 minuuttia. 
-- Sendinblue-ratkaisuun vietävien profiilien enimmäismäärä riippuu Sendinblue-ratkaisuun liittyvästä sopimuksesta.
+- Miljoona asiakasprofiilia sisältävien segmenttien vieminen voi kestää 90 minuuttia. 
+- Sendinblueen vietävien asiakasprofiilien määrä riippuu Sendinblue-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Yhteyden määrittäminen Sendinblue-ratkaisuun
 
@@ -64,7 +64,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Syötä **Sendinblue-luettelon tunnus** 
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. 
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. 
 
 1. Vaihtoehtoisesti voit viedä **etunimen**, **sukunimen** tai **puhelinnumeron** mukaan. Näin voit luoda mukautettuja sähköpostiviestejä. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 

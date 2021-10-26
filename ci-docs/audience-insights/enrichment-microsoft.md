@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 45c81a037258e42d8975e0372c104865a9d4cbfe
-ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
+ms.openlocfilehash: 51b150cbf5d9cfb3a5df42e680bcfa57ec5496cb
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/01/2021
-ms.locfileid: "7466620"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617873"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Asiakasprofiilien täydentäminen tuotemerkillä ja kiinnostuksen kohteilla (esiversio)
 
@@ -137,7 +137,7 @@ Brändien ja kiinnostuksenkohteiden affiniteetteja voi tarkastella myös yksitt�
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

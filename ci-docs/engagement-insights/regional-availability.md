@@ -8,18 +8,18 @@ ms.date: 09/28/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
-ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
+ms.openlocfilehash: 82591919b44eaac8a251d7fdb148253d5cac23c3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "7564590"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645397"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin alueellinen saatavuus
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Sitoutumisen merkitykselliset tiedot, Dynamics 365 Customer Insightsin kyky tuoda vähitellen lisää alueita, joilla asiakkaat voivat halutessaan tallentaa tietonsa. Järjestelmänvalvojat voivat valita alueen [luodessaan uuden ympäristön](manage-environments-workspaces.md#create-an-environment). 
+Sitoutumisen merkitykselliset tiedot, Dynamics 365 Customer Insightsin kyky tuoda vähitellen lisää alueita, joilla asiakkaat voivat halutessaan tallentaa tietonsa. Järjestelmänvalvojat voivat valita alueen [luodessaan uuden ympäristön](create-new-environment.md). 
 
 Määrittäessäsi sitoutumistietoja ensimmäistä kertaa, voit valita alueen ja käydä läpi [ohjatun ensimmäisen käyttökokemuksen](quickstart.md). Myöhemmin jokaisen uuden ympäristön avulla voit valita alueen, jonne tiedot tallennetaan.
 

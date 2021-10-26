@@ -1,32 +1,32 @@
 ---
 title: Yritysprofiilien rikastaminen kolmannen osapuolen Leadspace-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
-ms.date: 04/09/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: kishorem-MS
-ms.author: kishorem
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 34b73b37670ed45e2c31ea164c0788b793bee433829ce21317c83903f3fca1fe
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031699"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617347"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
 
-Leadspace on tietotekniikkayritys, joka tarjoaa yritysten välisten asiakastietojen ympäristön. Sen avulla voidaan täydentää niiden asiakkaiden tietoja, joilla on yhtenäiset asiakasprofiilit yrityksissä. Rikastuksissa on enemmän määritteitä, kuten esim. yrityksen koko, sijainti ja toimiala.
+Leadspace on tietotekniikkayritys, joka tarjoaa yritysten välisten asiakastietojen ympäristön. Sen avulla ympäristöt, joilla on asiakkaisiin perustuvat yhtenäiset asiakasprofiilit, voivat rikastaa tietojaan. Rikasta *Asiakasprofiilit* määritteillä kuten yrityksen koko, sijainti tai toimiala. Rikasta *Yhteishenkilöprofiilit* määritteillä kuten titteli, henkilötyyppi tai sähköpostin vahvistus.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 Voit määrittää Leadspacen, jos seuraavat edellytykset täyttyvät:
 
 - Sinulla on aktiivinen Leadspace-käyttöoikeus.
-- Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md) yrityksiä varten.
-- Leadspace-yhteys on jo määritetty järjestelmänvalvojan toimesta tai sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja "pysyvä avain" (**Leadspace-tunnus**). Jos haluat lisätietoja tuotteesta, ota suoraan yhteyttä [Leadspaceen](https://www.leadspace.com/products/leadspace-on-demand/).
+- Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md), jotka perustuvat asiakkaisiin.
+- Leadspace-yhteys on jo määritetty järjestelmänvalvojan toimesta tai sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja "pysyvä avain" (**Leadspace-tunnus**). Jos haluat lisätietoja tuotteesta, ota suoraan yhteyttä [Leadspaceen](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 
@@ -46,10 +46,14 @@ Voit määrittää Leadspacen, jos seuraavat edellytykset täyttyvät:
 
 1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään Leadspacen vastaavien yritystietojen etsimiseen. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
 
-   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu":::
+   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu.":::
 
 1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
+1. Valitse valintaruutu, jos sinulla on *yhteyshenkilöprofiileja*, jotka haluat rikastaa. Käyttäjäryhmän merkitykselliset tiedot yhdistävät pakolliset kentät automaattisesti.
+
+   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Leadspace-yhteyshenkilötietueen rikastaminen.":::
+ 
 1. Anna rikastusta varten nimi ja valitse vaihtoehtojen tarkistamisen jälkeen **Tallenna rikastus**.
 
 
@@ -81,7 +85,8 @@ Lisätietoja on kohdassa [Leadspacen ohjelmointirajapinnat](https://support.lead
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
+
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

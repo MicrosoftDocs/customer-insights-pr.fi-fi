@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Constant Contactiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Constant Contactiin.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 30dfe4d6c2374ba9979827ea70a71c52a1334b45dd3e36ccb1de90fae0c61ad9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b25e4f11e21d059c2d867e925c0ae5635a87addc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031837"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619115"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Segmenttien vieminen Constant Contactiin (esiversio)
 
@@ -28,10 +28,10 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä Constant Contactiin enintään miljoona profiilia yhdessä viennissä.
+- Voit viedä vientiä kohden enintään miljoona asiakasprofiilia Constant Contactiin.
 - Vieminen Constant Contactiin rajoittuu segmentteihin.
-- Miljoonan profiilin vienti Constant Contactiin saattaa kestää noin 1 tunnin. 
-- Constant Contactiin vietävien profiilien määrä on riippuvainen ja rajoitettu Constant Contact -sopimuksen mukaan.
+- Enintään yhden miljoonan asiakasprofiilin vieminen Constant Contactiin voi kestää tunnin. 
+- Constant Contactiin vietävien asiakasprofiilien määrä riippuu Constant Contact -sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Constant Contact -yhteyden määrittäminen
 
@@ -65,7 +65,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna [**Constant Contact -luettelon tunnus**](https://app.constantcontact.com/pages/contacts/ui#lists). Avaa luettelo Constant Contactissa, jotta löydät luettelon tunnuksen URL-osoitteesta.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Constant Contactiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Constant Contactiin pitää viedä segmenttejä.
 
 1. Vaihtoehtoisesti voit viedä Etunimi- ja Sukunimi-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 

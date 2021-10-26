@@ -1,7 +1,7 @@
 ---
 title: Entiteettien yhdistäminen tietoja yhtenäistettäessä
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494315"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648250"
 ---
 # <a name="merge-entities"></a>Entiteettien yhdistäminen
 
@@ -89,7 +91,7 @@ Valitse **Yhdistä**-sivulla **Käytöstä poistetut kentät** nähdäksesi luet
     :::image type="content" source="media/recency-merge-option.png" alt-text="Viimeaikaisuusasetus yhdistämiskenttien valintaikkunassa.":::
     - **Vähiten uusin**: määrittää voittajan arvon vähiten uusien arvojen perusteella. Tasaus edellyttää päivämäärää tai numeerista kenttää jokaiselle yhdistämiskenttien osallistujaentiteetille.
 
-1.  Voit lisätä yhdistämisprosessiin osallistumista varten lisää kenttiä.
+1.  Voit lisätä kenttiä osallistuaksesi yhdistämisprosessiin.
 
 1.  Voit nimetä yhdistetyn kentän uudelleen.
 
@@ -131,7 +133,7 @@ Jotkin entiteetit sisältävät enemmän tietoja kuin toiset. Jos entiteetti sis
 
 Kun olet määrittänyt yhdistämiskentät, voit määrittää, miten CustomerId-arvot luodaan, yksilölliset asiakasprofiilin tunnukset. Tietojen yhdistämisprosessin yhdistämisvaihe luo yksilöllisen asiakasprofiilin tunnisteen. Tunnus on *Asiakas*-entiteetin CustomerId-tunnus, joka on tulosta tietojen yhdistämisprosessista. 
 
-Asiakas-entiteetin CustomerId-tunnus perustuu ensisijaisen arvon hajautusarvo, joka ei-tyhjäarvoisen voittajan perusavaimilla on. Nämä avaimet tulevat vastine- ja yhdistämisvaiheessa käytetyistä entiteeteistä, ja vastinejärjestys vaikuttaa niihin. Luotu CustomerID voi siis muuttua, kun perusavaimen arvo muuttuu vastinetilauksen ensisijaisessa entiteetissä. Tästä syystä perusavaimen arvo ei aina vastaa samaa asiakasta.
+Asiakas-entiteetin CustomerId-tunnus perustuu ensisijaisen arvon hajautusarvo, joka ei-tyhjäarvoisen voittajan perusavaimilla on. Nämä avaimet tulevat vastine- ja yhdistämisvaiheessa käytetyistä entiteeteistä, ja vastinejärjestys vaikuttaa niihin. Luotu CustomerID voi siis muuttua, kun perusavaimen arvo muuttuu vastinetilauksen ensisijaisessa entiteetissä. Perusavaimen arvo ei välttämättä aina edusta samaa asiakasta.
 
 Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymisen.
 
@@ -139,7 +141,7 @@ Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymi
 
 1. Siirry kohtaan **Yhdenmukaista** > **Yhdistä**.
 
-1. Valitse **Yhdistä**-sivulla **Avaimet**-välilehti. 
+1. Valitse **Avaimet**-välilehti. 
 
 1. Vie hiiren osoitin **CustomerId**-riville ja valitse **Määritä**-vaihtoehto.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Tunnuksen luonnin mukauttamisen hallinta.":::
@@ -147,6 +149,30 @@ Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymi
 1. Valitse enintään viisi kenttää, jotka sisältävät yksilöllisen asiakastunnuksen ja ovat vakaampia. Tietueet, jotka eivät vastaa kokoonpanoa, käyttävät sen sijaan järjestelmän luomaa määritystunnusta.  
 
 1. Ota muutokset käyttöön valitsemalla **Valmis** ja suorita yhdistämisprosessi.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Profiilien ryhmitteleminen kotitalouksiksi tai klustereiksi
+
+Osana asiakasprofiilin luonnin määritysprosessia voit määrittää sääntöjä, jotka ryhmittelevät liittyvät profiilit klusteriin. Käytettävissä on tällä hetkellä kahdentyyppisiä klustereita: kotitalousklusterit ja mukautetut klusterit. Järjestelmä valitsee automaattisesti kotitalouden ennalta määritetyin säännöin, jos *Asiakas*-entiteetti sisältää semanttiset kentät *Person.LastName* ja *Location.Address*. Voit myös luoda klusterin omilla säännöilläsi ja ehdoillasi, samoin kuin [vastaavuussäännöissä](match-entities.md#define-rules-for-match-pairs).
+
+**Määritä kotitalous tai klusteri**
+
+1. Siirry kohtaan **Yhdenmukaista** > **Yhdistä**.
+
+1. Valitse **Yhdistä**-välilehdessä **Lisäasetukset** > **Luo klusteri**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Uuden klusterin luomisen ohjausobjekti.":::
+
+1. Valitse joko **Kotitalous** tai **Mukautettu** klusteri. Jos semanttiset kentät *Person.LastName* ja *Location.Address* ovat olemassa *Asiakas*-entiteetissä, kotitalous valitaan automaattisesti.
+
+1. Anna klusterille nimi ja valitse **Valmis**.
+
+1. Valitse **Klusterit**-välilehti löytääksesi luomasi klusterin.
+
+1. Määritä klusteri luomalla säännöt ja ehdot.
+
+1. Valitse **Suorita** suorittaaksesi yhdistämisprosessin ja luodaksesi klusterin.
+
+Kun yhdistämisprosessi on suoritettu, klusterin tunnisteet lisätään uusiksi kentiksi *Asiakas*-entiteetissä.
 
 ## <a name="run-your-merge"></a>Suorita yhdistäminen
 

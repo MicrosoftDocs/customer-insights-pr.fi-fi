@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034173"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645122"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -26,7 +26,7 @@ Voit vaihtaa ympäristöä valitsemalla sivun oikeassa yläkulmassa **Ympärist�
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Näyttökuva ohjausobjektista, jonka avulla voit vaihtaa ympäristöä.":::
 
-Järjestelmänvalvojat voivat [Luoda](get-started-paid.md) ja hallita ympäristöjä.
+Järjestelmänvalvojat voivat [Luoda](create-environment.md) ja hallita ympäristöjä.
 
 ## <a name="edit-an-existing-environment"></a>Aiemmin luodun ympäristön muokkaaminen
 
@@ -36,23 +36,9 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 
 2.  Valitse **Muokkaa**-kuvake.
 
-3. **Muokkaa ympäristöä** -ruudussa voit päivittää ympäristön **näyttönimen**, mutta et voi muuttaa **aluetta** tai **tyyppiä**.
+3. Voit päivittää ympäristön asetuksia **Muokkaa ympäristöä** -ruudussa.
 
-4. Jos ympäristö on määritetty niin, että tiedot tallennetaan Azure Data Lake Storageen, voit päivittää **asiakkaan avaimen**. Et voi kuitenkaan muuttaa **tilin nimeä** tai **säilön** nimeä.
-
-5. Voit myös tehdä päivityksen käyttöoikeusavaimeen perustuvassa yhteydessä resurssi- tai tilausperusteiseen yhteyteen. Päivitykseen jälkeen ei ole mahdollista palata käyttöoikeusavaimeen. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilö**-tietoja ei voi muuttaa yhteyttä päivitettäessä.
-
-6. Vaihtoehtoisesti voit määrittää Microsoft Dataverse -ympäristön URL-osoitteen kohdassa **Tietojen jakamisen määrittäminen Microsoft Dataversen kanssa ja lisäominaisuuksien ottaminen käyttöön**. Nämä ominaisuudet sisältävät tietojen jakamisen sovelluksiin ja ratkaisuihin Microsoft Dataverseen perusteella,tietojen käsittelyn paikallisistas tietolähteistä, tai käytä [ennusteita](predictions.md). Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Microsoft Dataversen hallitun Data Laken kanssa.
-
-   > [!NOTE]
-   > - Tietojen jakamista Microsoft Dataversen hallitun Data Laken kanssa ei tueta tällä hetkellä, jos kaikki tiedot tallennetaan omaan Azure Data Lake Storage -ratkaisuun.
-   > - [Entiteetin puuttuvien arvojen ennustetta](predictions.md) ja PowerBI Embedded -raporttien käyttäjäryhmän tietoja (jos käytössä ympäristössäsi) ei tällä hetkellä tueta, kun otat tietojen jakamisen käyttöön Microsoft Dataversen hallitun tietojärven kanssa.
-
-   Kun tietojen jakaminen Microsoft Dataversen kanssa on otettu käyttöön, aloitetaan tietolähteiden ja muiden prosessien täydellinen päivitys. Jos prosesseja tällä hetkellä suoritetaan, et näe mahdollisuutta ottaa tietojen jakamista käyttöön Microsoft Dataversen kanssa. Odota, että prosessit valmistuvat tai peruutat ne, jotta tietojen jakaminen voidaan ottaa käyttöön. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
-   
-   Kun suoritat prosesseja, kuten tietojen käsittelyä tai segmenttien luontia, vastaavat kansiot luodaan edellä määritettyyn tallennustiliin. Datatiedostot ja model.json-tiedostot luodaan ja lisätään vastaaviin alikansioihin suoritettavan prosessin mukaan.
+Lisätietoja ympäristön asetuksista on kohdassa [Uuden ympäristön luominen](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopioi ympäristön määritys
 

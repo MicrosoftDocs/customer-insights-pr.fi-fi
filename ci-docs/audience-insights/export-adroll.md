@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen AdRolliin
 description: Tietoja yhteyden määrittämisestä ja viennistä AdRolliin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e48f67ec21bb9b883dd30544ccf4dcfbf487acb1abaf0a0557764bc3d955e41a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9373ea18e77723c988392a5a2959baa66d8eae9
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032067"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617332"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Segmenttien vieminen AdRolliin (esiversio)
 
@@ -28,11 +28,11 @@ Vie yhtenäisten asiakasprofiilien segmentit AdRolliin ja käytä niitä mainost
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä jopa 250 000 profiilia kerralla AdRoll-ratkaisuun.
-- Alle 100 profiilin segmenttejä ei voi viedä AdRolliin. 
+- Voit viedä kerralla enintään 250 000 asiakasprofiilia AdRolliin.
+- AdRolliin ei voi viedä segmenttejä, jotka sisältävät vähemmän kuin 100 asiakasprofiilia. 
 - AdRoll-vienti on rajoitettu segmentteihin.
-- 250 000 profiilin vieminen AdRolliin voi kestää 10 minuuttia. 
-- AdRoll-ratkaisuun vietävien profiilien enimmäismäärä riippuu AdRoll-sopimuksesta.
+- Enintään 250 000 asiakasprofiilin vieminen AdRolliin voi kestää 10 minuuttia. 
+- AdRolliin vietävien asiakasprofiilien määrä riippuu sopimuksestasi AdRollin kanssa.
 
 ## <a name="set-up-connection-to-adroll"></a>Määritä yhteys AdRolliin
 
@@ -66,7 +66,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Syötä **AdRoll-mainostajan tunnus**. Lisätietoja on kohdassa [AdRoll-mainostajien profiilit](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Segmenttejä on vietävä AdRolliin.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Segmenttejä on vietävä AdRolliin.
 
 1. Valitse segmentit, jotka haluat viedä. Valitse segmentti, jossa on vähintään 100 jäsentä. Pienempiä segmenttejä ei voi viedä. Lisäksi vietävän segmentin enimmäiskoko on 250 000 jäsentä per vienti. 
 

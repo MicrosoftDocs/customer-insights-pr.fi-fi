@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Campaign Monitoriin
 description: Tietoja yhteyden määrittämisestä ja viennistä Campaign Monitoriin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d2cc3ec944faa1d77ffb44e8abb422d753c5625d0ccef75cbb7efb14cb7c3741
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031883"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618977"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Segmenttien vieminen Campaign Monitoriin (esiversio)
 
@@ -28,10 +28,10 @@ Vie yhtenäisten asiakasprofiilien segmentit Campaign Monitoriin ja käytä niit
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä Campaign Monitoriin enintään miljoona profiilia yhdessä viennissä.
+- Voit viedä vientiä kohden enintään miljoona asiakasprofiilia Campaign Monitoriin.
 - Vieminen Campaign Monitoriin rajoittuu segmentteihin.
-- Miljoonan profiilin vienti Campaign Monitoriin saattaa kestää noin 20 minuuttia. 
-- Campaign Monitoriin vietävien profiilien määrä on riippuvainen ja rajoitettu Campaign Monitor -sopimuksen mukaan.
+- Enintään yhden miljoonan asiakasprofiilin vieminen Campaign Monitoriin voi kestää 20 minuuttia. 
+- Campaign Monitoriin vietävien asiakasprofiilien määrä riippuu Campaign Monitor -sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Määritä yhteys Campaign Monitoriin
 
@@ -66,7 +66,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 1. Anna [**Campaign Monitor -luettelon tunnus**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
    [Luo API-avain](https://www.campaignmonitor.com/api/getting-started/) Campaign Monitorin **tiliasetuksista**, jotta näet ohjelmointirajapinnan luettelotunnuksen.  
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Campaign Monitoriin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Campaign Monitoriin pitää viedä segmenttejä.
 
 1. Valitse **Tallenna**.
 

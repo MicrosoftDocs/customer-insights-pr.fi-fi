@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen DotDigitaliin
 description: Tietoja yhteyden määrittämisestä ja viennistä DotDigitaliin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f09be0dfa599c1ef7cf0055b7ce1df8784cf447ada64b56bc7543c214f9a5b99
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3e3a79603f9f5746ee176d3d4299a30510c7459e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034632"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618379"
 ---
 # <a name="export-segments-to-dotdigital-preview"></a>Segmenttien vieminen DotDigitaliin (esiversio)
 
@@ -22,17 +22,17 @@ Vie yhtenäistettyjen asiakasprofiilien segmentit DotDigital-osoitekirjoihin ja 
 
 ## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
--   [DotDigital-tili](https://dotdigital.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
+-   Sinulla on [DotDigital-tili](https://dotdigital.com/) ja olet luonut [ohjelmointirajapintakäyttäjän](https://support.dotdigital.com/hc/articles/115001718730-How-do-I-create-an-API-user). Yhteyden luomiseksi tarvitset ohjelmointirajapintakäyttäjän valtuustiedot
 -   DotDigitalissa on aiemmin luotuja osoitekirjoja ja vastaavia tunnuksia. Tunnus saadaan URL-osoitteesta, kun valitset ja avaat osoitekirjan. Lisätietoja on kohdassa [DotDigital-osoitekirjat](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Käyttäjäryhmän merkityksellisissä tiedoissa on [määritettyjä segmenttejä](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Enintään 1 miljoona profiilia kussakin DotDigital-viennissä.
+- Enintään miljoona asiakasprofiilia DotDigital-vientiä kohden.
 - DotDigital-vienti on rajoitettu segmentteihin.
-- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 3 tuntia palveluntoimittajan rajoitusten vuoksi. 
-- DotDigitaliin vietävien profiilien määrä määräytyy DotDigital-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+- Miljoona asiakasprofiilia sisältävä segmenttien vienti voi kestää kolme tuntia palveluntarjoajan päässä olevien rajoitusten vuoksi. 
+- DotDigitaliin vietävien asiakasprofiilien määrä riippuu DotDigital-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-dotdigital"></a>Määritä yhteys DotDigitaliin
 
@@ -44,7 +44,7 @@ Vie yhtenäistettyjen asiakasprofiilien segmentit DotDigital-osoitekirjoihin ja 
 
 1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Anna **DotDigitalin käyttäjänimi ja salasana**.
+1. Anna **DotDigitalin ohjelmointirajapinnan käyttäjänimi ja salasana**. 
 
 1. Anna **[DotDigital-osoitekirjan tunnus](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book)**.
 
@@ -67,7 +67,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys DotDigital-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**, **Koko nimi**, **Sukupuoli** ja **Postinumero**.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**, **Koko nimi**, **Sukupuoli** ja **Postinumero**.
 
 1. Valitse segmentit, jotka haluat viedä. Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia DotDigitaliin.
 

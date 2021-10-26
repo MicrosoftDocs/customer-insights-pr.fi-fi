@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin tietojen vieminen Autopilotiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Autopilotiin.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9ada8a6f4e4546990a1360567b400033050119c4c4c9a3df1af8fcaab75e157
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4cceb64484e8e257a90b8cbaedff4419659bb399
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032021"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618425"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Segmenttien vieminen Autopilotiin (esiversio)
 
@@ -28,10 +28,10 @@ Vie yhdistettyjen asiakasprofiilien segmentit Autopilotiin ja käytä niitä Aut
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä yhteensä enintään 100 000 asiakasprofiilia Autopilotiin.
+- Voit viedä enintään 100 000 asiakasprofiilia Autopilotiin.
 - Autopilot-vienti on rajoitettu segmentteihin.
-- 100 000 profiilin vieminen Autopilotiin voi kestää muutaman tunnin. 
-- Autopilotiin vietävien profiilien määrä määräytyy Autopilot-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+- Enintään 100 000 asiakasprofiilin vieminen Autopilotiin voi kestää muutaman tunnin. 
+- Autopilotiin vietävien asiakasprofiilien määrä riippuu Autopilot-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-autopilot"></a>Määritä yhteys Autopilotiin
 
@@ -43,7 +43,7 @@ Vie yhdistettyjen asiakasprofiilien segmentit Autopilotiin ja käytä niitä Aut
 
 1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-3. Anna [Autopilotin API-avain](https://autopilot.docs.apiary.io/#).
+1. Anna [Autopilotin API-avain](https://autopilot.docs.apiary.io/#).
 
 1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
 
@@ -63,7 +63,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys Autopilot-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**.
 
 1. Valitse segmentit, jotka haluat viedä. On erittäin **suositeltavaa, että asiakastietueita viedään enintään 100 000** Autopilotiin. 
 

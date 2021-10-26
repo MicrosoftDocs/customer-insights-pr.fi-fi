@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6ce72486faa97e6f630a991044ca5e6d4714d0b8b8395a60fad12f3e3a49fa29
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032429"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645030"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Osittaisten tietojen viimeisteleminen ennusteiden avulla
 
@@ -35,7 +35,7 @@ Ennen kuin organisaatio voi käyttää ennustetoimintoa, seuraavien edellytykset
 
 2. Käyttäjäryhmäsi tiedot on liitetty Dataverse-esiintymääsi.
 
-Jos olet [luomassa ensimmäistä ympäristöä](get-started-paid.md), määritä se **Luo ympäristö** -valintaikkunassa ja valitse **Lisäasetukset**. Jos olet jo luonut ympäristön, siirry sen asetuksiin ja valitse **Lisäasetukset**. Anna kummassakin tapauksessa **Käytä ennusteita** -osassa sen Dataverse -esiintymän URL-osoite, johon haluat liittää ympäristön.
+Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Ennusteen luominen asiakasentiteetissä
 

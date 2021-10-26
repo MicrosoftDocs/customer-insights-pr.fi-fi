@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen LinkedIn Adsiin
 description: Tietoja yhteyden määrittämisestä ja viennistä LinkedIniin.
-ms.date: 05/12/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2cfaa37fd0ac697f29665792bab27a925d8ea1eede0519d424524a7e5accbfeb
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034219"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618287"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Segmenttien vieminen LinkedIniin (esiversio)
 
@@ -28,9 +28,9 @@ Vie yhdistettyjen asiakasprofiilien segmentit LinkedIn Adsiin ja luo vastaavat k
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä LinkedIn Adsiin enintään 100 000 profiilia yhdessä viennissä.
+- Voit viedä vientiä kohden enintään 100 000 asiakasprofiilia LinkedIn Adsiin.
 - Vieminen LinkedIn Adsiin rajoittuu segmentteihin.
-- 100 000 profiilin vienti LinkedIn Adsiin saattaa kestää noin 10 minuuttia. 
+- Enintään 100 000 asiakasprofiilin vieminen LinkedIn Adsiin voi kestää 10 minuuttia. 
 
 ## <a name="set-up-the-connection-to-linkedin-ads"></a>Määritä yhteys LinkedIn Adsiin
 
@@ -66,7 +66,7 @@ Voit määrittää viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoik
 
 1. Valitse, haluatko viedä tiedot LinkedInissä [yhteyshenkilöiden kohdistamista](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) varten vai [yrityksen kohdistamista](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) varten. 
 
-1. Valitse **Tietojen täsmäytys** -osassa yhdistetyn asiakasprofiilisi kenttä, joka edustaa asiakkaan sähköpostiosoitetta. LinkedIn Adsiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osassa yhteyshenkilöiden kohdistamista varten vähintään yksi kenttä, joka edustaa asiakkaan sähköpostiosoitetta, Apple Ad -tunnusta, Google Ads -tunnusta, Google-käyttäjätunnusta tai etu- ja sukunimeä. Jos valitset yrityksen kohdistamisen, valitse vähintään yksi kenttä, joka edustaa yrityksen nimeä, sähköpostin toimialuetta, LinkedIn-sivun URL-osoitetta, Stock-symbolia tai verkkosivustoa. Viennin lisämäärityksiä varten voidaan valita lisää kenttiä. 
 
 1. Valitse segmentit, jotka haluat viedä. Kohdeyleisöt LinkedIn Campaign Managerissa luodaan automaattisesti valittujen vietävien segmenttien nimellä. Kustakin segmentistä tulee erillinen kohdeyleisö. 
 

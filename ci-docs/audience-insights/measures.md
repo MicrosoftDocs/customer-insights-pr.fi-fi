@@ -1,7 +1,7 @@
 ---
 title: Mittareiden luominen ja hallinta
 description: Määritä yrityksen suorituskyvyn analysoimiseen ja kuvaamiseen liittyvät mittarit.
-ms.date: 04/12/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3593a02ce89233cf1e66c6beee669dd6dd261ba3b0e1d2d0cc966731349d7d0b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7037004"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622855"
 ---
 # <a name="define-and-manage-measures"></a>Mittojen määrittäminen ja hallinta
 
@@ -26,15 +26,15 @@ Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa 
 
 ## <a name="build-your-own-measure-from-scratch"></a>Rakenna oma mittari tyhjästä
 
-Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mittarin ja tietomääritteet tietoentiteeteistä, joille on määritetty suhde yhteyden muodostamiseksi asiakasentiteettiin. 
+Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit tehdä tietomääritteiden avulla mittarin tietoentiteeteistä, jotka voivat suhteen kautta muodostaa yhteyden yhtenäiseen asiakasprofiilientiteettiin.
+
+# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
 
 1. Valitse **Uusi** ja valitse **Luo oma**.
 
 1. Valitse **Muokkaa nimeä** ja anna mittarille **nimi**. 
-   > [!NOTE]
-   > Jos uuden mittarin määrityksellä on vain kaksi kenttää, esimerkiksi asiakastunnus ja yksi laskenta, tulos lisätään uutena sarakkeena järjestelmän luomaan entiteettiin, jota jonka nimi on mukautettu mittari. Voit myös nähdä mittarin arvon yhdistetyssä asiakasprofiilissa. Muut mittarit luovat omat entiteetit.
 
 1. Valitse määritysalueessa koontitoiminto avattavasta **Valitse toiminto** -valikosta. Koostetoimintoja ovat seuraavat: 
    - **Sum**
@@ -53,7 +53,7 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
    1. Valitse **Määritteet**-välilehti. 
    1. Tietoentiteetti: valitse entiteetti, joka sisältää mitattavan määritteen. 
    1. Tietomäärite: valitse määrite, jota haluat käyttää koostetoiminnossa mittarin laskemiseksi. Voit valita vain yhden määritteen kerrallaan.
-   1. Voit valita myös tietomääritteen olemassa olevasta mittarista valitsemalla **Mittarit**-välilehden. Vaihtoehtoisesti voit hakea mitä tahansa entiteetin tai mittarin nimeä. 
+   1. Voit valita myös tietomääritteen olemassa olevasta mittarista valitsemalla **Mittarit**-välilehden tai voit hakea mitä tahansa entiteetin tai mittarin nimeä. 
    1. Valitse **Lisää**, jos haluat lisätä valitun määritteen mittariin.
 
    :::image type="content" source="media/measure-attribute-selection.png" alt-text="Valitse laskelmissa käytettävä määrite.":::
@@ -73,11 +73,11 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
    1. Valitse **Muokkaa dimensioita**, jos haluat lisätä tietomääritteitä, joiden mukaan mittarin arvot ryhmitellään. Tämä voi olla esimerkiksi kaupunki tai sukupuoli. Oletusarvoisesti valitaan *CustomerID*-dimensio *asiakastason mittareiden* luomiseksi. Voit poistaa oletusdimension, jos haluat luoda *yritystason mittareita*.
    1. Valitse **Valmis**, jos haluat lisätä dimensiot mittariin.
 
-1. Valitse **Säännöt**, jos tiedoissa on arvoja, jotka on korvattava kokonaisluvulla. Voit haluta esimerkiksi korvata *tyhjäarvon* arvolla *0*. Määritä sääntö ja varmista, että valitset korvaavaksi arvoksi vain kokonaislukuja.
+1. Jos tiedoissasi on arvoja, jotka on korvattava kokonaisluvulla, valitse **Säännöt**. Määritä sääntö ja varmista, että valitset korvaavaksi arvoksi vain kokonaislukuja. Voit esimerkiksi korvata arvon *tyhjä* arvolla *0*.
 
 1. Jos yhdistetyn tietoentiteetin ja *asiakas*-entiteetin välillä on useita polkuja, tulee valita jokin määritetyistä [entiteettisuhteen poluista](relationships.md). Mittarin tulokset voivat vaihdella valitun polun mukaan. 
    
-   1. Valitse **Tietomääritteet** ja valitse sitten entiteettipolku, jota käytetään mittarin tunnistamisessa. Jos *Asiakas*-entiteetissä on vain yksi polku, ohjausobjektia ei näy.
+   1. Valitse **Suhdepolku** ja valitse entiteettipolku, jota tulee käyttää mittarisi tunnistamiseen. Jos *Asiakas*-entiteetissä on vain yksi polku, ohjausobjektia ei näy.
    1. Ota valinta käyttöön valitsemalla **Valmis**. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Valitse mittarin entiteettipolku.":::
@@ -92,7 +92,79 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit luoda mit
 
 1. Siirry **Mittarit**-kohtaan, jos haluat nähdä juuri luodun mittarin luettelossa.
 
+# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
+
+1. Valitse **Uusi** ja valitse **Luo oma**.
+
+1. Valitse **Muokkaa nimeä** ja anna mittarille **nimi**. 
+
+1. Valitse määritysalueessa koontitoiminto avattavasta **Valitse toiminto** -valikosta. Koostetoimintoja ovat seuraavat: 
+   - **Sum**
+   - **Keskiarvo**
+   - **Määrä**
+   - **Yksilöllinen määrä**
+   - **Enintään**
+   - **Min**
+   - **Ensimmäinen**: ottaa tietueen ensimmäisen arvon
+   - **Viimeinen**: ottaa tietueeseen lisätyn viimeisen arvon
+
+   :::image type="content" source="media/measure-operators.png" alt-text="Mittarin laskelmien operaattorit.":::
+
+1. Valitse **Lisää määrite**, jos haluat valita tälle mittarille luotavat tiedot.
+   
+   1. Valitse **Määritteet**-välilehti. 
+   1. Tietoentiteetti: valitse entiteetti, joka sisältää mitattavan määritteen. 
+   1. Tietomäärite: valitse määrite, jota haluat käyttää koostetoiminnossa mittarin laskemiseksi. Voit valita vain yhden määritteen kerrallaan.
+   1. Voit valita myös tietomääritteen olemassa olevasta mittarista valitsemalla **Mittarit**-välilehden tai voit hakea mitä tahansa entiteetin tai mittarin nimeä. 
+   1. Valitse **Lisää**, jos haluat lisätä valitun määritteen mittariin.
+
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Valitse laskelmissa käytettävä määrite.":::
+
+1. Jos haluat luoda monimutkaisia mittareita, voit lisätä määritteiden määrää tai käyttää mittarin toiminnossa matemaattisia operaattoreita.
+
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Luo monimutkainen mittari, jossa on matemaattisia operaattoreita.":::
+
+1. Jos haluat lisätä suodattimia, valitse määritysalueen **Suodatin**-kohta. 
+  
+   1. Valitse **Suodattimet**-ruudun **Lisää määrite** -osassa määrite, jota haluat käyttää suodattimien luomisessa.
+   1. Aseta suodatinoperaattorit, jos haluat määrittää jokaiselle valitulle määritteelle suodattimen.
+   1. Valitse **Käytä**, jos haluat lisätä suodattimet mittariin.
+
+1. Jos haluat lisätä dimensioita, valitse määritysalueen **Dimensio**-kohta. Dimensiot näkyvät mittarin tulosentiteetin sarakkeina.
+ 
+   1. Valitse **Muokkaa dimensioita**, jos haluat lisätä tietomääritteitä, joiden mukaan mittarin arvot ryhmitellään. Tämä voi olla esimerkiksi kaupunki tai sukupuoli. Oletusarvoisesti valitaan *CustomerID*-dimensio *asiakastason mittareiden* luomiseksi. Voit poistaa oletusdimension, jos haluat luoda *yritystason mittareita*.
+   1. Valitse **Valmis**, jos haluat lisätä dimensiot mittariin.
+
+1. Jos tiedoissasi on arvoja, jotka on korvattava kokonaisluvulla, valitse **Säännöt**. Määritä sääntö ja varmista, että valitset korvaavaksi arvoksi vain kokonaislukuja. Voit esimerkiksi korvata arvon *tyhjä* arvolla *0*.
+
+1. Voit käyttää **Kokoa aliasiakkaat** -käyttöpainiketta, jos [käytät tilejä, joissa on hierarkioita](relationships.md#set-up-account-hierarchies).
+   - Jos se on määritetty arvoon **Ei käytössä**, mittari lasketaan jokaiselle tilille. Jokaisella tilillä on oma tulos.
+   - Jos se määritetty arvoon **Käytössä**, valitse **Muokkaa**, jotta voit valita tilihierarkian käytettyjen hierarkioiden mukaan. Mittari tuottaa vain yhden tuloksen, koska siihen koostetaan aliasiakkaat.
+
+1. Jos yhdistetyn tietoentiteetin ja *asiakas*-entiteetin välillä on useita polkuja, tulee valita jokin määritetyistä [entiteettisuhteen poluista](relationships.md). Mittarin tulokset voivat vaihdella valitun polun mukaan. 
+   
+   1. Valitse **Suhdepolku** ja valitse entiteettipolku, jota tulee käyttää mittarisi tunnistamiseen. Jos *Asiakas*-entiteetissä on vain yksi polku, ohjausobjektia ei näy.
+   1. Ota valinta käyttöön valitsemalla **Valmis**. 
+
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Valitse mittarin entiteettipolku.":::
+
+1. Valitse laskelman **...**-kohta, jos haluat **monistaa**, **uudelleennimetä** tai **poistaa** laskelman mittarista.
+
+1. **Esiversio**-alueessa on näkyvissä mittarin tulosentiteetin tietorakenne, myös suodattimet ja dimensiot. Esiversio readoi dynaamisesti määrityksen muutoksiin.
+
+1. Laske määritetyn mittarin tulokset valitsemalla **Suorita**. Valitse **Tallenna ja sulje**, jos haluat pitää nykyisen määrityksen ja suorittaa mittarin myöhemmin.
+
+1. Siirry **Mittarit**-kohtaan, jos haluat nähdä juuri luodun mittarin luettelossa.
+
+---
+
 ## <a name="use-a-template-to-build-a-measure"></a>Mittarin luominen mallin avulla
+
+Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä mittoja. Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
+
+# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
 
 Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä mittoja. Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
 
@@ -140,6 +212,12 @@ Seuraavassa ohjeessa on kuvattu, miten uusi mittari voidaan luoda mallin avulla.
 
 1. Nyt voit laskea mittarin tulokset valitsemalla **Suorita**. Jos haluat tarkentaa sitä myöhemmin, valitse **Tallenna luonnos**.
 
+# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+
+Tämä ominaisuus on käytettävissä vain niissä ympäristöissä luoduille yksiköille, joissa yksittäiset asiakkaat ovat ensisijainen kohdeyleisö.
+
+---
+
 ## <a name="manage-your-measures"></a>Hallitse mittoja
 
 **Mittarit**-sivulla on mittarien luettelo.
@@ -166,6 +244,5 @@ Valitse seuraaville vaihtoehdoille mittari luettelosta:
 ## <a name="next-step"></a>Seuraava vaihe
 
 Voit luoda [asiakassegmentin](segments.md) olemassa olevien mittareiden avulla.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

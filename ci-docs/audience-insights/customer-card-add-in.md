@@ -1,7 +1,7 @@
 ---
 title: Asiakaskortti-apuohjelma Dynamics 365 -sovelluksiin
 description: Näytä käyttäjäryhmän merkitykselliset tiedot Dynamics 365 -sovelluksissa tämän apuohjelman avulla.
-ms.date: 05/18/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,39 +9,40 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0f6c922104df229980b308136a4d764938121b35d6d744f41b1530bdb5515e7f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
+ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032984"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "7643386"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Kun Asiakaskortti-apuohjelma on asennettu tuettuun Dynamics 365 -sovellukseen, voit näyttää demografiset tiedot, kävijätiedot ja aktiivisuuden aikajanat. Apuohjelma hakee tietoja Customer Insights -sovelluksesta vaikuttamatta yhdistetyn Dynamics 365 -sovelluksen tietoihin. 
+Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Kun asiakaskortin apuohjelma on asennettu tuettuun Dynamics 365 -sovellukseen, voit valita, näytetäänkö asiakasprofiilin kentät, tiedot ja aktiviteetin aikajana. Apuohjelma hakee tietoja Customer Insights -sovelluksesta vaikuttamatta yhdistetyn Dynamics 365 -sovelluksen tietoihin.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
 ## <a name="prerequisites"></a>Edellytykset
 
 - Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
-- Jotta Dynamics 365 -tiedot voidaan yhdistää kohdeyleisön merkistyksellisten tietojen siakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Microsoft Dataverse -yhdistimen avulla](connect-power-query.md).
+- Jotta Dynamics 365 -tiedot voidaan yhdistää käyttäjäryhmän merkistyksellisten tietojen asiakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Microsoft Dataverse -yhdistimen avulla](connect-power-query.md).
 - Kaikki Asiakaskortti-apuohjelman Dynamics 365 -käyttäjät [on lisättävä käyttäjiksi](permissions.md) kohdeyleisön merkityksellisissä tiedoissa, jotta tiedot näkyvät heille.
 - [Haku- ja suodatustoiminnot](search-filter-index.md) kohdeyleisön merkityksellisissä tiedoissa vaaditaan, jotta tietojen haku toimii.
-- Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin kohdeyleisön merkityksellisissä tiedoissa:
-  - Mittarin ohjausobjekti: edellyttää [määritettyjä mittareita](measures.md).
-  - Älykkyyden hallinta: Edellyttää [ennusteiden](predictions.md) tai [mukautettujen mallien](custom-models.md) avulla luotuja tietoja.
-  - Demografiatietojen ohjausobjekti: demografiset kentät (kuten ikä tai sukupuoli), ovat käytettävissä yhdistetyssä asiakasprofiilissa.
-  - Rikastus-ohjausobjekti: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
-  - Aikajanan ohjausobjekti: edellyttää [määritettyjä aktiviteetteja](activities.md).
+- Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin käyttäjäryhmän merkityksellisissä tiedoissa. Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
+  - **Mittarin ohjausobjekti**: Vaatii asiakasmääritetyyppisiä [määritettyjä mittareita](measures.md).
+  - **Älykkyyden hallinta**: Edellyttää [ennusteiden](predictions.md) tai [mukautettujen mallien](custom-models.md) avulla luotuja tietoja.
+  - **Asiakkaan tietojen ohjausobjekti**: Profiilin kaikki kentät ovat käytettävissä yhtenäisessä asiakasprofiilissa.
+  - **Rikastus-ohjausobjekti**: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
+  - **Yhteyshenkilöiden ohjausobjekti**: Edellyttää yhteyshenkilötyyppisen semanttisen entiteetin määrittelemistä.
+  - **Aikajanan ohjausobjekti**: Edellyttää [määritettyjä aktiviteetteja](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Asiakaskortin apuohjelman asentaminen
 
 Asiakaskortin apuohjelma on Dynamics 365:n Customer Engagement -sovellusten ratkaisu. Jos haluat asentaa ratkaisun, siirry AppSourceen ja hae sanalla **Dynamics Customer Card**. Valitse [Customer Card Add-in AppSourcessa](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) ja sitten **Hanki nyt**.
 
-Ratkaisun asentaminen voi edellyttää kirjautumista Dynamics 365 -sovelluksen järjestelmänvalvojan tunnistetiedoilla.
-
-Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
+Ratkaisun asentaminen voi edellyttää kirjautumista Dynamics 365 -sovelluksen järjestelmänvalvojan tunnistetiedoilla. Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 
 ## <a name="configure-the-customer-card-add-in"></a>Asiakaskortin apuohjelman määrittäminen
 
@@ -50,7 +51,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Valitse **Näyttönimi**-linkki **Dynamics 365 Customer Insights – Asiakaskortti-apuohjelma (esiversio)** -ratkaisulle.
 
    > [!div class="mx-imgBorder"]
-   > ![Näyttönimen valinta.](media/select-display-name.png "Näyttönimen valinta")
+   > ![Näyttönimen valinta.](media/select-display-name.png "Valitse näyttönimi.")
 
 1. Valitse **Kirjaudu sisään** ja anna sen järjestelmänvalvojatilin tunniste tiedot, jota käytät Customer Insightsin määrittämiseen.
 
@@ -64,7 +65,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
    - Tili yhdistetään valitsemalla asiakasentiteetissä kenttä, joka vastaa tilientiteetin tunnusta.
 
    > [!div class="mx-imgBorder"]
-   > ![Yhteyshenkilön tunnus -kenttä.](media/contact-id-field.png "Yhteyshenkilön tunnus -kenttä")
+   > ![Yhteyshenkilön tunnus -kenttä.](media/contact-id-field.png "Yhteyshenkilön tunnus -kenttä.")
 
 1. Tallenna asetukset valitsemalla **Tallenna määritys**.
 
@@ -73,7 +74,9 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Delegoi **Customer Insights -kortin mukauttaja** -rooli käyttäjille, jotka mukauttavat koko organisaation kortissa näkemää sisältöä.
 
 ## <a name="add-customer-card-controls-to-forms"></a>Asiakaskortin ohjausobjektien lisääminen lomakkeisiin
-  
+
+Skenaariosta riippuen voit valita ohjausobjekteja joko **Yhteyshenkilö**-lomakkeeseen tai **Tili**-lomakkeeseen. Jos käyttäjäryhmän merkitykselliset tiedot -ympäristösi on yritystilejä varten, on suositeltavaa lisätä ohjausobjektit Tili-lomakkeeseen. Korvaa tässä tapauksessa "yhteyshenkilö" alla olevissa vaiheessa tunnuksella "tili".
+
 1. Voit lisätä Asiakaskortti-ohjausobjekteja Yhteyshenkilö-lomakkeeseen siirtymällä Dynamics 365 -järjestelmässä kohtaan **Asetukset** > **Mukautukset**.
 
 1. Valitse **Mukauta järjestelmää**.
@@ -83,7 +86,7 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Valitse yhteyshenkilölomake, jonka haluat lisätä asiakaskortin ohjausobjekteihin.
 
     > [!div class="mx-imgBorder"]
-    > ![Yhteyshenkilölomakkeen valitseminen.](media/contact-active-forms.png "Yhteyshenkilölomakkeen valitseminen")
+    > ![Yhteyshenkilölomakkeen valitseminen.](media/contact-active-forms.png "Valitse yhteyshenkilölomake.")
 
 1. Voit lisätä ohjausobjektin vetämällä kentän lomake-editorissa **kenttien hallinnasta** kohtaan, johon haluat sijoittaa ohjausobjektin.
 
@@ -102,7 +105,8 @@ Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 1. Voit mukauttaa mukautetussa ohjausobjektissa näkyviä tietoja valitsemalla muokkauspainikkeen oikeassa yläkulmassa.
 
 ## <a name="upgrade-customer-card-add-in"></a>Asiakaskortin apuohjelman päivittäminen
-Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Voit päivittää uusimman version toimimalla seuraavasti Dynamics 365 -sovelluksessa, johon apuohjelma on asennettu.
+
+Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Jos haluat päivittää uusimpaan versioon, toimi seuraavasti Dynamics 365 -sovelluksessa, johon apuohjelma on asennettu.
 
 1. Siirry Dynamics 365 -sovelluksissa kohtaan **Asetukset** > **Mukauttaminen** ja valitse **Ratkaisut**.
 

@@ -1,7 +1,7 @@
 ---
 title: Yhtenäisten asiakasprofiilien rikastaminen
 description: Asiakastietojen rikastaminen ominaisuuksien avulla.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469964"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617551"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
 
@@ -27,16 +27,26 @@ Käytä rikastamisasetuksia valitsemalla käyttäjäryhmän merkityksellisissä 
 
 Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jos haluat luoda tai muokata täydennyksiä. Lisätietoja on kohdassa [Oikeudet](permissions.md).
 
-**Tutustu**-välilehdessä ovat seuraavat täydennykset:
+Löydät **Löydä**-välilehdestä kaikki tuetut rikastamisvaihtoehdot.
 
-- Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
+# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
+
 - [Tuotemerkit](enrichment-microsoft.md), jotka toimittaa Microsoft
 - [Kiinnostuksen kohteet](enrichment-microsoft.md), jotka toimittaa Microsoft
-- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md)
-- Leadspacen toimittamat [yritystiedot](enrichment-leadspace.md)
+- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md) 
 - Experianin tarjoamat [demografiatiedot](enrichment-experian.md)
-- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md)
-- [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP)
+- [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP) 
+- Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
+
+# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+
+- Leadspacen toimittamat [yritystiedot](enrichment-leadspace.md)
+- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md) 
+- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md) 
+- [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP) 
+- Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
+
+---
 
 **Omat täydennykset** -välilehdessä voit tarkastella määrittämiäsi täydennyksiä ja muokata niiden ominaisuuksia.
 
@@ -58,7 +68,7 @@ Suorita useita rikasteita tai poista niiden aktivointi kerralla valitsemalla ne 
 
 ## <a name="enrichments-and-connections"></a>Rikastukset ja yhteydet
 
-Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](connections.md), jotka järjestelmänvalvoja tunnistetiedoilla ja antaa tietojen siirron hyväksynnän. Tämän jälkeen sekä järjestelmänvalvojat että osallistujat voivat käyttää yhteyttä rikastusten määrittämiseen.  
+Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](connections.md), jotka järjestelmänvalvoja tunnistetiedoilla ja antaa tietojen siirron hyväksynnän. Järjestelmänvalvojat ja osallistujat voivat käyttää yhteyksiä rikastuksien määrittämiseen.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
 
