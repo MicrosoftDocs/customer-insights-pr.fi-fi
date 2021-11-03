@@ -1,7 +1,7 @@
 ---
 title: Tapahtuman vaihtuvuuden ennustaminen
 description: Sen riskin ennustaminen, että asiakas ei enää osta yrityksen tuotteita tai palveluja.
-ms.date: 10/11/2021
+ms.date: 10/20/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ac484f74e388aa23422a89e25dabb555f2ad4118
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643373"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673041"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Tapahtuman vaihtuvuuden ennustaminen (esiversio)
 
@@ -28,6 +28,32 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
 > Kokeile tapahtuman vaihtuvuusennustetta opasohjelmaa ja mallitietoja käyttäen: [Tapahtuman vaihtuvuuden ennustamisen (esiversio) esimerkkiopas](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>edellytykset
+
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
+
+- Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
+- Liiketoiminnan tietämys, jonka avulla tiedät, mitä vaihtuvuus merkitsee yrityksellesi. Aikaperusteista vaihtuvuusmääritelmiä tuetaan, joten asiakkaan katsotaan vaihtuneen tietyn ostamattoman ajanjakson jälkeen.
+- Tietoja tapahtumista ja ostoista sekä niiden historiasta:
+    - Tapahtumatunnisteet erottavat ostot ja tapahtumat toisistaan.
+    - Asiakastunnisteet, joilla tapahtumat yhdistetään asiakkaisiin.
+    - Tapahtuman tapahtumapäivämäärät, jotka määrittävät tapahtuman tapahtumispäivämäärät.
+    - Ostojen ja tapahtumien semanttiseen tietorakenteeseen tarvitaan seuraavat tiedot:
+        - **Tapahtuman tunnus**: oston tai tapahtuman yksilöivä tunnus.
+        - **Tapahtuman päivämäärä**: oston tai tapahtuman päivämäärä.
+        - **Tapahtuman arvo**: tapahtuman tai nimikkeen valuutta tai numeroarvoinen summa.
+        - (Valinnainen) **Yksilöivä tuotetunnus**: ostetun tuotteen tai palvelun tunnus, jos tieto on rivitasolla.
+        - (Valinnainen) **Tieto siitä, oliko tämä tapahtuma palautus**: Tosi/epätosi-kenttä ilmaisee, oliko tapahtuma palautus vai ei. Jos **Tapahtuman arvo** on negatiivinen, myös tällä tiedolla viitataan palautukseen.
+- (Valinnainen) Tietoja asiakkaan aktiviteeteista:
+    - Aktiviteetin tunnisteet, joiden avulla saman tyypin aktiviteetit erotetaan toisistaan.
+    - Asiakastunnisteet, joiden avulla aktiviteetit yhdistetään asiakkaisiin.
+    - Aktiviteetin tiedot, jotka sisältävät aktiviteetin nimen ja päivämäärän.
+    - Asiakasaktiviteettien semanttinen tietorakenne sisältää seuraavat tiedot:
+        - **Perusavain:** Aktiviteetin yksilöllinen tunniste. Esimerkiksi sivustovierailu tai käyttötietue, joka osoittaa, että asiakas kokeile tuotenäytettä.
+        - **Aikaleima:** Ensisijaisen avaimen tunnistaman tapahtuman päivämäärä ja aika.
+        - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi elintarvikemyymälän UserAction-kenttä voisi olla asiakkaan käyttämä kuponki.
+        - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi elintarvikemyymälän CouponValue-kenttä voisi olla kupongin valuutta-arvo.
+
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
 - Liiketoiminnan tietämys, jonka avulla tiedät, mitä vaihtuvuus merkitsee yrityksellesi. Aikaperusteista vaihtuvuusmääritelmiä tuetaan, joten asiakkaan katsotaan vaihtuneen tietyn ostamattoman ajanjakson jälkeen.
@@ -51,7 +77,7 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
         - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi elintarvikemyymälän UserAction-kenttä voisi olla asiakkaan käyttämä kuponki.
         - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi elintarvikemyymälän CouponValue-kenttä voisi olla kupongin valuutta-arvo.
 - (Valinnainen) Tietoja asiakkaistasi:
-    - Nämä tiedot tulisi kohdistaa staattisempiin määritteisiin, jotta malli toimisi parhaalla mahdollisella tavalla.
+    - Näiden tietojen on vastattava staattisia määritteitä, sillä niin voidaan varmistaa mallin toimiminen parhaalla mahdollisella tavalla.
     - Asiakastietojen semanttinen tietorakenne sisältää seuraavat tiedot:
         - **CustomerID:** Asiakkaan yksilöivä tunnus.
         - **Luontipäivämäärä:** Päivämäärä, jona asiakas alun perin lisättiin.
@@ -59,6 +85,9 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
         - **Maa:** asiakkaan maa.
         - **Toimiala:** asiakkaan toimialatyyppi. Esimerkiksi "Toimiala"-niminen kenttä kahvipaahtimon kohdalla voi ilmaista, onko asiakas vähittäismyyjä.
         - **Luokitus:** asiakkaan luokitteleminen yrityksesi tarpeiden mukaan. Esimerkiksi "ValueSegment"-niminen kenttä kahvipaahtimon kohdalla voi olla asiakkaan kokoon perustuva asiakastaso.
+
+---
+
 - Ehdotetut tietojen ominaisuudet:
     - Riittävät historiatiedot: Tapahtumatiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Mieluiten 2-3 vuoden tapahtumahistoria. 
     - Useita ostoja asiakasta kohden: Parhaimmillaan vähintään kaksi tapahtumaa asiakasta kohden
@@ -114,6 +143,32 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
 
 1. Valitse **Seuraava**.
 
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
+
+### <a name="add-additional-data-optional"></a>Lisätietojen lisääminen (valinnainen)
+
+Määritä asiakasaktiviteettientiteetin suhde *asiakasentiteettiin*.
+
+1. Valitse kenttä, joka määrittää asiakkaan asiakasaktiviteettitaulukossa. Se voi liittyä suoraan *asiakasentiteetin* ensisijaiseen asiakastunnukseen.
+
+1. Valitse entiteetti, joka on ensisijainen *Asiakas*-entiteettisi.
+
+1. Anna suhdetta kuvaava nimi.
+
+#### <a name="customer-activities"></a>Asiakasaktiviteetit
+
+1. Vaihtoehtoisesti voit valita **Lisää tiedot** **Asiakasaktiviteetit**-kohdassa.
+
+1. Valitse semanttinen aktiviteettityyppi, joka sisältää haluamasi tiedot, ja valitse sitten yksi tai useampi aktiviteetti **Aktiviteetit**-osasta.
+
+1. Valitse aktiviteettityyppi, joka vastaa määrittämiesi asiakkaan aktiviteetin tyyppiä. Valitse **Luo uusi** ja valitse käytettävissä oleva aktiviteettityyppi tai luo uusi tyyppi.
+
+1. Valitse **Seuraava**, sitten **Tallenna**.
+
+1. Jos haluat sisällyttää muita asiakasaktiviteetteja, toista edellä olevat vaiheet.
+
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
+
 ### <a name="select-prediction-level"></a>Valitse ennusteen taso
 
 Useimmat ennusteet luodaan asiakastasolla. Joissakin tilanteissa ne eivät ehkä ole riittävän tarkkoja yrityksen tarpeisiin. Tämän ominaisuuden avulla voit ennustaa vaihtuvuuden esimerkiksi asiakashaaran osalta kokonaisen asiakkaan asemesta.
@@ -122,9 +177,9 @@ Useimmat ennusteet luodaan asiakastasolla. Joissakin tilanteissa ne eivät ehkä
 
 1. Laajenna entiteetit, joista haluat valita toissijaisen tason, tai käytä hakusuodatinruutua suodattaaksesi valitut vaihtoehdot.
 
-1. Valitse määrite, jota haluat käyttää toissijaisena tasona, ja valitse sitten **Lisää**
+1. Valitse määrite, jota haluat käyttää toissijaisena tasona, ja valitse sitten **Lisää**.
 
-1. Valitse **Seuraava**
+1. Valitse **Seuraava**.
 
 > [!NOTE]
 > Tässä osassa käytettävissä olevat entiteetit näkyvät, koska niillä on suhde edellisessä osassa valitsemaasi entiteettiin. Jos lisättävää entiteettiä ei näy, varmista, että sillä on kelvollinen suhde kohdassa **Suhteet**. Vain yksi yhteen- ja monta yhteen -suhteet kelpaavat tässä kokoonpanossa.
@@ -159,7 +214,7 @@ Määritä asiakasaktiviteettientiteetin suhde *asiakasentiteettiin*.
 
 1. Valitse **Seuraava**.
 
-### <a name="provide-an-optional-list-of-benchmark-accounts-business-accounts-only"></a>Valinnaisen luettelon tarjoaminen vertailuasiakkaista (vain yritystilit)
+### <a name="provide-an-optional-list-of-benchmark-accounts"></a>Valinnaisen luettelon muodostaminen vertailuasiakkaista
 
 Lisää luettelo yritysasiakkaistasi ja asiakkaistasi, joita haluat käyttää vertailukohtana. Saat [tietoja näistä vertailuasiakkaista](#review-a-prediction-status-and-results) mukaan lukien niiden vaihtuvuuspisteytyksen ja vaikuttavimmat ominaisuudet, jotka vaikuttivat niiden vaihtuvuusennusteeseen.
 
@@ -168,6 +223,8 @@ Lisää luettelo yritysasiakkaistasi ja asiakkaistasi, joita haluat käyttää v
 1. Valitse asiakkaat, jotka toimivat vertailukohtina.
 
 1. Jatka valitsemalla **Seuraava**.
+
+---
 
 ### <a name="set-schedule-and-review-configuration"></a>Määritä aikataulu ja tarkista määritys
 
@@ -201,6 +258,25 @@ Lisää luettelo yritysasiakkaistasi ja asiakkaistasi, joita haluat käyttää v
 1. Valitse sen ennusteen vieressä olevat allekkaiset pisteet, jonka tuloksia haluat tarkastella, ja valitse **Näytä**.
 
    :::image type="content" source="media/model-subs-view.PNG" alt-text="Ennusteen tulosten näyttäminen näkymän ohjausobjektilla":::
+
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
+
+1. Tulossivulla on seuraavat kolme ensisijaista tieto-osaa:
+   - **Opetusmallin suorituskyky**: A, B ja C ovat mahdollisia pistemääriä. Tämä pistemäärä osoittaa ennusteen suorituskyvyn, ja sen avulla voit tehdä päätöksen tulosentiteettiin tallennettujen tulosten käyttämisestä. Pistemäärät määritetään seuraavien sääntöjen perusteella: 
+        - **A**, kun mallin tarkkuudeksi on ennustettu vähintään 50 % ennusteesta yhteensä ja kun vaihtuvuusasiakkaiden tarkka ennusteprosentti on ainakin 10 % suurempi kuin lähtöarvo.
+            
+        - **B**, kun mallin tarkkuudeksi on ennustettu vähintään 50 % ennusteesta yhteensä ja kun vaihtuvuusasiakkaiden tarkka ennusteprosentti on enintään 10 % suurempi kuin lähtöarvo.
+            
+        - **C**, kun mallin tarkkuudeksi on ennustettu alle 50 % ennusteesta yhteensä tai kun vaihtuvuusasiakkaiden tarkka ennusteprosentti on pienempi kuin lähtöarvo.
+               
+        - **Lähtöarvo** käyttää mallin ennusteen aikaikkunan (kuten yhden vuoden), ja malli luo eri aikajakoja jakamalla sen kahdella, kunnes tuloksena on yksi kuukausi tai sitä lyhyempi jakso. Se luo liiketoimintasäännön näiden osien avulla asiakkaille, jotka eivät ole tehneet ostona kyseisellä aikavälillä. Näiden asiakkaiden katsotaan vaihtuneen. Lähtöarvomalliksi valitaan aikaperusteinen liiketoimintasääntö, joka ennustaa parhaiten todennäköisen vaihtuvuuden.
+            
+    - **Vaihtuvuuden todennäköisyys (asiakkaiden määrä)**: Asiakasryhmät ennustetun vaihtuvuusriskin perusteella. Nämä tiedot auttavat myöhemmin, jos haluat luoda asiakassegmentin, jolla on suuri vaihtuvuusriski. Tällaiset segmentit auttavat ymmärtämään, missä segmentin jäsenyyden rajan on oltava.
+       
+    - **Tärkeimmät tekijät**: Ennusteen luomisessa otetaan huomioon useita tekijöitä. Kunkin tekijän tärkeys lasketaan mallin luomille kooste-ennusteille. Voit käyttää näitä tekijöitä apuna ennusteen tuloksien vahvistamisessa tai voit käyttää tätä tietoa myöhemmin [luodessasi segmenttejä](segments.md), joista voi olla apua asiakkaiden vaihtuvuusriskiin vaikuttamisessa.
+
+
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
 1. Tulossivulla on seuraavat kolme ensisijaista tieto-osaa:
    - **Opetusmallin suorituskyky**: A, B ja C ovat mahdollisia pistemääriä. Tämä pistemäärä osoittaa ennusteen suorituskyvyn, ja sen avulla voit tehdä päätöksen tulosentiteettiin tallennettujen tulosten käyttämisestä. Pistemäärät määritetään seuraavien sääntöjen perusteella: 
@@ -237,6 +313,11 @@ Lisää luettelo yritysasiakkaistasi ja asiakkaistasi, joita haluat käyttää v
        Kun ennustat vaihtuvuutta asiakastasolla, kaikki asiakkaat otetaan huomioon, kun keskimääräisiä ominaisuusarvoja johdetaan vaihtuvuussegmenteille. Jokaisen asiakkaan toissijaisen tason vaihtuvuusennusteissa vaihtuvuussegmenttien johtaminen riippuu sivuruudussa valitun kohteen toissijaisesta tasosta. Esimerkiksi jos kohteella on tuoteluokan toissijainen taso = toimistotarvikkeet, otetaan huomioon vain kohteet, joissa on toimistotarvikkeet tuoteluokkana, kun keskimääräisiä ominaisuusarvoja johdetaan vaihtuvuussegmenteille. Logiikkaa käytetään, jotta kohteen ominaisuusarvojen ja pienien, keskisuurien ja suurien vaihtuvuussegmenttien keskimääräisten arvojen vertailu olisi tasapuolista.
 
        Joissain tapauksissa pienien, keskisuurien ja suurien vaihtuvuussegmenttien keskimääräinen arvo on tyhjä tai se ei ole käytettävissä, koska ei ole kohteita, jotka kuuluvat yllä olevaan määritelmään perustuviin, vastaaviin vaihtuvuussegmentteihin.
+       
+       > [!NOTE]
+       > Keskimäärin pienen, keskitason ja suuren sarakkeen arvojen tulkinta poikkeaa luokitteluominaisuuksista, kuten maa tai toimiala. Koska ominaisuuden keskimääräinen arvo ei ole käytössä luokitteluominaisuuksissa, näiden sarakkeiden arvo on niiden asiakkaiden osuus pienen, keskitason tai suuren vaihtuvuuden segmenteissä, joiden luokitteluominaisuuden arvo on sama sivupaneelissa valittuun kohteeseen verrattuna.
+
+---
 
 ## <a name="manage-predictions"></a>Hallitse ennusteita
 

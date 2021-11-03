@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7606062"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673824"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -166,7 +166,7 @@ Maaliskuun 2021 päivityksessä on useita ominaisuuksia, suorituskykypäivityksi
 - **Vie segmentit Constant Contactiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Constant Contact. Nyt voit viedä segmenttejä Customer Insightsista Constant Contact -luetteloihin ja käyttää niitä markkinointikampanjoiden lähtökohtana.   
    Lisätietoja on aiheessa [Vienti Constant Contactiin](export-constant-contact.md).
 
-- **Vie segmentit RollWorksiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään RollWorks. Nyt voit viedä segmenttejä Customer Insightsista RollWorks-kohdeyleisöihin ja käyttää niitä B2B-mainonnan lähtökohtana.    
+- **Vie segmentit RollWorksiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään RollWorks. Segmenttejä voidaan nyt viedä Customer Insightsista RollWorks-käyttäjäryhmiin, jossa niitä voidaan käyttää yritystenvälisen mainonnan perustana.    
    Lisätietoja on aiheessa [Vienti RollWorksiin](export-rollworks.md).
 
 - **Vie segmentit Snapchatiin** Olemme laajentaneet vientikohteitamme niin, että niihin sisällytetään Snapchat. Nyt voit viedä segmenttejä Customer Insightsista Snapchat-kohdeyleisöihin ja käyttää niitä mainonnan lähtökohtana.     

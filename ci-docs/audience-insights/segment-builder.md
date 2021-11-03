@@ -1,7 +1,7 @@
 ---
 title: Luo segmenttejä segmentin muodostintyökalun avulla
 description: Luo asiakassegmenttejä ja ryhmittele ne eri määritteiden perusteella.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623002"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673546"
 ---
 # <a name="create-segments"></a>Segmenttien luominen
 
@@ -23,6 +23,7 @@ Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimu
 > [!TIP]
 > - Pikasegmenttejä tuetaan vain **yksittäisten asiakkaiden** ympäristöissä.    
 > - Segmentit, jotka perustuvat **yksittäisiin asiakkaisiin**, sisältävät automaattisesti käytössä olevat segmentin jäsenten yhteystiedot. Ympäristöissä, jotka perustuvat **yritystileihin**, segmentit perustuvat asiakkaisiin (yrityksiin tai tytäryrityksiin). Jos haluat sisällyttää yhteyshenkilötiedot segmenttiin, käytä **Projektin määritteet** -toimintoa segmentin muodostimessa.
+>    - Varmista, että yhteyshenkilön tietolähteet on [yhdistetty semanttisesti ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-entiteettiin.
 
 ## <a name="segment-builder"></a>Segmentin muodostin
 
@@ -52,7 +53,7 @@ Yllä olevassa esimerkissä on kuvattu segmentointiominaisuudet. Olemme määrit
 
 Uuden segmentin voi luoda useilla tavoilla. Tässä osassa kuvataan, miten oma segmentti voidaan rakentaa alusta. Voit myös luoda *pikasegmentin* olemassa olevien entiteettien perusteella tai käyttää koneoppimismalleja *segmenttiehdotusten* saamiseksi. Lisätietoja löytyy kohdasta [Segmenttien yleiskatsaus](segments.md).
 
-Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tallennetaan passiiviseksi segmentiksi. Kun olet suorittanut segmentin määrityksen loppuun, aktivoi segmentti suorittamalla se. Vaihtoehtoisesti voit _ **Aktivoida** _ segmentin **Kaikki segmentit** -sivulta.
+Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tallennetaan passiiviseksi segmentiksi. Kun olet suorittanut segmentin määrityksen loppuun, aktivoi segmentti suorittamalla se. Vaihtoehtoisesti segmentti voidaan **aktivoida** **Kaikki segmentit** -sivulla.
 
 1. Siirry **Segmentit**-sivulle.
 
@@ -86,17 +87,25 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 
    OR-operaattoria käytettäessä kaikkien ehtojen on perustuttava suhdepolkuun sisältyviin entiteetteihin.
 
-   - Voit luoda useita sääntöjä eri asiakastietueiden joukkoja varten. Voit yhdistää ryhmiä niin, että niihin sisällytetään liiketoimintatapausta varten tarvittavat asiakkaat. Luo uusi sääntö valitsemalla **Lisää sääntö**. Jos et erityisesti voi lisätä sääntöön eikä entiteettiä määritetyn suhdepolun vuoksi, sinun täytyy luoda uusi sääntö, jotta voit valita määritteet sen muodostamiseksi.
+   - Voit luoda useita sääntöjä eri asiakastietueiden joukkoja varten. Voit yhdistää ryhmiä niin, että niihin sisällytetään liiketoimintatapausta varten tarvittavat asiakkaat. Luo uusi sääntö valitsemalla **Lisää sääntö**. Jos entiteettiä ei voi sisällyttää sääntöön määritetyn suhdepolun vuoksi, siitä valittavia määrityksiä varten on luotava uusi sääntö.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Lisää uusi sääntö segmenttiin ja valitse määritetty operaattori.":::
 
    - Valitse jokin joukko-operaattoreista: **Unioni**, **Leikkaus** tai **Paitsi**.
 
       - **Liitos** yhdistää kaksi ryhmää.
-      - **Leikkaa** asettaa kaksi ryhmää päällekkäin. Vain molemmille ryhmille *yhteiset* tiedot säilytetään yhdistetyssä ryhmässä.
-      - **Lukuun ottamatta** yhdistää kaksi ryhmää. Vain ryhmän A tiedot, jotka *eivät ole yhteisiä* ryhmän B tietojen kanssa, säilytetään.
+      - **Leikkaa** asettaa kaksi ryhmää päällekkäin. Vain molemmille ryhmille *yhteiset* tiedot säilyvät yhdistetyssä ryhmässä.
+      - **Lukuun ottamatta** yhdistää kaksi ryhmää. Vain ne ryhmän A tiedot, jotka *eivät ole yhteisiä* ryhmän B tietojen kanssa, säilytetään.
 
-1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet.  
+1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet. 
+
+   > [!IMPORTANT]
+   > Jos segmentti perustuu yritystileihin, segmenttiin on sisällytettävä jokaisesta *ContactProfile*-entiteetin tilistä vähintään yhden yhteyshenkilön tiedot, jotta segmentti voidaan aktivoida tai viedä kohteisiin, jotka vaativat yhteyshenkilöiden tietoja. Lisätietoja *ContactProfile*-entiteetistä on kohdassa [Semanttiset yhdistämismääritykset](semantic-mappings.md).
+   > Yhteyshenkilöiden projisoituja määritteitä sisältäviin yritystileihin perustuvan segmentin esimerkkitulos voi olla seuraavankaltainen: 
+   >
+   > |Tunnus  |Asiakkaan nimi  |Tuotto  |Yhteyshenkilön nimi  | Yhteyshenkilön rooli|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [Toimitusjohtaja, hankintapäällikkö]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Esimerkki sivuruudussa valituista ennustetuista määritteistä, jotka lisätään tulosentiteettiin.":::
   
@@ -107,13 +116,14 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
    > - Jos määrite, jonka haluat projisoida, on enemmän kuin yhden siirtymisen päässä *Asiakas*-entiteetistä suhteen määrityksen perusteella, tätä määritettä tulee käyttää tekemäsi segmenttikyselyn jokaisessa säännössä. 
    > - Jos määrite, jonka haluat projisoida, on vain yhden siirtymisen päässä *Asiakas*-entiteetistä, tämän määritteen ei tarvitse olla mukana tekemäsi segmenttikyselyn jokaisessa säännössä. 
    > - **Projisoidut määritteet** otetaan huomioon, kun joukko-operaattoreita käytetään.
-   > - Jos segmentti perustuu yritystileihin, segmenttiin on sisällytettävä jokaisesta tilistä vähintään yhden yhteyshenkilön tiedot, jotta segmentti voidaan aktivoida tai viedä kohteisiin, jotka vaativat yhteyshenkilöiden tietoja.
 
 1. Ennen kuin tallennat ja suoritat segmentin, valitse segmentin nimen vierestä **Muokkaa tietoja**. Anna segmentille nimi ja päivitä segmentin ehdotetun **Tulos-entiteetin nimi**. Voit myös lisätä segmenttiin kuvauksen.
 
 1. Valitse **Suorita**, jotta voit tallentaa segmentin, aktivoida sen ja aloittaa segmentin käsittelyn perustuen kaikkiin sääntöihin ja ehtoihin. Muussa tapauksessa se tallentuu passiiviseksi segmentiksi.
-
+   
 1. Valitse **Palaa segmentteihin**, jos haluat siirtyä takaisin **Segmentit**-sivulle.
+
+1. Segmentti luodaan oletusarvoisesti dynaamisena segmenttinä. Niinpä kyseinen segmentti päivitetään järjestelmän päivityksen yhteydessä. [Automaattinen päivitys voidaan pysäyttää](segments.md#manage-existing-segments) valitsemalla valitussa segmentissä **Tee staattinen** -vaihtoehto. Staattiset segmentit voidaan [päivittää manuaalisesti](segments.md#refresh-segments) koska tahansa.
 
 > [!TIP]
 > - Segmentin muodostin ei ehdota entiteeteille kelvollisia arvoja, kun operaattorit määritetään ehdoille. Voit tarkastella käytettävissä olevia arvoja siirtymällä kohtaan **Tieto** > **Entiteetit** ja lataamalla entiteettitiedot.

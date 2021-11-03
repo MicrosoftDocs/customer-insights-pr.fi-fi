@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 95afd1fedb98a451e4978ee66be2ea98ad7a4a76
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645682"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673387"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Ympäristöjen luominen käyttäjäryhmän merkityksellisissä tiedoissa
 
@@ -46,7 +46,7 @@ Valitse **Perustiedot**-vaiheessa, haluatko luoda ympäristön alusta asti vai [
 
 Anna seuraavat tiedot:
    - **Nimi**: Ympäristön nimi. Tämä kenttä on jo täytetty, jos kopioit tietoja aiemmin luodusta ympäristöstä, mutta voit muuttaa sitä.
-   - **Valitse yritys**: Valitse uuden ympäristön ensisijainen käyttäjäryhmä. Voit työskennellä yksittäisten asiakkaiden (B2C) tai [yritystilien](work-with-business-accounts.md) (B2B) kanssa.
+   - **Valitse yritys**: Valitse uuden ympäristön ensisijainen käyttäjäryhmä. Kyse voi yksittäistä kuluttajista (kuluttajakauppa) tai [yritystilistä](work-with-business-accounts.md) (yritystenvälinen kauppa).
    - **Tyyppi**: Määritä, haluatko luoda tuotanto- vai eristysympäristön. Eristysympäristöt eivät salli ajoitettua tietojen päivittämistä, ja ne on tarkoitettu esikäyttöä ja testausta varten. Eristysympäristöt käyttävät samaa ensisijaista käyttäjäryhmää kuin valittu tuotantoympäristö.
    - **Alue**: Alue, jossa palvelu otetaan käyttöön ja jossa sitä isännöidään.
 
@@ -54,7 +54,7 @@ Anna seuraavat tiedot:
 
 Valitse **Tietojen tallennustila** -vaiheessa, mihin tiedot käyttäjäryhmän merkityksellisistä tiedoista tallennetaan.
 
-Käytettävissä on kaksi vaihtoehtoa: **Customer Insights -tallennustila** (Customer Insights -ryhmä hallinnoi Azure Data Lake -ratkaisussa) ja **Azure Data Lake Storage** (oma Azure Data Lake Storage). Oletusarvoisesi Customer Insights -tallennustila -vaihtoehto on valittu.
+Käytettävissä on kaksi vaihtoehtoa: **Customer Insights -tallennustila** (Customer Insights -ryhmän hallitsema Azure Data Lake -ratkaisu) ja **Azure Data Lake Storage** (oma Azure Data Lake Storage). Oletusarvoisesi Customer Insights -tallennustila -vaihtoehto on valittu.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Valitse se Azure Data Lake Storage, johon tiedot käyttäjäryhmän merkityksellisistä tiedoista tallennetaan.":::
 
@@ -66,7 +66,7 @@ Kun tiedot tallennetaan Azure Data Lake Storageen, hyväksyt, että tiedot siirr
 > - Azure Data Lake Storage -tilit samasta Azure-alueesta, jonka valitsit ympäristöä luotaessa.
 > - Azure Data Lake Storage -tilit, joissa *hierarkkinen nimitila* on otettu käyttöön.
 
-Voit valita Azure Data Lake Storage -asetukselle resurssi- tai tilausperustaisen asetuksen todentamista varten. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md). **Säilön** nimi on `customerinsights`, eikä sitä voi muuttaa.
+Voit valita Azure Data Lake Storage -asetukselle resurssi- tai tilausperustaisen asetuksen todentamista varten. Lisätietoja on kohdassa [Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päänimen avulla](connect-service-principal.md). **Säilön** nimi on `customerinsights`, eikä sitä voi muuttaa.
 
 Kun järjestelmäprosessit, kuten tietojen käsittely, ovat valmiit, järjestelmä luo vastaavat kansiot määrittämällesi tallennustilille. Datatiedostot ja *model.json*-tiedostot luodaan ja lisätään kansioihin prosessin nimen perusteella.
 
@@ -82,8 +82,8 @@ Jos haluat käyttää [valmiita ennustemalleja](predictions-overview.md#out-of-b
 
 > [!NOTE]
 > Customer Insights ei tue seuraavia tietojen jakamisen skenaarioita:
-> - Jos tallennat kaikki tiedot omaan Azure Data Lake Storageen, et voi ottaa käyttöön tietojen jakamista Microsoft Dataversen hallinnoiman Data Laken kanssa.
-> - Jos otat käyttöön tietojen jakamisen Microsoft Dataversen hallinnoiman Data Laken kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
+> - Jos tallennat kaikki tiedot omaan Azure Data Lake Storageen, et voi ottaa käyttöön tietojen jakamista Dataversen hallitun Data Laken kanssa.
+> - Jos otat käyttöön tietojen jakamisen Dataversen kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Vaihe 4: Viimeistele asetukset
 
@@ -93,10 +93,10 @@ Voit myös muuttaa useimpia asetuksia myöhemmin. Lisätietoja on kohdassa [Ymp�
 
 ## <a name="work-with-your-new-environment"></a>Käytä uutta ympäristöäsi
 
-Seuraavien artikkelien avulla voit aloittaa Customer Insightsin määrittämisen. 
+Seuraaviin artikkeleihin tutustuminen auttaa aloittamaan Customer Insightsin määrittämisen: 
 
 - [Lisää käyttäjiä ja määritä käyttöoikeuksia](permissions.md).
 - [Käytä tietolähteitäsi](data-sources.md) ja suorita ne [tietojen yhdistämisprosessin](data-unification.md) avulla [yhtenäisten asiakasprofiilien](customer-profiles.md) aikaansaamiseksi.
 - [Rikastuta yhtenäisiä asiakasprofiileja](enrichment-hub.md) tai [suorita ennustavia malleja](predictions-overview.md).
-- Luo [segmenttejä](segments.md) ryhmitelläksesi asiakkaita ja [mittoja](measures.md) KPI-arvosteluille.
+- [Segmenttien](segments.md) luominen asiakkaiden ryhmittelyä varten ja [mittojen](measures.md) luominen tunnuslukujen arviointia varten.
 - Määritä [yhteydet](connections.md) ja [vienti](export-destinations.md), jotta voit käsitellä tietojen alijoukkoja muissa sovelluksissa.

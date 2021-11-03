@@ -1,7 +1,7 @@
 ---
 title: Koneoppimisen tehostamat ehdotetut segmentit
 description: Koneoppimisen avulla voit etsiä uusia ja mielenkiintoisia segmenttejä asiakasmääritteiden perusteella.
-ms.date: 02/01/2021
+ms.date: 10/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: f743853826cee0427618abccfba27f10016a0f05cc674f5f7da2210366d60305
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 44e46bb650b6f090afcab3bc940d03a304e9c375
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028356"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673179"
 ---
 # <a name="suggested-segments-preview"></a>Ehdotetut segmentit (esiversio)
 
@@ -23,7 +23,7 @@ Tutustu asiakkaiden kiinnostaviin segmentteihin tekoälymallin avulla. Tämä ko
 > [!NOTE]
 > Ehdotetut segmentit -ominaisuus käyttää automaattisia menetelmiä tietojen arvioimiseen ja ennusteiden luomiseen näiden tietojen perusteella. Tämän vuoksi sitä voidaan käyttää valmiudet käyttää profilointimenetelmänä, koska kyseinen ehto on määritetty yleisessä tietosuoja-asetuksessa (GDPR). Jos tätä ominaisuutta käytetään tietojen käsittelemiseen, siihen sovelletaan GDPR-määrityksiä tai muita lakeja ja säännöksiä. Olet vastuussa siitä, että Dynamics 365 Customer Insightsin käyttäminen, myös tämän ominaisuuden käyttäminen, on kaikkien lakien ja säädösten mukaista. Näihin kuuluvat yksityisyyteen, henkilökohtaisiin tietoihin, biometrisiin tietoihin, tietosuojaan ja viestintäsalaisuuteen liittyvät lait.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Customer Insightsin ehdotettujen segmenttien sivu, jossa näkyvät ehdotuksen tiedot sivupaneelissa.":::
+:::image type="content" source="media/suggested-segments.png" alt-text="Ehdotettujen segmenttien sivulla näkyy ehdotuksen tiedot sivuruudussa":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Segmentit, joita on ehdotettu KPI-lukujen parantamista varten
 
@@ -49,7 +49,7 @@ Segmenttiehdotukset ovat erilaisia, jos ensisijaisena määritteenä käytetää
 
 Kun ensisijainen määrite on esimerkiksi *vuositulot* tai *jäsenyyskausi*, järjestelmä ehdottaa segmenttejä, joilla on korkeampi tai matalampi numeerisen määritteen keskimääräinen arvo verrattuna kaikkiin asiakkaisiin.
 
-Jos ensisijaisena määritteenä on luokitteleva määrite, kuten *asiakastyytyväisyys*, tuloksena saadaan ehdotettuja segmenttejä, joilla on korkeampi tai matalampi prosenttiosuus tiettyyn luokkaan kuuluvia asiakkaita verrattuna samaan luokkaan kuuluviin kaikkiin asiakkaisiin. Esimerkiksi *asiakastyytyväisyys* valitaan ensisijaiseksi määritteeksi. Se sisältää kolme luokkaa (*Matala*, *Keskitaso* ja *Korkea*). Kullekin luokalle ehdotetaan segmenttejä, joissa tähän luokkaan kuuluvien asiakkaiden prosenttiosuus on merkittävästi korkeampi tai matalampi kuin kaikkien samaan luokkaan kuuluvien asiakkaiden osuus. Jos tyytyväisyys on *korkea* 22 prosentilla kaikista asiakkaista, kyseiseen luokkaan ehdotetaan vain asiakkaita, joiden *korkean* tyytyväisyyden tason asiakasosuus on huomattavasti korkeampi tai matalampi kuin 22 prosenttia. Vastaavasti kaikille muille luokille (*Matala* ja *Keskitaso*) ehdotetaan segmenttejä, jos ne ovat tilastollisesti merkittäviä.
+Jos ensisijaisena määritteenä on luokitteleva määrite, kuten *asiakastyytyväisyys*, tuloksena saadaan ehdotettuja segmenttejä, joilla on korkeampi tai matalampi prosenttiosuus tiettyyn luokkaan kuuluvia asiakkaita verrattuna samaan luokkaan kuuluviin kaikkiin asiakkaisiin. Esimerkiksi *asiakastyytyväisyys* valitaan ensisijaiseksi määritteeksi. Se sisältää kolme luokkaa (*Matala*, *Keskitaso* ja *Korkea*). Kuhunkin luokkaan ehdotetaan segmenttejä, joissa kyseiseen luokkaan kuuluvien asiakkaiden prosenttiosuus on suurempi tai pienempi verrattuna kaikkien asiakkaiden osuuteen samassa luokassa. Jos kaikista asiakkaista 22 prosentin tyytyväisyys on *Suuri*, kyseiseen luokkaan ehdotetaan silloin vain segmenttejä, joiden osuus asiakkaista, joiden tyytyväisyys on *Suuri*, on suurempi tai pienempi verrattuna 22 prosenttiin: Vastaavasti kaikille muille luokille (*Matala* ja *Keskitaso*) ehdotetaan segmenttejä, jos ne ovat tilastollisesti merkittäviä.
 
 > [!NOTE]
 > Tällä hetkellä tuetaan vain ensisijaisia luokittelevia määritteitä, joissa on enintään 10 luokkaa. Jos haluat tarkastella segmenttiehdotuksia, jotka perustuvat yli 10 luokkaa sisältävään ensisijaiseen määritteeseen, on suositeltavaa ryhmitellä joitakin luokkia niin, että luokkien määrä on 10 tai alle. Tämä rajoitus koskee vain ensisijaisia määritteitä. Vaikuttavissa luokittelevissa määritteissä tuetaan tällä hetkellä enintään 100 luokkaa.
@@ -77,7 +77,7 @@ Jos ensisijaisena määritteenä on luokitteleva määrite, kuten *asiakastyytyv
 
 Kun tekoälymalli on luonut ehdotukset, ne löytyvät kohdasta **Segmentit** > **Ehdotukset (esikatselu)**.
  
-Tarkastele ehdotuksen tietoja valitsemalla ehdotettu segmentti. Tiedot voivat olla kuten keskiarvon ja segmentin jäsenten määrän vertailu. Voit myös tarkastella määritteiden arvoja tai sääntöjä, joiden mukaan tekoälymalli oppi ehdottamaan valittua segmenttiä.
+Kyseisen ehdotuksen tietoja voi tarkastella valitsemalla ehdotetun segmentin. Voit myös tarkastella määritteiden arvoja tai sääntöjä, joiden mukaan tekoälymalli oppi ehdottamaan valittua segmenttiä.
 
 ## <a name="save-a-suggestion-as-a-segment"></a>Ehdotuksen tallentaminen segmenttinä
 

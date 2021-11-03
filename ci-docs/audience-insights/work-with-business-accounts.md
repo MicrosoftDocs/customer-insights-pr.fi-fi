@@ -1,7 +1,7 @@
 ---
 title: 'Aloita: yritystilit ensisijaisena kohdekäyttäjäryhmänä'
 description: Lisätietoja yritystileistä ensisijaisena kohdekäyttäjäryhmänä Dynamics 365 Customer Insights.
-ms.date: 09/30/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wimohabb
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea036cf3a3623a314a6d0d7da85b2c30c030ccea
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ac5ae950a44f7f32e3cb9fdc0ffad05b78fddef0
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7644984"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673683"
 ---
 # <a name="work-with-business-accounts-in-audience-insights"></a>Yritystilien käyttäminen käyttäjäryhmän merkityksellisissä tiedoissa
 
-Käyttäjäryhmän merkitykselliset tiedot -ominaisuus Dynamics 365 Customer Insightsissa antaa mahdollisuuden määrittää ympäristön erilaisille ensisijaisille kohdekäyttäjäryhmille: yksittäisille asiakkaille (B2C) ja yritysasiakkaille (B2B). B2C-skenaarioissa tiedot on keskitetty yksittäisten henkilöiden ympärille. B2B:n ensisijaiset kohdekäyttäjäryhmät ovat tilit - organisaatiot ja yritykset - ja yhteyshenkilöt. Tämän artikkelin avulla voit aloittaa yritystiliympäristön käytön. Siinä luetellaan eri ominaisuusalueiden erot käyttäjäryhmän merkityksellisissä tiedoissa riippuen ympäristösi kohdistuksesta. Lisätietoja eroista on ominaisuusalueiden ohjeissa. 
+Käyttäjäryhmän merkitykselliset tiedot -ominaisuus Dynamics 365 Customer Insightsissa antaa mahdollisuuden määrittää ympäristön erilaisille ensisijaisille kohdekäyttäjäryhmille: yksittäisille kuluttajille (kuluttajakauppa) ja yritystileille (yritystenvälinen). Kuluttajakauppaskenaarioissa tiedot on keskitetty yksittäisten henkilöiden ympärille. Yritystenvälisessä kaupassa ensisijaiset kohdekäyttäjäryhmät ovat tilit – organisaatiot ja yritykset – ja yhteyshenkilöt. Tämän artikkelin avulla voit aloittaa yritystiliympäristön käytön. Siinä luetellaan eri ominaisuusalueiden erot käyttäjäryhmän merkityksellisissä tiedoissa riippuen ympäristösi kohdistuksesta. Lisätietoja eroista on ominaisuusalueiden ohjeissa. 
 
 ## <a name="create-an-environment-for-business-accounts"></a>Ympäristön luominen yritystileille
 
@@ -32,7 +32,7 @@ Kun olet yhtenäistänyt tiedot, [määritä tilihierarkiat](relationships.md#se
 
 Jos organisaatiosi ylläpitää yksittäisten asiakkaiden ja yritystilien ympäristöjä, voit vasemmanpuoleisen ruudun valitsimen avulla valita ensisijaisen kohdekäyttäjäryhmän.
 
-:::image type="content" source="media/switch-primary-target-audience.PNG" alt-text="Valitsin, joka vaihtaa ensisijaista kohdekäyttäjäryhmää yksittäisten asiakkaiden ja yritystilien välillä.":::
+:::image type="content" source="media/switch-primary-target-audience.png" alt-text="Valitsin, joka vaihtaa ensisijaista kohdekäyttäjäryhmää yksittäisten asiakkaiden ja yritystilien välillä.":::
 
 ## <a name="supported-feature-areas"></a>Tuetut ominaisuusalueet
 

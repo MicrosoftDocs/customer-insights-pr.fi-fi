@@ -1,7 +1,7 @@
 ---
 title: Järjestelmän määrittäminen käyttäjäryhmän merkityksellisissä tiedoissa
 description: Tietoja Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuden järjestelmäasetuksista.
-ms.date: 02/12/2021
+ms.date: 10/15/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2af8728009b4f1d53ebc2557bab8c79537a0dc5dda54477493ab1ad16f3f9a8a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
+ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035896"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7651836"
 ---
 # <a name="system-configuration"></a>Järjestelmän kokoonpano
 
@@ -24,9 +24,9 @@ ms.locfileid: "7035896"
 - [Ohjelmointirajapinnan käyttö](#api-usage-tab)
 - [Tietoja](#about-tab)
 - [Yhteiset](#general-tab)
+- [Suojaus](#security-tab)
 
-> [!div class="mx-imgBorder"]
-> ![Järjestelmä-sivu.](media/system-tabs.png "Järjestelmä-sivu")
+:::image type="content" source="media/system-tabs.png" alt-text="Järjestelmäsivun asetusten välilehdet":::
 
 ## <a name="status-tab"></a>Tila-välilehti
 
@@ -84,9 +84,15 @@ Valitse tehtävän tila, jos haluat tarkastella koko työn edistymistietoja. Yll
 
 ## <a name="general-tab"></a>Yleiset-välilehti
 
-**Yleiset**-välilehdessä on kaksi asetusta, **Kieli** ja **Maan/alueen muoto**.
+Kieltä ja maa- tai aluemuotoa voi vaihtaa **Yleiset**-välilehdessä.
 
-Sovellus [useita kieliä](supported-languages.md). Jos haluat vaihtaa ensisijaista kieltä, valitse **Kieli** avattavasta luettelosta.
+Customer Insights [tukee useita kieliä](/dynamics365/get-started/availability). Sovellus käyttää kieliasetuksia näyttämään elementit, kuten valikon, selitetekstin ja järjestelmän sanomat, ensisijaisella kielellä.
+
+Tuotuja tietoja ja manuaalisesti annettuja tietoja ei käännetä.
+
+### <a name="update-the-settings"></a>Asetusten päivittäminen
+
+Jos haluat vaihtaa ensisijaista kieltä, valitse **Kieli** avattavasta luettelosta.
 
 Jos haluat muuttaa päivämäärien, kellonaikojen ja lukujen muotoilua, käytä avattavaa **Maan/alueen muoto** -valikkoa. Tämän kentän alapuolella näkyy muotoilun esikatselu. Järjestelmä ehdottaa automaattisesti valintaa, kun valitset uuden kielen.
 
@@ -105,6 +111,13 @@ Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, m
 
    Toiminnot, joissa käytetään [reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md), sisältävät kiikarisymbolin. Sen avulla voi tarkastella reaaliaikaista ohjelmointirajapinnan käyttöä. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.   
    Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Reaaliaikainen ohjelmointirajapinnan käyttö** -ruudun **Ryhmittely**-ruudun avulla. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
+
+## <a name="security-tab"></a>Suojaus-välilehti
+
+**Suojaus**-välilehdessä voi linkittää oman [Azure Key Vaultin](/azure/key-vault/general/basic-concepts) ympäristöön ja hallita sitä.
+Erillistä key vaultia voidaan käyttää salaisten koodien valmisteluun ja käyttämiseen organisaation vaatimustenmukaisuusrajalla. Käyttäjäryhmän merkitykselliset tiedot voivat käyttää Azure Key Vaultin salaisia koodeja [yhteyksien määrittämiseen](connections.md) kolmannen osapuolen järjestelmiin.
+
+Lisätietoja on kohdassa [Oman Azure Key Vaultin tuominen](use-azure-key-vault.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

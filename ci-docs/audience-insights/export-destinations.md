@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623097"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673319"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
@@ -32,14 +32,14 @@ Vienneissä on kaksi päätyyppiä:
 
 ### <a name="export-segments"></a>Segmenttien vienti
 
-**Segmenttien vieminen yritystilien (B2B) tai yksittäisten asiakkaiden ympäristöissä (B2C)**  
-Useimmat vientivaihtoehdot tukevat molempia ympäristöjä. Segmenttien viemisellä eri kohdejärjestelmiin on erityisvaatimuksia. Yleisesti segmentin jäsen, asiakasprofiili, sisältää yhteyshenkilön tiedot. Vaikka näin on yleensä yksittäisille asiakkaille (B2C) perustuvien segmenttien tapauksessa, sama ei välttämättä päde segmentteihin, jotka perustuvat yritystileihin (B2B). 
+**Segmenttien vieminen yritystilien (yritystenvälinen) tai yksittäisten kuluttajien ympäristöissä (kuluttajakauppa)**  
+Useimmat vientivaihtoehdot tukevat molempia ympäristöjä. Segmenttien viemisellä eri kohdejärjestelmiin on erityisvaatimuksia. Yleisesti segmentin jäsen, asiakasprofiili, sisältää yhteyshenkilön tiedot. Vaikka näin on yleensä yksittäisille kuluttajille (kuluttajakauppa) perustuvien segmenttien tapauksessa, sama ei välttämättä päde segmentteihin, jotka perustuvat yritystileihin (yritystenvälinen). 
 
-**Segmenttien vienti yritystiliympäristöissä (B2B)**  
+**Segmenttien vienti yritystiliympäristöissä (yritystenvälinen)**  
 - Yritystilien ympäristöjen segmentit perustuvat *Asiakas*-entiteettiin. Jotta tilin segmenttejä voidaan viedä sellaisenaan, kohdejärjestelmän on tuettava puhtaita tilin segmenttejä. Näin on [LinkedIn](export-linkedin-ads.md)issä, kun valitset **yritys**-vaihtoehdon määrittäessäsi vientiä.
 - Kaikki muut kohdejärjestelmät edellyttävät yhteyshenkilöentiteetin kenttiä. Jotta tilin segmentit voivat hakea tietoja liittyvistä yhteyshenkilöistä, segmentin määrityksen on projisoitava yhteyshenkilöentiteetin määritteet. Lisätietoja [segmenttien ja projektimääritteiden määrittämisestä](segment-builder.md).
 
-**Segmenttien viennit yksittäisten asiakkaiden (B2C) ympäristöissä**  
+**Segmenttien viennit yksittäisten kuluttajien ympäristöissä (kuluttajakauppa)**  
 - Yksittäisten asiakkaiden ympäristöissä segmentit perustuvat *yhtenäinen asiakasprofiili* -entiteettiin. Kaikki segmentit, jotka vastaavat kohdejärjestelmien vaatimuksia (esimerkiksi sähköpostiosoite), voidaan viedä.
 
 **Segmenttien viennin rajoitukset**  

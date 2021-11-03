@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622855"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673366"
 ---
 # <a name="define-and-manage-measures"></a>Mittojen määrittäminen ja hallinta
 
@@ -28,7 +28,7 @@ Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa 
 
 Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit tehdä tietomääritteiden avulla mittarin tietoentiteeteistä, jotka voivat suhteen kautta muodostaa yhteyden yhtenäiseen asiakasprofiilientiteettiin.
 
-# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
 
@@ -92,7 +92,7 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit tehdä ti
 
 1. Siirry **Mittarit**-kohtaan, jos haluat nähdä juuri luodun mittarin luettelossa.
 
-# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Mittarit**.
 
@@ -164,7 +164,7 @@ Tässä osassa kerrotaan uuden mittarin luomisesta alusta alkaen. Voit tehdä ti
 
 Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä mittoja. Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
 
-# <a name="individual-customers-b2c"></a>[Yksittäiset asiakkaat (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 
 Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä mittoja. Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
 
@@ -212,7 +212,7 @@ Seuraavassa ohjeessa on kuvattu, miten uusi mittari voidaan luoda mallin avulla.
 
 1. Nyt voit laskea mittarin tulokset valitsemalla **Suorita**. Jos haluat tarkentaa sitä myöhemmin, valitse **Tallenna luonnos**.
 
-# <a name="business-accounts-b2b"></a>[Yritystilit (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
 Tämä ominaisuus on käytettävissä vain niissä ympäristöissä luoduille yksiköille, joissa yksittäiset asiakkaat ovat ensisijainen kohdeyleisö.
 
