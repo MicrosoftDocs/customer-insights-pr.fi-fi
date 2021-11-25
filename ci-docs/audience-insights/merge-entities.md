@@ -1,7 +1,7 @@
 ---
 title: Entiteettien yhdistäminen tietoja yhtenäistettäessä
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
-ms.date: 10/10/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-merge
-ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648250"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732768"
 ---
 # <a name="merge-entities"></a>Entiteettien yhdistäminen
 
@@ -187,10 +187,9 @@ Valitse **Suorita yhdistäminen ja jatkoprosessit**, kun haluat päivittää muu
 
 Jos haluat tehdä lisää muutoksia ja suorittaa vaiheen uudelleen, voit peruuttaa käynnissä olevan yhdistämisen. Valitse **Pävitetään...**-teksti ja valitse sitten **Peruuta työ** näkyviin tulevassa reunaruudussa.
 
-> [!TIP]
-> Kun olet suorittanut yhdistämisprosessin, avaa **Tehtävän tiedot** -ruutu valitsemalla prosessin tila. Se antaa yleiskuvan käsittelyajasta, viimeisestä käsittelypäivästä sekä kaikista tehtävään liittyvistä virheistä ja varoituksista. Valitse **Näytä tiedot**, jos haluat nähdä, mitkä entiteetit osallistuivat vastaavuusprosessiin, onnistuiko konfliktinratkaisu ja onko päivitysten julkaiseminen onnistunut.  
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Porautumispolku, jonka avulla voit käsitellä tehtävän tilalinkin tietoja.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="Porautumispolku, jonka avulla voit käsitellä tehtävän tilalinkin tietoja.":::
 
 ## <a name="next-step"></a>Seuraava vaihe
 

@@ -1,7 +1,7 @@
 ---
 title: Järjestelmän määrittäminen käyttäjäryhmän merkityksellisissä tiedoissa
 description: Tietoja Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuden järjestelmäasetuksista.
-ms.date: 10/15/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,14 +9,16 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3ce767939b8fedf676dc569ede47104ecfe930dd
-ms.sourcegitcommit: cd9f9a9d3da71c5420ef5c4c6ead91bc820d17a9
+ms.openlocfilehash: 1b790106f8b9617d0c1f244e1d15a74c7ef9a82b
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/19/2021
-ms.locfileid: "7651836"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732357"
 ---
 # <a name="system-configuration"></a>Järjestelmän kokoonpano
+
+Jos haluat käyttää järjestelmämäärityksiä kohdeyleisötiedoissa, valitse vasemmanpuoleisesta siirtymispalkista **Järjestelmänvalvoja** > **Järjestelmä**, kun haluat tarkastella järjestelmätehtävien ja -prosessien luetteloa.
 
 **Järjestelmä**-sivu sisältää seuraavat välilehdet:
 - [Tila](#status-tab)
@@ -30,39 +32,55 @@ ms.locfileid: "7651836"
 
 ## <a name="status-tab"></a>Tila-välilehti
 
-**Tila-välilehdessä** voit seurata tietojen käsittelyn, tietojen vientien ja useiden muiden tärkeiden tuoteprosessien edistymistä. Tarkistamalla tämän välilehden tiedot voit varmistaa, että aktiiviset prosessit ovat valmiita.
+**Tila-välilehdessä** voit seurata tehtävien etenemistä, tietojen käyttöä, tietojen vientiä ja monia muita tärkeitä tuoteprosesseja. Tarkista tämän välilehden tiedot ja varmista, että aktiiviset tehtävät ja prosessit ovat täydellisiä.
 
-Tässä välilehdessä on taulukoita, joissa on tila- ja käsittelytietoja eri prosesseja varten. Kukin taulukko seuraa tehtävän **nimeä** ja sen vastaavaa entiteettiä, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**.
+Tässä välilehdessä on taulukoita, joissa on tila- ja käsittelytietoja eri prosesseja varten. Kukin taulukko seuraa tehtävän **nimeä** ja sen vastaavaa entiteettiä, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**. Voit tarkastella useiden viime suoritusten tietoja valitsemalla tehtävän tai prosessin nimen. 
 
-Tarkastele tehtävän viimeisimpien suoritusten tietoja valitsemalla tehtävän nimi.
+Valitse tila tehtävän tai prosessin vieressä **Tila**-sarakkeessa, jos haluat avata **Edistymisen tiedot** -ruudun.
 
-### <a name="status-types"></a>Tilatyypit
+   :::image type="content" source="media/system-progress-details.png" alt-text="Järjestelmän Edistymisen tiedot -ruutu":::
 
-Tehtävillä on kuusi tilatyyppiä. Seuraavat tilatyypit näkyvät myös sivuilla *Täsmäytä*, *Yhdistä*, *Tietolähteet*, *Segmentit*, *Mittarit*, *Rikastaminen*, *Aktiviteetit* ja *Ennusteet*:
+### <a name="status-definitions"></a>Tilamääritykset
 
-- **Käsittelyssä:** Tehtävä on meneillään. Tilaksi voi muuttua Onnistunut tai Epäonnistunut.
-- **Onnistunut:** tehtävä suoritettiin onnistuneesti.
-- **Ohitettu:** Tehtävä ohitettiin. Vähintään yksi palvelimelta siirrettävä prosessi, josta tämä tehtävä on riippuvainen, on epäonnistumassa tai se ohitettiin.
-- **Epäonnistunut:** tehtävän käsitteleminen epäonnistui.
-- **Peruutettu:** Käyttäjä peruutti käsittelyn, ennen kuin se valmistui.
-- **Jonossa:** Käsittely asetetaan jonoon, ja se käynnistyy, kun kaikki yläpuolella olevat tehtävät on suoritettu. Lisätietoja: [Päivityskäytännöt](#refresh-policies).
+Järjestelmä käyttää tehtäviä ja prosesseja varten seuraavia tiloja:
 
-### <a name="refresh-policies"></a>Päivityskäytännöt
+|Tila  |Määritelmä  |
+|---------|---------|
+|Peruutettu |Käyttäjä on peruuttanut käsittelyn, ennen kuin se valmistui.   |
+|Epäonnistunut   |Tietojen käsittelyssä havaittiin virheitä.         |
+|Virhe  |Käsittely epäonnistui.  |
+|Ei aloitettu   |Tietolähteessä ei ole vielä käsiteltyjä tietoja tai se on edelleen luonnostilassa.         |
+|Käsittely  |Tehtävä tai prosessi on käynnissä.  |
+|Päivittää    |Tietoja käsittely on meneillään. Voit peruuttaa tämän toiminnon valitsemalla **Pysäytä päivittäminen** **Toiminnot**-sarakkeessa. Tietolähteen päivittämisen pysäyttäminen palauttaa sen tilaan, jossa se on viimeksi päivitetty.       |
+|Ohitettu  |Tehtävä tai prosessi ohitettiin. Vähintään yksi palvelimelta siirrettävä prosessi, josta tämä tehtävä on riippuvainen, on epäonnistumassa tai se ohitettiin.|
+|Onnistui  |Tehtävä tai prosessi on suoritettu. Tietolähteiden osalta ilmaisee, että tiedot on käsitelty onnistuneesti, jos **Päivitetty**-sarakkeessa mainitaan aika.|
+|Jonossa | Käsittely asetetaan jonoon, ja se käynnistyy, kun kaikki alkuvaiheen tehtävät ja prosessit on suoritettu. Lisätietoja on aiheessa [Prosessien päivittäminen](#refresh-processes).|
 
-Tässä luettelossa on kunkin pääprosessin päivityskäytännöt.
+### <a name="refresh-processes"></a>Prosessien päivittäminen
 
-- **Tietolähteet:** Suoritetaan [määritetyn aikataulun mukaisesti](#schedule-tab). Ei riipu mistään muusta prosessista. Vastaavuus riippuu tämän prosessin onnistuneesta suorittamisesta.
-- **Täsmäytys:** Suoritetaan [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy vastaavuusmäärityksessä käytettyjen tietolähteiden käsittelyn mukaan. Yhdistäminen riippuu tämän prosessin onnistuneesta suorittamisesta.
-- **Yhdistä**: Suoritetaan [määritetyn aikataulun mukaisesti](#schedule-tab). Riippuu täsmäytysprosessin suorittamisesta. Segmentit, mittarit, rikastus, haku, aktiviteetit, ennusteet ja tietojen valmistelu riippuvat tämän prosessin onnistuneesta suorittamisesta.
-- **Segmentit**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan. Merktiykselliset tiedot riippuvat sen käsittelystä.
-- **Mittarit**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan.
-- **Aktiviteetit**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan.
-- **Rikastaminen**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan.
-- **Haku**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan.
-- **Tietojen valmistelu**: Suoritetaan [määritetyn aikataulun mukaisesti](#schedule-tab). Määräytyy Yhdistä-prosessin mukaan.
-- **Merkitykseliset tiedot**: Suoritetaan manuaalisesti (kertapäivitys) ja [määritetyn aikataulun mukaisesti](#schedule-tab). Riippuu Segmentit-prosessista.
+Tehtävien ja prosessien päivitys suoritetaan [määritetyn aikataulun](#schedule-tab) mukaisesti. 
 
-Valitse tehtävän tila, jos haluat tarkastella koko työn edistymistietoja. Yllä olevat päivityskäytännöt voivat auttaa ymmärtämään, mitä voit tehdä **ohitettujen** tai **jonossa** olevien tehtävien käsittelemiseksi.
+|Prosessi  |Kuvaus  |
+|---------|---------|
+|Aktiviteetti  |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista. Merktiykselliset tiedot riippuvat sen käsittelystä.|
+|Analyysin linkitys |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu segmenteistä.  |
+|Analyysin valmistelu |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu segmenteistä.  |
+|Tietojen valmistelu   |Määräytyy yhdistämisen mukaan.   |
+|Tietolähteet   |Ei riipu mistään muusta prosessista. Vastaavuus riippuu tämän prosessin onnistuneesta suorittamisesta.  |
+|Rikastukset   |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista. |
+|Vientikohteet |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu segmenteistä.  |
+|Näkemykset |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu segmenteistä.  |
+|Analytiikka   |Määräytyy yhdistämisen mukaan.   |
+|Täsmäytä |Määräytyy vastaavuusmäärityksessä käytettyjen tietolähteiden käsittelyn mukaan.      |
+|Mittarit  |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista.  |
+|Yhdistä   |Riippuu täsmäytysprosessin suorittamisesta. Segmentit, mittarit, rikastus, haku, aktiviteetit, ennusteet ja tietojen valmistelu riippuvat tämän prosessin onnistuneesta suorittamisesta.   |
+|Profiilit   |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista. |
+|Hae   |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista. |
+|Segmentit  |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu yhdistämisprosessista. Merktiykselliset tiedot riippuvat sen käsittelystä.|
+|Järjestelmä   |Riippuu täsmäytysprosessin suorittamisesta. Segmentit, mittarit, rikastus, haku, aktiviteetit, ennusteet ja tietojen valmistelu riippuvat tämän prosessin onnistuneesta suorittamisesta.   |
+|Käyttäjä  |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu entiteeteistä.  |
+
+Valitse prosessin tila, jos haluat nähdä koko työn edistymistiedot. Yllä olevien päivitysprosessien avulla saat tietoja siitä, miten voit käsitellä **ohitettua** tai **jonoon määritettyä** tehtävää tai prosessia.
 
 ## <a name="schedule-tab"></a>Aikataulut-välilehti
 
@@ -109,7 +127,7 @@ Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, m
 
 -  **Toiminnot** - taulukko, jossa on rivejä kullekin käytettävissä olevalle ohjelmointirajapinnan toiminnolle sekä toimintojen käyttöä koskevat tiedot. Voit valita toiminnon nimen ja siirtyä [ohjelmointirajapinnan viitteeseen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
-   Toiminnot, joissa käytetään [reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md), sisältävät kiikarisymbolin. Sen avulla voi tarkastella reaaliaikaista ohjelmointirajapinnan käyttöä. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.   
+   [Reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md) käyttävät toiminnot sisältävät painikkeen, jolla näkyy reaaliaikaisen ohjelmointirajapinnan käytön kiikarisymboli. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.   
    Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Reaaliaikainen ohjelmointirajapinnan käyttö** -ruudun **Ryhmittely**-ruudun avulla. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
 
 ## <a name="security-tab"></a>Suojaus-välilehti

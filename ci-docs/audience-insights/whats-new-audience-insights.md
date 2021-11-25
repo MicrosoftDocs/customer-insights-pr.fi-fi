@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 08/31/2021
+ms.date: 11/04/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
+ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673824"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "7753113"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -26,6 +26,41 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="october-2021-updates"></a>Lokakuun 2021 päivitykset
+
+Lokakuun 2021 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="b-to-b"></a>B2B
+
+Lokakuusta 2021 alkaen voit käyttää liiketoimintatilejä ja niihin liittyviä yhteyshenkilöitä Customer Insightsissa. Aiemmin sovellus oli räätälöity lähinnä yksittäisille kuluttajille. Useita ominaisuusalueita on päivitetty tukemaan B2B-skenaarioita uuden ympäristötyypin päällä. Jos haluat yleiskatsauksen tuetuista B2B-ominaisuuksista, katso lisätietoja [Liiketoimintatilien käyttäminen kohdeyleisötiedoissa](work-with-business-accounts.md).
+
+Seuraavissa osissa on korostettu joitakin keskeisiä alueita, jotka on mukautettu yritystilejä ja yksittäisiä kuluttajia varten.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Liiketoimintatileihin perustuvien segmenttien vieminen
+
+Kaikki segmenttiviennit kohdeyleisötiedoissa ovat käytettävissä liiketoimintatilien yhteydessä. Useimmat segmenttiviennit edellyttävät, että taustalla olevien segmenttien lisämääritys- ja [yhteyshenkilötiedot](segment-builder.md#create-a-new-segment) ovat voimassa yritystilien osalta. Lisätietoja: [Segmenttien vienti](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>LinkedIn Ads -viennin käyttö yritystilien kanssa
+
+LinkedIn Ads -vienti on nyt käytettävissä yhteyshenkilöille ja yrityksille kohdentamisessa yritysasiakkuuksien yhteydessä. Kun valitset LinkedIn-viennin ensisijaiseksi kohdistukseksi yrityksiin kohdistamisen, voit viedä yritystileille luotuja segmenttejä ilman liitettyjä yhteystietoja. Lisätietoja on dokumentaatiossa [LinkedIn Adsin viennistä](export-linkedin-ads.md) ja [yhteyshenkilöihin kohdistamisen](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) ja [yrityskohdistuksen](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) eroista. 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Liiketoimintatileihin ja niiden hierarkiaan perustuvien mittareiden luominen
+
+Tämän mittarin muodostimen avulla voit luoda mittareita yritystilejä varten ja käyttää tarvittaessa hierarkiatietoja. Hierarkiatietoja käytetään laskettaessa tileihin ja siihen liittyvien alatilien mittareita. Voit esimerkiksi luoda mittareita, kuten kokonaistuottoa kullekin hierarkian mukaan tunnistetulle yritysasiakasryhmälle. Lisätietoja on kohdassa [Mittarien määrittäminen ja hallinta](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Liiketoimintatileihin ja niiden hierarkiaan perustuvien segmenttien luominen
+
+Segmentin muodostimen avulla voit luoda liiketoimintatilien segmenttejä, jotka valinnaisesti sisältävät yhteyshenkilötiedot segmentin jokaiselle tilille. Jos asiakashierarkia on määritetty, voit käyttää asiakashierarkiatietoja segmentin luonnissa. Lisätietoja on kohdassa [Uuden segmentin luominen](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Yritystilien säilyttäminen poistumistrendin syväanalyysin kautta
+
+Asiakaspoistuman ennustemalli tukee nyt myös yritystilejä. Voit arvioida poistumisriskin paitsi tilille, myös tilin ja tuotteen tai palveluluokan yhdistelmälle. Tämän lisäyksen avulla voit ymmärtää, lopettaako tili todennäköisemmin ostamisen yleisesti vai vain tietyntyyppisiltä tavaroilta tai palveluluokilta. Auttaaksesi sinua käyttämään tätä tekoälymallia se listaa myös syitä siihen, miksi asiakas on todennäköisesti poistumassa. Lisätietoja on ohjeaiheessa [Tapahtumien poistumisennuste (esiversio)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Yrityksen yhteyshenkilöiden tarkasteleminen Asiakas-näkymässä
+
+Jos liiketoimintatilit on yhdistetty liittyviin asiakkaisiin, Customer Insights -sovellus näyttää nämä liittyvät yhteyshenkilöt osana Asiakas-tietonäkymää. Lisätietoja on kohdassa [Asiakasprofiilit](customer-profiles.md).
+
 
 ## <a name="september-2021-updates"></a>Syyskuun 2021 päivitykset
 

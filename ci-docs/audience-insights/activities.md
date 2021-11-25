@@ -1,7 +1,7 @@
 ---
 title: Asiakasaktiviteetit
 description: Määritä asiakasaktiviteetit ja tarkastele niitä asiakasprofiilien aikajanalla.
-ms.date: 09/27/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: bcb8d42963719f5d225556c31b3fc06db8573e5b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: c99ec2e7d5e4bf32a509bbe4c0c53999129b2305
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673133"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732442"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
@@ -82,9 +82,7 @@ Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäär�
 
 1. Käsittele aktiviteetti valitsemalla **Aktiviteetit**-sivulla **Suorita**. 
 
-> [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
-
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-activities"></a>Aiemmin luotujen aktiviteettien hallinta
 

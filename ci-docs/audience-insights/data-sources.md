@@ -1,7 +1,7 @@
 ---
 title: Tietojen käsitteleminen tietolähteiden avulla
 description: Tietoja tietojen tuomisesta eri lähteistä.
-ms.date: 04/12/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645351"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732138"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -48,14 +48,7 @@ Näkyvissä on kunkin käsitellyn tietolähteen nimi, sen tilan ja kyseisen tiet
 > [!div class="mx-imgBorder"]
 > ![Tietolähde lisättiin.](media/configure-data-datasource-added.png "Tietolähde lisättiin")
 
-|Tila  |Kuvaus  |
-|---------|---------|
-|Onnistui   |Tietolähde on käsitelty, jos **Päivitetty**-sarakkeessa on aika.
-|Ei aloitettu   |Tietolähteessä ei ole vielä käsiteltyjä tietoja tai se on edelleen luonnostilassa.         |
-|Päivittää    |Tietoja käsittely on meneillään. Voit peruuttaa tämän toiminnon valitsemalla **Pysäytä päivittäminen** **Toiminnot**-sarakkeessa. Tietolähteen päivittämisen pysäyttäminen palauttaa sen tilaan, jossa se on viimeksi päivitetty.       |
-|Epäonnistunut     |Tietojen käsittelyssä havaittiin virheitä.         |
-
-Valitse jonkin tietolähteen **Tila**-sarakkeen arvo, jos haluat tarkastella lisätietoja. Laajenna **Edistymisen tiedot** -ruudussa **Tietolähteet**-kohta. Valitsemalla **Katso tiedot** -kohdan voit tarkastella lisätietoja päivityksen tilasta, kuten virhetiedot ja jäljempänä tapahtuvat prosessipäivitykset.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella **Entiteetit**-sivulla. Lisätietoja on kohdassa [Entiteetit](entities.md).
 

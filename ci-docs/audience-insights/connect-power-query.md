@@ -1,7 +1,7 @@
 ---
 title: Tietojen käyttäminen Power Query -yhdistimen avulla
 description: Power Queryyn perustuvien tietolähteiden yhdistimet.
-ms.date: 09/29/2020
+ms.date: 11/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: ab6edc3f33ebacb81f55c0882a78c5827b4384ed
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643490"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732214"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhteyden muodostaminen Power Query -tietolähteeseen
 
@@ -79,6 +79,8 @@ Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamer
    > [!div class="mx-imgBorder"]
    > ![Muokkaa-asetus.](media/edit-option-data-sources.png "Muokkaa-asetus")
 
+   [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+   
 3. Lisätietoja muutosten ja muunnosten käyttämisestä **Power Query – Muokkaa kyselyjä** -ikkunassa on kohdassa [Uuden tietolähteen luominen](#create-a-new-data-source).
 
 4. Kun lopetat muokkaamisen, tallenna muutokset valitsemalla **Tallenna** Power Queryssä.

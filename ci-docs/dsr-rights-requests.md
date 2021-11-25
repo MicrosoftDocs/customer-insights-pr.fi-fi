@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: c116f7ce208c0288851a4b2230e27784ba3a5337
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483660"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732676"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan
 
@@ -79,7 +79,14 @@ Vuokraajan järjestelmänvalvoja voi viedä tiedot seuraavasti:
 2. Kuittaa pyydetyn käyttäjän tietojen vientivahvistus.
 3. Saat viedyt tiedot vuokraajan järjestelmänvalvojan sähköpostiosoitteen kautta.
 
-## <a name="engagement-insights"></a>Seurannan merkitykselliset tiedot
+## <a name="consent-management-preview"></a>Hyväksynnän hallinta (esiversio)
+
+Hyväksynnän hallinnan ominaisuus ei kerää käyttäjätietoja suoraan. Se tuo ja käsittelee vain muiden sovellusten käyttäjien toimittamat tiedot.
+
+Jos haluat poistaa tiettyjä käyttäjiä koskevat hyväksyntätiedot, poista ne tietolähteistä, joiden tiedot on siirretty hyväksynnän hallintaominaisuuteen. Kun tietolähde on päivitetty, myös poistetut tiedot poistetaan hyväksyntäkeskuksesta. Hyväksyntäentiteettiä käyttävät sovellukset poistavat myös tiedot, jotka on poistettu lähteestä [päivityksen](audience-insights/system.md#refresh-processes) jälkeen. Tietolähteet kannattaa päivittää nopeasti sen jälkeen, kun on vastattu rekisteröidyn henkilön pyyntöön, jotta käyttäjän tiedot voidaan poistaa muista prosesseista ja sovelluksista.
+
+
+## <a name="engagement-insights-preview"></a>Vuorovaikutuksen merkitykselliset tiedot (esiversio)
 
 ### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Käyttäjän tunnistetietoja sisältävien tapahtumatietojen poistaminen ja vieminen
 

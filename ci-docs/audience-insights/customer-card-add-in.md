@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643386"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7792023"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
@@ -34,7 +34,7 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
   - **Mittarin ohjausobjekti**: Vaatii asiakasmääritetyyppisiä [määritettyjä mittareita](measures.md).
   - **Älykkyyden hallinta**: Edellyttää [ennusteiden](predictions.md) tai [mukautettujen mallien](custom-models.md) avulla luotuja tietoja.
   - **Asiakkaan tietojen ohjausobjekti**: Profiilin kaikki kentät ovat käytettävissä yhtenäisessä asiakasprofiilissa.
-  - **Rikastus-ohjausobjekti**: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin.
+  - **Rikastus-ohjausobjekti**: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin. Kortin apuohjelma tukee seuraavia rikastuksia: [Tuotemerkit](enrichment-microsoft.md), jotka Microsoft tarjoaa, ja [kiinnostuksen kohteet](enrichment-microsoft.md), jotka Microsoft myös tarjoaa.
   - **Yhteyshenkilöiden ohjausobjekti**: Edellyttää yhteyshenkilötyyppisen semanttisen entiteetin määrittelemistä.
   - **Aikajanan ohjausobjekti**: Edellyttää [määritettyjä aktiviteetteja](activities.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 10/14/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673729"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799632"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -39,6 +39,19 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 3. Voit päivittää ympäristön asetuksia **Muokkaa ympäristöä** -ruudussa.
 
 Lisätietoja ympäristön asetuksista on kohdassa [Uuden ympäristön luominen](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Yhdistä Microsoft Dataverseen
+   
+Tässä **Microsoft Dataverse** -vaiheessa voit yhdistää Customer Insightsin Dataverse-ympäristöösi.
+
+Jos haluat käyttää [valmiita ennustemalleja](predictions-overview.md#out-of-box-models), määritä tietojen jakaminen Dataversen kanssa. Voit myös ottaa käyttöön tietojen käsittelyn paikallisista tietolähteistä antamalla organisaatiosi hallinnoiman Microsoft Dataverse -ympäristön URL-osoitteen. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Dataversen hallitun Data Laken kanssa.
+
+:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
+
+> [!NOTE]
+> Customer Insights ei tue seuraavia tietojen jakamisen skenaarioita:
+> - Jos tallennat kaikki tiedot omaan Azure Data Lake Storageen, et voi ottaa käyttöön tietojen jakamista Dataversen hallitun Data Laken kanssa.
+> - Jos otat käyttöön tietojen jakamisen Dataversen kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopioi ympäristön määritys
 

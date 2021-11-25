@@ -4,17 +4,17 @@ description: Lisätietoja Android SDK:n mukauttamisesta ja suorittamisesta
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/15/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: a060ac60db71a7b0fb8c0d7a3b0e266004fbee6a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494271"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655338"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Android SDK:n käytön aloittaminen
 
@@ -42,12 +42,12 @@ Aloita prosessi valitsemalla työtila. Valitse sitten Android-mobiiliympäristö
 
 - Jos sinulla ei ole vielä työtilaa, valitse **Uusi työtila** ja luo [uusi työtila](create-workspace.md) ohjeiden mukaan.
 
-- Kun työtila on luotu, siirry kohtaan **Hallinta** > **Työtila** ja valitse **Asennusopas**. 
+- Kun työtila on luotu, siirry kohtaan **Hallinta** > **Työtila** ja valitse **Asennusopas**.
 
 ## <a name="configure-the-sdk"></a>SDK:n määrittäminen
 
 Kun olet ladannut SDK:n, voit käyttää sitä Android Studion avulla tapahtumien käyttöönotossa ja määrittämisessä. Tapoja tehdä on kaksi:
-### <a name="option-1-using-jitpack-recommended"></a>Vaihtoehto 1: JitPackin käyttäminen (suositellaan)
+### <a name="option-1-use-jitpack-recommended"></a>Vaihtoehto 1: Käytä JitPackia (suositus)
 1. Lisää JitPack-säilö `build.gradle`-juureen:
     ```gradle
     allprojects {
@@ -61,12 +61,12 @@ Kun olet ladannut SDK:n, voit käyttää sitä Android Studion avulla tapahtumie
 1. Lisää riippuvuus:
     ```gradle
     dependencies {
-        implementation 'com.github.microsoft:engagementinsights-sdk-android:1.0.0'
+        implementation 'com.github.microsoft:engagementinsights-sdk-android:v1.0.0'
         api 'com.google.code.gson:gson:2.8.1'
     }
     ```
 
-### <a name="option-2-using-download-link"></a>Vaihtoehto 2: Latauslinkin käyttäminen
+### <a name="option-2-use-download-link"></a>Vaihtoehto 2: Käytä latauslinkkiä
 1. Lataa [vuorovaikutuksen merkityksellisten tietojen Android SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip) ja aseta tiedosto `eiandroidsdk-debug.aar` kansioon `libs`.
 
 1. Avaa projektin tason tiedosto `build.gradle` ja lisää seuraavat koodikatkelmat:
@@ -83,22 +83,23 @@ Kun olet ladannut SDK:n, voit käyttää sitä Android Studion avulla tapahtumie
     }
     ```
 
-1. Lisää `manifests`-kansion alla sijaitsevaan `AndroidManifest.xml`-tiedostoon verkon ja Internetin käyttöoikeudet. 
+## <a name="enable-auto-instrumentation"></a>Automaattisen instrumentoinnin käyttöönotto
+
+1. Lisää `manifests`-kansion alla sijaitsevaan `AndroidManifest.xml`-tiedostoon verkon ja Internetin käyttöoikeudet.
     ```xml
     <manifest>
         ...
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
-    
-1. Määritä vuorovaikutuksen merkityksellisten tietojen SDK:n määritys `AndroidManifest.xml`-tiedoston kautta. 
 
-## <a name="enable-auto-instrumentation"></a>Automaattisen instrumentoinnin käyttöönotto
+1. Määritä vuorovaikutuksen merkityksellisten tietojen SDK:n määritys `AndroidManifest.xml`-tiedoston kautta.
+
 1. Kopioi XML-katkelma **asennusohjeesta**. `Your-Ingestion-Key` täytetään automaattisesti.
 
    > [!NOTE]
    > Osaa `${applicationId}` ei tarvitse korvata. Se täytetään automaattisesti.
-   
+
 
    ```xml
    <application>
@@ -116,20 +117,24 @@ Kun olet ladannut SDK:n, voit käyttää sitä Android Studion avulla tapahtumie
    </application>
    ```
 
-1. Ota käyttöön tapahtumien `View` automaattinen sieppaus tai poista se käytöstä määrittämällä yllä olevan kentän `autoCapture` arvoksi `true` tai `false`. `Action`-tapahtumat on nyt lisättävä manuaalisesti.
+1. Ota käyttöön tapahtumien `View` automaattinen sieppaus tai poista se käytöstä määrittämällä yllä olevan kentän `autoCapture` arvoksi `true` tai `false`. 
 
-1. (Valinnainen) Muita määrityksiä ovat muun muassa päätepisteen keruutyökalun URL-osoite. Ne voidaan lisätä käsittelyavaimen metatietoihin tiedostossa `AndroidManifest.xml` seuraavasti:
-    ```xml
+   >[!NOTE]
+   >`Action`-tapahtumat on lisättävä manuaalisesti.
+
+1. (Valinnainen) Muita määrityksiä ovat muun muassa päätepisteen keruutyökalun URL-osoite. Ne voidaan lisätä käsittelyavaimen metatietoihin tiedostossa `AndroidManifest.xml`.
+
+   ```xml
         <meta-data
             android:name="com.microsoft.engagementinsights.endpointUrl"
             android:value="https://some-endpoint-url.com" />
-    ```
+   ```
 
 ## <a name="implement-custom-events"></a>Mukautettujen tapahtumien toteuttaminen
 
 Kun SDK on alustettu, voit käsitellä tapahtumia ja niiden ominaisuuksia `MainActivity`-ympäristössä.
 
-    
+
 Java:
 ```java
 Analytics analytics = new Analytics();
@@ -141,7 +146,7 @@ var analytics = Analytics()
 ```
 
 ### <a name="set-property-for-all-events-optional"></a>Kaikkien tapahtumien ominaisuuden määrittäminen (valinnainen)
-    
+
 Java:
 ```java
 analytics.setProperty("year", 2021);

@@ -1,7 +1,7 @@
 ---
 title: Tietojen yhtenäistäminen entiteettien vastaavuuden avulla
 description: Yhdistä entiteetit, jotta voit yhdistää tietojoukkoja ja luoda yhtenäisiä asiakasprofiileja.
-ms.date: 02/23/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: 67e17495fa6da1cfac7ee4ee165e798364f6cb27
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648204"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732630"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -180,10 +180,7 @@ Siirry kohtaan **Tiedot** > **Yhdistä** > **Täsmäytä** ja aloita prosessi va
 
 Onnistuneen suorituksen eli yhtenäisen asiakasprofiilientiteetin tulokset ovat **Entiteetit**-sivulla. Yhdistettyä asiakasentiteettiä kutsutaan **Profiilit**-osassa nimellä **Asiakkaat**. Ensimmäinen onnistunut täsmäytetty kohde luo yhtenäisen *Asiakas*-entiteetin. Kaikki myöhemmät vastineet laajentavat tätä entiteettiä.
 
-> [!TIP]
-> Kun olet suorittanut vastaavuusprosessin, avaa **Tehtävän tiedot** -ruutu valitsemalla prosessin tila. Se antaa yleiskuvan käsittelyajasta, viimeisestä käsittelypäivästä sekä kaikista tehtävään liittyvistä virheistä ja varoituksista. Valitse **Näytä tiedot**, jos haluat nähdä, mitkä entiteetit osallistuivat vastaavuusprosessiin, mitä sääntöjä niihin on sovellettu ja onko päivitysten julkaiseminen onnistunut.  
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Porautumispolku, jonka avulla voit käsitellä tehtävän tilalinkin tietoja.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="review-and-validate-your-matches"></a>Täsmäytysten tarkistaminen ja vahvistaminen
 

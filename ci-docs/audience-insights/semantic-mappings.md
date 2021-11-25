@@ -1,7 +1,7 @@
 ---
 title: Semanttiset yhdistämismääritykset (esiversio)
 description: Yleiskatsaus semanttisista yhdistämismäärityksistä ja niiden käytöstä.
-ms.date: 09/28/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622931"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7731939"
 ---
 # <a name="semantic-mappings"></a>Semanttiset yhdistämismääritykset
 
@@ -75,8 +75,7 @@ Semanttisten yhdistämismääritysten avulla voit yhdistää ei-aktiviteettitied
 
 1. Jos haluat suorittaa semanttiset yhdistämismääritykset myöhemmin, valitse semanttiset yhdistämismääritykset ja valitse **Lataa uudelleen**.
 
-> [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Aiemmin luotujen semanttisten yhdistämismääritysten hallinta
 
@@ -91,5 +90,6 @@ Kohdassa **Tiedot** > **Semanttiset yhdistämismääritykset (esiversio)** voit 
 - **Nimeä uudelleen**: Avaa dialogin, jossa voit antaa valitulle semanttiselle yhdistämismääritykselle toisen nimen. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
 - **Poista**: Avaa dialogin, joka vahvistaa valitun semanttisen yhdistämismäärityksen poistamisen. Voit myös poistaa useita semanttisia yhdistämismäärityksiä kerralla valitsemalla semanttiset yhdistämismääritykset ja poistokuvakkeen. Vahvista poisto valitsemalla **Poista**.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

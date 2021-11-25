@@ -84,6 +84,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Parannetut osoitteet
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Paranna yritystietoja
+          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Azure Mapsin rikastaminen
           href: audience-insights/enrichment-azure-maps.md
         - name: Tietojen rikastaminen HERE Technologiesin avulla
@@ -250,6 +252,40 @@
           href: audience-insights/apis.md
         - name: Ohjelmointirajapintaviitteet
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+- name: Hyväksynnän hallinta (esiversio)
+  items:
+    - name: Ohjekeskus
+      href: consent-management/index.yml
+    - name: Ominaisuuksien yleiskatsaus
+      href: consent-management/overview.md
+    - name: Aloitusopas
+      items:
+        - name: Aloitusopas
+          href: consent-management/get-started.md
+        - name: Käsitteet ja terminologia
+          href: consent-management/glossary.md
+    - name: Tuo hyväksyntätiedot
+      items:
+        - name: Tuo hyväksyntätiedot
+          href: consent-management/import-consent-data.md
+        - name: Hyväksyntätietojen määrittäminen ja suostumusasetusten käyttäminen
+          href: consent-management/set-consent-rules.md
+    - name: Suostumustietojen hallinta
+      items:
+        - name: Suostumussääntöjen käyttöönotto kohdeyleisön tiedoissa
+          href: audience-insights/activate-consent.md
+        - name: Hallitse hyväksynnän oletussääntöjä kohdeyleisön merkityksellisten tietojen segmenttien avulla
+          href: audience-insights/change-default-consent-rules.md
+    - name: Käyttäjien ja asetusten hallinta
+      items:
+        - name: Järjestelmäasetusten määrittäminen
+          href: consent-management/system-settings.md
+        - name: Käyttäjien ja oikeuksien hallinta
+          href: consent-management/manage-users.md
+    - name: Suostumustietojen käyttö
+      items:
+        - name: Ennusteiden luominen hyväksyntätietojen avulla
+          href: consent-management/predictions-consent-data.md
 - name: Vuorovaikutuksen merkitykselliset tiedot (esiversio)
   items:
     - name: Ohjekeskus

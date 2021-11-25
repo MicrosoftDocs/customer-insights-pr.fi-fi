@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: eb25e050b8aa768e6e1d8d4c5adce6095cccc346
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483661"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7791977"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Palvelun rajoitukset Customer Insights -ominaisuuksissa
 
@@ -26,7 +26,7 @@ Tässä artikkelissa on tietoja Customer Insights -palvelun sisältämistä rajo
 
 | Alue  | Rajoitukset  | Huomautuksia |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmentit ja mittarit | 100 segmentit tai mittaria. | Aktiivisten [segmenttien](audience-insights/segments.md) ja [mittareiden](audience-insights/measures.md) yhteismäärä saa olla enintään 100.  |
+| Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](audience-insights/segments.md), [mittareiden](audience-insights/measures.md) ja [ennusteiden](audience-insights/predictions.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
 | Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](audience-insights/segments.md) tai [mittareita](audience-insights/measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
 
 

@@ -9,16 +9,18 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 409dfce02c41d7c52295409912880b9224469908805e199066faeb2b7a4f1f9d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035319"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799724"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
 
 Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja. Voit luoda uuden tilausten vaihtuvuusennusteen valitsemalla **Älykäs toiminto** > **Ennusteet**-sivu. Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOKNQ]
 
 > [!TIP]
 > Kokeile tilauksen vaihtuvuusennusteen opasohjelmaa näytetietojen avulla: [Tilauksen vaihtuvuusennusteen näyteopas](sample-guide-predict-subscription-churn.md).

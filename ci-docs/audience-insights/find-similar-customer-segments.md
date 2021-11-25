@@ -9,16 +9,18 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ee4d24ae0ae39c689956f70efe46c4226876484e6da6282dc874cec37bd287e2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7c447609bd54de0780dd14aae9f05c7c24b8cce5
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034532"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799678"
 ---
 # <a name="similar-customers-preview"></a>Samankaltaiset asiakkaat (esiversio)
 
 Tämän ominaisuuden avulla voit etsiä samanlaisia asiakkaita asiakaskunnasta käyttämällä tekoälyä. Tämän ominaisuuden käyttäminen edellyttää vähintään yhden segmentin luomista. Laajentamalla aiemmin luodun segmentin ehtoja voit etsiä segmentin kanssa samankaltaisia asiakkaita.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
 > *Etsi samankaltaiset asiakkaat* käyttää automaattisia menetelmiä tietojen arviointiin ja ennusteissa, joten sitä voidaan käyttää profilointimenetelmänä, koska kyseinen käsite on määritetty yleisessä tietosuoja-asetuksessa (GDPR). Asiakkaat käyttävät tätä toimintoa tietojen käsittelyyn. GDPR tai muut lait tai säädökset saattavat ohjata toiminnon käyttöä. Olet vastuussa siitä, että Dynamics 365 Customer Insightsin käyttäminen, myös ennusteiden käyttäminen, on kaikkien lakien ja säädösten mukaista. Näihin kuuluvat yksityisyyteen, henkilökohtaisiin tietoihin, biometrisiin tietoihin, tietosuojaan ja viestintäsalaisuuteen liittyvät lait.
