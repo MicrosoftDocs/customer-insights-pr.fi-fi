@@ -1,7 +1,7 @@
 ---
 title: Power Query -pohjaisten tietolähteiden lisäävä päivitys
 description: Power Queryyn perustuvien suurten tietolähteiden uusien ja päivitettyjen tietojen päivittäminen.
-ms.date: 09/28/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,16 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
-ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
+ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7377830"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900251"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Power Queryyn perustuvien tietolähteiden lisäävä päivitys
+
+Tässä artikkelissa käsitellään Power Query perustuvien tietolähteiden lisäävän päivityksen määrittämistä.
 
 Tietolähteiden lisäävän päivityksen edut:
 
@@ -30,9 +32,9 @@ Käyttäjäryhmän merkityksellisissä tiedoissa on mahdollista tehdä sellaiste
 
 1. [Luo uusi Power Queryyn perustuva tietolähde](connect-power-query.md).
 
-1. Anna tietolähteelle nimi.
+1. Anna tietolähteelle **Nimi**.
 
-1. Valitse lisäävää päivitystä tukeva tietolähde, kuten Azure SQL -tietokanta.
+1. Valitse lisäävää päivitystä tukeva tietolähde, kuten [Azure SQL -tietokanta](/power-query/connectors/azuresqldatabase).
 
 1. Valitse käsiteltävät entiteetit tai taulukot.
 

@@ -1,5 +1,5 @@
 ---
-title: Customer Insightsin tietojen vieminen SFTP-isäntiin
+title: Customer Insights -tietojen vieminen SFTP-palvelimiin (Video)
 description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a54025588945e4db6ab800dca034520b5f08d49b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673912"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7904115"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Segmenttien ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)
 

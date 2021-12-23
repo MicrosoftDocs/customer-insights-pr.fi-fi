@@ -1,7 +1,7 @@
 ---
 title: Ympäristöjen luominen Customer Insightsissa
 description: Ympäristöjen luomisen vaiheet lisensoidulla Dynamics 365 Customer Insights -tilauksella.
-ms.date: 10/14/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
+ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673387"
+ms.lasthandoff: 12/06/2021
+ms.locfileid: "7892334"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Ympäristöjen luominen käyttäjäryhmän merkityksellisissä tiedoissa
 
@@ -77,6 +77,9 @@ Jos luot useita Customer Insights -ympäristöjä ja päätät tallentaa näiden
 Tässä **Microsoft Dataverse** -vaiheessa voit yhdistää Customer Insightsin Dataverse-ympäristöösi.
 
 Jos haluat käyttää [valmiita ennustemalleja](predictions-overview.md#out-of-box-models), määritä tietojen jakaminen Dataversen kanssa. Voit myös ottaa käyttöön tietojen käsittelyn paikallisista tietolähteistä antamalla organisaatiosi hallinnoiman Microsoft Dataverse -ympäristön URL-osoitteen. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Dataversen hallitun Data Laken kanssa.
+
+> [!IMPORTANT]
+> Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
 

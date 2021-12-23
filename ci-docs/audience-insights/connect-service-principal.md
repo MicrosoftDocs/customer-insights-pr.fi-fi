@@ -1,7 +1,7 @@
 ---
 title: Yhteyden muodostaminen Azure Data Lake Storage -tiliin palvelun päätunnuksen avulla
 description: Muodosta yhteys Data Lake -tallennustilaan Azure-palvelun päätoiminnon avulla.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645168"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900254"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päätunnuksen avulla
 
-Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoitetut käyttöoikeudet. Sen sijaan että sovellukset kirjautusivat sisään käyttäjänä, jolla on kaikki oikeudet, Azure antaa mahdollisuuden käyttää palveluobjekteja. Lue lisää siitä, miten voit muodostaa yhteyden Dynamics 365 Customer Insights -tilin Azure Data Lake Storage -tiliin käyttämällä Azure-palvelun pääkäyttäjää tallennustilin avainten sijaan. 
+Tässä artikkelissa kerrotaan, miten Azure Data Lake Storage -tiliin voi muodostaa yhteyden Dynamics 365 Customer Insightsista käyttämällä Azure-palvelun päänimeä tallennustilan tilin avainten sijaan. 
 
-Palvelun pääkansion avulla voit [lisätä tai muokata Common Data Model -kansiota tietolähteenä](connect-common-data-model.md) tai [luoda tai päivittää ympäristön](create-environment.md).
+Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoitetut käyttöoikeudet. Sen sijaan että sovellukset kirjautusivat sisään käyttäjänä, jolla on kaikki oikeudet, Azure antaa mahdollisuuden käyttää palveluobjekteja. Palvelun päänimen avulla voit [lisätä tai muokata Common Data Model -kansiota tietolähteenä](connect-common-data-model.md) tai [luoda tai päivittää ympäristön](create-environment.md).
 
 > [!IMPORTANT]
 > - Palvelun päänimiä käyttävällä Data Lake Storage -tilillä on oltava [käytössä hierarkkinen nimitila](/azure/storage/blobs/data-lake-storage-namespace).
-> - Palveluobjektin luontiin tarvitaan Azure-tilauksen järjestelmänvalvojan oikeudet.
+> - Tarvitset Azure-tilaukseen järjestelmänvalvojan oikeudet palvelun pääkäyttäjän luomiseksi.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Luo Azure-palvelun pääkäyttäjä Customer Insights -tietoja varten
 
-Ennen kuin luot uuden palvelupääkäyttäjän kohdeyleisöä tai sitoutumistietoja varten, tarkista, onko se jo olemassa organisaatiossasi.
+Ennen kuin luot uuden palvelun päänimen Customer Insightsille, tarkista, onko se jo organisaatiossasi.
 
 ### <a name="look-for-an-existing-service-principal"></a>Aiemmin luodun palveluobjektin etsiminen
 

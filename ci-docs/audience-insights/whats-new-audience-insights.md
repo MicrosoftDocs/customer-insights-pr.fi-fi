@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 11/04/2021
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
-ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
+ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "7753113"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884258"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
@@ -26,6 +26,18 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="november-2021-updates"></a>Marraskuun 2021 päivitykset
+
+Marraskuun 2021 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="segment-membership-now-available-in-dataverse"></a>Segmentin jäsenyys on nyt käytettävissä Dataversessa
+
+Asiakasprofiilien segmenttijäsenyystiedot ovat nyt saatavilla Dataversessa asiakasprofiilien ja oivallusten rinnalla. Dynamics 365 -toimintosovellukset ja mallipohjaiset sovellukset voivat näiden tietojen avulla etsiä tietyn asiakkaan segmenttijäsenyystiedot.
+
+### <a name="activities-support-contact-level-details-for-business-accounts"></a>Aktiviteetit tukevat yritystilien yhteyshenkilötason tietoja
+
+Nyt voit määrittää, näyttää ja suodattaa aktiviteetteja yhteyshenkilöille liiketoimintatilin aktiviteettiaikajanalla, jotta saat paremman käsityksen siitä, mitkä asiakkaan yhteyshenkilöt ovat tiettyihin aktiviteetteihin osallistuneet.
 
 ## <a name="october-2021-updates"></a>Lokakuun 2021 päivitykset
 

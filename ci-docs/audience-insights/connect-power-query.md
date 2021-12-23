@@ -1,7 +1,7 @@
 ---
-title: Tietojen käyttäminen Power Query -yhdistimen avulla
+title: Tietojen kerääminen Power Query -yhdistimen kautta (video)
 description: Power Queryyn perustuvien tietolähteiden yhdistimet.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732214"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903836"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhteyden muodostaminen Power Query -tietolähteeseen
 
-Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimiä. Dynamics 365 Customer Insights tukee suurinta osaa näistä yhdistimistä. Power Query -yhdistimiin perustuvia tietolähteitä lisätään yleensä seuraavassa osassa kuvattujen vaiheiden mukaisesti. Käytettävä yhdistin kuitenkin määrittää, mitä tietoja tarvitaan. Lisätietoja yhdistinkohtaisista ohjeista on [Power Query -yhdistimien viitesivulla](/power-query/connectors/).
+Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimiä. Dynamics 365 Customer Insights tukee suurinta osaa näistä yhdistimistä. 
+
+Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleensä tässä osassa kuvattujen vaiheiden mukaisesti. Käytettävä yhdistin kuitenkin määrittää, mitä tietoja tarvitaan. Lisätietoja yksittäisistä yhdistimistä on [Power Query -yhdistimien ohjeissa](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,12 +30,9 @@ Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimi
 
 1. Valitse **Lisää tietolähde**.
 
-1. Valitse **Tuo tiedot** -menetelmä ja valitse sitten **Seuraava**.
+1. Valitse **Microsoft Power Query** ja valitse sitten **Seuraava**.
 
-1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**. Nimen ohjeet: 
-   - Alussa on oltava kirjain.
-   - Käytä vain kirjaimia ja numeroita. Erikoismerkit ja välilyönnit eivät ole sallittuja.
-   - Käytä 3–64 merkkiä.
+1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**.
 
 1. Valitse jokin [käytettävissä olevista yhdistimistä](#available-power-query-data-sources). Tässä esimerkissä valitaan **Text/CSV**-yhdistin.
 
@@ -50,7 +49,7 @@ Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimi
 
 1. Voit lisätä tietolähteeseen entiteettejä valitsemalla **Nouda tiedot** **Muokkaa kyselyjä** -valintaikkunassa.
 
-   Seuraavien muunnosten tekeminen on suositeltavaa:
+   On suositeltavaa käyttää seuraavia muunnoksia:
 
    - Jos käsiteltävät tiedot saadaan CSV-tiedostosta, ensimmäisellä rivillä on usein otsikoita. Valitse ensin **Muunna taulukko** ja sitten **Käytä otsikoita ensimmäisenä rivinä**.
    - Varmista, että tietotyyppi on määritetty oikein.
@@ -61,7 +60,7 @@ Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimi
 
 ## <a name="available-power-query-data-sources"></a>Käytettävissä olevat Power Query -tietolähteet
 
-[Power Query -yhdistimien viitesivulla](/power-query/connectors/) on ajantasainen luettelo yhdistimistä, jotka voidaan valita tuomaan tietoja Customer Insightsiin. 
+Katso [Power Query -yhdistimen ohjeesta](/power-query/connectors/) yhdistinluettelo, jonka avulla voit tuoda tietoja Customer Insightsiin. 
 
 Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamerkki, voidaan käyttää uusien Power Queryyn perustuvien tietolähteiden luomiseen. Kun yhdistimen dokumentaatiossa on lisätietoja sen edellytyksistä, rajoituksista ja muista tiedoista.
 

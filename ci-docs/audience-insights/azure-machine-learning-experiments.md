@@ -1,7 +1,7 @@
 ---
 title: Azuren automaattianalyysipalvelujen kokeileminen
 description: Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen Dynamics 365 Customer Insightsissa.
-ms.date: 11/30/2020
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,16 +9,16 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4c04a1d08aba152ce91d452ae2300c1ce0fc79e5d6980ac506dc40d9914c9fca
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e37eec503c9df83ef72497e22afa1266296e642c
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033168"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881734"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen
 
-Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppimismallien muodostamisen lähde, joilla voidaan luoda lisää merkityksellisiä liiketoimintatietoja. Integroituneet Customer Insights sekä koneoppimisstudio (perinteinen) ja Azuren automaattianalyysipalvelut käyttävät käyttäjän mukautettuja malleja. Kohdassa [Koneoppimisstudion (perinteinen) kokeileminen](machine-learning-studio-experiments.md) on esimerkkejä kokeiluista, jotka perustuvat koneoppimisstudioon (perinteinen). 
+Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppimismallien muodostamisen lähde, joilla voidaan luoda lisää merkityksellisiä liiketoimintatietoja. Azuren automaattianalyysipalveluihin integroituvalla Customer Insightsilla voi käyttää omia mukautettuja malleja.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -35,7 +35,7 @@ Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppim
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Azuren automaattianalyysipalvelujen suunnitteluohjelman käyttäminen
 
-Azuren automaattianalyysipalvelujen suunnitteluohjelma on visuaalinen kaavio, jossa tietojoukkoja ja moduuleja voi vetää ja pudottaa samalla tavoin kuin koneoppimisstudiossa (perinteinen). Suunnitteluohjelmassa luotu eräjakso voidaan integroida Customer Insightsiin, jos määritykset sen sallivat. 
+Azuren koneoppimisen suunnittelija tarjoaa visuaalisen pohjan, johon voit vetää ja pudottaa tietojoukkoja ja moduuleja. Suunnitteluohjelmassa luotu eräjakso voidaan integroida Customer Insightsiin, jos määritykset sen sallivat. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Azuren automaattianalyysipalvelujen SDK:n käyttäminen
 

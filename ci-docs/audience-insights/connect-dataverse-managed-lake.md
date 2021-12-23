@@ -1,7 +1,7 @@
 ---
 title: Yhdistä Microsoft Dataversen taulukoihin
 description: Tietojen tuominen Microsoft Dataversen hallitusta Data Lake -tallennustilasta.
-ms.date: 07/23/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,22 +9,25 @@ author: adkuppa
 ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
-ms.openlocfilehash: ffeccffd0e353cb5490b537552d585c184ad672f9c806e673bd04743214ad068
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: fecf3e33b5bc1eec17006fc196004be902c03b40
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033076"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900147"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Tässä artikkelissa on tietoa siitä, miten Dataverse-käyttäjät voivat nopeasti muodostaa yhteyden analyyttisiin kokonaisuuksiinsa Dataversen hallitsemassa järvessä. Vain Dataverse -organisaation järjestelmänvalvojat voivat jatkaa tarkastelemaan hallitussa Data Lake -tallennustilassa käytettävissä olevia entiteettejä.
+Tässä artikkelissa on tietoja siitä, miten Dataverse-käyttäjät voivat muodostaa nopeasti yhteyden Microsoft Dataversen hallitun data laken analyysientiteetteihin. 
+
+> [!NOTE]
+> Sinun täytyy olla Dataverse-organisaation järjestelmänvalvoja, jotta voit jatkaa ja tarkastella hallitussa data lakessa käytettävissä olevien entiteettien luetteloa.
 
 ## <a name="important-considerations"></a>Tärkeitä huomioon otettavia seikkoja
 
-Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat tallennettuina eri sijainnissa kuin missä tietoja käsitellään tai tallennetaan Dynamics 365 Customer Insightsissa. Tuomalla verkkopalveluun tallennetut tiedot tai muodostamalla niihin yhteyden hyväksyt, että tiedot voidaan siirtää ja tallentaa yhdessä Dynamics 365 Customer Insightsin kanssa.  [Lisätietoja on Microsoftin luottamuskeskuksessa.](https://www.microsoft.com/trust-center)
+Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat tallennettuina eri sijainnissa kuin missä tietoja käsitellään tai tallennetaan Dynamics 365 Customer Insightsissa. Tuomalla verkkopalveluun tallennetut tiedot tai muodostamalla niihin yhteyden hyväksyt, että tiedot voidaan siirtää ja tallentaa yhdessä Dynamics 365 Customer Insightsin kanssa.  [Lisätietoja on Microsoftin luottamuskeskuksessa](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Yhteyden muodostaminen Dataversen hallittuun tallennustilaan
 
@@ -32,12 +35,9 @@ Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat ta
 
 2. Valitse **Lisää tietolähde**.
 
-3. Valitse **Yhdistä Microsoft Dataversen hallitsemaan järveen** ja valitse **Seuraava** .
+3. Valitse **Microsoft Dataverse** ja valitse sitten **Seuraava**.
 
-4. Anna tietolähteen **nimi** ja valitse **Seuraava**. Nimen ohjeet: 
-   - Alussa on oltava kirjain.
-   - Käytä vain kirjaimia ja numeroita. Erikoismerkit ja välilyönnit eivät ole sallittuja.
-   - Käytä 3–64 merkkiä.
+4. Anna tietolähteen **nimi** ja valitse **Seuraava**. 
 
 5. Anna Dataverse-organisaation **palvelinosoite** ja valitse **Kirjaudu sisään**.
 

@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 11/12/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
+ms.openlocfilehash: 309b2a900e50727ffa655fc6b5fe728ea55ba5bf
+ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799632"
+ms.lasthandoff: 12/06/2021
+ms.locfileid: "7892380"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -45,6 +45,9 @@ Lisätietoja ympäristön asetuksista on kohdassa [Uuden ympäristön luominen](
 Tässä **Microsoft Dataverse** -vaiheessa voit yhdistää Customer Insightsin Dataverse-ympäristöösi.
 
 Jos haluat käyttää [valmiita ennustemalleja](predictions-overview.md#out-of-box-models), määritä tietojen jakaminen Dataversen kanssa. Voit myös ottaa käyttöön tietojen käsittelyn paikallisista tietolähteistä antamalla organisaatiosi hallinnoiman Microsoft Dataverse -ympäristön URL-osoitteen. Valitse **Ota käyttöön tietojen jakaminen**, jos haluat jakaa Customer Insightsin tulostiedot Dataversen hallitun Data Laken kanssa.
+
+> [!IMPORTANT]
+> Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
 

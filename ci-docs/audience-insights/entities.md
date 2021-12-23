@@ -1,7 +1,7 @@
 ---
 title: Entiteetit ja tietojoukot
 description: Tietojen näyttäminen Entiteetit-sivulla.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,51 +9,57 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2a207a3dcad4bf192efb6ee1554195f10b19670b
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732076"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900423"
 ---
 # <a name="entities-in-audience-insights"></a>Käyttäjäryhmän merkityksellisten tietojen entiteetit
 
 Kun [tietolähteet on määritetty](data-sources.md), siirry **Entiteetit**-sivulle arvioimaan käsiteltyjen tietojen laatua. Entiteettejä pidetään tietojoukkoina. Monet Dynamics 365 Customer Insights -ominaisuudet perustuvat näihin entiteetteihin. Niiden huolellinen tarkastelu voi auttaa tarkistamaan kyseisten ominaisuuksien tuloksia.
 
-**Entiteetit**-sivulla on luettelo entiteeteistä, ja siinä on useita sarakkeita:
+**Entiteetit**-sivulla on entiteettejä, ja siinä on seuraavat sarakkeet:
 
 - **Nimi**: Tietoentiteetin nimi. Jos entiteetin nimen vieressä on varoitussymboli, kyseisen entiteetin tietojen lataus ei onnistunut.
-- **Lähde**: entiteetin käsitelleen tietolähteen tyyppi.
-- **Luonut**: entiteetin luoneen henkilön nimi.
-- **Luotu**: entiteetin luontipäivä ja -aika.
-- **Päivitetty**: entiteettiä päivittäneen henkilön nimi
-- **Tila**: entiteetin viimeisen päivityksen tiedot
+- **Lähde**: Entiteetin keränneen tietolähteen tyyppi.
+- **Päivitetty**: Entiteetin edellinen päivitysaika.
+- **Tila**: entiteetin viimeisen päivityksen tiedot.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="explore-a-specific-entitys-data"></a>Tutustu tietyn entiteetin tietoihin
 
-Valitse entiteetti, jonka kenttiin ja tietueisiin haluat tutustua.
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Entiteetit**.
+1. Valitse **Entiteetit**-sivulta entiteetti, jonka tietosivu avautuu.  
+1. Tutustu tämän entiteetin kenttiin ja tietueisiin.
 
-> [!div class="mx-imgBorder"]
-> ![Valitse entiteetti.](media/data-manager-entities-data.png "Valitse entiteetti")
-
-- **Tiedot**-välilehdessä on taulukko, jossa on tietoja entiteetin yksittäisistä tietueista.
+- **Määritteet**-välilehti on oletusarvoisesti valittuna, ja se näyttää taulukon, jossa tarkastellaan valitun entiteetin tietoja, kuten kenttien nimiä, tietotyyppejä ja tyyppejä. **Tyyppi**-sarakkeessa näkyy liittyviä Common Data Model -tyyppejä, jotka järjestelmä joko tunnistaa automaattisesti tai jotka käyttäjät [yhdistävät manuaalisesti](map-entities.md). Nämä tyypit ovat semanttisia tyyppejä, jotka voivat poiketa määritteiden tietotyypeistä. Esimerkiksi alla olevassa *Sähköposti*-kentässä on tietotyyppi *Teksti*, mutta sen (semanttisen) Common Data Model -tyyppi voi olla *Email* tai *EmailAddress*.
 
 > [!div class="mx-imgBorder"]
 > ![Kentät-taulukko.](media/data-manager-entities-fields.PNG "Kentät-taulukko")
 
-- **Määritteet**-välilehti on oletusarvoisesti valittuna, ja se näyttää taulukon, jossa tarkastellaan valitun entiteetin tietoja, kuten kenttien nimiä, tietotyyppejä ja tyyppejä. **Tyyppi**-sarakkeessa näkyy liittyviä Common Data Model -tyyppejä, jotka järjestelmä joko tunnistaa automaattisesti tai jotka käyttäjät [yhdistävät manuaalisesti](map-entities.md). Nämä tyypit ovat semanttisia tyyppejä, jotka voivat poiketa määritteiden tietotyypeistä. Esimerkiksi alla olevassa *Sähköposti*-kentässä on tietotyyppi *Teksti*, mutta sen (semanttisen) Common Data Model -tyyppi voi olla *Email* tai *EmailAddress*.
-
 > [!NOTE]
-> Kummassakin taulukossa näkyy vain osa entiteetin tiedoista. Voit tarkastella koko tietojoukkoa siirtymällä **Tietolähteet**-sivulle, valitsemalla entiteetin, valitsemalla **Muokka** ja tarkastelemalla entiteetin tietoja Power Query -editorissa kohdassa [Tietolähteet](data-sources.md) kuvatulla tavalla.
+> Tässä sivussa näkyy vain esimerkki entiteetin tiedoista. Voit tarkastella koko tietojoukkoa siirtymällä **Tietolähteet**-sivulle, valitsemalla entiteetin, valitsemalla **Muokka** ja tarkastelemalla entiteetin tietoja Power Query -editorissa kohdassa [Tietolähteet](data-sources.md) kuvatulla tavalla.
 
-Lisätietoja entiteetissä käsitellyistä tiedoista on **Yhteenveto**-sarakkeessa, jossa on joitakin tärkeitä tietoja tietojen ominaisuuksista, kuten tyhjäarvot, puuttuvat arvot, yksilöivät arvot, määrät ja jakelut.
-
-Näet tietojen yhteenvedon valitsemalla kaaviokuvakkeen.
+Lisätietoja entiteetissä käsitellyistä tiedoista on **Yhteenveto**-sarakkeessa, jossa on joitakin tärkeitä tietoja tietojen ominaisuuksista, kuten tyhjäarvot, puuttuvat arvot, yksilöivät arvot, määrät ja jakelut. Näet tietojen yhteenvedon valitsemalla kaaviokuvakkeen.
 
 > [!div class="mx-imgBorder"]
 > ![Yhteenvetosymboli.](media/data-manager-entities-summary.png "Tietojen yhteenvetotaulukko")
+
+- **Tiedot**-välilehdessä on taulukko, jossa on tietoja entiteetin yksittäisistä tietueista. Luettelossa näkyvät tiedot määräytyvät entiteetin tietotyypin mukaan.
+
+> [!div class="mx-imgBorder"]
+> ![Valitse entiteetti.](media/data-manager-entities-data.png "Valitse entiteetti")
+
+- **Raportit**-välilehden (joidenkin entiteettien käytettävissä) avulla voit visualisoida tiedot luomalla raportin ja se sisältää seuraavat sarakkeet:
+
+  - **Raportin nimi**: raportin nimi.
+  - **Luonut**: entiteetin luoneen henkilön nimi.
+  - **Luotu**: entiteetin luontipäivä ja -aika.
+  - **Muokannut**: entiteettiä muokanneen henkilön nimi.
+  - **Muokattu**: entiteetin muokkauspäivä ja -aika. 
 
 ## <a name="entity-specific-information"></a>Entiteettikohtainen tieto
 
@@ -73,8 +79,7 @@ Seuraavat tarkistukset suoritetaan, jotta näytetyt tiedot voidaan paljastaa vio
 
 - Kentän arvo ei vastaa sen sarakkeen tietotyyppiä.
 - Kentissä on merkkejä, joiden vuoksi sarakkeet eivät vastaa odotettua rakennetta. Esimerkiksi: väärin muotoiltuja lainausmerkkejä, virheellisiä lainausmerkkejä tai uuden linjan merkkejä.
-- Jos datetime-, date/date/datetimeoffset-sarakkeita on, niiden muoto on määritettävä mallissa, jos se ei noudata ISO-vakiomuotoa.
-
+- Jos on päivämäärä ja aika / päivämäärä / päivämääräsiirtymä-sarakkeita, niiden muoto on määritettävä mallissa, jos se ei noudata ISO-vakiomuotoa.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

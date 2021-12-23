@@ -1,7 +1,7 @@
 ---
 title: Tietojen käsitteleminen tietolähteiden avulla
 description: Tietoja tietojen tuomisesta eri lähteistä.
-ms.date: 11/01/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 6846c73cb156aaa049e2656c8e327bcba1f73abc
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732138"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900338"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -25,19 +25,22 @@ Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen o
 
 ## <a name="add-a-data-source"></a>Lisää tietolähde
 
-Lisätietoja tietolähteen lisäämisestä on artikkeleissa, joissa käsitellään valittua vaihtoehtoa.
+Yksityiskohtaisissa artikkeleissa on lisätietoja tietolähteen lisäämisestä valitun vaihtoehdon mukaan.
 
-Tietolähde voidaan lisätä pääasiassa kolmella tavalla:
+Voit lisätä seuraavat tietolähteet:
 
-- [Käyttämällä kymmeniä Power Query -yhdistimiä](connect-power-query.md)
-- [Common Data Model -kansiosta](connect-common-data-model.md)
-- [Omasta Microsoft Dataversen Data Lake -tallennustilasta](connect-dataverse-managed-lake.md)
+- [Power Query -yhdistimet](connect-power-query.md)
+- [Common Data Model](connect-common-data-model.md)
+- [Microsoft Dataversen data lake](connect-dataverse-managed-lake.md)
+
+> [!NOTE]
+> Jos käytät kokeiluversiota, tuontitavat-osassa on **Customer Insights -tietokirjasto** -vaihtoehto. Valitse tämä vaihtoehto, jos haluat valita tietojoukon, joka on käytettävissä eri toimialoja varten. Saat lisätietoja [Dynamics 365 Customer Insights kokeilusta](../trial-signup.md).
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Tietojen lisääminen paikallisista tietolähteistä
 
-Käyttäjäryhmän merkityksellisten tietojen paikallisten tietolähteiden tietojen käsittelemistä tuetaan Microsoft Power Platform -tietotyönkulkujen perusteella. Tietovirtaukset voidaan ottaa käyttöön Customer Insightsissa [antamalla Microsoft Dataverse -ympäristön URL-osoite](create-environment.md) ympäristöä määritettäessä.
+Käyttäjäryhmän merkityksellisten tietojen paikallisten tietolähteiden tietojen käsittelemistä tuetaan Microsoft Power Platform -tietotyönkulkujen perusteella. Voit ottaa Dataflows-tiedot käyttöön Customer Insightsissa [antamalla Microsoft Dataverse -ympäristön URL-osoitteen](create-environment.md) ympäristön määrittämisen jälkeen.
 
-Kun Dataverse-ympäristö on liitetty Customer Insights -tietoihin, luodut tietolähteet käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovuot tukevat paikallisia yhteyksiä tietoyhdyskäytävän avulla. Poista ja luo uudelleen tietolähteet, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä [paikallisten tietoyhdyskäytävien käyttöön](/data-integration/gateway/service-gateway-app).
+Tietolähteet, jotka luodaan, kun Dataverse-ympäristö on liitetty Customer Insightsiin, käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovuot tukevat paikallisia yhteyksiä tietoyhdyskäytävän avulla. Voit poistaa ja luoda uudelleen tietolähteitä, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä, [paikallisten tietoyhdyskäytävien avulla](/data-integration/gateway/service-gateway-app).
 
 Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä, ja voit käyttää niitä uudelleen Customer Insightsissa. Tietolähteiden sivulla on linkki, jonka avulla voi siirtyä Microsoft Power Platform -ympäristöön paikallisten tietoyhdyskäytävien tarkastelemista ja määrittämistä varten.
 

@@ -1,7 +1,7 @@
 ---
 title: Semanttiset yhdistämismääritykset (esiversio)
 description: Yleiskatsaus semanttisista yhdistämismäärityksistä ja niiden käytöstä.
-ms.date: 11/01/2021
+ms.date: 12/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 08b257b97704b219bb3277042516e00deb886a49
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7731939"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881826"
 ---
-# <a name="semantic-mappings"></a>Semanttiset yhdistämismääritykset
+# <a name="semantic-mappings-preview"></a>Semanttiset yhdistämismääritykset (esiversio)
 
 Semanttisten yhdistämismääritysten avulla voit yhdistää ei-aktiviteettitiedot ennalta määritettyihin rakenteisiin. Nämä rakenteet auttavat käyttäjäryhmän merkityksellisiä tietoja ymmärtämään tietomääritteitäsi. Semanttiset yhdistämismääritykset ja toimitetut tiedot mahdollistivat uusia merkityksellisiä tietoja ja ominaisuuksia käyttäjäryhmän merkityksellisissä tiedoissa. Tietoja aktiviteettitietojen yhdistämisestä rakenteisiin löytyy [aktiviteettien](activities.md) ohjeista.
 
@@ -91,5 +91,40 @@ Kohdassa **Tiedot** > **Semanttiset yhdistämismääritykset (esiversio)** voit 
 
 - **Poista**: Avaa dialogin, joka vahvistaa valitun semanttisen yhdistämismäärityksen poistamisen. Voit myös poistaa useita semanttisia yhdistämismäärityksiä kerralla valitsemalla semanttiset yhdistämismääritykset ja poistokuvakkeen. Vahvista poisto valitsemalla **Poista**.
 
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Yhteyshenkilötason aktiviteettien luominen ContactProfile-entiteettien semanttisen yhdistämismäärityksen avulla
+
+Kun olet luonut semanttisen *ContactProfile*-entiteettien yhdistämismäärityksen, voit siepata yhteyshenkilöiden aktiviteetit. Sen avulla näet tilin aktiviteetin aikajanalla sen yhteyshenkilön, joka oli vastuussa kustakin aktiviteetista. Useimmat vaiheet noudattavat tyypillistä aktiviteettien yhdistämismääritystä.
+
+   > [!NOTE]
+   > Jotta yhteyshenkilötason aktiviteetit toimisivat, aktiviteettitietojen jokaiselle tietueelle on oltava sekä **AccountID**- että **ContactID**-määritteet.
+
+1. [*ContactProfilen* semanttisen entiteettiyhdistämisen määrittäminen](#define-a-contactprofile-semantic-entity-mapping) ja suorita semanttinen yhdistämismääritys.
+
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Aktiviteetit**.
+
+1. Luo uusi aktiviteetti valitsemalla **Lisää aktiviteetti**.
+
+1. Anna aktiviteetille nimi, valitse lähdeaktiviteettientiteetti ja valitse aktiviteettientiteetin perusavain.
+
+1. Luo **Suhteet**-vaiheessa epäsuora suhde aktiviteetin lähdetietojen ja asiakkaiden välille käyttämällä yhteyshenkilötietojasi välittävänä entiteettinä. Lisätietoja löytyy kohdasta [suorat ja epäsuorat suhdepolut](relationships.md#relationship-paths).
+   - Esimerkkinä *Ostot*-nimisen aktiviteetin suhde:
+      - **Ostojen lähdeaktiviteettitiedot** > **Yhteyshenkilötiedot** määritteessä **ContactID**
+      - **Yhteyshenkilön tiedot** > **Asiakkaan tiedot** määritteessä **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Esimerkki suhteen määrityksestä.":::
+
+1. Kun olet määrittänyt suhteet, valitse **Seuraava** ja viimeistele aktiviteettien yhdistämismääritykset. Aktiviteettien luonnin yksityiskohtaiset vaiheet ovat ohjeaiheessa [Aktiviteetin määritteleminen](activities.md).
+
+1. Suorita aktiviteettien yhdistämismääritykset.
+
+1. Yhteyshenkilötason aktiviteettisi näkyvät nyt asiakkaan aikajanalla.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Lopullinen tulos yhteyshenkilöaktiviteettien määrittämisen jälkeen":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Yhteyshenkilötason aktiviteettiaikajanan suodatus
+
+Kun olet määrittänyt yhteyshenkilötason aktiviteettien yhdistämismäärityksen ja suorittanut sen, asiakkaiden aktiviteettiaikajana päivittyy. Se sisältää yhteyshenkilöiden tunnukset tai nimet *ContactProfile*-määritysten mukaisesti aktiviteetteja varten, joissa he ovat toimineet. Voit suodattaa aktiviteetteja aikajanan yhteyshenkilöiden mukaan nähdäksesi tietyt yhteyshenkilöt, joista olet kiinnostunut. Voit myös tarkastella kaikkia aktiviteetteja, joita ei ole delegoitu tietylle yhteyshenkilölle, valitsemalla **Aktiviteetit, joita ei ole yhdistetty yhteyshenkilöön.**
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Yhteyshenkilötason aktiviteetteja varten käytettävissä olevat suodatusvaihtoehdot.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

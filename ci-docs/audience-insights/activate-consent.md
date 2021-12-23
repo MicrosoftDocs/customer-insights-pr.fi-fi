@@ -1,7 +1,7 @@
 ---
 title: Suostumussääntöjen aktivoiminen segmenteille
 description: Noudata näitä vaiheita, jotka linkittävät suostumustiedot ja aktivoivat suostumuksen tarkistukset käyttäjäryhmän merkityksellisissä tiedoissa. Järjestelmänvalvoja voi myös poistaa suostumuksen tarkistukset käytöstä.
-ms.date: 11/03/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: smithy7
 ms.author: smithc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 45899738d39bd5caa433e123f9fe59020e831998
-ms.sourcegitcommit: 79b09498d1328e5551fb8684c44af1fb149f9881
+ms.openlocfilehash: 552cb0739c4d17266dd028638df067f3384b738a
+ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7790772"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "7884070"
 ---
 # <a name="activate-consent-rules"></a>Aktivoi hyväksyntäsäännöt
 
@@ -49,3 +49,6 @@ Jos haluat lopettaa hyväksyntätietojen käytön kohdeyleisötiedoissa, järjes
 1. Valitse **Suostumus (esiversio)** -välilehti.
 
 1. Valitse **Ota suostumuksen tarkistukset käyttöön** -osassa valitsimen arvoksi **Ei käytössä**.
+
+> [!TIP]
+> Jos haluat lopettaa hyväksynnän hallintaominaisuuden käytön, katso [Hyväksyntäkeskuksen järjestelmäasetukset (esiversio)](../consent-management/system-settings.md).

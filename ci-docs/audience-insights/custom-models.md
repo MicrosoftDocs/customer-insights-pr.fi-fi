@@ -1,7 +1,7 @@
 ---
 title: Mukautetut koneoppimisen mallit | Microsoft-dokumentit
 description: Azuren automaattianalyysipalvelujen mukautettujen mallien käyttäminen Dynamics 365 Customer Insightsissa.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032938"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881780"
 ---
 # <a name="custom-machine-learning-models"></a>Mukautetut koneoppimisen mallit
+
+> [!NOTE]
+> Machine Learning Studion (perinteinen) tuki päättyy 31.8.2024. On suositeltavaa siirtyä [Azure Machine Learningiin](/azure/machine-learning/overview-what-is-azure-machine-learning) tähän päivämäärään mennessä.
+>
+> 1.12.2021 jälkeen et voi luoda uusia Machine Learning Studion (perinteinen) resursseja. Voit käyttää 31.8.2024 asti aiemmin luotuja Machine Learning Studion (classic) resursseja. Lisätietoja on ohjeaiheessa [Siirtyminen Azure Machine Learningiin](/azure/machine-learning/migrate-overview).
+
 
 Valitsemalla **Analytiikka** > **Mukautetut mallit** voit hallita Azuren automaattianalyysipalvelumalleihin perustuvia työnkulkuja. Työnkulut auttavat valitsemaan tiedot, joista halutaan muodostaa merkityksellisiä tietoja, ja yhdistää tulokset yhtenäistettyihin asiakastietoihin. Lisätietoja mukautettujen koneoppimismallien muodostamisesta on kohdassa [Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen](azure-machine-learning-experiments.md).
 
@@ -24,9 +30,9 @@ Valitsemalla **Analytiikka** > **Mukautetut mallit** voit hallita Azuren automaa
 
 Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa liiketoimintaominaisuuksia ja tulovirtoja. On erittäin suositeltavaa tasapainottaa eettisesti ennusteen arvo sekä sen vaikutukset ja mahdolliset puolueellisuudet. Lisätietoja tavasta, jolla Microsoft [ottaa tekoälyn vastuullisen käytön huomioon](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Saat myös lisätietoja Azuren automaattianalyysipalveluja koskevista [vastuullisten automaattianalyysipalvelujen tekniikoista ja prosesseista](/azure/machine-learning/concept-responsible-ml).
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
-- Tämä toiminto tukee tällä hetkellä verkkopalveluja, jotka on julkaistu [koneoppimisstudiossa (perinteinen)](https://studio.azureml.net) ja [Azuren automaattianalyysipalvelujen eräjaksoissa](/azure/machine-learning/concept-ml-pipelines).
+- Tämä ominaisuus tukee [Azure Machine Learning -eräputkien](/azure/machine-learning/concept-ml-pipelines) kautta julkaistuja verkkopalveluja.
 
 - Tämän toiminnon käyttöä varten tarvitaan Azure Data Lake Gen2 -tallennustilin, joka on liitetty Azure-studioesiintymään. Lisätietoja on kohdassa [Azure Data Lake Storage Gen2 -tallennustilatilin luominen](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 
 1. Jos Azuren koneoppimispalvelun tilaus on eri vuokraajassa kuin Customer Insights, valitse **sisäänkirjaus** valtuustiedoilla valitussa organisaatiossa.
 
-1. Valitse verkkopalveluun liitetyt **työtilat**. Luettelossa on kaksi osaa: toinen on Azuren automaattianalyysipalvelujen v1 (koneoppimisstudio (perinteinen)) ja toinen Azuren automaattianalyysipalvelut v2 (Azuren automaattianalyysipalvelut). Jos ole varma, mikä työtila sopii omaan Koneoppimisstudio (perinteinen) -työtilaan, valitse **Mikä tahansa**.
+1. Valitse verkkopalveluun liitetyt **työtilat**. 
 
-1. Valitse Koneoppimisstudio (perinteinen) -verkkopalvelu tai Azuren automaattianalyysipalvelut -putki avattavassa **WWW-palvelu, joka sisältää mallin** -luettelossa. Valitse sitten **Seuraava**.
-   - Lisätietoja [verkkopalvelun julkaisemisesta koneoppimisstudiossa (perinteinen)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Lisätietoja [jakson julkaisemisesta Azuren automaattianalyysipalveluissa suunnitteluohjelman](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) tai [SDK:n](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk) avulla. Jakso on julkaistava [jakson päätepisteessä](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Valitse avattavassa **WWW-palvelu, joka sisältää mallin** -valikossa Azure Machine Learning -putki. Valitse sitten **Seuraava**.    
+   Lisätietoja [jakson julkaisemisesta Azuren automaattianalyysipalveluissa suunnitteluohjelman](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) tai [SDK:n](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk) avulla. Jakso on julkaistava [jakson päätepisteessä](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. Valitse kullekin **verkkopalvelun syötteelle** vastaava **Entiteetti** käyttäjäryhmän merkityksellisissä tiedoissa ja valitse sitten **Seuraava**.
    > [!NOTE]
@@ -62,9 +67,6 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
    > ![Työnkulun määrittäminen.](media/intelligence-screen2-updated.png "Työnkulun määrittäminen")
 
 1. Määritä seuraavat ominaisuudet **Mallin tulosteparametrit** -vaiheessa:
-   - Koneoppimisstudio (perinteinen)
-      1. Anna sen tulosteen **entiteetin nimi**, johon haluat verkkopalvelun tulosten siirtyvän.
-   - Azuren automaattianalyysipalvelut
       1. Anna sen tulosteen **entiteetin nimi**, johon haluat jakson tulosten siirtyvän.
       1. Valitse avattavassa luettelossa eränjakson **Tulostetietosäilön parametrin nimi**.
       1. Valitse avattavassa luettelossa eränjakson **Tulostepolun parametrin nimi**.
@@ -93,9 +95,6 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 1. Kullekin **verkkopalvelun syötteelle** voidaan päivittää vastaava **Entiteetti** käyttäjäryhmän merkityksellisissä tiedoissa. Valitse sitten **Seuraava**.
 
 1. Määritä seuraavat ominaisuudet **Mallin tulosteparametrit** -vaiheessa:
-   - Koneoppimisstudio (perinteinen)
-      1. Anna sen tulosteen **entiteetin nimi**, johon haluat verkkopalvelun tulosten siirtyvän.
-   - Azuren automaattianalyysipalvelut
       1. Anna sen tulosteen **entiteetin nimi**, johon haluat jakson tulosten siirtyvän.
       1. Valitse testijaksolle **Tulostetietosäilön parametrin nimi**.
       1. Valitse testijaksolle **Tulostepolun parametrin nimi**.
