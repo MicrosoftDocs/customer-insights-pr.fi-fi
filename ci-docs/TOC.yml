@@ -80,7 +80,7 @@
       items:
         - name: Asiakasprofiilien rikastaminen
           href: audience-insights/enrichment-hub.md
-        - name: Tuotemerkki ja kiinnostuksen kohteiden affiniteetit
+        - name: Tuotemerkit ja kiinnostuksen kohteet
           href: audience-insights/enrichment-microsoft.md
         - name: Parannetut osoitteet
           href: audience-insights/enrichment-enhanced-addresses.md
@@ -130,6 +130,8 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Tapahtuman vaihtuvuuden ennustaminen
               href: audience-insights/predict-transactional-churn.md
+            - name: Asiakaspalautteen asenteen analysointi
+              href: audience-insights/sentiment-analysis.md
             - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
               href: audience-insights/custom-models.md
             - name: Osittain puuttuvien tietojen täydentäminen

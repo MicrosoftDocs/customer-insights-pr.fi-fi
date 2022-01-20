@@ -1,7 +1,7 @@
 ---
-title: Dynamics 365 -sovellusten asiakaskortin apuohjelma (video)
+title: Dynamics 365 -sovellusten asiakaskortin apuohjelma (sisältää videon)
 description: Näytä käyttäjäryhmän merkitykselliset tiedot Dynamics 365 -sovelluksissa tämän apuohjelman avulla.
-ms.date: 12/07/2021
+ms.date: 12/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
+ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904009"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "7945423"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
@@ -27,12 +27,12 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 ## <a name="prerequisites"></a>Edellytykset
 
 - Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
-- Jotta Dynamics 365 -tiedot voidaan yhdistää käyttäjäryhmän merkistyksellisten tietojen asiakasprofiileihin, ne on [saatava Dynamics 365 -sovelluksesta Microsoft Dataverse -yhdistimen avulla](connect-power-query.md).
+- Dynamics 365 -tietojen yhdistäminen käyttäjäryhmän merkityksellisten tietojen asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin yhdistämisvaiheessa](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Kaikki Asiakaskortti-apuohjelman Dynamics 365 -käyttäjät [on lisättävä käyttäjiksi](permissions.md) kohdeyleisön merkityksellisissä tiedoissa, jotta tiedot näkyvät heille.
 - [Haku- ja suodatustoiminnot](search-filter-index.md) kohdeyleisön merkityksellisissä tiedoissa vaaditaan, jotta tietojen haku toimii.
 - Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin käyttäjäryhmän merkityksellisissä tiedoissa. Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
   - **Mittarin ohjausobjekti**: Vaatii asiakasmääritetyyppisiä [määritettyjä mittareita](measures.md).
-  - **Älykkyyden hallinta**: Edellyttää [ennusteiden](predictions.md) tai [mukautettujen mallien](custom-models.md) avulla luotuja tietoja.
+  - **Älykkyyden hallinta**: Edellyttää [ennusteiden tai mukautettujen mallien](predictions-overview.md) avulla luotuja tietoja.
   - **Asiakkaan tietojen ohjausobjekti**: Profiilin kaikki kentät ovat käytettävissä yhtenäisessä asiakasprofiilissa.
   - **Rikastus-ohjausobjekti**: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin. Korttilisäosa tukee seuraavia rikastuksia: Microsoftin tuottamat [tuotemerkit](enrichment-microsoft.md), [kiinnostuksen kohteet](enrichment-microsoft.md) ja [Office-vuorovaikutustiedot](enrichment-office.md).
   - **Yhteyshenkilöiden ohjausobjekti**: Edellyttää yhteyshenkilötyyppisen semanttisen entiteetin määrittelemistä.

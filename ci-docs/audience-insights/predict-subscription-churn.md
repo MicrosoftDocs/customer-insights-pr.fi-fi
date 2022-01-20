@@ -1,5 +1,5 @@
 ---
-title: Tilausten poistuman ennuste (video)
+title: Tilauksen vaihtuvuusennuste (sisältää videon)
 description: Ennusta riski sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 1ef2ff642731ee1ba0a142433745fc5a5b398c88
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7903945"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967697"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
 
@@ -77,7 +77,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 1. Anna **Päivät tilauksen päättymisestä** -kohtaan arvo, jonka jälkeen yritys pitää asiakasta menetettynä. Tämä kausi linkittyy yleensä yrityksen aktiviteetteihin, kuten tarjouksiin tai muihin markkinointitoimintoihin, joiden avulla yritetään estää asiakkaiden menettäminen.
 1. Määritä **Vaihtuvuuden ennustamisessa huomioon otettavat päivät** -määrä määrittääksesi aikavälin vaihtuvuuden ennustamiselle. Voit esimerkiksi ennustaa asiakkaiden vaihtuvuusriskin seuraavan 90 päivän aikana, jotta voit mukauttaa asiakkaiden säilyttämiseen tähtääviä markkinointiponnistelujasi. Asiakaspoistuman riskin ennustaminen pitkällä tai lyhyemmällä ajanjaksolla voi vaikeuttaa riskiprofiilin tekijöiden käsittelyä yrityksesi tarpeista riippuen. Jatka valitsemalla **Seuraava**
    >[!TIP]
-   > Voit valita **Tallenna ja sulje** milloin tahansa, jos haluat tallentaa ennusteen luonnokseksi. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
+   > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
 
 ### <a name="add-required-data"></a>Lisää pakolliset tiedot
 

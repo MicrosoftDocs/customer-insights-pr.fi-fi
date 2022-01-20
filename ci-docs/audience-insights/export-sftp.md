@@ -1,5 +1,5 @@
 ---
-title: Customer Insights -tietojen vieminen SFTP-palvelimiin (Video)
+title: Customer Insights -tietojen vieminen SFTP-palvelimiin (sisältää videon)
 description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904115"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934883"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Segmenttien ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)
 
@@ -28,6 +28,7 @@ Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secur
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Palomuurin takana olevia SFTP-kohteita ei tueta tällä hetkellä. 
 - Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia. 
 - Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia. 
 
