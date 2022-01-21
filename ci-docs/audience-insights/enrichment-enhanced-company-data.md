@@ -1,7 +1,7 @@
 ---
 title: Yritystietojen parantaminen
 description: Rikasta ja normalisoi yritystietoja Microsoftin malleilla.
-ms.date: 11/15/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
-ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
+ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
+ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "7813914"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "7927578"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 
@@ -83,6 +83,16 @@ Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös a
 Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
 
 Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+
+### <a name="overview-card"></a>Yleiskatsauskortti
+
+Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
+
+* **Käsitellyt ja muuttuneet asiakkaat**: niiden asiakasprofiilien määrä, joiden rikastaminen onnistui.
+
+* **Käsitellyt mutta muuttumattomat asiakkaat**: Niiden asiakasprofiilien määrä, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
+
+* **Asiakkaita ei ole käsitelty eikä muutettu**: Niiden profiilien määrä, joita ei tunnistettu. Kyse on yleensä siitä, että syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
