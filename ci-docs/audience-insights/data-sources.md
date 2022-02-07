@@ -9,16 +9,11 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977825"
 ---
+
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuus yhdistää tietoihin monenlaisista lähteistä. Tietolähteen yhdistämistä kutsutaan usein *tietojen käsittelyprosessiksi*. Kun tiedot on käsitelty, ne voidaan [yhdistää](data-unification.md) ja niissä voidaan tehdä toimintoja.
 
@@ -28,7 +23,7 @@ Yksityiskohtaisissa artikkeleissa on lisätietoja tietolähteen lisäämisestä 
 
 Voit lisätä seuraavat tietolähteet:
 
-- [Power Query -yhdistimet](connect-power-query.md)
+- [Power Query ‑yhdistimet](connect-power-query.md)
 - [Common Data Model](connect-common-data-model.md)
 - [Microsoft Dataversen data lake](connect-dataverse-managed-lake.md)
 

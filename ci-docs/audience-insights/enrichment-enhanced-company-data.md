@@ -1,7 +1,7 @@
 ---
 title: Yritystietojen parantaminen
 description: Rikasta ja normalisoi yritystietoja Microsoftin malleilla.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
-ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "7927578"
 ---
+
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 
 Microsoftin mallien ja koottujen yritystietojen avulla voit korjata, täydentää ja standardoida yritysprofiileja. [Common Data Model -muotoa](/common-data-model/schema/core/applicationcommon/account) käytetään saamaan parempi tarkkuus ja oivallukset.
@@ -82,17 +77,17 @@ Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös a
 
 Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
 
-Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+**Rikastetut asiakkaat -esikatseluruudussa** näkyy näyte rikastetuista tiedoista. Valitse **Näytä lisää** ja valitse **Tiedot**-välilehti, jos haluat tarkastella kunkin rikastetun profiilin yksityiskohtaista näkymää.
 
 ### <a name="overview-card"></a>Yleiskatsauskortti
 
 Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
 
-* **Käsitellyt ja muuttuneet asiakkaat**: niiden asiakasprofiilien määrä, joiden rikastaminen onnistui.
+* **Käsitellyt ja muuttuneet yritykset**: niiden asiakasyritysprofiilien määrä, joiden rikastaminen onnistui.
 
-* **Käsitellyt mutta muuttumattomat asiakkaat**: Niiden asiakasprofiilien määrä, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
+* **Käsitellyt mutta muuttumattomat yritykset**: Niiden asiakasyritysprofiilien määrä, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
 
-* **Asiakkaita ei ole käsitelty eikä muutettu**: Niiden profiilien määrä, joita ei tunnistettu. Kyse on yleensä siitä, että syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
+* **Yritykset, joita ei ole käsitelty eikä muutettu**: Niiden asiakasyritysprofiilien määrä, joita ei tunnistettu. Tämä tapahtuu yleensä, kun syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 

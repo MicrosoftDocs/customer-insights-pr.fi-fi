@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
-description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 12/02/2021
+description: 'Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,11 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884258"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Olemme innoissamme voidessamme ilmoittaa uusimmista päivityksistämme! Tässä artikkelissa on yhteenveto yleisen esiversion ominaisuuksista, yleisen saatavuuden parannuksista ja ominaisuuksien päivityksistä. Katso ominaisuuksien pitkäaikaiset suunnitelmat [Dynamics 365- ja Power Platform -julkaisusuunnitelmista](/dynamics365/release-plans/).
 
@@ -26,6 +21,50 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="december-2021-updates"></a>Joulukuun 2021 päivitykset
+
+Joulukuun 2021 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Lähetä Customer Insights -lokit edelleen Azure Monitoriin
+
+Customer Insights tarjoaa suoran integroinnin Azure Monitorin kanssa. Tämä ominaisuus sisältää seurantatapahtumat ja toimintatapahtumat. Azure Monitorin resurssilokien avulla voit valvoa ja lähettää lokeja Azure Storageen, Azure Log Analyticsiin tai virtauttaa se Azure-tapahtumakeskukseen.
+
+Lisätietoja on ohjeaiheessa [Lokien edelleenlähetys Dynamics 365 Customer Insightsssa Azure Monitorin avulla (esiversio)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Täydennä asiakasprofiileja vuorovaikutustietojen avulla
+
+Microsoft Office 365 -tietojen avulla voit täydentää asiakastiliprofiileja tiedoilla vuorovaikutuksista Office 365 -sovelluksissa. Seurantatiedot muodostuvat sähköposti- ja kokousaktiviteetista, jotka kootaan asiakastasolla. Esimerkiksi yritystilin sähköpostiviestien määrä tai asiakkaan tapaamisten määrän. Yksittäisten käyttäjien tietoja ei jaeta. Tämä toiminto on saatavana seuraavilla alueilla: Yhdistynyt kuningaskunta, Eurooppa, Pohjois-Amerikka.
+
+Lisätietoja on ohjeaiheessa [Täydennä asiakasprofiileja vuorovaikutustietojen avulla (esiversio)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Tietojen yhdistämisen lisäominaisuudet
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Ota käyttöön ristiriidan ratkaisukäytännöt yksittäisellä määritteen tasolla
+
+Jos poistat asiakastietojen kaksoiskappaleita entiteetissä, et ehkä haluat valita voittajaksi täyttä tietuetta. Nyt voit yhdistää eri tietueiden parhaat kentät jokaisen määritteen sääntöjen perusteella. Voit esimerkiksi säilyttää uusimman sähköpostiviestin JA täydellisimmän osoitteen eri tietueista. 
+
+Nyt voit määrittää erillisiä yhdistämissääntöjä yksittäisille määritteille samalla, kun poistat kaksoiskappaleita ja yhdistät tietueita yhdessä entiteetissä. Aiemmin voit valita vain yhden yhdistämissäännön (tietueiden säilyttäminen viimeaikaisuuden perusteella) ja sääntöä sovellettiin tietuetasolla kaikkiin määritteisiin. Se ei ole ihanteellista silloin, kun säilytettävää tietoa löytyy tietueesta A ja muita hyviä tietoja tietueesta B.
+
+Lisätietoja on kohdassa [Vastine-entiteetin kaksoiskappaleiden poiston määrittäminen](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Täsmäytyksen mukautetut säännöt
+
+Joskus on määritettävä poikkeus yleisille säännöille, jotta tietueita EI yhdistetä. Näin voi käydä silloin, kun useat henkilöt jakavat riittävästi tietoja, jotta järjestelmä voisi täsmäyttää ne yksittäiseksi henkilöksi. Esimerkiksi kaksoset, joilla on sama sukunimi, jotka asuvat samassa kaupungissa ja joilla on sama syntymäpäivä.
+
+Poikkeuksilla varmistetaan, että virheellinen tietojen yhdistäminen voidaan ottaa huomioon yhdistämissäännöissä. Sääntöön voi lisätä useita poikkeuksia.
+
+Katso lisätietoja artikkelista [Poikkeuksien lisääminen sääntöön](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Lisää ristiriitojen ratkaisukäytäntöjä ja ota käyttöön määritteiden ryhmittely
+
+Tämän ominaisuuden avulla voit käsitellä kenttäryhmää yhtenä yksikkönä. Jos tietueet sisältävät esimerkiksi kentät Osoite1, Osoite2, Kaupunki, Osavaltio ja Postinumero. Emme todennäköisesti halua yhdistää tietoja toiseen tietueen Osoite2-kohtaan ajatellen, että se voisi tehdä tiedoistamme täydellisempiä.
+
+Nyt voit yhdistää toisiinsa liittyvien kenttien ryhmän ja käyttää ryhmässä yhtä yhdistämiskäytäntöä. 
+
+Lisätietoja on ohjeaiheessa [Yhdistä kenttien ryhmä](merge-entities.md#combine-a-group-of-fields).
+
 
 ## <a name="november-2021-updates"></a>Marraskuun 2021 päivitykset
 

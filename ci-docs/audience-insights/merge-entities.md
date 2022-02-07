@@ -1,7 +1,7 @@
 ---
 title: Entiteettien yhdistäminen tietoja yhtenäistettäessä
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732768"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Entiteettien yhdistäminen
 
 Yhdistämisvaihe on tietojen yhdistämisprosessin viimeinen vaihe. Sen tarkoitus on täsmäyttää ristiriitaiset tiedot. Esimerkkejä ristiriitaisista tiedoista ovat esimerkiksi asiakkaan nimi, joka on kahdessa tietojoukossa hieman eri tavalla (esimerkiksi Grant Marshall ja Grant Marshal) ja puhelinnumero, jonka muodot ovat erilaiset (esimerkiksi 617-803-091X ja 617803091X). Näiden ristiriitaisten arvopisteiden yhdistäminen tapahtuu määrite kerrallaan.
@@ -99,11 +94,13 @@ Valitse **Yhdistä**-sivulla **Käytöstä poistetut kentät** nähdäksesi luet
 
 1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
 
-## <a name="manually-combine-fields"></a>Yhdistä kentät manuaalisesti
+## <a name="combine-fields-manually"></a>Yhdistä kentät manuaalisesti
 
-Määritä yhdistetty määrite manuaalisesti. 
+Määritä yhdistetty määrite manuaalisesti.
 
-1. Valitse **Yhdistä**-sivulla **Yhdistä kentät**.
+1. Valitse **Yhdistä**-sivulla **Jatka**.
+
+1. Valitse **Kentät**-vaihtoehto.
 
 1. Määritä yhdistämisen voittajakäytäntö avattavassa **Yhdistä kentät** -luettelossa.
 
@@ -114,6 +111,26 @@ Määritä yhdistetty määrite manuaalisesti.
 1. Ota muutokset käyttöön valitsemalla **Valmis**.
 
 1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
+
+## <a name="combine-a-group-of-fields"></a>Yhdistä kenttien ryhmä
+
+Käsittele kenttäryhmää yhtenä yksikkönä. Jos tietueet sisältävät esimerkiksi kentät Osoite1, Osoite2, Kaupunki, Osavaltio ja Postinumero. Emme todennäköisesti halua yhdistää tietoja toiseen tietueen Osoite2-kohtaan ajatellen, että se voisi tehdä tiedoistamme täydellisempiä
+
+1. Valitse **Yhdistä**-sivulla **Jatka**.
+
+1. Valitse **Kenttien ryhmä** -vaihtoehto.
+
+1. Määritä yhdistämisen voittajakäytäntö avattavassa **Ryhmien lajitteluperuste** -luettelossa.
+
+1. Valitse **Lisää** ja valitse, haluatko lisätä kenttiä tai lisää ryhmiä kenttiin.
+
+1. Anna jokaiselle yhdistetylle kentälle **Nimi** ja **Tulosteen nimi**.
+
+1. Anna kenttien ryhmälle **Nimi**. 
+
+1. Ota muutokset käyttöön valitsemalla **Valmis**.
+
+1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
 
 ## <a name="change-the-order-of-fields"></a>Kenttien järjestyksen muuttaminen
 

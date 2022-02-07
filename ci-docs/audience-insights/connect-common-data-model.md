@@ -1,7 +1,7 @@
 ---
 title: Common Data Model -tietojen yhdistäminen Azure Data Lake -tiliin
 description: Common Data Model -tietojen käyttäminen Azure Data Lake Storagen avulla.
-ms.date: 12/06/2021
+ms.date: 01/25/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,13 +9,8 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900193"
 ---
+
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Common Data Model -kansioon yhdistäminen Azure Data Lake -tilillä
 
 Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemisestä Azure Data Lake Storage Gen2 -tilin avulla.
@@ -26,7 +21,9 @@ Tässä artikkelissa on tietoja Common Data Model -kansion tietojen käsittelemi
 
 - Tietojen käsittely tukee ainoastaan Azure Data Lake *Gen2* -tallennustilejä. Azure Data Lake Gen1 -tallennustilejä ei voi käyttää tietojen käsittelyyn.
 
-- Azure-palveluobjektin käyttäminen todentaminen edellyttää, että se on määritetty vuokraajassa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md).
+- Azure Data Lake Storage -tilillä on oltava [hierarkkisen nimitilan ominaisuus käytössä](/azure/storage/blobs/data-lake-storage-namespace).
+
+- Azure-palveluobjektin käyttäminen todentamiseen edellyttää, että se on määritetty vuokraajassa. Lisätietoja on kohdassa [Käyttäjäryhmän merkityksellisten tietojen yhdistäminen Azure Data Lake Storage Gen2 -tiliin Azure-palveluobjektilla](connect-service-principal.md).
 
 - Azure Data Lake -tallennustilan, joka halutaan yhdistää ja jonka tietoja halutaan käsitellä, on oltava samalla Azure-alueella kuin Dynamics 365 Customer Insights -ympäristö. Yhteyksiä Common Data Model -kansioon toisen Azure-alueen Data Lake -tallennustilasta ei tueta. Ympäristön Azure-alueen voi tarkistaa valitsemalla käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Järjestelmä** > **Tietoja**.
 

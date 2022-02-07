@@ -1,7 +1,7 @@
 ---
 title: Tietojen yhtenäistäminen entiteettien vastaavuuden avulla
 description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden avulla.
-ms.date: 11/24/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-match
-ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
-ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "7863807"
+  - ci-match
 ---
+
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
 Täsmäytysvaihe määrittää, miten tietojoukot yhdistetään yhdistetyksi asiakasprofiilin tietojoukoksi. Kun [yhdistämisvaihe](map-entities.md) tietojen yhdistämisessä on valmis, voit yhdistää kaikki entiteetit. Täsmäytysvaihe edellyttää vähintään kahta yhdistettyä entiteettiä.
@@ -35,7 +30,7 @@ Kukin vastine yhdistää vähintään kaksi entiteettiä yhdeksi konsolidoiduksi
 
 :::image type="content" source="media/match-page.png" alt-text="Näyttökuva tietojen yhdistämisprosessin yhdistämisalueen vastaavuussivusta.":::
   
-Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *LoyaltyScheme:loyCustomers*-entiteettiin. Tietojoukko, jonka ensimmäisen vaiheen tulokset vastaavat seuraavaa entiteettiä, jos entiteettejä on enemmän kuin kaksi.
+Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *LoyaltyScheme:loyCustomers*-entiteettiin. Ensimmäisestä täsmäytysvaiheesta tuloksena oleva tietojoukko täsmäytetään seuraavan entiteetin kanssa, jos entiteettejä on enemmän kuin kaksi.
 
 > [!IMPORTANT]
 > Entiteetti, jonka valitset ensisijaiseksi entiteetiksi, toimii yhdistettyjen profiilien perustana. Täsmäytysvaiheen aikana valitut lisäentiteetit lisätään tähän entiteettiin. Tämä ei tarkoita, että yhtenäinen entiteetti sisältää *kaikki* entiteettiin sisältyvät tiedot.
@@ -108,7 +103,7 @@ Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttä�
 
 ### <a name="change-the-entity-order-in-match-rules"></a>Entiteettijärjestyksen muuttaminen vastaavuussäännöissä
 
-Voit järjestää entiteetit uudelleen vastaavuussäännöille, jos haluat muuttaa niiden käsittelyjärjestystä. Säännöt, jotka ovat ristiriidassa muuttuneen järjestyksen vuoksi, poistetaan. Poistetut säännöt täytyy luoda uudelleen päivitetyllä määrityksellä.
+Voit järjestää entiteetit uudelleen täsmäytyssääntöjen mukaan, jos haluat muuttaa niiden käsittelyjärjestystä. Säännöt, jotka ovat ristiriidassa muuttuneen järjestyksen vuoksi, poistetaan. Poistetut säännöt täytyy luoda uudelleen päivitetyllä määrityksellä.
 
 1. Siirry kohtaan **Tiedot** > **Yhdistäminen** > **Yhdistä** ja valitse **Muokkaa**.
 
@@ -130,17 +125,21 @@ Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos ky
 
 1. Valitse **Tiedot** > **Yhtenäistä** > **Täsmäytä**.
 
-1. Valitse **Yhdistetyt kaksoiskappaleet** -osassa **Määritä entiteetit**. Jos kaksoiskappaleiden poistamisen säännöt on jo luotu, valitse **Muokkaa**.
+1. **Kahdentamattomat tietuetiedot** -osassa valitse **Määritä entiteetit**. Jos kaksoiskappaleiden poistamisen säännöt on jo luotu, valitse **Muokkaa**.
 
 1. Valitse **Yhdistä asetukset** -ruudussa entiteetit, joissa haluat suorittaa kaksoiskappaleiden poiston.
 
-1. Määritä, miten kaksoiskappaletietueet yhdistetään, ja valitse jokin kolmesta yhdistämisvaihtoehdosta:
-   - **Useimmat täytetyt**: Määrittää voittavaksi tietueeksi tietueen, jossa on eniten täytettyjä määritekenttiä. Se on yhdistämisen oletusasetus.
-   - **Uusin**: Määrittää voittajatietueeksi uusimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
-   - **Vähiten viimeaikaiset**: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
+   1. Määritä, miten kaksoiskappaletietueet yhdistetään, ja valitse jokin kolmesta yhdistämisvaihtoehdosta:
+      - **Useimmat täytetyt**: Määrittää voittavaksi tietueeksi tietueen, jossa on eniten täytettyjä määritekenttiä. Se on yhdistämisen oletusasetus.
+      - **Uusin**: Määrittää voittajatietueeksi uusimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
+      - **Vähiten viimeaikaiset**: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
+
+   1. Voit myös määrittää entiteetin yksittäisten määritteiden kaksoiskappaleiden poistosäännöt valitsemalla **Lisäasetukset**. Voit esimerkiksi säilyttää uusimman sähköpostiviestin JA täydellisimmän osoitteen eri tietueista. Laajenna entiteettiä, kun haluat nähdä sen kaikki määritteet, ja määritä, mitä asetusta käytetään yksittäisissä määritteissä. Jos valitset viimeaikaisuuteen perustuvan vaihtoehdon, sinun täytyy myös määrittää päivämäärä-/aikakenttä, joka määrittää viimeaikaisuuden. 
  
-   > [!div class="mx-imgBorder"]
-   > ![Kaksoiskappaleiden poistosääntöjen vaihe 1.](media/match-selfconflation.png "Kaksoiskappaleiden poistosääntöjen vaihe 1")
+      > [!div class="mx-imgBorder"]
+      > ![Kaksoiskappaleiden poistosääntöjen vaihe 1.](media/match-selfconflation.png "Kaksoiskappaleiden poistosääntöjen vaihe 1")
+
+   1. Valitse **Valmis**, jos haluat ottaa yhdistämisasetukset käyttöön kaksoiskappaleiden poistossa.
  
 1. Kun entiteetit on valittu ja niiden yhdistämisasetus on määritetty, määritä kaksoiskappaleiden poistosäännöt entiteettitasolla valitsemalla **Lisää sääntö**.
    - **Valitse kenttä** sisältää kaikki entiteetin käytettävissä olevat kentät. Valitse kenttä, jonka haluat tarkistaa kaksoiskappaleiden varalta. Valitse kentät, jotka ovat todennäköisesti yksilöllisiä jokaiselle asiakkaalle. Esimerkiksi sähköpostiosoite tai nimen, postiosoitteen ja puhelinnumeron yhdistelmä.
@@ -158,7 +157,7 @@ Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos ky
 
 1. Mukautetut vastaavuussäännöt korvaavat kaksoiskappaleiden poistamisen säännöt. Jos kaksoiskappaleiden poistosääntö määrittää vastaavia tietueita ja mukautetuksi vastaavuussääntönä on, etteivät tietueet saa koskaan vastata toisiin, näille kahdelle tietueelle ei etsitä vastaavuutta.
 
-1. Kun [vastaavuusprosessi on suoritettu](#run-the-match-process), kaksoiskappaleiden poistotilastot ovat näkyvissä keskeisissä mittausruuduissa.
+1. Kun [vastaavuusprosessi on](#run-the-match-process) suoritettu, näet kaksoiskappaleiden tilastot tärkeimpien mittausarvojen ruuduissa.
 
 ### <a name="deduplication-output-as-an-entity"></a>Kaksoiskappaleiden poiston tulos entiteettinä
 
@@ -222,7 +221,23 @@ Voit määrittää ja hienosäätää useimpia vastineparametreja.
 
 - **Poista sääntö** valitsemalla **Poista**-symboli.
 
-## <a name="specify-custom-match-conditions"></a>Mukautettujen täsmäytysehtojen määritteleminen
+## <a name="advanced-options"></a>Lisäasetukset
+
+### <a name="add-exceptions-to-a-rule"></a>Poikkeuksien lisääminen sääntöön
+
+Useimmissa tapauksissa entiteettien vastaavuus johtaa yksilöiviin käyttäjäprofiileihin, joissa on yhdistettyjä tietoja. Jos haluat käsitellä dynaamisesti harvinaisia virheellisiä esiintymiä, voit määrittää vastaavuussäännölle poikkeuksia. Poikkeuksia sovelletaan vastaavuussääntöjen käsittelyn jälkeen, eikä kaikkia tietueita, jotka täyttävät poikkeusehdot, täsmäytetä.
+
+Jos esimerkiksi vastaavuussäännössä on sukunimi, kaupunki ja syntymäpäivä, järjestelmä tunnistaa kaksoset, joilla on sama sukunimi, jotka asuvat samassa kaupungissa kuin sama profiili. Voit määrittää poikkeuksen, joka ei täsmäytä profiileja, jos yhdistettävien entiteettien etunimi ole sama.
+
+1. Siirry kohtaan **Tiedot** > **Yhdenmukaista** > **Täsmäytä** ja valitse **Muokkaa** sääntöä, johon haluat lisätä ehtoja.
+
+1. Valitse **Muokkaa sääntöä** -ruudussa **Lisää poikkeus**.
+
+1. Määritä poikkeusehdot. 
+
+1. Tallenna sääntö valitsemalla **Valmis**.
+
+### <a name="specify-custom-match-conditions"></a>Mukautettujen täsmäytysehtojen määritteleminen
 
 Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettävissä on neljä vaihtoehtoa: 
 
@@ -241,7 +256,7 @@ Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettäv
 
 1. Valitse mukautetun vastineen vaihtoehto avattavasta **Mukautettu tyyppi** -luettelosta ja valitse **Lataa malli**. Jokaiselle vastinevaihtoehdolle on oltava oma malli.
 
-1. Mallitiedosto latautuu. Avaa se ja täytä tiedot. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Jos esimerkiksi haluat, että *Myynti*-kohteen perusavain *12345* vastaa aina *Yhteyshenkilö*-kohteen perusavainta *34567*, täytä malli:
+1. Avaa ladattu mallitiedosto ja täytä tiedot. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Jos esimerkiksi haluat, että *Myynti*-kohteen perusavain *12345* vastaa aina *Yhteyshenkilö*-kohteen perusavainta *34567*, täytä malli:
     - Entiteetti1: Myynti
     - Entiteetti1Avain: 12345
     - Entiteetti2: Yhteyshenkilö
@@ -268,7 +283,7 @@ Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettäv
 
 1. Aloita vastaava prosessi valitsemalla **Täsmäytys**-sivulla **Suorita**. Mukautettu täsmäytysmääritys ohittaa muut määritetyt vastaavuussäännöt.
 
-### <a name="known-issues"></a>Tunnetut ongelmat
+#### <a name="known-issues"></a>Tunnetut ongelmat
 
 - Itseyhdistäminen ei näytä normalisoituja tietoja entiteeteille, joiden kaksoiskappaleet poistetaan. Se kuitenkin käyttää normalisointia sisäisesti kaksoiskappaleiden poiston aikana. Se on toiminnallisuuden mukaan kaikille normalisoinnille. 
 - Jos semanttinen tyyppiasetus poistetaan **Yhdistämismääritys**-vaiheessa, kun vastinesääntö käyttää Alias-yhdistämismääritystä tai mukautettua ohitusmääritystä, normalisointia ei käytetä. Se tapahtuu vain, jos poistat semanttisen tyypin, kun olet määrittänyt normalisoinnin vastinesäännössä, koska semanttinen tyyppi on tuntematon.
