@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
-ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
+ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/06/2021
-ms.locfileid: "7892334"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088098"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Ympäristöjen luominen käyttäjäryhmän merkityksellisissä tiedoissa
 
@@ -28,7 +28,7 @@ Organisaatiot voivat luoda *kaksi* ympäristöä jokaista Customer Insights -kä
 
 ## <a name="create-a-new-environment"></a>Luo uusi ympäristö
 
-Kun asiakas on hankkinut tilauslisenssin Customer Insightsiin, Microsoft 365 -vuokraajan yleinen järjestelmänvalvoja saa sähköpostiviestin, jossa häntä kehotetaan luomaan ympäristö. Mene osoitteeseen [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) aloittaaksesi. 
+Kun olet ostanut Customer Insights -tilauksen käyttöoikeuden, Microsoft 365 -vuokraajan Järjestelmänvalvoja saa sähköpostiviestin, joka kutsuu hänet luomaan ympäristön. Mene osoitteeseen [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) aloittaaksesi. 
 
 Ohjatun käyttökokemuksen avulla voit kerätä kaikki uuteen ympäristöön tarvittavat tiedot. Tarvitset [järjestelmänvalvojan oikeudet](permissions.md) käyttäjäryhmän merkityksellisissä tiedoissa, jotta voit luoda ja hallita ympäristöjä.
 
@@ -64,7 +64,7 @@ Kun tiedot tallennetaan Azure Data Lake Storageen, hyväksyt, että tiedot siirr
 > Customer Insights tukee tällä hetkellä seuraavia:
 > - Käytetyt entiteetit Power BI -tiedonkuluista, jotka tallennetaan Microsoft Dataversen hallinnoimaan Data Lakeen.  
 > - Azure Data Lake Storage -tilit samasta Azure-alueesta, jonka valitsit ympäristöä luotaessa.
-> - Azure Data Lake Storage -tilit, joissa *hierarkkinen nimitila* on otettu käyttöön.
+> - Azure Data Lake Storage -tilit, jotka ovat Gen2 ja joissa *hierarkkinen nimitila* on otettu käyttöön. Azure Data Lake Gen1 -tallennustilejä ei tueta.
 
 Voit valita Azure Data Lake Storage -asetukselle resurssi- tai tilausperustaisen asetuksen todentamista varten. Lisätietoja on kohdassa [Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päänimen avulla](connect-service-principal.md). **Säilön** nimi on `customerinsights`, eikä sitä voi muuttaa.
 

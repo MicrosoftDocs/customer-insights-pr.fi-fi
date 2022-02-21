@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.openlocfilehash: 1af01e5579f85d7c8bc8976a003f53ef2dd280d1
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900254"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088143"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päätunnuksen avulla
 
@@ -23,7 +23,7 @@ Tässä artikkelissa kerrotaan, miten Azure Data Lake Storage -tiliin voi muodos
 Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoitetut käyttöoikeudet. Sen sijaan että sovellukset kirjautusivat sisään käyttäjänä, jolla on kaikki oikeudet, Azure antaa mahdollisuuden käyttää palveluobjekteja. Palvelun päänimen avulla voit [lisätä tai muokata Common Data Model -kansiota tietolähteenä](connect-common-data-model.md) tai [luoda tai päivittää ympäristön](create-environment.md).
 
 > [!IMPORTANT]
-> - Palvelun päänimiä käyttävällä Data Lake Storage -tilillä on oltava [käytössä hierarkkinen nimitila](/azure/storage/blobs/data-lake-storage-namespace).
+> - Data Lake -tallennustilin, joka käyttää palvelun pääobjektia on oltava Gen2 ja sillä on oltava [käytössä hierarkinen nimiavaruus](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1 -tallennustilejä ei tueta.
 > - Tarvitset Azure-tilaukseen järjestelmänvalvojan oikeudet palvelun pääkäyttäjän luomiseksi.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Luo Azure-palvelun pääkäyttäjä Customer Insights -tietoja varten

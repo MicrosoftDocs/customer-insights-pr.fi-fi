@@ -1,6 +1,6 @@
 ---
 title: Tietojen käsitteleminen Power Query -yhdistimen kautta (sisältää videon)
-description: Power Queryyn perustuvien tietolähteiden yhdistimet.
+description: Power Query -pohjaisten tietolähteiden yhdistimet.
 ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,18 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: aae49be4364676ecc7a307e60eeca13859f1662a
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+ms.openlocfilehash: 727cb9a4d754b6dbd74d6ecab1b183d41f713d8f
+ms.sourcegitcommit: aadee829eff111c95eb30c0a97a68dcc87994acf
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934974"
+ms.lasthandoff: 02/04/2022
+ms.locfileid: "8092068"
 ---
-# <a name="connect-to-a-power-query-data-source"></a>Yhteyden muodostaminen Power Query -tietolähteeseen
+# <a name="connect-to-a-power-query-data-source"></a>Yhdistäminen Power Query -tietolähteeseen
 
-Power Queryssä on laaja valikoima tietojen käsittelyyn tarkoitettuja yhdistimiä. Dynamics 365 Customer Insights tukee suurinta osaa näistä yhdistimistä. 
+Power Queryssa on laaja joukko yhdistimiä tietojen käsittelyä varten. Dynamics 365 Customer Insights tukee suurinta osaa näistä yhdistimistä. 
 
-Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleensä tässä osassa kuvattujen vaiheiden mukaisesti. Käytettävä yhdistin kuitenkin määrittää, mitä tietoja tarvitaan. Lisätietoja yksittäisistä yhdistimistä on [Power Query -yhdistimien ohjeissa](/power-query/connectors/).
+Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleensä tässä osassa kuvattujen vaiheiden mukaisesti. Käytettävä yhdistin kuitenkin määrittää, mitä tietoja tarvitaan. Lisätietoja yksittäisistä yhdistimistä o [Power Query -yhdistinviitteessä](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -30,7 +30,7 @@ Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleens�
 
 1. Valitse **Lisää tietolähde**.
 
-1. Valitse **Microsoft Power Query** ja valitse sitten **Seuraava**.
+1. Valitse **Microsoft Power Query**.
 
 1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**.
 
@@ -40,31 +40,31 @@ Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleens�
 
 1. Valitse **Muunna tiedot**. Tässä vaiheessa tietolähteisiin lisätään entiteettejä. Entiteetit ovat tietojoukkoja. Jos tietokannassa on useita tietojoukkoja, kukin tietojoukko on oma entiteetti.
 
-1. Voit tarkistaa tiedot ja tarkentaa niitä **Power Query – Muokkaa kyselyjä** -valintaikkunassa. Vasemmassa ruudussa näkyvät ne entiteetit, jotka järjestelmät tunnistivat valitussa tietolähteessä.
+1. **Power Query - Muokkaa kyselyitä** -dialogi mahdollistaa tietojen tarkistuksen ja tarkennuksen. Vasemmassa ruudussa näkyvät ne entiteetit, jotka järjestelmät tunnistivat valitussa tietolähteessä.
 
    > [!div class="mx-imgBorder"]
    > ![Muokkaa kyselyjä -ikkuna.](media/data-manager-configure-edit-queries.png "Muokkaa kyselyjä -ikkuna")
 
-1. Voit myös muuntaa tietoja. Valitse muokattava tai muunnettava entiteetti. Tee muunnokset Power Query -ikkunassa olevilla asetuksilla. Jokainen muunnos mainitaan **Käytössä olevat vaiheet** -luettelossa. Power Query sisältää useita valmiita muunnosvaihtoehtoja. Lisätietoja on kohdassa [Power Query -muunnokset](/power-query/power-query-what-is-power-query#transformations).
-
-1. Voit lisätä tietolähteeseen entiteettejä valitsemalla **Nouda tiedot** **Muokkaa kyselyjä** -valintaikkunassa.
+1. Voit myös muuntaa tietoja. Valitse muokattava tai muunnettava entiteetti. Ota muunnokset käyttöön Power Query -ikkunassa vaihtoehtojen avulla. Jokainen muunnos mainitaan **Käytössä olevat vaiheet** -luettelossa. Power Query sisältää runsaasti valmiiksi luotuja muunnosvaihtoehtoja. Lisätietoja on kohdassa  [Power Query -muunnokset](/power-query/power-query-what-is-power-query#transformations).
 
    On suositeltavaa käyttää seuraavia muunnoksia:
 
-   - Jos käsiteltävät tiedot saadaan CSV-tiedostosta, ensimmäisellä rivillä on usein otsikoita. Valitse ensin **Muunna taulukko** ja sitten **Käytä otsikoita ensimmäisenä rivinä**.
-   - Varmista, että tietotyyppi on määritetty oikein.
+   - Jos käsiteltävät tiedot saadaan CSV-tiedostosta, ensimmäisellä rivillä on usein otsikoita. Siirry kohtaan **Muunna** ja valitse **Käytä ensimmäistä riviä otsikoina**.
+   - Varmista, että tietotyyppi on määritetty oikein. Valitse esimerkiksi päivämääräkentille päivämäärätyyppi.
 
-1. Tallenna muunnokset valitsemalla Power Query -ikkunan alareunassa **Tallenna**. Tietolähteeseen voi siirtyä tallentamisen jälkeen valitsemalla **Tiedot** > **Tietolähteet**.
+1. Voit lisätä entiteettejä tietolähteeseen **Muokkaa kyselyjä** -dialogissa kohdassa **Aloitussivu** valitsemalla **Hae tiedot**.
+
+1. Valitse **Tallenna** Power Query -ikkunan alaostasta tallentaaksesi muunnokset. Tietolähteeseen voi siirtyä tallentamisen jälkeen valitsemalla **Tiedot** > **Tietolähteet**.
 
 1. **Tietolähteet**-sivulla uuden tietolähteen tila on **Päivittyy**.
 
 ## <a name="available-power-query-data-sources"></a>Käytettävissä olevat Power Query -tietolähteet
 
-Katso [Power Query -yhdistimen ohjeesta](/power-query/connectors/) yhdistinluettelo, jonka avulla voit tuoda tietoja Customer Insightsiin. 
+Katso [Power Query -yhdistinviite](/power-query/connectors/) nähdäksesi luettelon yhdistimistä, joita voidaan käyttää tuomaan tietoja Customer Insightsiin. 
 
-Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamerkki, voidaan käyttää uusien Power Queryyn perustuvien tietolähteiden luomiseen. Kun yhdistimen dokumentaatiossa on lisätietoja sen edellytyksistä, rajoituksista ja muista tiedoista.
+Yhdistimet, joilla on merkintä **Customer Insights (tietovirrat)** -sarakkeessa ovat käytettävissä uusien tietolähteiden luomiseen Power Queryn perusteella. Kun yhdistimen dokumentaatiossa on lisätietoja sen edellytyksistä, rajoituksista ja muista tiedoista.
 
-## <a name="edit-power-query-data-sources"></a>Power Query -tietolähteiden muokkaaminen
+## <a name="edit-power-query-data-sources"></a>Muokkaa Power Query -tietolähteitä
 
 > [!NOTE]
 > Jos jokin sovelluksen prosessi (kuten *segmentointi*, *vastaavuus* tai *yhdistäminen*) käyttää tietolähteitä, niin ei ehkä voi tehdä muutoksia. 
@@ -80,9 +80,9 @@ Yhdistimiä, joiden **Customer Insights (tietovuot)** -sarakkeessa on valintamer
 
    [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
    
-3. Lisätietoja muutosten ja muunnosten käyttämisestä **Power Query – Muokkaa kyselyjä** -ikkunassa on kohdassa [Uuden tietolähteen luominen](#create-a-new-data-source).
+3. Ota muutokset ja muunnokset käyttöön **Power Query - Kyselyjen muokkaaminen** -valintaikkunassa kohdassa [Luo uusi tietolähde](#create-a-new-data-source) kuvatulla tavalla.
 
-4. Kun lopetat muokkaamisen, tallenna muutokset valitsemalla **Tallenna** Power Queryssä.
+4. Valitse **Tallenna** Power Queryssä muokkausten jälkeen muutosten tallentamiseksi.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,7 +1,7 @@
 ---
 title: Dynamics 365 -sovellusten asiakaskortin apuohjelma (sisältää videon)
 description: Näytä käyttäjäryhmän merkitykselliset tiedot Dynamics 365 -sovelluksissa tämän apuohjelman avulla.
-ms.date: 12/22/2021
+ms.date: 02/02/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
+ms.openlocfilehash: ce6c8fab84fd4c5dfc9f78b91dde3483a1d358c1
+ms.sourcegitcommit: 11308ed275b4b25a35576eccfcae9dda9e2c2784
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "8085212"
 ---
-
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
 
 
@@ -113,5 +118,26 @@ Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Jos haluat päivittä�
 
 1. Kun olet käynnistänut päivityksen, latausilmaisin näkyy päivityksen valmistumiseen asti. Jos uudempia versioja ei ole, päivitys näyttää virhesanoman.
 
+## <a name="troubleshooting"></a>Vianmääritys
+
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Asiakaskortin apuohjelman ohjausobjektit eivät löydä tietoja
+
+**Ongelma:**
+
+Vaikka tunnuskentät olisi määritetty oikein, ohjausobjektit eivät löydä tietoja asiakkailta.  
+
+**Ratkaisu:**
+
+1. Varmista, että olet määrittänyt kortin apuohjelman ohjeiden mukaisesti: [Asiakaskortin apuohjelman määrittäminen](#configure-the-customer-card-add-in) 
+
+1. Tarkista tietojen käytön konfiguraatio. Muokkaa Dynamics 365 -järjestelmän tietolähdettä, joka sisältää yhteyshenkilön tunnuksen GUID-tunnuksen. Jos Power Query -editorissa näkyy yhteyshenkilön tunnuksen GUID-tunnus ja siinä on isoja kirjaimia, kokeile seuraavia: 
+    1. Muokkaa tietolähdettä ja avaa tietolähde Power Query -editorissa.
+    1. Valitse yhteyshenkilön tunnussarake.
+    1. Valitse **Muunna** otsikkoriviltä nähdäksesi saatavilla olevat toiminnot.
+    1. Valitse **pieni kirjain**. Tarkista, ovatko taulukon GUID-tunnukset nyt pieniä kirjaimia.
+    1. Tallenna tietolähde.
+    1. Suorita tietojen käsittely, yhdistäminen ja jatkoprosessit, jotta muutokset välitetään GUID-tunnukseen. 
+
+Kun täydellinen päivitys on suoritettu, odotettujen tietojen pitäisi näkyä asiakaskortin apuohjelman ohjausobjekteissa. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

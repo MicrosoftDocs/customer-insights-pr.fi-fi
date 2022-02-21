@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: db38778c0da862e119f9b374e07c82ead0d3a4f2
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 6aadd6b5018f63362f86c0e3e3ce085e94c47391
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645578"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8116010"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Linkin luominen kohdeyleisön ja sitoutumistietojen välille
 
@@ -25,7 +25,7 @@ Käyttämällä yhtenäisiä profiileja ja segmenttejä saat käyttäjäryhmäti
 
 ## <a name="prerequisites"></a>Edellytykset
 
-- Käyttäjäryhmätiedot on tallennettava Azure Data Lake Storage -tilillesi tai [Microsoft Dataversen](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;hallitsemaan Data Lake -tallennustilaan. 
+- Käyttäjäryhmätiedot on tallennettava Azure Data Lake Storage -tilillesi tai [Microsoft Dataversen](/powerapps/maker/data-platform/data-platform-intro)&ndash;hallitsemaan Data Lake -tallennustilaan. 
 - Käyttäjäryhmätietojen tulisi olla liitetty Dataverse-ympäristöön. Jos ympäristö käyttää myös Dataverseä tietojen tallennustilana, varmista, että valitset **Ota tietojen jakaminen käyttöön** -asetuksen käyttäjäryhmän merkityksellisissä tiedoissa. Lisätietoja on kohdassa [Ympäristön luominen ja määrittäminen käyttäjäryhmän merkityksellisissä tiedoissa](../audience-insights/create-environment.md).
 - Tarvitset järjestelmänvalvojan oikeudet sekä sitouttamistieto- että käyttäjäryhmän tietoympäristöihin.
 - Linkitettyjen ympäristöjen on oltava samalla maantieteellisellä alueella.

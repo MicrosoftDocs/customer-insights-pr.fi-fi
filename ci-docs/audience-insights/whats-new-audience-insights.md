@@ -1,7 +1,7 @@
 ---
 title: Uudet ja tulevat ominaisuudet
-description: 'Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.'
-ms.date: 01/27/2022
+description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
+ms.date: 03/02/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,8 +9,13 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
+ms.openlocfilehash: 0e25ed4e4e25b130fda410d4ba1c78caded7f0f9
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088281"
 ---
-
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
 
 
@@ -21,6 +26,17 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="january-2022-updates"></a>Tammikuun 2022 päivitykset
+
+Tammikuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="sentiment-analysis-of-your-customers-feedback"></a>Asiakaspalautteen asenneanalyysi
+
+Customer Insights sisältää uuden tekoälyä hyödyntävän ominaisuuden, joka syntetisoi asiakkaiden asenteita ja tunnistaa tietyt liiketoiminnan näkökohdat mahdollisuuksiksi kohdistettuihin parannuksiin. Analysoimalla asiakkaiden kirjallisen palautteen saat tarkkoja tietoja edulliseen hintaan. Luonnollisen kielen käsittelyn (NLP) mallien avulla suoritettu asenneanalyysi, jossa luodaan kaksi merkityksellistä tietoa kullekin asiakastunnukselle. Asennepisteet (–5–5) ja soveltuvien liiketoimintanäkökohtien luettelot. 
+
+Lisätietoja on ohjeaiheessa [Asenneanalyysi asiakaspalautteessa (Esiversio)](sentiment-analysis.md).
 
 
 ## <a name="december-2021-updates"></a>Joulukuun 2021 päivitykset
@@ -37,7 +53,7 @@ Lisätietoja on ohjeaiheessa [Lokien edelleenlähetys Dynamics 365 Customer Insi
 
 Microsoft Office 365 -tietojen avulla voit täydentää asiakastiliprofiileja tiedoilla vuorovaikutuksista Office 365 -sovelluksissa. Seurantatiedot muodostuvat sähköposti- ja kokousaktiviteetista, jotka kootaan asiakastasolla. Esimerkiksi yritystilin sähköpostiviestien määrä tai asiakkaan tapaamisten määrän. Yksittäisten käyttäjien tietoja ei jaeta. Tämä toiminto on saatavana seuraavilla alueilla: Yhdistynyt kuningaskunta, Eurooppa, Pohjois-Amerikka.
 
-Lisätietoja on ohjeaiheessa [Täydennä asiakasprofiileja vuorovaikutustietojen avulla (esiversio)](enrichment-office.md)
+Lisätietoja on ohjeaiheessa [Täydennä asiakasprofiileja vuorovaikutustietojen avulla (Esiversio)](enrichment-office.md).
 
 ### <a name="advanced-data-unification-features"></a>Tietojen yhdistämisen lisäominaisuudet
 

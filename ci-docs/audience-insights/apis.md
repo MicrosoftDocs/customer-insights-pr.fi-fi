@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 413746e1896928d2c648ba59d67d4247a173da57
+ms.sourcegitcommit: 21854bb66ffa53948f659886f2e131236539ae88
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732260"
+ms.lasthandoff: 02/08/2022
+ms.locfileid: "8100136"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights -ohjelmointirajapintojen käyttäminen
 
@@ -35,7 +35,7 @@ Tässä artikkelissa kerrotaan Customer Insightsin ohjelmointirajapintojen käyt
  
    Ohjelmointirajapintojen ottaminen käyttöön luo sen esiintymän ensisijaisen ja toissijaisen tilausavaimen, jota käytetään ohjelmointirajapintapyynnöissä. Voit luoda avaimet uudelleen valitsemalla **Luo ensisijainen uudelleen** tai **Luo toissijainen uudelleen**, kun olet valinnut ensin **Hallinta** > **Käyttöoikeudet** > **Ohjelmointirajapinnat**.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Customer Insightsin ohjelmointirajapintojen ottaminen käyttöön.":::
+<!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
 1. **Kokeile ohjelmointirajapintoja** valitsemalla [Tutustu ohjelmointirajapintoihin](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
@@ -49,7 +49,7 @@ Tässä artikkelissa kerrotaan Customer Insightsin ohjelmointirajapintojen käyt
 
 HTTP-vastaus tulee pian näkyviin alapuolelle.
 
-   :::image type="content" source="media/try-apis.gif" alt-text="Ohjelmointirajapintojen testaaminen.":::
+<!--   :::image type="content" source="media/try-apis.gif" alt-text="How to test the APIs."::: -->
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Uuden sovellusrekisteröinnin luominen Azure-portaalissa
 
@@ -65,7 +65,7 @@ Näiden vaiheiden avulla voit aloittaa Customer Insightsin ohjelmointirajapintoj
 
 1. Valitse uudessa sovellusrekisteröinnissä **Ohjelmointirajapinnan oikeudet**.
 
-   :::image type="content" source="media/app-registration-1.gif" alt-text="Ohjelmointirajapinnan oikeuksien määrittäminen sovelluksen rekisteröinnin yhteydessä.":::
+<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
 
 1. Valitse **Lisää käyttöoikeus** ja valitse sitten sivuruudussa **Customer Insights**.
 
@@ -77,7 +77,7 @@ Näiden vaiheiden avulla voit aloittaa Customer Insightsin ohjelmointirajapintoj
 
 Voit käyttää tämän sovelluksen rekisteröinnin sovellus- tai asiakastunnusta MSAL (Microsoft Authentication Library) -kirjastossa. Tällä tavoin saadaan pyynnön kanssa ohjelmointirajapintaan lähetettävä haltijatunnus.
 
-:::image type="content" source="media/grant-admin-consent.gif" alt-text="Järjestelmänvalvojan suostumuksen myöntäminen.":::
+<!-- :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 Lisätietoja MSAL-kirjastosta on kohdassa [MSAL (Microsoft Authentication Library) -kirjaston yleiskatsaus](/azure/active-directory/develop/msal-overview).
 
@@ -103,7 +103,7 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakasohjelmakirjastoissa
 
 1. Viimeistele sovelluksen rekisteröinti valitsemalla **Myönnä järjestelmänvalvojan hyväksyntä kohteelle...**.
 
-   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Järjestelmänvalvojan suostumuksen myöntäminen.":::
+ <!--  :::image type="content" source="media/grant-admin-consent.gif" alt-text="How to grant admin consent."::: -->
 
 1. Lopuksi on vielä lisättävä sovellusrekisteröinnin nimi Customer Insightsin käyttäjänä.  
    
@@ -129,7 +129,7 @@ Lisätietoja NuGet.orgin C#-asiakaskirjastojen käytön aloittamisesta. Lisätie
  
    Vaihtoehtoisesti voit suorittaa seuraavan komennon **NuGet Package Manager Consolessa**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="NuGet-paketin lisääminen Visual Studio projektiin.":::
+ <!--  :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Add NuGet package to Visual Studio project."::: -->
 
 #### <a name="use-the-c-client-library"></a>C#-asiakaskirjaston käyttäminen
 
@@ -141,7 +141,7 @@ Lisätietoja NuGet.orgin C#-asiakaskirjastojen käytön aloittamisesta. Lisätie
 
 1. Välitä tämä `HttpClient` `CustomerInsights`-asiakkaan muodostukseen.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Httpclient-näyte.":::
+<!--   :::image type="content" source="media/httpclient-sample.png" alt-text="Sample of httpclient."::: -->
 
 1. Tee asiakasohjelmasta kutsuja laajennusmenetelmiin, esimerkiksi `GetAllInstancesAsync`. Jos taustalla oleva `Microsoft.Rest.HttpOperationResponse` on ensisijainen vaihtoehto, käytä http-sanomamenetelmiä, esimerkiksi `GetAllInstancesWithHttpMessagesAsync`.
 

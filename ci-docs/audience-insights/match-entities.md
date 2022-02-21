@@ -1,7 +1,7 @@
 ---
 title: Tietojen yhtenäistäminen entiteettien vastaavuuden avulla
 description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden avulla.
-ms.date: 01/28/2022
+ms.date: 02/07/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-match
+- ci-match
+ms.openlocfilehash: 20f21a6601a1a6f13d076878b10c15be947dac9f
+ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 02/07/2022
+ms.locfileid: "8098831"
 ---
-
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
 Täsmäytysvaihe määrittää, miten tietojoukot yhdistetään yhdistetyksi asiakasprofiilin tietojoukoksi. Kun [yhdistämisvaihe](map-entities.md) tietojen yhdistämisessä on valmis, voit yhdistää kaikki entiteetit. Täsmäytysvaihe edellyttää vähintään kahta yhdistettyä entiteettiä.
@@ -24,13 +29,7 @@ Hakusivu koostuu kolmesta osasta:
 
 ## <a name="specify-the-match-order"></a>Määritä täsmäytysjärjestys.
 
-Siirry kohtaan **Tiedot** > **Yhdistä** > **Määritä vastaavuus** ja valitse **Määritä järjestys**, kun haluat aloittaa vastaavuuden määrityksen.
-
-Kukin vastine yhdistää vähintään kaksi entiteettiä yhdeksi konsolidoiduksi entiteetiksi. Samalla se säilyttää yksilölliset asiakastietueet. Valitsimme esimerkiksi kaksi entiteettiä: **eCommerce:eCommerceContacts** ensisijaisena entiteettinä ja **LoyaltyScheme:loyCustomers** toisena entiteettinä. Entiteettien järjestys määrittää, missä järjestyksessä järjestelmä yrittää yhdistää tietueet.
-
-:::image type="content" source="media/match-page.png" alt-text="Näyttökuva tietojen yhdistämisprosessin yhdistämisalueen vastaavuussivusta.":::
-  
-Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *LoyaltyScheme:loyCustomers*-entiteettiin. Ensimmäisestä täsmäytysvaiheesta tuloksena oleva tietojoukko täsmäytetään seuraavan entiteetin kanssa, jos entiteettejä on enemmän kuin kaksi.
+Kukin vastine yhdistää vähintään kaksi entiteettiä yhdeksi konsolidoiduksi entiteetiksi. Samalla se säilyttää yksilölliset asiakastietueet. Vastinejärjestys ilmaisee järjestyksen, jossa järjestelmä yrittää yhdistää tietueet.
 
 > [!IMPORTANT]
 > Entiteetti, jonka valitset ensisijaiseksi entiteetiksi, toimii yhdistettyjen profiilien perustana. Täsmäytysvaiheen aikana valitut lisäentiteetit lisätään tähän entiteettiin. Tämä ei tarkoita, että yhtenäinen entiteetti sisältää *kaikki* entiteettiin sisältyvät tiedot.
@@ -38,9 +37,18 @@ Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *
 > Seuraavat kaksi seikkaa auttavat entiteettihierarkian valinnassa:
 >
 > - Valitse entiteetti, jolla on täydellisimmät ja luotettavat profiilitiedot asiakkaistasi ensisijaisena entiteettinä.
-> - Valitse ensisijaiseksi entiteetiksi entiteetti, jolla on useita yhteisiä määritteitä (esimerkiksi nimi, puhelinnumero tai sähköpostiosoite).
+> - Valitse ensisijaiseksi entiteetiksi entiteetti, jolla on useita yhteisiä määritteitä muiden entiteettien kanssa (esimerkiksi nimi, puhelinnumero tai sähköpostiosoite).
 
-Kun olet määrittänyt vastinejärjestyksen, näet määritetyt vastaavuusparit **Täsmäytettyjen tietueiden tiedot** -osassa kohdassa **Tiedot** > **Yhtenäistä** > **Täsmäytä**. Tärkeimmät mittausarvot ovat tyhjiä, kunnes vastineprosessi on valmis.
+1. Siirry kohtaan **Tiedot** > **Yhdistä** > **Määritä vastaavuus** ja valitse **Määritä järjestys**, kun haluat aloittaa vastaavuuden määrityksen.
+1. Valitse **Entiteettijärjestys**. Valitse esimerkiksi **eCommerce:eCommerceContacts** ensisijaiseksi entiteetiksi ja **LoyaltyScheme:loyCustomers** toiseksi entiteetiksi. 
+1. Valitse **sisällytä kaikki**, jos haluat jokaisesta entiteetin tietueesta yksilöidyn asiakkaan, joka yhdistetään jokaisen seuraavan entiteetin kanssa.
+1. Valitse **Valmis**. 
+
+Kun olet määrittänyt vastinejärjestyksen, määritetyt vastaavuusparit näkyvät osan **Yhdistettyjen entiteettien tiedot** kohdassa **Tiedot** > **Yhdistä** > **Hae vastakappaleet**. Tärkeimmät mittarit ovat tyhjiä, kunnes vastineprosessi on valmis.
+
+:::image type="content" source="media/match-page.png" alt-text="Näyttökuva tietojen yhdistämisprosessin yhdistämisalueen vastaavuussivusta.":::
+  
+Ensisijainen entiteetti *eCommerce:eCommerceContacts* yhdistetään seuraavaan *LoyaltyScheme:loyCustomers*-entiteettiin. Ensimmäisestä täsmäytysvaiheesta tuloksena oleva tietojoukko täsmäytetään seuraavan entiteetin kanssa, jos entiteettejä on enemmän kuin kaksi.
 
 ## <a name="define-rules-for-match-pairs"></a>Vastaavuusparien sääntöjen määritteleminen
 
@@ -50,7 +58,7 @@ Entiteetin nimen vieressä on **Tarvesäännöt**-varoitus, joka viittaa siihen,
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Näyttökuva Täsmäytettyjen tietueiden tiedot -osasta, jossa on ohjausobjekti, jolla lisätään korostettuja sääntöjä.":::
 
-1. Määritä vastaavuussäännöt valitsemalla **Täsmäytettyjen tietueiden tiedot** -osassa **Lisää säännöt**.
+1. Valitse **Lisää sääntö** entiteetissä **Yhdistettyjen tietueiden tiedot** -osassa yhdistyssääntöjen määrittämiseksi.
 
 1. Määritä **Luo sääntö** -ruudussa säännön ehdot.
 
@@ -61,15 +69,15 @@ Entiteetin nimen vieressä on **Tarvesäännöt**-varoitus, joka viittaa siihen,
    - **Entiteetti/kenttä (toinen rivi)**: Valitse määrite, joka liittyy ensimmäisellä rivillä määritetyn entiteetin määritteeseen.
 
    - **Normalisoi**: Valitse seuraavista normalisointivaihtoehdoista valituille määritteille. 
-     - Tyhjä tila: poistaa kaikki välilyönnit. *Hello Worldista* tulee *HelloWorld*.
+     - Numeraalit: muuntaa muut numerojärjestelmät, kuten roomalaiset numerot arabialaisiksi numeroiksi. *VIII* muuttuu muotoon *8*.
      - Symbolit: poistaa kaikki symbolit ja erikoismerkit. *Head&Shoulder* muuttuu muotoon *HeadShoulder*.
      - Teksti pieniksi kirjaimiksi: Muuntaa kaikki merkit pieniksi. *KAIKKI ISOLLA- ja Ensimmäiset Kirjaimet Isolla* -tapaukset muuttuvat muotoon *kaikki isolla- ja ensimmäiset kirjaimet isolla*.
+     - Tyyppi (Puhelin, Nimi, Osoite, Organisaatio): standardoi nimet, otsikot, puhelinnumerot, osoitteet jne. 
      - Unicode ASCII-muotoon: muuntaa unicode-merkinnät ASCII-merkeiksi. */u00B2* muuttuu muotoon *2*.
-     - Numeraalit: muuntaa muut numerojärjestelmät, kuten roomalaiset numerot arabialaisiksi numeroiksi. *VIII* muuttuu muotoon *8*.
-     - Semanttiset tyypit: standardoi nimet, otsikot, puhelinnumerot ja osoitteet, yms. 
+     - Tyhjä tila: poistaa kaikki välilyönnit. *Hello Worldista* tulee *HelloWorld*.
 
    - **Tarkkuus**: Määritä tässä ehdossa käyttöönotettu tarkkuustaso. 
-     - **Perustiedot**: Valitse arvoksi *Matala*, *Keskitaso*, *Korkea* ja *Tarkka*. Valitse **Tarkka** vain, jos haluat täsmäyttää tietueita, joiden täsmäävyys on 100 prosenttia. Valitse jokin toinen taso, jos haluat täsmäyttää tietueita, jotka eivät ole täysin identtisiä.
+     - **Perustiedot**: Valitse arvoksi *Matala*, *Keskitaso*, *Korkea* ja *Tarkka*. Valitse **Tarkka**, jos haluat yhdistää vain tietueet, jotka vastaavat 100 prosentin tarkkuudella. Valitse jokin toinen taso, jos haluat täsmäyttää tietueita, jotka eivät ole täysin identtisiä.
      - **Mukautettu**: Määritä prosenttiluku, jota tietueiden on vastattava. Järjestelmä yhdistää vain tämän raja-arvon ohittavat tietueet.
 
 1. Anna säännön **Nimi**.
@@ -92,7 +100,7 @@ Jos haluat yhdistää entiteetit vain, jos määritteet vastaavat useita ehtoja,
 
 ### <a name="add-rules-to-a-match-pair"></a>Sääntöjen lisääminen vastinepariin
 
-Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttääksesi entiteettejä useiden määritteiden perusteella
+Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttääksesi entiteettejä useiden määritteiden perusteella.
 
 1.  Siirry kohtaan **Tiedot** > **Yhdenmukaista** > **Täsmäytä** ja valitse **Lisää sääntö** entiteettiin, johon haluat lisätä sääntöjä.
 
@@ -117,7 +125,7 @@ Voit järjestää entiteetit uudelleen täsmäytyssääntöjen mukaan, jos halua
 
 [Entiteettien ristiintaulukointisääntöjen](#define-rules-for-match-pairs) lisäksi voit myös määrittää kaksoiskappaleiden poistamissääntöjä. *Kaksoiskappaleiden poistaminen* on myös yksi prosessi tietueita täsmäytettäessä. Se tunnistaa tietueiden kaksoiskappaleet ja yhdistää ne yhteen tietueeseen. Lähdetietueet linkitetään yhdistettyyn tietueeseen vaihtoehtoisilla tunnuksilla.
 
-Tietueita, joista on poistettu kaksoiskappaleet, käytetään sitten entiteettien välisessä vastaavuusprosessissa. Kaksoiskappaleiden poistaminen tapahtuu yksittäisille entiteeteille ja voidaan määrittää jokaiselle kohteelle, jota käytetään vastineparissa.
+Tietueita, joiden kaksoiskappaleet on poistettu, käytetään entiteettien välisessä yhdistämisprosessissa. Kaksoiskappaleiden poista tehdään yksittäisille tietueille eikä sitä voi määrittää jokaiselle vastinepareissa käytetylle entiteetille.
 
 Kaksoiskappaleiden poistosääntöjen määrittäminen ei ole pakollista. Jos kyseisiä sääntöjä ei ole määritetty, järjestelmän määrittämiä sääntöjä käytetään. Ne yhdistävät kaikki tietueet yhdeksi tietueeksi, ennen kuin ne välittyvät entiteettienväliseen vastaavuuteen suorituskyvyn parantamiseksi.
 
