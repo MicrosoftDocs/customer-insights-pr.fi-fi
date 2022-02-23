@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
+ms.openlocfilehash: 8a4473c1c395bbcf8efa2bfa24cddb82e1784279
+ms.sourcegitcommit: 15ec8c5f54242feda9489e7665726ec5e0983dc9
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "8008761"
 ---
-
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Asiakaspalautteen asenteen analysointi (esiversio)
 
 Asiakkaat odottavat nykyisin, että tuotteet, palvelut ja kokemukset ovat laadukkaita. Tällaisia ovat etenkin palautetta antavat asiakkaat. Organisaatioiden kannalta on erittäin haastavaa analysoida kasvavaa tietomäärää ilman, että tarkkuus heikkenee ja työvoimakustannukset nousevat. Dynamics 365 Customer Insights sisältää asiakaspalautteen asenneanalyysimallin, jonka avulla organisaatiot voivat analysoida tietoja entistä tarkemmin ja edullisemmin.
