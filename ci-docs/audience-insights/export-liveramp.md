@@ -1,39 +1,37 @@
 ---
 title: LiveRamp-yhdistin
-description: Tietoja yhteyden määrittämisestä ja viennistä LiveRampiin.
-ms.date: 10/08/2021
-ms.reviewer: mhart
+description: Tietoja tietojen viennistä LiveRampiin.
+ms.date: 12/02/2020
+ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: kishorem-ms
-ms.author: kishorem
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f9a0a88fb58897e4d279c181f4cdb4f6c852da60
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 86aa8c66a47ee61741082c95f05d2e5ce3f06f35
+ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618931"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "4667180"
 ---
-# <a name="export-segments-to-liverampreg-preview"></a>Segmenttien vieminen LiveRampiin&reg; (esiversio)
+# <a name="liverampreg-connector-preview"></a>LiveRamp&reg; yhdistin (esikatselu)
 
-Aktivoi tiedot LiveRampissa, jotta voit muodostaa yhteyden yli 500 ympäristöön digitaalisissa kanavissa, yhteisöpalveluissa ja televisioissa. Työstä tietojasi LiveRampissa kohdistaaksesi, estääksesi ja yksilöllistääksesi mainoskampanjoita.
+Aktivoi tietosi LiveRampissa muodostaaksesi yhteyden yli 500 ympäristöön digitaalisissa, yhteisöllisissä ja television ekosysteemeissä. Työstä tietojasi LiveRampissa kohdistaaksesi, estääksesi ja yksilöllistääksesi mainoskampanjoita.
 
-## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
+## <a name="prerequisites"></a>Edellytykset
 
 - Tämän yhdistimen käyttö edellyttää LiveRamp-tilausta.
 - Hanki tilaus [ottamalla suoraan yhteyttä LiveRampiin](https://liveramp.com/contact/). [Lisätietoja LiveRamp-käyttöönotosta](https://liveramp.com/our-platform/data-onboarding/).
 
-## <a name="set-up-connection-to-liveramp"></a>Määritä yhteys LiveRampiin
+## <a name="connect-to-liveramp"></a>LiveRampiin yhdistäminen
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **LiveRamp**.
+1. Valitse **LiveRamp**-ruudussa **Määritä**.
 
-1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
-
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Anna kohteelle tunnistettava nimi **Näyttönimi**-kentässä.
 
 1. Anna LiveRamp Secure FTP (SFTP) -tilillesi **Käyttäjänimi** ja **Salasana**.
 Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
@@ -42,25 +40,15 @@ Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
 
 1. Kun yhteys on tarkistettu, hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu.
 
-1. Viimeistele yhteys valitsemalla **Tallenna**.
+1. Määritä LiveRamp-yhdistin valitsemalla **Seuraava**.
 
-## <a name="configure-an-export"></a>Viennin määrittäminen
-
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
-
-1. Siirry kohtaan **Tiedot** > **Viennit**.
-
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
-
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys LiveRamp-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
 
 1. Valitse **Valitse avaintunniste** -kentässä **Sähköposti**, **Nimi ja osoite** tai **Puhelin** lähetettäväksi LiveRampille käyttäjätietojen ratkaisemiseksi.
-   > [!div class="mx-imgBorder"]
-   > ![LiveRamp-yhdistin ja määritteiden yhdistämismääritys.](media/export-liveramp-segments.png "LiveRamp-yhdistin ja määritteiden yhdistämismääritys")
 
-1. Yhdistä vastaavat määritteet *Asiakas*-entiteetistä valittua avaintunnistetta varten.
+1. Yhdistä yhdistetyn asiakasentiteetin vastaavat määritteet valittua avaintunnistetta varten.
 
-1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä lähetettäväksi LiveRampiin.
+1. Valitse **Lisää määrite**, jos haluat yhdistää lisää määritteitä LiveRampille lähetettäväksi.
 
    > [!TIP]
    > Useiden avaintunnistemääritteiden lähettäminen LiveRampille tuottaa todennäköisesti suuremman vastaavuuden.
@@ -69,14 +57,15 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+> [!div class="mx-imgBorder"]
+> ![LiveRamp-yhdistin ja määritteiden yhdistämismääritys](media/export-liveramp-segments.png "LiveRamp-yhdistin ja määritteiden yhdistämismääritys")
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+## <a name="export-the-data"></a>Tietojen vieminen
 
+Vienti käynnistyy pian, jos kaikki viennin edellytykset täyttyvät. Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
+Kun vienti on suoritettu onnistuneesti, voit kirjautua LiveRampin käyttöönottoon tietojesi aktivointia ja jakelu varten.
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
 Kun tietojen lähetys Liverampiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Liveramp noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

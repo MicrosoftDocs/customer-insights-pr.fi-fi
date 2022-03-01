@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Constant Contactiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Constant Contactiin.
-ms.date: 10/08/2021
+ms.date: 03/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b25e4f11e21d059c2d867e925c0ae5635a87addc
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 29f4320c798db62609283e3c48f0b47a4f0b982f
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619115"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124269"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Segmenttien vieminen Constant Contactiin (esiversio)
 
@@ -28,10 +28,10 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä vientiä kohden enintään miljoona asiakasprofiilia Constant Contactiin.
+- Voit viedä Constant Contactiin enintään miljoona profiilia yhdessä viennissä.
 - Vieminen Constant Contactiin rajoittuu segmentteihin.
-- Enintään yhden miljoonan asiakasprofiilin vieminen Constant Contactiin voi kestää tunnin. 
-- Constant Contactiin vietävien asiakasprofiilien määrä riippuu Constant Contact -sopimuksestasi ja sen sisältämistä rajoituksista.
+- Miljoonan profiilin vienti Constant Contactiin saattaa kestää noin 1 tunnin. 
+- Constant Contactiin vietävien profiilien määrä on riippuvainen ja rajoitettu Constant Contact -sopimuksen mukaan.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Constant Contact -yhteyden määrittäminen
 
@@ -47,7 +47,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 1. Alusta yhteys Constant Contactiin valitsemalla **Yhdistä**.
 
-1. Valitse **Todenna vakioyhteyshenkilöllä** ja anna vakioyhteyshenkilön järjestelmänvalvojan tunnistetiedot. 
+1. Valitse **Todenna AdRollin avulla** ja anna Constant Contactin järjestelmänvalvojan tunnistetiedot. 
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
@@ -65,7 +65,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna [**Constant Contact -luettelon tunnus**](https://app.constantcontact.com/pages/contacts/ui#lists). Avaa luettelo Constant Contactissa, jotta löydät luettelon tunnuksen URL-osoitteesta.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Constant Contactiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Constant Contactiin pitää viedä segmenttejä.
 
 1. Vaihtoehtoisesti voit viedä Etunimi- ja Sukunimi-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 

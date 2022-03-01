@@ -4,17 +4,17 @@ description: Käytettävissä olevien raporttien avulla voit tarkastella verkkos
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 10/01/2021
+ms.date: 06/18/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 5ccdcb47db597154cf79b9f2e8fc238ab75dfde9
-ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
+ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/30/2021
-ms.locfileid: "7582918"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036644"
 ---
 # <a name="view-reports"></a>Näytä raportit
 
@@ -92,18 +92,12 @@ Mobiiliraportit on ryhmitelty reaaliaikaisen käytön, sovelluksen ja käyttäj�
 
 - **Sijainnit**-kohdassa on tietoja sovelluksen käyttäjistä maan, alueen ja kaupungin mukaan.
 
-## <a name="filter-by-time-or-date-range"></a>Suodattaminen ajan tai päivämääräalueen mukaan
+## <a name="filter-by-time-or-value"></a>Suodatus ajan tai arvon mukaan
 
-Voit valita aikavälin tai päivämääräalueen verkko- tai mobiiliraportissa keskittyäksesi arvoon tai ajanjaksoon. 
+Voit valita aikavälin tai arvon verkko- tai mobiiliraportissa, jos haluat tarkastella arvoa tai ajanjaksoa. 
 
-- Jos haluat valita aikavälin, valitse raporttinäkymän oikeasta yläkulmasta arvo. Arvot löytyvät raportin avattavasta luettelosta. Voit valita myös vaihtoehdon **Kiinteä päivämääräalue**. 
+- Voit valita aikavälin valitsemalla raportin avattavasta luettelosta **Lisää [...]** -kohdan. Aikavälin valinta ei ole käytössä reaaliaikaisissa käyttöraporteissa – niiden aikavälinä on "nyt".
 
-  :::image type="content" source="media/filter-by-time.png" alt-text="Suodattaminen ajan tai päivämääräalueen mukaan.":::   
-
-- Useimmissa raporteissa raportin suodattaminen tapahtuu valitsemalla arvo kaaviosta tai luettelosta.
-
-> [!NOTE]
-> Aikavälin valinta ei ole käytössä reaaliaikaisissa käyttöraporteissa – niiden aikavälinä on "nyt".
-
+- Useimmissa raporteissa voit suodattaa raporttia arvon perusteella valitsemalla sellaisen kaaviosta tai luettelosta.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

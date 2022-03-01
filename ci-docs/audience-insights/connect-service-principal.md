@@ -1,7 +1,7 @@
 ---
-title: Yhteyden muodostaminen Azure Data Lake Storage -tiliin palvelun päätunnuksen avulla
-description: Muodosta yhteys Data Lake -tallennustilaan Azure-palvelun päätoiminnon avulla.
-ms.date: 12/06/2021
+title: Yhteyden muodostaminen Azure Data Lake Storage Gen2 -tiliin palveluobjektia käyttämällä
+description: Käytä käyttäjäryhmän tietojen Azure-palveluobjektia muodostamaan yhteys omaan Data Lake -tallennustilaan, kun se liitetään käyttäjäryhmän tietoihin.
+ms.date: 02/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,63 +9,54 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 1af01e5579f85d7c8bc8976a003f53ef2dd280d1
-ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+ms.openlocfilehash: cc94ad49f12067d513db4663bff60620d6501eb0
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/03/2022
-ms.locfileid: "8088143"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692109"
 ---
-# <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päätunnuksen avulla
+# <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Yhteyden muodostaminen Azure Data Lake Storage Gen2 -tiliin käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektilla
 
-Tässä artikkelissa kerrotaan, miten Azure Data Lake Storage -tiliin voi muodostaa yhteyden Dynamics 365 Customer Insightsista käyttämällä Azure-palvelun päänimeä tallennustilan tilin avainten sijaan. 
+Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoitetut käyttöoikeudet. Sen sijaan että sovellukset kirjautusivat sisään käyttäjänä, jolla on kaikki oikeudet, Azure antaa mahdollisuuden käyttää palveluobjekteja. Aiheessa käsitellään käyttäjäryhmän merkityksellisten tietojen yhdistämisestä Azure Data Lake Storage Gen2 -tiliin käyttämällä Azure-palveluobjektia eikä tallennustilan tiliavaimia. 
 
-Azure-palveluja käyttävillä automaattisilla työkaluilla on oltava aina rajoitetut käyttöoikeudet. Sen sijaan että sovellukset kirjautusivat sisään käyttäjänä, jolla on kaikki oikeudet, Azure antaa mahdollisuuden käyttää palveluobjekteja. Palvelun päänimen avulla voit [lisätä tai muokata Common Data Model -kansiota tietolähteenä](connect-common-data-model.md) tai [luoda tai päivittää ympäristön](create-environment.md).
+Palveluobjektin avulla voi turvallisesti [lisätä Common Data Model -kansion tietolähteenä tai muokata sitä](connect-common-data-model.md) tai [luoda uuden ympäristön tai päivittää aiemmin luotua ympäristöä](get-started-paid.md).
 
 > [!IMPORTANT]
-> - Data Lake -tallennustilin, joka käyttää palvelun pääobjektia on oltava Gen2 ja sillä on oltava [käytössä hierarkinen nimiavaruus](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1 -tallennustilejä ei tueta.
-> - Tarvitset Azure-tilaukseen järjestelmänvalvojan oikeudet palvelun pääkäyttäjän luomiseksi.
+> - Azure Data Lake Gen2 -tallennustilillä, joka yrittää käyttää palveluobjektia, on [oltava käytössä hierarkkinen nimitila (HNS)](/azure/storage/blobs/data-lake-storage-namespace).
+> - Palveluobjektin luontiin tarvitaan Azure-tilauksen järjestelmänvalvojan oikeudet.
 
-## <a name="create-an-azure-service-principal-for-customer-insights"></a>Luo Azure-palvelun pääkäyttäjä Customer Insights -tietoja varten
+## <a name="create-azure-service-principal-for-audience-insights"></a>Käyttäjäryhmän merkityksellisten tietojen Azure-palveluobjektin luominen
 
-Ennen kuin luot uuden palvelun päänimen Customer Insightsille, tarkista, onko se jo organisaatiossasi.
+Tarkista ennen uuden käyttäjäryhmän merkityksellisten tietojen palveluobjektin luontia, onko sellainen jo luotu organisaatioon.
 
 ### <a name="look-for-an-existing-service-principal"></a>Aiemmin luodun palveluobjektin etsiminen
 
 1. Siirry [Azure-hallintaportaaliin](https://portal.azure.com) ja kirjaudu organisaatioon.
 
-2. Valitse **Azure-palvelut**-kohdassa **Azure Active Directory**.
+2. Valitse **Azure Active Directory** Azure-palveluissa.
 
 3. Valitse **Hallinta**-kohdassa **Enterprise-sovellukset**.
 
-4. Hae Microsoft-sovellustunnusta:
-   - Käyttäjäryhmän merkitykselliset tiedot: `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` nimellä `Dynamics 365 AI for Customer Insights`
-   - Sitoutumistiedot: `ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd` nimellä `Dynamics 365 AI for Customer Insights engagement insights`
+4. Käytä hakusanana käyttäjäryhmän merkityksellisten tietojen ensimmäisen osapuolen sovellustunnusta `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` tai nimeä `Dynamics 365 AI for Customer Insights`.
 
-5. Jos löydät vastaavan tietueen, palvelun pääkäyttäjä on jo olemassa. 
+5. Jos löydät vastaavan tietueen, käyttäjäryhmän merkityksellisillä tiedoilla on palveluobjekti. Sitä ei tarvitse luoda uudelleen.
    
-   :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Näyttökuva, jossa näkyy palvelun pääkäyttäjä.":::
+   :::image type="content" source="media/ADLS-SP-AlreadyProvisioned.png" alt-text="Näyttökuva, jossa on aiemmin luotu palveluobjekti":::
    
 6. Jos tuloksia ei ole, luo uusi palveluobjekti.
 
->[!NOTE]
->Jotta voit käyttää Dynamics 365 Customer Insightsia täydellä teholla, suosittelemme, että lisäät molemmat sovellukset palvelun pääkäyttäjään.
-
 ### <a name="create-a-new-service-principal"></a>Uuden palveluobjektin luominen
 
-1. Asenna Azure Active Directory PowerShell for Graphin uusin versio. Lisätietoja on kohdassa [Asenna Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
-
-   1. Valitse tietokoneessa näppäimistön Windows-avain, hae **Windows PowerShell** ja valitse **Suorita Järjestelmänvalvojana**.
+1. Asenna uusin **Azure Active Directory PowerShell for Graph** -versio. Lisätietoja on kohdassa [Azure Active Directory PowerShell for Graphin asentaminen](/powershell/azure/active-directory/install-adv2).
+   - Valitse tietokoneessa näppäimistön Windows-avain, tee haku hakusanalla **Windows PowerShell** ja **suorita järjestelmänvalvojana**.
    
-   1. Anna avautuvassa PowerShell-ikkunassa `Install-Module AzureAD`.
+   - Anna avautuvassa PowerShell-ikkunassa `Install-Module AzureAD`.
 
-2. Luo Customer Insights -palvelun pääkäyttäjä Azure AD PowerShell -moduulilla.
-
-   1. Anna PowerShell-ikkunassa `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Vaihda *[vuokraajan tunnuksen]* paikkamerkin paikalle sen vuokraajan tunnus, jossa haluat luoda palveluobjektin. Ympäristön nimiparametri `AzureEnvironmentName` on valinnainen.
+2. Luo käyttäjäryhmän merkityksellisten tietojen palveluobjekti Azure AD PowerShell -moduulissa.
+   - Anna PowerShell-ikkunassa `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Vaihda vuokraajan tunnuksen paikkamerkin paikalle sen vuokraajan tunnus, jossa haluat luoda palveluobjektin. Ympäristön nimiparametri `AzureEnvironmentName` on valinnainen.
   
-   1. Anna `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Tämä komento luo käyttäjäryhmän merkityksellisten tietojen palveluobjektin valitussa vuokraajassa. 
-
-   1. Anna `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. Tämä komento luo palvelun pääkäyttäjälle sitoutumistietoja varten valitulle vuokraajalle.
+   - Anna `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Tämä komento luo käyttäjäryhmän merkityksellisten tietojen palveluobjektin valitussa vuokraajassa.  
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Tallennustilin käyttöön tarvittavien oikeuksien myöntäminen palveluobjektille
 
@@ -75,49 +66,51 @@ Siirry Azure-portaaliin myöntämään palveluobjektille sen tallennustilin oike
 
 1. Avaa se tallennustili, jota haluat käyttäjäryhmän merkityksellisten tietojen palveluobjektin voivan käyttää.
 
-1. Valitse vasemmanpuoleisesta ruudusta **Käytönvalvonta (IAM)** ja valitse sitten **Lisää** > **Lisää roolimääritys**.
-
-   :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Näyttökuva, jossa näkyy Azure-portaali, kun lisätään roolimääritystä.":::
-
-1. Määritä **Lisää roolien määritys** -ruudussa seuraavat ominaisuudet:
-   - Rooli: **Tallennustilan BLOB-tietojen osallistuja**
-   - Käyttöoikeuden delegointi: **Käyttäjä, ryhmä tai palveluobjekti**
-   - Valitse: **Dynamics 365 AI for Customer Insights** ja **Dynamics 365 AI for Customer Insights -sitoutumistiedot** (kaksi aiemmin tässä toimintosarjassa luomaa [palvelun pääkäyttäjää](#create-a-new-service-principal))
+1. Valitse siirtymisruudussa **Käyttöoikeuksien hallinta (IAM)** ja valitse sitten **Lisää** > **Lisää roolimääritys**.
+   
+   :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Näyttökuvassa Azure-portaali roolimääritystä lisättäessä":::
+   
+1. Määritä seuraavat ominaisuudet **Lisää roolimääritys** -ruudussa:
+   - Rooli: *Tallennustilan BLOB-tietojen osallistuja*
+   - Käyttöoikeuden delegointi: *Käyttäjä, ryhmä tai palveluobjekti*
+   - Valitse: *Dynamics 365 AI for Customer Insights* ([luotu palveluobjekti](#create-a-new-service-principal))
 
 1.  Valitse **Tallenna**.
 
 Muutosten päivittyminen voi kestää 15 minuuttia.
 
-## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Anna Azure-resurssitunnus tai Azure-tilauksen tiedot käyttäjäryhmän merkityksellisten tietojen tallennustililiitteessä
+## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Anna Azure-resurssitunnus tai Azure-tilauksen tiedot käyttäjäryhmän merkityksellisten tietojen tallennustililiitteessä.
 
-Voit liittää Data Lake -tallennustilan kohdeyleisötietoihin, jotta voit [tallentaa tulostietoja](manage-environments.md) tai [käyttää niitä tietolähteenä](connect-common-data-service-lake.md). Tämän vaihtoehdon avulla voit valita resurssipohjaisen tai tilauspohjaisen vaihtoehdon. Noudata valitsemasi toimintatavan mukaisesti jossakin seuraavista osasta annettuja ohjeita.
+Liitä käyttäjäryhmän merkityksellisten tietojen Azure Data Lake -tallennustili [säilön tulostetietoihin](manage-environments.md) tai [käytä sitä tietolähteenä](connect-dataverse-managed-lake.md). Azure Data Lake -vaihtoehdon valinta antaa mahdollisuuden valita, käytetäänkö resurssi- tai tilauspohjaista menettelytapaa.
+
+Anna valitussa menettelytavassa tarvittavat tiedot seuraavien ohjeiden mukaisesti.
 
 ### <a name="resource-based-storage-account-connection"></a>Resurssipohjainen tallennustiliyhteys
 
 1. Siirry [Azure-hallintaportaaliin](https://portal.azure.com), kirjaudu tilaukseen ja avaa tallennustili.
 
-1. Valitse vasemmanpuoleisessa ruudussa **Asetukset** > **Ominaisuudet**.
+1. Valitse siirtymisruudussa **Asetukset** > **Ominaisuudet**.
 
 1. Kopioi tallennustilin resurssitunnuksen arvo.
 
    :::image type="content" source="media/ADLS-SP-ResourceId.png" alt-text="Tallennustilin resurssitunnuksen arvon kopiointi":::
 
-1. Lisää käyttäjäryhmän resurssitunnus tallennustilin yhteysnäytössä näkyvään resurssikenttään.
+1. Lisää käyttäjäryhmän merkityksellisissä tiedoissa resurssitunnus resurssikenttään, joka näkyy tallennustilin yhteysnäytössä.
 
    :::image type="content" source="media/ADLS-SP-ResourceIdConnection.png" alt-text="Tallennustilin resurssitunnuksen tietojen antaminen":::   
-
+   
 1. Liitä tallennustili suorittamalla jäljellä olevat vaiheet käyttäjäryhmän merkityksellisissä tiedoissa.
 
 ### <a name="subscription-based-storage-account-connection"></a>Tilauspohjainen tallennustiliyhteys
 
 1. Siirry [Azure-hallintaportaaliin](https://portal.azure.com), kirjaudu tilaukseen ja avaa tallennustili.
 
-1. Valitse vasemmanpuoleisessa ruudussa **Asetukset** > **Ominaisuudet**.
+1. Valitse siirtymisruudussa **Asetukset** > **Ominaisuudet**.
 
 1. Varmista, että valitset oikeat tiedot käyttäjäryhmän merkityksellisissä tiedoissa tarkista tallennustilin **Tilaus**-, **Resurssiryhmä**- ja **Nimi**-kohtien tiedot.
 
-1. Valitse käyttäjäryhmän tiedoissa vastaavien kenttien arvot, kun liität tallennustilin.
-
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa arvot tai vastaavat kentät tallennustiliä liitettäessä.
+   
 1. Liitä tallennustili suorittamalla jäljellä olevat vaiheet käyttäjäryhmän merkityksellisissä tiedoissa.
 
 

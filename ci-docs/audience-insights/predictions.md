@@ -1,7 +1,7 @@
 ---
 title: Osittaisten tietojen viimeisteleminen ennusteiden avulla
 description: Puutteellisten asiakastietojen täydentäminen ennusteiden avulla.
-ms.date: 11/01/2021
+ms.date: 05/05/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,17 +9,16 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732400"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645030"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Osittaisten tietojen täydentäminen ennusteilla (vanhentunut)
+# <a name="complete-your-partial-data-with-predictions"></a>Osittaisten tietojen viimeisteleminen ennusteiden avulla
 
-> [!IMPORTANT]
-> Tämä ominaisuus **vanhentuu** **5.11.2021** alkaen. Nykyiset toteutukset toimivat, kunnes toiminto poistetaan, mutta uusia integrointeja ei voi luoda alla olevan ohjeen mukaisesti.
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Ennusteiden avulla voit helposti luoda ennustettuja arvoja, jotka auttavat ymmärtämään asiakasta aiempaa paremmin. Valitsemalla **Analytiikka** > **Ennusteet**-sivulla **Omat ennusteet** näkyviin tulee ennusteet, jotka on määritetty toisaalla käyttäjäryhmän merkityksellisissä tiedoissa ja joiden avulla ennusteita voi mukauttaa entisestään.
 
@@ -61,8 +60,6 @@ Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
    > ![Esimerkki kentän arvojen ja luokkien yhdistämisestä.](media/intelligence-categorymapping.png "Esimerkki kentän arvojen ja luokkien yhdistämisestä")
 
 8. Valitse **Valmis**. Ennustetta aletaan käsitellä. Käsittelyn kesto riippuu tietojen koosta ja monimuotoisuudesta. Tulokset ovat käytettävissä uudessa entiteetissä luodun ennusteen **tulosentiteetin nimen** perusteella.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Luo ennuste segmentin luomisen aikana
 

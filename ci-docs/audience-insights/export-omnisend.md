@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Omnisendiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Omnisendiin.
-ms.date: 10/08/2021
+ms.date: 05/21/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5496efa075fa3474c579366d143ea55e86ec3995
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 8bd692819fa8451ded5e74191ee717f81f87425d
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619024"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124481"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Segmenttien vieminen Omnisendiin (esiversio)
 
@@ -28,9 +28,9 @@ Vie yhtenäisten asiakasprofiilien segmentit Omnisendiin ja käytä niitä markk
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Vientiä kohden voit viedä enintään miljoona asiakasprofiilia Omnisendiin, ja se voi kestää neljä tuntia.
+- Voit viedä kussakin viennissä enintään 1 miljoonaa profiilia Omnisendiin ja se voi kestää jopa 4 tuntia.
 - Vieminen Omnisendiin rajoittuu segmentteihin.
-- Omnisendiin vietävien asiakasprofiilien määrä riippuu sopimuksestasi Omnisendin kanssa.
+- Profiilien määrä, jonka voi viedä Omnisendiin, määräytyy sen mukaan, millainen sopimus Omnisendin kanssa on solmittu.
 
 ## <a name="set-up-connection-to-omnisend"></a>Määritä yhteys Omnisendiin
 
@@ -40,7 +40,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Omnisendiin ja käytä niitä markk
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvoisesti vain järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvon mukaan kyse on vain järjestelmänvalvojista. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Anna [Omnisendin API-avain](https://support.omnisend.com/en/articles/1061890-generating-api-key).
 
@@ -62,7 +62,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys Omnisend-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Omnisendiin pitää viedä segmenttejä. Voit myös viedä etunimen, sukunimen, osoitteen, maan/alueen, osavaltion, kaupungin ja postinumeron yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Omnisendiin pitää viedä segmenttejä. Voit myös viedä etunimen, sukunimen, osoitteen, maan/alueen, osavaltion, kaupungin ja postinumeron yksilöllisempien sähköpostiviestien luomiseksi. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 
 1. Valitse **Tallenna**.
 

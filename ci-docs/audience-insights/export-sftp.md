@@ -1,5 +1,5 @@
 ---
-title: Customer Insights -tietojen vieminen SFTP-palvelimiin (sisältää videon)
+title: Customer Insightsin tietojen vieminen SFTP-isäntiin
 description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,18 +9,16 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
+ms.openlocfilehash: b19ca6b8085846785682046f83d0ed4758269e5b98303692c703d995407ca7dd
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934883"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035457"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Segmenttien ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)
 
 Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secure File Transfer Protocol (SFTP) -sijaintiin.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWO94X]
 
 ## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
@@ -28,7 +26,6 @@ Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secur
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Palomuurin takana olevia SFTP-kohteita ei tueta tällä hetkellä. 
 - Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia. 
 - Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia. 
 

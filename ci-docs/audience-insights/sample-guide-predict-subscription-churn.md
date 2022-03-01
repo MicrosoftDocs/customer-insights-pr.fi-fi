@@ -2,19 +2,19 @@
 title: Tilauksen vaihtuvuusennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tilauksen vaihtuvuusennustemallia.
 ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: e2360c707bcbdfa64482f06f0a0cd0783a377b4fd79620ffd3cc1c9c6cad9ed3
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
+ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029579"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "4653976"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Tilauksen vaihtuvuusennusteen (esiversio) näyteopas
 
@@ -22,14 +22,14 @@ Aiheessa käsitellään kattavasti tilauksen vaihtuvuusennuste-esimerkki käytt�
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet, joita he myyvät Contoso Coffee -verkkosivustonsa kautta. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
+Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
 
 ## <a name="prerequisites"></a>Edellytykset
 
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
 - Seuraavat vaiheet on suositeltavaa toteuttaa [uudessa ympäristössä](manage-environments.md).
 
-## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
+## <a name="task-1---ingest-data"></a>Tehtävä 1 – tietojen käsitteleminen
 
 Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisestä Power Query -yhdistimiä](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua. 
 
@@ -46,9 +46,10 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **DateOfBirth**: päivämäärä
    - **CreatedOn**: päivämäärä, aika ja aikavyöhyke
 
-   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
+   [!div class="mx-imgBorder"]
+   ![Syntymäpäivän muuttaminen päivämääräksi](media/ecommerce-dob-date.PNG "syntymäpäivän muuntaminen päivämääräksi")
 
-1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommerceContacts**-arvo
+1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
 
 1. Tallenna tietolähde.
 
@@ -66,7 +67,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
+1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **loyCustomers**.
 
 1. Tallenna tietolähde.
 
@@ -89,7 +90,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **Is_auto_renew**: tosi, epätosi
    - **RecurringFrequencyInMonths**: kokonaisluku
 
-1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
+1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
 
 1. Tallenna tietolähde.
 
@@ -128,9 +129,9 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
 
-1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
+1. Valitse avattavassa **Ensisijainen**-luettelossa **eCommerceContacts : eCommerce** ensisijaiseksi lähteeksi ja sisällytä kaikki tietueet.
 
-1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
+1. Valitse avattavassa **Entiteetti 2** -luettelossa **loyCustomers : LoyaltyScheme** ja sisällytä kaikki tietueet.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
 
@@ -138,16 +139,16 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Lisää ensimmäinen ehto FullName-kentässä.
 
-   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
-   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
+   * eCommerceContacts: valitse **FullName** avattavassa kentässä.
+   * loyCustomers: valitse **FullName** avattavassa kentässä.
    * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
 1. Anna uuden säännön **FullName, Email**.
 
    * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
-   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
+   * Valitse entiteetin eCommerceContacts-asetukseksi avattavassa luettelossa **EMail**.
+   * Valitse entiteetin loyCustomers-asetukseksi avattavassa luettelossa **EMail**. 
    * Jätä Normalisoi-kohta tyhjäksi. 
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
@@ -229,6 +230,3 @@ Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

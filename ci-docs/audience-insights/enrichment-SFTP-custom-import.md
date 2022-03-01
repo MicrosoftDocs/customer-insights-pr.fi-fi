@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: fa1d4ffd9f77e128b5d804e4562e964561f4684f
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618678"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304646"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Asiakasprofiilien rikastaminen mukautetuilla tiedoilla (esiversio)
 
@@ -45,8 +45,6 @@ Mukautetun SFTP-tuonnin määritykselle on seuraavat edellytykset:
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Näyttökuva tietojen sijainnin syöttämisestä.":::
 
-1. Valitse **Seuraava** ja valitse asiakastietojoukko. Se voi sisältää joko kaikki asiakasprofiilit tai segmentin.
-
 1. Valitse **Seuraava** ja anna rikastuksen ja tulosentiteetin nimi. 
 
 1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
@@ -66,7 +64,7 @@ Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse 
 1. Kun tarkistus on tehty, yhteys tallennetaan valitsemalla **Tallenna**.
 
    > [!div class="mx-imgBorder"]
-   > ![Experian-yhteyden määrityssivu.](media/enrichment-SFTP-connection.png "Experian-yhteyden määrityssivu")
+   > ![Experian-yhteyden määrityssivu](media/enrichment-SFTP-connection.png "Experian-yhteyden määrityssivu")
 
 
 ## <a name="defining-field-mappings"></a>Kenttien yhdistämismääritysten määrittäminen 
@@ -125,6 +123,6 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

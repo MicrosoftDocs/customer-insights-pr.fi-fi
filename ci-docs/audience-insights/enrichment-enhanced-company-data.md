@@ -1,7 +1,7 @@
 ---
 title: Yritystietojen parantaminen
 description: Rikasta ja normalisoi yritystietoja Microsoftin malleilla.
-ms.date: 01/19/2022
+ms.date: 11/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 693e2f410a77cbf2e87ff0132ce963aab7e8e3e4
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
+ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010894"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "7813914"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 
@@ -82,17 +82,7 @@ Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös a
 
 Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
 
-**Rikastetut asiakkaat -esikatseluruudussa** näkyy näyte rikastetuista tiedoista. Valitse **Näytä lisää** ja valitse **Tiedot**-välilehti, jos haluat tarkastella kunkin rikastetun profiilin yksityiskohtaista näkymää.
-
-### <a name="overview-card"></a>Yleiskatsauskortti
-
-Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
-
-* **Käsitellyt ja muuttuneet yritykset**: niiden asiakasyritysprofiilien määrä, joiden rikastaminen onnistui.
-
-* **Käsitellyt mutta muuttumattomat yritykset**: Niiden asiakasyritysprofiilien määrä, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
-
-* **Yritykset, joita ei ole käsitelty eikä muutettu**: Niiden asiakasyritysprofiilien määrä, joita ei tunnistettu. Tämä tapahtuu yleensä, kun syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
+Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 

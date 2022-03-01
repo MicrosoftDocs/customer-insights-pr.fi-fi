@@ -1,7 +1,7 @@
 ---
 title: Asiakkaan merkityksellisten tietojen vieminen ActiveCampaign-ratkaisuun
 description: Lisätietoja yhteyden ja viemisen määrittämisestä ActiveCampaign-ratkaisuun
-ms.date: 10/08/2021
+ms.date: 06/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4fbdd5a51a3df35d31ad072eef64d20ee967d7ee
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 6d85fa9836618e27f7f3da6ce17c07b4bc89e187
+ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618149"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6314605"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Segmenttien vieminen ActiveCampaign-ratkaisuun (esiversio)
 
@@ -28,9 +28,9 @@ Vie yhdistettyjen asiakasprofiilien segmentit ActiveCampaign-ratkaisuun ja käyt
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Vientiä kohden voit viedä enintään miljoona asiakasprofiilia ActiveCampaigniin, ja se voi kestää 90 minuuttia.
+- Yhdessä viennissä ActiveCampaign-ratkaisuun voi olla enintään miljoona profiilia. Vienti voi kestää 90 minuuttia.
 - Vieminen ActiveCampaign-ratkaisuun on rajoitettu segmentteihin.
-- ActiveCampaigniin vietävien asiakasprofiilien määrä riippuu sopimuksestasi ActiveCampaignin kanssa.
+- ActiveCampaign-ratkaisuun vietävien profiilien enimmäismäärä riippuu ActiveCampaign-sopimuksesta.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Yhteyden määrittäminen ActiveCampaign-ratkaisuun
 
@@ -64,7 +64,7 @@ Voit määrittää viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoik
 
 1. Syötä [**ActiveCampaign-luettelon tunnus**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Segmenttien vieminen ActiveCampaign-ratkaisuun on pakollista. Vaihtoehtoisesti voit viedä etunimen, sukunimen tai puhelinnumeron mukaan. Näin voit luoda mukautettuja sähköpostiviestejä. Yhdistä nämä kenttä valitsemalla Lisää määrite.
+3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Segmenttien vieminen ActiveCampaign-ratkaisuun on pakollista. Vaihtoehtoisesti voit viedä etunimen, sukunimen tai puhelinnumeron mukaan. Näin voit luoda mukautettuja sähköpostiviestejä. Yhdistä nämä kenttä valitsemalla Lisää määrite.
 
 1. Valitse **Tallenna**.
 

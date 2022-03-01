@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 867a6541734746f75a35faaa8d3861e0479d6114
-ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
+ms.openlocfilehash: 948a7e980df5714034009c92282e78cf2bdcb231
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/29/2021
-ms.locfileid: "7866884"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618287"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Segmenttien vieminen LinkedIniin (esiversio)
 
@@ -28,7 +28,6 @@ Vie yhdistettyjen asiakasprofiilien segmentit LinkedIn Adsiin ja luo vastaavat k
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Customer Insights -segmentin on sisällettävä vähintään 300 yksilöllistä profiilia. 
 - Voit viedä vientiä kohden enintään 100 000 asiakasprofiilia LinkedIn Adsiin.
 - Vieminen LinkedIn Adsiin rajoittuu segmentteihin.
 - Enintään 100 000 asiakasprofiilin vieminen LinkedIn Adsiin voi kestää 10 minuuttia. 

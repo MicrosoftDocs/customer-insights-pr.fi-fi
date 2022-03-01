@@ -4,17 +4,17 @@ description: Suppiloraporttien käyttö sen ymmärtämiseen, miten käyttäjäry
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 09/21/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: efb10f2664630a5851d9582ff09c378c01777b96
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558916"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498638"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Suppiloraporttien luominen ja hallinta
 
@@ -163,23 +163,13 @@ Voit muuttaa suppiloraportin nimeä, poistaa sen tai muokata raportin vaiheita.
 
 Osallistumisen merkitykselliset tiedot antavat nyt suppilotietoja asiakkaille. Suppilotietojen avulla saat lisätietoja asiakaskäyttäytymisestä suppiloraportin vaiheissa. Kun luot ja tallennat uuden suppiloraportin, raporttiin luodaan automaattisesti suppilotietoja. 
 
-:::image type="content" source="media/funnel-insights.png" alt-text="Suppilon merkitykselliset tiedot.":::
-
-> [!NOTE]
-> Suppilotietoja voi luoda vain suppilovaiheille, jotka **eivät** sisällä mukautettuja dimensioita. Jos haluat luoda suppilotietoja suppilosi kaikista osavaiheista, luo suppilovaiheet käyttämällä sitouttamisnäkemyksien valmiita dimensioita. 
-
 Voit tarkastella suppilotietoja seuraavista luokista sekä pää- että vaihetasolla: 
 
- - Muunnosprosentti
- -    Konversioaste Kassan ja Oston välillä on 22 %.
+ - Muunnosprosentti 
  - Siirtoaika 
- -    Keskimääräinen siirtymisaika Ostoskorin ja Kassan välillä on 23 minuuttia. 
  - Valmistumisaika 
- -    Keskimääräinen aika, jonka asiakkaat käyttävät suppilon suorittamiseen, on 47 minuuttia. 
 
 Näiden näkemysten avulla voit tutkia asiakaskäyttäytymistä ja ymmärtää paremmin suppiloraportin päätepistettä ja muunnoksia. 
-
-Jos haluat verrata eri vaiheiden tietoja, valitse **Näytä vaiheiden erittely** tai **Vertaa muihin vaiheisiin** tietokorteissa. Niissä näkyy pylväskaavio, jossa verrataan kunkin suppilon vaiheen tietoja. 
 
 Suppilotiedot lasketaan uudelleen 24 tunnin välein tai kun **tallennat** suppiloraportin. 
 

@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: Ohjesisällön käytön aloittaminen liittyviä artikkeleja etsimällä.
   ms.author: mhart
-  ms.date: 03/02/2022
+  ms.date: 10/29/2020
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e154b37f57bb2765f48a9f6b38f86dffcb05f403
-  ms.sourcegitcommit: a371fc1e75b2321e45d3f972a3ac84c725f8cc38
+  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
+  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
   ms.translationtype: HT
   ms.contentlocale: fi-FI
-  ms.lasthandoff: 02/10/2022
-  ms.locfileid: "8107195"
+  ms.lasthandoff: 03/15/2021
+  ms.locfileid: "5598454"
 title: Dynamics 365 Customer Insights -ohjeet
-summary: Etsi hyödyllisiä resursseja, jotta pääset alkuun ja opit Customer Insightsin ominaisuuksista ja mahdollisuuksista.
+summary: Etsi hyödyllisiä resursseja, joiden avulla voit aloittaa Customer Insightsin käytön ja joissa on tietoja sen toiminnoista ja ominaisuuksista.
 landingContent:
 - title: Tietoja Customer Insightsista
   linkLists:
@@ -23,41 +23,19 @@ landingContent:
     - text: Customer Insightsin yleiskatsaus
       url: overview.md
     - text: Julkaisusuunnitelmat
-      url: /dynamics365/release-plans/
-    - text: Tutustu CDP:hen
-      url: https://dynamics.microsoft.com/ai/customer-insights/
-  - linkListType: learn
-    links:
-    - text: Customer Insights -oppimispolku
-      url: /learn/paths/build-customer-insights/
-- title: Customer Insights -palvelun aloittaminen
+      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Ympäristön käyttäminen
+      url: https://home.ci.ai.dynamics.com/
+- title: Käyttäjäryhmän merkityksellisten tietojen käytön aloittaminen
   linkLists:
   - linkListType: get-started
     links:
     - text: Rekisteröidy kokeiluversion käyttäjäksi
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
+    - text: Uudet ominaisuudet
       url: audience-insights/whats-new-audience-insights.md
-    - text: Pikaopas
-      url: audience-insights/get-started.md
-  - linkListType: learn
-    links:
-    - text: Aloita käyttö
-      url: /learn/modules/get-started-customer-data-platform/
-- title: Käyttäjäryhmän merkityksellisten tietojen hallinta
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Järjestelmän määrittäminen
-      url: audience-insights/system.md
-    - text: Käyttöoikeuksien määrittäminen
-      url: audience-insights/permissions.md
-    - text: Useiden ympäristöjen hallinta
-      url: audience-insights/manage-environments.md
-  - linkListType: learn
-    links:
-    - text: Customer Insightsin hallinta
-      url: /learn/modules/administer-customer-data-platform/
+    - text: Käyttäjäryhmän merkityksellisten tietojen dokumentaatio
+      url: audience-insights/index.yml
 - title: Yhteydenotto
   linkLists:
   - linkListType: overview
@@ -68,16 +46,16 @@ landingContent:
       url: https://go.microsoft.com/fwlink/?linkid=2074172
     - text: Ilmoita ongelmasta
       url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Tietojen jakaminen eri ominaisuuksien välillä
+- title: Käyttäjäryhmän merkityksellisten tietojen opasohjelmat
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: tutorial
     links:
-    - text: Linkin luominen ominaisuuksien välille
-      url: engagement-insights/integrate-audience-insights-engagement-insights.md
-    - text: Segmenttien luominen raporteissa käytettäväksi
-      url: engagement-insights/integrate-audience-insights-segments.md
-    - text: Profiiliominaisuuksien käyttö vuorovaikutteisessa analyysissä
-      url: engagement-insights/curate-dimensions.md
+    - text: Luo uusi ympäristö
+      url: audience-insights/home.md
+    - text: Yhdistetyn asiakasprofiilin luominen
+      url: /learn/modules/unified-customer-profile/
+    - text: Sovelluksen käyttäminen
+      url: /learn/modules/working-with-customer-insights/
 - title: Käyttäjäryhmän merkityksellisten tietojen vieminen
   linkLists:
   - linkListType: how-to-guide
@@ -88,6 +66,16 @@ landingContent:
       url: audience-insights/customer-card-add-in.md
     - text: Power BI -yhdistin
       url: audience-insights/export-power-bi.md
+- title: Käyttäjäryhmän merkityksellisten tietojen hallinta
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Järjestelmän määrittäminen
+      url: audience-insights/system.md
+    - text: Käyttöoikeuksien määrittäminen
+      url: audience-insights/permissions.md
+    - text: Useiden ympäristöjen hallinta
+      url: audience-insights/manage-environments.md
 - title: Tietoja käyttäjäryhmän merkityksellisistä tiedoista (esiversio)
   linkLists:
   - linkListType: overview

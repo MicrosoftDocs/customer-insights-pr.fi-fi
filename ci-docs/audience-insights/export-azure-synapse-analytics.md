@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Azure Synapse -analytiikkaan
 description: Tietoja yhteyden määrittämisestä ja viennistä Azure Synapse -analytiikkaan.
-ms.date: 01/05/2022
+ms.date: 04/12/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 6f630b8fb03bf615ada6d40fe27a91975d0c856e
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
+ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951038"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5977373"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Vie tietoja Azure Synapse -analytiikkaan (esiversio)
 
@@ -49,8 +49,6 @@ Azuressa:
 
 ### <a name="configure-a-connection"></a>Yhteyden määrittäminen
 
-Yhteyden luonti edellyttää, että Customer Insightsin palvelun päänimi ja käyttäjätili tarvitsevat sen *resurssiryhmän* **Lukija**-oikeuden, jossa Synapse Analytics -työtila sijaitsee. Lisäksi palvelun päänimi ja käyttäjä tarvitsevat Synapse Analytics -työtilassa **Synapse-järjestelmänvalvojan** oikeudet. 
-
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
 1. Valitse **Lisää yhteys** ja valitse **Azure Synapse -analytiikka** tai valitse **Määritä** **Azure Synapse -analytiikka** -ruudussa yhteyden määrittämistä varten.
@@ -65,7 +63,7 @@ Yhteyden luonti edellyttää, että Customer Insightsin palvelun päänimi ja k�
 
 ### <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Jaetun yhteyden viennin määrittämiseen tarvitaan vähintään **osallistujan** oikeudet Customer Insightsissa. Lisätietoja on aiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on aiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
@@ -76,16 +74,12 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 1. Anna viennille tunnistettava **Näyttönimi** ja **Tietokannan nimi**.
 
 1. Valitse Azure Synapse -analytiikkaan vietävät entiteetit.
-   > [!NOTE]
-   > [Common Data Model -kansioon](connect-common-data-model.md) perustuvia tietolähteitä ei tueta.
 
-2. Valitse **Tallenna**.
+1. Valitse **Tallenna**.
 
 Viennin tallentaminen ei suorita vientiä heti.
 
 Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand).
-
-Synapse Analyticsiin vietyjen tietojen kyselyyn tarvitaan **tallennustilan Blob-tietojen lukijan** käyttöoikeus vientien työtilan kohdetallennustilassa. 
 
 ### <a name="update-an-export"></a>Viennin päivittäminen
 

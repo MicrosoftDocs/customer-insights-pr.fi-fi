@@ -1,5 +1,5 @@
 ---
-title: Asiakaspalautteen asenneanalyysi
+title: Asiakaspalautteen semanttinen analyysi
 description: Tietoja asenneanalyysimallin käyttämisestä Dynamics 365 Customer Insightsin asiakaspalautteessa.
 ms.date: 12/23/2021
 ms.service: customer-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 8a4473c1c395bbcf8efa2bfa24cddb82e1784279
-ms.sourcegitcommit: 15ec8c5f54242feda9489e7665726ec5e0983dc9
+ms.openlocfilehash: 05e530a1bc96c5fd9c7a3bc0197563d8fe330387
+ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8008761"
+ms.lasthandoff: 01/10/2022
+ms.locfileid: "7951078"
 ---
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Asiakaspalautteen asenteen analysointi (esiversio)
 
@@ -38,7 +38,7 @@ Mallien tulosten luotettavuus varmistetaan antamalla läpinäkyvästi tietoja ma
 
 Käytössä on kaksi **luonnollisen kielen käsittelymallia (NLP-mallia)**: Ensimmäinen malli määrittä kullekin palautekommentille asennepisteet. Toinen malli liittää kunkin palautteen kaikkiin soveltuviin liiketoiminnan alueeseen. Mallien koulutukseen käytetään julkisia, erilaisista lähteistä saatavia tietoja. Näitä lähteitä ovat yhteisöpalvelu sekä jälleenmyynti-, ravintola- ja kuluttajatuotealat sekä autoteollisuus.    
   
-Mallin palautetietoihin liitettäviä esimääritettyjä liiketoiminnan alueita ovat esimerkiksi seuraavat:
+- Mallin palautetietoihin liitettäviä esimääritettyjä liiketoiminnan alueita ovat esimerkiksi seuraavat:
 -   Asiakashallinta
 -   Uloskuittaus ja maksu
 -   Asiakastuki

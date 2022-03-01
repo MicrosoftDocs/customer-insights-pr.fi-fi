@@ -1,48 +1,38 @@
 ---
 title: Customer Insights -tietojen vienti Dynamics 365 Salesiin
-description: Tietoja yhteyden määrittämisestä ja viennistä Dynamics 365 Salesiin.
-ms.date: 03/03/2021
-ms.reviewer: mhart
+description: Tutustu Dynamics 365 Sales -yhteyden määrittämiseen.
+ms.date: 08/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d8a35424f4271b350b8d84e72a01deb6d69652a0
-ms.sourcegitcommit: 08a5dfcc4f9d293c8e7ac4fef604bc52985b1b78
+ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "8090919"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643814"
 ---
-# <a name="use-segments-in-dynamics-365-sales-preview"></a>Käytä segmenttejä Dynamics 365 Salesissa (esiversio)
+# <a name="connector-for-dynamics-365-sales-preview"></a>Dynamics 365 Salesin yhdistin (esikatselu)
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Asiakastietojen avulla voit luoda markkinointiluetteloita, seurata työnkulkuja ja lähettää kampanjoita Dynamics 365 Salesin avulla.
 
-## <a name="known-limitations"></a>Tunnetut rajoitukset
+## <a name="prerequisite"></a>Edellytykset
 
-- Viennit Dynamics 365 Salesiin on rajoitettu 100 000 jäseneen segmenttiä kohti.
-- Segmentin vieminen Dynamics 365 Salesiin voi kestää enintään kolme tuntia. 
+[Common Data Servicella käytetyt Dynamics 365 Salesin](connect-power-query.md) yhteyshenkilötietueet.
 
-## <a name="prerequisite-for-connection"></a>Yhteyden edellytys
+## <a name="configure-the-connector-for-sales"></a>Määritä Salesin yhdistin
 
-1. Dynamics 365 Salesissa on oltava yhteyshenkiötietueita, ennen kuin voit viedä segmentin Customer Insightsista Salesiin. Lisätietoja yhteyshenkilöiden käyttämisestä [Dynamics 365 Salesissa Microsoft Dataversein avulla](connect-power-query.md).
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
 
-   > [!NOTE]
-   > Segmenttien vieminen käyttäjäryhmän tiedoista Salesiin ei luo Sales-esiintymiin uusia yhteyshenkilötietueita. Salesin yhteyshenkilötietueet on käsiteltävä käyttäjäryhmän tiedoissa, ja niitä on käytettävä tietolähteenä. Ne on myös sisällytettävä yhdistettyyn asiakasentiteettiin, jotta asiakastunnukset voidaan yhdistää yhteyshenkilötunnuksiin ennen segmenttien viemistä.
+1. Valitse **Dynamics 365 Sales** -kohdassa **Määritä**.
 
-## <a name="set-up-the-connection-to-sales"></a>Määritä yhteys Salesiin
-
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
-
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Dynamics 365 Sales**.
-
-1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
-
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
 
 1. Syötä organisaatiosi Sales-URL-osoite **Palvelinosoite**-kentässä.
 
@@ -50,24 +40,12 @@ Asiakastietojen avulla voit luoda markkinointiluetteloita, seurata työnkulkuja 
 
 1. Yhdistä asiakastunnuskenttä Dynamics 365 -yhteyshenkilön tunnukseen.
 
-1. Viimeistele yhteys valitsemalla **Tallenna**. 
-
-## <a name="configure-an-export"></a>Viennin määrittäminen
-
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
-
-1. Siirry kohtaan **Tiedot** > **Viennit**.
-
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
-
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Dynamics 365 Sales -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Seuraava**.
 
 1. Valitse vähintään yksi segmentti.
 
-1. Valitse **Tallenna**
+1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+## <a name="export-the-data"></a>Tietojen vieminen
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.

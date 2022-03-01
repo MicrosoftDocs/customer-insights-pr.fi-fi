@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tietojen vieminen Salesforce Marketing Cloud -sovellukseen
 description: Lisätietoja yhteyden ja viemisen määrittämisestä Salesforce Marketing Cloud -sovellukseen
-ms.date: 07/23/2021
+ms.date: 06/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b50539d6478a8fe196048f0fb421e5856f713a3ddc6577a637e593f90857ae8b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 123f8b2dbb6140785dec6c1b4164d2f513f66a53
+ms.sourcegitcommit: 057079532e31c12bac36f374857ba3dc847d6ad0
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035549"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6314603"
 ---
 # <a name="export-segments-and-other-data-to-salesforce-marketing-cloud-preview"></a>Segmenttien ja muiden tietojen vieminen Salesforce Marketing Cloud -sovellukseen (esiversio)
 
@@ -23,6 +23,11 @@ Käytä Salesforce Marketing Cloud -sovelluksen asiakastietoja viemällä ne suo
 ## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
 - SFTP-isännän ja vastaavien järjestelmänvalvojan valtuustietojen käytettävyys. [Salesforce Marketing Cloud -sovelluksen SFTP-sijaintien määrittäminen](https://help.salesforce.com/articleView?id=sf.mc_es_configure_enhanced_ftp.htm&type=5) 
+
+## <a name="known-limitations"></a>Tunnetut rajoitukset
+
+- Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia. 
+- 100 miljoonan asiakasprofiilin vieminen voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys. 
 
 ## <a name="set-up-the-connection-to-salesforce-marketing-cloud"></a>Yhteyden määrittäminen Salesforce Marketing Cloud -sovellukseen
 

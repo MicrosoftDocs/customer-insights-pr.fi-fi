@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin entiteettirakenteet Common Data Modelissa
 description: Common Data Modelin entiteettien käyttäminen.
-ms.date: 08/13/2021
+ms.date: 04/17/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 2cdbe11a1c0cc5d65434fb2ae3a3f38c18f31cf4
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046499"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692301"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Entiteettirakenteet Common Data Modelissa
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 [Common Data Model](/common-data-model/) on sääntöpohjainen eritelmä ja määritelmä vakioentiteeteille, jotka edustavat yleisiä liiketoiminta- ja tuottavuussovelluksissa käytettyjä käsitteitä ja toimintoja. Tätä mallia laajennetaan myös havainnollisiin ja analyyttisiin tietoihin. Common Data Model tarjoaa selkeästi määriteltyjä, modulaarisia ja laajennettavia liiketoimintaentiteettejä, kuten Tili, Liiketoimintayksikkö, Tapaus, Yhteyshenkilö, Liidi, Mahdollisuus ja Tuote, sekä vuorovaikutusta myyjien, työntekijöiden ja asiakkaiden välille, kuten toimintoja ja palvelutasosopimuksia. Kuka tahansa voi käyttää ja laajentaa Common Data Model -määritelmiä tallentamaan lisää liiketoimintakohtaisia ideoita.
 
@@ -42,7 +42,7 @@ Lisätietoja on ohjeistuksessa, jossa käsitellään [Customer Insightsin entite
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Entiteettien näyttäminen Common Data Model -taulukossa
 
-Entiteettejä voi tarkastella [Common Data Modelin taulukossa](https://microsoft.github.io/CDM/). Valitsemalla kohteen Tiedot-sovellusosasta saat luettelon Customer Insights -entiteeteistä ja niiden määrityksistä.
+Entiteettejä voi tarkastella [Common Data Modelin taulukossa](https://microsoft.github.io/CDM/). Valitse **Lataa GitHubista** -painike ja valitse **foundationCommon** > **crmCommon** > **solutions** > **customerInsights**, jossa on luettelo Customer Insights -entiteeteistä ja niiden määritelmistä.
 > [!div class="mx-imgBorder"]
 > ![CDM-taulukossa näkyy CustomerActivity-entiteetti.](media/CDM-entity-navigator.png "CDM-taulukossa näkyy CustomerActivity-entiteetti")
 

@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a3d7f9276330a6daacbe9428d84a371b81bbefe
-ms.sourcegitcommit: 971716c761871cee390519cacef617dac21ecd60
+ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
+ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/01/2021
-ms.locfileid: "7466344"
+ms.lasthandoff: 08/30/2021
+ms.locfileid: "7461099"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Käyttäytymistietojen jakaminen demografisten dimensioiden avulla
 
@@ -29,7 +29,7 @@ Käyttämällä yhtenäisiä profiilin demografisia dimensioita käyttäjät voi
 - Sitoutumistilastoympäristö, jossa sinulla on asiakasprofiilitiedot linkitettyinä yleisötilastoympäristöön, jossa asiakasprofiilit luodaan. Lisätietoja: [Linkin luominen kohdeyleisön ja sitoutumistietojen välille](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Kun olet luonut linkin kohdeyleisön ja sitoutumistietoympäristöjen välille, haluat ehkä vain asiakasprofiilin ominaisuuksiin liittyvät tiedot, jotka voivat olla hyödyllisiä sitoutumistietojen dimensioiksi. Lisätietoja on kohdassa [Ota käyttöön käyttäjäryhmän yhdistetyt profiilit -määritteet ja -segmentit](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
+> Kun olet luonut linkin kohdeyleisön ja sitoutumistietoympäristöjen välille, haluat ehkä vain asiakasprofiilin ominaisuuksiin liittyvät tiedot, jotka voivat olla hyödyllisiä sitoutumistietojen dimensioiksi. Lisätietoja on kohdassa [Ota käyttöön käyttäjäryhmän yhdistetyt profiilit -määritteet ja -segmentit](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
 
 ## <a name="create-a-new-custom-report"></a>Uuden mukautetun raportin luominen
 

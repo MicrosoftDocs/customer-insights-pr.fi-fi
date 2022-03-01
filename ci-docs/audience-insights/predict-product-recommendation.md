@@ -1,7 +1,7 @@
 ---
 title: Tuotesuosituksen ennuste
 description: Ennusta tuotteet, joita asiakas todennäköisesti ostaa tai joiden kanssa asiakas on tekemisissä.
-ms.date: 01/13/2022
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967790"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494535"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Tuotesuosituksen ennuste (esiversio)
 
@@ -79,11 +79,11 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 1. Määritä **Tuotteiden määrä**, jota haluat suositella asiakkaalle. Arvo riippuu siitä, miten toimitusmenetelmä täyttää tiedot. Jos voit suositella kolmea tuotetta, määritä tämä arvo vastaavasti.
    
    >[!TIP]
-   > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Ennusteluonnos on **Omat ennusteet** -välilehdessä.
+   > Voit valita **Tallenna ja sulje** milloin tahansa, jos haluat tallentaa ennusteen luonnokseksi. Ennusteluonnos on **Omat ennusteet** -välilehdessä.
 
-1. Valitse, sisällytetäänkö **Toistuvia ostoja odotetaan** -kenttään tuotteet, joita asiakkaat ovat äskettäin ostaneet.
+1. Määritä, haluatko **ehdottaa tuotteita, jotka asiakkaat ovat äskettäin ostaneet**.
 
-1. Määritä **Katso taaksepäin -ikkuna**. Tämä määritys määrittää aikavälin, jonka malli odottaa, ennen kuin suosittelee tuotetta käyttäjälle uudelleen. Ilmoita esimerkiksi, että asiakas ostaa kannettavan tietokoneen kahden vuoden välein. Tässä ikkunassa näkyy ostohistoria kahden viime vuoden ajalta. Jos nimike löytyy, se suodatetaan suosituksista.
+1. Jos olet määrittänyt, että äskettäin ostettuja tuotteita *ei* suositella, määritä arvoksi **Katso taaksepäin -ikkuna**. Tämä määritys määrittää aikavälin, jonka malli odottaa, ennen kuin suosittelee tuotetta käyttäjälle uudelleen. Ilmoita esimerkiksi, että asiakas ostaa kannettavan tietokoneen kahden vuoden välein. Tässä ikkunassa näkyy ostohistoria kahden viime vuoden ajalta. Jos nimike löytyy, se suodatetaan suosituksista.
 
 1. Valitse **Seuraava**
 
