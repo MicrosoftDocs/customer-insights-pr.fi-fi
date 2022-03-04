@@ -2,21 +2,23 @@
 title: Vuorovaikutuksen verkkotietojen integroiminen kohdeyleisön tietojen kanssa
 description: Asiakkaiden verkkotietojen tuominen vuorovaikutuksen tiedoista kohdeyleisön tietoihin.
 ms.date: 06/24/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c2789a7d1379e0cf56511b272a763c904d8a3d347058ea9e029aaff0f723a028
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 037e264658bc354618cff56a89645ef7552aeb13
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033765"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350541"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Vuorovaikutuksen verkkotietojen integroiminen kohdeyleisön tietojen kanssa
+
+
+[!INCLUDE [cc-beta-prerelease-disclaimer](../engagement-insights/includes/cc-beta-prerelease-disclaimer.md)]
 
 Asiakkaat tekevät usein päivittäisiä tapahtumia verkossa sivustojen avulla. Dynamics 365 Customer Insightsin vuorovaikutuksen merkitykselliset tiedot (esiversio) on kätevä sovellus, jonka avulla verkkotiedot voi integroida lähteenä. Tapahtuma- ja toimintatietojen ja demografisten tietojen lisäksi aktiviteetteja nähdään verkossa yhdistetyissä asiakasprofiileissa. Näiden profiilien avulla voi hankkia merkityksellisiä tietoja, kuten tietoja segmenteistä, mittareista tai ennusteista käyttäjäryhmän aktivointia varten.
 

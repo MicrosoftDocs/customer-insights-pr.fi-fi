@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 76b3466afd84aa439ea55afe90ae037825884f2d
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645306"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229073"
 ---
 # <a name="create-a-new-workspace-and-add-members"></a>Uuden työtilan luominen ja jäsenten lisääminen
 
@@ -26,9 +25,9 @@ Kun luot työtilan, voit valita, millaisiin tietoihin haluat keskittyä. Voit mi
 
 ## <a name="create-a-new-workspace"></a>Luo uusi työtila
 
-Työtilan luontiprosessiin kuuluu *ympäristön* määrittäminen järjestelemään työtilasi. Ympäristö on tila, joka voi sisältää yhden tai useamman työtilan. Ympäristön avulla voit hallita työtilojasi ja yhteyksiäsi Customer Insightsin kohderyhmän merkityksellisten tietojen ominaisuuteen.
+Työtilan luontiprosessiin kuuluu *ympäristön* määrittäminen järjestelemään työtilasi. Ympäristö on tila, joka voi sisältää yhden tai useamman työtilan. Ympäristön avulla voit hallita työtilojasi ja yhteyksiäsi kohdeyleisötietojen ominaisuuteen.
 
-1. Valitse työtilanvaihtajasta **Uusi**.
+1. Valitse työtilanvaihtajasta **+Uusi**.
 
    :::image type="content" source="media/new-workspace.png" alt-text="Customer Insights -sivu, jolla on kuvaselite siirtymisruudun ja kuvauksen päällä.":::
 

@@ -1,27 +1,26 @@
 ---
 title: Microsoft Teams -botti
 description: Yhtenäistettyjen asiakasprofiilien hakeminen Microsoft Teamsissa botin avulla.
-ms.date: 04/21/2020
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 45ea23fbefe5f1d44c3961183b76d2cc5c45355e
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d6b016c1ec35e26ce6449333234edfd218bc9354
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405612"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232098"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Dynamics 365 Customer Insightsin Teams-botti (esiversio)
 
 Botti käyttää Microsoft Teams -yhteyttä yhtenäistettyjen asiakasprofiilien etsimiseen Teams-kanavissa.
 
 > [!div class="mx-imgBorder"]
-> ![Teams-botti, jossa näkyy asiakastietue](media/teams-bot.png "Teams-botti, jossa näkyy asiakastietue")
+> ![Teams-botti, jossa näkyy asiakastietue.](media/teams-bot.png "Teams-botti, jossa näkyy asiakastietue")
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -31,7 +30,10 @@ Botin asennus ja määritys edellyttää seuraavaa:
 - [Yhdistämisprosessi](data-unification.md) on valmis.
 - Kenttiä on lisätty [haku- ja suodatusindeksiin ](search-filter-index.md).
 - Customer Insights ja Teams ovat samassa organisaatiossa.
+- Ympäristössäsi on yksittäisille asiakkaille ensisijainen kohdekäyttäjäryhmä määritettynä. Yritystilejä ei tueta.
 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Botin määritys
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
@@ -52,3 +54,6 @@ Botti tarjoaa yhdistettyjen asiakasprofiilien hakumahdollisuuksia.
 - Jos organisaatiolla on samassa organisaatiossa useita Customer Insights -ympäristöjä, antamalla **switchinstance** voit valita, mihin ympäristöön botti yhdistetään.
 
 - Kirjoita **ohje**, kun haluat nähdä luettelon käytettävissä olevista bottikomennoista.  
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

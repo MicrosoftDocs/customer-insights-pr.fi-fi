@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 279af24358a1d6ea2b4cc75d5496042af73a7cae
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ded9e98f06109b7cdc27f449455b7f58d633722f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645442"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350633"
 ---
 # <a name="manage-environments-and-workspaces"></a>Ympäristöjen ja työtilojen hallinta
 
@@ -24,7 +23,7 @@ ms.locfileid: "7645442"
 
 Tässä aiheessa käsitellään työtilojen ja ympäristöjen hallintaa, kun ne on jo luotu. 
 
-- *Työtila* on paikka tapahtumien ja raporttien tallentamista ja hallintaa varten. Siellä voit tarkastella käyttäjäaktiviteetteja reaaliaikaisesti. Kun luot työtilan, voit valita työtilaan lähetettävien tietojen tyypin. Tällä hetkellä tuetaan verkkotietoja ja mobiilisovelluksia. Lisätietoja löytyy kohdasta [Työtilan luominen ja jäsenten lisääminen](create-workspace.md).
+- *Työtila* on paikka tapahtumien ja raporttien tallentamista ja hallintaa varten. Siellä voit tarkastella käyttäjäaktiviteetteja reaaliaikaisesti. Kun luot työtilan, voit valita työtilaan lähetettävien tietojen tyypin. Tällä hetkellä tuetaan verkkotietoja ja mobiilisovelluksia. Lisätietoja löytyy kohdasta [Uuden työtilan luominen ja jäsenten lisääminen](create-workspace.md).
 
 - *Ympäristö* on paikka, jossa voit hallita työtiloja ja yhteyksiä. Lisätietoja on kohdassa [Uuden ympäristön luominen](create-new-environment.md).
 
@@ -71,19 +70,11 @@ Ympäristön järjestelmänvalvojana voit käyttää ympäristöä vasemmassa si
 
 :::image type="content" source="media/environment-edit.png" alt-text="Ympäristön hallintakeskus.":::
 
-### <a name="rename-an-environment"></a>Ympäristön nimeäminen uudelleen
+### <a name="edit-an-environment-name"></a>Muokkaa ympäristön nimeä
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Ympäristö** ja valitse **Asetukset**.
 
 1. Päivitä **Ympäristön nimi** ja ota muutokset käyttöön valitsemalla **Tallenna**.
-
-### <a name="manage-environment-members"></a>Ympäristön jäsenten hallinta
-
-1. Siirry kohtaan **Ympäristö** > **Työtila** ja valitse **Jäsenet**.
-
-1. Valitse **Lisää jäseniä**, jos haluat antaa päivittää jäseniä ja [määrittää rooleja](user-roles.md). Tällä hetkellä käytettävissä on vain **Ympäristön järjestelmänvalvoja**.
-
-1. Lisää jäseniä ympäristöösi valitsemalla **Lisää jäseniä**.
 
 ### <a name="delete-an-environment"></a>Ympäristön poistaminen
 
@@ -97,6 +88,14 @@ Ympäristön järjestelmänvalvojat voivat poistaa ympäristöjä. Ennen kuin vo
 
 1. Valitse **Poista** poistaaksesi ympäristön pysyvästi.
 
+### <a name="manage-environment-members"></a>Ympäristön jäsenten hallinta
+
+1. Siirry kohtaan **Ympäristö** > **Työtila** ja valitse **Jäsenet**.
+
+1. Valitse **Lisää jäseniä**, jos haluat antaa päivittää jäseniä ja [määrittää rooleja](user-roles.md). Tällä hetkellä käytettävissä on vain **Ympäristön järjestelmänvalvoja**.
+
+1. Lisää jäseniä ympäristöösi valitsemalla **Lisää jäseniä**.
+
 ## <a name="manage-connections"></a>Yhteyksien hallinta
 
 Yhteyden luominen kohderyhmän merkityksellisiin tietoihin sallii sinun tarkastella raportteja vuorovaikutuksen merkityksellisissä tiedoissa yhdistettyjen asiakasprofiilien perusteella. 
@@ -107,7 +106,6 @@ Lue lisätietoja kohdasta [Linkin luominen kohdeyleisön ja sitoutumistietojen v
 
 Voit suojata asiakkaan henkilötiedot poistamalla tai viemällä käyttäjän yksilöiviä tietoja.
 
-Lisätietoja: [Henkilötietoja sisältävien tapahtumatietojen poistaminen ja vieminen](delete-export-personal-data.md).
-
+Lisätietoja: [Henkilötietoja sisältävien tapahtumatietojen poistaminen ja vieminen](../dsr-rights-requests.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

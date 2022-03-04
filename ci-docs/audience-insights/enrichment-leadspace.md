@@ -1,50 +1,78 @@
 ---
 title: Yritysprofiilien rikastaminen kolmannen osapuolen Leadspace-rikastamisella
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
-ms.date: 11/24/2020
-ms.reviewer: kishorem
-ms.service: customer-insights
+ms.date: 09/30/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 1b5c6e46e8e424df83e855d81fc4dd7ecb394e3c
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668719"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8230630"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
 
-Leadspace on tietotekniikkayritys, joka tarjoaa yritysten välisten asiakastietojen ympäristön. Sen avulla voidaan täydentää niiden asiakkaiden tietoja, joilla on yhtenäiset asiakasprofiilit yrityksissä. Rikastamiset sisältävät lisämääritteitä, kuten yrityksen koko, sijainti ja toimiala.
+Leadspace on datatiedeyritys, joka tarjoaa yritystenvälisen asiakastietoympäristön. Sen avulla ympäristöt, joilla on asiakkaisiin perustuvat yhtenäiset asiakasprofiilit, voivat rikastaa tietojaan. Rikasta *Asiakasprofiilit* määritteillä kuten yrityksen koko, sijainti tai toimiala. Rikasta *Yhteishenkilöprofiilit* määritteillä kuten titteli, henkilötyyppi tai sähköpostin vahvistus.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 Voit määrittää Leadspacen, jos seuraavat edellytykset täyttyvät:
 
-- Aktiivinen Leadspace-käyttöoikeus ja pysyvä avain (johon viitataan **Leadspace-tunnuksena**). Saat lisätietoja tuotteesta ottamalla yhteyttä suoraan [Leadspaceen](https://www.leadspace.com/products/leadspace-on-demand/).
-- [Järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet.
-- Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md) yrityksiä varten.
+- Sinulla on aktiivinen Leadspace-käyttöoikeus.
+- Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md), jotka perustuvat asiakkaisiin.
+- Leadspace-yhteys on jo määritetty järjestelmänvalvojan toimesta tai sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja "pysyvä avain" (**Leadspace-tunnus**). Jos haluat lisätietoja tuotteesta, ota suoraan yhteyttä [Leadspaceen](https://www.leadspace.com/leadspace-microsoft-dynamics-365/).
 
-## <a name="configuration"></a>Määritys
+## <a name="configure-the-enrichment"></a>Määritä rikastus
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Rikastaminen**.
 
-1. Valitse **Rikasta tietojani** Leadspace-ruudussa.
+1. Valitse Leadspace-ruudussa **Rikasta tietojani** ja valitse **Aloita**.
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Näyttökuvassa Leadspace-ruutu":::
 
-1. Valitse **Aloita** ja anna sitten aktiivinen **Leadspace-tunnus** (pysyvä avain). Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu. Vahvista molemmat syötteet valitsemalla **Yhdistä Leadspaceen**.
+1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** ja sitten **Leadspace**. 
 
-1. Valitse **Yhdistä tiedot** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään vastaavien yritystietojen hakemiseen Leadspacesta. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
+1. Vahvista yhteys valitsemalla **Yhdistä Leadspaceen**.
 
-   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu":::
+1. Valitse **Seuraava** ja valitse **Asiakastietojoukko**, jonka haluat rikastaa Leadspacen yritystiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+    :::image type="content" source="media/enrichment-Leadspace-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
+
+1. Valitse **Seuraava** ja määritä, mitä yhtenäisten profiilien kenttiä käytetään Leadspacen vastaavien yritystietojen etsimiseen. **Yrityksen nimi** on pakollinen kenttä. Tarkkuutta voi parantaa lisäämällä enintään kaksi muuta kenttää: **Yrityksen verkkosivusto** ja **Yrityksen sijainti**.
+
+   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-kentän yhdistämismääritysruutu.":::
+
+1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
+
+1. Valitse valintaruutu, jos sinulla on *yhteyshenkilöprofiileja*, jotka haluat rikastaa. Käyttäjäryhmän merkitykselliset tiedot yhdistävät pakolliset kentät automaattisesti.
+
+   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Leadspace-yhteyshenkilötietueen rikastaminen.":::
+ 
+1. Anna rikastusta varten nimi ja valitse vaihtoehtojen tarkistamisen jälkeen **Tallenna rikastus**.
+
+
+## <a name="configure-the-connection-for-leadspace"></a>Leadspace-yhteyden määrittäminen 
+
+Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse rikastusta määritettäessä **Lisää yhteys** *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse Leadspace-ruudussa **Määritä**.
+
+1. Valitse **Aloita**. 
+
+1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
+
+1. Anna voimassa oleva Leadspace-tunnus.
+
+1. Tarkista **Tietojen yksityisyys ja vaatimustenmukaisuus** -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+
+1. Tarkista määritys valitsemalla **Tarkista**.
+
+1. Kun tarkistus on suoritettu, valitse **Tallenna**.
    
-1. Viimeistele kentän yhdistämismääritys valitsemalla **Käytä**.
-
-1. Valitse **Suorita**, jos haluat täydentää yritysprofiileja. Rikastamisen kesto määräytyy yhtenäisten asiakasprofiilien määrän mukaan.
+   :::image type="content" source="media/enrichment-Leadspace-connection.png" alt-text="Leadspace-yhteyden määrityssivu.":::
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
@@ -56,9 +84,13 @@ Lisätietoja on kohdassa [Leadspacen ohjelmointirajapinnat](https://support.lead
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
 Kun tietojen lähetys Leadspaceen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Leadspace noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

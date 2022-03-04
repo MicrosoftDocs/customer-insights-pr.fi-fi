@@ -3,18 +3,20 @@ title: Yhteydet muihin palveluihin Customer Insightsista.
 description: Tietojen jakaminen muille palveluille.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304968"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354379"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
@@ -47,6 +49,7 @@ Jotta voit lisätä yhteyksiä, tarvitset [järjestelmänvalvojan käyttöoikeud
 1. Anna **Määritä yhteys** -ruudussa tarvittavat tiedot. 
    1. Yhteyden **Näyttönimi** ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
    1. Täsmälliset kentät määräytyvät sen mukaan, mihin palveluun muodostat yhteyden. Saat tietoja liittyvästä yhteystyypistä kohdepalvelun artikkelista.
+   1. Jos [käytät omaa Key Vaultiasi](use-azure-key-vault.md) salaisien koodien tallentamiseen, aktivoi **Käytä Key Vaultia** ja valitse sitten salainen koodi luettelosta.
 
 1. luo yhteys valitsemalla **Tallenna**.
 
@@ -93,3 +96,6 @@ irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uude
 
 1. Vahvista poisto valitsemalla **Poista**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Määritä yhteydet omassa Key Vaultissa hallitsemiesi salaisten koodien avulla
+
+Jotkin yhteydet tarvitsevat salaisia koodeja kuten ohjelmointirajapinnan avaimia tai salasanoja. Jotkin yhteydet tukevat salaisia koodeja, jotka on tallennettu omaan Key Vaultiisi. Lisätietoja tuetuista yhteyksistä ja määrityksistä on kohdassa [oma Key Vaultisi käyttäjäryhmän merkityksellisiä tietoja varten](use-azure-key-vault.md).

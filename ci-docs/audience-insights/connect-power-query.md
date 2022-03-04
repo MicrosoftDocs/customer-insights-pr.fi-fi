@@ -3,18 +3,21 @@ title: Tietojen käsitteleminen Power Query -yhdistimen kautta (sisältää vide
 description: Power Query -pohjaisten tietolähteiden yhdistimet.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 727cb9a4d754b6dbd74d6ecab1b183d41f713d8f
-ms.sourcegitcommit: aadee829eff111c95eb30c0a97a68dcc87994acf
+searchScope:
+- ci-data-sources
+- ci-create-data-source
+- customerInsights
+ms.openlocfilehash: 4c12933a0684094702843be309525dd6d5d9b6f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "8092068"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355517"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhdistäminen Power Query -tietolähteeseen
 

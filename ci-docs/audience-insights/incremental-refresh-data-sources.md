@@ -1,24 +1,26 @@
 ---
-title: Power Query -pohjaisten tietolähteiden lisäävä päivitys
+title: Power Queryyn perustuvien tietolähteiden lisäävä päivitys
 description: Power Queryyn perustuvien suurten tietolähteiden uusien ja päivitettyjen tietojen päivittäminen.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-schedule
+- customerInsights
+ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900251"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353677"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Power Queryyn perustuvien tietolähteiden lisäävä päivitys
 
-Tässä artikkelissa käsitellään Power Query perustuvien tietolähteiden lisäävän päivityksen määrittämistä.
+Tässä artikkelissa käsitellään Power Queryyn perustuvien tietolähteiden lisäävän päivityksen määrittämistä.
 
 Tietolähteiden lisäävän päivityksen edut:
 
@@ -28,7 +30,7 @@ Tietolähteiden lisäävän päivityksen edut:
 
 ## <a name="configure-incremental-refresh"></a>Määritä lisäävä päivitys
 
-Käyttäjäryhmän merkityksellisissä tiedoissa on mahdollista tehdä sellaisten Power Queryn kautta tuotujen tietolähteiden lisäävä päivitys, jotka tukevat lisäävää käyttöä. Esimerkiksi Azure SQL -tietokannat, joiden päivämäärä- ja aikakentät ilmaisevat, milloin tietotietueet päivitettiin viimeksi.
+Kohdeyleisön oivallukset sallivat Power Queryn kautta tuotujen, lisäävää käsittelyä tukevien tietolähteiden lisäävän päivityksen. Esimerkiksi Azure SQL -tietokannat, joiden päivämäärä- ja aikakentät ilmaisevat, milloin tietotietueet päivitettiin viimeksi.
 
 1. [Luo uusi Power Queryyn perustuva tietolähde](connect-power-query.md).
 

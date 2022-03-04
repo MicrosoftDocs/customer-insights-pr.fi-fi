@@ -1,39 +1,33 @@
 ---
-title: Valmiiden profiiliraporttien käyttöönotto
-description: Valmiiden profiiliraporttien luominen sukupuolen, iän ja alkuperämaan tai -alueen mukaan ryhmiteltynä.
+title: Valmiiden (out-of-box, OOB) profiiliraporttien käyttöönotto
+description: Valmiiden (out-of-box, OOB) profiiliraporttien luominen sukupuolen, iän ja alkuperämaan tai -alueen mukaan ryhmiteltynä.
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 05/03/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 3aa9599fc780098a2f7f31f0210d76ed2ef27ece774dd6212b5cb2a599ad537e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4c165c4278a4870e6872d460e20cf7cb1eb8df83
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033948"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8233950"
 ---
-# <a name="out-of-box-profile-reports"></a>Valmiit profiiliraportit
+# <a name="out-of-box-oob-unified-profile-reports"></a>Valmiit (out-of-box, OOB) yhtenäiset profiiliraportit
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Raportti on yhdistelmä tietojen visualisointeja, joiden avulla voit ymmärtää käyttäjien käyttäytymistä paremmin. Kun muodostat yhteyden Customer Insightsin kohderyhmän merkityksellisiin tietoihin, vuorovaikutuksen merkitykselliset tiedot voivat näyttää raportin, joka sisältää tietoja yhdistetyistä asiakasprofiileista. Tämä raportti sisältää profiiliesi määrän ryhmiteltynä sukupuolen, iän ja maantieteellisin sijainnin perusteella.
+Yhtenäinen profiiliraportti on kokoelma tietojen visualisointeja, joka auttaa ymmärtämään, miten käyttäjät käyttäytyvät. Kun muodostat yhteyden Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuteen, sitoutumistiedot voivat näyttää OOB-raportteja, joissa on tietoja yhtenäisistä asiakasprofiileista. Tämä raportti sisältää profiiliesi määrän ryhmiteltynä sukupuolen, iän ja maantieteellisin sijainnin perusteella. Lisätietoja asiakasprofiileista on kohdassa [Asiakasprofiilit](../audience-insights/customer-profiles.md).
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
-Kohderyhmän merkityksellisten tietojen ympäristön on tallennettava tietoja asiakkaan hallitsemalle Azure Data Lake Storage -tilille.
-
-Jos käytät kohderyhmän merkitykselliset tiedot -ominaisuuden kokeiluversiota tai ympäristöä Customer Insightsin hallitsemassa Data Lake -tallennustilassa, [pyydä meiltä apua](https://go.microsoft.com/fwlink/?linkid=2145734).  
-
+Ympäristön järjestelmänvalvojan on [luotava linkki sitoutumistietojen ja käyttäjäryhmän merkityksellisten tietojen välille](integrate-audience-insights-engagement-insights.md).
 
 ## <a name="enable-the-customer-profile-report"></a>Asiakasprofiiliraportin käyttöönotto
 
-Ympäristön järjestelmänvalvojan on [muodostettava yhteys kohderyhmän merkityksellisiin tietoihin](configure-connections.md).
-
-Kun olet määrittänyt yhteyden tiedot, järjestelmänvalvoja voi asettaa raportin muiden organisaation jäsenten nähtäville. Yhteyden määrittänyt ympäristön järjestelmänvalvoja voi automaattisesti käyttää raporttia. 
+Kun linkki sitoutumistietojen ja käyttäjäryhmän merkityksellisten tietojen välille on määritetty, järjestelmänvalvoja voi myöntää käyttöoikeuden organisaation muille henkilöille raportin tarkastelua varten. Yhteyden määrittänyt ympäristön järjestelmänvalvoja voi automaattisesti käyttää raporttia. 
 
 Kun yhteys on muodostettu vasemmassa siirtymisruudussa tulee käyttöön **Profiilit**-toiminto. 
 

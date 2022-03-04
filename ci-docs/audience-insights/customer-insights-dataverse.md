@@ -1,20 +1,22 @@
 ---
 title: Customer Insights -tiedot Microsoft Dataversessä
 description: Käytä Customer Insights -entiteettejä -taulukoina Microsoft Dataversessä.
-ms.date: 10/14/2021
+ms.date: 11/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+searchScope:
+- ci-system-diagnostic
+- customerInsights
+ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645214"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355425"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
@@ -45,6 +47,7 @@ Jotkin tulosentiteetit käyttäjäryhmän merkityksellisistä tiedoista ovat kä
 - [CustomerMeasure](#customermeasure)
 - [Rikastus](#enrichment)
 - [Ennuste](#prediction)
+- [Segmentin jäsenyys](#segment-membership)
 
 
 ### <a name="customerprofile"></a>CustomerProfile
@@ -121,3 +124,16 @@ Tämä taulukko sisältää malliennusteen tulostiedot.
 | Arvot               | JSON-merkkijono | Mallin tuottama lisämääritteiden luettelo |
 | msdynci_predictionid | GUID        | Msdynci_identifierista luotu deterministinen GUID-tunnus | 
 | msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
+
+### <a name="segment-membership"></a>Segmentin jäsenyys
+
+Tämä taulukko sisältää asiakasprofiilien segmenttien jäsenyystiedot.
+
+| Column        | Type | Description                        |
+|--------------------|--------------|-----------------------------|
+| CustomerId        | String       | Asiakkaan profiilin tunnus        |
+| SegmentProvider      | String       | Sovellus, joka julkaisee segmentit. Oletus: Käyttäjäryhmien merkitykselliset tiedot         |
+| SegmentMembershipType | String       | Tämän segmentin jäsenyystietueen asiakkaan tyyppi. Tukee useita tyyppejä, kuten asiakasta, yhteyshenkilöä tai asiakkuutta. Oletus: Asiakas  |
+| Segmentit       | JSON-merkkijono  | Niiden yksilöllisten segmenttien luettelo, joihin asiakasprofiili kuuluu      |
+| msdynci_identifier  | String   | Segmentin jäsenyystietueen yksilöllinen tunnus. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| msdynci_segmentmembershipid | GUID      | Deterministinen GUID, joka on luotu kohteesta `msdynci_identifier`          |

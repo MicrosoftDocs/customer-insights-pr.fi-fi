@@ -2,21 +2,23 @@
 title: Tilauksen vaihtuvuusennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tilauksen vaihtuvuusennustemallia.
 ms.date: 11/19/2020
-ms.reviewer: digranad
-ms.service: customer-insights
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+searchScope:
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 5de57155b47b74efa4c5ef2fe63a3c87505644be
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653976"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355609"
 ---
-# <a name="subscription-churn-prediction-preview-sample-guide"></a>Tilauksen vaihtuvuusennusteen (esiversio) näyteopas
+# <a name="subscription-churn-prediction-sample-guide"></a>Tilauksen vaihtuvuusennusteen näyteopas
 
 Aiheessa käsitellään kattavasti tilauksen vaihtuvuusennuste-esimerkki käyttämällä alla olevia näytetietoja. 
 
@@ -29,9 +31,9 @@ Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimi�
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
 - Seuraavat vaiheet on suositeltavaa toteuttaa [uudessa ympäristössä](manage-environments.md).
 
-## <a name="task-1---ingest-data"></a>Tehtävä 1 – tietojen käsitteleminen
+## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
 
-Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisestä Power Query -yhdistimiä](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua. 
+Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisesta Power Query -yhdistinten avulla](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Asiakas tietojen käsitteleminen sähköisen kaupankäynnin ympäristössä
 
@@ -46,10 +48,9 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **DateOfBirth**: päivämäärä
    - **CreatedOn**: päivämäärä, aika ja aikavyöhyke
 
-   [!div class="mx-imgBorder"]
-   ![Syntymäpäivän muuttaminen päivämääräksi](media/ecommerce-dob-date.PNG "syntymäpäivän muuntaminen päivämääräksi")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
+1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommerceContacts**-arvo
 
 1. Tallenna tietolähde.
 
@@ -67,7 +68,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **loyCustomers**.
+1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
 
 1. Tallenna tietolähde.
 
@@ -90,7 +91,7 @@ Tutustu etenkin artikkeleihin, joissa on [tietoja tietojen käsittelystä](data-
    - **Is_auto_renew**: tosi, epätosi
    - **RecurringFrequencyInMonths**: kokonaisluku
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
+1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
 
 1. Tallenna tietolähde.
 
@@ -129,9 +130,9 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
 
-1. Valitse avattavassa **Ensisijainen**-luettelossa **eCommerceContacts : eCommerce** ensisijaiseksi lähteeksi ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
 
-1. Valitse avattavassa **Entiteetti 2** -luettelossa **loyCustomers : LoyaltyScheme** ja sisällytä kaikki tietueet.
+1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
 
@@ -139,16 +140,16 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 1. Lisää ensimmäinen ehto FullName-kentässä.
 
-   * eCommerceContacts: valitse **FullName** avattavassa kentässä.
-   * loyCustomers: valitse **FullName** avattavassa kentässä.
+   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
+   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
    * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
 1. Anna uuden säännön **FullName, Email**.
 
    * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entiteetin eCommerceContacts-asetukseksi avattavassa luettelossa **EMail**.
-   * Valitse entiteetin loyCustomers-asetukseksi avattavassa luettelossa **EMail**. 
+   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
+   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
    * Jätä Normalisoi-kohta tyhjäksi. 
    * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
 
@@ -169,7 +170,7 @@ Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuude
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Tehtävä 3 – tilauksen vaihtuvuusennusteen määrittäminen
 
-Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan nyt suorittaa. Artikkelissa [Tilauksen vaihtuvuusennuste (esiversio)](predict-subscription-churn.md) on tarkat ohjeet. 
+Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan nyt suorittaa. Yksityiskohtaiset ohjeet ovat [Tilauspoistuman ennuste](predict-subscription-churn.md) -artikkelissa. 
 
 1. Valitse **Analytiikka** > **Tutustu** ja valitse sitten **Asiakasvaihtuvuusmalli**.
 
@@ -230,3 +231,6 @@ Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -2,19 +2,21 @@
 title: Reaaliaikainen tietojen käsittely ja rajoitukset
 description: Yleisiä tietoja käyttäjäryhmän merkityksellisten tietojen reaaliaikaisista ominaisuuksista
 ms.date: 10/27/2020
-ms.reviewer: nikeller
-ms.service: customer-insights
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+searchScope:
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689171"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355471"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Reaaliaikainen tietojen käsittely (esiversio)
 
@@ -54,7 +56,7 @@ Reaaliaikaisen ohjelmointirajapinnan avulla voi julkaista uuden aktiviteetin lä
 
 Reaaliaikainen ohjelmointirajapinta voidaan yhdistää kahdella tavalla:
 
-- [epäsuorasti](#connect-via-the-dynamics-365-customer-insights-connector) käyttämällä [Dynamics 365 Customer Insights -liitintä](https://docs.microsoft.com/connectors/customerinsights/)
+- [epäsuorasti](#connect-via-the-dynamics-365-customer-insights-connector) käyttämällä [Dynamics 365 Customer Insights -liitintä](/connectors/customerinsights/)
 - [suoraan](#connect-directly-to-the-real-time-api) koodin kautta
 
 Seuraavat edellytykset koskevat molempia tapoja:
@@ -66,13 +68,13 @@ Seuraavat edellytykset koskevat molempia tapoja:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Yhdistä Dynamics 365 Customer Insights -liittimen kautta
 
-Reaaliaikainen ohjelmointirajapinta voi käsitellä tietoja erityisestä Power Platform -liittimestä, [Dynamics 365 Customer Insights -liittimestä](https://docs.microsoft.com/connectors/customerinsights/), ilman että sinun tarvitsee kirjoittaa ja ottaa käyttöön mitään koodia.    
-Yhdistin voi tehdä samat reaaliaikaiset toiminnot kuin ohjelmointirajapinta. Tarvitset kelvollisen käyttöoikeuden premium-liittimiin. Lisätietoja:[Power Appsin ja Power Automaten käyttöoikeuksien usein kysytyt kysymykset](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+Reaaliaikainen ohjelmointirajapinta voi käsitellä tietoja erityisestä Power Platform -liittimestä, [Dynamics 365 Customer Insights -liittimestä](/connectors/customerinsights/), ilman että sinun tarvitsee kirjoittaa ja ottaa käyttöön mitään koodia.    
+Yhdistin voi tehdä samat reaaliaikaiset toiminnot kuin ohjelmointirajapinta. Tarvitset kelvollisen käyttöoikeuden premium-liittimiin. Lisätietoja:[Power Appsin ja Power Automaten käyttöoikeuksien usein kysytyt kysymykset](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps ja/tai Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic-sovellukset](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps ja/tai Power Automate](/connectors/)
+- Azure [Logic-sovellukset](/azure/connectors/apis-list)
 
-Lisätietoja virtojen luomisesta on [Power Automate -ohjeessa](https://docs.microsoft.com/power-automate/).
+Lisätietoja virtojen luomisesta on [Power Automate -ohjeessa](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Yhteyden muodostaminen suoraan reaaliaikaiseen ohjelmointirajapintaan
 
@@ -83,6 +85,7 @@ Tietoja tästä ohjelmointirajapinnasta, kuten parametrit ja vastaukset, on **En
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Tietoja reaaliaikaisesta käytöstä telemetriatietojen avulla
 
-Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#api-usage-tab) siirtymällä kohtaan **Järjestelmänvalvoja** > **Järjestelmä** > **Ohjelmointirajapinnan käyttö**. **Toiminnot**-taulukossa on niille ohjelmointirajapinnan toimintojen riveillä, joissa käytetään reaaliaikaisia menetelmiä, on painike, jolla voi tarkastella reaaliaikaisen ohjelmointirajapinnan käyttöä. Painikkeen visualisointina on kiikarisymboli. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.
+Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#api-usage-tab). 
 
-Valitse **Ryhmittelyperuste**-valitsimen avulla tapa, jolla reaaliaikainen vuorovaikutus esitetään aikajanalla edellisten 24 tunnin ja edellisen 30 päivän välillä. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,42 +1,48 @@
 ---
 title: Customer Insightsin tietojen vieminen Autopilotiin
-description: Tietoja yhteyden määrittämisestä Autopilotiin.
-ms.date: 12/08/2020
+description: Tietoja yhteyden määrittämisestä ja viennistä Autopilotiin.
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 6d039c4afd84eaad942d214d4e6fb8ef7b1ec72a
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 7a7a67a52fcf39da8d50bd95817d25470fc90b6f
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596126"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227662"
 ---
-# <a name="connector-for-autopilot-preview"></a>Autopilot-yhdistin (esiversio)
+# <a name="export-segments-to-autopilot-preview"></a>Segmenttien vieminen Autopilotiin (esiversio)
 
 Vie yhdistettyjen asiakasprofiilien segmentit Autopilotiin ja käytä niitä Autopilotin sähköpostimarkkinoinnissa. 
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
 -   [Autopilot-tili](https://www.autopilothq.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 -   Käyttäjäryhmän merkityksellisissä tiedoissa on [määritettyjä segmenttejä](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
-## <a name="connect-to-autopilot"></a>Muodosta yhteys Autopilotiin
+## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
+- Voit viedä enintään 100 000 asiakasprofiilia Autopilotiin.
+- Autopilot-vienti on rajoitettu segmentteihin.
+- Enintään 100 000 asiakasprofiilin vieminen Autopilotiin voi kestää muutaman tunnin. 
+- Autopilotiin vietävien asiakasprofiilien määrä riippuu Autopilot-sopimuksestasi ja sen sisältämistä rajoituksista.
 
-1. Valitse **Autopilot**-kohdassa **Määritä**.
+## <a name="set-up-connection-to-autopilot"></a>Määritä yhteys Autopilotiin
 
-1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-   :::image type="content" source="media/export-autopilot.PNG" alt-text="Autopilot-yhteyden määritysruutu.":::
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Autopilot**.
 
-1. Anna **Autopilotin ohjelmointirajapinnan avain** [Autopilotin ohjelmointirajapinnan avain](https://autopilot.docs.apiary.io/#).
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Anna [Autopilotin API-avain](https://autopilot.docs.apiary.io/#).
 
 1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
 
@@ -44,26 +50,27 @@ Vie yhdistettyjen asiakasprofiilien segmentit Autopilotiin ja käytä niitä Aut
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
-1. Määritä vienti valitsemalla **Next**.
+1. Viimeistele yhteys valitsemalla **Tallenna**.
 
-## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
+## <a name="configure-an-export"></a>Viennin määrittäminen
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**.
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Autopilot-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**.
 
 1. Valitse segmentit, jotka haluat viedä. On erittäin **suositeltavaa, että asiakastietueita viedään enintään 100 000** Autopilotiin. 
 
 1. Valitse **Tallenna**.
 
-## <a name="export-the-data"></a>Tietojen vieminen
+Viennin tallentaminen ei suorita vientiä heti.
 
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
-
-## <a name="known-limitations"></a>Tunnetut rajoitukset
-
-- Voit viedä yhteensä enintään 100 000 asiakasprofiilia Autopilotiin.
-- Autopilot-vienti on rajoitettu segmentteihin.
-- 100 000 profiilin vieminen Autopilotiin voi kestää muutaman tunnin. 
-- Autopilotiin vietävien profiilien määrä määräytyy Autopilot-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

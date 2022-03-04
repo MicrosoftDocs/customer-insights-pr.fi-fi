@@ -1,22 +1,24 @@
 ---
 title: Semanttiset yhdistämismääritykset (esiversio)
 description: Yleiskatsaus semanttisista yhdistämismäärityksistä ja niiden käytöstä.
-ms.date: 09/28/2021
-ms.service: customer-insights
+ms.date: 12/01/2021
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+searchScope:
+- ci-semantic-mapping
+- customerInsights
+ms.openlocfilehash: 37696f3e82eb9b75fbf9f78363adc890891efcc3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622931"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353953"
 ---
-# <a name="semantic-mappings"></a>Semanttiset yhdistämismääritykset
+# <a name="semantic-mappings-preview"></a>Semanttiset yhdistämismääritykset (esiversio)
 
 Semanttisten yhdistämismääritysten avulla voit yhdistää ei-aktiviteettitiedot ennalta määritettyihin rakenteisiin. Nämä rakenteet auttavat käyttäjäryhmän merkityksellisiä tietoja ymmärtämään tietomääritteitäsi. Semanttiset yhdistämismääritykset ja toimitetut tiedot mahdollistivat uusia merkityksellisiä tietoja ja ominaisuuksia käyttäjäryhmän merkityksellisissä tiedoissa. Tietoja aktiviteettitietojen yhdistämisestä rakenteisiin löytyy [aktiviteettien](activities.md) ohjeista.
 
@@ -75,8 +77,7 @@ Semanttisten yhdistämismääritysten avulla voit yhdistää ei-aktiviteettitied
 
 1. Jos haluat suorittaa semanttiset yhdistämismääritykset myöhemmin, valitse semanttiset yhdistämismääritykset ja valitse **Lataa uudelleen**.
 
-> [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun työn jossakin tehtävissä on valittu **Näytä tiedot**, saat lisätietoja: käsittelyajan, viimeisimmän käsittelypäivämäärän sekä kaikki tehtävään liitetyt virheet ja varoitukset.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Aiemmin luotujen semanttisten yhdistämismääritysten hallinta
 
@@ -91,5 +92,41 @@ Kohdassa **Tiedot** > **Semanttiset yhdistämismääritykset (esiversio)** voit 
 - **Nimeä uudelleen**: Avaa dialogin, jossa voit antaa valitulle semanttiselle yhdistämismääritykselle toisen nimen. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
 - **Poista**: Avaa dialogin, joka vahvistaa valitun semanttisen yhdistämismäärityksen poistamisen. Voit myös poistaa useita semanttisia yhdistämismäärityksiä kerralla valitsemalla semanttiset yhdistämismääritykset ja poistokuvakkeen. Vahvista poisto valitsemalla **Poista**.
+
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Yhteyshenkilötason aktiviteettien luominen ContactProfile-entiteettien semanttisen yhdistämismäärityksen avulla
+
+Kun olet luonut semanttisen *ContactProfile*-entiteettien yhdistämismäärityksen, voit siepata yhteyshenkilöiden aktiviteetit. Sen avulla näet tilin aktiviteetin aikajanalla sen yhteyshenkilön, joka oli vastuussa kustakin aktiviteetista. Useimmat vaiheet noudattavat tyypillistä aktiviteettien yhdistämismääritystä.
+
+   > [!NOTE]
+   > Jotta yhteyshenkilötason aktiviteetit toimisivat, aktiviteettitietojen jokaiselle tietueelle on oltava sekä **AccountID**- että **ContactID**-määritteet.
+
+1. [*ContactProfilen* semanttisen entiteettiyhdistämisen määrittäminen](#define-a-contactprofile-semantic-entity-mapping) ja suorita semanttinen yhdistämismääritys.
+
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Tiedot** > **Aktiviteetit**.
+
+1. Luo uusi aktiviteetti valitsemalla **Lisää aktiviteetti**.
+
+1. Anna aktiviteetille nimi, valitse lähdeaktiviteettientiteetti ja valitse aktiviteettientiteetin perusavain.
+
+1. Luo **Suhteet**-vaiheessa epäsuora suhde aktiviteetin lähdetietojen ja asiakkaiden välille käyttämällä yhteyshenkilötietojasi välittävänä entiteettinä. Lisätietoja löytyy kohdasta [suorat ja epäsuorat suhdepolut](relationships.md#relationship-paths).
+   - Esimerkkinä *Ostot*-nimisen aktiviteetin suhde:
+      - **Ostojen lähdeaktiviteettitiedot** > **Yhteyshenkilötiedot** määritteessä **ContactID**
+      - **Yhteyshenkilön tiedot** > **Asiakkaan tiedot** määritteessä **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Esimerkki suhteen määrityksestä.":::
+
+1. Kun olet määrittänyt suhteet, valitse **Seuraava** ja viimeistele aktiviteettien yhdistämismääritykset. Aktiviteettien luonnin yksityiskohtaiset vaiheet ovat ohjeaiheessa [Aktiviteetin määritteleminen](activities.md).
+
+1. Suorita aktiviteettien yhdistämismääritykset.
+
+1. Yhteyshenkilötason aktiviteettisi näkyvät nyt asiakkaan aikajanalla.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Lopullinen tulos yhteyshenkilöaktiviteettien määrittämisen jälkeen":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Yhteyshenkilötason aktiviteettiaikajanan suodatus
+
+Kun olet määrittänyt yhteyshenkilötason aktiviteettien yhdistämismäärityksen ja suorittanut sen, asiakkaiden aktiviteettiaikajana päivittyy. Se sisältää yhteyshenkilöiden tunnukset tai nimet *ContactProfile*-määritysten mukaisesti aktiviteetteja varten, joissa he ovat toimineet. Voit suodattaa aktiviteetteja aikajanan yhteyshenkilöiden mukaan nähdäksesi tietyt yhteyshenkilöt, joista olet kiinnostunut. Voit myös tarkastella kaikkia aktiviteetteja, joita ei ole delegoitu tietylle yhteyshenkilölle, valitsemalla **Aktiviteetit, joita ei ole yhdistetty yhteyshenkilöön.**
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Yhteyshenkilötason aktiviteetteja varten käytettävissä olevat suodatusvaihtoehdot.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

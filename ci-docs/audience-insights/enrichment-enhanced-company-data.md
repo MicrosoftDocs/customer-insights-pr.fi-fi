@@ -1,20 +1,19 @@
 ---
 title: Yritystietojen parantaminen
 description: Rikasta ja normalisoi yritystietoja Microsoftin malleilla.
-ms.date: 11/15/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
-ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
+ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "7813914"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229399"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 
@@ -82,7 +81,17 @@ Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös a
 
 Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
 
-Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+**Rikastetut asiakkaat -esikatseluruudussa** näkyy näyte rikastetuista tiedoista. Valitse **Näytä lisää** ja valitse **Tiedot**-välilehti, jos haluat tarkastella kunkin rikastetun profiilin yksityiskohtaista näkymää.
+
+### <a name="overview-card"></a>Yleiskatsauskortti
+
+Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
+
+* **Käsitellyt ja muuttuneet yritykset**: niiden asiakasyritysprofiilien määrä, joiden rikastaminen onnistui.
+
+* **Käsitellyt mutta muuttumattomat yritykset**: Niiden asiakasyritysprofiilien määrä, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
+
+* **Yritykset, joita ei ole käsitelty eikä muutettu**: Niiden asiakasyritysprofiilien määrä, joita ei tunnistettu. Tämä tapahtuu yleensä, kun syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 

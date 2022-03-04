@@ -1,20 +1,19 @@
 ---
-title: Rikastaminen kolmannen osapuolen HERE Technologies -rikastamisella
+title: Rikastaminen kolmannen osapuolen rikastamisen HERE Technologies -ratkaisun avulla
 description: Yleisiä tietoja HERE Technologiesin kolmannen osapuolen rikastamisesta.
-ms.date: 12/10/2020
-ms.reviewer: jodahl
-ms.service: customer-insights
+ms.date: 04/09/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 258e37de9d9685d9ebc30b3c6b8d238d583431b4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 1b46e8913c6d288b93cdf32e195b5e9387916e70
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269510"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8230378"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
@@ -26,35 +25,54 @@ HERE Technologiesin rikastamisen määrittämiselle on seuraavat edellytykset:
 
 - Aktiviinen HERE Technologies -tilaus. Voit tehdä tilauksen [rekisteröitymällä täällä](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) tai ottamalla suoraan [yhteyttä HERE Technologiesiin](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you). [Lisätietoja HERE Technologiesin sijaintitietojen rikastamisesta.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- HERE Technologies -ohjelmointirajapinnan avain.
+- [HERE-yhteys](connections.md) on käytettävissä *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet ja HERE Technologies -ohjelmointirajapinnan avain.
 
-- [Järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet.
+## <a name="configure-the-enrichment"></a>Määritä rikastus
 
-## <a name="configuration"></a>Määritys
+1. Siirry kohtaan **Tiedot** > **Täydentäminen**. 
 
-1. Siirry kohtaan **Tiedot** > **Täydentäminen**.
-
-1. Valitse **Rikasta tietojani** HERE Technologies -ruudussa.
+1. Valitse HERE Technologies -ruudussa **Rikasta tietojani** ja valitse **Aloita**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies -ruutu](media/HERE-tile.png "HERE Technologies -ruutu")
+   > ![HERE Technologies -ruutu.](media/HERE-tile.png "HERE Technologies -ruutu")
 
-1. Anna aktiivinen **HERE Technologies -ohjelmointirajapinnan avain**. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu. 
+1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys**. Valitse avattavasta luettelosta **HERE Technologies**. 
 
-1. Vahvista molemmat syötteet valitsemalla **Yhdistä HERE-palveluun**.
+1. Vahvista valinta valitsemalla **Yhdistä HERE Technologiesiin**.
 
-1.  Valitse **Lisää tiedot** ja valitse sitten **Asiakastietojoukko**, jota haluat rikastaa HERE Technologies -ratkaisun sijaintitiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+1.  Valitse **Seuraava** ja valitse **Asiakastietojoukko**, jonka haluat rikastaa HERE Technologiesin sijaintitiedoilla. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
     :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
 
-1. Määritä, yhdistetäänkö kentät ensi- ja/tai toissijaiseen osoitteeseen. Voit määrittää kummankin osoitteen (kuten koti- ja työosoitteen) kentän yhdistämismäärityksen ja rikastaa profiileja molemmilla osoitteilla erikseen. Valitse **Seuraava**.
+1. Määritä, yhdistetäänkö kentät ensi- ja/tai toissijaiseen osoitteeseen. Voit määrittää kenttien yhdistämismäärityksen molemmille osoitteille että rikastaa profiileja molemmille osoitteille erikseen. Jos esimerkiksi on koti- ja yritysosoite. Valitse **Seuraava**.
 
 1. Määritä, mitä yhtenäistettyjen profiilien kenttiä käytetään hakemaan vastaavia sijaintitietoja HERE Technologies -palvelusta. **Lähiosoite 1** ja **Postinumero** ovat pakollisia kenttiä valitussa ensi- ja/tai toissijaisen osoitteessa. Vastaavuuden tarkkuutta voi parantaa lisäämällä kenttiä.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies -rikastamisen määrityssivu](media/enrichment-HERE-configuration.png "HERE Technologies -rikastamisen määrityssivu")
+   > ![HERE Technologies -rikastamisen määrityssivu.](media/enrichment-HERE-configuration.png "HERE Technologies -rikastamisen määrityssivu")
 
-1. Viimeistele kentän yhdistämismääritys valitsemalla **Käytä**.
+1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
+
+1. Kirjoita rikastuksen nimi. 
+
+1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
+
+## <a name="configure-the-connection-for-here-technologies"></a>HERE Technologies -yhteyden määrittäminen 
+
+Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse rikastusta määritettäessä **Lisää yhteys** *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse HERE Technologies -ruudussa **Määritä**.
+
+1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
+
+1. Anna kelvollinen HERE Technologiesin API-avain.
+
+1. Tarkista **Tietojen yksityisyys ja vaatimustenmukaisuus** -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+
+1. Tarkista määritys valitsemalla **Tarkista**.
+
+1. Kun tarkistus on suoritettu, valitse **Tallenna**.
+
+   > [!div class="mx-imgBorder"]
+   > ![HERE Technologies -yhteyden määrityssivu.](media/enrichment-HERE-connection.png "HERE Technologies -yhteyden määrityssivu")
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
@@ -66,7 +84,7 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit antaa asiakkaille mukautettuja kokemuksia luomalla [segmenttejä](segments.md) ja [mittoja](measures.md) sekä [viemällä tietoja](export-destinations.md).
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

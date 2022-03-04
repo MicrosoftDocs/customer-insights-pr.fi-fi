@@ -1,24 +1,28 @@
 ---
 title: Osittaisten tietojen viimeisteleminen ennusteiden avulla
 description: Puutteellisten asiakastietojen täydentäminen ennusteiden avulla.
-ms.date: 05/05/2020
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645030"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353999"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Osittaisten tietojen viimeisteleminen ennusteiden avulla
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Osittaisten tietojen täydentäminen ennusteilla (vanhentunut)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Tämä ominaisuus **vanhentuu** **5.11.2021** alkaen. Nykyiset toteutukset toimivat, kunnes toiminto poistetaan, mutta uusia integrointeja ei voi luoda alla olevan ohjeen mukaisesti.
 
 Ennusteiden avulla voit helposti luoda ennustettuja arvoja, jotka auttavat ymmärtämään asiakasta aiempaa paremmin. Valitsemalla **Analytiikka** > **Ennusteet**-sivulla **Omat ennusteet** näkyviin tulee ennusteet, jotka on määritetty toisaalla käyttäjäryhmän merkityksellisissä tiedoissa ja joiden avulla ennusteita voi mukauttaa entisestään.
 
@@ -60,6 +64,8 @@ Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
    > ![Esimerkki kentän arvojen ja luokkien yhdistämisestä.](media/intelligence-categorymapping.png "Esimerkki kentän arvojen ja luokkien yhdistämisestä")
 
 8. Valitse **Valmis**. Ennustetta aletaan käsitellä. Käsittelyn kesto riippuu tietojen koosta ja monimuotoisuudesta. Tulokset ovat käytettävissä uudessa entiteetissä luodun ennusteen **tulosentiteetin nimen** perusteella.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Luo ennuste segmentin luomisen aikana
 
@@ -110,7 +116,7 @@ Tämän prosessin osana valitaan tietty määrite, johon segmentti perustuu. Se 
 
 ## <a name="edit-a-prediction"></a>Muokkaa ennustetta
 
-Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderissa ja tehostaa mallin toimintaa.  
+Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderilla parantaaksesi mallin tehokkuutta.  
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Analytiikka** > **Ennusteet** > **Omat ennusteet**.
 
@@ -120,12 +126,12 @@ Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderissa ja tehostaa mall
 
 4. Valitse **Mukauta AI Builderissa**.
 
-5. Päivitä malli AI Builderissa. [Lisätietoja mallien hallinnasta AI builderissa](/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Päivitä mallisi AI Builderissa. [Lisätietoja mallien hallinnasta AI builderissa](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Ennusteen seuraava suoritus käyttää luomaasi päivitettyä mallia.
 
 > [!NOTE]
-> AI Builderissa luodut uudet mallit eivät näy käyttäjäryhmän merkityksellisissä tiedoissa, ellei mallia luotu edellä mainituista kokemuksista.
+> Uudet AI Builderissa luodut mallit eivät näy kohdeyleisön merkityksellisissä tiedoissa, ellei mallia ole luotu edellä mainituissa käyttökokemuksissa.
 
 ## <a name="remove-a-prediction"></a>Poista ennuste
 

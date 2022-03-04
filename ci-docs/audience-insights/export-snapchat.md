@@ -1,22 +1,21 @@
 ---
 title: Customer Insights -tietojen vieminen Snapchatiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Snapchatiin.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d3dae7f0fef1fc3792c90c8ac0d3b037f5c0923d
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 7eac3307b3f82b6c5ebc3d66d6563ae50696ed65
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760515"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227244"
 ---
-# <a name="export-segment-lists-to-snapchat-preview"></a>Segmenttiluetteloiden vieminen Snapchatiin (esiversio)
+# <a name="export-segments-to-snapchat-preview"></a>Segmenttien vieminen Snapchatiin (esiversio)
 
 Vie yhtenäisten asiakasprofiilien segmentit Snapchatiin ja käytä niitä mainontaan. 
 
@@ -29,7 +28,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Snapchatiin ja käytä niitä maino
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Vieminen Snapchatiin rajoittuu segmentteihin.
-- Miljoonan profiilin vienti Snapchatiin saattaa kestää noin 15 minuuttia. 
+- Enintään yhden miljoonan asiakasprofiilin vieminen Snapchatiin voi kestää 15 minuuttia. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Määritä yhteys Snapchatiin
 
@@ -63,7 +62,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Anna [**Snapchat-kohdeyleisön tunnus**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Snapchatiin pitää viedä segmenttejä.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Snapchatiin pitää viedä segmenttejä.
 
 1. Valitse segmentit, jotka haluat viedä. 
 

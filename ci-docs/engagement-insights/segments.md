@@ -4,17 +4,16 @@ description: Segmenttien luominen, muokkaaminen ja poistaminen sekä se, missä 
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 06/09/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: cedcd58373428dd35ba29ce8fdd00007257f8fa59b0d25bc584b4e832df13604
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e99c04e6c92d8ca16c2d69957e0f5b7dba0ac757
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036144"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225372"
 ---
 # <a name="view-and-create-segments"></a>Segmenttien tarkasteleminen ja luominen
 
@@ -44,22 +43,27 @@ Tässä osassa kuvataan, miten *tyhjä segmentti* luodaan alusta alkaen.
 
 1. Valitse **Uusi segmentti**.
 
-1. Valitse **resurssikirjastossa** määrite, jonka mukaan haluat suodattaa. Tällä hetkellä voit luoda vain dimensioihin perustuvia segmenttejä.
+1. Valitse **Resurssikirjastossa** merkki (+), jonka vieressä on määrite, jonka mukaan haluat suodattaa. Tällä hetkellä voit luoda vain dimensioihin perustuvia segmenttejä.
 
-1. Valitse operaattori ja arvo valitulle määritteelle. Seuraavia tapahtumia tuetaan.
+   :::image type="content" source="media/create-new-segment.png" alt-text="Luo uusi segmentti.":::
+
+1. Valitse **Sääntö** -osassa operaattori ja arvo valitulle määritteelle. Seuraavia tapahtumia tuetaan.
+
+   :::image type="content" source="media/choose-operator-segment.png" alt-text="Valitse operaattori uudelle segmentille.":::
+
    - **on**: edellyttää täsmällistä vastaavuusarvoa. Käyttää **yhtä kuin** yhdelle arvolle tai **joku näistä** useiden arvojen sisällyttämiseksi.
    - **ei ole**: edellyttää täsmällistä vastaavuusarvoa arvojen poissulkemiseksi. Käyttää **yhtä kuin** yhdelle arvolle tai **joku näistä** useiden arvojen sisällyttämiseksi.
    - **alkaa**: merkkijono, jolla vastaavat arvot alkavat.
    - **päättyy**: merkkijono, jolla vastaavat arvot päättyvät.
    - **sisältää**: vastaavien arvojen sisältämä merkkijono.
 
-1. Jos haluat lisätä ryhmään ehtoja, voit käyttää seuraavaa kahta loogista operaattoria. Projisoidut määritteet otetaan huomioon, kun joukko-operaattoreita käytetään.
+1. Jos haluat lisätä ehtoja ryhmään, voit käyttää loogisia operaattoreita. Projisoidut määritteet otetaan huomioon, kun joukko-operaattoreita käytetään.
    - **JA**-operaattori: Molempien ehtojen on täytyttävä segmentointiprosessin aikana. Tämä vaihtoehto on hyödyllinen, kun määrität ehtoja eri entiteeteille.
    - **TAI**-operaattori: Jommankumman ehdoista on täytyttävä segmentointiprosessin aikana. Tämä vaihtoehto on hyödyllinen, kun määrität useita ehtoja samalle entiteetille.
 
 1. Valitse **Tallenna** ja nimeä segmentti. 
 
-Segmentti näkyy Segmentit-sivulla, ja voit käyttää sitä työtilan kaikissa raporteissa ja suppiloissa.
+Segmentti näkyy **Segmentit**-sivulla, ja voit käyttää sitä työtilan kaikissa raporteissa ja suppiloissa.
 
 ## <a name="use-a-segment-in-a-report-or-funnel"></a>Segmentin käyttö raportissa tai suppilossa
 
@@ -67,7 +71,7 @@ Voit suodattaa segmenttejä raportissa tai suppilossa segmentin ehtojen mukaan. 
 
 :::image type="content" source="media/segment-reports-filter.png" alt-text="Sivunäkymien raportti, jossa on laajennettu avattava luettelo käytettävien segmenttien valitsemista varten.":::
 
-Jos haluat ottaa segmentin käyttöön, avaa raportti tai suppilo. Valitse **Lisää ehto** ja valitse sitten **Suodata segmentin mukaan**. Valitse segmentti luettelosta, jota haluat käyttää. Segmentti kohdistetaan raporttiin. Jos kaavio ei tue segmenttiä, siinä näkyy virhe.
+Jos haluat ottaa segmentin käyttöön, avaa raportti tai suppilo. Valitse **+ Lisää ehto** ja valitse sitten **Suodata segmentin mukaan**. Valitse segmentti luettelosta, jota haluat käyttää. Segmentti kohdistetaan raporttiin. Jos kaavio ei tue segmenttiä, siinä näkyy virhe. Saat lisätietoja ohjeartikkelista [Suppiloraporttien luominen ja hallinta](funnel-reports.md).
  
 Voit käyttää raportissa tai suppilossa *enintään kolmea segmenttiä*.
 
@@ -91,5 +95,7 @@ Voit käyttää raportissa tai suppilossa *enintään kolmea segmenttiä*.
 1. Valitse segmenttiluettelosta **Lisää [...]**. 
 1. Valitse avattavasta luettelosta **Poista**.
 1. Valitse **Poista** vahvistaaksesi.
+
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -3,18 +3,17 @@ title: Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan | Microsoft Docs
 description: Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen ominaisuuden rekisteröidyn pyyntöön vastaaminen.
 ms.date: 08/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: e095eb4f8e194f314d7d6baf6fa6a7a319319d2a
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483660"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350265"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan
 
@@ -79,71 +78,78 @@ Vuokraajan järjestelmänvalvoja voi viedä tiedot seuraavasti:
 2. Kuittaa pyydetyn käyttäjän tietojen vientivahvistus.
 3. Saat viedyt tiedot vuokraajan järjestelmänvalvojan sähköpostiosoitteen kautta.
 
-## <a name="engagement-insights"></a>Seurannan merkitykselliset tiedot
+## <a name="consent-management-preview"></a>Hyväksynnän hallinta (esiversio)
 
-### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Käyttäjän tunnistetietoja sisältävien tapahtumatietojen poistaminen ja vieminen
+Hyväksynnän hallinnan ominaisuus ei kerää käyttäjätietoja suoraan. Se tuo ja käsittelee vain muiden sovellusten käyttäjien toimittamat tiedot.
 
-Seuraavissa osissa kuvataan, miten henkilötietoja mahdollisesti sisältävät tapahtumatiedot poistetaan ja viedään.
+Jos haluat poistaa tiettyjä käyttäjiä koskevat hyväksyntätiedot, poista ne tietolähteistä, joiden tiedot on siirretty hyväksynnän hallintaominaisuuteen. Kun tietolähde on päivitetty, myös poistetut tiedot poistetaan hyväksyntäkeskuksesta. Hyväksyntäentiteettiä käyttävät sovellukset poistavat myös tiedot, jotka on poistettu lähteestä [päivityksen](audience-insights/system.md#refresh-processes) jälkeen. Tietolähteet kannattaa päivittää nopeasti sen jälkeen, kun on vastattu rekisteröidyn henkilön pyyntöön, jotta käyttäjän tiedot voidaan poistaa muista prosesseista ja sovelluksista.
 
-Tietojen poistaminen tai vieminen:
 
-1. Merkitse tapahtumaominaisuudet, jotka sisältävät henkilötietoja sisältäviä tietoja.
-2. Poista tai vie tiettyihin arvoihin (kuten tiettyyn käyttäjätunnukseen) liittyviä tietoja.
+<!-- ## Engagement insights (preview)
 
-#### <a name="tag-and-update-event-properties"></a>Tapahtumaominaisuuksien merkitseminen tunnisteilla ja päivittäminen
+### Deleting and exporting event data containing end user identifiable information
 
-Henkilötiedot merkitään tunnisteilla tapahtumaominaisuuden tasolla. Merkitse ensin poistettavaksi tai vietäväksi harkitut ominaisuudet tunnisteella.
+The following sections describe how to delete and export event data that might contain personal data.
 
-Jos haluat merkitä tapahtumaominaisuuden sisältävän henkilötietoja, toimi seuraavasti:
+To delete or export data:
 
-1. Avaa tapahtuman sisältävä työtila.
+1. Tag event properties that contain data with personal information.
+2. Delete or export data associated with specific values (for example: a specified user ID).
 
-1. Avaa valitun työtilan tapahtumaluettelo siirtymällä kohtaan **Tiedot** > **Tapahtumat**.
+#### Tag and update event properties
+
+Personal data is tagged on an event property level. First, tag the properties being considered for deletion or export.
+
+To tag an event property as containing personal information, follow these steps:
+
+1. Open the workspace containing the event.
+
+1. Go to **Data** > **Events** to see the list of events in the selected workspace.
   
-1. Valitse tapahtuma, jonka haluat merkitä tunnisteella.
+1. Select the event you want to tag.
 
-1. Avaa valitun tapahtuman kaikki ominaisuudet sisältävä ruutu valitsemalla **Muokkaa ominaisuuksia**.
+1. Select **Edit properties** to open the pane listing all properties of the selected event.
      
-1. Valitse **...** ja valitse sitten **Muokkaa**, jotta pääset **Päivitä ominaisuus** -valintaikkunaan.
+1. Select **...** and then choose **Edit** to reach the **Update property** dialog.
 
-   ![Muokkaa tapahtumaa.](engagement-insights/media/edit-event.png "Muokkaa tapahtumaa")
+   ![Edit event.](engagement-insights/media/edit-event.png "Edit event")
 
-1. Valitse **Päivitä ominaisuus** -ikkunassa oikeasta yläkulmasta **...** ja valitse sitten **Sisältää EUII-tietoja** -ruutu. Tallenna muutokset valitsemalla **Päivitä**.
+1. In the **Update Property** window, choose **...** in the upper right corner, and then choose the **Contains EUII** box. Choose **Update** to save your changes.
 
-   ![Tallenna tekemäsi muutokset.](engagement-insights/media/update-property.png "Tallenna tekemäsi muutokset")
+   ![Save your changes.](engagement-insights/media/update-property.png "Save your changes")
 
    > [!NOTE]
-   > Aina kun tapahtumarakenne muuttuu tai uusi tapahtuma luodaan, on suositeltavaa arvioida asiaan liittyvät tapahtumaominaisuudet ja merkitset ne tarvittaessa henkilötiedoiksi tai poistat kyseisen merkinnän.
+   > Every time the event schema changes or you create a new event, it's recommended that you evaluate the associated event properties and tag or untag them as containing personal data, if necessary.
 
-#### <a name="delete-or-export-tagged-event-data"></a>Tunnisteilla merkittyjen tapahtumatietojen poistaminen tai vieminen
+#### Delete or export tagged event data
 
-Jos kaikki tapahtumaominaisuudet on merkitty edellisessä vaiheessa kuvatulla tavalla, ympäristön järjestelmänvalvoja voi tehdä merkittyjen tapahtumatietojen poistopyynnön.
+If all event properties have been tagged appropriately as described in the previous step, an environment admin can issue a deletion request against the tagged event data.
 
-EUII-tietojen poisto- tai vientipyyntöjen hallinta
+To manage EUII deletion or export requests
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Ympäristö** > **Asetukset**.
+1. Go to **Admin** > **Environment** > **Settings**.
 
-1. Valitse **Hallitse loppukäyttäjän yksilöiviä tietoja (EUII)** -osassa **Hallitse EUII-tietoja**.
+1. In the **Manage end user identifiable information (EUII)** section, select **Manage EUII**.
 
-##### <a name="deletion"></a>Poistaminen
+##### Deletion
 
-Poistoa varten voit lisätä pilkuilla erotettujen käyttäjätunnusten luettelon **Poista käyttäjän yksilöivät tiedot (EUII)** -osaan. Näitä tunnuksia verrataan tämän jälkeen kulloisenkin ympäristön kaikkien projektien kaikkiin merkittyihin tapahtumaominaisuuksiin tarkkojen merkkijonovastaavuuksien perusteella. 
+For deletion, you can enter a list of comma-separated user IDs in the **Delete end user identifiable information (EUII)** section. These IDs will then be compared with all tagged event properties of all projects in the current environment via exact string matching. 
 
-Jos ominaisuuden arvo vastaa jotakin annetuista tunnuksista, siihen liittyvä tapahtuma poistetaan pysyvästi. Koska tätä toimintoa ei voi kumota, poisto on vahvistettava, kun **Poista** on valittu.
+If a property value matches one of the provided IDs, the associated event will be permanently deleted. Due to the irreversibility of this action, you must confirm the deletion after selecting **Delete**.
 
-##### <a name="export"></a>Export
+##### Export
 
-Vientiprosessi on samanlainen kuin poistoprosessi tapahtumaominaisuuksien **Vie käyttäjän yksilöiviä tietoja (EUII)** -osassa tapahtuvaan arvojen määrittämiseen. Lisäksi tarvitaan **Azuren blob-tallennustilan URL-osoite** vientikohteen määrittämistä varten. Azure blob-tallennustilan URL-osoitteen on sisällettävä [Jaetun käyttöoikeuden allekirjoitus (SAS)](/azure/storage/common/storage-sas-overview).
+The export process is identical to the deletion process when it comes to defining event property values in the **Export end user identifiable information (EUII)** section. Additionally, you'll need to provide an **Azure blob storage URL** to specify the export destination. The Azure Blob URL must include a [Shared Access Signature (SAS)](/azure/storage/common/storage-sas-overview).
 
-Kun olet valinnut **Vie**, kaikki kulloisenkin ryhmän tapahtumat, jotka sisältävät vastaavia merkittyjä ominaisuuksia, viedään CSV-muodossa vientikohteeseen.
+After selecting **Export**, all events of the current team that contain matching tagged properties will be exported in CSV format to the export destination.
 
-### <a name="good-practices"></a>Hyvät käytännöt
+### Good practices
 
-* Yritä välttää henkilötietoja sisältävien tapahtumien lähettämistä.
-* Jos sinun on lähetettävä EUII-tietoja sisältäviä tapahtumia, rajoita EUII-tietoja sisältävien tapahtumien ja tapahtumaominaisuuksien määrää. Ihanteellista on niiden määrän rajoittaminen yhteen.
-* Varmista, että lähetettyjä henkilötietoja voi käyttää mahdollisimman harva henkilö.
-* Jos tapahtuma sisältää henkilötietoja, varmista, että määrität yhdelle ominaisuudelle yksilöivän tunnisteen, jonka voi helposti yhdistää tiettyyn käyttäjään (esimerkiksi käyttäjätunnuksen). Näin tiedot on helpompi erottaa toisistaan ja viedä tai poistaa oikeat tiedot.
-* Merkitse kutakin tapahtumaa kohden vain yksi ominaisuus henkilötietoja sisältäväksi. Ihanteellisesti sellainen tapahtuma, joka sisältää yksilöivän tunnisteen.
-* Älä merkitse yksityiskohtaisia arvoja (kuten koko pyynnön tekstiä) sisältäviä ominaisuuksia. Vuorovaikutuksen merkitykselliset tiedot -ominaisuudessa käytetään tarkkoja merkkijonovastaavuuksia poistettavien tai vietävien tapahtumien määrittämisessä.
+* Try to avoid sending any events that contain personal data.
+* If you need to send events containing EUII data, limit the number of events and event properties that contain EUII data. Ideally, limit yourself to one such event.
+* Make sure that as few people as possible have access to the sent personal data.
+* For events containing personal data, make sure that you set one property to emit a unique identifier that can easily be linked to a specific user (for example, a user ID). This makes it easier to segregate data and to export or delete the right data.
+* Only tag one property per event as containing personal data. Ideally one that only contains a unique identifier.
+* Do not tag properties containing verbose values (for example, an entire request body). Engagement insights capability uses exact string matching when deciding which events to delete or export. -->
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

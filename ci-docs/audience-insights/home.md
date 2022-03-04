@@ -1,36 +1,46 @@
 ---
 title: Käyttäjäryhmän merkityksellisten tietojen aloitussivu
 description: Sovellukseen tutustumisen aloittaminen aloitussivulta.
-ms.date: 07/22/2021
+ms.date: 10/19/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 4072c724213486751ae96d38549fbcb6397b32c4
-ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
+searchScope:
+- ci-home
+- customerInsights
+ms.openlocfilehash: 7915a9c447b6c957ef4078380f578c1fb0a2ecb8
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/22/2021
-ms.locfileid: "6650360"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354732"
 ---
-# <a name="explore-the-home-page"></a>Aloitussivuun tutustuminen
+# <a name="explore-audience-insights"></a>Tutustu käyttäjäryhmän merkityksellisiin tietoihin
 
 Voit [käyttää käyttäjäryhmän tietoja Dynamics 365 Customer Insightsssa](https://home.ci.ai.dynamics.com/) seuraavassa URL-osoitteessa: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+
 **Aloitussivulla** on segmenttien, mittareiden ja rikastuksen tietojen (jos ne on määritetty) yleiskatsaus sen jälkeen, kun [vastaavuusmääritys](map-entities.md)-, [vastaavuus](match-entities.md)- ja [yhdistäminen](merge-entities.md)-vaiheet on suoritettu.
 
-:::image type="content" source="media/home-page-insights.png" alt-text="Näyttökuva Aloitus-näytöstä, jossa näkyvät näytetiedot.":::
+:::image type="content" source="media/home-page.png" alt-text="Näyttökuva Aloitus-näytöstä, jossa näkyvät näytetiedot.":::
 
-**Viimeaikaiset segmentit** -kohdassa esitetään asiakasryhmiä määrittämiesi demografia-, käyttäytymis- tai tapahtumamääritteiden perusteella. [Segmenttien luominen](segments.md) auttaa asiakaskannan ryhmittelemisessä ja liiketoiminnan aktiviteettien kohdentamisessa.
+1 - Customer Insightsin ominaisuuksien vaihtelu 
 
-**Viimeaikaiset mittarit** -kohdassa on ruudut, joissa on määritetyt [tunnusluvut (KPI-luvut)](measures.md). Esimerkiksi keskimääräinen asiakasvaihtuvuus tai asiakkaan keskimääräinen kulutus verkossa.
+2 - Eri alueiden välillä siirtyminen vasemmassa ruudussa ja ensisijaisen kohdekäyttäjäryhmän valitseminen
 
-**Viimeaikaiset rikastukset** -osa sisältää tulokset viime aikoina suoritetuista rikastamisprosesseista. [Rikastukset](enrichment-hub.md) lisäävät tietoja asiakaskunnasta. Esimerkiksi antamalla tietoja asiakkaiden kiinnostuksen kohteista ja suosikkibrändeistä.
+3 - Käsiteltävän ympäristön löytäminen ja ympäristöjen hallinta järjestelmänvalvojana
 
-## <a name="next-step"></a>Seuraava vaihe
+4 - Customer Insightsin henkilökohtaisten asetusten määrittäminen
 
-Jos haluat nähdä omat tärkeät tiedot aloitussivulla, sinun täytyy ensin [lisätä tietolähteitä](data-sources.md) ja [yhtenäistää](data-unification.md) tiedot, jotta voit muodostaa asiakasprofiileja.
+Aloitussivulla voi nyt tarkastella seuraavia osia:
+
+- **Viimeaikaiset segmentit** -osassa näkyy ryhmä asiakkaita määritettyjen demografia-, toiminta- tai tapahtumamääritteiden perusteella. [Segmenttien luominen](segments.md) auttaa asiakaskannan ryhmittelemisessä ja liiketoiminnan aktiviteettien kohdentamisessa.
+
+- **Viimeaikaiset liiketoimintamittarit** -osassa on ruutuja, joissa on määritetyt [tunnusluvut](measures.md). Esimerkiksi keskimääräinen asiakasvaihtuvuus tai asiakkaan keskimääräinen kulutus verkossa.
+
+- **Viimeaikaiset rikastukset** sisältää luettelon äskettäin suoritetuista rikastamisajoista. [Rikastukset](enrichment-hub.md) lisäävät tietoja asiakaskunnasta. Esimerkiksi antamalla tietoja asiakkaiden kiinnostuksen kohteista ja suosikkibrändeistä.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

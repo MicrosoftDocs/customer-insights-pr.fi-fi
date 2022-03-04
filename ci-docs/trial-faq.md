@@ -3,18 +3,17 @@ title: Kokeiluversion usein kysytyt kysymykset - Dynamics 365 Customer Insights
 description: Ratkaisuja Customer Insights -kokeiluversion määrittämiseen ja hallintaan liittyviin yleisiin kysymyksiin. Tietoja ympäristö- ja sovelluskohtaisten ongelmien ratkaisemisesta.
 author: m-hartmann
 ms.author: mhart
-ms.date: 09/30/2021
+ms.date: 02/10/2022
 ms.topic: get-started
-ms.service: customer-insights
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2837ae13b4150310193a2d09d59aed66b4a69c69
-ms.sourcegitcommit: e6020c178a61beb0ee31a031c11ded914d10d995
+ms.openlocfilehash: 9badd8370358b9f5745ba6347e8db42e89c5f3d3
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 10/13/2021
-ms.locfileid: "7642864"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229491"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Dynamics 365 Customer Insights -kokeiluversion usein kysytyt kysymykset
 
@@ -63,7 +62,7 @@ Voit laajentaa kokeiluversiota sovelluksessa suoraan. Kokeiluversion käyttöä 
 
 Yleensä suosittelemme, että aloitat alusta omilla tiedoillasi päivittäessäsi Customer Insightsin maksulliseen versioon. 
 
-Vaihtoehtoisesti jos käytät vain käyttäjäryhmän merkityksellisiä tietoja, voit kopioida tietosi kokeiluympäristöstä, jos ostat Customer Insightsin. Sinun on oltava Customer Insights -kokeiluversion järjestelmänvalvoja ja Microsoft 365 -vuokraajan yleinen järjestelmänvalvoja tai organisaatiosi Dynamics 365:n järjestelmänvalvoja, jotta voit siirtää asetukset kokeiluympäristöstä maksulliseen ympäristöön. 
+Vaihtoehtoisesti jos käytät vain käyttäjäryhmän merkityksellisiä tietoja, voit kopioida tietosi kokeiluympäristöstä, jos ostat Customer Insightsin. Sinun täytyy olla Customer Insights -kokeiluversion järjestelmänvalvoja ja Microsoft 365 -vuokraajan globaali järjestelmänvalvoja tai organisaatiosi Dynamics 365 -järjestelmänvalvoja , jotta voit siirtää asetukset kokeiluympäristöstä maksulliseen ympäristöön. 
 
 Kun olet kirjautunut maksullisen Customer Insights -esiintymääsi ensimmäistä kertaa, sinua pyydetään luomaan uusi ympäristö. Tässä prosessissa voit kopioida konfiguraation aiemmin luodusta ympäristöstä ja siirtää suurimman osan asetuksista. Jos sinulla on edellä mainitut käyttöoikeudet, kokeiluympäristö näkyy tässä luettelossa. Lisätietoja on kohdassa [Ympäristön määritysten kopioiminen](audience-insights/manage-environments.md#copy-the-environment-configuration).
 
@@ -82,8 +81,9 @@ Kun olet rekisteröitynyt kokeiluversion käyttäjäksi, siirryt sovelluksen pä
 
 Useimmat Customer Insights -ominaisuudet ovat käytettävissä kokeilun aikana.
 
-Seuraava ominaisuus ei ole käytössä: 
+Seuraavat ominaisuudet **eivät ole käytössä**: 
 - Et voi luoda uusia ympäristöjä, jotka käyttävät omaa Azure Data Lake -tallennustiliäsi.
+- Nykyistä kokeiluympäristöä ei voi poistaa. 
 
 ### <a name="how-long-does-the-trial-last"></a>Miten kauan kokeiluversio kestää?
 

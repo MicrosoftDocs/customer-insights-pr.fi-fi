@@ -3,18 +3,17 @@ title: Asiakkaan elinkaariarvoennuste esimerkkioppaassa
 description: Tämän esimerkkioppaan avulla voit kokeilla asiakkaan ennustearvoa.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306345"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354827"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Asiakkaan elinkaariarvoennuste (CLV) esimerkkioppaassa
 
@@ -22,7 +21,7 @@ Tässä oppaassa kerrotaan esimerkkidatan avulla asiakkaan elinkaariarvon (CLV) 
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet. He myyvät tuotteita Contoso Coffee-verkkosivustonsa kautta. Yritys haluaa ymmärtää arvon (tuoton), jonka asiakkaat voivat luoda seuraavien 12 kuukauden aikana. Tietäen asiakkaiden odotetun arvon seuraavien 12 kuukauden aikana auttavat heitä ohjaamaan markkinointia suuriarvoisiin asiakkaisiin.
+Contoso on yritys, joka tuottaa laadukkaita kahveja ja kahvikoneita. He myyvät tuotteita Contoso Coffeen verkkosivuston kautta. Yritys haluaa ymmärtää arvon (tuoton), jonka asiakkaat voivat luoda seuraavien 12 kuukauden aikana. Tietäen asiakkaiden odotetun arvon seuraavien 12 kuukauden aikana auttavat heitä ohjaamaan markkinointia suuriarvoisiin asiakkaisiin.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -31,7 +30,7 @@ Contoso on yritys, joka tuottaa laadukkaat kahvi- ja kahvikoneet. He myyvät tuo
 
 ## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
 
-Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähteiden käsittelystä Power Query -yhdistimien avulla](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua.
+Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisesta Power Query -yhdistinten avulla](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Asiakas tietojen käsitteleminen sähköisen kaupankäynnin ympäristössä
 
@@ -164,7 +163,7 @@ Tietojen purkamisen jälkeen aloitetaan nyt tietojen yhdistäminen ja luodaan yh
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Tehtävä 3 ‑ Määritä asiakkaan elinkaariarvon ennuste
 
-Kun yhtenäiset asiakasprofiilit ovat käytössä, voidaan nyt suorittaa asiakkaan elinkaariarvon ennuste. Yksityiskohtaiset ohjeet ovat kohdassa [Asiakkaan elinkaariarvo ennuste (esiversio) ](predict-customer-lifetime-value.md).
+Kun yhtenäiset asiakasprofiilit ovat käytössä, voidaan nyt suorittaa asiakkaan elinkaariarvon ennuste. Yksityiskohtaiset ohjeet ovat ohjeaiheessa [Asiakkaan elinkaariarvon ennuste](predict-customer-lifetime-value.md).
 
 1. Siirry kohtaan **Älykäs toiminto**  > **Ennusteet** ja valitse **Asiakkaan elinkaariarvomalli**.
 

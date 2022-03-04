@@ -1,37 +1,44 @@
 ---
 title: Rikasta asiakasprofiileja Microsoftin tietojen avulla
-description: Microsoftin omistamista tiedoista voit rikastaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla.
-ms.date: 06/14/2021
+description: Käytä Microsoftin omistusoikeudellisia tietoja asiakastietojen rikastamisessa merkkimieltymyksillä ja osuudella kirjoituksista.
+ms.date: 11/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-enrichments
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: 77972475c9a448186cee3b1b62eeda7b1996edfc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305152"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355315"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Asiakasprofiilien täydentäminen tuotemerkillä ja kiinnostuksen kohteilla (esiversio)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Asiakasprofiilien rikastaminen merkkimieltymyksillä ja osuudella kirjoituksista (esiversio)
 
-Microsoftin omistamista tiedoista voit rikastaa asiakastietoja tuotemerkkien ja kiinnostuksen kohteiden tiedoilla. Nämä affiniteetit perustuvat sellaisten henkilöiden tietoihin, joilla on samanlaiset demografiatiedot kuin asiakkailla. Nämä tiedot auttavat ymmärtämään ja segmentoimaan asiakkaita paremmin sen perusteella, mikä on heidän affiniteettinsa tiettyjen brändien ja kiinnostuksenkohteiden osalta.
+Käytä Microsoftin omistusoikeudellisia tietoja asiakastietojen rikastamisessa tuotemerkkimieltymyksillä, kiinnostuksen kohteilla ja osuudella kirjoituksista. Nämä mieltymykset ja osuus kirjoituksista perustuvat niiden henkilöiden tietoihin, jotka edustavat samanlaista väestöä kuin asiakkaasi. Näiden tietojen avulla saat lisätietoja asiakkaista ja voit segmentoida heidät mieltymysten tai kirjoitusten osuuksien perusteella tiettyihin tuotemerkkeihin ja kiinnostuksen kohteisiin.
 
 Valitse käyttäjäryhmän merkityksillisissä tiedoissa **Tiedot** > **Rikastaminen**, jos haluat [määrittää ja tarkastella rikastuksia](enrichment-hub.md).
 
-Jos haluat määrittää tuotemerkin affiniteettien täydentämisen, siirry **Tutustu**-välilehteen ja valitse **Täydennä omat tiedot** **Tuotemerkit**-ruudussa.
+Jos haluat määrittää tuotemerkkimieltymysten ja kirjoitusten osuuksien rikastuksen, siirry **Etsi**-välilehteen ja valitse **Rikasta tiedot** -kohta **Tuotemerkit**-ruudussa.
 
-Jos haluat määrittää kiinnostuksen kohteen affiniteettien täydentämisen, siirry **Tutustu**-välilehteen ja valitse **Täydennä omat tiedot** **Kiinnostuksen kohteet** -ruudussa.
+Jos haluat määrittää kiinnostuksen kohteiden ja kirjoitusten osuuksien rikastuksen, siirry **Etsi**-välilehteen ja valitse **Rikasta tiedot** -kohta **Kiinnostuksen kohteet**-ruudussa.
 
    > [!div class="mx-imgBorder"]
-   > ![Tuotemerkit- ja Kiinnostuksen kohteet -ruudut](media/BrandsInterest-tile-Hub.png "Tuotemerkit- ja Kiinnostuksen kohde -ruudut")
+   > ![Tuotemerkit- ja Kiinnostuksen kohteet -ruudut.](media/BrandsInterest-tile-Hub.png "Tuotemerkit- ja Kiinnostuksen kohde -ruudut")
 
-## <a name="how-we-determine-affinities"></a>Miten määritetään affiniteetit
+## <a name="how-we-determine-affinities-and-sov"></a>Miten mieltymykset ja osuus kirjoituksista määritetään
 
-Microsoftin online-hakutietojen avulla voidaan etsiä affiniteetteja tuotemerkkejä ja kiinnostuksen kohteita varten eri demografisille segmenteille (jotka on määritetty iän, sukupuolen tai sijainnin mukaan). Tuotemerkin tai kiinnostuksen kohteiden online-hakujen määrä määrittää, kuinka paljon demografisessa segmentissä on verrattuna muihin segmentteihin kyseisen tuotemerkin tai kiinnotuksen kohteen merkitystä.
+Käytetään Microsoftin online-hakujen tietoja etsittäessä mieltymyksiä ja osuutta kirjoituksista tuotemerkeille ja kiinnostuksen kohteille eri demografissa segmenteissä (määritetään iän, sukupuolen tai sijainnin mukaan). Tuotemerkin tai kiinnostuksen kohteen online-hakujen määrä muodostaa perustan mieltymykselle tai osuudelle kirjoituksista. Kaikki kuitenkin määrittävät erilaisen näkökulman asiakkaiden ymmärtämiseen.
+
+- Mieltymys on vertailukelpoinen eri demografisissa segmenteissä. Näiden tietojen avulla voit määrittää demografiset segmentit, joilla on korkein mieltymys tiettyä tuotemerkkiä tai kiinnostuksen kohdetta kohtaan muihin segmentteihin verrattuna.
+
+- Osuus kirjoituksista o vertailukelpoinen valituissa tuotemerkeissä tai kiinnostuksen kohteissa. Voit käyttää näitä tietoja määrittäessäsi tuotemerkin tai kiinnostuksen kohteen, jolla on korkein osuus kirjoituksista tietyssä demografisessa segmentissä verrattuna muihin valitsemiisi tuotemerkkeihin tai kiinnostuksen kohteisiin.
 
 ## <a name="affinity-level-and-score"></a>Affiniteettitaso ja pistemäärä
 
@@ -48,6 +55,10 @@ Jokaisessa rikastetussa asiakasprofiilissa on kaksi toisiinsa liittyvää arvoa:
 |Matala     | 1–34        |
 
 Affiniteettia mittaavan tarkkuuden mukaan voit käyttää affiniteettitasoa tai pistemäärää. Affiniteettipisteet antavat aiempaa tarkemman hallinnan.
+
+## <a name="share-of-voice-sov"></a>Osuus kirjoituksista
+
+Osuus kirjoituksista lasketaan 100 pisteen asteikolla. Jokaisen rikastetun asiakasprofiilin kaikkien tuotemerkkien ja kiinnostuksen kohteiden kokonaisosuus kirjoituksista on yhteensä 100. Toisin kuin mieltymykset, osuus kirjoituksista on suhteellinen valittuihin tuotemerkkeihin ja kiinnostuksen kohteisiin nähden. Esimerkiksi sanan 'Microsoft' arvot osuudelle kirjoituksista voi olla erilainen, jos valitut tuotemerkit ovat ('Microsoft', 'GitHub') ja ('Microsoft', 'LinkedIn').
 
 ## <a name="supported-countriesregions"></a>Tuetut maat ja alueet
 
@@ -82,7 +93,7 @@ Tarkista oletusarvoiset rikastusasetukset ja päivitä ne tarpeen mukaan.
 
 ### <a name="select-entity-to-enrich"></a>Rikastettavan entiteetin valitseminen
 
-Valitse **Rikastettu entiteetti** ja valitse tietojoukko, jonka haluat rikastaa Microsoftin yritystiedoilla. Voit valita asiakasentiteetin, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+Valitse **Rikastettu entiteetti** ja valitse tietojoukko, jonka haluat rikastaa Microsoftin tiedoilla. Voit valita asiakasentiteetin, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
 ### <a name="map-your-fields"></a>Yhdistä kenttäsi
 
@@ -116,26 +127,25 @@ Suorita rikastus, kun olet konfiguroinut tuotemerkit, kiinnostuksen kohteet ja d
 
 Asiakastietojen koon mukaan rikastusaika voi kestää useita minuutteja.
 
-> [!TIP]
-> Tehtävillä ja prosesseilla on [kuusi tilatyyppiä](system.md#status-types). Lisäksi useimmat prosessit [riippuvat muista loppupään prosesseista](system.md#refresh-policies). Voit valita prosessin tilan, jos haluat tarkastella koko työn edistymistä koskevia tietoja. Kun olet valinnut jollekin työn tehtävälle **Katso tiedot** -kohdan, näkyvissä ovat lisätiedot. Niitä ovat käsittelyaika, edellinen käsittelypäivä ja kaikki tehtävään liittyvät virheet ja varoitukset.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
 Kun täydennysprosessia suoritetaan, siirry **Omat täydennykset** -kohtaan ja tarkista niiden asiakkaiden kokonaismäärä, joiden tietoja on täydennetty, sekä tuotemerkkien tai kiinnostuksen kohteiden erittely täydennetyissä asiakasprofiileissa.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Tulosten esikatselu rikastamisprosessin suorittamisen jälkeen":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Tulosten esikatselu rikastamisprosessin suorittamisen jälkeen.":::
 
-Tarkastele rikastettuja tietoja valitsemalla kaaviossa **Näytä rikastetut tiedot**. Tuotemerkkien rikastetut tiedot siirtyvät **BrandAffinityFromMicrosoft**-entiteettiin. Kiinnostuksen kohteiden tiedot ovat **InterestAffinityFromMicrosoft**-entiteetissä. Nämä entiteetit ilmoitetaan myös **Rikastaminen**-ryhmässä kohdassa **Tiedot** > **Entiteetit**.
+Näet kaavion, jossa on rikastettujen asiakasprofiilien määrä ajan kuluessa sekä rikastettujen entiteettien esikatselut. Tarkista rikastetut tiedot valitsemalla **Katso lisää** **Affiniteettitaso**- tai **Osuus kirjoituksista** -kaavioissa. Tuotemerkkien rikastetut tiedot siirretään **BrandAffinityFromMicrosoft**- tai **BrandShareOfVoiceFromMicrosoft**-entiteetteihin. Kiinnostuksen kohteiden tiedot ovat **InterestAffinityFromMicrosoft**- ja **InterestShareOfVoiceFromMicrosoft**-entiteeteissä. Nämä entiteetit ilmoitetaan myös **Rikastaminen**-ryhmässä kohdassa **Tiedot** > **Entiteetit**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Rikastamistietojen tarkasteleminen asiakaskortissa
 
-Brändien ja kiinnostuksenkohteiden affiniteetteja voi tarkastella myös yksittäisissä asiakaskorteissa. Valitse ensin **Asiakkaat** ja sitten asiakasprofiili. Asiakaskortissa on tietoja kaavioista tuotemerkkejä tai kiinnostuksen kohteita varten, joita kohtaan henkilöillä asiakkaiden demografisessa profiilissa on affiniteetti.
+Tuotemerkkiä ja kiinnostuksen kohteen osuutta kirjoituksissa voi tarkastella myös yksittäisissä asiakaskorteissa. Valitse ensin **Asiakkaat** ja sitten asiakasprofiili. Asiakaskortissa ovat kaaviot, joissa on tuotemerkin tai kiinnostuksen kohteen osuus kirjoituksista kyseisen asiakkaan demografisen profiilin henkilöiden mukaan.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Asiakaskortin rikastetut tiedot":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Asiakaskortin rikastetut tiedot.":::
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

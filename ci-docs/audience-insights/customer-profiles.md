@@ -1,75 +1,76 @@
 ---
 title: Asiakasprofiilien näyttäminen
 description: Yhtenäisten asiakastietojen yhdistelmänäkymän hakeminen.
-ms.date: 12/01/2020
+ms.date: 09/30/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: NimrodMagen
-ms.author: nimagen
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+searchScope:
+- ci-customers-page
+- ci-customer-card
+- ci-activities
+- ci-activities-wizard
+- customerInsights
+ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896323"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354877"
 ---
 # <a name="customer-profiles"></a>Asiakasprofiilit
 
-**Asiakas**-sivulla on asiakkaiden yhdistelmänäkymä, joka perustuu [kaikista tietolähteistä](data-sources.md) kerättyihin profiilitietoihin. Asiakasprofiilit ovat käytettävissä sen jälkeen kun [luot yhdistetyn asiakasentiteetin](data-unification.md). Varmista, että tietojen yhdistämisprosessi on valmis, jotta asiakkaat saavat entistä monipuolisempia näkymiä. Sivun avulla voit myös hakea asiakkaita.
+**Asiakkaat** -sivu näyttää yhdistetyn näkymän yhtenäisistä asiakasprofiileista. Asiakasprofiilit ovat käytössä, kun olet [luonut yhtenäisen asiakasentiteetin](data-unification.md). Sivulla voit hakea asiakkaita ja määrittää haun indeksin.
 
-Asiakkaat voivat olla henkilöitä tai organisaatioita (esikatselu). Jokaista asiakas- tai organisaatioprofiilia edustaa ruutu. Valitse ruutu, jos haluat nähdä lisätietoja tietystä asiakkaasta tai organisaatiosta. Sivun alaosassa olevien sivutusohjausobjektien avulla voit tarkastella muita tietueita.
+Asiakkaat voivat olla yksityishenkilöitä tai organisaatioita. Kutakin asiakasprofiilia edustaa ruutu. Voit käyttää sivutuksen ohjausobjekteja, kun haluat saada lisää tietueita. Kortti näyttää kentät *Asiakas*-entiteetistä **Haku- ja suodatinindeksi** -määritysten mukaan. Valitse ruutu nähdäksesi valitun asiakkaan tiedot erillisellä sivulla nimeltä [Asiakkaan tietosivu](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
-> ![Kuluttajakaupan asiakasprofiilit](media/profiles-customers.png "Kuluttajakaupan asiakasprofiilit")
-
-Organisaatiot (esikatselu)
-> [!div class="mx-imgBorder"] 
-> ![Yritysten väliset asiakasprofiilit](media/profile-customers-b2b.png "Yritysten väliset asiakasprofiilit")
+> ![Asiakkaan sivu, joka näyttää tulosruudut](media/customers-page-result-tiles-B2C.png "Asiakkaan sivu, joka näyttää tulosruudut")
 
 > [!NOTE]
-> Jos ruutuja ei näy, kun valitset **Asiakkaat** -siirtymisnäkymässä, järjestelmänvalvojan on [määritettävä vähintään yksi haettavissa oleva määrite](search-filter-index.md) kohdassa **Hae ja suodata indeksi**.
+> Jos et näe ruutuja, kun valitset siirtymisessä kohdan **Asiakkaat**, järjestelmänvalvojasi on [määritettävä vähintään yksi haettava määrite](search-filter-index.md) kohdassa **Haku- ja suodatinindeksi**.
 
 ## <a name="search-for-customers"></a>Hae asiakkaita
 
-Voit hakea asiakkaita kirjoittamalla nimen tai jonkin muun määritteen hakuruutuun. Haku toimii vain tietojen yhdistämisprosessin aikana luodussa asiakasprofiilientiteetissä.
+Voit hakea asiakkaita kirjoittamalla nimen tai jonkin muun määritteen hakuruutuun. Haku toimii vain _Asiakas_-entiteetissä, joka luotiin tietojen yhtenäistämisen prosessin aikana.
 
-Järjestelmänvalvojana voit määrittää haettavat määritteet käyttämällä **Indeksin hakeminen ja suodattaminen** -sivua. Lisätietoja on kohdassa [Indeksin hakemisen ja suodattamisen hallinta](search-filter-index.md).
+Järjestelmänvalvojana voit määrittää haettavat määritteet käyttämällä **Indeksin hakeminen ja suodattaminen** -sivua. Lisätietoja löytyy kohdasta [Haku- ja suodatinindeksin hallinta](search-filter-index.md).
 
 ## <a name="filter-customers"></a>Suodata asiakkaat
 
-Voit suodattaa asiakkaita asiakasprofiilientiteetin kenttien mukaan. Kuten haussa, järjestelmänvalvojan täytyy ensin määrittää kentät suodatettaviksi **Indeksin hakeminen ja suodattaminen** -sivun avulla.
+Voit suodattaa asiakkaita _Asiakas_-entiteetin kenttien mukaan. Kuten haussa, järjestelmänvalvojan täytyy ensin määrittää kentät suodatettaviksi **Indeksin hakeminen ja suodattaminen** -sivun avulla.
 
-1. Valitse **Suodatus** **Asiakkaat**-sivulla.
+1. Valitse **Näytä suodattimet** **Asiakkaat**-sivulla.
 
-2. Valitse niiden määritteiden vieressä olevat ruudut, joiden mukaan haluat suodattaa asiakkaat.
+1. Valitse niiden määritteiden vieressä olevat ruudut, joiden mukaan haluat suodattaa asiakkaat.
 
-   > [!div class="mx-imgBorder"] 
-   > ![Asiakasprofiilit](media/profiles-customers3.png "Asiakasprofiilit")
+1. Poista kaikki suodattimet valitsemalla **Tyhjennä suodattimet** **Asiakkaat**-sivulla.
 
-3. Poista kaikki suodattimet valitsemalla **Tyhjennä suodattimet** **Asiakkaat**-sivulla.
+## <a name="customer-details-page"></a>Asiakastiedot-sivu
 
-##  <a name="customer-details-page"></a>Asiakastiedot-sivu
+Avaa **Asiakastiedot-sivu** valitsemalla jokin asiakasruuduista. Tässä näkymässä on valitun asiakkaan yhdistetyt tiedot. Asiakkaan tiedoissa on seuraava sisältö:
 
-Avaa **Asiakastiedot-sivu** valitsemalla jokin asiakasruuduista. Tässä näkymässä on valitun asiakkaan yhdistetyt tiedot.
+**Asiakasprofiilin ruutu**: Tämä ruutu näyttää eri arvot yhtenäisestä _Asiakas_-entiteetistä. Jos kentällä ei ole arvoa valitulle asiakasprofiilille, se ei näy. Ruudun rakenne koostuu osista:  
+  - Ensimmäisessä osassa näkyy ennalta määritetty kenttäjoukko, jota seuraavat kaikki haku- ja suodatinindeksiin kuuluvat kentät. Kaikki osoitteeseen liittyvät kentät yhdistetään yksittäiseksi riviksi, jos profiili sisältää tällaisia kenttiä. 
+  - **Tämän asiakkaan yhteyshenkilöt**: Yritystiliympäristöissä asiakkaan kaikki liittyvät yhteyshenkilöt näkyvät toisena osana. Kukin yhteyshenkilö näytetään kenttiensä kanssa. Tyhjät kentät piilotetaan.
+  - **Lisäkentät**: Näyttää valitun asiakkaan jäljellä olevat kentät tunnuksia lukuun ottamatta. 
+  - **Tunnukset**: Luetteloi kaikki tunnukset vastaavaan entiteetin nimen alla. Kentät tunnistetaan tunnuksiksi semantiikan mukaan, koska semantiikka luokittelee ne tunnuksiksi.
 
-Asiakastietoja ovat esimerkiksi seuraavat:
+**Aktiviteetin aikajana**: Näyttää tiedot, jos sinulla on määritettyjä aktiviteetteja. Aikajananäkymä sisältää valitun asiakkaan kronologisesti lajiteltuja aktiviteetteja alkaen uusimmasta aktiviteetista. Lisätietoja löytyy kohdasta [Asiakkaan aktiviteetit](activities.md).
 
--   **Asiakasprofiili-ruutu:** Tässä ruudussa näkyy erilaisia yhtenäisen asiakasprofiilientiteetin arvoja. Näitä tietoja ovat esimerkiksi sähköpostiosoite, nimi ja kaupunki. 
+**Näkemykset**:  
+  - **Mittarit**: Näyttää, oletko määrittänyt yhden tai useamman asiakkaan määritteen mittarin. Ne sisältävät asiakkaisiin liittyvät lasketut tunnusluvut yksittäisen asiakkaan tasolla. Lisätietoja löytyy kohdasta [Mittarien määritteleminen ja hallinta](measures.md).
 
--   **Mahdolliset kiinnostuksen kohteet, Mahdolliset tuotemerkit:** Osoittaa, onko ensimmäisen osapuolen rikastaminen määritetty. Ilmaisee mahdolliset kiinnostuksen kohteet ja brändiaffiniteetit, joita voi olla tämän asiakkaan profiilia muistuttavalla asiakkaalla. Lisätietoja on kohdassa [Asiakasprofiilien rikastaminen brändin ja kiinnostuksen kohteiden affiniteeteillä](enrichment-microsoft.md).
+  - **Mahdolliset kiinnostuksen kohteet, mahdolliset tuotemerkit**: Näytää, oletko määrittänyt rikastukseksi tuotemerkin tai kiinnostuksen kohteen. Se edustaa mahdollisia kiinnostuksen kohteita ja tuotemerkkien sukulaisuuksia perustuen muihin asiakkaisiin, joiden profiili on samanlainen kuin valitun asiakasprofiilin. Lisätietoja löytyy kohdasta [Asiakasprofiilien rikastaminen tuotemerkeillä ja kiinnostuksen kohteilla](enrichment-microsoft.md).
 
--   **Mittarit:** Näyttää tietyn tyyppisen mittareiden määrittäminen: asiakasmääritemittarit. Ne sisältävät asiakkaisiin liittyvät lasketut tunnusluvut yksittäisen asiakkaan tasolla. Lisätietoja on kohdassa [Mittarien määrittäminen ja hallinta](measures.md).
-
--   **Aktiviteetin aikajana:** Näyttää mahdolliset määritetyt aktiviteetit. Aikajananäkymässä on kyseisen asiakkaan kronologisesti lajitellut aktiviteetit viimeisimmistä aktiviteetista alkaen. Lisätietoja on kohdassa [Asiakasaktiviteetit](activities.md).
-
-Palaa asiakkaan hakusivulla valitsemalla **Palaa Asiakkaat-kohtaan**.
+Palaa asiakashakusivulle valitsemalla **Takaisin asiakkaisiin**.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-[Voit lisätä enemmän tietolähteitä](data-sources.md) tai [luoda asiakassegmenttejä](segments.md).
+[Lisää tietolähteitä](data-sources.md), [rikasta yhtenäisiä profiileja](enrichment-hub.md) tai [luo segmenttejä](segments.md), jotta voit käsitellä yhtenäisiä asiakasprofiileja muissa sovelluksissa.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

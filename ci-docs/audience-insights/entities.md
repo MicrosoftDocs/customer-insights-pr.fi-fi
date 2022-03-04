@@ -3,18 +3,20 @@ title: Entiteetit ja tietojoukot
 description: Tietojen näyttäminen Entiteetit-sivulla.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-entities
+- customerInsight
+ms.openlocfilehash: 1e1abdf49a3c1fe6f9fdd2cf5353a7723454f47b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900423"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355294"
 ---
 # <a name="entities-in-audience-insights"></a>Käyttäjäryhmän merkityksellisten tietojen entiteetit
 
@@ -41,7 +43,7 @@ Kun [tietolähteet on määritetty](data-sources.md), siirry **Entiteetit**-sivu
 > ![Kentät-taulukko.](media/data-manager-entities-fields.PNG "Kentät-taulukko")
 
 > [!NOTE]
-> Tässä sivussa näkyy vain esimerkki entiteetin tiedoista. Voit tarkastella koko tietojoukkoa siirtymällä **Tietolähteet**-sivulle, valitsemalla entiteetin, valitsemalla **Muokka** ja tarkastelemalla entiteetin tietoja Power Query -editorissa kohdassa [Tietolähteet](data-sources.md) kuvatulla tavalla.
+> Tässä sivussa näkyy vain esimerkki entiteetin tiedoista. Voit tarkastella koko tietojoukkoa siirtymällä **Tietolähteet**-sivulle, valitsemalla entiteetin, valitsemalla **Muokkaa** ja tarkastelemalla entiteetin tietoja Power Query -editorissa kohdassa [Tietolähteet](data-sources.md) kuvatulla tavalla.
 
 Lisätietoja entiteetissä käsitellyistä tiedoista on **Yhteenveto**-sarakkeessa, jossa on joitakin tärkeitä tietoja tietojen ominaisuuksista, kuten tyhjäarvot, puuttuvat arvot, yksilöivät arvot, määrät ja jakelut. Näet tietojen yhteenvedon valitsemalla kaaviokuvakkeen.
 
@@ -71,7 +73,9 @@ Käsiteltyjen tietolähteiden kentät voivat sisältää vioittuneita tietoja. T
 
 Esimerkiksi syntymäpäiväsarakkeen tietotyypiksi on määritetty päivämäärä. Asiakasrekisterin syntymäpäiväksi on merkitty "1.1.19777". Järjestelmä merkitsee tämän tietueen vioittuneeksi. Joku voi nyt muuttaa lähdejärjestelmän syntymäpäiväksi '1977'. Tietolähteiden automaattisen päivityksen jälkeen kentän muoto on nyt kelvollinen ja tietue poistetaan vioittuneesta entiteetistä. 
 
-Siirry kohtaan **Tieto** > **Entiteetit** ja etsi vioittuneet entiteetit **Järjestelmä**-osasta. Vioittuneiden entiteettien rakenteen nimeäminen: "DataSourceName_EntityName_corrupt".
+Siirry kohtaan **Tieto** > **Entiteetit** ja etsi vioittuneet entiteetit **Järjestelmä**-osasta. Vioittuneiden entiteettien rakenteen nimeäminen: "DataSourceName_EntityName_corrupt". Valitse vioittunut entiteetti tunnistaaksesi kaikki vialliset kentät ja syyn yksittäisen tietueen tasolla.
+> [!div class="mx-imgBorder"]
+> ![Vioittumisen syy.](media/corruption-reason.png "Vioittumisen syy")
 
 Customer Insights käsittelee edelleen vioittuneita tietueita. Ne saattavat kuitenkin aiheuttaa ongelmia yhtenäisten tietojen kanssa toimittaessa.
 

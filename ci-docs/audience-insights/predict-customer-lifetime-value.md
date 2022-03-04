@@ -3,20 +3,24 @@ title: Asiakkaan elinkaaren arvon (CLV) ennuste
 description: Ennakoi aktiivisten asiakkaiden myyntituoton potentiaali tulevaisuudessa.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 740d6a5a749e156414b0e80193334051b7f2632fe4d1f4291d74b99250f35bc2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035365"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355785"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Asiakkaan elinkaaren arvon (CLV) ennuste (esiversio)
+# <a name="customer-lifetime-value-clv-prediction"></a>Asiakkaan elinkaaren arvon (CLV) ennuste
 
 Ennusta mahdollinen arvo (myyntituotto), jonka yksittäiset aktiiviset asiakkaat tuovat yritykselle tiettynä tulevana ajanjaksona. Tämän ominaisuuden avulla voit saavuttaa esimerkiksi seuraavat tavoitteet: 
 - Korkean lisäarvon asiakkaiden tunnistaminen ja näiden merkityksellisten tietojen käsitteleminen
@@ -65,7 +69,7 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
     - Tietojen täydellisyys: Vähemmän kuin 20 % arvoista puutuu syötetietojen pakollisissa kentissä   
 
 > [!NOTE]
-> - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos osto- tai tapahtumaentiteettejä on useita, ne voidaan yhdistää Power Queryssä ennen tietojen käsittelyä.
+> - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos osto-/tapahtumaentiteettejä on useita, ne voidaan yhdistää Power Queryssä ennen tietojen käsittelyä.
 > - Jos haluat lisää asiakkaan aktiviteettitietoja (valinnaisia), voit kuitenkin lisätä mallin käsiteltäväksi niin monta asiakasaktiviteettientiteettiä kuin haluat.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Asiakkaan elinkaaren arvon ennusteen luominen
@@ -74,7 +78,7 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
 
 1. Valitse **Asiakkaan elinkaaren arvo** -ruutu ja valitse sitten **Käytä mallia**. 
 
-1. Valitse **Asiakkaan elinkaaren arvo (esiversio)** -ruudussa **Aloita**.
+1. Valitse **Asiakkaan elinkaaren arvo** -ruudussa **Aloita käyttö**.
 
 1. **Anna tälle mallille** ja **tulosentiteetille nimi**, jotta ne voidaan erottaa muista malleista tai entiteeteistä.
 

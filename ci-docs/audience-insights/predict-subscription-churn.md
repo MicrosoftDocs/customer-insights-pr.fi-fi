@@ -3,20 +3,19 @@ title: Tilauksen vaihtuvuusennuste (sisältää videon)
 description: Ennusta riski sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967697"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354689"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Tilausten vaihtuvuusennuste (esikatselu)
+# <a name="subscription-churn-prediction"></a>Tilauksen vaihtuvuusennuste
 
 Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja. Voit luoda uuden tilausten vaihtuvuusennusteen valitsemalla **Älykäs toiminto** > **Ennusteet**-sivu. Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita.
 
@@ -63,7 +62,7 @@ Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei en
 ## <a name="create-a-subscription-churn-prediction"></a>Tilausten vaihtuvuusennusteen luominen
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Analytiikka** > **Ennusteet**.
-1. Valitse **Tilausten vaihtuvuusennuste (esikatselu)** -ruutu ja valitse sitten **Käytä tätä mallia**.
+1. Valitse **Tilauksen poistumismalli** -ruutu ja valitse **Käytä tätä mallia**.
    > [!div class="mx-imgBorder"]
    > ![Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike.](media/subscription-churn-usethismodel.PNG "Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike")
 
