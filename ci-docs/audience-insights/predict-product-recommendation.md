@@ -1,21 +1,22 @@
 ---
 title: Tuotesuosituksen ennuste
 description: Ennusta tuotteet, joita asiakas todennäköisesti ostaa tai joiden kanssa asiakas on tekemisissä.
-ms.date: 01/13/2022
+ms.date: 09/13/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: b9a9c7eb4ee3f2f0510a609757a36e5d5796a2f7
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355747"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494535"
 ---
-# <a name="product-recommendation-prediction"></a>Tuotesuosituksen ennuste
+# <a name="product-recommendation-prediction-preview"></a>Tuotesuosituksen ennuste (esiversio)
 
 Tuotesuositusmalli luo ennakoivia tuotesuositusjoukkoja. Suositukset perustuvat aiempaan ostokäyttäytymiseen ja asiakkaisiin, joilla on samanlaisia ostomalleja. Voit luoda uusia tuotesuosituksen ennusteita **Analytiikka** > **Ennusteet** -sivulla Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita.
 
@@ -53,7 +54,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 > [!NOTE]
 > - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tapahtuman määritelmä on varsin joustava. Kaikki tiedot, jotka kuvaavat käyttäjän ja tuotteen välistä vuorovaikutusta, voivat toimia syötteenä. Esimerkiksi tuotteen ostaminen tai osallistuminen kurssille tai tapahtumaan.
-> - Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos ostoentiteettejä on useita, yhdistä ne  Power Queryssä ennen tietojen käsittelyn alkamista.
+> - Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos ostoentiteettejä on useita, yhdistä ne Power Queryssä ennen tietojen käsittelyä.
 > - Jos tilaus ja tilaustiedot ovat eri entiteettejä, yhdistä ne ennen mallin käyttöä. Malli ei toimi, jos käytössä on vain entiteetin tilaustunnus tai vastaanottotunnus.
 
 
@@ -61,7 +62,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 1. Siirry Customer Insightsissa kohtaan **Älykäs toiminto** > **Ennusteet**.
 
-1. Valitse **Tuotesuositusmalli** -ruutu ja valitse **Käytä tätä mallia**.
+1. Valitse **Tuotesuositusten malli (esiversio)** -ruudussa **Käytä tätä mallia**.
    > [!div class="mx-imgBorder"]
    > ![Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike.](media/product-recommendation-usethismodel.PNG "Tuotesuositusmalli-ruutu ja Käytä tätä mallia -painike")
 
@@ -78,11 +79,11 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 1. Määritä **Tuotteiden määrä**, jota haluat suositella asiakkaalle. Arvo riippuu siitä, miten toimitusmenetelmä täyttää tiedot. Jos voit suositella kolmea tuotetta, määritä tämä arvo vastaavasti.
    
    >[!TIP]
-   > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Ennusteluonnos on **Omat ennusteet** -välilehdessä.
+   > Voit valita **Tallenna ja sulje** milloin tahansa, jos haluat tallentaa ennusteen luonnokseksi. Ennusteluonnos on **Omat ennusteet** -välilehdessä.
 
-1. Valitse, sisällytetäänkö **Toistuvia ostoja odotetaan** -kenttään tuotteet, joita asiakkaat ovat äskettäin ostaneet.
+1. Määritä, haluatko **ehdottaa tuotteita, jotka asiakkaat ovat äskettäin ostaneet**.
 
-1. Määritä **Katso taaksepäin -ikkuna**. Tämä määritys määrittää aikavälin, jonka malli odottaa, ennen kuin suosittelee tuotetta käyttäjälle uudelleen. Ilmoita esimerkiksi, että asiakas ostaa kannettavan tietokoneen kahden vuoden välein. Tässä ikkunassa näkyy ostohistoria kahden viime vuoden ajalta. Jos nimike löytyy, se suodatetaan suosituksista.
+1. Jos olet määrittänyt, että äskettäin ostettuja tuotteita *ei* suositella, määritä arvoksi **Katso taaksepäin -ikkuna**. Tämä määritys määrittää aikavälin, jonka malli odottaa, ennen kuin suosittelee tuotetta käyttäjälle uudelleen. Ilmoita esimerkiksi, että asiakas ostaa kannettavan tietokoneen kahden vuoden välein. Tässä ikkunassa näkyy ostohistoria kahden viime vuoden ajalta. Jos nimike löytyy, se suodatetaan suosituksista.
 
 1. Valitse **Seuraava**
 

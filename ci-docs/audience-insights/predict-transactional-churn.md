@@ -1,21 +1,22 @@
 ---
-title: Tapahtumien vaihtuvuusennuste (sisältää video)
+title: Tapahtuman vaihtuvuuden ennustaminen
 description: Sen riskin ennustaminen, että asiakas ei enää osta yrityksen tuotteita tai palveluja.
-ms.date: 01/13/2022
+ms.date: 10/20/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 9aa208ad94dcb6b1e0f110a3f974c56de00bbd07
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355655"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673041"
 ---
-# <a name="transaction-churn-prediction"></a>Tapahtuman vaihtuvuuden ennustaminen
+# <a name="transaction-churn-prediction-preview"></a>Tapahtuman vaihtuvuuden ennustaminen (esiversio)
 
 Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteita tai palveluja annetulla ajanjaksolla. Voit luoda uusia vaihtuvuusennusteita valitsemalla **Analytiikka** > **Ennusteet**. Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita. 
 
@@ -24,7 +25,7 @@ Tapahtuman vaihtuvuusennuste auttaa ennustamaan, ostaako asiakas vielä tuotteit
 Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien vaihtuvuus ja myös tilin ja toisen tietotason, kuten tuoteluokan, yhdistelmän vaihtuvuus. Dimension lisääminen voi auttaa saamaan selville, kuinka todennäköistä on, että asiakas ”Contoso” lopettaa tuoteluokan ”toimistotarvikkeet” ostamisen. Lisäksi yritystilien osalta voimme käyttää tekoälyä muodostamaan luettelon syistä, miksi on todennäköistä, että asiakas vaihtaa toissijaisen tason tietoluokkaan.
 
 > [!TIP]
-> Kokeile tapahtuman vaihtuvuusennustetta opasohjelmaa ja mallitietoja käyttäen: [Tapahtuman vaihtuvuuden ennustamisen esimerkkiopas](sample-guide-predict-transactional-churn.md).
+> Kokeile tapahtuman vaihtuvuusennustetta opasohjelmaa ja mallitietoja käyttäen: [Tapahtuman vaihtuvuuden ennustamisen (esiversio) esimerkkiopas](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>edellytykset
 
@@ -100,12 +101,12 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
 
 1. Siirry Customer Insightsissa kohtaan **Älykäs toiminto** > **Ennusteet**.
 
-1. Valitse **Asiakaspoistumismalli** -ruutu ja valitse **Käytä tätä mallia**.
+1. Valitse **Asiakasvaihtuvuusmalli (esiversio)** -ruudussa **Käytä tätä mallia**.
 
 1. Valitse **Asiakasvaihtuvuuden malli** -ruudussa **Tapahtuma** ja valitse **Aloita**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Näyttökuvassa valittu tapahtumavaihtoehto Asiakasvaihtuvuuden malli -ruudussa.":::
- 
+
 ### <a name="name-model"></a>Nimimalli
 
 1. Anna mallille nimi, joka erottaa sen muista malleista.
@@ -116,11 +117,11 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
 
 ### <a name="define-customer-churn"></a>Määritä asiakasvaihtuma
 
-1. Määritä **Ennusteikkuna**. Ennustetaan esimerkiksi asiakkaiden vaihtuvuusriski seuraavan 90 päivän aikana siten, että se on linjassa markkinoinnin säilyttämispyrkimysten kanssa. Vaihtuvuusriskin ennusteen pituus voi hankaloittaa vaihtuvuusriskiprofiilissa olevien seikkojen huomioon ottamista; tämä kuitenkin määräytyy liiketoimintakohtaisten tarpeiden mukaan.
+1. Määritä vaihtuvuusennusteen aikaikkuna **Tunnista asiakkaat, jotka saattavat vaihtaa tilauksen seuraavassa** -kentässä. Ennustetaan esimerkiksi asiakkaiden vaihtuvuusriski seuraavan 90 päivän aikana siten, että se on linjassa markkinoinnin säilyttämispyrkimysten kanssa. Vaihtuvuusriskin ennusteen pituus voi hankaloittaa vaihtuvuusriskiprofiilissa olevien seikkojen huomioon ottamista; tämä kuitenkin määräytyy liiketoimintakohtaisten tarpeiden mukaan.
    >[!TIP]
-   > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
+   > Voit valita **Tallenna ja sulje** milloin tahansa, jos haluat tallentaa ennusteen luonnokseksi. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
 
-1. Määritä vaihtuvuus **Vaihtuvuusmääritelmä** -kentässä antamalla päivien määrä. Jos asiakas ei ole esimerkiksi tehnyt ostoja 30 päivän aikana, heidän voidaan katsoa vaihtuneen liiketoiminnassa. 
+1. Anna vaihtuvuuden määrittävän päivien määrä **Asiakkaan katsotaan vaihtuneen, jos hän ei ole tehnyt ostoksia:** -kentässä. Jos asiakas ei ole esimerkiksi tehnyt ostoja 30 päivän aikana, heidän voidaan katsoa vaihtuneen liiketoiminnassa. 
 
 1. Jatka valitsemalla **Seuraava**.
 
@@ -128,16 +129,19 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
 
 1. Valitse **Lisää tiedot** ja valitse sitten sivuruudusta aktiviteetin tyyppi, joka sisältää tarvittavat tapahtuma- tai ostohistoriatiedot.
 
-1. Valitse **Valitse aktiviteetit** -kohdassa aktiviteetit siitä valitusta aktiviteettityypistä, johon laskelman halutaan kohdistuvan.
+1. Valitse **Valitse aktiviteetit** -kohdassa aktiviteetit, jotka haluat kohdistaa laskutoimitukseen valitusta aktiviteetista.
 
-   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="Sivuruutu, jossa näkyy tiettyjen aktiviteettien valitseminen semanttisen tyypin perusteella.":::
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sivuruutu, jossa näkyy tiettyjen aktiviteettien valitseminen semanttisen tyypin perusteella.":::
 
-   Jos et ole vielä yhdistänyt aktiviteettia semanttiseen tyyppiin, valitse **Muokkaa**. Ohjattu kokemus semanttisten aktiviteettien yhdistämiseksi avautuu. Yhdistä tietosi valitun toimintotyypin vastaaviin kenttiin.
+1. Jos et ole vielä yhdistänyt aktiviteettia semanttiseen tyyppiin, valitse **Muokkaa**. Ohjattu kokemus semanttisten aktiviteettien yhdistämiseksi avautuu. Yhdistä tietosi valitun toimintotyypin vastaaviin kenttiin.
 
-1. Yhdistä semanttiset määritteet kenttiin, jotka tarvitaan mallin suorittamiseen. Jos alla olevia kenttiä ei ole täytetty, määritä ostohistoriaentiteetin suhde *Asiakas*-entiteettiin. Valitse **Tallenna**.
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sivun asetusaktiviteetin tyyppi.":::
 
-1. Valitse **Lisää pakolliset tiedot** -vaiheessa **Seuraava**, kun et enää lisää aktiviteetteja vaan haluat jatkaa.
+1. Kun aktiviteetti on yhdistetty vastaavaan semanttiseen tyyppiin, jatka valitsemalla **Seuraava**
 
+1. Yhdistä semanttiset määritteet kenttiin, jotka tarvitaan mallin suorittamiseen. Jos alla olevia kenttiä ei ole täytetty, määritä ostohistoriaentiteetin suhde *Asiakas*-entiteettiin.
+
+1. Valitse **Seuraava**.
 
 # <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 

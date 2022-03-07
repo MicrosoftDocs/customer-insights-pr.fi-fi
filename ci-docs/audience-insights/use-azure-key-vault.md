@@ -3,20 +3,18 @@ title: Bring your own Azure key vault salaisten koodien hallintaa varten
 description: Opettele määrittämään Customer Insights niin, että voit käyttää omaa Azure key vaultia.
 ms.date: 10/06/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: brndkfr
 ms.author: bkief
 manager: shellyha
-searchScope:
-- ci-system-security
-- customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 6f521dfce3e0922238d16beee3be8e1bbcfc63a5
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355887"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606063"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Bring your own Azure key vault (esiversio)
 

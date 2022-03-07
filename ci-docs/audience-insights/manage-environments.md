@@ -1,26 +1,24 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 12/06/2021
+ms.date: 10/14/2021
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-searchScope:
-- ci-system-about
-- customerInsights
-ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354275"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673729"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 ## <a name="switch-environments"></a>Ympäristöjen vaihtaminen
 
@@ -41,22 +39,6 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 3. Voit päivittää ympäristön asetuksia **Muokkaa ympäristöä** -ruudussa.
 
 Lisätietoja ympäristön asetuksista on kohdassa [Uuden ympäristön luominen](create-environment.md).
-
-## <a name="connect-to-microsoft-dataverse"></a>Yhdistä Microsoft Dataverseen
-   
-Tässä **Microsoft Dataverse** -vaiheessa voit yhdistää Customer Insightsin Dataverse-ympäristöösi.
-
-Jos haluat käyttää [valmiita ennustemalleja](predictions-overview.md#out-of-box-models), määritä tietojen jakaminen Dataversen kanssa. Voit myös ottaa käyttöön tietojen käsittelyn paikallisista tietolähteistä antamalla organisaatiosi hallinnoiman Microsoft Dataverse -ympäristön URL-osoitteen.
-
-> [!IMPORTANT]
-> Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.
-
-:::image type="content" source="media/dataverse-provisioning.png" alt-text="Määritysvalinnat tietojen jakamista varten Microsoft Dataversen kanssa.":::
-
-> [!NOTE]
-> Customer Insights ei tue seuraavia tietojen jakamisen skenaarioita:
-> - Jos tallennat kaikki tiedot omaan Azure Data Lake Storageen, et voi ottaa käyttöön tietojen jakamista Dataversen hallitun Data Laken kanssa.
-> - Jos otat käyttöön tietojen jakamisen Dataversen kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopioi ympäristön määritys
 

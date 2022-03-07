@@ -5,15 +5,16 @@ author: britl
 ms.reviewer: mhart
 ms.author: britl
 ms.date: 09/27/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
-ms.topic: overview
+ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: da848e6b155248bd308386d7e23a36131a2e78de
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 2e2df207802f8de501661d247bd80d6cc792636f
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231354"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558742"
 ---
 # <a name="developer-resources-overview"></a>Kehittäjien resurssien yleiskatsaus
 

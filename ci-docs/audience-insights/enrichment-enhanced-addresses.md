@@ -1,25 +1,20 @@
 ---
-title: Osoitteen parannusten rikastus (sisältää videon)
+title: Osoitteiden parannuksen rikastus
 description: Rikasta ja normalisoi asiakasprofiilien osoitetietoja Microsoftin malleilla.
-ms.date: 01/19/2022
+ms.date: 07/25/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-searchScope:
-- ci-data-sources-enrichment
-- ci-data-sources-enrichment-details
-- ci-enrichments
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: 067757019078d3a46b224ba259d2d097dfbbe381
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 65db6ce05f4d6f7f7b08ada172fec057027dd310
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353632"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692249"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Asiakasprofiilien rikastaminen parannetuilla osoitteilla
 
@@ -28,8 +23,6 @@ Tietojen osoitteet voivat olla rakenteettomia, epätäydellisiä tai virheellisi
 ## <a name="how-we-enhance-addresses"></a>Miten parannamme osoitteita
 
 Mallimme käy läpi kaksivaiheisen prosessin osoitteen parantamiseksi. Ensinnäkin se jäsentää osoitteen tunnistaakseen sen komponentit ja asettaa ne jäsenneltyyn muotoon. Tämän jälkeen osoitteen arvot voi korjata, määrittää valmiiksi ja standardisoida tekoälyn avulla.
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWNewo]
 
 ### <a name="example"></a>Esimerkiksi
 
@@ -105,20 +98,10 @@ Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös a
 
 Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
 
-**Rikastetut asiakkaat -esikatseluruudussa** näkyy näyte rikastetuista tiedoista. Valitse **Näytä lisää** ja valitse **Tiedot**-välilehti, jos haluat tarkastella kunkin rikastetun profiilin yksityiskohtaista näkymää.
-
-### <a name="overview-card"></a>Yleiskatsauskortti
-
-Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
-
-* **Käsitellyt ja muuttuneet osoitteet**: niiden asiakasprofiilien määrä osoitteilla, joiden rikastaminen onnistui.
-
-* **Käsitellyt mutta muuttumattomat osoitteet**: Niiden asiakasprofiilien määrä osoitteilla, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
-
-* **Osoitteet, joita ei ole käsitelty eikä muutettu**: Niiden asiakasprofiilien määrä osoitteilla, joita ei tunnistettu. Kyse on yleensä siitä, että syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
+Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Voit hyödyntää rikastettuja asiakastietoja. Voit luoda [segmenttejä](segments.md) ja [mittareita](measures.md) ja jopa [viedä tietoja](export-destinations.md), jos haluat tarjota asiakkaille mukautettuja käyttökokemuksia.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

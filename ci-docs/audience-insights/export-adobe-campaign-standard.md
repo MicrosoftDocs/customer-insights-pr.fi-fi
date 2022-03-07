@@ -1,39 +1,40 @@
 ---
 title: Customer Insights -tietojen vieminen Adobe Campaign Standardiin
-description: Opettele käyttämään kohdeyleisötietoja Adobe Campaign Standardissa.
-ms.date: 03/29/2021
+description: Lisätietoja käyttäjäryhmän merkityksellisten tietojen segmenttien käytöstä Adobe Campaign Standardissa.
+ms.date: 02/26/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 6b90ee53236fdd601ecdfd8e6117a15269a08084
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: a5d0154c3d7c473dcba03fac0847bafcf97de2f2
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227754"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596311"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insights -segmenttien käyttö Adobe Campaign Standardissa (esiversio)
+# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insightsin segmenttien käyttö Adobe Campaign Standardissa (esiversio)
 
-Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen käyttäjä on voinut luoda segmenttejä markkinointikampanjoiden tehostamiseksi kohdistamalla kampanjat liittyviin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän tietoja Adobe Experience Platformissa ja sovelluksissa, kuten Adobe Campaign Standardissa, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
+Dynamics 365 Customer Insights -yleisötietojen käyttäjänä olet saattanut luoda segmenttejä markkinointikampanjoidesi tehostamiseksi kohdistamalla ne oleellisiin käyttäjäryhmiin. Jos haluat käyttää käyttäjäryhmän merkityksellisiä tietoja Adobe Experience Platformista ja sovelluksista, kuten Adobe Campaign Standardista, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Tässä artikkelissa kuvattujen vaiheiden prosessikaavio.":::
 
 ## <a name="prerequisites"></a>Edellytykset
 
 -   Dynamics 365 Customer Insights -lisenssi
--   Adobe Campaign Standard -lisenssi
+-   Adobe Campaign Standard -käyttöoikeus
 -   Azure Blob -tallennustili
 
 ## <a name="campaign-overview"></a>Kampanjan yleiskatsaus
 
-Jos haluat lisätietoja siitä, miten voit käyttää segmenttejä käyttäjäryhmätiedoista Adobe Experience Platformissa, tarkastellaanpa fiktiivistä esimerkkikampanjaa.
+Katsotaanpa keksityssä esimerkkikampanjassa, miten käyttäjäryhmän merkityksellisten tietojen segmenttejä käytetään Adobe Experience Platformissa.
 
-Oletetaan, että yrityksesi tarjoaa asiakkaillesi kuukausittain tilauspohjaisen palvelun Yhdysvalloissa. Haluat määrittää asiakkaat, joiden tilaukset on määrä uusia seuraavien kahdeksan päivän aikana, mutta jotka eivät ole uusineet tilaustaan. Jos haluat säilyttää nämä asiakkaat, haluat lähettää heille kampanjatarjouksen sähköpostitse Adobe Campaign Standardin avulla.
+Oletetaan, että yrityksesi tarjoaa asiakkaillesi kuukausittain tilauspohjaisen palvelun Yhdysvalloissa. Haluat määrittää asiakkaat, joiden tilaukset on määrä uusia seuraavien kahdeksan päivän aikana, mutta jotka eivät ole uusineet tilaustaan. Säilyttääksesi nämä asiakkaat, haluat lähettää heille kampanjatarjouksen sähköpostitse Adobe Campaign Standardin avulla.
 
-Tässä esimerkissä mainossähköpostikampanja suoritetaan kerran. Tässä artikkelissa ei ole tietoja useammasta kuin yhdestä kampanjan käytön käyttötapauksesta. Käyttäjäryhmätiedot ja Adobe Campaign Standard voidaan kuitenkin määrittää toimimaan myös toistuvan kampanjaskenaarion mukaisesti.
+Tässä esimerkissä mainossähköpostikampanja suoritetaan kerran. Tässä artikkelissa ei ole tietoja useammasta kuin yhdestä kampanjan käytön käyttötapauksesta. Voit kuitenkin määrittää käyttäjäryhmän merkitykselliset tiedot ja Adobe Campaign Standardin toimimaan myös toistuvan kampanjaskenaarion mukaisesti.
 
 ## <a name="identify-your-target-audience"></a>Kohdekäyttäjäryhmän tunnistaminen
 
@@ -47,21 +48,15 @@ Lähetettävässä tarjoussähköpostiviestissä on asiakkaan etunimi, sukunimi 
 
 ## <a name="export-your-target-audience"></a>Kohdekäyttäjäryhmän vieminen
 
-### <a name="configure-a-connection"></a>Yhteyden määrittäminen
-
 Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäjäryhmän merkityksellisistä tiedoista Azure Blob -tallennustilatilille.
 
-1. Siirry kohdeyleisön merkityksellisissä tiedoissa kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
+1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Adobe Campaign**. Vaihtoehtoisesti voit valita **Adobe Campaign** -ruudussa **Määritä**.
+1. Valitse **Adobe-kampanja**-ruudussa **Määritä**.
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Adobe Campaign Standardin määritysruutu.":::
 
-1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
-
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
-
-1. Kirjoita sen Azure Blob -tallennustilatilin **Tilin nimi**, **Tilin avain** ja **Säilö**, johon haluat viedä segmentin.  
+1. Anna **näyttönimi** uudelle vientikohteelle ja kirjoita sitten sen Azure Blob -tallennustilatilin **Tilin nimi**, **Tiliavain** ja **Säilö**, johon haluat viedä segmentin.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Näyttökuva varastotilin määrityksestä. "::: 
 
@@ -69,17 +64,7 @@ Kun kohdekäyttäjäryhmä määritetty, voimme määrittää viennin käyttäj�
 
    - Lisätietoja säilön luomisesta on kohdassa [Säilön luominen](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Viimeistele yhteys valitsemalla **Tallenna**.
-
-### <a name="configure-an-export"></a>Viennin määrittäminen
-
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
-
-1. Siirry kohtaan **Tiedot** > **Viennit**.
-
-1. Luo uusi vienti valitsemalla **Lisää vienti**.
-
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Adobe Campaign -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
+1. Valitse **Seuraava**.
 
 1. Valitse segmentti, jonka haluat viedä. Tässä esimerkissä se on **ChurnProneCustomers**.
 
@@ -87,20 +72,22 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Seuraava**.
 
-1. Nyt yhdistämme kohdeyleisötietosegmentin **Lähde**-kentät Adobe Campaign Standard -profiilirakenteen **Kohde**-kenttien nimiin.
+1. Nyt yhdistämme **lähde**-kentät käyttäjäryhmän merkityksellisten tietojen segmentistä Adobe Campaign Standard -profiilirakenteen **Kohde**-kenttien nimiin.
 
-   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Adobe Campaign Standard -yhdistimen kenttien yhdistämismääritys.":::
+   :::image type="content" source="media/ACS-field-mapping.png" alt-text="Adobe Campaign Standard -yhdyssovelluksen kenttämääritys.":::
 
-   Jos haluat lisätä määritteitä, valitse **Lisää määrite**. Kohdenimi voi olla eri kuin lähdekentän nimi, joten voit edelleen yhdistää segmenttituottoja käyttäjäryhmätiedoista Adobe Campaign Standardiin, jos kentillä ei ole samaa nimeä kahdessa järjestelmässä.
+   Jos haluat lisätä määritteitä, valitse **Lisää määrite**. Kohdenimi voi olla eri kuin lähdekentän nimi, joten voit edelleen yhdistää segmenttituottoja käyttäjäryhmän merkityksellisistä tiedoista Adobe Campaign Standardiin, jos kentillä ei ole samaa nimeä kahdessa järjestelmässä.
 
    > [!NOTE]
-   > Sähköpostiosoitetta käytetään tunnistetietokenttänä, mutta voit yhdistää käyttäjäryhmätietojen yhdistämistunnuksen Adobe Campaign Standardiin minkä tahansa muun tunnisteen avulla.
+   > Sähköpostiosoitetta käytetään tunnistetietokenttänä, mutta voit yhdistää tietoja Adobe Campaign Standardiin käyttäjäryhmän perusteella minkä tahansa muun tunnisteen avulla.
 
 1. Valitse **Tallenna**.
 
-Kun olet tallentanut vientikohteen, löydät sen kohdasta **Tiedot** > **Viennit**.
+Kun olet tallentanut vientikohteen, löydät sen kohdasta **Järjestelmänvalvoja** > **Viennit** > **Omat vientikohteet**.
 
-Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#run-exports-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
+:::image type="content" source="media/export-destination-adobe-campaign-standard.png" alt-text="Näyttökuva, jossa vienti- ja näytesegmentti on korostettu.":::
+
+Nyt voit [viedä segmentin tarvittaessa](export-destinations.md#export-data-on-demand). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md) yhteydessä.
 
 > [!NOTE]
 > Varmista, että viedyn segmentin tietueiden määrä on Adobe Campaign Standard -käyttöoikeutesi sallitun rajan sisällä.
@@ -115,28 +102,28 @@ Esimerkki: Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-
 
 Kun käyttäjäryhmän merkityksellisiä tietoja sisältävä segmentti viedään, se sisältää sarakkeet, jotka olet valinnut ja määrittänyt viennin kohteen edellisessä vaiheessa. Näitä tietoja voi käyttää [profiilien luomiseen Adobe Campaign Standardissa](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/about-profiles.html#managing-profiles).
 
-Jotta segmenttiä voidaan käyttää Adobe Campaign Standardissa, Adobe Campaign Standardin profiilirakenne on laajennettava niin, että se sisältää kaksi lisäkenttää. Opettele [laajentamaan profiiliresurssia](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) Adobe Campaign Standardin uusilla kentillä.
+Adobe Campaign Standardin segmentin käyttöä varten Adobe Campaign Standardin profiilirakenne on laajennettava niin, että se sisältää kaksi lisäkenttää. Opettele [laajentamaan profiiliresurssia](https://experienceleague.adobe.com/docs/campaign-standard/using/developing/use-cases--extending-resources/extending-the-profile-resource-with-a-new-field.html#developing) Adobe Campaign Standardin uusilla kentillä.
 
-Esimerkissämme nämä kentät ovat *Segmentin nimi ja Segmentin päivämäärä (valinnainen)*.
+Esimerkissämme nämä kentät ovat *Segmentin nimi ja Segmentin päivämäärä (valinnainen).*
 
-Näiden kenttien avulla määritetään kampanjaan halutut kohdeprofiilit Adobe Campaign Standardissa.
+Näiden kenttien avulla määritetään profiileja Adobe Campaign Standardissa, jonka haluamme kohdistaa tähän kampanjaan.
 
 Jos Adobe Campaign Standardissa ei ole muita tietueita kuin mitä aiot tuoda, voit ohittaa tämän vaiheen.
 
 ## <a name="import-data-into-adobe-campaign-standard"></a>Tietojen tuominen Adobe Campaign Standardiin
 
-Nyt kun kaikki on valmista, on tuotava valmiit käyttäjäryhmätiedot käyttäjäryhmän merkityksellisistä tiedoista Adobe Campaign Standardiin profiilien luontia varten. Opettele [tuomaan profiileja Adobe Campaign Standardissa](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) työnkulun avulla.
+Nyt kun kaikki on valmista, meidän on tuotava valmiit käyttäjäryhmän tiedot käyttäjäryhmän merkityksellisistä tiedoista Adobe Campaign Standardiin profiilien luontia varten. Opettele [tuomaan profiileja Adobe Campaign Standardissa](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/managing-profiles/creating-profiles.html#profiles-and-audiences) työnkulun avulla.
 
-Alla olevassa kuvassa oleva tuonnin työnkulku on määritetty suoritettavaksi kahdeksan tunnin välein. Se etsii vietyjä käyttäjäryhmän merkityksellisten tietojen segmenttejä (.csv-tiedosto Azure Blob Storagessa). Työnkulku poimii .csv-tiedoston sisällön määritetyssä sarakejärjestyksessä. Työnkulku on luotu suorittamaan virheiden peruskäsittely ja varmistamaan, että jokaisella tietueella on sähköpostiosoite ennen tietojen tallentamista Adobe Campaign Standardiin. Työnkulku poimii myös segmentin nimen tiedostonimestä, ennen kuin se lisää tai päivittää Adobe Campaign Standard -profiilin tiedot.
+Alla olevassa kuvassa oleva tuonnin työnkulku on määritetty suoritettavaksi 8 tunnin välein ja se etsii vietyjä käyttäjäryhmien merkityksellisiä tietoja (.csv-tiedosto Azure Blob -säilössä). Työnkulku poimii .csv-tiedoston sisällön määritetyssä sarakejärjestyksessä. Työnkulku on luotu suorittamaan virheiden peruskäsittely ja varmistamaan, että jokaisella tietueella on sähköpostiosoite ennen tietojen tallentamista Adobe Campaign Standardiin. Työnkulku poimii myös segmentin nimen tiedostonimestä, ennen kuin se upottaa ACS-profiilin tiedot.
 
 :::image type="content" source="media/ACS-import-workflow.png" alt-text="Näyttökuva tuonnin työnkulusta Adobe Campaign Standard -käyttöliittymässä.":::
 
-## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>Nouda käyttäjäryhmä Adobe Campaign Standardissa
+## <a name="retrieve-the-audience-in-adobe-campaign-standard"></a>Nouda kohdeyleisö Adobe Campaign Standardissa
 
-Kun tiedot on tuotu Adobe Campaign Standardiin, [voit luoda työnkulun](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data) ja tehdä [kyselyjä](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) asiakkaille *segmentin nimen* ja *segmentin päivämäärän* perusteella ja valita näytekampanjalle tunnistetut profiilit.
+Kun tiedot on tuotu Adobe Campaign Standardiin, [voit luoda työnkulun](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/workflow-general-operation/building-a-workflow.html#managing-processes-and-data) ja [tehdä kyselyjä](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/targeting-activities/query.html#managing-processes-and-data) asiakkaille *segmentin nimen* ja *segmentin päivämäärän* perusteella ja valita näytekampanjalle tunnistetut profiilit.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Sähköpostin luominen ja lähettäminen Adobe Campaign Standardilla
 
 Luo sähköpostiviestin sisältö ja [testaa ja lähetä](https://experienceleague.adobe.com/docs/campaign-standard/using/testing-and-sending/get-started-sending-messages.html#preparing-and-testing-messages) sitten sähköpostiviestisi.
 
-:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Esimerkki sähköpostista, jossa on Adobe Campaign Standardin uusimistarjous.":::
+:::image type="content" source="media/contoso-sample-email.jpg" alt-text="Esimerkki sähköpostista, jossa on tarjous Adobe Campaign Standard -tilauksen uusimisesta.":::

@@ -5,15 +5,16 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/04/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 1f82ff588c2ffbe82c3ee7df2498ac2cca2bad31
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 5e301b4ff0a7586fb143b154b773791b3bd645b7
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8225419"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648113"
 ---
 # <a name="create-a-new-environment"></a>Luo uusi ympäristö 
 
@@ -45,7 +46,7 @@ Ympäristö on paikka, jossa voit hallita työtiloja ja yhteyksiä. Ympäristön
 
 1. Valitse **Näytä lisäasetukset**, jotta voit ottaa käyttöön ja tai poistaa käytöstä nämä valinnaiset asetukset:
 
-   - Vaihda **Tuntemattomasta tunnettuun** arvoon "käytössä", jotta voit liittää verkkotaphtumia aiemmin todennettuihin käyttäjiin. Lisätietoja on kohdassa [Todennettujen vierailijoiden verkkotapahtumien tunnistaminen](unknown-to-known.md).
+   - Vaihda **Tuntemattomasta tunnettuun** arvoon "käytössä", jotta voit liittää verkkotaphtumia aiemmin todennettuihin käyttäjiin. Lisätietoja on kohdassa [Todennettujen vierailijoiden verkkotapahtumien tunnistaminen](unknown-to-known.md)
    - Vaihda **Suodata bottiliikenne** arvoon "käytössä", jotta voit poistaa tämän työtilan bottiverkkoliikenteen. 
 
 1. Valitse **Valmis**, kun olet valmis. 

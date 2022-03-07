@@ -4,16 +4,17 @@ description: Dimensioiden luominen, muokkaaminen ja poistaminen.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 06/09/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: d35c72f73d2f3e202ae3c5a5ef26e9db89360084
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: b575c5e84197d76f53a722bac60c5af928c917f9671720ede1de38c4a7478be4
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8226299"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7033993"
 ---
 # <a name="view-and-create-dimensions"></a>Dimensioiden tarkasteleminen ja luominen
 
@@ -21,7 +22,7 @@ ms.locfileid: "8226299"
 
 Dimensio on tapahtuman määrite, joka voi kuvailla, suodattaa tai ryhmitellä tietoja. Jos käytät verkkosivustossasi markkinointikampanjaa, voit lajitella vierailijat dimensioiden avulla uusien ja palaavien käyttäjien mukaan.  
 
-Tapahtumanäkemykset sisältävät tapahtuman ominaisuuksien valmiit (out-of-the-box, OOB) dimensiot. Esimerkkejä:
+Tapahtumanäkemykset sisältävät tapahtuman ominaisuuksien kattavat dimensiot. Esimerkkejä:
 
 - Selaimen nimi
 - Sivun nimi
@@ -43,21 +44,17 @@ Dimensiot perustuvat olemassa oleviin tapahtuman ominaisuuksiin. Kun käytät se
 Järjestelmän luoman dimension lisäksi ympäristön ja työtilan järjestelmänvalvojat voivat luoda mukautettuja dimensioita. Mukautetut dimensiot perustuvat perustapahtumien oletusominaisuuksiin tai voivat käyttää [tapahtuman mukautettuja ominaisuuksia](advanced-SDK-implementation.md).
 
 1. Siirry kohtaan **Tieto** > **Dimensiot**.
-1. Valitse **Uusi dimensio**.
+1. Valitse **Lisää dimensio**.
 
    :::image type="content" source="media/add-dimension.png" alt-text="Dimension lisääminen tapahtumaan.":::
 
 1. Valitse **Luo dimensio** -ruudussa ominaisuus, johon dimensio perustuu. Ominaisuusluettelossa näkyvät kaikki työtilan ominaisuudet, joita ei ole liitetty dimensioon.
-   
-   :::image type="content" source="media/create-new-dimension.png" alt-text="Luo uusi dimensio":::
-      
-3. Anna nimi **Näyttönimi**-ruudussa. Voit vaihtoehtoisesti lisätä **Kuvauksen**.
-4. Tallenna dimensio valitsemalla **Luo**. Dimension käyttö [mukautetussa raportissa](custom-reports.md) tai [segmentissä](segments.md) voi kestää enintään minuutin. 
+1. Anna nimi **Näyttönimi**-ruudussa. Voit vaihtoehtoisesti lisätä kuvauksen.
+1. Tallenna dimensio valitsemalla **Luo**. Dimension käyttö [mukautetussa raportissa](custom-reports.md) tai [segmentissä](segments.md) voi kestää enintään minuutin. 
 
 ## <a name="edit-a-dimension"></a>Muokkaa dimensiota
 
-Voit muuttaa dimension nimeä ja kuvausta. Voit muokata vain käyttäjän luomia dimensioita, mutta et voi muokata järjestelmän dimensioita.
-
+Voit muuttaa dimension nimeä ja kuvausta.
 
 1. Siirry kohtaan **Tieto** > **Dimensiot**.
 1. Valitse poistettava dimensio.

@@ -2,30 +2,8 @@
   href: index.yml
 - name: Tuotteen yleiskatsaus
   href: overview.md
-- name: Oppimishakemisto
-  items:
-    - name: Aloita käyttö
-      href: /learn/modules/get-started-customer-data-platform/
-    - name: Tietojen käsitteleminen
-      href: /learn/modules/ingest-data-customer-insights/
-    - name: Yhdistetyn asiakasprofiilin luominen
-      href: /learn/modules/unified-customer-profile/
-    - name: Käyttäjäryhmien merkityksellisten tietojen käyttö
-      href: /learn/modules/working-with-customer-insights/
-    - name: Tietojen rikastaminen ja ennusteiden teko
-      href: /learn/modules/enrich-data/
-    - name: Hallitse ulkoisia yhdistimiä
-      href: /learn/modules/configure-third-party-connections/
-    - name: Customer Insightsin hallinta
-      href: /learn/modules/administer-customer-data-platform/
-- name: Ilmainen kokeiluversio
-  items:
-    - name: Rekisteröityminen ilmaisen kokeiluversion käyttäjäksi
-      href: trial-signup.md
-    - name: Kokeiluversion usein kysytyt kysymykset
-      href: trial-FAQ.md
-- name: Aloita maksullisella lisenssillä
-  href: paid-license.md
+- name: Luo kokeilu
+  href: audience-insights/get-started-trial.md
 - name: Ympäristön käyttäminen
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Merkityksellisiä tietoja käyttäjäryhmästä
@@ -36,28 +14,28 @@
       href: audience-insights/overview.md
     - name: Uudet ja päivitetyt toiminnot
       href: audience-insights/whats-new-audience-insights.md
-    - name: Aloitusopas
+    - name: Luo uusi ympäristö
+      href: audience-insights/get-started-paid.md
+    - name: Learn-moduulit
       items:
-        - name: Pikaopas
-          href: audience-insights/get-started.md
-        - name: Luo uusi ympäristö
-          href: audience-insights/create-environment.md
-        - name: Tutustu käyttäjäryhmän merkityksellisiin tietoihin
-          href: audience-insights/home.md
-    - name: Yritystilien käsitteleminen
-      href: audience-insights/work-with-business-accounts.md
+        - name: Tietojen käsitteleminen
+          href: /learn/modules/ingest-data-customer-insights/
+        - name: Yhdistetyn asiakasprofiilin luominen
+          href: /learn/modules/unified-customer-profile/
+        - name: Sovelluksen käyttäminen
+          href: /learn/modules/working-with-customer-insights/
+        - name: Tietojen ja ennusteiden rikastaminen
+          href: /learn/modules/enrich-data/
     - name: Tietolähteet
       items:
         - name: Tietolähteiden yleiskatsaus
           href: audience-insights/data-sources.md
-        - name: Tietolähteiden lisääminen Power Query -yhdistinten avulla
+        - name: Tietolähteiden lisääminen Power Query -yhdistimien avulla
           href: audience-insights/connect-power-query.md
         - name: Common Data Model -kansion lisääminen tietolähteenä
           href: audience-insights/connect-common-data-model.md
         - name: Hallitun Dataverse Data Lake -tallennustilan lisääminen
           href: audience-insights/connect-dataverse-managed-lake.md
-        - name: 'Azure Synapse Analytics:n lisääminen'
-          href: audience-insights/connect-synapse.md
         - name: Tietolähteiden lisäävä päivitys
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Reaaliaikainen tietojen käsittely
@@ -82,28 +60,20 @@
           href: audience-insights/relationships.md
         - name: Asiakkaan aktiviteettien luettelo
           href: audience-insights/activities.md
-        - name: Semanttisen yhdistämisen määrittäminen
-          href: audience-insights/semantic-mappings.md
     - name: Tietojen rikastaminen
       items:
         - name: Asiakasprofiilien rikastaminen
           href: audience-insights/enrichment-hub.md
-        - name: Tuotemerkit ja kiinnostuksen kohteet
+        - name: Tuotemerkki ja kiinnostuksen kohteiden affiniteetit
           href: audience-insights/enrichment-microsoft.md
         - name: Parannetut osoitteet
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Parannetut yritystiedot
-          href: audience-insights/enrichment-enhanced-company-data.md
-        - name: Azure Mapsin rikastaminen
-          href: audience-insights/enrichment-azure-maps.md
         - name: Tietojen rikastaminen HERE Technologiesin avulla
           href: audience-insights/enrichment-here.md
         - name: Täydennä Leadspacen avulla
           href: audience-insights/enrichment-leadspace.md
         - name: Rikastaminen Experianin avulla
           href: audience-insights/enrichment-experian.md
-        - name: Rikasta Office 365 -tiedoilla
-          href: audience-insights/enrichment-office.md
         - name: Rikastaminen mukautetun SFTP-tuonnin avulla
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segmentit
@@ -122,12 +92,8 @@
           href: audience-insights/find-similar-customer-segments.md
     - name: Mittarit
       items:
-        - name: Mittarien yleiskatsaus
+        - name: Mittareiden ja tunnuslukujen määrittäminen
           href: audience-insights/measures.md
-        - name: Uuden mittarin luominen
-          href: audience-insights/measure-builder.md
-        - name: Käytä mittarimallia
-          href: audience-insights/measure-templates.md
     - name: Ennusteet
       items:
         - name: 'Tietojen ennustaminen AI:n avulla'
@@ -140,10 +106,8 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Ennakoi tilausten vaihtuvuus
               href: audience-insights/predict-subscription-churn.md
-            - name: Tapahtuman vaihtuvuuden ennustaminen
+            - name: Tapahtuman vaihtuvuuden ennakointi
               href: audience-insights/predict-transactional-churn.md
-            - name: Asiakaspalautteen asenteen analysointi
-              href: audience-insights/sentiment-analysis.md
             - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
               href: audience-insights/custom-models.md
             - name: Osittain puuttuvien tietojen täydentäminen
@@ -154,12 +118,14 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Tilauksen vaihtuvuusennusteen näyteopas
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Esimerkkiopas tapahtuman vaihtuvuuden ennakoinnista
+            - name: Tapahtuman vaihtuvuusennusteen näyteopas
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Tuotesuosituksen ennusteen näyteopas
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Azuren automaattianalyysipalvelujen kokeileminen
               href: audience-insights/azure-machine-learning-experiments.md
+            - name: Azuren koneoppimisstudion kokeileminen
+              href: audience-insights/machine-learning-studio-experiments.md
         - name: Hallitse ennusteita
           href: audience-insights/manage-predictions.md
         - name: Ennusteisiin perustuvien segmenttien luominen
@@ -248,16 +214,14 @@
           href: audience-insights/connections.md
         - name: Useiden ympäristöjen hallinta
           href: audience-insights/manage-environments.md
-        - name: Suojaus
-          items:
-            - name: Bring your own Key Vault
-              href: audience-insights/use-azure-key-vault.md
-            - name: Yhteyden muodostaminen ADLS-tallennustiliin palveluobjektia käyttämällä
-              href: audience-insights/connect-service-principal.md
-            - name: Diagnostiikkalokien vieminen
-              href: audience-insights/diagnostics.md
+        - name: Yhteyden muodostaminen ADLS-tallennustiliin palveluobjektia käyttämällä
+          href: audience-insights/connect-service-principal.md
+        - name: Tuetut kielet
+          href: audience-insights/supported-languages.md
     - name: Laajennettavuus
       items:
+        - name: Verkkotietojen integroiminen vuorovaikutuksen tiedoista
+          href: audience-insights/integrate-engagement-insights.md
         - name: Tarkista entiteettirakenteet Common Data Modelissa
           href: audience-insights/entity-schemas.md
         - name: Customer Insights -tiedot Dataversessä
@@ -266,45 +230,95 @@
           href: audience-insights/apis.md
         - name: Ohjelmointirajapintaviitteet
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Hyväksynnän hallinta (esiversio)
+    - name: Palvelurajoitukset
+      href: audience-insights/service-limits.md
+    - name: GDPR-asetuksen DSR-pyynnöt
+      href: audience-insights/gdpr.md
+- name: Seurannan merkityksellisiä tietoja (esiversio)
   items:
     - name: Ohjekeskus
-      href: consent-management/index.yml
+      href: engagement-insights/index.yml
     - name: Ominaisuuksien yleiskatsaus
-      href: consent-management/overview.md
+      href: engagement-insights/overview.md
+    - name: Ilmainen kokeiluversio
+      href: 'https://pi.dynamics.com/'
     - name: Aloitusopas
       items:
         - name: Aloitusopas
-          href: consent-management/get-started.md
+          href: engagement-insights/get-started.md
+        - name: Luo työtila
+          href: engagement-insights/create-workspace.md
+        - name: Tapahtumien sieppaaminen sivustoista ja mobiilisovelluksista
+          href: engagement-insights/developer-resources.md
         - name: Käsitteet ja terminologia
-          href: consent-management/glossary.md
-    - name: Tuo hyväksyntätiedot
+          href: engagement-insights/glossary.md
+    - name: Tapahtumat
       items:
-        - name: Tuo hyväksyntätiedot
-          href: consent-management/import-consent-data.md
-        - name: Hyväksyntätietojen määrittäminen ja suostumusasetusten käyttäminen
-          href: consent-management/set-consent-rules.md
-    - name: Suostumustietojen hallinta
+        - name: Tapahtumien luominen ja muokkaaminen
+          href: engagement-insights/refined-events.md
+        - name: Tunnista aiemmin todennettujen kävijöiden verkkotapahtumat
+          href: engagement-insights/unknown-to-known.md
+        - name: Vie tapahtumat
+          href: engagement-insights/export-events.md
+    - name: Raportoi
       items:
-        - name: Suostumussääntöjen käyttöönotto kohdeyleisön tiedoissa
-          href: audience-insights/activate-consent.md
-        - name: Hallitse hyväksynnän oletussääntöjä kohdeyleisön merkityksellisten tietojen segmenttien avulla
-          href: audience-insights/change-default-consent-rules.md
-    - name: Käyttäjien ja asetusten hallinta
+        - name: Näytä raportit
+          href: engagement-insights/view-reports.md
+        - name: Luo mukautettuja raportteja
+          href: engagement-insights/custom-reports.md
+        - name: Yhtenäistettyjen profiiliraporttien luominen
+          href: engagement-insights/profile-reports.md
+        - name: Dimensioiden tarkasteleminen ja luominen
+          href: engagement-insights/dimensions.md
+        - name: Mittareiden tarkasteleminen ja luominen
+          href: engagement-insights/metrics.md
+        - name: Segmenttien tarkasteleminen ja luominen
+          href: engagement-insights/segments.md
+    - name: Siirtymäanalyysit
       items:
-        - name: Järjestelmäasetusten määrittäminen
-          href: consent-management/system-settings.md
-        - name: Käyttäjien ja oikeuksien hallinta
-          href: consent-management/manage-users.md
-    - name: Suostumustietojen käyttö
+        - name: Suppiloraporttien luominen ja hallinta
+          href: engagement-insights/funnel-reports.md
+    - name: Kehittäjien resurssit
       items:
-        - name: Ennusteiden luominen hyväksyntätietojen avulla
-          href: consent-management/predictions-consent-data.md
-- name: Vuorovaikutuksen merkitykselliset tiedot (esiversio)
-  href: engagement-insights/overview.md
-- name: Palvelurajoitukset
-  href: service-limits.md
-- name: DSR-oikeudet ja -pyynnöt
-  href: dsr-rights-requests.md
+        - name: Kehittäjien resurssien yleiskatsaus
+          href: engagement-insights/developer-resources.md
+        - name: 'SDK:n verkkosovelluksen tutoriaali'
+          href: engagement-insights/advanced-SDK-implementation.md
+        - name: Web SDK -näyte
+          href: engagement-insights/websdk-sample.md
+        - name: 'Android SDK:n opasohjelma'
+          href: engagement-insights/get-started-android.md
+        - name: 'Android SDK:n esimerkki'
+          href: engagement-insights/androidsdk-sample.md
+        - name: iOS SDK -opastus
+          href: engagement-insights/get-started-ios.md
+        - name: 'iOS SDK:n esimerkki'
+          href: engagement-insights/iossdk-sample.md
+    - name: Hallinto
+      items:
+        - name: Roolit ja oikeudet
+          href: engagement-insights/user-roles.md
+        - name: Ympäristöjen ja työtilojen hallinta
+          href: engagement-insights/manage-environments-workspaces.md
+        - name: Yhteyksien määrittäminen
+          href: engagement-insights/configure-connections.md
+        - name: Evästeiden ja käyttäjän suostumuksen hallinta
+          href: engagement-insights/user-consent-storage.md
+    - name: Yleinen tietosuoja-asetus
+      items:
+        - name: Henkilötietojen poistaminen ja vieminen
+          href: engagement-insights/delete-export-personal-data.md
+    - name: Alueellinen saatavuus
+      href: engagement-insights/regional-availability.md
+    - name: Palvelurajoitukset
+      href: engagement-insights/quotas.md
+- name: Integroi käyttäjäryhmä- ja sitoutumistiedot
+  items:
+    - name: Yhdistä käyttäjäryhmätiedot ja sitoutumistiedot
+      href: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - name: Käytä analyysitietoja käyttäjäryhmäsegmenttien sitoutumistietoraporteissa
+      href: engagement-insights/integrate-audience-insights-segments.md
+    - name: Käyttäytymistietojen jakaminen demografisten dimensioiden avulla
+      href: engagement-insights/curate-dimensions.md
 - name: Tukipyyntö
-  href: /power-platform/admin/get-help-support
+  href: 'https://dynamics.microsoft.com/en-us/support/'

@@ -1,22 +1,21 @@
 ---
-title: Yhtenäisen näkymän luominen asiakkaille
-description: Käy tietojen yhdistäminen läpi tietojen kanssa ja luo asiakasprofiilien yksittäinen päätietojoukko.
-ms.date: 10/18/2021
+title: Tietojen yhdistäminen
+description: Tietoja käytettyjen tietojen yhdistämisestä.
+ms.date: 04/16/2020
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-searchScope:
-- ci-map
-- customerInsights
-ms.openlocfilehash: 2012d32494ccd4639cbffbb81d4f6eac1258e23b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.custom: intro-internal
+ms.openlocfilehash: cb96763d4b5b67b5110db757eb7d160c294d6fc3
+ms.sourcegitcommit: b78c9680b213204e6b0ed47f0147205083f6a98f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353815"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "6539065"
 ---
 # <a name="data-unification-overview"></a>Tietojen yhdistämisen yleiskatsaus
 

@@ -1,28 +1,24 @@
 ---
 title: Osittaisten tietojen viimeisteleminen ennusteiden avulla
 description: Puutteellisten asiakastietojen täydentäminen ennusteiden avulla.
-ms.date: 11/01/2021
+ms.date: 05/05/2020
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-searchScope:
-- ci-predictions
-- ci-custom-models
-- customerInsights
-ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8353999"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692523"
 ---
-# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Osittaisten tietojen täydentäminen ennusteilla (vanhentunut)
+# <a name="complete-your-partial-data-with-predictions"></a>Osittaisten tietojen viimeisteleminen ennusteiden avulla
 
-> [!IMPORTANT]
-> Tämä ominaisuus **vanhentuu** **5.11.2021** alkaen. Nykyiset toteutukset toimivat, kunnes toiminto poistetaan, mutta uusia integrointeja ei voi luoda alla olevan ohjeen mukaisesti.
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Ennusteiden avulla voit helposti luoda ennustettuja arvoja, jotka auttavat ymmärtämään asiakasta aiempaa paremmin. Valitsemalla **Analytiikka** > **Ennusteet**-sivulla **Omat ennusteet** näkyviin tulee ennusteet, jotka on määritetty toisaalla käyttäjäryhmän merkityksellisissä tiedoissa ja joiden avulla ennusteita voi mukauttaa entisestään.
 
@@ -39,7 +35,7 @@ Ennen kuin organisaatio voi käyttää ennustetoimintoa, seuraavien edellytykset
 
 2. Käyttäjäryhmäsi tiedot on liitetty Dataverse-esiintymääsi.
 
-Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
+Jos olet [luomassa ensimmäistä ympäristöä](get-started-paid.md), määritä se **Luo ympäristö** -valintaikkunassa ja valitse **Lisäasetukset**. Jos olet jo luonut ympäristön, siirry sen asetuksiin ja valitse **Lisäasetukset**. Anna kummassakin tapauksessa **Käytä ennusteita** -osassa sen Dataverse -esiintymän URL-osoite, johon haluat liittää ympäristön.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Ennusteen luominen asiakasentiteetissä
 
@@ -64,8 +60,6 @@ Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
    > ![Esimerkki kentän arvojen ja luokkien yhdistämisestä.](media/intelligence-categorymapping.png "Esimerkki kentän arvojen ja luokkien yhdistämisestä")
 
 8. Valitse **Valmis**. Ennustetta aletaan käsitellä. Käsittelyn kesto riippuu tietojen koosta ja monimuotoisuudesta. Tulokset ovat käytettävissä uudessa entiteetissä luodun ennusteen **tulosentiteetin nimen** perusteella.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Luo ennuste segmentin luomisen aikana
 
@@ -116,7 +110,7 @@ Tämän prosessin osana valitaan tietty määrite, johon segmentti perustuu. Se 
 
 ## <a name="edit-a-prediction"></a>Muokkaa ennustetta
 
-Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderilla parantaaksesi mallin tehokkuutta.  
+Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderissa ja tehostaa mallin toimintaa.  
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Analytiikka** > **Ennusteet** > **Omat ennusteet**.
 
@@ -126,12 +120,12 @@ Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderilla parantaaksesi ma
 
 4. Valitse **Mukauta AI Builderissa**.
 
-5. Päivitä mallisi AI Builderissa. [Lisätietoja mallien hallinnasta AI builderissa](/ai-builder/manage-model#retrain-and-republish-existing-models).
+5. Päivitä malli AI Builderissa. [Lisätietoja mallien hallinnasta AI builderissa](/ai-builder/manage-model#retrain-and-republish-existing-models).
 
 Ennusteen seuraava suoritus käyttää luomaasi päivitettyä mallia.
 
 > [!NOTE]
-> Uudet AI Builderissa luodut mallit eivät näy kohdeyleisön merkityksellisissä tiedoissa, ellei mallia ole luotu edellä mainituissa käyttökokemuksissa.
+> AI Builderissa luodut uudet mallit eivät näy käyttäjäryhmän merkityksellisissä tiedoissa, ellei mallia luotu edellä mainituista kokemuksista.
 
 ## <a name="remove-a-prediction"></a>Poista ennuste
 
