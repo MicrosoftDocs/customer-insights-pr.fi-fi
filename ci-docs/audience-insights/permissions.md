@@ -1,20 +1,23 @@
 ---
 title: Käyttöoikeuksien hallinta
 description: Tietoja käyttöoikeuksista ja käyttäjärooleista.
-ms.date: 10/27/2020
+ms.date: 03/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e58bb1a3bd4c0920ff984daffabbf16162185f3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+searchScope:
+- ci-permissions
+- ci-system-security
+- customerInsights
+ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595698"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355933"
 ---
 # <a name="user-permissions"></a>Käyttäjien käyttöoikeudet
 
@@ -31,7 +34,7 @@ Roolityyppejä on kolme:
 - Tutustu **Rikastaminen**-sivuun.
 - Tuutustu entiteetteihin ja vie niitä **Entiteetit**-sivun avulla.
 - Näytä järjestelmän käsittelyn tila **Järjestelmä**-sivun avulla.
-- Vie segmenttejä **Segmentit**-sivulta.
+- Vientien tarkasteleminen **Viennit**-sivulla.
 - Asenna **Power BI Customer Insights** -koontinäyttö ja käytä sitä.
 
 ## <a name="contributor"></a>Osallistuja
@@ -43,6 +46,7 @@ Roolityyppejä on kolme:
 - Luo segmenttejä **Segmentit**-sivun avulla.
 - Luo mittareita **Mittarit**-sivun avulla.
 - Hallitse määrityksiä ja täydennä asiakasprofiilit **Täydennä**-sivulla (vain ensimmäisen osapuolen täydennykset).
+- Hallitse ja luo vientejä osallistujien kanssa jaettujen yhteyksien perusteella. [Lisätietoja siitä, miten järjestelmänvalvojat voivat sallia osallistujien käyttää yhteyttä vienneissä.](connections.md#allow-contributors-to-use-a-connection-for-exports)
 
 ## <a name="administrator"></a>Järjestelmänvalvoja
 
@@ -50,8 +54,9 @@ Roolityyppejä on kolme:
 - Muuta asetuksia **Järjestelmä**-sivulla, myös työskentelykieli, ja päivitä järjestelmäprosessien aikataulut.
 - Tarkastele ja lisää oikeuksia **Käyttöoikeudet**-sivulla.
 - Määritä Asiakkaat-sivun haku- ja suodatusmääritelmät **Hae ja suodata indeksi** -sivulla (käytettävissä **Asiakkaat**-sivulla).
-- Määritä Dynamics 365 Sales -segmentin kohteet käyttämällä **Vientikohteet**-sivua.
+- Voit hallita yhteyksiä ja sallia niitä muille käyttäjärooleille **Yhteydet**-sivulla.
 - Hallitse määrityksiä ja täydennä asiakasprofiilit **Täydennä**-sivulla (kaikki täydennykset).
+- Hallitse ja luo vientejä **Viennit**-sivulla.
 - Asenna **asiakaskortin apuohjelma** ja käytä sitä.
 - Lisää **Power Apps -yhdistin** ja käytä sitä.
 - Ota [Customer Insights -ohjelmointirajapinnat](apis.md) käyttöön.

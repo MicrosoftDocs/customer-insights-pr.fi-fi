@@ -1,24 +1,23 @@
 ---
 title: Azuren automaattianalyysipalvelujen kokeileminen
 description: Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen Dynamics 365 Customer Insightsissa.
-ms.date: 11/30/2020
-ms.service: customer-insights
+ms.date: 12/02/2021
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6f00d3202dc29d810bdd218d06c7d04e551846e8
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 3c3bed3dca40be748140a8b339191e6a42725714
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668764"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228884"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Azuren automaattianalyysipalveluihin perustuvien mallien käyttäminen
 
-Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppimismallien muodostamisen lähde, joilla voidaan luoda lisää merkityksellisiä liiketoimintatietoja. Integroituneet Customer Insights sekä koneoppimisstudio (perinteinen) ja Azuren automaattianalyysipalvelut käyttävät käyttäjän mukautettuja malleja. Kohdassa [Koneoppimisstudion (perinteinen) kokeileminen](machine-learning-studio-experiments.md) on esimerkkejä kokeiluista, jotka perustuvat koneoppimisstudioon (perinteinen). 
+Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppimismallien muodostamisen lähde, joilla voidaan luoda lisää merkityksellisiä liiketoimintatietoja. Azuren automaattianalyysipalveluihin integroituvalla Customer Insightsilla voi käyttää omia mukautettuja malleja.
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -29,30 +28,30 @@ Dynamics 365 Customer Insightsin yhtenäistetyt tiedot ovat sellaisten koneoppim
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Azuren automaattianalyysipalvelujen työtilan määrittäminen
 
-1. [Azuren automaattianalyysipalvelujen työtilan luonti](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) sisältää lisätietoja työtilan luontivaihtoehdoista. Paras tulos saadaan luomalla työtila sillä Azure-alueella, joka on maantieteellisesti lähinnä Customer Insights -ympäristöä.
+1. [Azuren automaattianalyysipalvelujen työtilan luonti](/azure/machine-learning/concept-workspace#-create-a-workspace) sisältää lisätietoja työtilan luontivaihtoehdoista. Paras tulos saadaan luomalla työtila sillä Azure-alueella, joka on maantieteellisesti lähinnä Customer Insights -ympäristöä.
 
-1. Työtilaa käytetään [Azuren koneoppimisstudion](https://ml.azure.com/) kautta. Työtilaa voi [käyttää eri tavoin](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
+1. Työtilaa käytetään [Azuren koneoppimisstudion](https://ml.azure.com/) kautta. Työtilaa voi [käyttää eri tavoin](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction).
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Azuren automaattianalyysipalvelujen suunnitteluohjelman käyttäminen
 
-Azuren automaattianalyysipalvelujen suunnitteluohjelma on visuaalinen kaavio, jossa tietojoukkoja ja moduuleja voi vetää ja pudottaa samalla tavoin kuin koneoppimisstudiossa (perinteinen). Suunnitteluohjelmassa luotu eräjakso voidaan integroida Customer Insightsiin, jos määritykset sen sallivat. 
+Azuren koneoppimisen suunnittelija tarjoaa visuaalisen pohjan, johon voit vetää ja pudottaa tietojoukkoja ja moduuleja. Suunnitteluohjelmassa luotu eräjakso voidaan integroida Customer Insightsiin, jos määritykset sen sallivat. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Azuren automaattianalyysipalvelujen SDK:n käyttäminen
 
-Data-analyytikot ja tekoälykehittäjät luovat koneoppisen työnkulkuja käyttämällä [Azuren automaattianalyysipalvelujen SDK:ta](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true). Tällä hetkellä SDK:lla koulutettuja malleja ei voi integroida suoraan Customer Insightsiin. Customer Insights -integrointiin tarvitaan mallia käyttävä eräpäättelyjakso.
+Data-analyytikot ja tekoälykehittäjät luovat koneoppisen työnkulkuja käyttämällä [Azuren automaattianalyysipalvelujen SDK:ta](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). Tällä hetkellä SDK:lla koulutettuja malleja ei voi integroida suoraan Customer Insightsiin. Customer Insights -integrointiin tarvitaan mallia käyttävä eräpäättelyjakso.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Customer Insights -integroinnin eräjaksovaatimukset
 
 ### <a name="dataset-configuration"></a>Tietojoukon määritys
 
-Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja eräpäättelyjaksoon. Nämä tietojoukot on rekisteröitävä työtilassa. Tällä tuetaan vain [taukokkomuotoisia tietojoukkoja](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset), joiden muoto on.csv. Entiteettitietoja vastaavat tietojoukot on muutettava jaksoparametreiksi.
+Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja eräpäättelyjaksoon. Nämä tietojoukot on rekisteröitävä työtilassa. Tällä tuetaan vain [taukokkomuotoisia tietojoukkoja](/azure/machine-learning/how-to-create-register-datasets#tabulardataset), joiden muoto on.csv. Entiteettitietoja vastaavat tietojoukot on muutettava jaksoparametreiksi.
    
 * Suunnitteluohjelman tietojoukkoparametrit
    
      Avaa suunnitteluohjelmassa **Valitse tietojoukon sarakkeet** ja valitse **Määritä jaksoparametrina**, jossa annetaan parametrin nimi.
 
      > [!div class="mx-imgBorder"]
-     > ![Suunnitteluohjelman tietojoukon muuttaminen parametreiksi](media/intelligence-designer-dataset-parameters.png "Tietojoukon muuttaminen parametreiksi suunnitteluohjelmassa")
+     > ![Suunnitteluohjelman tietojoukon muuttaminen parametreiksi.](media/intelligence-designer-dataset-parameters.png "Tietojoukon muuttaminen parametreiksi suunnitteluohjelmassa")
    
 * SDK:n tietojoukkoparametri (Python)
    
@@ -76,9 +75,9 @@ Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja 
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Jaksotietojen tuominen Customer Insightsiin
 
-* Suunnitteluohjelmassa on [tietojen vientimoduuli](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data), jolla jakson tuloste voidaan viedä Azure-tallennustilaan. Tällä hetkellä moduulin tietosäilön tyypin on oltava **Azure Blob -säilö**, minkä lisäksi **tietosäilö** ja suhteellinen **polku** on muutettava parametreiksi. Customer Insights korvaa nämä molemmat parametrit suorituksen aikana tietosäilöllä ja polulla, jota tuote voi käyttää.
+* Suunnitteluohjelmassa on [tietojen vientimoduuli](/azure/machine-learning/algorithm-module-reference/export-data), jolla jakson tuloste voidaan viedä Azure-tallennustilaan. Tällä hetkellä moduulin tietosäilön tyypin on oltava **Azure Blob -säilö**, minkä lisäksi **tietosäilö** ja suhteellinen **polku** on muutettava parametreiksi. Customer Insights korvaa nämä molemmat parametrit suorituksen aikana tietosäilöllä ja polulla, jota tuote voi käyttää.
    > [!div class="mx-imgBorder"]
-   > ![Tietojen vientimoduulin määritys](media/intelligence-designer-importdata.png "Tietojen vientimoduulin määritys")
+   > ![Tietojen vientimoduulin määritys.](media/intelligence-designer-importdata.png "Tietojen vientimoduulin määritys")
    
 * Kun päättelytulosteen kirjoittamiseen käytetään koodia, tuloste voidaan ladata polkuun työtilan *rekisteröidyssä tietosäilössä*. Jos polku ja tietosäilö on muutettu parametreiksi jaksossa, Customer insights voi lukea ja tuoda päättelytulosteen. Tällä hetkellä tuetaan yhtä taulukkomuotoista tulostetta, jonka muoto on csv. Polun on sisällettävä hakemisto ja tiedostonimi.
 
@@ -97,3 +96,6 @@ Luotavien tietojoukkojen on käytettävä Customer Insightsin entiteettitietoja 
       # datastore.upload(src_dir=<<working directory>>, target_path=directory_name, overwrite=False, show_progress=True)
       output_dataset = Dataset.File.upload_directory(src_dir=<<working directory>>, target = (datastore, directory_name)) # Remove trailing "/" from directory_name
    ```
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

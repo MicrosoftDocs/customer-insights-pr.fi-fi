@@ -4,22 +4,21 @@ author: m-hartmann
 description: Dynamics 365 Customer Insightsin ensimmäiseen käyttökokemukseen ja sen ominaisuuksiin tutustuminen.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: e17b66217415c0b554a449f0d992deec7e2d96e7
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977641"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350127"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Käytön aloittaminen Customer Insightsin ostamisen jälkeen
 
 Tämä artikkeli kertoo, miten voit ottaa ensimmäiset askeleet Dynamics 365 Customer Insightsissa sen jälkeen, kun organisaatiosi on ostanut tilauksen. Jos haluat ostaa Customer Insightsin, yhteydenottovaihtoehtomme näkyvät [Dynamics 365 Customer Insights -verkkosivustolla](https://dynamics.microsoft.com/ai/customer-insights/). 
 
-Kun asiakas on hankkinut tilauslisenssin Customer Insightsiin, Microsoft 365 -vuokraajan yleinen järjestelmänvalvoja saa sähköpostiviestin, jossa häntä kehotetaan luomaan ympäristö. 
+Kun olet ostanut Customer Insights -tilauksen käyttöoikeuden, Microsoft 365 -vuokraajan Järjestelmänvalvoja saa sähköpostiviestin, joka kutsuu hänet luomaan ympäristön. 
 
 Customer Insights -asiakkaalla on käyttöoikeus vuokraajaa kohden, ja se sisältää useita ominaisuuksia. Voit ostaa lisää kapasiteettia ja lisenssejä, jotta voit suurentaa oletuskiintiötä. 
 - [Hinnoittelun yhteenveto](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
@@ -40,10 +39,7 @@ Ensimmäisen käyttökokemuksen avulla voit valita ensimmäisen Customer Insight
 
 ## <a name="create-your-own-environment"></a>Oman ympäristön luonti
 
-Kun olet ensimmäisen kerran kirjautunut sisään, näet ympäristön, jossa on mallitietoja. Niiden avulla voit tutustua ominaisuuksiin ja sovellukseen. Jos haluat käyttää omia tietojasi, sinun täytyy luoda ympäristö ominaisuudessa, jossa haluat työskennellä.
-
-- [Ympäristön luominen käyttäjäryhmän merkityksellisissä tiedoissa.](audience-insights/get-started-paid.md)
-- [Ympäristön luominen sitoutumistiedoissa.](engagement-insights/create-new-environment.md) 
+Kun olet ensimmäisen kerran kirjautunut sisään, näet ympäristön, jossa on mallitietoja. Niiden avulla voit tutustua ominaisuuksiin ja sovellukseen. Jos haluat käyttää omia tietojasi, [luo ympäristö](audience-insights/get-started-paid.md).
 
 
 

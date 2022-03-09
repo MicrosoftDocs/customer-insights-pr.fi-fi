@@ -1,41 +1,36 @@
 ---
 title: Asiakasprofiilien hakeminen ja suodattaminen
 description: Tietojen löytäminen nopeasti yhtenäisistä asiakasprofiileista ja määritettyjen määritteiden suodattaminen.
-ms.date: 04/16/2020
-ms.reviewer: nimagen
-ms.service: customer-insights
+ms.date: 11/01/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+searchScope:
+- ci-search-filter
+- customerInsights
+ms.openlocfilehash: 4445f44b87a5947c3dfcf43ddb49dca9f25b69aa
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405626"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354505"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Asiakasprofiilit: haku- ja suodatusindeksi
 
 Asiakastietojen yhtenäistämisen tuloksena on asiakasprofiilientiteetti, joilla koko asiakaskannasta saadaan yhtenäinen näkymä. Voit [etsiä nopeasti tietoja tietystä asiakkaasta tai asiakasryhmästä](customer-profiles.md) määrittämällä **Haku**- ja **Suodatin**-ominaisuudet **Asiakkaat**-sivulla. Lue lisää siitä, miten järjestelmänvalvojat voivat muokata määritteitä **Hae ja suodata indeksi** -sivulla. Käyttäjät voivat käyttää niitä hakemiseen ja suodattamiseen.
 
-> [!div class="mx-imgBorder"]
-> ![Hakusuodatin](media/search-filter.png "Hakusuodatin")
+   :::image type="content" source="media/search-filter.png" alt-text="Hakusuodatin":::
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="add-fields-and-specify-attributes"></a>Kenttien lisääminen ja määritteiden määrittäminen
 
 Jos määrität haettavia määritteitä ensimmäistä kertaa järjestelmänvalvojana, indeksoidut kentät on määritettävä ensin. Kaikki ne määritteet, joilla käyttäjät voivat hakea ja suodattaa asiakkaita **Asiakkaat**-sivulla, kannattaa valita. Voit määrittää vain niitä määritteitä, joita on tietojen yhtenäistämisprosessin aikana luodussa asiakasprofiilientiteetissä.
 
 1. Avaa **Asiakkaat**-sivu ja valitse **Hae ja suodata indeksi**.
-
-> [!NOTE]
-> Luodaan oletushakuindeksin määritys käytettävistä määritteistä asiakasentiteetissä Yhdistämismääritys-sivulla määritettyjen seuraavien semanttisten tyyppien avulla.
-> - Henkilö etunimi, sukunimi, toinen nimi, koko nimi
-> - Organisaation nimi
-> - Sähköpostiosoite
-> - Puhelin
-> - Sijainnin tiedot
 
 2. Valitse **+ Lisää**, jos haluat määrittää indeksoidut kentät.
 
@@ -64,4 +59,11 @@ Taulukossa on seuraavat tiedot.
 
 2. Ota muutokset käyttöön valitsemalla **Tallenna**.
 
-3. Valitse **Suorita**, kun olet valmis ottamaan asetukset käyttöön.
+3. Valitse **Suorita**, kun olet valmis ottamaan asetukset käyttöön. Kun muutokset on käsitelty, ne ovat [Asiakas-sivun asiakaskorteissa](customer-profiles.md). 
+
+## <a name="next-steps"></a>Seuraavat vaiheet
+
+Tarkista [yhdistetyt profiilit -sivu](customer-profiles.md), jos haluat hakea profiileja tai tarkastella kaikkien yhtenäisten profiilien alijoukkoa indeksoiduissa kentissä.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

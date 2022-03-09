@@ -2,19 +2,21 @@
 title: Aiemmin luotujen segmenttien segmentin merkitykselliset tiedot
 description: Aiemmin luotujen segmenttien merkityksellisten tietojen erot ja yhteneväisyydet ovat nähtävissä.
 ms.date: 06/10/2020
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 90ebcaab896c628b04e751ad9857e924749895e7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+searchScope:
+- ci-segment-insights
+- customerInsights
+ms.openlocfilehash: 8ae832c69c89bee08b8ef36ed99233b6e8e5a0f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595330"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355563"
 ---
 # <a name="segment-insights-preview"></a>Segmentin merkitykselliset tiedot (esiversio)
 
@@ -44,13 +46,13 @@ Voit myös analysoida, miten päällekkäisyys muuttuu tietyillä määritteill�
 Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot.":::
 
 Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset:
 
 - Niiden jäsenten määrä, jotka ovat päällekkäisiä analysoitavaksi valittujen segmenttien kanssa.
 - Niiden jäsenien määrä, jotka sisältyvät yhteen segmentteihin mutta eivät muihin segmentteihin.
-- Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Avattavan suodattimen avulla voit valita minkä tahansa määritteen kiinnostavuustason, ja alareunassa olevasta taulukosta näkyvät vastaavat tiedot.
+- Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Voit valita minkä tahansa määritteen kiinnostuksen tason suodattimen avattavan valikon avulla. Alla olevassa taulukossa näkyvät vastaavat tiedot.
 
 ## <a name="segment-differentiators"></a>Segmentin erottimet
 
@@ -77,7 +79,7 @@ Segmentin erot auttaa sinua saamaan selville, mikä erottaa segmentin muista asi
 Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot.":::
 
 Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset. Erilaisuusanalyysi sisältää kaksi välilehteä. **Määritteet**-välilehdessä on luettelo profiilimääritteistä, joita pidetään erottavinä tekijöinä. **Mittarit**-välilehdessä on lueteltu erottavat tekijät. Jokaisessa välilehdessä on seuraavat tiedot:
 

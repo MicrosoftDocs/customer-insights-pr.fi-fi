@@ -1,27 +1,26 @@
 ---
 title: Microsoft Teams -botti
 description: Yhtenäistettyjen asiakasprofiilien hakeminen Microsoft Teamsissa botin avulla.
-ms.date: 04/21/2020
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 03299610fd41a7e142e3c9723fad56ce7f90e083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: d6b016c1ec35e26ce6449333234edfd218bc9354
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267948"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232098"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Dynamics 365 Customer Insightsin Teams-botti (esiversio)
 
 Botti käyttää Microsoft Teams -yhteyttä yhtenäistettyjen asiakasprofiilien etsimiseen Teams-kanavissa.
 
 > [!div class="mx-imgBorder"]
-> ![Teams-botti, jossa näkyy asiakastietue](media/teams-bot.png "Teams-botti, jossa näkyy asiakastietue")
+> ![Teams-botti, jossa näkyy asiakastietue.](media/teams-bot.png "Teams-botti, jossa näkyy asiakastietue")
 
 ## <a name="prerequisites"></a>Edellytykset
 
@@ -31,7 +30,10 @@ Botin asennus ja määritys edellyttää seuraavaa:
 - [Yhdistämisprosessi](data-unification.md) on valmis.
 - Kenttiä on lisätty [haku- ja suodatusindeksiin ](search-filter-index.md).
 - Customer Insights ja Teams ovat samassa organisaatiossa.
+- Ympäristössäsi on yksittäisille asiakkaille ensisijainen kohdekäyttäjäryhmä määritettynä. Yritystilejä ei tueta.
 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWRElj]
 ## <a name="configure-the-bot"></a>Botin määritys
 
 1. Valitse käyttäjäryhmän merkityksellisissä tiedoissa **Hallinta** > **Vientikohteet**.

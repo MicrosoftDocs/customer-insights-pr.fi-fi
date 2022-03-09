@@ -1,41 +1,42 @@
 ---
 title: Customer Insightsin tietojen vieminen Google Adsiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Google Adsiin.
-ms.date: 03/03/2021
-ms.service: customer-insights
+ms.date: 09/27/2021
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f4c094e486577d00d8c0c64e8527829820b335f6
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5759689"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227006"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Segmenttien vieminen Google Adsiin (esiversio)
 
-Vie yhtenäistettyjen asiakasprofiilien segmentit Google Adsin käyttäjäryhmäluetteloon ja käytä profiileja mainontaan Google Haussa, YouTubessa, Gmailissa ja Google Display-verkostossa. 
+Vie yhdistettyjen asiakasprofiilien segmentit Google Ads -käyttäjäryhmäluetteloon ja käytä niitä mainostamisessa Google Searchissa, Gmailissa, YouTubessa ja Google Display Networkissa. 
+
+> [!IMPORTANT]
+> Tällä hetkellä voit luoda uuden yhteyden ja viedä tietoja Google Adsiin vain, jos sinulla on jo hyväksytty Google Adsin kehittäjätunnus. Käytännön muutosten vuoksi päivitämme Google Adsin viennin pian ja tarjoamme vientivaihtoehdon, joka ei edellytä sovelluskehittäjätietuetta käyttökokemuksen jatkuvuuden varmistamiseksi ja viennin helpottamiseksi Google Adsiin. Suosittelemme, että lisää yhteyksiä Google Adsiin ei luoda, jotta uuteen vientivaihtoehtoon siirtyminen helpottuu.
 
 ## <a name="prerequisites-for-connection"></a>Yhteyden edellytykset
 
 -   [Google Ads -tili](https://ads.google.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
--   Sinulla on [hyväksytty Google Ads -kehittäjätunnus](https://developers.google.com/google-ads/api/docs/first-call/dev-token) 
--   [Asiakkaan vastaavuuskäytännön](https://support.google.com/adspolicy/answer/6299717) vaatimukset täyttyvät
--   [Uudelleenmarkkinointiluetteloiden kokojen](https://support.google.com/google-ads/answer/7558048) edellytys on täytettävä 
-
+-   Sinulla on [hyväksytty Google Ads -kehittäjätunnus](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
+-   [Asiakkaan vastaavuuskäytännön](https://support.google.com/adspolicy/answer/6299717) vaatimukset täyttyvät.
+-   [Uudelleenmarkkinointiluetteloiden kokojen](https://support.google.com/google-ads/answer/7558048) edellytys on täytettävä.
 -   Google Adsissa on aiemmin luotuja käyttäjäryhmiä ja vastaavia tunnuksia. Lisätietoja on kohdassa [Google Ads -käyttäjäryhmät](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   [Segmentit on määritetty](segments.md)
+-   [Segmentit on määritetty](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta, etunimeä ja sukunimeä vastaavat kentät.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Enintään 1 miljoona profiilia kussakin Google Ads -viennissä.
+- Enintään miljoona asiakasprofiilia Google Ads -vientiä kohden.
 - Google Ads -vienti on rajoitettu segmentteihin.
-- Yhteensä 1 miljoonan profiilin segmenttien vienti voi kestää 5 minuuttia palveluntoimittajan rajoitusten vuoksi. 
+- Miljoona asiakasprofiilia sisältävä segmenttien vienti voi kestää viisi minuuttia palveluntarjoajan päässä olevien rajoitusten vuoksi. 
 - Google Ads -vastaavuuden saavuttaminen voi kestää 48 tuntia.
 
 ## <a name="set-up-connection-to-google-ads"></a>Määritä yhteys Google Adsiin
@@ -68,17 +69,19 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää kohde**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Google Ads -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Google Ads -osasta. Jos et näe tämän osan nimeä, nämä yhteystyypit eivät ole käytettävissä.
 
 1. Käynnistä yhteys Google Adsiin antamalla **[Google Ads -käyttäjäryhmän tunnus](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)** ja valitsemalla **Yhdistä**.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla **Etunimi**- ja **Sukunimi**-kenttien osalta.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta.
 
 1. Valitse segmentit, jotka haluat viedä. Voit viedä yhteensä enintään 1 000 000 asiakasprofiilia Google Adsiin.
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. 
+
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

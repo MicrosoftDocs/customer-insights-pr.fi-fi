@@ -1,45 +1,49 @@
 ---
 title: Customer Insights -tietojen vieminen SendGridiin
-description: Tietoja yhteyden määrittämisestä SendGridiin.
-ms.date: 12/08/2020
-ms.reviewer: philk
-ms.service: customer-insights
+description: Tietoja yhteyden määrittämisestä ja viennistä SendGridiin.
+ms.date: 10/08/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f16d69deb2a0b48270ed04f9b72f03056f20b619
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 65d60e7e70e3444b0695b905431bab9a0269ceef
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268728"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231568"
 ---
-# <a name="connector-for-sendgrid-preview"></a>SendGrid-yhdistin (esiversio)
+# <a name="export-segments-to-sendgrid-preview"></a>Segmenttien vieminen SendGridiin (esiversio)
 
 Vie yhdistettyjen asiakasprofiilien segmentit SendGridin yhteyshenkilöluetteloihin ja käytä niitä SendGridin kampanjoissa ja sähköpostimarkkinoinnissa. 
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
 -   [SendGrid-tili](https://sendgrid.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 -   SendGridissa on aiemmin luotuja yhteyshenkilöluetteloja ja vastaavia tunnuksia. Lisätietoja on kohdassa [SendGrid - yhteyshenkilöiden hallinta](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts).
 -   Käyttäjäryhmän merkityksellisissä tiedoissa on [määritettyjä segmenttejä](segments.md).
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
-## <a name="connect-to-sendgrid"></a>Yhteyden muodostaminen SendGridiin
+## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Vientikohteet**.
+- Enintään 100 000 asiakasprofiilia SendGridiin.
+- SendGrid-vienti on rajoitettu segmentteihin.
+- Enintään 100 000 asiakasprofiilin vieminen SendGridiin voi kestää muutaman tunnin. 
+- SendGridiin vietävien asiakasprofiilien määrä riippuu SendGrid-sopimuksestasi ja sen sisältämistä rajoituksista.
 
-1. Valitse **SendGrid**-kohdassa **Määritä**.
+## <a name="set-up-connection-to-sendgrid"></a>Määritä yhteys SendGridiin
 
-1. Anna vientikohteelle tunnistettava nimi **Näyttönimi**-kentässä.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-   :::image type="content" source="media/export-sendgrid.PNG" alt-text="SendGridin viennin määritysruutu.":::
+1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **SendGrid**.
+
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
+
+1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Anna **SendGridin ohjelmointirajapinnan avain** [SendGridin ohjelmointirajapinnan avain](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
-
-1. Anna **[SendGrid-luettelon tunnus](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**.
 
 1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
 
@@ -47,26 +51,29 @@ Vie yhdistettyjen asiakasprofiilien segmentit SendGridin yhteyshenkilöluetteloi
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
-1. Määritä vienti valitsemalla **Next**.
+1. Viimeistele yhteys valitsemalla **Tallenna**.
 
-## <a name="configure-the-connector"></a>Yhdistimen määrittäminen
+## <a name="configure-an-export"></a>Viennin määrittäminen
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä asiakkaan sähköpostiosoitetta vastaavassa yhtenäistetyssä asiakasprofiilissa. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**, **Maa/alue**, **Osavaltio**, **Kaupunki** ja **Postinumero**.
+Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+
+1. Siirry kohtaan **Tiedot** > **Viennit**.
+
+1. Luo uusi vienti valitsemalla **Lisää kohde**.
+
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys SendGrid-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+
+1. Anna **[SendGrid-luettelon tunnus](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**.
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Toimi samalla tavalla muiden valinnaisten kenttien osalta. Näitä kenttiä ovat esimerkiksi **Etunimi**, **Sukunimi**, **Maa/alue**, **Osavaltio**, **Kaupunki** ja **Postinumero**.
 
 1. Valitse segmentit, jotka haluat viedä. On erittäin **suositeltavaa, että asiakastietueita viedään enintään 100 000** SendGridiin. 
 
 1. Valitse **Tallenna**.
 
-## <a name="export-the-data"></a>Tietojen vieminen
+Viennin tallentaminen ei suorita vientiä heti.
 
-Voit [viedä tietoja tarvittaessa](export-destinations.md). Vienti suoritetaan myös jokaisen [ajoitetun päivityskerran](system.md#schedule-tab) yhteydessä.
-
-## <a name="known-limitations"></a>Tunnetut rajoitukset
-
-- Yhteensä enintään 100 000 profiilia SendGridiin.
-- SendGrid-vienti on rajoitettu segmentteihin.
-- 100 000 profiilin vieminen SendGridiin voi kestää muutaman tunnin. 
-- SendGridiin vietävien profiilien määrä määräytyy SendGrid-sopimuksen mukaan, joka myös rajoittaa profiilien määrää.
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
