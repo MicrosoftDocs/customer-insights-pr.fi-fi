@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: e4b9a65eb50f75e0243fabfc10b501cf7acf4490
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 042558af801a1d1fc365939d9aa42c09b98b2679
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229634"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376550"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Asiakasprofiilien rikastaminen mukautetuilla tiedoilla (esiversio)
 
@@ -25,7 +25,7 @@ Mukautetun SFTP-tuonnin määritykselle on seuraavat edellytykset:
 
 - Tiedossa on SFTP-isäntään tuotavan tiedoston nimi ja sijainti (polku).
 - *model.json*-tiedosto määrittää tuotavien tietojen [Common Data Model -rakenteen](/common-data-model/). Tiedoston on oltava samassa kansiossa kuin tuotava tiedosto.
-- Järjestelmänvalvoja on jo määrittänyt SFTP-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet. Tarvitset sen SFTP-sijainnin käyttäjän tunnistetiedot, URL-osoitteen ja portin numeron, josta haluat tuoda tietoja.
+- Järjestelmänvalvoja on jo määrittänyt SFTP-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#admin) käyttöoikeudet. Tarvitset sen SFTP-sijainnin käyttäjän tunnistetiedot, URL-osoitteen ja portin numeron, josta haluat tuoda tietoja.
 
 
 ## <a name="configure-the-import"></a>Määritä tuonti

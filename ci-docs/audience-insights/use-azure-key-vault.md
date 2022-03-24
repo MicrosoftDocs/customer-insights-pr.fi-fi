@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 5b22c1464b3f089551f485f98d6d93840ff77136
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 418575f724090628da8bd01e2569a4cb9e646337
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355887"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376504"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Bring your own Azure key vault (esiversio)
 
@@ -31,7 +31,7 @@ Jotta key vault voidaan määrittää käyttäjäryhmän merkityksellisissä tie
 
 - Sinulla on aktiivinen Azure-tilaus.
 
-- Sinulla on  [Järjestelmänvalvoja](permissions.md#administrator)-rooli käyttäjäryhmän merkityksellisissä tiedoissa. Lisätietoja [käyttöoikeuksista ja käyttäjäryhmän merkityksellisistä tiedoista](permissions.md#assign-roles-and-permissions).
+- Sinulla on  [Järjestelmänvalvoja](permissions.md#admin)-rooli käyttäjäryhmän merkityksellisissä tiedoissa. Lisätietoja [käyttöoikeuksista ja käyttäjäryhmän merkityksellisistä tiedoista](permissions.md#assign-roles-and-permissions).
 
 - Sinulla on [Osallistuja](/azure/role-based-access-control/built-in-roles#contributor)- ja [Käyttäjän käyttöoikeuksien järjestelmänvalvoja](/azure/role-based-access-control/built-in-roles#user-access-administrator) -roolit key vaultissa tai resurssiryhmässä, jolle key vault kuuluu. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal). Jos sinulla ei ole Käyttäjän käyttöoikeuksien järjestelmänvalvoja -roolia key vaultissa, sinun on määritettävä roolipohjaiset käyttöoikeuksien valvontaoikeudet Dynamics 365 Customer Insightsin Azure-palveluobjektille erikseen. Seuraa vaiheita [Azure-palveluobjektin käyttämiseksi](connect-service-principal.md) linkitettävää key vaultia varten.
 

@@ -1,7 +1,7 @@
 ---
 title: Käyttöoikeuksien hallinta
 description: Tietoja käyttöoikeuksista ja käyttäjärooleista.
-ms.date: 03/25/2021
+ms.date: 02/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: a3d21d55d86950953611967bb66712312eb42b4b
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 85e1f4f93ac0e99ce6634dfc8fceab0c9a14885e
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355933"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376734"
 ---
 # <a name="user-permissions"></a>Käyttäjien käyttöoikeudet
 
@@ -48,7 +48,7 @@ Roolityyppejä on kolme:
 - Hallitse määrityksiä ja täydennä asiakasprofiilit **Täydennä**-sivulla (vain ensimmäisen osapuolen täydennykset).
 - Hallitse ja luo vientejä osallistujien kanssa jaettujen yhteyksien perusteella. [Lisätietoja siitä, miten järjestelmänvalvojat voivat sallia osallistujien käyttää yhteyttä vienneissä.](connections.md#allow-contributors-to-use-a-connection-for-exports)
 
-## <a name="administrator"></a>Järjestelmänvalvoja
+## <a name="admin"></a>Järjestelmänvalvoja
 
 - Kaikki osallistujan oikeudet.
 - Muuta asetuksia **Järjestelmä**-sivulla, myös työskentelykieli, ja päivitä järjestelmäprosessien aikataulut.
@@ -60,6 +60,12 @@ Roolityyppejä on kolme:
 - Asenna **asiakaskortin apuohjelma** ja käytä sitä.
 - Lisää **Power Apps -yhdistin** ja käytä sitä.
 - Ota [Customer Insights -ohjelmointirajapinnat](apis.md) käyttöön.
+- [Delegoi ympäristön omistus](manage-environments.md#change-the-owner-of-an-environment) toiselle järjestelmänvalvojalle.
+
+## <a name="admin-owner"></a>Järjestelmänvalvoja (omistaja)
+
+- Kaikki järjestelmänvalvojan käytettävissä olevat oikeudet.
+- [Nollaa ja poista](manage-environments.md#reset-an-existing-environment) ympäristö.
 
 ## <a name="assign-roles-and-permissions"></a>Delegoi roolit ja oikeudet
 

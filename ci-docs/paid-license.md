@@ -7,12 +7,12 @@ ms.date: 10/05/2021
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: fa6ea6e96de3d382c1426b383a057c8ce4f67ccf
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350127"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455994"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Käytön aloittaminen Customer Insightsin ostamisen jälkeen
 
@@ -39,7 +39,4 @@ Ensimmäisen käyttökokemuksen avulla voit valita ensimmäisen Customer Insight
 
 ## <a name="create-your-own-environment"></a>Oman ympäristön luonti
 
-Kun olet ensimmäisen kerran kirjautunut sisään, näet ympäristön, jossa on mallitietoja. Niiden avulla voit tutustua ominaisuuksiin ja sovellukseen. Jos haluat käyttää omia tietojasi, [luo ympäristö](audience-insights/get-started-paid.md).
-
-
-
+Kun olet ensimmäisen kerran kirjautunut sisään, näet ympäristön, jossa on mallitietoja. Niiden avulla voit tutustua ominaisuuksiin ja sovellukseen. Jos haluat käyttää omia tietojasi, [luo ympäristö](/dynamics365/customer-insights/audience-insights/create-environment).

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4c1b5eaa3568b5c73013024d2da7e65276142f72
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355013"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455834"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Käytä segmenttejä Dynamics 365 Salesissa (esiversio)
 
@@ -31,7 +31,7 @@ Asiakastietojen avulla voit luoda markkinointiluetteloita, seurata työnkulkuja 
 
 ## <a name="prerequisite-for-connection"></a>Yhteyden edellytys
 
-1. Dynamics 365 Salesissa on oltava yhteyshenkiötietueita, ennen kuin voit viedä segmentin Customer Insightsista Salesiin. Lisätietoja yhteyshenkilöiden käyttämisestä [Dynamics 365 Salesissa Microsoft Dataversein avulla](connect-power-query.md).
+1. Dynamics 365 Salesissa on oltava yhteyshenkiötietueita, ennen kuin voit viedä segmentin Customer Insightsista Salesiin. Lisätietoja siitä, miten yhteyshenkilöitä voi käsitellä [Dynamics 365 Salesista käyttämällä Microsoft Dataverse](connect-dataverse-managed-lake.md)a.
 
    > [!NOTE]
    > Segmenttien vieminen käyttäjäryhmän tiedoista Salesiin ei luo Sales-esiintymiin uusia yhteyshenkilötietueita. Salesin yhteyshenkilötietueet on käsiteltävä käyttäjäryhmän tiedoissa, ja niitä on käytettävä tietolähteenä. Ne on myös sisällytettävä yhdistettyyn asiakasentiteettiin, jotta asiakastunnukset voidaan yhdistää yhteyshenkilötunnuksiin ennen segmenttien viemistä.

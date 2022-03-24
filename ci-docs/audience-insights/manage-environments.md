@@ -1,7 +1,7 @@
 ---
 title: Luo ja hallitse ympäristöjä
 description: Tietoja palveluun rekisteröitymisestä ja ympäristöjen hallinnasta.
-ms.date: 12/06/2021
+ms.date: 02/09/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,16 +11,14 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: d9e0ee726dbbfcf330022c4d95747551d3114e7e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4f4e5a8415f6c2128b0480edf67f317124eeeba9
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354275"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376872"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
-
-
 
 ## <a name="switch-environments"></a>Ympäristöjen vaihtaminen
 
@@ -98,9 +96,29 @@ Kun olet päivittänyt tietolähteet, siirry kohtaan **Tiedot** > **Yhtenäistä
 
 Kun tietojen yhtenäistäminen on valmis, päivitä myös kohdat **Mittarit** ja **Segmentit** siirtymällä niihin.
 
+## <a name="change-the-owner-of-an-environment"></a>Ympäristön omistajan muuttaminen
+
+Vaikka useilla käyttäjillä voi olla järjestelmänvalvojan oikeudet Customer Insightsissa, vain yksi käyttäjä on ympäristön omistaja. Oletusarvon mukaan järjestelmänvalvoja luo ympäristön. Ympäristön järjestelmänvalvojana voit delegoida omistuksen toiselle käyttäjälle, jolla on järjestelmänvalvojan oikeudet.
+
+1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
+
+1. Valitse **Muokkaa**-kuvake.
+
+1. Siirry **Muokkaa ympäristöä** -ruudussa **Perustiedot**-vaiheeseen.
+
+1. Valitse **Muuta ympäristön omistajaa** -kentässä ympäristön uusi omistaja.  
+
+1. Valitse **Tarkasta ja viimeistele** ja sitten **Päivitä** ottaaksesi muutokset käyttöön. 
+
+## <a name="claim-ownership-of-an-environment"></a>Ympäristön omistajuuden vaatiminen
+
+Jos ympäristön omistaja lähtee organisaatiosta tai hänen tilinsä poistetaan, ympäristöllä ei ole omistajaa. Käyttäjä, jolla on järjestelmänvalvojan oikeudet, voi vaatia omistajuuden ja hänestä voi tulla uusi omistaja. Hän voi jatkaa ympäristön omistajana tai [vaihtaa omistuksen toiselle järjestelmänvalvojalle](#change-the-owner-of-an-environment). 
+
+Vaadi omistus valitsemalla **Ota omistus** -painike, joka näkyy jokaisen Customer Insights -sivun yläosassa, kun alkuperäinen omistaja on lähtenyt organisaatiosta.
+
 ## <a name="reset-an-existing-environment"></a>Aiemmin luodun ympäristön palauttaminen
 
-Järjestelmänvalvoja voi palauttaa ympäristön tyhjään tilaan, jos haluat poistaa kaikki määritykset ja käsitellyt tiedot.
+Ympäristön omistajana voit nollata ympäristön tyhjään tilaan, jos haluat poistaa kaikki määritykset ja poistaa käytetyt tiedot.
 
 1.  Valitse sovelluksen otsikossa **Ympäristö**-valitsin. 
 
@@ -112,7 +130,7 @@ Järjestelmänvalvoja voi palauttaa ympäristön tyhjään tilaan, jos haluat po
 
 ## <a name="delete-an-existing-environment"></a>Olemassa olevan ympäristön poistaminen
 
-Järjestelmänvalvoja voi poistaa myös hallitsemasi ympäristön.
+Ympäristön omistajana voit poistaa ympäristön, jonka järjestelmänvalvoja olet.
 
 1.  Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 

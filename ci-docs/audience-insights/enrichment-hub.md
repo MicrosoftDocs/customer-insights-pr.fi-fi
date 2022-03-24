@@ -1,7 +1,7 @@
 ---
 title: Yhtenäisten asiakasprofiilien rikastaminen
 description: Asiakastietojen rikastaminen ominaisuuksien avulla.
-ms.date: 02/07/2022
+ms.date: 02/18/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355379"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372698"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
 
@@ -42,6 +42,7 @@ Löydät **Löydä**-välilehdestä kaikki tuetut rikastamisvaihtoehdot.
 - [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP) 
 - Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
 - HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md) 
+- [Käyttäjätiedot](enrichment-liveramp.md), jotka tarjoaa LiveRamp AbiliTec
 
 # <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
@@ -80,6 +81,10 @@ Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](con
 ## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
 
 Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Esimerkiksi vain tietyn segmentin tietojen rikastaminen on mahdollista. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajoitukset ja nykyinen käyttö näkyy **Rikastus**-sivulla.
+
+## <a name="enrich-data-sources-before-unification"></a>Tietolähteiden rikastus ennen yhdistämistä
+
+Voit rikastaa asiakastietoja ennen tietojen yhdistämistä, mikä parantaa tietojen vastaavuuden laatua. Lisätietoja: [tietolähteiden rikastus](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>Rikastusprosessin edistymisen katsominen
 

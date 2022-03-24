@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354404"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376412"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
 
@@ -37,7 +37,7 @@ Customer Insights lähettää seuraavat tapahtumalokit:
 Jotta diagnostiikka voidaan määrittää Customer Insightsissa, seuraavien edellytysten on täytyttävä:
 
 - Sinulla on aktiivinen [Azure-tilaus](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet Customer Insightsissa.
+- Sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet Customer Insightsissa.
 - Sinulla on **Osallistuja**- ja **Käyttäjän käyttöoikeuksien järjestelmänvalvoja** -rooli Azuren kohderesurssissa. Resurssi voi olla Azure Storage account, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal).
 - Azure Storagen, Azure-tapahtumakeskuksen tai Azure Log Analyticsin [kohdevaatimukset](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) pitää olla täytettynä.
 - Sinulla on vähintään **Lukija**-rooli resurssiryhmässä, johon resurssi kuuluu.
@@ -132,7 +132,7 @@ API-tapahtumilla ja työnkulun tapahtumilla on yhteinen rakenne. Eriävät tiedo
 | `resultSignature` | String    | Valinnainen          | Tapahtuman tulostila. Jos toiminto vastaa REST API -kutsua, se on HTTP-tilakoodi.        | `200`             |
 | `durationMs`      | Long      | Valinnainen          | Toiminnon kesto millisekunteina.     | `133`     |
 | `callerIpAddress` | String    | Valinnainen          | Kutsujan IP-osoite, jos toiminto vastaa API-kutsua, joka tulee julkisesta IP-osoitteesta.                                                 | `144.318.99.233`         |
-| `identity`        | String    | Valinnainen          | Käyttäjän tai sovelluksen identiteettiä kuvaava JSON-objekti, joka on tehnyt toiminnon.       | Katso [Käyttäjätiedot](#identity-schema)-osa.     |  |
+| `identity`        | String    | Valinnainen          | Käyttäjän tai sovelluksen identiteettiä kuvaava JSON-objekti, joka on tehnyt toiminnon.       | Katso [Käyttäjätiedot](#identity-schema)-osa.     |  
 | `properties`      | String    | Valinnainen          | JSON-objekti, jossa on enemmän ominaisuuksia tiettyyn tapahtumaluokkaan.      | Katso [Ominaisuudet](#api-properties-schema)-osa.    |
 | `level`           | String    | Pakollinen          | Tapahtuman suojaustaso.    | `Informational`, `Warning`, `Error` tai `Critical`.           |
 | `uri`             | String    | Valinnainen          | Pyynnön absoluuttinen URI.    |               |
@@ -239,7 +239,7 @@ Työnkulkutapahtumilla on seuraavat ominaisuudet.
 | `properties.startTimestamp`                  | Kyllä      | Kyllä  | UTC-aikaleima `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Kyllä      | Kyllä  | UTC-aikaleima `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Kyllä      | Kyllä  | UTC-aikaleima `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Kyllä      | Kyllä  | Customer Insightsin `instanceId`                                                                                                                                                                                                                              |  |
+| `properties.instanceId`                      | Kyllä      | Kyllä  | Customer Insightsin `instanceId`                                                                                                                                                                                                                              |  
 | `properties.identifier`                      | No       | Kyllä  | - Jos käytössä on OperationType = `Export`, tunnus on vientimäärityksen GUID-tunnus. <br> - Jos OperationType = `Enrichment`, tunnus on rikastustoiminnon GUID-tunnus. <br> - OperationType-tyypeille `Measures` ja `Segmentation` tunnus on entiteetin nimi. |
 | `properties.friendlyName`                    | No       | Kyllä  | Viennin tai käsiteltävän entiteetin helppokäyttöinen nimi.                                                                                                                                                                                           |
 | `properties.error`                           | No       | Kyllä  | Valinnainen. Virhesanoma, jossa on lisätietoja.                                                                                                                                                                                                                  |

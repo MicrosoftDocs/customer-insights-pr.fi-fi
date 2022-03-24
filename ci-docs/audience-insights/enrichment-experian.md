@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ad1023135516ca9c49818d19aa84df68d16b2e3c
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: efa26fa82a950063e074a4ab930ed95383c55334
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229960"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376688"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Rikasta asiakasprofiileja Experian-ratkaisun demografisten tietojen avulla (esiversio)
 
@@ -25,7 +25,7 @@ Jotta voit määrittää Experian-ratkaisun, seuraavien edellytysten on täytytt
 
 - Tarvitset aktiivisen Experian-tilauksen. Jos haluat tehdä tilauksen, [ota yhteyttä suoraan Experian-ratkaisuun](https://www.experian.com/marketing-services/contact). [Lisätietoja Experian-ratkaisun tietojen rikastamisesta](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
 
-- Järjestelmänvalvoja on jo määrittänyt Experian-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#administrator) oikeudet. Experian-ratkaisun luomaa SSH:ta käyttävää Secure Transport (ST) -tiliä varten tarvitaan käyttäjätunnus, osapuolen tunnus ja mallinumero.
+- Järjestelmänvalvoja on jo määrittänyt Experian-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet. Experian-ratkaisun luomaa SSH:ta käyttävää Secure Transport (ST) -tiliä varten tarvitaan käyttäjätunnus, osapuolen tunnus ja mallinumero.
 
 ## <a name="supported-countriesregions"></a>Tuetut maat ja alueet
 

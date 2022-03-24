@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 47239bd7f0c89742cf9c673bb2ebe4c41d853233
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228470"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376826"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Täydennä asiakasprofiileja vuorovaikutustietojen avulla (esiversio)
 
@@ -28,7 +28,7 @@ Jotta voit määrittää rikastuksen, seuraavien edellytysten on täytyttävä:
 - Tarvitset aktiivisen Office 365 -pilvikäyttöoikeuden.
 - Sinulla on [yhtenäiset asiakasprofiilit](customer-profiles.md), jotka perustuvat [yritysasiakkuuksiin](work-with-business-accounts.md).
 - Customer Insights -ympäristöön on liitettävä [Microsoft Dataverse -organisaatio](create-environment.md#step-3-connect-to-microsoft-dataverse).
-- [Järjestelmänvalvojan](permissions.md#administrator) käyttöoikeudet.
+- [Järjestelmänvalvojan](permissions.md#admin) käyttöoikeudet.
 - Sinulla on tai voit saada Office 365 -vuokraajasi järjestelmänvalvojalta luvan käyttää Office 365 -tietoja **organisaation tietojen** tarjoamiseen Dynamics 365 -sovelluksissa.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus

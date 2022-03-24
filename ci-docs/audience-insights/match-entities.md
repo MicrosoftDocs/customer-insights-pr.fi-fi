@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355149"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376918"
 ---
 # <a name="match-entities"></a>Entiteettien vastaavuus
 
@@ -180,7 +180,19 @@ Kaksoiskappaleiden poiston tulosentiteetti sisältää seuraavat tiedot:
   - Deduplication_WinnerId: Tämä kenttä sisältää määritettyjen ryhmien tai klustereiden voittaneen tunnuksen. Jos Deduplication_WinnerId on sama kuin tietueen ensisijaisen avaimen arvo, tietue on voittanut tietue.
 - Kenttiä käytetään kaksoiskappaleiden poiston sääntöjen määrittämisessä.
 - Sääntö- ja Pistemäärä-kentät määrittävät, mitä kaksoiskappaleiden poiston sääntöjä noudatetaan. Ne määrittävät myös vastaavan algoritmin palauttaman pistemäärän.
-   
+ 
+## <a name="include-enriched-entities-preview"></a>Rikastettujen entiteettien sisällyttäminen (esiversio)
+
+Jos rikastit entiteettejä tietolähdetasolla, valitse ne ennen kuin suoritat vastaavuusprosessin. Rikastetut entiteetit voivat parantaa yhdistämisen tuloksia. Lisätietoja: [Rikastus tietolähteitä varten](data-sources-enrichment.md). 
+
+Rikastettu entiteetti sisältää alkuperäiset tietolähdekentät ja rikastetut kentät. Jos siis haluat käyttää rikastettua entiteettiä, aiemmin luotuun määritykseen ei ole vaikutusta. Voi olla kuitenkin tarpeen päivittää vastaavuussääntöjä niin, että rikastettuja kenttiä käytetään.
+
+1. Siirry kohtaan **Tiedot** > **Yhdistä** > **Vastaavuus** ja valitse **Käytä rikastettuja entiteettejä** sivun yläosassa.
+
+1. Valitse vähintään yksi rikastettu entiteetti **Käytä rikastettuja entiteettejä** -ruudusta.
+
+1. Valitse **Valmis**. Aina, kun käytetään lähde-entiteettiä (esimerkiksi vastaavuusjärjestys tai -sääntö), se vaihdetaan automaattisesti rikastettuun entiteettiin.
+  
 ## <a name="run-the-match-process"></a>Suorita täsmäytysprosessi
 
 Määritetyillä vastaavuussäännöillä, mukaan lukien entiteettien välinen vastaavuuksien etsiminen ja kaksoiskappaleiden poistosäännöt, on määritetty, voit suorittaa täsmäytysprosessin. 

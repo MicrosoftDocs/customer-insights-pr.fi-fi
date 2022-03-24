@@ -8,16 +8,14 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 667a984f1a2287456f4e6324eafe628fba957bf5
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 9195770255bd798636b9532d6e1ca928345b3708
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232654"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376458"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käyttäjäryhmän merkityksellisten tietojen uudet ominaisuudet
-
-
 
 Olemme innoissamme voidessamme ilmoittaa uusimmista päivityksistämme! Tässä artikkelissa on yhteenveto yleisen esiversion ominaisuuksista, yleisen saatavuuden parannuksista ja ominaisuuksien päivityksistä. Katso ominaisuuksien pitkäaikaiset suunnitelmat [Dynamics 365- ja Power Platform -julkaisusuunnitelmista](/dynamics365/release-plans/).
 
@@ -26,6 +24,62 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+
+## <a name="february-2022-updates"></a>Helmikuun 2022 päivitykset
+
+Helmikuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="general-availability-for-prediction-models"></a>Ennustemallien yleinen saatavuus
+
+Valmiit ennustemallit kuten **tilausten vaihtuvuus**, **tapahtumien vaihtuvuus** ja **asiakkaan elinkaaren arvo (CLV)** tulevat yleisesti saataville osina Customer Insightsia. 
+
+Lisätietoja on kohdassa [Ennusteiden yleiskatsaus](predictions-overview.md).
+
+### <a name="new-data-source-integration-with-azure-synapse-analytics-preview"></a>Uusi tietolähde: integrointi Azure Synapse Analyticsin kanssa (esiversio)
+
+Azure Synapse Analytics on yritysanalyysipalvelu, joka nopeuttaa tietovarastojen ja suurien tietojärjestelmien tuottamia oivalluksia.
+
+Jos organisaatio käyttää jo Azure Synapse Analyticsin kehittyneitä analytiikkaominaisuuksia ja tallentaa tulokset Data Lake -tietokantoihin, kyseiset tiedot on helppo lisätä Customer Insightsiin. Lisätietoja: [Yhdistä Azure Synapse -tietolähde (esiversio)](connect-synapse.md).
+
+### <a name="liveramp-enrichment-preview"></a>LiveRamp-rikastus (esiversio)
+
+LiveRamp mahdollistaa offline-tunnistetietojen deterministisen ratkaisun ja asiakastietojen yhdistämisen. Voit liittää asiakastiedoissa olevia henkilökohtaisia tunnisteita AbiliTec-tunnistetietokaavioon ja vastaanottaa AbiliTec-tunnuksia. Sen jälkeen kyseisiä tunnuksia voi käyttää asiakastietojen aiempaa parempaa yhdistämistä varten.
+
+Lisätietoja on ohjeaiheessa [Täydennä asiakasprofiileja LiveRamp-tunnistetietojen avulla (esiversio)](enrichment-liveramp.md).
+
+### <a name="enrichment-for-data-sources-preview"></a>Rikastus tietolähteitä varten (esiversio)
+
+Käytä Microsoftin ja muiden kumppanien tietoja asiakastietojen rikastukseen ennen tietojen yhdistämistä. Tietolähteiden rikastus auttaa täydellisemmän ja laadukkaamman tiedon tuottamisessa, mikä puolestaan parantaa tietojen yhdistämisen tuloksia.
+
+Lisätietoja: [Rikastus tietolähteitä varten (esiversio)](data-sources-enrichment.md).
+
+### <a name="change-owner-of-environment"></a>Muuta ympäristön omistajaa
+
+Vaikka useilla käyttäjillä voi olla järjestelmänvalvojan oikeudet Customer Insightsissa, vain yksi käyttäjä on ympäristön omistaja. Parannetun kokemuksen avulla voit vaihtaa ympäristön omistajaa tai ottaa omistuksen, jos entinen omistaja on lähtenyt organisaatiosta. 
+
+Lisätietoja: [Ympäristön omistajan vaihtaminen](manage-environments.md#change-the-owner-of-an-environment).
+
+### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Tietojen valmistelun prosessi luetteloi virheellisten tietueiden virheiden syyn
+
+Tietojen valmistelun prosessi näyttää nyt virheellistä tietoa sisältävien kenttien virheen syyn yksittäisten tietueiden tasolla, mikä helpottaa tunnistamista. 
+
+Lisätietoja: [Virheelliset tietolähteet](entities.md#corrupted-data-sources).
+
+### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Vuorovaikutuksen merkityksellisten tietojen raportointiominaisuuden esiversion lopettaminen
+
+Dynamics 365 Customer Insightsin vuorovaikutuksen merkityksellisten tietojen esiversio lopetettiin 15.2.2022.  
+Tämä muutos tarkoittaa sitä, että Customer Insights -kokeilukokemus ei enää sisältää mahdollisuutta luoda suppiloja eikä muita raportointitoimintoja.
+
+Kutsumme sinut tutustumaan ja arvioimaan [Customer Insightsin](https://dynamics.microsoft.com/ai/customer-insights/), Microsoftin asiakastietoympäristön (CDP), monia muita ominaisuuksia.    
+ 
+Siirtymisjakson aikana olemassa olevat esiversion osallistujat voivat edelleen käyttää joitakin esiversio-ominaisuuksia ja -toimintoja:
+
+- Koodin käyttäminen verkkosivuston tai mobiilisovelluksen luomiseen 
+- Tapahtumien ja tapahtumien ominaisuuksien katsominen 
+- Paranna yhtenäisiä profiileja käsiteltyjen ja jalostettujen tapahtumien avulla, jotta asiakastietojen täydestä arvosta saa hyötyä
+  
+Siirtymisjakson aikana siepatut tapahtumat virtautetaan yhä yhdistettyyn Data Lakeen. Kun tämä toiminto on poistettu käytöstä, tapahtumien tietojen jakaminen vuorovaikutuksen merkityksellisten tietojen ja kohdeyleisön tietojen välillä loppuu eikä uusia tapahtumia lähetetä yhdistettyyn tallennustilaan.
+Ota suoraan yhteyttä Microsoft-asiakastiimiisi, jos sinulla on kysymyksiä ominaisuuden esiversion loppumisesta. Asiakastiimisi pitää sinut ajan tasalla tulevista julkaisuista. 
 
 ## <a name="january-2022-updates"></a>Tammikuun 2022 päivitykset
 
