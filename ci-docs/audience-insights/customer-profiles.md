@@ -9,23 +9,20 @@ author: Nils-2m
 ms.author: nikeller
 manager: shellyha
 searchScope:
-- ci-customers-page
-- ci-customer-card
-- ci-activities
-- ci-activities-wizard
-- customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354877"
+  - ci-customers-page
+  - ci-customer-card
+  - ci-activities
+  - ci-activities-wizard
+  - customerInsights
 ---
+
 # <a name="customer-profiles"></a>Asiakasprofiilit
 
 **Asiakkaat** -sivu näyttää yhdistetyn näkymän yhtenäisistä asiakasprofiileista. Asiakasprofiilit ovat käytössä, kun olet [luonut yhtenäisen asiakasentiteetin](data-unification.md). Sivulla voit hakea asiakkaita ja määrittää haun indeksin.
 
-Asiakkaat voivat olla yksityishenkilöitä tai organisaatioita. Kutakin asiakasprofiilia edustaa ruutu. Voit käyttää sivutuksen ohjausobjekteja, kun haluat saada lisää tietueita. Kortti näyttää kentät *Asiakas*-entiteetistä **Haku- ja suodatinindeksi** -määritysten mukaan. Valitse ruutu nähdäksesi valitun asiakkaan tiedot erillisellä sivulla nimeltä [Asiakkaan tietosivu](customer-profiles.md#customer-details-page).
+Asiakkaat voivat olla yksityishenkilöitä tai organisaatioita. Kutakin asiakasprofiilia edustaa ruutu. Voit käyttää sivutuksen ohjausobjekteja, kun haluat saada lisää tietueita. Kortti näyttää kentät *Asiakas*-entiteetistä **Haku- ja suodatinindeksi** -määritysten mukaan. Järjestelmä poimii kunkin kortin kenttien järjestyksen.
+
+Valitse ruutu nähdäksesi valitun asiakkaan tiedot erillisellä sivulla nimeltä [Asiakkaan tietosivu](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
 > ![Asiakkaan sivu, joka näyttää tulosruudut](media/customers-page-result-tiles-B2C.png "Asiakkaan sivu, joka näyttää tulosruudut")

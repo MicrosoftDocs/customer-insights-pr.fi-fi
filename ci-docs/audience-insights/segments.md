@@ -1,7 +1,7 @@
 ---
 title: Käyttäjäryhmien merkityksellisten tietojen segmentit
 description: Yleiskatsaus segmenteistä ja niiden luomisesta ja hallinnasta.
-ms.date: 11/01/2021
+ms.date: 03/30/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -9,18 +9,13 @@ ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-customers-page
-- ci-enrichment-details
-- ci-segments
-- ci-segment-details
-- customerInsights
-ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355979"
+  - ci-customers-page
+  - ci-enrichment-details
+  - ci-segments
+  - ci-segment-details
+  - customerInsights
 ---
+
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
 Segmenttien avulla asiakkaita ryhmitellä demografia-, tapahtuma- tai toimintamääritteiden perusteella. Segmenttejä käyttämällä voit kohdistaa markkinointikampanjoita, myyntiaktiviteetteja ja asiakastukitoimintoja liiketoiminnan tavoitteiden saavuttamiseksi.
@@ -68,7 +63,9 @@ Seuraava toiminto on käytettävissä, kun valitse segmentin:
 
 ## <a name="refresh-segments"></a>Päivitä segmentit
 
-Voit päivittää kaikki segmentit kerralla valitsemalla **Päivitä kaikki** **Segmentit**-sivulla. Halutessasi voit päivittää yhden tai useita segmenttejä, kun valitset ne ja valitse sitten **Päivitä** asetuksista. Voit myös määrittää toistuvan päivityksen kohdassa **Järjestelmänvalvoja** > **Järjestelmä** > **Ajoita**.
+Voit päivittää kaikki segmentit kerralla valitsemalla **Päivitä kaikki** **Segmentit**-sivulla. Halutessasi voit päivittää yhden tai useita segmenttejä, kun valitset ne ja valitse sitten **Päivitä** asetuksista. Voit myös määrittää toistuvan päivityksen kohdassa **Järjestelmänvalvoja** > **Järjestelmä** > **Ajoita**. Kun toistuva päivitys määritetään, seuraavat säännöt ovat voimassa:
+- Kaikki **Dynaaminen**- tai **Laajennus**-tyyppiset segmentit päivittyvät automaattisesti määritetyllä välillä. Kun päivitys on valmis, **Tila** ilmaisee, onko segmentin päivityksessä ongelmia. **Päivitetty viimeksi** näyttää edellisen onnistuneen päivityksen aikaleiman. Jos tapahtuu virhe, saat näkyviin tiedot siitä, mitä tapahtui, valitsemalla virheen.
+- Segmenttejä, joiden tyyppinä on **Staattinen**, *ei* päivitetä automaattisesti. **Päivitetty viimeksi** -kentässä näkyy staattisten segmenttien edellisen suorituksen tai manuaalisen päivityksen aikaleima.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 

@@ -1,20 +1,15 @@
 ---
 title: Yleiskatsaus tuetuista ennusteskenaarioista
 description: Dynamics 365 Customer Insights -sovelluksen kattamia ennusteskenaarioita ja vaihtoehtoja.
-ms.date: 12/21/2021
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228240"
 ---
+
 # <a name="predictions-overview"></a>Ennusteiden yleiskatsaus
 
 Dynamics 365 Customer Insightsissa on erilaisia vaihtoehtoja, joilla voit hyödyntää tekoälyä ja koneoppimista tietojen ennustamiseen. 
@@ -36,6 +31,11 @@ Helpoin tapa aloittaa tietojen ennustaminen on esimääritetyt mallit, joita kut
 - [Liiketapahtumien vaihtuminen](predict-transactional-churn.md): Ennustaa, jos asiakas ei enää osta tuotteitasi tai palveluitasi tietyllä aikavälillä.
 
 ---
+
+> [!TIP]
+> On suositeltavaa päivittää vakiomallit säännöllisesti päivitetyillä tiedoilla, jotta ne ilmoittavat yrityksen käyttötapauksen tarkasti. Tiedot päivittyvät tilapäisinä, kun järjestelmä käyttää uusia tai päivitettyjä tietolähteitä. Mallit kuitenkin vain päivittävät pisteet tässä tapauksessa ja jatkavat nykyisten koulutustietojen käyttöä.
+> 
+> Voit määrittää **päivitysaikataulun** määrittämällä mallin uudelleenkoulutusaikataulun määrityskokemuksessa. Malli uudelleenkouluttaa ja uudelleenpisteyttää tämän aikataulun mukaan, jota voit muuttaa milloin tahansa.
 
 
 ## <a name="azure-machine-learning-integration"></a>Azuren automaattianalyysipalvelujen integraatio

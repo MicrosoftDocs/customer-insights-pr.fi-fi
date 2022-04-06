@@ -1,7 +1,7 @@
 ---
 title: Tietojen käsitteleminen tietolähteiden avulla
 description: Tietoja tietojen tuomisesta eri lähteistä.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: adkuppa
@@ -9,16 +9,11 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-data-sources
-- ci-create-data-source
-- customerInsights
-ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354045"
+  - ci-data-sources
+  - ci-create-data-source
+  - customerInsights
 ---
+
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
 
@@ -47,7 +42,18 @@ Tietolähteet, jotka luodaan, kun Dataverse-ympäristö on liitetty Customer Ins
 
 Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä, ja voit käyttää niitä uudelleen Customer Insightsissa. Tietolähteiden sivulla on linkki, jonka avulla voi siirtyä Microsoft Power Platform -ympäristöön paikallisten tietoyhdyskäytävien tarkastelemista ja määrittämistä varten.
 
+> [!IMPORTANT]
+> Varmista, että yhdyskäytävät on päivitetty uusimpaan versioon. Voit asentaa päivityksen ja määrittää yhdyskäytävän uudelleen yhdyskäytävän näytössä näkyvästä kehotteesta tai [ladata uusimman version](https://powerapps.microsoft.com/downloads/). Jos et käytä uusinta yhdyskäytäväversiota, tietovirran päivitys epäonnistuu ja näyttöön tulee virhesanomia, kuten **Avainsanaa ei tueta: määritysominaisuudet. Parametrin nimi: avainsana**.
+
 ## <a name="review-ingested-data"></a>Käsiteltyjen tietojen tarkistaminen
+Jos ympäristö sisältää Power Platform-tietovoita, **Tietolähteet**-sivulla on kolme osaa: 
+- **Jaettu**: tietolähteet, joita kaikki Customer Insights -järjestelmänvalvojat voivat hallita. Power BI-tietovuot, oma tallennustilatilisi ja Dataverse-hallittuihin tietoihin liittäminen ovat esimerkkejä jaetuista tietolähteistä.
+- **Minun hallinnoimia**: Power Platform-tietovoita voit luoda ja hallita vain sinä. Muut Customer Insights -järjestelmänvalvojat voivat tarkastella vain näitä tietovirtoja mutta eivät voi muokata, päivittää tai poistaa niitä.
+- **Muiden hallinnoimia**: muiden järjestelmänvalvojien luomia Power Platform-tietovoita. Voit vain tarkastella niitä. Siinä on tietovuon omistaja, johon voi ottaa yhteyttä, jos tarvitset apua.
+> [!NOTE]
+> Muut käyttäjät voivat tarkastella ja käyttää kaikkia entiteettejä. Käyttäjän tilannetiedot koskevat vain tietolähteitä eikä näistä tietovoista tuloksena olevia entiteettejä.
+
+Jos Power Platform-tietovoita ei käytetä, ryhmiä tai osia ei ole näkyvissä. **Tietolähteet**-sivu sisältää vain luettelon kaikista tietolähteistä.
 
 Näkyvissä on kunkin käsitellyn tietolähteen nimi, sen tilan ja kyseisen tietolähteen tietojen viimeisimmän päivityskerran. Tietolähdeluettelon voi lajitella kunkin sarakkeen mukaan.
 

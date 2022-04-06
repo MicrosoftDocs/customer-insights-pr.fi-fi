@@ -1,24 +1,19 @@
 ---
 title: Ympäristöjen luominen Customer Insightsissa
 description: Ympäristöjen luomisen vaiheet lisensoidulla Dynamics 365 Customer Insights -tilauksella.
-ms.date: 02/24/2022
+ms.date: 03/28/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: MichelleDevaney
-ms.author: midevane
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
-- ci-home
-- customerInsights
-ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354091"
+  - ci-home
+  - customerInsights
 ---
+
 # <a name="create-an-environment-in-audience-insights"></a>Ympäristöjen luominen käyttäjäryhmän merkityksellisissä tiedoissa
 
 Tässä artikkelissa kerrotaan, miten luodaan uusi ympäristö sen jälkeen, kun organisaatio on ostanut Dynamics 365 Customer Insights -tilauksen. 
@@ -83,14 +78,16 @@ Tarjoa oma Microsoft Dataverse -ympäristösi tietojen (profiilien ja tietojen) 
 Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja paikallisista tietolähteistä Power Platform -tietovirtojen ja -yhdyskäytävien avulla](data-sources.md#add-data-from-on-premises-data-sources). Voit myös käyttää [käyttövalmiita ennustemalleja](predictions-overview.md?tabs=b2c#out-of-box-models) muodostamalla yhteyden Dataverse-ympäristöön.
 
 > [!IMPORTANT]
-> Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.
+> 1. Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.
+> 1. Dataverse-ympäristössä on oltava yleisen järjestelmänvalvojan rooli. Tarkista, onko tämä [Dataverse-ympäristö liitetty](/power-platform/admin/control-user-access#associate-a-security-group-with-a-dataverse-environment) tiettyihin käyttöoikeusryhmiin, ja varmista, että sinut on lisätty näihin käyttöoikeusryhmiin.
+> 1. Tähän Dataverse-ympäristöön ei ole jo aiemmin liitetty Customer Insights -ympäristöä. Opettele poistamaan [aiemmin luotu yhteys Dataverse-ympäristöön](manage-environments.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="tietojen jakaminen Microsoft Dataversen kanssa automaattisesti käytössä uusille esiintymille.":::
 
-> [!NOTE]
-> Customer Insights ei tue seuraavia tietojen jakamisen skenaarioita:
-> - Jos tallennat kaikki tiedot omaan Azure Data Lake Storageen, et voi ottaa käyttöön tietojen jakamista Dataversen hallitun Data Laken kanssa.
-> - Jos otat käyttöön tietojen jakamisen Dataversen kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
+Lisätietoja tietojen jakamisen ottamisesta käyttöön Microsoft Dataversen kanssa omasta Azure Data Lake Storagesta on ohjeaiheessa [Yhteyden muodostaminen Microsoft Dataverse](manage-environments.md#connect-to-microsoft-dataverse).
+
+Customer Insights ei tue seuraavia tietojen jakamisen skenaarioita:
+- Jos otat käyttöön tietojen jakamisen Dataversen kanssa, et voi [luoda ennustettuja tai puuttuvia arvoja entiteetissä](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Vaihe 4: Viimeistele asetukset
 

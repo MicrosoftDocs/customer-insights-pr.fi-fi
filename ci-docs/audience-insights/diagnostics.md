@@ -9,15 +9,10 @@ author: brndkfr
 ms.author: bkief
 manager: shellyha
 searchScope:
-- ci-system-diagnostic
-- customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376412"
+  - ci-system-diagnostic
+  - customerInsights
 ---
+
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
 
 Dynamics 365 Customer Insights tarjoaa suoran integroinnin Azure Monitorin kanssa. Azure Monitorin resurssilokien avulla voit valvoa ja lähettää lokeja [Azure Storageen](https://azure.microsoft.com/services/storage/), [Azure Log Analyticsiin](/azure/azure-monitor/logs/log-analytics-overview) tai virtauttaa se [Azure-tapahtumakeskukseen](https://azure.microsoft.com/services/event-hubs/).
@@ -230,7 +225,7 @@ Työnkulkutapahtumilla on seuraavat ominaisuudet.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Kyllä      | Kyllä  | Aina `WorkflowEvent`, joka merkitsee lokitapahtuman työnkulkutapahtumaksi.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Kyllä      | Kyllä  | Työnkulun suorituksen tunnus. Kaikilla työnkulku- ja tehtävätapahtumilla työnkulun suorittamisessa on sama `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Kyllä      | Kyllä  | Toiminnon tunnus, katso [Toimintotyypit].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Kyllä      | Kyllä  | Toiminnon tunnus, katso [Toimintotyypit](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Kyllä      | No   | Vain työnkulku. Työnkulun käynnistämien tehtävien määrä.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Kyllä      | No   | Valinnainen. Vain työnkulkutapahtumat. Azure Active Directory [objectId käyttäjälle](/azure/marketplace/find-tenant-object-id#find-user-object-id), joka käynnisti työnkulun. Katso myös `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Kyllä      | No   | `full`- tai `incremental`-päivitys.                                                                                                                                                                                                                            |

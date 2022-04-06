@@ -1,7 +1,7 @@
 ---
 title: Yhdistä Microsoft Dataversen taulukoihin
 description: Tietojen tuominen Microsoft Dataversen hallitusta Data Lake -tallennustilasta.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -9,18 +9,11 @@ ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
 searchScope:
-- ci-dataverse
-- customerInsights
-ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354137"
+  - ci-dataverse
+  - customerInsights
 ---
+
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
-
-
 
 Tässä artikkelissa on tietoja siitä, miten Dataverse-käyttäjät voivat muodostaa nopeasti yhteyden Microsoft Dataversen hallitun data laken analyysientiteetteihin. 
 
@@ -29,7 +22,8 @@ Tässä artikkelissa on tietoja siitä, miten Dataverse-käyttäjät voivat muod
 
 ## <a name="important-considerations"></a>Tärkeitä huomioon otettavia seikkoja
 
-Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat tallennettuina eri sijainnissa kuin missä tietoja käsitellään tai tallennetaan Dynamics 365 Customer Insightsissa. Tuomalla verkkopalveluun tallennetut tiedot tai muodostamalla niihin yhteyden hyväksyt, että tiedot voidaan siirtää ja tallentaa yhdessä Dynamics 365 Customer Insightsin kanssa.  [Lisätietoja on Microsoftin luottamuskeskuksessa](https://www.microsoft.com/trust-center).
+1. Verkkopalveluihin, kuten Azure Data Lake Storageen, tallennetut tiedot voivat tallennettuina eri sijainnissa kuin missä tietoja käsitellään tai tallennetaan Dynamics 365 Customer Insightsissa. Tuomalla verkkopalveluun tallennetut tiedot tai muodostamalla niihin yhteyden hyväksyt, että tiedot voidaan siirtää ja tallentaa yhdessä Dynamics 365 Customer Insightsin kanssa.  [Lisätietoja on Microsoftin luottamuskeskuksessa](https://www.microsoft.com/trust-center).
+2. Vain Dataverse-entiteetit, joissa [muutosten seuranta](/power-platform/admin/enable-change-tracking-control-data-synchronization) on otettu käyttöön, ovat näkyvissä. Nämä entiteetit voidaan viedä Dataverse-hallittuun Data Lake -tallennustilaan, ja niitä voidaan käyttää Customer Insightsissa. Käyttövalmiissa Dataverse-taulukoissa muutosten seuranta on oletusarvoisesti käytössä. Ota muutosten seuranta käyttöön mukautetuissa taulukoissa. Jos haluat tarkistaa, onko Dataverse-taulukossa otettu käyttöön muutosten seuranta, siirry kohtaan [Power Apps](https://make.powerapps.com) > **Tiedot** > **Taulukot**. Etsi kiinnostava taulukko ja valitse se. Valitse **Asetukset** > **Lisäasetukset** ja tarkista **Muutosten seuranta** asetus.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Yhteyden muodostaminen Dataversen hallittuun tallennustilaan
 

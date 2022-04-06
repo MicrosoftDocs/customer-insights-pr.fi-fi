@@ -1,7 +1,7 @@
 ---
 title: Yhtenäisten asiakasprofiilien rikastaminen
 description: Asiakastietojen rikastaminen ominaisuuksien avulla.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,17 +10,12 @@ ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
-- ci-enrichments
-- ci-enrichment-details
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
-ms.translationtype: HT
-ms.contentlocale: fi-FI
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372698"
+  - ci-enrichments
+  - ci-enrichment-details
+  - ci-enrichment-wizard
+  - customerInsights
 ---
+
 # <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
 
 Voit täydentää asiakastietoja Microsoftin ja muiden kumppaneiden kaltaisten lähteiden tiedoilla.
@@ -97,5 +92,19 @@ Rikastamistilan tarkistaminen
 1. Laajenna **Edistymisen tiedot** -ruudussa **Rikastukset**-osa. 
 1. Valitse **Näytä tiedot** haluamasi rikastuksen alta tarkastellaksesi edistymistä. 
 1. Valitse **Tehtävän tiedot** -ruudussa **Näytä tiedot**, kun haluat nähdä prosessit, jotka liittyvät rikastusten päivittämiseen ja niiden tilaan. 
+
+## <a name="enrichment-results"></a>Rikastamisen tulokset
+
+Kun rikastaminen on suoritettu loppuun, voit tarkastella rikastamisen tuloksia.
+
+1. Siirry kohtaan **Tiedot** > **Täydentäminen**. 
+1. Valitse rikastaminen, josta haluat tietoja.
+
+Kaikki rikastamiset näyttävät perustietoja, kuten lisättyjen profiilien määrän, luodun rikastusentiteetin esikatselun ja rikastettujen profiilien määrän ajan mittaan. Jos mahdollista, **Rikastettujen asiakkaiden määrä kentän mukaan** tarjoaa porautumisen kunkin rikastetun kentän kattavuuteen.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="Rikastusten tulossivu.":::
+
+Jotkin rikastukset näyttävät myös tiedot, jotka liittyvät rikastuksen tyyppiin. Lisätietoja on asiaa koskevien rikastamisen ohjeissa.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
