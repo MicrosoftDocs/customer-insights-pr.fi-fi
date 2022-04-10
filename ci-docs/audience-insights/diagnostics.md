@@ -9,10 +9,15 @@ author: brndkfr
 ms.author: bkief
 manager: shellyha
 searchScope:
-  - ci-system-diagnostic
-  - customerInsights
+- ci-system-diagnostic
+- customerInsights
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
+ms.translationtype: HT
+ms.contentlocale: fi-FI
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523665"
 ---
-
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
 
 Dynamics 365 Customer Insights tarjoaa suoran integroinnin Azure Monitorin kanssa. Azure Monitorin resurssilokien avulla voit valvoa ja lähettää lokeja [Azure Storageen](https://azure.microsoft.com/services/storage/), [Azure Log Analyticsiin](/azure/azure-monitor/logs/log-analytics-overview) tai virtauttaa se [Azure-tapahtumakeskukseen](https://azure.microsoft.com/services/event-hubs/).
