@@ -1,12 +1,12 @@
 ---
 title: Mittarien ymmärtäminen ja hallinta
 description: Tietoja siitä, miten mittarit auttavat analysoimaan yrityksen toimintaa ja näyttämään sen tuloksia.
-ms.date: 02/28/2022
+ms.date: 03/24/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.author: wameng
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-measures
@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: c46fcc3baba1d6c92c2c0fe459a62277343cc0e4
-ms.sourcegitcommit: cf6a0ed44915908a44c70889a2dd199a9d0d4798
+ms.openlocfilehash: ef10f480086ccac4fa5c6c58818e35ecae67532c
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/28/2022
-ms.locfileid: "8359769"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529673"
 ---
 # <a name="measures-overview"></a>Mittarien yleiskatsaus
 
@@ -27,7 +27,7 @@ Mittarien avulla ymmärrät paremmin asiakkaiden käyttäytymistä ja liiketoimi
 
 Mittarit luodaan käyttämällä [mittareiden luontiohjelmaa](measure-builder.md). Se on tietojen kysely-ympäristö, jossa on useita operaattoreita ja yksinkertaiset yhdistämisvalinnat. Sen avulla voi suodattaa tietoja, ryhmitellä tuloksia, havaita [entiteettisuhteiden polkuja](relationships.md) ja esikatsella tulosta. [Ennalta määritettyjen mallien](measure-templates.md) avulla voit määrittää usein käytettyjä mittareita tehokkaasti.
 
-Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon, mutta tekevät myös paljon palautuksia. Voit luoda näiden mittarien perusteella [segmentin](segments.md), joka edistää seuraavia parhaita toimintoja. 
+Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon, mutta tekevät myös paljon palautuksia. Voit luoda näiden mittarien perusteella [segmentin](segments.md), joka edistää seuraavia parhaita toimintoja.
 
 ## <a name="manage-your-measures"></a>Hallitse mittoja
 
@@ -35,18 +35,17 @@ Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa 
 
 Saat tietoja mittarityypistä, tekijästä, luontipäivästä ja tilasta. Kun valitset mittarin luettelosta, voit esikatsella tulosta ja ladata CSV-tiedoston.
 
-Jos haluat päivittää kaikki mitat samalla kertaa, valitse **Päivitä kaikki** valitsematta tiettyä mittaa.
+:::image type="content" source="media/measures-actions.png" alt-text="Yksittäisten mittareiden hallintatoiminnot."lightbox="media/measures-actions.png":::
 
-:::image type="content" source="media/measure-actions.png" alt-text="Yksittäisten mittareiden hallintatoiminnot.":::
+Seuraavat toiminnot ovat käytettävissä, kun valitset mittarin:
 
-Valitse seuraaville vaihtoehdoille mittari luettelosta:
-
-- Voit tarkastella tietoja valitsemalla mitan nimen.
 - **Muokkaa** mitan määritystä.
-- **Päivitä** mittari uusimpien tietojen perusteella.
+- **Monista** mittari. Voit muokata sen ominaisuuksia heti tai tallentaa kaksoiskappaleen.
+- **Päivitä** mittari uusimpien tietojen perusteella. Jos haluat päivittää kaikki mittarit samanaikaisesti, valitse kaikki mittarit ja valitse sitten **Päivitä**.
 - **Nimeä uudelleen** mitta.
-- **Poista** mitta.
 - **Aktivoi** tai **poista aktivointi**. Passiivisia mittareita ei päivitetä [aikataulutetun päivityksen](system.md#schedule-tab) aikana.
+- **Tunniste** segmentin [tunnisteiden hallintaa varten](work-with-tags-columns.md#manage-tags).
+- **Poista** mitta.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 

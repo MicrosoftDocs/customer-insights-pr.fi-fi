@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: dccc069a355725bae09c1fece9292b9aee374e6d
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 06c5bed74b82f9ae2a764a2eb363348e0edab531
+ms.sourcegitcommit: 4b2ad63aa7a4d4f31b573870bccbc40befe5f8fd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8225511"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "8552052"
 ---
 # <a name="connector-for-power-bi-preview"></a>Power BI -yhdistin (esiversio)
 
@@ -72,6 +72,6 @@ Kun olet poistanut suhteiden kaksoiskappaleet, yritä määrittää Power BI -yh
 
 Kun lataat entiteettejä, jotka sisältävät päiväysmuotoisia kenttiä, kuten PP/KK/VVVV, saatat kohdata virheitä, jotka johtuvat virheellisistä aluemuodoista. Tämä ristiriita tapahtuu, kun Power BI Desktop -tiedoston aluekohtaiseksi asetukseksi on määritetty muu kuin englanti (Yhdysvallat), koska käyttäjäryhmätietojen päivämääräkentät tallennetaan Yhdysvaltalaisessa muodossa.
 
-Power BI Desktop -tiedostossa on yksi alueasetus, jota käytetään tietoja noudettaessa. Hakeaksesi nämä päivämääräkentät oikein tulkittuna, määritä BPI-tiedoston aluekohtaiseksi asetukseksi englanti (Yhdysvallat). [Tietoja Power BI -työpöytätiedoston aluekohtaisen asetuksen muuttamisesta](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
+Power BI Desktop -tiedostossa on yksi alueasetus, jota käytetään tietoja noudettaessa. Hakeaksesi nämä päivämääräkentät oikein tulkittuna, määritä BPI-tiedoston aluekohtaiseksi asetukseksi englanti (Yhdysvallat). [Tietoja Power BI -työpöytätiedoston aluekohtaisen asetuksen muuttamisesta](/power-bi/fundamentals/supported-languages-countries-regions#choose-the-language-or-locale-of-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

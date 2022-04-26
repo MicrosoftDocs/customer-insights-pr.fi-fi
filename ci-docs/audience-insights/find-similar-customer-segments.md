@@ -1,23 +1,23 @@
 ---
 title: Samankaltaisten asiakkaiden etsiminen tekoälyn avulla (sisältää videon)
 description: Etsi samankaltaisia asiakassegmenttejä tekoälyn avulla.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355241"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561566"
 ---
 # <a name="similar-customers-preview"></a>Samankaltaiset asiakkaat (esiversio)
 
@@ -36,6 +36,8 @@ Tämän ominaisuuden avulla voit etsiä samanlaisia asiakkaita asiakaskunnasta k
 
 1. Tarkista uuden segmentin ehdotettu nimi ja muuta sitä tarvittaessa.
 
+1. Vaihtoehtoisesti voit lisätä uuteen segmenttiin [tunnisteita](work-with-tags-columns.md#manage-tags).
+
 1. Tarkista kentät, jotka määrittävät uuden segmentin. Näissä kentissä määritetään, millä perusteella järjestelmä yrittää etsiä samanlaisia asiakkaita lähdesegmentistä. Järjestelmä valitsee oletusarvoisesti suositellut kentät.
   Kentät, jotka voivat merkittävästi vähentää mallin tehokkuutta, jätetään automaattisesti pois:
   
@@ -44,9 +46,9 @@ Tämän ominaisuuden avulla voit etsiä samanlaisia asiakkaita asiakaskunnasta k
 
 1. Valitse, haluatko sisällyttää **Kaikki asiakkaat** vai vain **tietyn aiemmin luodun segmentin** asiakkaat uuteen segmenttiin.
 
-1. Sulje pois asiakkaat lähdesegmentissä valitsemalla **Jätä pois kaikki lähdesegmentissä** -valintaruutu.
-
 1. Oletusarvon mukaan järjestelmä ehdottaa, että tulosteessa on vain 20 prosenttia kohdeyleisöstä. Muokkaa tätä raja-arvoa tarpeen mukaan. Kynnyksen suurentaminen vähentää tarkkuutta.
+
+1. Sisällytä lähdesegmenttiin asiakkaita valitsemalla **Sisällytä jäseniä lähdesegmentistä niiden asiakkaiden lisäksi, joilla on samanlaiset määritteet** -valintaruutu.
 
 1. Aloita binaarisen luokituksen tehtävä (koneoppimisen menetelmä), joka analysoi tietojoukon, valitsemalla sivun alareunasta **Suorita**.
 
@@ -67,7 +69,7 @@ Voit [käsitellä samanlaisen segmentin tulosta](segments.md) samalla tavalla ku
 
 Jos haluat päivittää samanlaisen segmentin, valitse se **Segmentit**-sivulla ja valitse toimintoriviltä **Päivitä**.
 
-Jos muokkaat samankaltaista segmenttiä, tiedot käsitellään uudelleen. Aiemmin luotu segmentti päivittyy päivitetyillä tiedoilla.    
+Jos muokkaat samankaltaista segmenttiä, tiedot käsitellään uudelleen. Aiemmin luotu segmentti päivittyy päivitetyillä tiedoilla.
 Jos haluat muokata samanlaisen segmentin, valitse se **Segmentit**-sivulla ja valitse toimintoriviltä **Muokkaa**. Ota muutokset käyttöön ja aloita käsittely valitsemalla **Suorita**.
 
 ## <a name="delete-a-similar-segment"></a>Samanlaisen segmentin poistaminen
@@ -84,6 +86,5 @@ Binaariluokittelun koneoppimismalli määrittää pistemäärän samanlaisessa s
 - Samankaltaisuuspisteet välillä 0,85–1 ovat asiakkaita, jotka luokitellaan *hyvin samankaltaisiksi*
 
 Asiakkaat, joilla samankaltaisuutta koskevia pisteitä on alle 0,4, eivät sisälly mallin tuotokseen. Järjestelmä ei pidä niitä tarpeeksi samankaltaisina lähdesegmentin kanssa.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

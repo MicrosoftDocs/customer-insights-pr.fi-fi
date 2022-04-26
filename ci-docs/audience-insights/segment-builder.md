@@ -1,37 +1,36 @@
 ---
 title: Luo segmenttejä segmentin muodostintyökalun avulla
 description: Luo asiakassegmenttejä ja ryhmittele ne eri määritteiden perusteella.
-ms.date: 10/18/2021
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segments
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 6fa6f0738bf7fba94b2fb84a70ea17483aae8dac
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 1a28289ecb740ab6cdfa603b2cd66376e7e8b576
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354551"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529581"
 ---
 # <a name="create-segments"></a>Segmenttien luominen
 
-Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja. Segmenttejä hallitaan **Segmentit**-sivulla. Voit [luoda uusia segmenttejä](#create-a-new-segment) segmentin muodostimen avulla tai [luoda pikasegmenttejä](#quick-segments) sovelluksen muista alueista. 
+Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja. Segmenttejä hallitaan **Segmentit**-sivulla. Voit [luoda uusia segmenttejä](#create-a-new-segment) segmentin muodostimen avulla tai [luoda pikasegmenttejä](#quick-segments) sovelluksen muista alueista.
 
 > [!TIP]
-> - Pikasegmenttejä tuetaan vain **yksittäisten asiakkaiden** ympäristöissä.    
-> - Segmentit, jotka perustuvat **yksittäisiin asiakkaisiin**, sisältävät automaattisesti käytössä olevat segmentin jäsenten yhteystiedot. Ympäristöissä, jotka perustuvat **yritystileihin**, segmentit perustuvat asiakkaisiin (yrityksiin tai tytäryrityksiin). Jos haluat sisällyttää yhteyshenkilötiedot segmenttiin, käytä **Projektin määritteet** -toimintoa segmentin muodostimessa.
->    - Varmista, että yhteyshenkilön tietolähteet on [yhdistetty semanttisesti ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-entiteettiin.
+> - Pikasegmenttejä tuetaan vain **yksittäisten asiakkaiden** ympäristöissä.
+> - Segmentit, jotka perustuvat **yksittäisiin asiakkaisiin**, sisältävät automaattisesti käytössä olevat segmentin jäsenten yhteystiedot. Ympäristöissä, jotka perustuvat **yritystileihin**, segmentit perustuvat asiakkaisiin (yrityksiin tai tytäryrityksiin). Jos haluat sisällyttää yhteyshenkilötiedot segmenttiin, käytä **Projektin määritteet** -toimintoa segmentin muodostimessa. Varmista, että yhteyshenkilön tietolähteet on [yhdistetty semanttisesti ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-entiteettiin.
 
 ## <a name="segment-builder"></a>Segmentin muodostin
 
-Seuraavassa kuvassa on kuvattu segmentin muodostimen eri osia. Se näyttää segmentin, joka johtaa asiakasryhmään. Asiakkaat tilasivat tuotteita tietyllä aikavälillä ja keräsivät palkkiopisteitä tai käyttivät tietyn rahasumman. 
+Seuraavassa kuvassa on kuvattu segmentin muodostimen eri osia. Se näyttää segmentin, joka johtaa asiakasryhmään. Asiakkaat tilasivat tuotteita tietyllä aikavälillä ja keräsivät palkkiopisteitä tai käyttivät tietyn rahasumman.
 
 :::image type="content" source="media/segment-builder-overview.png" alt-text="Segmentin muodostimen elementit." lightbox="media/segment-builder-overview.png":::
 
@@ -65,11 +64,11 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 
 1. Segmentin muodostin -sivulla voit määrittää tai luoda sääntöjä. Sääntö koostuu yhdestä tai useasta asiakasjoukon määrittävästä ehdosta.
 
-1. Valitse **Sääntö1**-osassa entiteetin määrite, jonka mukaan haluat suodattaa asiakkaita. Määritteiden valintatapoja on kaksi: 
+1. Valitse **Sääntö1**-osassa sen entiteetin määrite, jonka mukaan haluat suodattaa asiakkaat. Määritteiden valintatapoja on kaksi:
    - Tarkista **Lisää sääntöön** -ruudun käytettävissä olevien entiteettien ja määritteiden luettelo ja valitse lisättävän määritteen vieressä oleva **+**-kuvake. Valitse, haluatko lisätä määritteen aiemmin luotuun sääntöön vai luoda sen avulla uuden säännön.
    - Kun kirjoitat määritteen nimen sääntöosaan, näet vastaavat ehdotukset.
 
-1. Valitse operaattorit, jotka määrittävät ehdon vastaavat arvot. Määritteen arvo voi olla jokin neljästä tietotyypistä: numeerinen, merkkijono, päivämäärä tai totuusarvo. Määritteen tietotyypistä riippuen eri operaattorit ovat käytettävissä määrittämään ehdon. Jos segmentillä on yritystilejä, käytettävissä on kaksi erityistä operaattoria, jotka voivat sisällyttää mahdollisia hierarkkisia tietoja käytettyjen tilien välillä. Käytä *seuraavan lapsi*- ja *seuraavan vanhempi* -operaattoreita liittyvien tilien sisällyttämiseen. 
+1. Valitse operaattorit, jotka määrittävät ehdon vastaavat arvot. Määritteen arvo voi olla jokin neljästä tietotyypistä: numeerinen, merkkijono, päivämäärä tai totuusarvo. Määritteen tietotyypistä riippuen eri operaattorit ovat käytettävissä määrittämään ehdon. Jos segmentillä on yritystilejä, käytettävissä on kaksi erityistä operaattoria, jotka voivat sisällyttää mahdollisia hierarkkisia tietoja käytettyjen tilien välillä. Käytä *seuraavan lapsi*- ja *seuraavan vanhempi* -operaattoreita liittyvien tilien sisällyttämiseen.
 
 1. Valitse **Lisää ehto**, jos haluat lisätä sääntöön lisää ehtoja. Jos haluat luoda säännön nykyisen säännön alle, valitse **Lisää alisääntö**.
 
@@ -77,7 +76,7 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 
    :::image type="content" source="media/relationship-path.png" alt-text="Mahdollinen suhdepolku luotaessa sääntöä, joka perustuu yhdistettyyn asiakasentiteettiin yhdistettyyn entiteettiin.":::
 
-   Esimerkiksi näyttökuvan *eCommerce_eCommercePurchases*-entiteetillä on neljä mahdollisuutta yhdistyä *Asiakas*-entiteettiin: 
+   Esimerkiksi näyttökuvan *eCommerce_eCommercePurchases*-entiteetillä on neljä mahdollisuutta yhdistyä *Asiakas*-entiteettiin:
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > Asiakas
    - eCommerce_eCommercePurchases > Asiakas
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Asiakas
@@ -101,11 +100,11 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
       - **Leikkaa** asettaa kaksi ryhmää päällekkäin. Vain molemmille ryhmille *yhteiset* tiedot säilyvät yhdistetyssä ryhmässä.
       - **Lukuun ottamatta** yhdistää kaksi ryhmää. Vain ne ryhmän A tiedot, jotka *eivät ole yhteisiä* ryhmän B tietojen kanssa, säilytetään.
 
-1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet. 
+1. Segmentit luovat oletusarvoisesti tulosentiteetin, joka sisältää kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin. Valitse **Projekti**-määritteet, jos haluat valita tulosentiteettiin liitettävät määritteet.
 
    > [!IMPORTANT]
    > Jos segmentti perustuu yritystileihin, segmenttiin on sisällytettävä jokaisesta *ContactProfile*-entiteetin tilistä vähintään yhden yhteyshenkilön tiedot, jotta segmentti voidaan aktivoida tai viedä kohteisiin, jotka vaativat yhteyshenkilöiden tietoja. Lisätietoja *ContactProfile*-entiteetistä on kohdassa [Semanttiset yhdistämismääritykset](semantic-mappings.md).
-   > Yhteyshenkilöiden projisoituja määritteitä sisältäviin yritystileihin perustuvan segmentin esimerkkitulos voi olla seuraavankaltainen: 
+   > Yhteyshenkilöiden projisoituja määritteitä sisältäviin yritystileihin perustuvan segmentin esimerkkitulos voi olla seuraavankaltainen:
    >
    > |Tunnus  |Asiakkaan nimi  |Tuotto  |Yhteyshenkilön nimi  | Yhteyshenkilön rooli|
    > |---------|---------|---------|---------|---|
@@ -117,14 +116,16 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 
    > [!NOTE]
    > - **Projektin määritteet** toimivat vain entiteeteille, joilla on yksi moneen -suhde asiakasentiteettiin. Esimerkiksi yhdellä asiakkaalla voi olla useita tilauksia.
-   > - Jos määrite, jonka haluat projisoida, on enemmän kuin yhden siirtymisen päässä *Asiakas*-entiteetistä suhteen määrityksen perusteella, tätä määritettä tulee käyttää tekemäsi segmenttikyselyn jokaisessa säännössä. 
-   > - Jos määrite, jonka haluat projisoida, on vain yhden siirtymisen päässä *Asiakas*-entiteetistä, tämän määritteen ei tarvitse olla mukana tekemäsi segmenttikyselyn jokaisessa säännössä. 
+   > - Jos määrite, jonka haluat projisoida, on enemmän kuin yhden siirtymisen päässä *Asiakas*-entiteetistä suhteen määrityksen perusteella, tätä määritettä tulee käyttää tekemäsi segmenttikyselyn jokaisessa säännössä.
+   > - Jos määrite, jonka haluat projisoida, on vain yhden siirtymisen päässä *Asiakas*-entiteetistä, tämän määritteen ei tarvitse olla mukana tekemäsi segmenttikyselyn jokaisessa säännössä.
    > - **Projisoidut määritteet** otetaan huomioon, kun joukko-operaattoreita käytetään.
 
-1. Ennen kuin tallennat ja suoritat segmentin, valitse segmentin nimen vierestä **Muokkaa tietoja**. Anna segmentille nimi ja päivitä segmentin ehdotetun **Tulos-entiteetin nimi**. Voit myös lisätä segmenttiin kuvauksen.
+1. Valitse nimettömän segmentin vieressä oleva **Muokkaa tietoja** -kohta. Anna segmentille nimi ja päivitä segmentin ehdotetun **Tulos-entiteetin nimi**. Vaihtoehtoisesti voit lisätä segmenttiin kuvauksen ja [tunnisteet](work-with-tags-columns.md#manage-tags).
+
+   :::image type="content" source="media/segments_edit_details.png" alt-text="Muokkaa tietoja -valintaikkuna.":::
 
 1. Valitse **Suorita**, jotta voit tallentaa segmentin, aktivoida sen ja aloittaa segmentin käsittelyn perustuen kaikkiin sääntöihin ja ehtoihin. Muussa tapauksessa se tallentuu passiiviseksi segmentiksi.
-   
+
 1. Valitse **Palaa segmentteihin**, jos haluat siirtyä takaisin **Segmentit**-sivulle.
 
 1. Segmentti luodaan oletusarvoisesti dynaamisena segmenttinä. Niinpä kyseinen segmentti päivitetään järjestelmän päivityksen yhteydessä. [Automaattinen päivitys voidaan pysäyttää](segments.md#manage-existing-segments) valitsemalla valitussa segmentissä **Tee staattinen** -vaihtoehto. Staattiset segmentit voidaan [päivittää manuaalisesti](segments.md#refresh-segments) koska tahansa.
@@ -132,7 +133,7 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 > [!TIP]
 > - Segmentin muodostin ei ehdota entiteeteille kelvollisia arvoja, kun operaattorit määritetään ehdoille. Voit tarkastella käytettävissä olevia arvoja siirtymällä kohtaan **Tieto** > **Entiteetit** ja lataamalla entiteettitiedot.
 > - Päivämääriin perustuvien ehtojen avulla voit siirtyä kiinteän päivämäärän ja liukuvan päivämäärävälin välillä.
-> - Jos segmentille on useita sääntöjä, muokattavan säännön vieressä on pystysuuntainen sininen viiva. 
+> - Jos segmentille on useita sääntöjä, muokattavan säännön vieressä on pystysuuntainen sininen viiva.
 > - Voit siirtää sääntöjä ja ehtoja muihin kohtiin segmentin määrityksessä. Valitse säännön tai ehdon vierestä [...] ja valitse, miten ja mihin se siirretään.
 > - Komentopalkin **Kumoa**- ja **Tee uudelleen** -ohjausobjektien avulla voit perua muutoksia.
 
@@ -153,10 +154,9 @@ Pikasegmenttien avulla voidaan nopeasti luoda yksinkertaisia segmenttejä yhdell
 
 4. Järjestelmä näyttää **arvioidun segmentin koon**. Voit määrittää, luodaanko määritetty segmentti vai avataanko sen ensin, jolloin voit määrittää toisen segmentin koon.
 
-    > [!div class="mx-imgBorder"]
-    > ![Nopean segmentin nimi ja arvioi.](media/quick-segment-name.png "Nopean segmentin nimi ja arvioi")
+   :::image type="content" source="media/quick-segment-name.png" alt-text="Nopean segmentin nimi ja arvioi.":::
 
-5. Anna segmentille **nimi**. Vaihtoehtoisesti voit antaa **näyttönimen**.
+5. Anna segmentille **nimi** ja **tulosentiteetin nimi**. Vaihtoehtoisesti voit lisätä [tunnisteita](work-with-tags-columns.md#manage-tags).
 
 6. Luo segmentti valitsemalla **Tallenna**.
 

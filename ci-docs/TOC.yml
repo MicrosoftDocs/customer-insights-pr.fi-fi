@@ -44,6 +44,8 @@
           href: audience-insights/create-environment.md
         - name: Tutustu käyttäjäryhmän merkityksellisiin tietoihin
           href: audience-insights/home.md
+        - name: Tunnisteiden ja sarakkeiden käsitteleminen
+          href: audience-insights/work-with-tags-columns.md
         - name: Yritystilien käsitteleminen
           href: audience-insights/work-with-business-accounts.md
     - name: Tietolähteet

@@ -6,7 +6,7 @@ ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-customers-page
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
-ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.openlocfilehash: 68e71df3853470af47228c7365f25db3a71d15b0
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 03/30/2022
-ms.locfileid: "8508562"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529535"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -51,20 +51,26 @@ Siirry **Segmentit**-sivulle nähdäksesi kaikki tallennetut segmentit ja hallit
 
 Jokaista segmenttiä edustaa rivi, joka sisältää segmentin lisätietoja.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Valittu segmentti sekä vaihtoehtojen avattava luettelo ja käytettävissä olevat vaihtoehdot.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valittu segmentti sekä vaihtoehtojen avattava luettelo ja käytettävissä olevat vaihtoehdot." lightbox="media/segments-selected-segment.png":::
 
-Seuraava toiminto on käytettävissä, kun valitse segmentin:
+Seuraavat toiminnot ovat käytettävissä, kun valitset segmentin:
 
 - **Näytä** segmentin tietoja, mukaan lukien jäsenmäärän trendi, segmentin jäsenten esikatselu.
+- **Lataa** jäsenten luettelo CSV-tiedostona.
 - **Muokkaa** segmenttiä, jos haluat muuttaa sen ominaisuuksia.
 - Luo segmentin **kaksoiskappale**. Voit muokata sen ominaisuuksia heti tai tallentaa kaksoiskappaleen.
 - **Päivitä** segmentti siten, että se sisältää uusimmat tiedot.
-- **Aktivoi** segmentti tai **Poista aktivointi**. Segmenteillä on kaksi mahdollista tilaa: aktiivinen ja passiivinen. Näistä tiloista on hyötyä segmenttiä muokattaessa. Passiivisissa segmenteissä on segmentin määritelmä, mutta se ei sisällä vielä asiakkaita. Kun segmentti aktivoidaan, tila muuttuu passiivisesta aktiivisesti ja se aloittaa segmentin määritelmää vastaavien asiakkaiden etsimisen. Jos [aikataulutettu päivitys](system.md#schedule-tab) on määritetty, passiivisten segmenttien **Tila**-arvon on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty. Kun passiivinen segmentti aktivoidaan, se päivittyy ja se sisällytetään aikataulutettuihin päivityksiin.
+- **Aktivoi** segmentti tai **Poista aktivointi**. Passiivisissa segmenteissä on segmentin määritelmä, mutta se ei sisällä vielä asiakkaita. Aktiivinen segmentti hakee asiakkaita, jotka vastaavat segmentin määritystä. Jos [aikataulutettu päivitys](system.md#schedule-tab) on määritetty, passiivisten segmenttien **Tila**-arvon on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty. Kun passiivinen segmentti aktivoidaan, se päivittyy ja se sisällytetään aikataulutettuihin päivityksiin.
   Voit vaihtoehtoisesti määrittää tulevan päivämäärän ja kellonajan tietyn segmentin aktivointiin ja aktivoinnin poistamiseen avattavan **Aktivoi / Poista aktivointi** -valikon **Ajoita myöhemmin** -toiminnolla.
+- **[Etsi samanlaisia asiakkaita](find-similar-customer-segments.md)** segmentistä.
 - **Nimeä uudelleen** segmentti.
+- **Tunniste** segmentin [tunnisteiden hallintaa varten](work-with-tags-columns.md#manage-tags).
 - **Lataa** jäsenten luettelo CSV-tiedostona.
 - **Hallitse vientiä** tarkastellaksesi vientiin liittyviä segmenttejä ja hallita niitä. [Lisätietoja vienneistä.](export-destinations.md)
 - **Poista** segmentti.
+- **Sarakkeet** [sarakkeiden mukauttamiseksi](work-with-tags-columns.md#customize-columns) näyttämistä varten.
+- **Suodatin** [tunnisteiden suodattamiseksi](work-with-tags-columns.md#filter-on-tags).
+- **Hae nimi** segmentin nimen mukaan tehtävää hakua varten.
 
 ## <a name="refresh-segments"></a>Päivitä segmentit
 

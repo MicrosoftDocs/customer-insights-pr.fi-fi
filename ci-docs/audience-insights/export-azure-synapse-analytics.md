@@ -1,19 +1,19 @@
 ---
 title: Customer Insights -tietojen vieminen Azure Synapse Analytics -ratkaisuun
 description: Tietoja Azure Synapse Analytics -yhteyden määrittämisestä.
-ms.date: 01/05/2022
+ms.date: 04/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 289c8d545f057b3f70679b485cf4350545c0587b
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 8ace9fbee4fbd8822629a39d5902e176f8511cb5
+ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231308"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "8560383"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Vie tietoja Azure Synapse Analyticsiin (esiversio)
 
@@ -28,21 +28,21 @@ Seuraavien edellytysten on täytyttävä, jotta yhteys Customer Insightsista Azu
 
 ## <a name="prerequisites-in-customer-insights"></a>Edellytykset Customer Insightsissa
 
-* Sinulla on  **Järjestelmänvalvoja**-rooli käyttäjäryhmän merkityksellisissä tiedoissa. Lisätietoja [käyttöoikeuksien määrittämisestä käyttäjäryhmän merkityksellisissä tiedoissa](permissions.md#assign-roles-and-permissions)
+* Azure Active Directory (AD) -käyttäjätilillä on **järjestelmänvalvojan** rooli Customer Insightsissa. Lisätietoja [käyttöoikeuksien määrittämisestä käyttäjäryhmän merkityksellisissä tiedoissa](permissions.md#assign-roles-and-permissions)
 
 Azuressa: 
 
 - Aktiivinen Azure-tilaus.
 
-- Käytettäessä uutta Azure Data Lake Storage Gen2 tiliä, *käyttäjäryhmän merkityksellisten tietojen palvelun pää* tarvitsee **Storage Blob Data Contributor** -oikeudet. Lue lisää [yhteyden muodostamisesta Azure Data Lake Storage Gen2- tiliin Azuren palvelun pään avulla käyttäjäryhmän merkityksellisillä tiedoilla](connect-service-principal.md). Data Lake Storage Gen2:ssa **on oltava käytössä** [hierarkkinen](/azure/storage/blobs/data-lake-storage-namespace) nimiavaruus.
+- Jos käytät uutta Azure Data Lake Storage Gen2 -tiliä, *Customer Insightsin palvelun päänimellä* on oltava **tallennustilan blob-tietojen käsittelijän** oikeudet. Lue lisää [yhteyden muodostamisesta Azure Data Lake Storage Gen2- tiliin Azuren palvelun pään avulla käyttäjäryhmän merkityksellisillä tiedoilla](connect-service-principal.md). Data Lake Storage Gen2:ssa **on oltava käytössä** [hierarkkinen](/azure/storage/blobs/data-lake-storage-namespace) nimiavaruus.
 
-- Resurssiryhmässä, jossa Azure Synapse -työtila sijaitsee, *palvelun pää* ja *käyttäjäryhmän merkitykselliset tiedot* tarvitsevat vähintään **Lukija**-oikeudet. Lisätietoja on kohdassa [Azure-roolien määrittäminen Azure-portaalin avulla](/azure/role-based-access-control/role-assignments-portal).
+- Resurssiryhmässä, jossa Azure Synapse workspace sijaitsee, on määritettävä *palvelun päänimelle* ja *järjestelmänvalvojan käyttöoikeudet Customer Insightsissa omaavalle Azure AD -käyttäjälle* vähintään **lukuoikeudet**. Lisätietoja on kohdassa [Azure-roolien määrittäminen Azure-portaalin avulla](/azure/role-based-access-control/role-assignments-portal).
 
-- *Käyttäjä* tarvitsee **Storage Blob Data Contributor** -oikeudet Azure Data Lake Storage Gen2 -tilillä, jossa tiedot ovat ja josta ne on linkitetty Azure Synapse -työtilaan. Lisätietoja [Azure-portaalin käyttämisestä Azure-roolin määrittämiseen blob- ja jonotiedoille](/azure/storage/common/storage-auth-aad-rbac-portal) sekä [Storage Blob Data Contributor -oikeuksista](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
+- *Järjestelmänvalvojan käyttöoikeudet Customer Insightsissa omaava Azure AD -käyttäjä* tarvitsee **tallennustilan blob-tietojen käsittelijän** oikeudet Azure Data Lake Storage Gen2 -tilillä, kun tiedot sijaitsevat Azure Synapse workspacessa ja kun ne linkitetään sinne. Lisätietoja [Azure-portaalin käyttämisestä Azure-roolin määrittämiseen blob- ja jonotiedoille](/azure/storage/common/storage-auth-aad-rbac-portal) sekä [Storage Blob Data Contributor -oikeuksista](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - *[Azure Synapse -työtilassa hallittu identiteetti](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* tarvitsee **Storage Blob Data Contributor** -oikeudet Azure Data Lake Storage Gen2 tilille, jossa tiedot ovat ja josta ne on linkitetty Azure Synapse -työtilaan. Lisätietoja [Azure-portaalin käyttämisestä Azure-roolin määrittämiseen blob- ja jonotiedoille](/azure/storage/common/storage-auth-aad-rbac-portal) sekä [Storage Blob Data Contributor -oikeuksista](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- Azure Synapse-työtilassa *käyttäjäryhmän merkityksellisten tietojen pää* tarvitsee **Synapsen järjestelmänvalvoja** -roolin. Lisätietoja on kohdassa [Käytönvalvonnan määrittäminen Synapse-työtilaa varten](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- Azure Synapse workspacessa *Customer Insightsin palvelun päänimelle* on määritettävä **Synapse-järjestelmänvalvojan** rooli. Lisätietoja on kohdassa [Käytönvalvonnan määrittäminen Synapse-työtilaa varten](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
 ## <a name="set-up-the-connection-and-export-to-azure-synapse"></a>Määritä yhteys ja vie Azure Synapseen
 

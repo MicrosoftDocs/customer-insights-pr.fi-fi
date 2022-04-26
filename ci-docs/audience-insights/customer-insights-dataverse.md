@@ -1,7 +1,7 @@
 ---
 title: Customer Insights -tiedot Microsoft Dataversessä
 description: Käytä Customer Insights -entiteettejä -taulukoina Microsoft Dataversessä.
-ms.date: 11/25/2021
+ms.date: 04/05/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,31 +11,33 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: bbbbf2a7f5edb81ee75f6e33988cd4721134b6e7
+ms.sourcegitcommit: 0363559a1af7ae16da2a96b09d6a4a8a53a8cbb8
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355425"
+ms.lasthandoff: 04/05/2022
+ms.locfileid: "8547622"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
-Customer Insights -vaihtoehdossa tulosentiteetit voi ottaa käyttöön [Microsoft Dataversessä](/powerapps/maker/data-platform/data-platform-intro.md). Tämä integrointi mahdollistaa helpon tietojen jakamisen ja mukautetun kehittämisen matalan tason koodin tai koodittoman menetelmän avulla. Tulosentiteetit ovat käytettävissä Dataversessa taulukoina. Näissä taulukoissa otetaan käyttöön skenaarioita, kuten [automatisoituja työnkulkuja Power Automaten kautta](/power-automate/getting-started), [mallipohjapohjaisia sovelluksia](/powerapps/maker/model-driven-apps/) ja [pohjaan perustuvia sovelluksia](/powerapps/maker/canvas-apps/) Power Appsin kautta. Voit käyttää minkä tahansa muun Dataverse-taulukoihin perustuvan sovelluksen tietoja. Nykyinen toteutus tukee pääasiassa hakuja, joissa käytettävissä olevista käyttäjäryhmätietokokonaisuuksista voidaan hakea tietoja tietylle asiakastunnukselle.
+Customer Insights -vaihtoehdossa tulosentiteetit voi ottaa käyttöön [Microsoft Dataversessä](/powerapps/maker/data-platform/data-platform-intro). Tämä integrointi mahdollistaa helpon tietojen jakamisen ja mukautetun kehittämisen matalan tason koodin tai koodittoman menetelmän avulla. [Tulosentiteetit](#output-entities) ovat käytettävissä tauluina Dataverse-ympäristössä. Voit käyttää minkä tahansa muun sovelluksen tietoja Dataverse-taulukoiden perusteella. Näiden taulujen avulla voidaan käyttää skenaarioita, kuten automatisoidut työnkulut Power Automatessa tai sovellusten luominen Power Appsissa. Nykyinen toteutus tukee pääasiassa hakuja, joissa käytettävissä olevien Customer Insights -entiteettien tiedot voidaan hakea annetun asiakastunnuksen avulla.
 
 ## <a name="attach-a-dataverse-environment-to-customer-insights"></a>Dataverse-ympäristön liittäminen Customer Insightsiin
 
-**Organisaatiot, joissa on käytössä olevia Dataverse-ympäristöjä**
+**Olemassa oleva organisaatio**
 
-Organisaatiot, joilla on jo Dataverse käytössä, voivat [käyttää aiemmin luotua Dataverse-ympäristöä](create-environment.md), kun Järjestelmänvalvoja määrittää kohdeyleisön tietoja. Antamalla URL-osoitteen Dataverse-ympäristöön se liitetään ympäristön uuteen kohdeyleisöön. Jotta Customer Insights ja Dataverse-ympäristöt toimisivat parhaalla mahdollisella tavalla, niitä on isännöitävä samalla alueella.
+Järjestelmänvalvojat voivat määrittää Customer Insightsin [käyttämään olemassa olevaa Dataverse-ympäristöä](create-environment.md), kun he luovat Customer Insights -ympäristön. Antamalla URL-osoitteen Dataverse-ympäristöön se liitetään ympäristön uuteen kohdeyleisöön. Customer Insights- ja Dataverse-ympäristöjä on isännöitävä samalla alueella. 
+
+Jos et halua käyttää olemassa olevaa Dataverse-ympäristöä, järjestelmä luo vuokraajan Customer Insights -tiedoille uuden ympäristön. 
+
+> [!NOTE]
+> Jos organisaatiossasi on jo käytössä Dataverse vuokraajassa, on tärkeää muistaa, että [Dataverse-ympäristön luontia hallitsee järjestelmänvalvoja](/power-platform/admin/control-environment-creation). Jos esimerkiksi määrität organisaatiotililläsi uutta kohdeyleisötieto-ympäristöä ja järjestelmänvalvoja on poistanut Dataverse-kokeiluympäristöjen luomisen käytöstä kaikille järjestelmänvalvojille, et voi luoda uutta kokeiluympäristöä.
+> 
+> Customer Insightsissa luoduissa Dataverse-kokeiluympäristöissä on 3 Gt tallennustilaa, jota ei lasketa mukaan vuokraajaan oikeutettuun kapasiteetin kokonaismäärään. Maksetut tilaukset saavat 15 Gt:n Dataverse-oikeuden tietokantaan ja 20 Gt:a tiedostotallennustilaan.
 
 **Uusi organisaatio**
 
-Jos luot uuden organisaation Customer Insights -tietoja ladattaessa, järjestelmä luo automaattisesti uuden Dataverse-ympäristön.
-
-> [!NOTE]
-> Jos organisaatiossasi on jo käytössä Dataverse vuokraajassa, on tärkeää muistaa, että [Dataverse-ympäristön luontia hallitsee järjestelmänvalvoja](/power-platform/admin/control-environment-creation.md). Jos esimerkiksi määrität organisaatiotililläsi uutta kohdeyleisötieto-ympäristöä ja järjestelmänvalvoja on poistanut Dataverse-kokeiluympäristöjen luomisen käytöstä kaikille järjestelmänvalvojille, et voi luoda uutta kokeiluympäristöä.
-> 
-> Customer Insightsissa luoduissa Dataverse-kokeiluympäristöissä on 3 Gt tallennustilaa, jota ei lasketa mukaan vuokraajaan oikeutettuun kapasiteetin kokonaismäärään. Maksetut tilaukset saavat 15 Gt:n Dataverse-oikeuden tietokantaan ja 20 Gt:a tiedostotallennustilaan.
+Jos luot uuden organisaation Customer Insightsin määrittämisen yhteydessä, järjestelmä luo automaattisesti uuden Dataverse-ympäristön organisaatiossa.
 
 ## <a name="output-entities"></a>Tulosentiteetit
 
@@ -129,11 +131,11 @@ Tämä taulukko sisältää malliennusteen tulostiedot.
 
 Tämä taulukko sisältää asiakasprofiilien segmenttien jäsenyystiedot.
 
-| Column        | Type | Description                        |
+| Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Asiakkaan profiilin tunnus        |
-| SegmentProvider      | String       | Sovellus, joka julkaisee segmentit. Oletus: Käyttäjäryhmien merkitykselliset tiedot         |
-| SegmentMembershipType | String       | Tämän segmentin jäsenyystietueen asiakkaan tyyppi. Tukee useita tyyppejä, kuten asiakasta, yhteyshenkilöä tai asiakkuutta. Oletus: Asiakas  |
-| Segmentit       | JSON-merkkijono  | Niiden yksilöllisten segmenttien luettelo, joihin asiakasprofiili kuuluu      |
-| msdynci_identifier  | String   | Segmentin jäsenyystietueen yksilöllinen tunnus. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| CustomerId        | String       | Asiakkaan profiilin tunnus        |
+| SegmentProvider      | String       | Sovellus, joka julkaisee segmentit. Oletus: Käyttäjäryhmien merkitykselliset tiedot         |
+| SegmentMembershipType | String       | Tämän segmentin jäsenyystietueen asiakkaan tyyppi. Tukee useita tyyppejä, kuten asiakasta, yhteyshenkilöä tai asiakkuutta. Oletus: Asiakas  |
+| Segmentit       | JSON-merkkijono  | Niiden yksilöllisten segmenttien luettelo, joihin asiakasprofiili kuuluu      |
+| msdynci_identifier  | String   | Segmentin jäsenyystietueen yksilöllinen tunnus. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
 | msdynci_segmentmembershipid | GUID      | Deterministinen GUID, joka on luotu kohteesta `msdynci_identifier`          |
