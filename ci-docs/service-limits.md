@@ -8,38 +8,23 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9bf8f03b785fb3035e3fc979a3304d4e98fd8d28
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: e2e7fc3033c25646693831d4c4c800d84ae6d6da
+ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350403"
+ms.lasthandoff: 04/27/2022
+ms.locfileid: "8641758"
 ---
-# <a name="service-limits-in-customer-insights-capabilities"></a>Palvelun rajoitukset Customer Insights -ominaisuuksissa
+# <a name="service-limits-in-customer-insights"></a>Palvelun rajoitukset Customer Insightsissa
 
 Tässä artikkelissa on tietoja Customer Insights -palvelun sisältämistä rajoituksista. Niiden avulla varmistetaan palvelun luotettavuus ja vakaus. Muutospyynnöt voi lähettää [ideakeskustelupalstan](https://go.microsoft.com/fwlink/?linkid=2074172) kautta. 
 
-## <a name="audience-insights"></a>Merkityksellisiä tietoja käyttäjäryhmästä
+## <a name="customer-insights"></a>Customer Insights
 
 | Area  | Rajoitukset  | Huomautuksia |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](audience-insights/segments.md), [mittareiden](audience-insights/measures.md) ja [ennusteiden](audience-insights/predictions.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
-| Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](audience-insights/segments.md) tai [mittareita](audience-insights/measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
+| Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](segments.md), [mittareiden](measures.md) ja [ennusteiden](predictions.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
+| Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](segments.md) tai [mittareita](measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
 
-<!--
-## Engagement insights
 
-### Workspace and event quotas
-
-Engagement insights is a highly scalable application that can support millions of events per second. During public preview, events have a volume threshold. There's also a limit to the number of workspaces in an organization.
-
-### Engagement insights limits
-
-- Maximum event volume per workspace  = 100 events per second
-
-- Maximum number of workspaces per organization = 100
-
-When events exceed the threshold, it can lead to loss of data in reports based on those events. You can [contact support](https://go.microsoft.com/fwlink/?linkid=2145734) to request a volume increase before you exceed limits. We'll work with you to determine your need for a volume increase and support your request.
--->
-
-[!INCLUDE[footer-include](includes/footer-banner.md)]
+[!INCLUDE [footer-include](includes/footer-banner.md)]

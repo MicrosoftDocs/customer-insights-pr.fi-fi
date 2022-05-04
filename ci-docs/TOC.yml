@@ -2,15 +2,17 @@
   href: index.yml
 - name: Tuotteen yleiskatsaus
   href: overview.md
+- name: Uudet ja päivitetyt toiminnot
+  href: whats-new-customer-insights.md
 - name: Oppimishakemisto
   items:
-    - name: Aloita käyttö
+    - name: Aloita
       href: /learn/modules/get-started-customer-data-platform/
     - name: Tietojen käsitteleminen
       href: /learn/modules/ingest-data-customer-insights/
     - name: Yhdistetyn asiakasprofiilin luominen
       href: /learn/modules/unified-customer-profile/
-    - name: Käyttäjäryhmien merkityksellisten tietojen käyttö
+    - name: Customer Insights -palvelun käyttäminen
       href: /learn/modules/working-with-customer-insights/
     - name: Tietojen rikastaminen ja ennusteiden teko
       href: /learn/modules/enrich-data/
@@ -26,275 +28,269 @@
       href: trial-FAQ.md
 - name: Ympäristön käyttäminen
   href: 'https://home.ci.ai.dynamics.com/'
-- name: Merkityksellisiä tietoja käyttäjäryhmästä
+- name: Aloita
   items:
-    - name: Ohjekeskus
-      href: audience-insights/index.yml
-    - name: Ominaisuuksien yleiskatsaus
-      href: audience-insights/overview.md
-    - name: Uudet ja päivitetyt toiminnot
-      href: audience-insights/whats-new-audience-insights.md
-    - name: Aloita
+    - name: Pikaopas
+      href: get-started.md
+    - name: Aloita maksullisella lisenssillä
+      href: paid-license.md
+    - name: Luo uusi ympäristö
+      href: create-environment.md
+    - name: Tutustu Customer Insightsiin
+      href: home.md
+    - name: Tunnisteiden ja sarakkeiden käsitteleminen
+      href: work-with-tags-columns.md
+    - name: Yritystilien käsitteleminen
+      href: work-with-business-accounts.md
+    - name: Integroi Dynamics 365 Marketingin kanssa
+      href: marketing-get-started.md
+- name: Tietolähteet
+  items:
+    - name: Tietolähteiden yleiskatsaus
+      href: data-sources.md
+    - name: Tietolähteiden lisääminen Power Query -yhdistinten avulla
+      href: connect-power-query.md
+    - name: Common Data Model -kansion lisääminen tietolähteenä
+      href: connect-common-data-model.md
+    - name: Hallitun Dataverse Data Lake -tallennustilan lisääminen
+      href: connect-dataverse-managed-lake.md
+    - name: 'Azure Synapse Analytics:n lisääminen'
+      href: connect-synapse.md
+    - name: Tietolähteiden rikastukset
+      href: data-sources-enrichment.md
+    - name: Tietolähteiden lisäävä päivitys
+      href: incremental-refresh-data-sources.md
+    - name: Reaaliaikainen tietojen käsittely
+      href: real-time-data-ingestion.md
+- name: Tietojen yhdistäminen
+  items:
+    - name: Tietojen yhdistämisen yleiskatsaus
+      href: data-unification.md
+    - name: Entiteettien ja määritteiden yhdistäminen
+      href: map-entities.md
+    - name: Entiteettien vastaavuus
+      href: match-entities.md
+    - name: Entiteettien yhdistäminen
+      href: merge-entities.md
+- name: Tietojen rikastaminen
+  items:
+    - name: Asiakasprofiilien rikastaminen
+      href: enrichment-hub.md
+    - name: Tuotemerkit ja kiinnostuksen kohteet
+      href: enrichment-microsoft.md
+    - name: Parannetut osoitteet
+      href: enrichment-enhanced-addresses.md
+    - name: Parannetut yritystiedot
+      href: enrichment-enhanced-company-data.md
+    - name: Azure Mapsin rikastaminen
+      href: enrichment-azure-maps.md
+    - name: Rikasta Dun & Bradstreetin avulla
+      href: enrichment-dnb.md
+    - name: Tietojen rikastaminen HERE Technologiesin avulla
+      href: enrichment-here.md
+    - name: Täydennä Leadspacen avulla
+      href: enrichment-leadspace.md
+    - name: Rikastus LiveRampin avulla
+      href: enrichment-liveramp.md
+    - name: Rikastaminen Experianin avulla
+      href: enrichment-experian.md
+    - name: Rikasta Office 365 -tiedoilla
+      href: enrichment-office.md
+    - name: Rikastaminen mukautetun SFTP-tuonnin avulla
+      href: enrichment-SFTP-custom-import.md
+- name: Yhtenäiset profiilit
+  items:
+    - name: Yhdistettyjen asiakasprofiilien arvioiminen
+      href: customer-profiles.md
+    - name: Yhdistettyjen asiakasprofiilien suodattaminen
+      href: search-filter-index.md
+    - name: Määritä asiakasaktiviteetit
+      href: activities.md
+- name: Segments
+  items:
+    - name: Segmenttien yleiskatsaus
+      href: segments.md
+    - name: Segmenttien luominen
+      href: segment-builder.md
+    - name: Mittarien perusteella ehdotetut segmentit
+      href: suggested-segments.md
+    - name: Aktiviteetin perusteella ehdotetut segmentit
+      href: suggested-segments-activity.md
+    - name: Hanki tietoja segmenteistä
+      href: segment-insights.md
+    - name: Etsi samankaltaisia asiakkaita
+      href: find-similar-customer-segments.md
+- name: Mittarit
+  items:
+    - name: Mittarien yleiskatsaus
+      href: measures.md
+    - name: Uuden mittarin luominen
+      href: measure-builder.md
+    - name: Käytä mittarimallia
+      href: measure-templates.md
+- name: Ennusteet
+  items:
+    - name: 'Tietojen ennustaminen AI:n avulla'
       items:
-        - name: Pikaopas
-          href: audience-insights/get-started.md
-        - name: Aloita maksullisella lisenssillä
-          href: paid-license.md
-        - name: Luo uusi ympäristö
-          href: audience-insights/create-environment.md
-        - name: Tutustu käyttäjäryhmän merkityksellisiin tietoihin
-          href: audience-insights/home.md
-        - name: Tunnisteiden ja sarakkeiden käsitteleminen
-          href: audience-insights/work-with-tags-columns.md
-        - name: Yritystilien käsitteleminen
-          href: audience-insights/work-with-business-accounts.md
-    - name: Tietolähteet
+        - name: Ennustemallien yleiskatsaus
+          href: predictions-overview.md
+        - name: Asiakkaan elinkaaren arvon ennustaminen
+          href: predict-customer-lifetime-value.md
+        - name: Tuotesuositusten ennustaminen
+          href: predict-product-recommendation.md
+        - name: Ennakoi tilausten vaihtuvuus
+          href: predict-subscription-churn.md
+        - name: Tapahtuman vaihtuvuuden ennustaminen
+          href: predict-transactional-churn.md
+        - name: Asiakaspalautteen asenteen analysointi
+          href: sentiment-analysis.md
+        - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
+          href: custom-models.md
+        - name: Osittain puuttuvien tietojen täydentäminen
+          href: predictions.md
+    - name: Esimerkkioppaat
       items:
-        - name: Tietolähteiden yleiskatsaus
-          href: audience-insights/data-sources.md
-        - name: Tietolähteiden lisääminen Power Query -yhdistinten avulla
-          href: audience-insights/connect-power-query.md
-        - name: Common Data Model -kansion lisääminen tietolähteenä
-          href: audience-insights/connect-common-data-model.md
-        - name: Hallitun Dataverse Data Lake -tallennustilan lisääminen
-          href: audience-insights/connect-dataverse-managed-lake.md
-        - name: 'Azure Synapse Analytics:n lisääminen'
-          href: audience-insights/connect-synapse.md
-        - name: Tietolähteiden rikastukset
-          href: audience-insights/data-sources-enrichment.md
-        - name: Tietolähteiden lisäävä päivitys
-          href: audience-insights/incremental-refresh-data-sources.md
-        - name: Reaaliaikainen tietojen käsittely
-          href: audience-insights/real-time-data-ingestion.md
-    - name: Tietojen yhdistäminen
+        - name: CLV-ennusteen malliopas
+          href: sample-guide-predict-clv.md
+        - name: Tilauksen vaihtuvuusennusteen näyteopas
+          href: sample-guide-predict-subscription-churn.md
+        - name: Esimerkkiopas tapahtuman vaihtuvuuden ennakoinnista
+          href: sample-guide-predict-transactional-churn.md
+        - name: Tuotesuosituksen ennusteen näyteopas
+          href: sample-guide-predict-product-recommendation.md
+        - name: Azuren automaattianalyysipalvelujen kokeileminen
+          href: azure-machine-learning-experiments.md
+    - name: Hallitse ennusteita
+      href: manage-predictions.md
+    - name: Ennusteisiin perustuvien segmenttien luominen
+      href: prediction-based-segment.md
+- name: Vientiasetukset
+  items:
+    - name: Viennit
       items:
-        - name: Tietojen yhdistämisen yleiskatsaus
-          href: audience-insights/data-unification.md
-        - name: Entiteettien ja määritteiden yhdistäminen
-          href: audience-insights/map-entities.md
-        - name: Entiteettien vastaavuus
-          href: audience-insights/match-entities.md
-        - name: Entiteettien yhdistäminen
-          href: audience-insights/merge-entities.md
-    - name: Tietojen rikastaminen
+        - name: Yleiskatsaus vienteihin
+          href: export-destinations.md
+        - name: Aktiivinen kampanja
+          href: export-active-campaign.md
+        - name: AdRoll
+          href: export-adroll.md
+        - name: Autopilot
+          href: export-autopilot.md
+        - name: Azure Blob Storage
+          href: export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: export-azure-data-lake-storage-gen2.md
+        - name: Azure Synapse Analytics
+          href: export-azure-synapse-analytics.md
+        - name: Adobe Campaign Standard
+          href: export-adobe-campaign-standard.md
+        - name: Adobe Experience Platform
+          href: export-adobe-experience-platform.md
+        - name: Braze
+          href: export-braze.md
+        - name: Campaign Monitor
+          href: export-campaign-monitor.md
+        - name: Constant Contact
+          href: export-constant-contact.md
+        - name: DotDigital
+          href: export-dotdigital.md
+        - name: Dynamics 365 Marketing
+          href: export-dynamics365-marketing.md
+        - name: Dynamics 365 Sales
+          href: export-dynamics365-sales.md
+        - name: Facebook -mainosten hallinta
+          href: export-facebook.md
+        - name: Google Ads
+          href: export-google-ads.md
+        - name: Iterable
+          href: export-iterable.md
+        - name: Klaviyo
+          href: export-klaviyo.md
+        - name: LinkedIn Ads
+          href: export-linkedin-ads.md
+        - name: LiveRamp
+          href: export-liveramp.md
+        - name: Mailchimp
+          href: export-mailchimp.md
+        - name: Marketo
+          href: export-marketo.md
+        - name: Microsoft Advertising
+          href: export-microsoft-advertising.md
+        - name: Omnisend
+          href: export-omnisend.md
+        - name: RollWorks
+          href: export-rollworks.md
+        - name: Salesforce Marketing Cloud
+          href: export-salesforce.md
+        - name: SendGrid
+          href: export-sendgrid.md
+        - name: SendInBlue
+          href: export-sendinblue.md
+        - name: Snapchat
+          href: export-snapchat.md
+        - name: SFTP
+          href: export-sftp.md
+    - name: Muut käyttötavat
       items:
-        - name: Asiakasprofiilien rikastaminen
-          href: audience-insights/enrichment-hub.md
-        - name: Tuotemerkit ja kiinnostuksen kohteet
-          href: audience-insights/enrichment-microsoft.md
-        - name: Parannetut osoitteet
-          href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Parannetut yritystiedot
-          href: audience-insights/enrichment-enhanced-company-data.md
-        - name: Azure Mapsin rikastaminen
-          href: audience-insights/enrichment-azure-maps.md
-        - name: Tietojen rikastaminen HERE Technologiesin avulla
-          href: audience-insights/enrichment-here.md
-        - name: Täydennä Leadspacen avulla
-          href: audience-insights/enrichment-leadspace.md
-        - name: Rikastus LiveRampin avulla
-          href: audience-insights/enrichment-liveramp.md
-        - name: Rikastaminen Experianin avulla
-          href: audience-insights/enrichment-experian.md
-        - name: Rikasta Office 365 -tiedoilla
-          href: audience-insights/enrichment-office.md
-        - name: Rikastaminen mukautetun SFTP-tuonnin avulla
-          href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Yhtenäiset profiilit
-      items:
-        - name: Yhdistettyjen asiakasprofiilien arvioiminen
-          href: audience-insights/customer-profiles.md
-        - name: Yhdistettyjen asiakasprofiilien suodattaminen
-          href: audience-insights/search-filter-index.md
-        - name: Määritä asiakasaktiviteetit
-          href: audience-insights/activities.md
-    - name: Segments
-      items:
-        - name: Segmenttien yleiskatsaus
-          href: audience-insights/segments.md
-        - name: Segmenttien luominen
-          href: audience-insights/segment-builder.md
-        - name: Mittarien perusteella ehdotetut segmentit
-          href: audience-insights/suggested-segments.md
-        - name: Aktiviteetin perusteella ehdotetut segmentit
-          href: audience-insights/suggested-segments-activity.md
-        - name: Hanki tietoja segmenteistä
-          href: audience-insights/segment-insights.md
-        - name: Etsi samankaltaisia asiakkaita
-          href: audience-insights/find-similar-customer-segments.md
-    - name: Mittarit
-      items:
-        - name: Mittarien yleiskatsaus
-          href: audience-insights/measures.md
-        - name: Uuden mittarin luominen
-          href: audience-insights/measure-builder.md
-        - name: Käytä mittarimallia
-          href: audience-insights/measure-templates.md
-    - name: Ennusteet
-      items:
-        - name: 'Tietojen ennustaminen AI:n avulla'
-          items:
-            - name: Ennustemallien yleiskatsaus
-              href: audience-insights/predictions-overview.md
-            - name: Asiakkaan elinkaaren arvon ennustaminen
-              href: audience-insights/predict-customer-lifetime-value.md
-            - name: Tuotesuositusten ennustaminen
-              href: audience-insights/predict-product-recommendation.md
-            - name: Ennakoi tilausten vaihtuvuus
-              href: audience-insights/predict-subscription-churn.md
-            - name: Tapahtuman vaihtuvuuden ennustaminen
-              href: audience-insights/predict-transactional-churn.md
-            - name: Asiakaspalautteen asenteen analysointi
-              href: audience-insights/sentiment-analysis.md
-            - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
-              href: audience-insights/custom-models.md
-            - name: Osittain puuttuvien tietojen täydentäminen
-              href: audience-insights/predictions.md
-        - name: Esimerkkioppaat
-          items:
-            - name: CLV-ennusteen malliopas
-              href: audience-insights/sample-guide-predict-clv.md
-            - name: Tilauksen vaihtuvuusennusteen näyteopas
-              href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Esimerkkiopas tapahtuman vaihtuvuuden ennakoinnista
-              href: audience-insights/sample-guide-predict-transactional-churn.md
-            - name: Tuotesuosituksen ennusteen näyteopas
-              href: audience-insights/sample-guide-predict-product-recommendation.md
-            - name: Azuren automaattianalyysipalvelujen kokeileminen
-              href: audience-insights/azure-machine-learning-experiments.md
-        - name: Hallitse ennusteita
-          href: audience-insights/manage-predictions.md
-        - name: Ennusteisiin perustuvien segmenttien luominen
-          href: audience-insights/prediction-based-segment.md
-    - name: Vientiasetukset
-      items:
-        - name: Viennit
-          items:
-            - name: Yleiskatsaus vienteihin
-              href: audience-insights/export-destinations.md
-            - name: Aktiivinen kampanja
-              href: audience-insights/export-active-campaign.md
-            - name: AdRoll
-              href: audience-insights/export-adroll.md
-            - name: Autopilot
-              href: audience-insights/export-autopilot.md
-            - name: Azure Blob Storage
-              href: audience-insights/export-azure-blob-storage.md
-            - name: Azure Data Lake Storage Gen2
-              href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse Analytics
-              href: audience-insights/export-azure-synapse-analytics.md
-            - name: Adobe Campaign Standard
-              href: audience-insights/export-adobe-campaign-standard.md
-            - name: Adobe Experience Platform
-              href: audience-insights/export-adobe-experience-platform.md
-            - name: Braze
-              href: audience-insights/export-braze.md
-            - name: Campaign Monitor
-              href: audience-insights/export-campaign-monitor.md
-            - name: Constant Contact
-              href: audience-insights/export-constant-contact.md
-            - name: DotDigital
-              href: audience-insights/export-dotdigital.md
-            - name: Dynamics 365 Marketing
-              href: audience-insights/export-dynamics365-marketing.md
-            - name: Dynamics 365 Sales
-              href: audience-insights/export-dynamics365-sales.md
-            - name: Facebook -mainosten hallinta
-              href: audience-insights/export-facebook.md
-            - name: Google Ads
-              href: audience-insights/export-google-ads.md
-            - name: Iterable
-              href: audience-insights/export-iterable.md
-            - name: Klaviyo
-              href: audience-insights/export-klaviyo.md
-            - name: LinkedIn Ads
-              href: audience-insights/export-linkedin-ads.md
-            - name: LiveRamp
-              href: audience-insights/export-liveramp.md
-            - name: Mailchimp
-              href: audience-insights/export-mailchimp.md
-            - name: Marketo
-              href: audience-insights/export-marketo.md
-            - name: Microsoft Advertising
-              href: audience-insights/export-microsoft-advertising.md
-            - name: Omnisend
-              href: audience-insights/export-omnisend.md
-            - name: RollWorks
-              href: audience-insights/export-rollworks.md
-            - name: Salesforce Marketing Cloud
-              href: audience-insights/export-salesforce.md
-            - name: SendGrid
-              href: audience-insights/export-sendgrid.md
-            - name: SendInBlue
-              href: audience-insights/export-sendinblue.md
-            - name: Snapchat
-              href: audience-insights/export-snapchat.md
-            - name: SFTP
-              href: audience-insights/export-sftp.md
-        - name: Muut käyttötavat
-          items:
-            - name: 'Asiakaskortti-apuohjelma Dynamics 365:lle'
-              href: audience-insights/customer-card-add-in.md
-            - name: Microsoft Teams (botti)
-              href: audience-insights/export-teams-bot.md
-            - name: Power Apps
-              href: audience-insights/export-power-apps.md
-            - name: Power Automate
-              href: audience-insights/export-power-automate.md
-            - name: Power BI
-              href: audience-insights/export-power-bi.md
-    - name: Entiteetit
-      items:
-        - name: Tietoja entiteeteistä
-          href: audience-insights/entities.md
-        - name: Tarkista entiteettirakenteet Common Data Modelissa
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights -tiedot Dataversessä
-          href: audience-insights/customer-insights-dataverse.md
-        - name: Suhteiden ja yhdistettyjen entiteettien muodostaminen
-          href: audience-insights/relationships.md
-        - name: Semanttisen yhdistämisen määrittäminen
-          href: audience-insights/semantic-mappings.md
-    - name: Hallinta
-      items:
-        - name: Järjestelmämääritysten määrittäminen
-          href: audience-insights/system.md
-        - name: Delegoidaan käyttöoikeuksia
-          href: audience-insights/permissions.md
-        - name: Yhteyksien yleiskuvaus
-          href: audience-insights/connections.md
-        - name: Useiden ympäristöjen hallinta
-          href: audience-insights/manage-environments.md
-        - name: Bring your own Key Vault
-          href: audience-insights/use-azure-key-vault.md
-        - name: Yhteyden muodostaminen tallennustiliin palvelun päänimen avulla
-          href: audience-insights/connect-service-principal.md
-        - name: Diagnostiikkalokien vieminen
-          href: audience-insights/diagnostics.md
-        - name: Palvelurajoitukset
-          href: service-limits.md
-        - name: DSR-oikeudet ja -pyynnöt
-          href: dsr-rights-requests.md
-    - name: Ohjelmointirajapinnat
-      items:
-        - name: Tarkista entiteettirakenteet Common Data Modelissa
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights -tiedot Dataversessä
-          href: audience-insights/customer-insights-dataverse.md
-        - name: Ohjelmointirajapintojen käsitteleminen
-          href: audience-insights/apis.md
-        - name: Ohjelmointirajapintaviitteet
-          href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+        - name: 'Asiakaskortti-apuohjelma Dynamics 365:lle'
+          href: customer-card-add-in.md
+        - name: Microsoft Teams (botti)
+          href: export-teams-bot.md
+        - name: Power Apps
+          href: export-power-apps.md
+        - name: Power Automate
+          href: export-power-automate.md
+        - name: Power BI
+          href: export-power-bi.md
+- name: Entiteetit
+  items:
+    - name: Tietoja entiteeteistä
+      href: entities.md
+    - name: Tarkista entiteettirakenteet Common Data Modelissa
+      href: entity-schemas.md
+    - name: Customer Insights -tiedot Dataversessä
+      href: customer-insights-dataverse.md
+    - name: Suhteiden ja yhdistettyjen entiteettien muodostaminen
+      href: relationships.md
+    - name: Semanttisen yhdistämisen määrittäminen
+      href: semantic-mappings.md
+- name: Hallinta
+  items:
+    - name: Järjestelmämääritysten määrittäminen
+      href: system.md
+    - name: Määritä tietoturva-asetukset
+      href: security-overview.md
+    - name: Delegoidaan käyttöoikeuksia
+      href: permissions.md
+    - name: Yhteyksien yleiskuvaus
+      href: connections.md
+    - name: Useiden ympäristöjen hallinta
+      href: manage-environments.md
+    - name: Bring your own Key Vault
+      href: use-azure-key-vault.md
+    - name: Yhteyden muodostaminen tallennustiliin palvelun päänimen avulla
+      href: connect-service-principal.md
+    - name: Diagnostiikkalokien vieminen
+      href: diagnostics.md
+    - name: Palvelurajoitukset
+      href: service-limits.md
+    - name: DSR-oikeudet ja -pyynnöt
+      href: dsr-rights-requests.md
+- name: Ohjelmointirajapinnat
+  items:
+    - name: Ohjelmointirajapintojen käsitteleminen
+      href: apis.md
+    - name: Ohjelmointirajapintaviitteet
+      href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
 - name: Hyväksynnän hallinta (esiversio)
   items:
     - name: Ohjekeskus
       href: consent-management/index.yml
     - name: Ominaisuuksien yleiskatsaus
       href: consent-management/overview.md
-    - name: Aloitusopas
+    - name: Aloita
       items:
-        - name: Aloitusopas
+        - name: Aloita
           href: consent-management/get-started.md
         - name: Käsitteet ja terminologia
           href: consent-management/glossary.md
@@ -306,10 +302,10 @@
           href: consent-management/set-consent-rules.md
     - name: Suostumustietojen hallinta
       items:
-        - name: Suostumussääntöjen käyttöönotto kohdeyleisön tiedoissa
-          href: audience-insights/activate-consent.md
-        - name: Hallitse hyväksynnän oletussääntöjä kohdeyleisön merkityksellisten tietojen segmenttien avulla
-          href: audience-insights/change-default-consent-rules.md
+        - name: Suostumussääntöjen ottaminen käyttöön Customer Insightsissa
+          href: activate-consent.md
+        - name: Hallitse hyväksynnän oletussääntöjä Customer Insightsin segmenttien avulla
+          href: change-default-consent-rules.md
     - name: Käyttäjien ja asetusten hallinta
       items:
         - name: Järjestelmäasetusten määrittäminen
@@ -320,7 +316,5 @@
       items:
         - name: Ennusteiden luominen hyväksyntätietojen avulla
           href: consent-management/predictions-consent-data.md
-- name: Vuorovaikutuksen merkitykselliset tiedot (esiversio)
-  href: engagement-insights/overview.md
 - name: Tukipyyntö
   href: /power-platform/admin/get-help-support
