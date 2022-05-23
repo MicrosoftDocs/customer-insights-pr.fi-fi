@@ -1,23 +1,22 @@
 ---
 title: Suostumussääntöjen aktivoiminen segmenteille
 description: Noudata näitä vaiheita, jotka linkittävät suostumustiedot ja aktivoivat suostumuksen tarkistukset Dynamics 365 Customer Insightsissa. Järjestelmänvalvoja voi myös poistaa suostumuksen tarkistukset käytöstä.
-ms.date: 11/12/2021
-ms.subservice: audience-insights
+ms.date: 04/27/2022
 ms.topic: how-to
-author: smithy7
-ms.author: smithc
+author: anubhav-t
+ms.author: antando
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: bfa03f4b7b56b300a74ebd04721cd64b893879f1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f82e3a4031fee8bcaa88575cbd68b37385a7fffb
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646048"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755166"
 ---
 # <a name="activate-consent-rules"></a>Aktivoi hyväksyntäsäännöt
 
-[Suostumuskeskus (esiversio)](consent-management/overview.md) auttaa harmonisoimaan suostumustietoja eri lähteistä. Käytä yhdistettyä *Suostumus*-entiteettiä, kun haluat käyttää oletussuostumustarkistuksia. Kun olet tuonut suostumustiedot Suostumuskeskukseen ja määrittänyt tietojen säännöt, *Suostumus*-entiteetti synkronoidaan automaattisesti Dynamics 365 Customer Insightsiin.
+[Suostumuskeskus (esiversio)](consent-management/overview.md) auttaa harmonisoimaan suostumustietoja eri lähteistä. Käytä yhdistettyä *Suostumus*-entiteettiä, kun haluat käyttää oletussuostumustarkistuksia. Kun olet tuonut suostumustiedot ja määrittänyt yhdistämissäännöt, *Suostumus*-entiteetti synkronoidaan automaattisesti Dynamics 365 Customer Insightsiin.
 
 ## <a name="enable-consent-checks"></a>Ota suostumuksen tarkistukset käyttöön
 

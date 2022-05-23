@@ -17,16 +17,16 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsight
-ms.openlocfilehash: 29b5d3f5848d36abd8e941136a6330dbb7730016
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6c0a1bc5d9a42806b458142804199c733ff530ec
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646138"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755494"
 ---
 # <a name="customer-activities"></a>Asiakasaktiviteetit
 
-Yhdistämällä [eri tietolähteiden](data-sources.md) asiakasaktiviteetteja Dynamics 365 Customer Insightsissa voit luoda aikajanan, jossa aktiviteetit näkyvät aikajärjestyksessä. Sisällytä aikajana Dynamics 365 -sovelluksiin [Asiakaskortin-apuohjelma](customer-card-add-in.md) -ratkaisulla tai Power BI -koontinäytön avulla.
+Yhdistä asiakas aktiviteetit [eri tietolähteistä ](data-sources.md) Dynamics 365 Customer Insightsissa. Luo aikajana, jossa aktiviteetit näkyvät aikajärjestyksessä. Sisällytä aikajana Dynamics 365 -sovelluksiin [Asiakaskortit-apuohjelmaratkaisun](customer-card-add-in.md) avulla.
 
 ## <a name="define-an-activity"></a>Aktiviteetin määrittäminen
 
@@ -78,7 +78,7 @@ Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäär�
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. Voit tallentaa aktiviteetin nyt valitsemalla **Viimeistele ja tarkista**, kun aktiviteettityypiksi on määritetty **Muu**. 
 
-1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. Tällä hetkellä *Palaute*-, *Uskollisuus*-, *Myyntitilaus*-, *Myyntitilausrivi*-, and *Tilaus*-aktiviteettityypit voidaan yhdistää semanttisesti sen jälkeen, kun on tehty päätös kenttien yhdistämisestä. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
+1. Valitse **Aktiviteettityyppi**-vaiheessa aktiviteetin tyyppi ja valitse tarvittaessa, haluatko yhdistää jotkin aktiviteettityypit semanttisesti käytettäväksi muissa Customer Insights -alueissa. *Palaute*-, *Uskollisuus*-, *SalesOrder*-, *SalesOrderLine* ja *Tilaus*-aktiviteettityyppi tukevat tällä hetkellä semantiikkaa sen jälkeen, kun kenttien yhdistämisen on hyväksytty. Jos aktiviteettityypillä ei ole merkitystä uudelle aktiviteetille, voit valita mukautetulle aktiviteettityypille *Muu* tai *Luo uusi*.
 
 1. Siirry seuraavaan vaiheeseen valitsemalla **Seuraava**. 
 
@@ -110,7 +110,7 @@ Kun olet määrittänyt asiakasaktiviteetit, valitse **Näytä aktiviteettien ai
 
 Jos haluat nähdä asiakkaan aikajanan, siirry kohtaan **Asiakkaat** ja valitse asiakasprofiili, jota haluat tarkastella.
 
-Jos asiakas on osallistunut aktiviteettiin, jonka olet määrittänyt, löydät sen **Aktivitieettien aikajana** -osasta.
+Jos asiakas on osallistunut määritettyyn aktiviteettiin, löydät sen **Aktivitieettien aikajana** -osasta.
 
 :::image type="content" source="media/Activity_Timeline1.PNG" alt-text="Näytä määritetyt aktiviteetit asiakasprofiileissa.":::
 

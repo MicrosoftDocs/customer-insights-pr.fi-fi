@@ -1,25 +1,25 @@
 ---
 title: Tuotesuosituksen ennuste
 description: Ennusta tuotteet, joita asiakas todennäköisesti ostaa tai joiden kanssa asiakas on tekemisissä.
-ms.date: 01/13/2022
+ms.date: 05/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: fe6c0e8ba8236243682a4105535a0026c4343c3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9b3e60c49d294d031f43ef0594cb69707bb64019
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646405"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762728"
 ---
 # <a name="product-recommendation-prediction"></a>Tuotesuosituksen ennuste
 
 Tuotesuositusmalli luo ennakoivia tuotesuositusjoukkoja. Suositukset perustuvat aiempaan ostokäyttäytymiseen ja asiakkaisiin, joilla on samanlaisia ostomalleja. Voit luoda uusia tuotesuosituksen ennusteita **Analytiikka** > **Ennusteet** -sivulla Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita.
 
-Tuotesuosituksiin saatetaan soveltaa paikallisia lakeja ja määräyksiä sekä asiakkaiden odotuksia. Mallia ei ole suunniteltu ottamaan huomioon näitä seikkoja.  Tämän ennakoivan ominaisuuden käyttäjänä **sinun on tarkistettava suositukset, ennen kuin toimitat ne asiakkaillesi**. Näin voit varmistaa, että noudatat soveltuvia lakeja tai säädöksiä sekä asiakkaan odotuksia sille, mitä suosittelet. 
+Tuotesuosituksiin saatetaan soveltaa paikallisia lakeja ja määräyksiä sekä asiakkaiden odotuksia. Mallia ei ole suunniteltu ottamaan huomioon näitä seikkoja.  Tämän ennakoivan ominaisuuden käyttäjänä **sinun on tarkistettava suositukset, ennen kuin toimitat ne asiakkaillesi**. Näin voit varmistaa, että noudatat soveltuvia lakeja tai säädöksiä sekä asiakkaan odotuksia sille, mitä suosittelet.
 
 Lisäksi tämän mallin tulos antaa suosituksia tuotetunnuksen perusteella. Toimitusmekanismin on yhdistettävä ennustetut tuotetunnukset asiakkaiden sopivaan sisältöön lokalisointia, kuvasisältöä ja muuta liiketoimintakohtaista sisältöä tai toiminnallisuutta varten.
 
@@ -33,29 +33,31 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
 - Liiketoiminnan tietämystä, joka auttaa ymmärtämään liiketoiminnan tuotteiden erilaisia tyyppejä ja sitä, miten asiakkaat käyttävät niitä. Tuemme sellaisten tuotteiden suosittelemista, joita asiakkaat ovat ostaneet aiemmin, tai uusien tuotteiden suosittelemista.
 
+- Ympäristön asetuksissa on määritettävä ensisijaiseksi kohdeyleisöksi **yksittäiset kuluttajat**.
+
 - Tietoja tapahtumista ja ostoista sekä niiden historiasta:
-    - Tapahtumatunnisteet erottavat ostot ja tapahtumat toisistaan.
-    - Asiakastunnisteet, joilla tapahtumat yhdistetään asiakkaisiin.
-    - Tapahtuman tapahtumapäivämäärät, jotka määrittävät tapahtuman tapahtumispäivämäärät.
-    - Tapahtuman tuotetunnustiedot.
-    - (Valinnainen) Tuoteluettelon tietoentiteetti, joka käyttää tuotesuodatinta.
-    - (Valinnainen) Määrittää, onko tapahtuma palautus vai ei.
-    - Semanttiseen tietorakenteeseen tarvitaan seuraavat tiedot:
-        - **Tapahtuma tunnus:** oston tai tapahtuman yksilöivä tunnus.
-        - **Tapahtuman päivämäärä:** oston tai tapahtuman päivämäärä.
-        - **Tapahtuman arvo:** oston tai tapahtuman numeroarvoinen summa.
-        - **Yksilöivä tuotetunnus:** ostetun tuotteen tai palvelun tunnus, jos tieto on rivitasolla.
-        - (Valinnainen) **Osto tai palautus:** Totuusarvokenttä, jonka arvo *tosi* osoittaa, että tapahtuma oli palautus. Jos osto- tai palautustietoja ei ole annettu mallissa ja **Tapahtuman arvo** on negatiivinen, käytämme näitä tietoja palautuksen päättelyssä.
+  - Tapahtumatunnisteet erottavat ostot ja tapahtumat toisistaan.
+  - Asiakastunnisteet, joilla tapahtumat yhdistetään asiakkaisiin.
+  - Tapahtuman tapahtumapäivämäärät, jotka määrittävät tapahtuman tapahtumispäivämäärät.
+  - Tapahtuman tuotetunnustiedot.
+  - (Valinnainen) Tuoteluettelon tietoentiteetti, joka käyttää tuotesuodatinta.
+  - (Valinnainen) Määrittää, onko tapahtuma palautus vai ei.
+  - Semanttiseen tietorakenteeseen tarvitaan seuraavat tiedot:
+    - **Tapahtuma tunnus:** oston tai tapahtuman yksilöivä tunnus.
+    - **Tapahtuman päivämäärä:** oston tai tapahtuman päivämäärä.
+    - **Tapahtuman arvo:** oston tai tapahtuman numeroarvoinen summa.
+    - **Yksilöivä tuotetunnus:** ostetun tuotteen tai palvelun tunnus, jos tieto on rivitasolla.
+    - (Valinnainen) **Osto tai palautus:** Totuusarvokenttä, jonka arvo *tosi* osoittaa, että tapahtuma oli palautus. Jos osto- tai palautustietoja ei ole annettu mallissa ja **Tapahtuman arvo** on negatiivinen, käytämme näitä tietoja palautuksen päättelyssä.
 - Ehdotetut tietojen ominaisuudet:
-    - Riittävät historiatiedot: Ainakin yksi vuosi liiketapahtumatietoja, mielellään 2–3 vuotta, joihin sisältyy kausivaihteluita.
-    - Useita ostoja asiakasta kohden: vähintään kolme tapahtumaa asiakastunnusta kohden
-    - Asiakkaiden määrä: vähintään 100 asiakasta, mielellään yli 10 000 asiakasta. Malli epäonnistuu, jos asiakkaita on alle 100.
+  - Riittävät historiatiedot: Ainakin yksi vuosi liiketapahtumatietoja, mielellään 2–3 vuotta, joihin sisältyy kausivaihteluita.
+  - Useita ostoja asiakasta kohden: vähintään kolme tapahtumaa asiakastunnusta kohden
+  - Asiakkaiden määrä: vähintään 100 asiakasta, mielellään yli 10 000 asiakasta. Malli epäonnistuu, jos asiakkaita on alle 100.
 
 > [!NOTE]
+>
 > - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tapahtuman määritelmä on varsin joustava. Kaikki tiedot, jotka kuvaavat käyttäjän ja tuotteen välistä vuorovaikutusta, voivat toimia syötteenä. Esimerkiksi tuotteen ostaminen tai osallistuminen kurssille tai tapahtumaan.
 > - Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos ostoentiteettejä on useita, yhdistä ne  Power Queryssä ennen tietojen käsittelyn alkamista.
 > - Jos tilaus ja tilaustiedot ovat eri entiteettejä, yhdistä ne ennen mallin käyttöä. Malli ei toimi, jos käytössä on vain entiteetin tilaustunnus tai vastaanottotunnus.
-
 
 ## <a name="create-a-product-recommendation-prediction"></a>Tuotesuosituksen ennusteen luominen
 
@@ -76,7 +78,7 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 ### <a name="define-product-recommendation-configuration"></a>Tuotesuositusmäärityksen määrittäminen
 
 1. Määritä **Tuotteiden määrä**, jota haluat suositella asiakkaalle. Arvo riippuu siitä, miten toimitusmenetelmä täyttää tiedot. Jos voit suositella kolmea tuotetta, määritä tämä arvo vastaavasti.
-   
+
    >[!TIP]
    > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Ennusteluonnos on **Omat ennusteet** -välilehdessä.
 
@@ -98,14 +100,13 @@ Jos haluat kokeilla tätä ominaisuutta, mutta sinulla ei ole tietoja alla maini
 
    :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Sivun asetusaktiviteetin tyyppi.":::
 
-1. Kun aktiviteetti on yhdistetty vastaavaan semanttiseen tyyppiin, jatka valitsemalla **Seuraava** 
- 
+1. Kun aktiviteetti on yhdistetty vastaavaan semanttiseen tyyppiin, jatka valitsemalla **Seuraava**.
+
 1. Yhdistä semanttiset määritteet kenttiin, jotka tarvitaan mallin suorittamiseen.
 
 1. Valitse **Tallenna**.
 
 1. Valitse **Seuraava**.
-
 
 ### <a name="configure-product-filters"></a>Tuotesuodattimien määritys
 
@@ -113,11 +114,11 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
 
 1. Lisää **Tuotetietojen lisääminen** -vaiheessa tuoteluetteloon kunkin tuotteen tiedot. Yhdistä tarvittavat tiedot ja valitse **Seuraava**.
 
-3. Valitse **Tuotesuodattimet**-vaiheessa jokin seuraavista vaihtoehdoista.
+1. Valitse **Tuotesuodattimet**-vaiheessa jokin seuraavista vaihtoehdoista.
 
-   * **Ei suodattimia**: käytä kaikkia tuotesuosituksen ennusteen tuotteita.
+   - **Ei suodattimia**: käytä kaikkia tuotesuosituksen ennusteen tuotteita.
 
-   * **Määritä tietyt tuotesuodattimet**: käytä tiettyjä tuotteita tuotesuosituksen ennusteessa.
+   - **Määritä tietyt tuotesuodattimet**: käytä tiettyjä tuotteita tuotesuosituksen ennusteessa.
 
 1. Valitse **Seuraava**.
 
@@ -126,7 +127,7 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
    :::image type="content" source="media/product-filters-sidepane.png" alt-text="Sivuruutu, joka näyttää tuoteluettelon entiteetin määritteet tuotesuodattimia varten.":::
 
 1. Valitse, käytetäänkö tuotesuodattimessa **ja**- tai **tai**-yhdistimiä yhdistämään loogisesti määritteiden valinnan tuoteluettelosta.
-   
+
    :::image type="content" source="media/product-filters-sample.png" alt-text="Tuotesuodattimien esimerkkimääritys yhdistettynä loogisiin JA-yhdistimiin.":::
 
 1. Valitse **Seuraava**.
@@ -150,7 +151,7 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
 1. Valitse ennuste, jota haluat tarkastella.
    - **Ennusteen nimi:** Ennusteelle luomisen yhteydessä annettu nimi.
    - **Ennustetyyppi:** Ennusteessa käytetyn mallin tyyppi.
-   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.    
+   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.
       Tulosentiteetin *pistemäärä* on suosituksen kvantitatiivinen mittari. Malli suosittelee tuotteita, joiden pistemäärä on suurempi kuin tuotteita, joiden pistemäärä on pienempi.
    - **Ennustettu kenttä**: Tähän kenttään täytetään vain tietyntyyppiset ennusteet, eikä sitä käytetä tuotesuositusten ennusteessa.
    - **Tila:** Ennusteen suoritumisen nykyinen tila.
@@ -171,28 +172,27 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
             - **A** Mallia pidetään **A**-laatuna, jos Menestys @ K -mittarin arvo on vähintään 10 % enemmän kuin perustaso. 
             - **B** Mallia pidetään **B**-laatuna, jos Menestys @ K -mittarin arvo on 0–10 % enemmän kuin perustaso.
             - **C** Mallia pidetään **C**-laatuna, jos Menestys @ K -mittarin arvo on vähemmän kuin perustaso.
-               
+
                > [!div class="mx-imgBorder"]
                > ![Tarkastele mallin suorituskyvyn tulosta.](media/product-recommendation-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
             - **Perustaso**: Malli käyttää kaikkien asiakkaiden ostomäärien mukaisia suositelluimpia tuotteita ja mallin määrittämiä opittuja sääntöjä asiakkaiden suositusjoukon luomisessa. Ennusteita vertaillaan sen jälkeen myydyimpiin tuotteisiin tuotteen ostaneiden asiakkaiden määrän mukaan laskettuna. Jos asiakkaan suositelluissa tuotteissa on vähintään yksi tuote, joka on myös myydyimpien tuotteiden joukossa, heitä pidetään perustason asiakkaina. Jos 10 asiakasta yhteensä 100 asiakkaasta on suositellut ostettua tuotetta, perustaso on 10 %.
             - **Menestys @ K**: Suositukset luodaan kaikille asiakkaille käyttämällä tapahtumien ajanjakson tarkistusjoukkoa. Tämän jälkeen niitä verrataan tapahtumien tarkistusjoukkoihin. Esimerkiksi 12 kuukauden jakson aikana kuukausi 12 voidaan jättää pois tietojen tarkistusjoukoksi. Jos malli ennustaa vähintään yhden oston kuukauden 12 aikana edellisten 11 kuukauden tietojen perusteella, asiakas kasvattaa Menestys @ K -mittarin arvoa.
-    
+
     1. **Useimmin ehdotetut tuotteet (laskurin kanssa)**: viisi yleisintä asiakkaille ennustettua tuotetta.
        > [!div class="mx-imgBorder"]
        > ![Kaavio, jossa on 5 eniten suositeltua tuotetta.](media/product-recommendation-topproducts.PNG "Kaavio, jossa on 5 eniten suositeltua tuotetta")
-    
+
     1. **Tärkeimmät suositustekijät:** malli antaa tuotesuosituksia asiakkaiden tapahtumahistorian perusteella. Se oppii aiemmin tehtyihin ostoihin perustuvia malleja ja löytää samankaltaisuuksia asiakkaiden ja tuotteiden välillä. Näiden samankaltaisuuksien avulla luodaan tuotesuosituksia.
-    Seuraavassa on tekijöitä, jotka voivat vaikuttaa mallin tuottamaan tuotesuositukseen. 
-        - **Aiemmat tapahtumat**: malli käyttää aiempien ostojen malleja tuotesuositusten luomiseen. Malli voi esimerkiksi suositella _Surfacen Arc Mouse_ -hiirtä, jos joku on äskettäin ostanut _Surface Book 3:n_ ja _Surface-kynän_. Malli on oppinut, että monet asiakkaat olivat hankkineet _Surface Arc Mousen_, kun ovat ostaneet _Surface Book 3:n_ ja _Surface-kynän_.
-        - **Asiakkaiden samankaltaisuus**: Muut asiakkaat, joilla on samanlaiset ostomallit, ovat hankkineet suositellun tuotteen. Esimerkiksi Johnille suositellaan _Surface Headphones 2_ -kuulokkeita, koska Jennifer ja Brad ostivat hiljattain _Surface Headphones 2_ -kuulokkeet. Malli olettaa, että John muistuttaa Jenniferiä ja Bradiä, koska heillä on ollut samanlaisia ostomalleja.
-        - **Tuotteen samankaltaisuus**: Suositeltava tuote muistuttaa muita tuotteita, jotka asiakas oli aiemmin ostanut. Malli katsoo, että kaksi tuotetta on samanlaisia, jos ne on ostettu yhdessä tai samankaltaisten asiakkaiden toimesta. esimerkiksi joku saa suosituksen _USB-tallennusasemasta_, koska he aiemmin ostivat _USB-C – USB -adapterin_ ja malli olettaa historiallisten ostokaavojen perusteella, että _USB-tallennusasema_ on samankaltainen kuin _USB-C – USB -adapteri_.
+    Seuraavassa on tekijöitä, jotka voivat vaikuttaa mallin tuottamaan tuotesuositukseen.
+        - **Aiemmat tapahtumat**: malli käyttää aiempien ostojen malleja tuotesuositusten luomiseen. Malli voi esimerkiksi suositella *Surfacen Arc Mouse* -hiirtä, jos joku on äskettäin ostanut *Surface Book 3:n* ja *Surface-kynän*. Malli on oppinut, että monet asiakkaat olivat hankkineet *Surface Arc Mousen*, kun ovat ostaneet *Surface Book 3:n* ja *Surface-kynän*.
+        - **Asiakkaiden samankaltaisuus**: Muut asiakkaat, joilla on samanlaiset ostomallit, ovat hankkineet suositellun tuotteen. Esimerkiksi Johnille suositellaan *Surface Headphones 2* -kuulokkeita, koska Jennifer ja Brad ostivat hiljattain *Surface Headphones 2* -kuulokkeet. Malli olettaa, että John muistuttaa Jenniferiä ja Bradiä, koska heillä on ollut samanlaisia ostomalleja.
+        - **Tuotteen samankaltaisuus**: Suositeltava tuote muistuttaa muita tuotteita, jotka asiakas oli aiemmin ostanut. Malli katsoo, että kaksi tuotetta on samanlaisia, jos ne on ostettu yhdessä tai samankaltaisten asiakkaiden toimesta. esimerkiksi joku saa suosituksen *USB-tallennusasemasta*, koska he aiemmin ostivat *USB-C – USB -adapterin* ja malli olettaa historiallisten ostokaavojen perusteella, että *USB-tallennusasema* on samankaltainen kuin *USB-C – USB -adapteri*.
 
         Yksi tai useampi näistä tekijöistä vaikuttaa kaikkiin tuotesuosituksiin. Niiden suositusten prosenttiosuus, joissa jokaisella tekijällä on ollut rooli, visualisoidaan kaaviossa. Seuraavassa esimerkissä aiemmat tapahtumat vaikuttavat 100 prosenttiin suosituksista, asiakkaan samankaltaisuus 60 prosenttiin suosituksista ja tuotteiden samankaltaisuus 22 prosenttiin suosituksista. Vie osoitin kaavion palkkien päälle nähdäksesi, minkä tarkan prosenttiosuuden vaikuttavat tekijät ovat vaikuttaneet.
 
         > [!div class="mx-imgBorder"]
         > ![Tärkeimmät suosittelukriteerit.](media/product-recommendation-keyrecommendationfactors.png "Tärkeimmät suositustekijät, joita malli oppi tuotesuositusten tuottamiseksi")
-       
-     
+
    1. **Tietotilastot**: Antaa yleiskuvan käytettävän mallin tapahtumien, asiakkaiden ja tuotteiden lukumäärästä. Se perustuu syötetietoihin, joita käytettiin kaavojen oppimiseen ja tuotesuositusten luomiseen.
 
       > [!div class="mx-imgBorder"]
@@ -208,6 +208,5 @@ Joskus vain tietyt tuotteet ovat ennusteen tyypille sopivia tai hyödyllisiä. T
 ## <a name="manage-predictions"></a>Hallitse ennusteita
 
 Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

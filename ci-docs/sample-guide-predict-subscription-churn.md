@@ -1,8 +1,8 @@
 ---
 title: Tilauksen vaihtuvuusennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tilauksen vaihtuvuusennustemallia.
-ms.date: 11/19/2020
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 2aea6c62421b308705899e4f8af64f64bfcb2d3d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646291"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741407"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Tilauksen vaihtuvuusennusteen näyteopas
 
@@ -112,61 +112,7 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
-Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuuden, yhdistämisen** prosessilla luodaan yhtenäistetty asiakasprofiili. Lisätietoja on kohdassa [Tietojen yhtenäistäminen](data-unification.md).
-
-### <a name="map"></a>Liitä
-
-1. Kun tiedot on käsitelty, tee eCommerce- ja Loyalty-tietojen yhdistämismääritys yleisiin tietotyyppeihin. Valitse **Tiedot** > **Yhtenäistä** > **Määritä vastaavuus**.
-
-1. Valitse asiakasprofiilin ilmaisevat entiteetit: **eCommerceContacts** ja **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="ecommerce- ja loyalty-tietolähteiden yhtenäistäminen":::
-
-1. Valitse **ContactId** **eCommerceContacts**-perusavaimeksi ja **LoyaltyID** **loyCustomers**-perusavaimeksi.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Yhtenäistäminen LoyaltyId-perusavaimena":::
-
-### <a name="match"></a>Täsmäytä
-
-1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
-
-1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
-
-1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
-
-1. Valitse **Luo uusi sääntö**
-
-1. Lisää ensimmäinen ehto FullName-kentässä.
-
-   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
-   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
-   * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
-   * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-1. Anna uuden säännön **FullName, Email**.
-
-   * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
-   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
-   * Jätä Normalisoi-kohta tyhjäksi. 
-   * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Nimen ja sähköpostin vastaavuussäännön yhtenäistäminen":::
-
-7. Valitse **Tallenna** ja **Suorita**.
-
-### <a name="merge"></a>Yhdistä
-
-1. Siirry **Yhdistä**-välilehteen.
-
-1. Vaihda **loyCustomers**-entiteetin **ContactId**-kohdassa näyttönimeksi **ContactIdLOYALTY** erottamaan se muista käsitellyistä tunnuksista.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="kanta-asiakastunnuksen contactid-nimen vaihtaminen":::
-
-1. Aloita yhdistämisprosessi valitsemalla **Tallenna** ja **Suorita**.
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Tehtävä 3 – tilauksen vaihtuvuusennusteen määrittäminen
 

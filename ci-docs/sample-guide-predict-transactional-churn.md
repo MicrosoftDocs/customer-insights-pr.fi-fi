@@ -1,19 +1,19 @@
 ---
 title: Tapahtuman vaihtuvuusennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tapahtuman vaihtuvuusennustemallia.
-ms.date: 11/19/2020
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05c221c634b8e0f582a6c6d3f4d90e971aa9707e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646360"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741315"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Tapahtuman vaihtuvuusennusteen näyteopas
 
@@ -86,69 +86,13 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 1. Tallenna tietolähde.
 
-
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
-Kun tiedot on käsitelty, aloitettavalla **yhdistämismäärityksen, vastaavuuden, yhdistämisen** prosessilla luodaan yhtenäistetty asiakasprofiili. Lisätietoja on kohdassa [Tietojen yhtenäistäminen](data-unification.md).
-
-### <a name="map"></a>Liitä
-
-1. Kun tiedot on käsitelty, tee eCommerce- ja Loyalty-tietojen yhdistämismääritys yleisiin tietotyyppeihin. Valitse **Tiedot** > **Yhtenäistä** > **Määritä vastaavuus**.
-
-1. Valitse asiakasprofiilin ilmaisevat entiteetit: **eCommerceContacts** ja **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="ecommerce- ja loyalty-tietolähteiden yhtenäistäminen":::
-
-1. Valitse **ContactId** **eCommerceContacts**-perusavaimeksi ja **LoyaltyID** **loyCustomers**-perusavaimeksi.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Yhtenäistäminen LoyaltyId-perusavaimena":::
-
-### <a name="match"></a>Täsmäytä
-
-1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
-
-1. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
-
-1. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen":::
-
-1. Valitse **Luo uusi sääntö**
-
-1. Lisää ensimmäinen ehto FullName-kentässä.
-
-   * Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
-   * Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
-   * Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
-   * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-1. Anna uuden säännön **FullName, Email**.
-
-   * Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   * Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
-   * Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**. 
-   * Jätä Normalisoi-kohta tyhjäksi. 
-   * Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Nimen ja sähköpostin vastaavuussäännön yhtenäistäminen":::
-
-7. Valitse **Tallenna** ja **Suorita**.
-
-### <a name="merge"></a>Yhdistä
-
-1. Siirry **Yhdistä**-välilehteen.
-
-1. Vaihda **loyCustomers**-entiteetin **ContactId**-kohdassa näyttönimeksi **ContactIdLOYALTY** erottamaan se muista käsitellyistä tunnuksista.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="kanta-asiakastunnuksen contactid-nimen vaihtaminen":::
-
-1. Aloita yhdistämisprosessi valitsemalla **Tallenna** ja **Suorita**.
-
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Tehtävä 3 – tapahtuman vaihtuvuusennusteen määrittäminen
 
-Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan nyt suorittaa. Yksityiskohtaiset ohjeet ovat [Tilauspoistuman ennuste](predict-subscription-churn.md) -artikkelissa. 
+Unified customer profiles -profiilien avulla voidaan nyt suorittaa tapahtumien vaihtuvuusennuste. Yksityiskohtaiset ohjeet ovat [Tapahtumien vaihtuvuusennuste](predict-transactional-churn.md) -artikkelissa. 
 
 1. Valitse **Analytiikka** > **Tutustu** ja valitse sitten **Asiakasvaihtuvuusmalli**.
 
@@ -180,7 +124,7 @@ Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan ny
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Tehtävä 4 – mallin tulosten ja selitysten tarkistaminen
 
-Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Voit nyt tarkastella tilauksen vaihtuvuusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Nyt voit tarkastella vaihtuvuusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Tehtävä 5 – Suuren vaihtuvuusriskin asiakkaiden segmentin luominen
 
@@ -192,14 +136,12 @@ Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 
    :::image type="content" source="media/segment-intelligence.PNG" alt-text="Segmentin luominen mallin tulosteen avulla":::
 
-1. Valitse **OOBSubscriptionChurnPrediction**-päätepiste ja määritä segmentti: 
+1. Valitse **OOBeCommerceChurnPrediction**-päätepiste ja määritä segmentti: 
    - Kenttä: ChurnScore
    - Operaattori: suurempi kuin
    - Arvo: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Tilauksen vaihtuvuussegmentin määrittäminen":::
 
-Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
+Nyt sinulla on dynaamisesti päivitetty segmentti, joka määrittää suuren vaihtuvuusriskin asiakkaat.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
 

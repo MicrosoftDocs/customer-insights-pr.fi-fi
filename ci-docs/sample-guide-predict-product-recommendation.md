@@ -1,7 +1,7 @@
 ---
 title: Tuotesuositusten ennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tuotesuosituksen ennustemallia.
-ms.date: 02/10/2021
+ms.date: 05/16/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 1115bab13bdca4a308a8d9eb5a1dc270801d16be
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
+ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646294"
+ms.lasthandoff: 05/16/2022
+ms.locfileid: "8762682"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Tuotesuositusten ennusteen näyteopas
 
@@ -40,7 +40,7 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 1. Luo **eCommerce**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
 
-1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadclasscontacts.
+1. Anna eCommerce-yhteyshenkilöiden URL-osoite: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -50,15 +50,15 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
 
-5. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
+1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
 
-6. **Tallenna** tietolähde.
+1. **Tallenna** tietolähde.
 
 ### <a name="ingest-online-purchase-data"></a>Verkko-ostostietojen käsitteleminen
 
 1. Lisää toinen tietojoukko samaan **eCommerce**-tietolähteeseen. Valitse **Text/CSV**-yhdistin uudelleen.
 
-1. Anna **Verkko-ostokset**-tietojen URL-osoite https://aka.ms/ciadclassonline.
+1. Syötä **Verkko-ostojen** tietojen URL-osoite [https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -70,12 +70,11 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 1. **Tallenna** tietolähde.
 
-
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Asiakastietojen käyttäminen kanta-asiakasrakenteesta
 
 1. Luo **LoyaltyScheme**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
 
-1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadclasscustomerloyalty.
+1. Anna eCommerce-yhteyshenkilöiden URL-osoite [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -90,64 +89,11 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
-Tietojen purkamisen jälkeen aloitetaan nyt tietojen yhdistäminen ja luodaan yhtenäinen asiakasprofiili. Lisätietoja on kohdassa [Tietojen yhtenäistäminen](data-unification.md).
-
-### <a name="map"></a>Liitä
-
-1. Kun tiedot on käsitelty, tee eCommerce- ja Loyalty-tietojen yhdistämismääritys yleisiin tietotyyppeihin. Valitse **Tiedot** > **Yhtenäistä** > **Määritä vastaavuus**.
-
-2. Valitse asiakasprofiilin ilmaisevat entiteetit: **eCommerceContacts** ja **loyCustomers**.
-
-   ![ecommerce- ja loyalty-tietolähteiden yhtenäistäminen](media/unify-ecommerce-loyalty.png)
-
-3. Valitse **ContactId** **eCommerceContacts**-perusavaimeksi ja **LoyaltyID** **loyCustomers**-perusavaimeksi.
-
-   ![Yhtenäistäminen LoyaltyId-perusavaimena](media/unify-loyaltyid.png)
-
-### <a name="match"></a>Täsmäytä
-
-1. Valitse **Täsmäytä**-välilehdessä **Määritä järjestys**.
-
-2. Valitse avattavasta **Ensisijainen**-luettelosta ensisijaiseksi lähteeksi **eCommerceContacts: eCommerce** ja sisällytä kaikki tietueet.
-
-3. Valitse avattavasta **Entiteetti 2** -luettelosta **loyCustomers: LoyaltyScheme** ja sisällytä kaikki tietueet.
-
-   ![eCommerce- ja Loyalty-täsmäytyksen yhtenäistäminen](media/unify-match-order.png)
-
-4. Valitse **Luo uusi sääntö**
-
-5. Lisää ensimmäinen ehto FullName-kentässä.
-
-   - Valitse eCommerceContacts-kohdassa avattavasta valikosta **FullName**.
-   - Valitse loyCustomers-kohdassa avattavasta valikosta **FullName**.
-   - Valitse avattava **Normalisoi**-luettelo ja valitse sitten **Tyyppi (puhelin, nimi, osoite...)**.
-   - Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-6. Anna uuden säännön **FullName, Email**.
-
-   - Lisää sähköpostiosoitteen toinen ehto valitsemalla **Lisää ehto**
-   - Valitse entity eCommerceContacts-kohdassa avattavasta valikosta **Sähköposti**.
-   - Valitse entity loyCustomers-kohdassa avattavasta valikosta **Sähköposti**.
-   - Jätä Normalisoi-kohta tyhjäksi.
-   - Määritä **Tarkkuustaso**: **Perustaso** ja **Arvo**: **Suuri**.
-
-   ![Nimen ja sähköpostin vastaavuussäännön yhtenäistäminen](media/unify-match-rule.png)
-
-7. Valitse **Tallenna** ja **Suorita**.
-
-### <a name="merge"></a>Yhdistä
-
-1. Siirry **Yhdistä**-välilehteen.
-
-1. Vaihda **loyCustomers**-entiteetin **ContactId**-kohdassa näyttönimeksi **ContactIdLOYALTY** erottamaan se muista käsitellyistä tunnuksista.
-
-   ![kanta-asiakastunnuksen contactid-nimen vaihtaminen](media/unify-merge-contactid.png)
-
-1. Aloita yhdistämisprosessi valitsemalla **Tallenna** ja **Suorita**.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-product-recommendation-prediction"></a>Tehtävä 3 – tuotesuositusennusteen määrittäminen
 
-Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan nyt suorittaa.
+Unified customer profiles -profiilien avulla voidaan nyt suorittaa tuotesuositusennuste.
 
 1. Siirry kohtaan **Analytiikka** > **Ennuste** ja valitse sitten **Tuotesuositus**.
 
@@ -162,27 +108,36 @@ Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan ny
    - **Toista odotetut ostot**: Valitse **Kyllä**, jos haluat sisällyttää tuotteet asiakkaiden aiemmin ostamaan suositukseen.
 
    - **Katso taaksepäin -ikkuna:** Valitse vähintään **365 päivää**. Tämä asetus määrittää, miten pitkälle menneisyyteen asiakkaan aktiviteetteja tarkastellaan, kun sitä käytetään suositusten syötteenä.
-   
+
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Tuotesuositusmallin mallin määritykset.":::
 
-1. Valitse **Pakolliset tiedot** ja valitse ostohistorian **Lisää tiedot** -kohta.
+1. Valitse **Lisää pakolliset tiedot** -vaiheessa **Lisää tiedot**.
 
-1. Lisää **eCommercePurchases : eCommerce** -entiteetti ja yhdistä eCommercen kentät vastaaviin mallin edellyttämiin kenttiin.
+1. Valitse **Lisää tiedot** - ruudussa **SalesOrderLine** ostohistoriaentiteetiksi. Tässä vaiheessa sitä ei todennäköisesti ole vielä määritetty. Avaa ruudussa linkki, jolla voit luoda aktiviteetin seuraavien vaiheiden mukaisesti:
+   1. Syötä **Aktiviteetin nimi** ja valitse *eCommercePurchases:eCommerce* **Aktiviteetin entiteetiksi**. **Perusavain** on *PurchaseId*.
+   1. Määritä ja anna nimi suhteelle *eCommerceContacts:eCommerce entity* ja valitse **ContactId** viiteavaimeksi.
+   1. Määritä Aktiviteetin yhdistämiselle **Tapahtuman aktiviteetiksi** *TotalPrice* ja aikaleimaksi *PurchasedOn*. Voit määrittää lisää kenttiä [Asiakas-aktiviteettien](activities.md) mukaisesti.
+   1. Valitse **Aktiviteettityypiksi** *SalesOrderLine*. Yhdistä seuraavat aktiviteettikentät:
+      - Tilausrivin tunnus: PurchaseId
+      - Tilauksen tunnus: PurchaseId
+      - Tilaustiedot: PurchasedOn
+      - Tuotetunnus: ProductId
+      - Summa: TotalPrice
+   1. Tarkista aktiviteetti ja viimeistele se, ennen kuin palaat mallimääritykseen.
 
-1. Liitä **eCommercePurchases : eCommerce** -entiteetti **eCommerceContacts : eCommerce** -entiteettiin.
+1. Valitse uudelleen **Valitse aktiviteetit** -vaiheessa uusi luotu aktiviteetti **Aktiviteetit**-osassa. Valitse **Seuraava**, jossa määritteen yhdistämismääritys on jo täytetty. Valitse **Tallenna**.
 
-   ![eCommerce-entiteetit.](media/model-purchase-join.png)
+1. Tässä esimerkkioppaassa ohitetaan **Tuotetietojen lisääminen** ja **Tuotesuodattimet** -tietojoukko, koska tuotetietoja ei ole.
 
-1. Määritä mallin aikataulu valitsemalla **Seuraava**.
+1. Määritä **Tietojen päivitykset** - vaiheessa mallin aikataulu.
 
    Mallia on koulutettava säännöllisesti, jotta se oppii uusia malleja, kun uusia tietoja käsitellään. Valitse tässä esimerkissä **Kuukausittain**.
 
-1. Kun tiedot on tarkistettu, valitse **Tallenna ja suorita**.
-
+1. Kun tiedot on tarkistettu, valitse **Tallenna ja suorita**. Mallin ensimmäinen suoritus kestää muutaman minuutin.
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Tehtävä 4 – mallin tulosten ja selitysten tarkistaminen
 
-Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Voit nyt tarkastella tuotesuositusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Voit nyt tarkastella tuotesuositusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-purchased-products"></a>Tehtävä 5 – eniten ostettujen tuotteiden segmentin luominen
 
@@ -190,21 +145,19 @@ Tuotantomallin suorittaminen luo uuden entiteetin, jonka saa näkyviin valitsema
 
 Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 
-1. Valitse **Segmentit**. Valitse ensin **Uusi** ja sitten **Luominen kohteesta** > **Analytiikka**.
+1. Valitse **Segmentit**. Valitse **Uusi** ja sitten **Luo kohteesta Analytiikka**.
 
    ![Segmentin luominen mallin tulosteen avulla](media/segment-intelligence.png)
 
 1. Valitse **OOBProductRecommendationModelPrediction**-päätepiste ja määritä segmentti:
 
    - Kenttä: ProductID
-   - Operaattori: Arvo
    - Arvo: Valitse kolme suosituinta tuotetunnusta
 
    :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Luo segmentti mallin tuloksista.":::
 
-Nyt sinulla on dynaamisesti päivitetty segmentti, joka määrittää asiakkaat, jotka ovat valmiita ostamaan kolme suositeltua tuotetta 
+Nyt sinulla on dynaamisesti päivitetty segmentti, joka määrittää asiakkaat, jotka saattaisivat olla kiinnostuneita ostamaan kolme suositeltua tuotetta.
 
 Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

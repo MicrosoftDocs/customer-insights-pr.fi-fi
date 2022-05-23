@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e77227e1e353c02cfb13e26a8ecbe0768ba6c0fa
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646073"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741499"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Vie tietoja Azure Synapse Analyticsiin (esiversio)
 
@@ -34,7 +34,7 @@ Azuressa:
 
 - Aktiivinen Azure-tilaus.
 
-- Jos käytät uutta Azure Data Lake Storage Gen2 -tiliä, *Customer Insightsin palvelun päänimellä* on oltava **tallennustilan blob-tietojen käsittelijän** oikeudet. Lue lisää [yhteyden muodostamisesta Azure Data Lake Storage Gen2- tiliin Azuren palvelun pään avulla käyttäjäryhmän merkityksellisillä tiedoilla](connect-service-principal.md). Data Lake Storage Gen2:ssa **on oltava käytössä** [hierarkkinen](/azure/storage/blobs/data-lake-storage-namespace) nimiavaruus.
+- Jos käytät uutta Azure Data Lake Storage Gen2 -tiliä, *Customer Insightsin palvelun päänimellä* on oltava **tallennustilan blob-tietojen käsittelijän** oikeudet. Lisätietoja [yhteyden muodostamisesta Azure Data Lake Storage Gen2 -tiliin Azure-palvelun pääobjektin avulla Customer Insightsille](connect-service-principal.md). Data Lake Storage Gen2:ssa **on oltava käytössä** [hierarkkinen](/azure/storage/blobs/data-lake-storage-namespace) nimiavaruus.
 
 - Resurssiryhmässä, jossa Azure Synapse workspace sijaitsee, on määritettävä *palvelun päänimelle* ja *järjestelmänvalvojan käyttöoikeudet Customer Insightsissa omaavalle Azure AD -käyttäjälle* vähintään **lukuoikeudet**. Lisätietoja on kohdassa [Azure-roolien määrittäminen Azure-portaalin avulla](/azure/role-based-access-control/role-assignments-portal).
 

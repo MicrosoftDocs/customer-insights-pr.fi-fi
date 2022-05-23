@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: cca91f2bbe2fc64554199082a79c1b388a01ab52
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646302"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740715"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Osittaisten tietojen täydentäminen ennusteilla (vanhentunut)
 
@@ -37,7 +37,7 @@ Ennen kuin organisaatio voi käyttää ennustetoimintoa, seuraavien edellytykset
 
 1. Organisaatiossasi on esiintymä, joka on [määritetty Microsoft Dataversessä](/ai-builder/build-model#prerequisites) ja se on samassa organisaatiossa kuin Customer Insights.
 
-2. Käyttäjäryhmäsi tiedot on liitetty Dataverse-esiintymääsi.
+2. Customer Insights -ympäristö on liitetty Dataverse -esiintymään.
 
 Lisätietoja on kohdassa [Uuden ympäristön luominen](create-environment.md).
 

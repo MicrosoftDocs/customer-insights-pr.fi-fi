@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: ecc8bb3dbec1d4583c4bf2a58058145343945299
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646133"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755446"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights -ohjelmointirajapintojen käyttäminen
 
@@ -25,7 +25,7 @@ Dynamics 365 Customer Insights määrittää ohjelmointirajapinnat, jotta voit l
 > [!IMPORTANT]
 > Kyseisten ohjelmointirajapintojen tiedot ovat [Customer Insightsin ohjelmointirajapintojen viitteessä](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). Niissä on lisätietoja toiminnoista, parametreista ja vastauksista.
 
-Tässä artikkelissa kerrotaan Customer Insightsin ohjelmointirajapintojen käyttämisestä, Azure-sovelluksen rekisteröinnin luomisesta ja käytettävissä olevien asiakasohjelmakirjastojen käytön aloittamisesta.
+Tässä artikkelissa kuvataan, miten Customer Insights -ohjelmointirajapintoja käytetään, kuinka Azure-sovelluksen rekisteröinti luodaan ja kuinka asiakaskirjastojen käyttö aloitetaan.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Customer Insightsin ohjelmistorajapintojen käytön kokeilemisen aloittaminen
 
@@ -83,13 +83,13 @@ Voit käyttää tämän sovelluksen rekisteröinnin sovellus- tai asiakastunnust
 
 Lisätietoja MSAL-kirjastosta on kohdassa [MSAL (Microsoft Authentication Library) -kirjaston yleiskatsaus](/azure/active-directory/develop/msal-overview).
 
-Lisätietoja sovelluksen rekisteröimisestä Azuressa on kohdassa [Sovelluksen rekisteröiminen](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+Lisätietoja sovelluksen rekisteröimisestä Azuressa on kohdassa [Sovelluksen rekisteröiminen](/graph/auth-register-app-v2).
 
 Lisätietoja ohjelmointirajapintojen käyttämisestä asiakasohjelmakirjastoissa on kohdassa [Customer Insightsin asiakasohjelmakirjastot](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Palvelinten väliset sovelluksen käyttöoikeudet
 
-[Sovelluksen rekisteröintiä käsittelevässä osiossa](#create-a-new-app-registration-in-the-azure-portal) selvitetään sellaisen sovelluksen rekisteröintiä, johon käyttäjän on kirjauduttava todennusta varten. Lisätietoja sellaisen sovelluksen rekisteröinnin luomisesta, jossa ei tarvita käyttäjän toimia ja joka voidaan suorittaa palvelimessa.
+[Sovelluksen rekisteröintiä käsittelevässä osiossa](#create-a-new-app-registration-in-the-azure-portal) selvitetään sellaisen sovelluksen rekisteröintiä, johon käyttäjän on kirjauduttava todennusta varten. Opettele luomaan sovelluksen rekisteröinti, joka ei tarvitse käyttäjän vuorovaikutusta ja joka voidaan suorittaa palvelimessa.
 
 1. Valitse Azure-portaalin sovelluksen rekisteröinnissä **Ohjelmointirajapinnan käyttöoikeudet**.
 
@@ -112,6 +112,10 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakasohjelmakirjastoissa
    Avaa Customer Insights, valitse **Hallinta** > **Käyttöoikeudet** ja valitse lopuksi **Lisää käyttäjä**.
 
 1. Hae sovellusrekisteröinnin nimi, valitse se hakutuloksissa ja valitse **Tallenna**.
+
+## <a name="sample-queries"></a>Näytekyselyt
+
+Olemme koonneet lyhyen OData-näytekyselyiden luettelon ohjelmointirajapinnan kanssa toimimiseksi: [OData-kyselyesimerkit](odata-examples.md).
 
 ## <a name="customer-insights-client-libraries"></a>Customer Insightsin asiakaskirjastot
 
@@ -147,7 +151,7 @@ Lisätietoja NuGet.orgin C#-asiakaskirjastojen käytön aloittamisesta. Lisätie
 
 1. Tee asiakasohjelmasta kutsuja laajennusmenetelmiin, esimerkiksi `GetAllInstancesAsync`. Jos taustalla oleva `Microsoft.Rest.HttpOperationResponse` on ensisijainen vaihtoehto, käytä http-sanomamenetelmiä, esimerkiksi `GetAllInstancesWithHttpMessagesAsync`.
 
-1. Vastauksen tyyppi on todennäköisesti `object`, koska menetelmä voi palauttaa useita tyyppejä (kuten `IList<InstanceInfo>` ja `ApiErrorResult`). Voit tarkistaa palautustyypin tekemällä turvallisesti objektien tyyppimuunnokset kyseisen toiminnon [ohjelmointirajapinnan tietosivulla](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) määritettyihin vastaustyyppeihin.    
+1. Vastauksen tyyppi on todennäköisesti `object`, koska menetelmä voi palauttaa useita tyyppejä (kuten `IList<InstanceInfo>` ja `ApiErrorResult`). Voit tarkistaa palautustyypin käyttämällä objekteja toiminnon [ohjelmointirajapinnan tietosivulla](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) määritetyissä vastaustyypeissä.    
    
    Jos pyynnössä tarvitaan enemmän tietoja, käytä raakavastausobjektia **http-sanomamenetelmillä**.
 

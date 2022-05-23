@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 0efda9d2997bcfd069b6d2445b69d159d7d3e59b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c64ac94a7e0e743d3c13e32e394cc5d409420622
+ms.sourcegitcommit: c00441bc60b978e25f930b06c9d97b46fe462538
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646038"
+ms.lasthandoff: 05/05/2022
+ms.locfileid: "8712898"
 ---
 # <a name="create-an-environment-in-customer-insights"></a>Ympäristöjen luominen Customer Insightsissa
 
@@ -63,8 +63,7 @@ Käytettävissä on kaksi vaihtoehtoa: **Customer Insights -tallennustila** (Cus
 Kun tiedot tallennetaan Azure Data Lake Storageen, hyväksyt, että tiedot siirretään ja tiedot tallennetaan tämän Azure-tallennustilin maantieteellisen sijainnin mukaisesti. Sijainti voi olla eri kuin se, mihin tiedot tallennetaan Dynamics 365 Customer Insightsissa. Lisätietoja löytyy [Microsoftin luottamuskeskuksesta](https://www.microsoft.com/trust-center).
 
 > [!NOTE]
-> Customer Insights tukee tällä hetkellä seuraavia:
-> - Käytetyt entiteetit Power BI -tiedonkuluista, jotka tallennetaan Microsoft Dataversen hallinnoimaan Data Lakeen.  
+> Customer Insights tukee tällä hetkellä seuraavia:  
 > - Azure Data Lake Storage -tilit samasta Azure-alueesta, jonka valitsit ympäristöä luotaessa.
 > - Azure Data Lake Storage -tilit, jotka ovat Gen2 ja joissa *hierarkkinen nimitila* on otettu käyttöön. Azure Data Lake Gen1 -tallennustilejä ei tueta.
 
@@ -80,7 +79,7 @@ Tässä **Microsoft Dataverse** -vaiheessa voit yhdistää Customer Insightsin D
 
 Tarjoa oma Microsoft Dataverse -ympäristösi tietojen (profiilien ja tietojen) jakamiseksi Dataverseen perustuviin liiketoimintasovelluksiin, kuten Dynamics 365 Marketingiin tai mallipohjaisiin sovelluksiin Power Appsissa. Jätä tämä kenttä tyhjäksi, jos sinulla ei ole omaa Dataverse -ympäristöä, jolloin valmistelemme sellaisen sinulle.
 
-Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja paikallisista tietolähteistä Power Platform -tietovirtojen ja -yhdyskäytävien avulla](data-sources.md#add-data-from-on-premises-data-sources). Voit myös käyttää [käyttövalmiita ennustemalleja](predictions-overview.md?tabs=b2c#out-of-box-models) muodostamalla yhteyden Dataverse-ympäristöön.
+Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja paikallisista tietolähteistä Power Platform -tietovirtojen ja -yhdyskäytävien avulla](data-sources.md#add-data-from-on-premises-data-sources).
 
 > [!IMPORTANT]
 > 1. Customer Insightsin ja Dataversen on oltava samalla alueella, jotta tietojen jakaminen voidaan ottaa käyttöön.

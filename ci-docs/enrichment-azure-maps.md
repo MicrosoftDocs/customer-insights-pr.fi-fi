@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6a1c3791076a7dda4531664ca88632f7f1b914e3
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645993"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755350"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Asiakasprofiilien täydennys Azure Mapsin avulla (esiversio)
 
@@ -51,7 +51,7 @@ Jotta Azure Mapsin tietojen rikastus voidaan määrittää, seuraavien edellytys
 
 1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
-1. Tarkista, haluatko muokata **lisäasetuksia**. Niiden avulla voit käsitellä erikoiskäyttötapauksia mahdollisimman joustavasti, mutta oletusarvot ovat useimmissa tapauksissa riittävät:
+1. Tarkista, haluatko muokata **lisäasetuksia**. Näiden asetusten avulla voit käsitellä erikoiskäyttötapauksia mahdollisimman joustavasti, mutta oletusarvot ovat useimmissa tapauksissa riittävät:
    - **Osoitteiden tyyppi**: Oletusarvo on se, että rikastus palauttaa parhaan vastineen, vaikka osoite olisi puutteellinen. Jos haluat saada vain täydelliset osoitteet&mdash;esimerkiksi osoitteet, joissa on talonnumero&mdash;poista kaikki valintaruudut paitsi **Pisteosoitteet**. 
    - **Kieli**: Oletusarvon mukaan osoitteet palautetaan sen alueen kielellä, johon osoite on määritetty. Jos haluat käyttää vakiomuotoista osoitekieltä, valitse kieli avattavasta valikosta. Esimerkiksi **englannin** valitseminen palauttaa **København, Danmark** sijasta **Copenhagen, Denmark**.
 
@@ -89,7 +89,7 @@ Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää vali
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
-Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Azure Maps -ratkaisuun, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää nämä tiedot pyyntösi mukaisesti, mutta olet vastuussa siitä, että Azure Maps täyttää kaikki liiketoimintaasi koskevat tietosuoja- tai tietoturvavelvoitteet. Lisätietoja on kohdassa [Microsoftin tietosuojakäytäntö](https://go.microsoft.com/fwlink/?linkid=396732).
+Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Azure Maps -ratkaisuun, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Azure Maps täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on kohdassa [Microsoftin tietosuojakäytäntö](https://go.microsoft.com/fwlink/?linkid=396732).
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

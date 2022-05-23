@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 409792bc3f12fca451ef038e3300758bdf9ecf3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d22c4c785695b23a257a89f1ffa519fdc18b443e
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646339"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741175"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate -yhdistin (esiversio)
 
@@ -25,14 +25,14 @@ Käynnistä tietyt tapahtumat automaattisesti, kun tiedot muuttuvat ja hallitse 
 
 ## <a name="power-automate-triggers"></a>Power Automaten käynnistimet
 
-Käynnistimien avulla voit luoda pilven työnkulkuja ja automatisoida toistuvia tehtäviä, kuten ilmoituksia tai lisätoimintoja. 
+Käynnistimien avulla voit luoda pilven työnkulkuja ja automatisoida toistuvia tehtäviä, kuten ilmoituksia tai lisätoimintoja.
 
-- Käynnistin, kun tietolähteen päivitys epäonnistuu. 
+- Käynnistin, kun tietolähteen päivitys epäonnistuu.
 - Käynnistin, kun tietolähteen päivitys onnistuu.
 - Käynnistin, kun segmentin raja ylitetään. Käynnistin rajoittuu rajan yläpuolen ylittämiseen.
 - Käynnistin, kun segmentin raja ylitetään liiketoiminnan mittarilla. Vain liiketoimintamittareita, joilla ei ole dimensiota, tuetaan. Käynnistin rajoittuu rajan yläpuolen ylittämiseen.
 - Käynnistä, kun kohteen (esimerkiksi tietolähteet, segmentit tai mittarit) täysi päivitys on valmis.
-- Käynnistä, kun yhdistämisprosessi (eri yhdistämisvaihtoehdot) on valmis.
+- Käynnistä, kun yhdistämisprosessin päivittäminen on päättynyt.
 
 [Määritä käynnistimet Power Automatessa.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 

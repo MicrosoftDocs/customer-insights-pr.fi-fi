@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646003"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755258"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
 
@@ -27,7 +27,7 @@ Customer Insights lähettää seuraavat tapahtumalokit:
 - **Tarkistustapahtumat**
   - **APIEvent** – ottaa käyttöön Dynamics 365 Customer Insights -käyttöliittymän kautta tehtyjen muutosten seurannan.
 - **Operatiiviset tapahtumat**
-  - **WorkflowEvent** – Työnkulun avulla voi määrittää [tietolähteitä](data-sources.md) ja [yhdistää](data-unification.md) ja [rikastaa](enrichment-hub.md) sekä lopuksi [viedä](export-destinations.md) tietoja muihin järjestelmiin. Kaikki nämä vaiheet voidaan tehdä yksitellen (esimerkiksi käynnistää yksi vienti) tai orkestroituna (esimerkiksi tiedot voidaan päivittää tietolähteistä, mikä käynnistää yhdistämisprosessin, joka vetää lisärikastukset ja lopuksi vie tiedot toiseen järjestelmään). Katso lisätietoja [WorkflowEvent-rakenteesta](#workflow-event-schema).
+  - **WorkflowEvent** – Työnkulun avulla voi määrittää [tietolähteitä](data-sources.md), [yhdistää](data-unification.md), [rikastaa](enrichment-hub.md) sekä lopuksi [viedä](export-destinations.md) tietoja muihin järjestelmiin. Kaikki nämä vaiheet voidaan tehdä yksitellen (esimerkiksi käynnistää yksittäinen vienti). Voi suorittaa niitä myös orkestroituina (esimerkiksi päivittää tiedot tietolähteistä, mikä käynnistää yhdistäminenprosessin, joka hakee rikastukset ja vie tiedot toiseen järjestelmään valmistuttuaan). Katso lisätietoja [WorkflowEvent-rakenteesta](#workflow-event-schema).
   - **APIEvent** – kaikki ohjelmointirajapinnan kutsut asiakkaiden ilmentymään Dynamics 365 Customer Insightsiin. Katso lisätietoja [APIEvent-rakenteesta](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Diagnostiikka-asetusten määrittäminen
@@ -55,7 +55,7 @@ Jotta diagnostiikka voidaan määrittää Customer Insightsissa, seuraavien edel
 
 1. Valitse kohderesurssin sisältävän Azure-tilauksen **Vuokraaja** ja valitse sitten **Kirjaudu sisään**.
 
-1. Valitse **Resurssityyppi** (Storage-tili, Tapahtumakeskus tai Log Analytics).
+1. Valitse **Resurssityyppi** (tallennustilan tili, tapahtumakeskus tai Log Analytics).
 
 1. Valitse kohderesurssin **Tilaus**.
 
@@ -182,7 +182,7 @@ JSON-objektin `identity` rakenne on seuraavanlainen
 
 ### <a name="workflow-event-schema"></a>Työnkulun tapahtumarakenne
 
-Työnkulku sisältää useita vaiheita. [Kerää tietolähteet](data-sources.md), [yhdistä](data-unification.md), [rikasta](enrichment-hub.md) ja [vie](export-destinations.md) tiedot. Kaikki nämä vaiheet voidaan suorittaa yksitellen tai järjestää seuraavilla prosesseilla. 
+Työnkulku sisältää useita vaiheita. [Kerää tietolähteet](data-sources.md), [yhdistä](data-unification.md), [rikasta](enrichment-hub.md) ja [vie](export-destinations.md) tiedot. Kaikki nämä vaiheet voidaan suorittaa yksitellen tai järjestää seuraavilla prosesseilla.
 
 #### <a name="operation-types"></a>Toimintotyypit
 
@@ -215,7 +215,7 @@ Työnkulku sisältää useita vaiheita. [Kerää tietolähteet](data-sources.md)
 | `time`          | Aikaleima | Pakollinen          | Tapahtuman aikaleima (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | String    | Pakollinen          | Tapahtuman lähettäneen ilmentymän ResourceId-tunnus.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
 | `operationName` | String    | Pakollinen          | Tapahtuman edustaman toiminnon nimi. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Lisätietoja on ohjeaiheessa [Toimintotyypit](#operation-types). | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | String    | Pakollinen          | Tapahtuman lokiluokka. Aina `Operational` työnkulkutapahtumille                                                                                           | `Operational`                                                                                                                                                            | 
+| `category`      | String    | Pakollinen          | Tapahtuman lokiluokka. Aina `Operational` työnkulkutapahtumille                                                                                           | `Operational`                                                                                                                                                            |
 | `resultType`    | String    | Pakollinen          | Tapahtuman tila. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Valinnainen          | Toiminnon kesto millisekunteina.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valinnainen          | JSON-objekti, jossa on enemmän ominaisuuksia tiettyyn tapahtumaluokkaan.                                                                                        | Katso aliosa [Työnkulun ominaisuudet](#workflow-properties-schema)                                                                                                       |

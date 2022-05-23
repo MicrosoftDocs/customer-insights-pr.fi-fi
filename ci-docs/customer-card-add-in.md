@@ -13,16 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 2dfa6c643cbe9a8531a085d8ce01b0f64776476f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646033"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755632"
 ---
 # <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
-
-
 
 Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Kun asiakaskortin apuohjelma on asennettu tuettuun Dynamics 365 -sovellukseen, voit valita, näytetäänkö asiakasprofiilin kentät, tiedot ja aktiviteetin aikajana. Apuohjelma hakee tietoja Customer Insights -sovelluksesta vaikuttamatta yhdistetyn Dynamics 365 -sovelluksen tietoihin.
 
@@ -31,7 +29,7 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 ## <a name="prerequisites"></a>Edellytykset
 
 - Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
-- Dynamics 365 -tietojen yhdistäminen Customer Insightsin asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin yhdistämisvaiheessa](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- Dynamics 365 -tietojen yhdistäminen Customer Insightsin asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin yhdistämisvaiheessa](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Kaikki asiakaskortin lisäosan Dynamics 365 -käyttäjät on [lisättävä käyttäjinä](permissions.md) Customer Insights -tietoihin, jotta he näkevät tiedot.
 - Customer Insightsin [määritetyt haku- ja suodatusominaisuudet](search-filter-index.md) ovat pakollisia, jotta tietojen valinta toimisi.
 - Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin Customer Insightsissa. Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
@@ -132,16 +130,16 @@ Vaikka tunnuskentät olisi määritetty oikein, ohjausobjektit eivät löydä ti
 
 **Ratkaisu:**
 
-1. Varmista, että olet määrittänyt kortin apuohjelman ohjeiden mukaisesti: [Asiakaskortin apuohjelman määrittäminen](#configure-the-customer-card-add-in) 
+1. Varmista, että olet määrittänyt kortin apuohjelman ohjeiden mukaisesti: [Asiakaskortin apuohjelman määrittäminen](#configure-the-customer-card-add-in)
 
-1. Tarkista tietojen käytön konfiguraatio. Muokkaa Dynamics 365 -järjestelmän tietolähdettä, joka sisältää yhteyshenkilön tunnuksen GUID-tunnuksen. Jos Power Query -editorissa näkyy yhteyshenkilön tunnuksen GUID-tunnus ja siinä on isoja kirjaimia, kokeile seuraavia: 
+1. Tarkista tietojen käytön konfiguraatio. Muokkaa Dynamics 365 -järjestelmän tietolähdettä, joka sisältää yhteyshenkilön tunnuksen GUID-tunnuksen. Jos Power Query -editorissa näkyy yhteyshenkilön tunnuksen GUID-tunnus ja siinä on isoja kirjaimia, kokeile seuraavia vaiheita:
     1. Muokkaa tietolähdettä ja avaa tietolähde Power Query -editorissa.
     1. Valitse yhteyshenkilön tunnussarake.
     1. Valitse **Muunna** otsikkoriviltä nähdäksesi saatavilla olevat toiminnot.
     1. Valitse **pieni kirjain**. Tarkista, ovatko taulukon GUID-tunnukset nyt pieniä kirjaimia.
     1. Tallenna tietolähde.
-    1. Suorita tietojen käsittely, yhdistäminen ja jatkoprosessit, jotta muutokset välitetään GUID-tunnukseen. 
+    1. Suorita tietojen käsittely, yhdistäminen ja jatkoprosessit, jotta muutokset välitetään GUID-tunnukseen.
 
-Kun täydellinen päivitys on suoritettu, odotettujen tietojen pitäisi näkyä asiakaskortin apuohjelman ohjausobjekteissa. 
+Kun järjestelmän täydellinen päivitys on suoritettu, odotettujen tietojen pitäisi näkyä asiakaskortin apuohjelman ohjausobjekteissa.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

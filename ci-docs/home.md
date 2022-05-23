@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin aloitussivu
 description: Sovellukseen tutustumisen aloittaminen aloitussivulta.
-ms.date: 04/12/2022
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,38 +11,55 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: ebc5eb6b2dfaa9b013cfa0c9ce60c8a0a57a065d
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
+ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646331"
+ms.lasthandoff: 05/12/2022
+ms.locfileid: "8743409"
 ---
 # <a name="explore-customer-insights"></a>Tutustu Customer Insightsiin
 
-Voit valita [Dynamics 365 Customer Insightsin](https://home.ci.ai.dynamics.com/) seuraavasta URL-osoitteesta: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
+Voit käyttää [Dynamics 365 Customer Insightsia](https://home.ci.ai.dynamics.com/) seuraavassa URL-osoitteessa: [https://home.ci.ai.dynamics.com/](https://home.ci.ai.dynamics.com/).
 
-**Aloitussivulla** on segmenttien, mittareiden ja rikastuksen tietojen (jos ne on määritetty) yleiskatsaus sen jälkeen, kun [vastaavuusmääritys](map-entities.md)-, [vastaavuus](match-entities.md)- ja [yhdistäminen](merge-entities.md)-vaiheet on suoritettu.
+**Aloitussivu** opastaa tärkeimpien ominaisuuksien määritysprosessissa ja antaa yleiskuvan segmenttien, toimenpiteiden ja täydennystietojen määrityksestä.
 
 :::image type="content" source="media/home-page.png" alt-text="Näyttökuva Aloitus-näytöstä, jossa näkyvät näytetiedot.":::
 
-Tärkeitä Customer Insightsin ohjausobjekteja:
+## <a name="left-side-pane"></a>Vasemmanpuoleinen ruutu
 
-- Vasen ruutu: Siirry ensisijaisen kohdeyleisön välillä, jos sinulla on B2C- ja B2B-ympäristö
+Vasemmassa ruudussa voit siirtyä eri Customer Insights -alueiden välillä. 
 
-- Vasen ruutu: Siirry eri alueiden välillä ja valitse ensisijainen kohdekäyttäjäryhmä
+Jos käytät yritystilejä ja yksittäisiä kuluttajia, voit valita ensisijaisen käyttäjäryhmän ja määrittää kohdistuksen sen mukaan. 
 
-- Otsikko: Vaihda käsiteltävä ympäristö ja hallitse ympäristöjä järjestelmänvalvojana
+## <a name="application-header"></a>Sovelluksen otsikko
 
-- Otsikko: Customer Insightsin henkilökohtaiset asetukset ja hae ohjevaihtoehdot
+**Ympäristön** valitsija näyttää ympäristön, jossa työskentelet ja mahdollistaa ympäristöjen luomisen ja hallinnan järjestelmänvalvojana.
 
-Aloitussivulla voi nyt tarkastella seuraavia osia:
+Hymyilevät kasvot -kuvake on **Palaute**-ohjausobjekti. Valitsemalla sen voit kertoa meille Customer Insights -käyttökokemuksestasi. Kuuntelemme aktiivisesti palautettasi ja kiitämme etukäteen kiittää siitä, että kerrot meille, mistä pidät ja miten voimme parantaa toimintaamme.
 
-- **Viimeaikaiset segmentit** -osassa näkyy ryhmä asiakkaita määritettyjen demografia-, toiminta- tai tapahtumamääritteiden perusteella. [Segmenttien luominen](segments.md) auttaa asiakaskannan ryhmittelemisessä ja liiketoiminnan aktiviteettien kohdentamisessa.
+Hammaspyöräkuvakkeena näkyvän **Asetukset**-ohjausobjektin avulla voit kerätä istuntojen tietoja Customer Insightsia varten ja määrittää yleisiä asetuksia Microsoft 365 -profiiliasi varten. 
 
-- **Viimeaikaiset liiketoimintamittarit** -osassa on ruutuja, joissa on määritetyt [tunnusluvut](measures.md). Esimerkiksi keskimääräinen asiakasvaihtuvuus tai asiakkaan keskimääräinen kulutus verkossa.
+**Ohjevaihtoehdot**, jotka visualisoidaan kysymysmerkkikuvakkeella, tarjoavat kontekstiin sopivia ohjelinkkejä ja muita hyödyllisiä resursseja.
 
-- **Viimeaikaiset rikastukset** sisältää luettelon äskettäin suoritetuista rikastamisajoista. [Rikastukset](enrichment-hub.md) lisäävät tietoja asiakaskunnasta. Esimerkiksi antamalla tietoja asiakkaiden kiinnostuksen kohteista ja suosikkibrändeistä.
+Profiilikuvasi avaa **asiakaspäällikön** Microsoft 365 -profiilillesi. Valitse **Oma tili**, jos haluat hallita henkilökohtaisia asetuksiasi.
+
+## <a name="getting-started-with-customer-insights-section"></a>Customer Insights -osan aloittaminen
+
+Tässä osassa on kortteja, jotka auttavat sinua käymään läpi Customer Insights -ympäristön määrittämisen. 
+
+1. **Lisää tietoja** -kortti auttaa tietojen tuonnissa. Customer Insights tukee [useita vaihtoehtoja, joilla voi tuoda tietoja asiakkaistasi](data-sources.md). Aloita valitsemalla **Lisää tietolähteitä**.
+1. Kun tietojen tuonti on onnistunut, voit käyttää **Yhtenäistä tiedot** -korttia tietojen yhdenmukaistamiseen ja [luodaksesi unified customer profiles -profiileja](data-unification.md) eri lähteistä. 
+1. Kun unified customer profiles on käytössä, on aika tarkastella **tietojen analysointi** -asetuksia ja saada lisätietoja. Kokeile luoda [liiketoimintatoimia](measures.md) suorituskykymittareiden seuraamista varten, [määritä segmentit](segments.md) tiettyjen kohderyhmien tavoittamiseksi tai [määritä ennusteet](predictions-overview.md) tekoälyn avulla.
+1. Kun asiakastiedot on tuotu ja ne ovat yhtenäiset ja rakenteeltaan siistit, käytät [eri vientikohteita](export-destinations.md) tietojen käsittelyyn. Yhdistä suosikkipalvelusi valitsemalla **Lisää yhteyksiä**. Voit esimerkiksi viedä tiedot Dynamics 365 Marketingiin, luodaksesi lähteviä markkinointikampanjoita tai luodaksesi asiakassiirtymiä. 
+
+## <a name="your-customer-insights-section"></a>Customer insights -osasi
+
+- **Segmentit** -osassa näkyy ryhmiä asiakkaita määritettyjen demografia-, toiminta- tai tapahtumamääritteiden perusteella. [Segmenttien luominen](segments.md) auttaa asiakaskannan ryhmittelemisessä ja liiketoiminnan aktiviteettien kohdentamisessa.
+
+- **Liiketoimintamittarit** -osassa on ruutuja, joissa on määritetyt [suorituskykymittarit](measures.md). Esimerkiksi keskimääräinen asiakasvaihtuvuus tai asiakkaan keskimääräinen kulutus verkossa.
+
+- **Rikastukset** sisältää luettelon äskettäin suoritetuista rikastamisista. [Rikastukset](enrichment-hub.md) lisäävät tietoja asiakaskunnasta. Esimerkiksi antamalla tietoja asiakkaiden kiinnostuksen kohteista ja suosikkibrändeistä.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

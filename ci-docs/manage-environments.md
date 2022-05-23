@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: fcdb7f073ff73322ff69d0a8684391819a809d00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 599cbaf4e19c3a7331e92bfc54c701fefe6c69b3
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646307"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741037"
 ---
 # <a name="manage-environments"></a>Ympäristöjen hallinta
 
@@ -127,11 +127,11 @@ Näkyviin tulee luettelo kaikista organisaation käytettävissä olevista ympär
 Seuraavat määritysasetukset kopioidaan:
 
 - Käsitellyt/tuodut tietolähteet
-- Tietojen yhtenäistämisen (yhdistäminen, vastaavuus) määritys
-- Segmentit
+- Tietojen yhdistämisen määritys
+- Segments
 - Mittarit
 - Suhteet
-- Aktiviteetit
+- Toiminnat
 - Haku- ja suodatusindeksi
 - Vientikohteet
 - Ajoitettu päivitys

@@ -1,188 +1,168 @@
 ---
-title: Entiteettien yhdistäminen tietoja yhtenäistettäessä
+title: Asiakas- tai tilikenttien yhtenäistäminen
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
-ms.date: 01/28/2022
+recommendations: false
+ms.date: 05/04/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: v-wendysmith
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
-- ci-match
 - ci-merge
+- ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 978a7c9bc440398fa39e9fa1d366d74e5c7aaea0
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 78e2528d4a3058f879d83952f72ed88a1da065b6
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646415"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740853"
 ---
-# <a name="merge-entities"></a>Entiteettien yhdistäminen
+# <a name="unify-customer-fields"></a>Yhdenmukaista asiakaskentät
 
-Yhdistämisvaihe on tietojen yhdistämisprosessin viimeinen vaihe. Sen tarkoitus on täsmäyttää ristiriitaiset tiedot. Esimerkkejä ristiriitaisista tiedoista ovat esimerkiksi asiakkaan nimi, joka on kahdessa tietojoukossa hieman eri tavalla (esimerkiksi Grant Marshall ja Grant Marshal) ja puhelinnumero, jonka muodot ovat erilaiset (esimerkiksi 617-803-091X ja 617803091X). Näiden ristiriitaisten arvopisteiden yhdistäminen tapahtuu määrite kerrallaan.
+[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
-:::image type="content" source="media/merge-fields-page.png" alt-text="Tietojen yhdistämisprosessin yhdistämissivu, jossa on taulukossa yhdistettyjä kenttiä, jotka määrittävät yhtenäisen asiakasprofiilin.":::
+Valitse yhdistämisprosessin tässä vaiheessa yhdistetyn profiilin entiteettiin yhdisteltävat määritteet tai sulje niitä pois. Jos esimerkiksi kolmella entiteetillä on sähköpostitietoja, haluat ehkä säilyttää kaikki kolme erillistä sähköpostikenttää tai yhdistää ne yhdeksi yhdistetyn profiilin sähköpostikentäksi. Järjestelmä yhdistää automaattisesti jotkin määritteet. Voit luoda vakaita ja yksilöllisiä asiakastunnuksia ja ryhmitellä toisiinsa liittyviä profiileja klusteriksi.
 
-Kun [täsmäytysvaihe](match-entities.md) on suoritettu, voit aloittaa yhdistämisvaiheen valitsemalla **Yhdistä**-ruudun **Yhdistäminen**-sivulla.
+:::image type="content" source="media/m3_unify.png" alt-text="Tietojen yhdistämisprosessin yhdistämissivu, jossa on taulukossa yhdistettyjä kenttiä, jotka määrittävät yhtenäisen asiakasprofiilin.":::
 
-## <a name="review-system-recommendations"></a>Tarkista järjestelmän suositukset
+## <a name="review-and-update-the-customer-fields"></a>Tarkista ja päivitä asiakasprofiilin kenttiä
 
-Voit valita ja poistaa käytöstä määritteitä, jotka yhdistetään yhdistetyn asiakasprofiilin entiteettiin kohdassa **Tiedot** > **Yhdistäminen** > **Yhdistä**. Yhtenäinen asiakasprofiili on tietojen yhdistämisprosessin tulos. Järjestelmä yhdistää jotkin määritteet automaattisesti.
+1. Tarkista luettelo kentistä, jotka on yhtenäistetty taulukon **Asiakaskentät**-välilehdessä. Tee tarvittavat muutokset.
 
-Jos haluat tarkastella määritteitä, jotka sisältyvät automaattisesti yhdistettyyn määritteeseen, valitse kyseinen yhdistetty määrite taulukon **Asiakaskentät**-välilehdessä. Määritteet, jotka muodostavat yhdistetyn määritteen, näkyvät yhdistetyn määritteen alapuolella kahdella uudelle rivillä.
+   1. Voit suorittaa seuraavat toimenpiteet yhdistetyille kentille:
+      - [Muokkaa](#edit-a-merged-field)
+      - [Nimeä uudelleen](#rename-fields)
+      - [Erota](#separate-merged-fields)
+      - [Jätä pois](#exclude-fields)
+      - [Siirrä ylös- tai alaspäin](#change-the-order-of-fields)
 
-## <a name="separate-rename-exclude-and-edit-merged-fields"></a>Erota, nimeä uudelleen, poista käytöstä ja muokkaa yhdistettyjä kenttiä
+   1. Voit suorittaa seuraavat toimenpiteet yksittäisille kentille:
+      - [Yhdistä kentät](#combine-fields-manually)
+      - [Yhdistä kenttien ryhmä](#combine-a-group-of-fields)
+      - [Nimeä uudelleen](#rename-fields)
+      - [Jätä pois](#exclude-fields)
+      - [Siirrä ylös- tai alaspäin](#change-the-order-of-fields)
 
-Voit muuttaa sitä, miten järjestelmä käsittelee yhdistettyjä määritteitä muodostaakseen yhtenäisen asiakasprofiilin. Valitse **Näytä lisää** ja valitse, mitä haluat muuttaa.
+1. Voit myös [luoda asiakastunnuksen määrityksen](#configure-customer-id-generation).
 
-:::image type="content" source="media/manage-merged-attributes.png" alt-text="Avattavan Näytä lisää -valikon vaihtoehdot, joiden avulla voi hallita yhdistettyjä määritteitä.":::
+1. Vaihtoehtoisesti voit [ryhmitellä profiileja kotitalouksiksi tai klustereiksi](#group-profiles-into-households-or-clusters).
 
-Lisätietoja on seuraavissa osissa.
+> [!div class="nextstepaction"]
+> [Seuraava vaihe: Tarkista yhdistäminen](review-unification.md)
 
-## <a name="separate-merged-fields"></a>Erota yhdistetyt kentät
+### <a name="edit-a-merged-field"></a>Muokkaa yhdistettyä kenttää
 
-Jos haluat erottaa yhdistetyt kentät, etsi määrite taulukosta. Erotetut kentät näkyvät erillisinä arvopisteinä yhdistetyssä asiakasprofiilissa. 
+1. Valitse yhdistetty kenttä ja valitse sitten **Muokkaa**. Kenttien yhdistäminen -ruutu tulee näkyviin.
 
-1. Valitse yhdistetty kenttä.
-  
-1. Valitse **Näytä lisää** ja valitse sitten **Erota kentät**.
- 
-1. Vahvista erottelu.
-
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
-
-## <a name="rename-merged-fields"></a>Yhdistettyjen kenttien nimeäminen uudelleen
-
-Yhdistettyjen määritteiden näyttönimen muuttaminen. Tuloste-entiteetin nimeä ei voi muuttaa.
-
-1. Valitse yhdistetty kenttä.
-  
-1. Valitse **Näytä lisää** ja valitse sitten **Nimeä uudelleen**.
-
-1. Vahvista muutettu näyttönimi. 
-
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
-
-## <a name="exclude-merged-fields"></a>Poista yhdistettyjä kenttiä käytöstä
-
-Poista määrite käytöstä yhdistetyssä asiakasprofiilissa. Jos kenttää käytetään muissa prosesseissa, esimerkiksi segmentissä, poista se näistä prosesseista, ennen kuin poistat kentän asiakasprofiilista. 
-
-1. Valitse yhdistetty kenttä.
-  
-1. Valitse **Näytä lisää** ja valitse **Poista käytöstä**.
-
-1. Vahvista käytöstä poisto.
-
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
-
-Valitse **Yhdistä**-sivulla **Käytöstä poistetut kentät** nähdäksesi luettelon kaikista käytöstä poistetuista kentistä. Tämän ruudun avulla käytöstä poistettuja kenttiä voidaan lisätä takaisin.
-
-## <a name="edit-a-merged-field"></a>Muokkaa yhdistettyä kenttää
-
-1.  Valitse yhdistetty kenttä.
-
-1.  Valitse **Näytä lisää** ja valitse sitten **Muokkaa**.
-
-1.  Määritä, miten kentät yhdistetään kolmesta vaihtoehdosta:
+1. Määritä, miten kentät yhdistetään kolmesta vaihtoehdosta:
     - **Tärkeys**: määrittää voittajan arvon osallistuvien kenttien tärkeyden mukaan. Se on yhdistämisen oletusasetus. Määritä tärkeysjärjestys valitsemalla **Siirrä ylöspäin/alaspäin**.
-    :::image type="content" source="media/importance-merge-option.png" alt-text="Tärkeysasetus yhdistämiskenttien valintaikkunassa."::: 
+
+      :::image type="content" source="media/importance-merge-option.png" alt-text="Tärkeysasetus yhdistämiskenttien valintaikkunassa.":::
+
     - **Uusin**: määrittää voittajan arvon uusimpien arvojen perusteella. Tasaus edellyttää päivämäärää tai numeerista kenttää jokaiselle yhdistämiskenttien osallistujaentiteetille.
-    :::image type="content" source="media/recency-merge-option.png" alt-text="Viimeaikaisuusasetus yhdistämiskenttien valintaikkunassa.":::
+
+      :::image type="content" source="media/recency-merge-option.png" alt-text="Viimeaikaisuusasetus yhdistämiskenttien valintaikkunassa.":::
+
     - **Vähiten uusin**: määrittää voittajan arvon vähiten uusien arvojen perusteella. Tasaus edellyttää päivämäärää tai numeerista kenttää jokaiselle yhdistämiskenttien osallistujaentiteetille.
 
-1.  Voit lisätä kenttiä osallistuaksesi yhdistämisprosessiin.
+1. Voit lisätä kenttiä osallistuaksesi yhdistämisprosessiin.
 
-1.  Voit nimetä yhdistetyn kentän uudelleen.
+1. Voit nimetä yhdistetyn kentän uudelleen.
 
 1. Ota muutokset käyttöön valitsemalla **Valmis**.
 
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
+### <a name="rename-fields"></a>Kenttien nimeäminen uudelleen
 
-## <a name="combine-fields-manually"></a>Yhdistä kentät manuaalisesti
+Voit muuttaa yhdistettyjen tai erillisten kenttien näyttönimeä. Tuloste-entiteetin nimeä ei voi muuttaa.
 
-Määritä yhdistetty määrite manuaalisesti.
+1. Valitse kenttä ja valitse **Nimeä uudelleen**.
 
-1. Valitse **Yhdistä**-sivulla **Jatka**.
+1. Syötä uusi näyttönimi.
 
-1. Valitse **Kentät**-vaihtoehto.
+1. Valitse **Valmis**.
+
+### <a name="separate-merged-fields"></a>Erota yhdistetyt kentät
+
+Jos haluat erottaa yhdistetyt kentät, etsi määrite taulukosta. Erotetut kentät näkyvät erillisinä arvopisteinä yhdistetyssä asiakasprofiilissa.
+
+1. Valitse yhdistetty kenttä ja valitse **Erota kentät toisistaan**.
+
+1. Vahvista erottelu.
+
+### <a name="exclude-fields"></a>Jätä kenttiä pois
+
+Jätä yhdistetty tai erillinen kenttä pois unified customer profile -profiilista. Jos kenttää käytetään muissa prosesseissa, esimerkiksi segmentissä, poista se näistä prosesseista, ennen kuin poistat kentän asiakasprofiilista.
+
+1. Valitse kenttä ja valitse **Jätä pois**.
+
+1. Vahvista käytöstä poisto.
+
+Jos haluat nähdä luettelon kaikista poisjätetyistä kentistä, valitse **Poisjätetyt kentät**. Voit tarvittaessa lukea poisjätetyn kentän.
+
+### <a name="change-the-order-of-fields"></a>Kenttien järjestyksen muuttaminen
+
+Jotkin entiteetit sisältävät enemmän tietoja kuin toiset. Jos entiteetti sisältää kentän uusimmat tiedot, voit priorisoida sen muita entiteettejä korkeammalle arvojen yhdistämisessä.
+
+1. Valitse kenttä.
+  
+1. Valitse **Siirrä ylös- tai alaspäin** järjestyksen määrittämiseksi tai vedä ja pudota ne haluttuun kohtaan.
+
+### <a name="combine-fields-manually"></a>Yhdistä kentät manuaalisesti
+
+Yhdistä erotettuja kenttä luodaksesi yhdistetyn määritteen.
+
+1. Valitse **Yhdistä** > **Kenttiä**. Kenttien yhdistäminen -ruutu tulee näkyviin.
 
 1. Määritä yhdistämisen voittajakäytäntö avattavassa **Yhdistä kentät** -luettelossa.
 
-1. Valitse lisättävä kenttä. Valitse **Lisää kenttiä** yhdistääksesi useampia kenttiä.
+1. Valitse **Lisää kenttä** yhdistääksesi lisää kenttiä.
 
 1. Anna **Nimi** ja **Tulostekentän nimi**.
 
 1. Ota muutokset käyttöön valitsemalla **Valmis**.
 
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi. 
+### <a name="combine-a-group-of-fields"></a>Yhdistä kenttien ryhmä
 
-## <a name="combine-a-group-of-fields"></a>Yhdistä kenttien ryhmä
+Käsittele kenttäryhmää yhtenä yksikkönä. Jos tietueet sisältävät esimerkiksi kentät Osoite1, Osoite2, Kaupunki, Osavaltio ja Postinumero, emme halua yhdistää tietoja toisen tietueen Osoite2-kenttään sillä perusteellaa, että se tekisi tiedoistamme täydellisemmät.
 
-Käsittele kenttäryhmää yhtenä yksikkönä. Jos tietueet sisältävät esimerkiksi kentät Osoite1, Osoite2, Kaupunki, Osavaltio ja Postinumero. Emme todennäköisesti halua yhdistää tietoja toiseen tietueen Osoite2-kohtaan ajatellen, että se voisi tehdä tiedoistamme täydellisempiä
-
-1. Valitse **Yhdistä**-sivulla **Jatka**.
-
-1. Valitse **Kenttien ryhmä** -vaihtoehto.
+1. Valitse **Yhdistä** > **Kenttäryhmä**.
 
 1. Määritä yhdistämisen voittajakäytäntö avattavassa **Ryhmien lajitteluperuste** -luettelossa.
 
-1. Valitse **Lisää** ja valitse, haluatko lisätä kenttiä tai lisää ryhmiä kenttiin.
+1. Valitse **Lisää** ja valitse, haluatko lisätä kenttiä vai ryhmiä kenttiin.
 
 1. Anna jokaiselle yhdistetylle kentälle **Nimi** ja **Tulosteen nimi**.
 
-1. Anna kenttien ryhmälle **Nimi**. 
+1. Anna kenttien ryhmälle **Nimi**.
 
 1. Ota muutokset käyttöön valitsemalla **Valmis**.
 
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
+## <a name="configure-customer-id-generation"></a>Määritä asiakastunnuksen luonti
 
-## <a name="change-the-order-of-fields"></a>Kenttien järjestyksen muuttaminen
+Määritä, miten luodaan asiakkaan tunnusarvoja ja yksilöllisiä asiakasprofiilin tunnisteita. Tietojen yhdistämisprosessin kenttien yhdistämisvaihe luo yksilöllisen asiakasprofiilin tunnuksen. Tunnus on *CustomerId*-tunnus *Asiakas*-entiteetissä, joka on tulos tietojen yhdistämisprosessista.
 
-Jotkin entiteetit sisältävät enemmän tietoja kuin toiset. Jos entiteetti sisältää kentän uusimmat tiedot, voit priorisoida sen muita entiteettejä korkeammalle arvojen yhdistämisessä.
-
-1. Valitse yhdistetty kenttä.
-  
-1. Valitse **Näytä lisää** ja valitse sitten **Muokkaa**.
-
-1. Valitse **Yhdistä kentät** -ruudussa **Siirrä ylös/alas** järjestyksen määrittämiseksi, tai vedä ja pudota niitä haluttuun sijaintiin.
-
-1. Vahvista muutos.
-
-1. Valitse **Tallenna** ja **Suorita** muutosten käsittelemiseksi.
-
-## <a name="configure-customer-id-generation"></a>Määritä asiakastunnuksen luonti 
-
-Kun olet määrittänyt yhdistämiskentät, voit määrittää, miten CustomerId-arvot luodaan, yksilölliset asiakasprofiilin tunnukset. Tietojen yhdistämisprosessin yhdistämisvaihe luo yksilöllisen asiakasprofiilin tunnisteen. Tunnus on *Asiakas*-entiteetin CustomerId-tunnus, joka on tulosta tietojen yhdistämisprosessista. 
-
-Asiakas-entiteetin CustomerId-tunnus perustuu ensisijaisen arvon hajautusarvo, joka ei-tyhjäarvoisen voittajan perusavaimilla on. Nämä avaimet tulevat vastine- ja yhdistämisvaiheessa käytetyistä entiteeteistä, ja vastinejärjestys vaikuttaa niihin. Luotu CustomerID voi siis muuttua, kun perusavaimen arvo muuttuu vastinetilauksen ensisijaisessa entiteetissä. Perusavaimen arvo ei välttämättä aina edusta samaa asiakasta.
+*CustomerId* perustuu ei-tyhjäarvoisen voittajan perusavaimien ensimmäisen arvon hajautusarvoon. Nämä avaimet ovat peräisin tietojen yhdistämisissä käytetyistä entiteeteistä, ja vastinejärjestys vaikuttaa niihin.Luotu asiakastunnus voi siis muuttua, kun perusavaimen arvo muuttuu vastinejärjestyksen ensisijaisessa entiteetissä. Perusavaimen arvo ei välttämättä aina edusta samaa asiakasta.
 
 Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymisen.
 
-**Määritä yksilöivä asiakastunnus**
+1. Valitse **Avaimet**-välilehti.
 
-1. Siirry kohtaan **Yhdenmukaista** > **Yhdistä**.
-
-1. Valitse **Avaimet**-välilehti. 
-
-1. Vie hiiren osoitin **CustomerId**-riville ja valitse **Määritä**-vaihtoehto.
+1. Vie hiiren osoitin **CustomerId**-riville ja valitse **Määritä**.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Tunnuksen luonnin mukauttamisen hallinta.":::
 
 1. Valitse enintään viisi kenttää, jotka sisältävät yksilöllisen asiakastunnuksen ja ovat vakaampia. Tietueet, jotka eivät vastaa kokoonpanoa, käyttävät sen sijaan järjestelmän luomaa määritystunnusta.  
 
-1. Ota muutokset käyttöön valitsemalla **Valmis** ja suorita yhdistämisprosessi.
+1. Valitse **Valmis**.
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Profiilien ryhmitteleminen kotitalouksiksi tai klustereiksi
 
-Osana asiakasprofiilin luonnin määritysprosessia voit määrittää sääntöjä, jotka ryhmittelevät liittyvät profiilit klusteriin. Käytettävissä on tällä hetkellä kahdentyyppisiä klustereita: kotitalousklusterit ja mukautetut klusterit. Järjestelmä valitsee automaattisesti kotitalouden ennalta määritetyin säännöin, jos *Asiakas*-entiteetti sisältää semanttiset kentät *Person.LastName* ja *Location.Address*. Voit myös luoda klusterin omilla säännöilläsi ja ehdoillasi, samoin kuin [vastaavuussäännöissä](match-entities.md#define-rules-for-match-pairs).
+Voit määrittää sääntöjä, jotka ryhmittelevät liittyvät profiilit klusteriksi. Käytettävissä on tällä hetkellä kahdentyyppisiä klustereita: kotitalousklusterit ja mukautetut klusterit. Järjestelmä valitsee automaattisesti kotitalouden ennalta määritetyin säännöin, jos *Asiakas*-entiteetti sisältää semanttiset kentät *Person.LastName* ja *Location.Address*. Voit myös luoda klusterin omilla säännöilläsi ja ehdoillasi, samoin kuin [vastaavuussäännöissä](match-entities.md#define-rules-for-match-pairs).
 
-**Määritä kotitalous tai klusteri**
-
-1. Siirry kohtaan **Yhdenmukaista** > **Yhdistä**.
-
-1. Valitse **Yhdistä**-välilehdessä **Lisäasetukset** > **Luo klusteri**.
+1. Valitse **Lisäasetukset** > **Luo klusteri**.
 
    :::image type="content" source="media/create-cluster.png" alt-text="Uuden klusterin luomisen ohjausobjekti.":::
 
@@ -194,31 +174,9 @@ Osana asiakasprofiilin luonnin määritysprosessia voit määrittää sääntöj
 
 1. Määritä klusteri luomalla säännöt ja ehdot.
 
-1. Valitse **Suorita** suorittaaksesi yhdistämisprosessin ja luodaksesi klusterin.
+1. Valitse **Valmis**. Klusteri luodaan, kun yhdistämisprosessi on valmis. Klusterien tunnisteet lisätään uusiksi kentiksi *Asiakas*-entiteettiin.
 
-Kun yhdistämisprosessi on suoritettu, klusterin tunnisteet lisätään uusiksi kentiksi *Asiakas*-entiteetissä.
-
-## <a name="run-your-merge"></a>Suorita yhdistäminen
-
-Jos yhdistät määritteet manuaalisesti tai annat järjestelmän yhdistää ne, voit aina suorittaa yhdistämisen. Valitse **Suorita** **Yhdistäminen**-sivulla, jos haluat aloittaa prosessin.
-
-> [!div class="mx-imgBorder"]
-> ![Tietojen yhdistämisen tallennus- ja suoritustoiminto.](media/configure-data-merge-save-run.png "Tietojen yhdistämisen tallennus- ja suoritustoiminto")
-
-Valitse **Suorita vain yhdistämistoiminto**, jos haluat, että tulos näkyy vain yhdistetyssä asiakasentiteetissä. Jatkoprosessit päivittyvät [päivitysaikataulun mukaan](system.md#schedule-tab).
-
-Valitse **Suorita yhdistäminen ja jatkoprosessit**, kun haluat päivittää muutokset järjestelmään. Kaikki prosessit, kuten rikastus, segmentit ja mittarit, käynnistyvät uudelleen automaattisesti. Kun kaikki jatkoprosessit on suoritettu loppuun, asiakasprofiilit vastaavat tehtyjä muutoksia.
-
-Jos haluat tehdä lisää muutoksia ja suorittaa vaiheen uudelleen, voit peruuttaa käynnissä olevan yhdistämisen. Valitse **Pävitetään...**-teksti ja valitse sitten **Peruuta työ** näkyviin tulevassa reunaruudussa.
-
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-:::image type="content" source="media/process-detail-path.png" alt-text="Porautumispolku, jonka avulla voit käsitellä tehtävän tilalinkin tietoja.":::
-
-## <a name="next-step"></a>Seuraava vaihe
-
-Määritä [aktiviteetit](activities.md), [rikastaminen](enrichment-hub.md) tai [suhteet](relationships.md), jos haluat lisää merkityksellisiä tietoja asiakkaista.
-
-Jos olet jo määrittänyt aktiviteetteja, rikastuksia tai segmenttejä, ne käsitellään automaattisesti uusimpien asiakastietojen perusteella.
+> [!div class="nextstepaction"]
+> [Seuraava vaihe: Tarkista yhdistäminen](review-unification.md)
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

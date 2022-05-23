@@ -66,12 +66,18 @@
   items:
     - name: Tietojen yhdistämisen yleiskatsaus
       href: data-unification.md
-    - name: Entiteettien ja määritteiden yhdistäminen
+    - name: Valitse lähdekentät
       href: map-entities.md
-    - name: Entiteettien vastaavuus
+    - name: Tietueiden kaksoiskappaleiden poistaminen
+      href: remove-duplicates.md
+    - name: Yhdistämisehdot
       href: match-entities.md
-    - name: Entiteettien yhdistäminen
+    - name: Yhdenmukaista asiakaskentät
       href: merge-entities.md
+    - name: Tietojen yhdistämisen tarkistaminen
+      href: review-unification.md
+    - name: Yhdistysasetusten päivittäminen
+      href: data-unification-update.md
 - name: Tietojen rikastaminen
   items:
     - name: Asiakasprofiilien rikastaminen
@@ -266,7 +272,7 @@
       href: connections.md
     - name: Useiden ympäristöjen hallinta
       href: manage-environments.md
-    - name: Bring your own Key Vault
+    - name: Tuo oma Key Vault -avainsäilösi
       href: use-azure-key-vault.md
     - name: Yhteyden muodostaminen tallennustiliin palvelun päänimen avulla
       href: connect-service-principal.md
@@ -282,6 +288,8 @@
       href: apis.md
     - name: Ohjelmointirajapintaviitteet
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+    - name: OData-näytekyselyt
+      href: odata-examples.md
 - name: Hyväksynnän hallinta (esiversio)
   items:
     - name: Ohjekeskus
