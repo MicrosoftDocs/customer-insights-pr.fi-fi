@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Oppimishakemisto
   items:
-    - name: Aloita
+    - name: Sertifioidu Microsoftin asiakastietoympäristöasiantuntijaksi
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Customer Insights -palvelun aloittaminen
       href: /learn/modules/get-started-customer-data-platform/
     - name: Tietojen käsitteleminen
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Aloita maksullisella lisenssillä
       href: paid-license.md
-    - name: Luo uusi ympäristö
-      href: create-environment.md
     - name: Tutustu Customer Insightsiin
       href: home.md
     - name: Tunnisteiden ja sarakkeiden käsitteleminen
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: Tarkista entiteettirakenteet Common Data Modelissa
       href: entity-schemas.md
-    - name: Customer Insights -tiedot Dataversessä
-      href: customer-insights-dataverse.md
     - name: Suhteiden ja yhdistettyjen entiteettien muodostaminen
       href: relationships.md
     - name: Semanttisen yhdistämisen määrittäminen
       href: semantic-mappings.md
+- name: Ympäristöt
+  items:
+    - name: Luo uusi ympäristö
+      href: create-environment.md
+    - name: Yhdistä Microsoft Dataverseen
+      href: customer-insights-dataverse.md
+    - name: Käytä omaa Azure Data Lake Storageasi
+      href: own-data-lake-storage.md
+    - name: Hallitse ympäristöasetuksia
+      href: manage-environments.md
+    - name: Yhteyden muodostaminen tallennustiliin palvelun päänimen avulla
+      href: connect-service-principal.md
 - name: Hallinta
   items:
     - name: Järjestelmämääritysten määrittäminen
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Delegoidaan käyttöoikeuksia
       href: permissions.md
-    - name: Yhteyksien yleiskuvaus
-      href: connections.md
-    - name: Useiden ympäristöjen hallinta
-      href: manage-environments.md
     - name: Tuo oma Key Vault -avainsäilösi
       href: use-azure-key-vault.md
-    - name: Yhteyden muodostaminen tallennustiliin palvelun päänimen avulla
-      href: connect-service-principal.md
     - name: Diagnostiikkalokien vieminen
       href: diagnostics.md
-    - name: Palvelurajoitukset
-      href: service-limits.md
-    - name: DSR-oikeudet ja -pyynnöt
-      href: dsr-rights-requests.md
+    - name: Yhteyksien yleiskuvaus
+      href: connections.md
 - name: Ohjelmointirajapinnat
   items:
     - name: Ohjelmointirajapintojen käsitteleminen
@@ -324,5 +328,9 @@
       items:
         - name: Ennusteiden luominen hyväksyntätietojen avulla
           href: consent-management/predictions-consent-data.md
+- name: Palvelurajoitukset
+  href: service-limits.md
+- name: DSR-oikeudet ja -pyynnöt
+  href: dsr-rights-requests.md
 - name: Tukipyyntö
   href: /power-platform/admin/get-help-support

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646370"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800322"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Mittarin muodostimen avulla voit luoda mittarin alusta
 
@@ -88,7 +88,7 @@ Voit luoda mittareita yksittäisten asiakkaiden tasolla (asiakasmäärite, asiak
 
 1. Jos haluat lisätä mittarille lisää laskelmia, valitse **Uusi laskelma**. Uusissa laskelmissa voi käyttää vain saman entiteettipolun entiteettejä. Lisälaskelmat näkyvät uusina sarakkeina mittarin tulosentiteetissä.
 
-1. Valitse laskelman **...**-kohta, jos haluat **monistaa**, **uudelleennimetä** tai **poistaa** laskelman mittarista.
+1. Valitse laskutoimituksessa kolme pystysuuntaista pistettä (&vellip;) **luodaksesi kaksoiskappaleen**, **nimetäksesi uudelleen** tai **poistaaksesi** laskutoimituksen mittarista.
 
 1. **Esiversio**-alueessa on näkyvissä mittarin tulosentiteetin tietorakenne, myös suodattimet ja dimensiot. Esiversio readoi dynaamisesti määrityksen muutoksiin.
 
@@ -158,7 +158,7 @@ Voit luoda mittareita yksittäisten asiakkuuksien tasolla (asiakasmittari) tai k
    1. Valitse **Suhdepolku** ja valitse entiteettipolku, jota tulee käyttää mittarisi tunnistamiseen. Jos *Asiakas*-entiteetissä on vain yksi polku, ohjausobjektia ei näy.
    1. Ota valinta käyttöön valitsemalla **Valmis**.
 
-1. Valitse laskelman **...**-kohta, jos haluat **monistaa**, **uudelleennimetä** tai **poistaa** laskelman mittarista.
+1. Valitse laskutoimituksessa kolme pystysuuntaista pistettä (&vellip;) **luodaksesi kaksoiskappaleen**, **nimetäksesi uudelleen** tai **poistaaksesi** laskutoimituksen mittarista.
 
 1. **Esiversio**-alueessa on näkyvissä mittarin tulosentiteetin tietorakenne, myös suodattimet ja dimensiot. Esiversio readoi dynaamisesti määrityksen muutoksiin.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 5b39452d7a4612242739e8000e57217954c71289
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641512"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808542"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan
 
@@ -41,7 +41,7 @@ Customer Insightsin järjestelmänvalvoja voi seurata näitä vaiheita ja poista
 1. Kirjaudu Dynamics 365 Customer Insights.
 2. Valitse **Tiedot** > **Tietolähteet**
 3. Jokainen luettelon tietolähde, joka sisältää poistetut asiakastiedot:
-   1. Valitse (...) ja valitse sitten **Päivitä**.
+   1. Valitse kolme pystysuuntaista pistettä (&vellip;) ja valitse sitten **Päivitä**.
    2. Tarkista tietolähteen tila **Tila**-kohdassa. Valintamerkki osoittaa, että päivitys onnistui. Varoituskolmio osoittaa, että päivitys ei onnistunut. Jos varoituskolmion näkyy, ota yhteys osoitteen D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
@@ -52,7 +52,7 @@ Customer Insightsin järjestelmänvalvoja voi seurata näitä vaiheita ja poista
 Customer Insightsin järjestelmänvalvoja voi poistaa Customer Insightsin käyttäjätiedot seuraavasti:
 
 1. Kirjaudu Dynamics 365 Customer Insights.
-2. Siirry **Järjestelmänhallinta** > **Käyttöoikeudet**.
+2. Valitse **Järjestelmänvalvoja** > **Tietoturva** > **Oikeudet**.
 3. Valitse poistettavan käyttäjän valintaruutu.
 4. Valitse **Poista**.
 

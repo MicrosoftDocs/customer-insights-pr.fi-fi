@@ -11,12 +11,12 @@ ms.reviewer: mhart
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: e8a294a4bad1581539b5905160cddcd625699d90
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646043"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800166"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
 
@@ -62,7 +62,7 @@ Jos haluat muodostaa yhteyden toiseen Dataverse-tietojärveen, [luo uusi tietol�
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
-2. Valitse päivitettävän tietolähteen vieressä kolme pistettä.
+2. Valitse päivitettävän tietolähteen vieressä vertikaalinen kolme pistettä (&vellip;).
 
 3. Valitse luettelossa **Muokkaa**-vaihtoehto.
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 9a04276f7326533cd389cba6554f468123463bac
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755446"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808502"
 ---
 # <a name="work-with-customer-insights-apis"></a>Customer Insights -ohjelmointirajapintojen käyttäminen
 
@@ -31,11 +31,11 @@ Tässä artikkelissa kuvataan, miten Customer Insights -ohjelmointirajapintoja k
 
 1. [Kirjaudu](https://home.ci.ai.dynamics.com) Customer Insightsiin. Jos et ole vielä tehnyt tilausta, [rekisteröidy Customer Insightsin kokeiluversioon](https://aka.ms/tryci).
 
-1. Ota ohjelmointirajapinnat käyttöön Customer Insights -ympäristössä valitsemalla **Hallinta** > **Käyttöoikeudet**. Sitä varten tarvitaan järjestelmänvalvojan oikeudet.
+1. Jos haluat ottaa ohjelmointirajapinnat käyttöön Customer Insights -ympäristössä, siirry kohtaan **Järjestelmänvalvoja** > **Tietoturva**. Sitä varten tarvitaan järjestelmänvalvojan oikeudet.
 
 1. Siirry **Ohjelmointirajapinnat**-välilehteen ja valitse **Ota käyttöön** -painike.    
  
-   Ohjelmointirajapintojen ottaminen käyttöön luo sen esiintymän ensisijaisen ja toissijaisen tilausavaimen, jota käytetään ohjelmointirajapintapyynnöissä. Voit luoda avaimet uudelleen valitsemalla **Luo ensisijainen uudelleen** tai **Luo toissijainen uudelleen**, kun olet valinnut ensin **Hallinta** > **Käyttöoikeudet** > **Ohjelmointirajapinnat**.
+   Ohjelmointirajapintojen ottaminen käyttöön luo sen esiintymän ensisijaisen ja toissijaisen tilausavaimen, jota käytetään ohjelmointirajapintapyynnöissä. Voit luoda avaimet uudelleen valitsemalla **Luo uudelleen ensisijainen** tai **Luo uudelleen toissijainen** kohdassa **Järjestelmänvalvoja** > **Turvallisuus** > **Ohjelmointirajapinnat**.
 
 <!--  :::image type="content" source="media/enable-apis.gif" alt-text="Enable Customer Insights APIs."::: -->
 
@@ -62,14 +62,12 @@ Näiden vaiheiden avulla voit aloittaa Customer Insightsin ohjelmointirajapintoj
 1. Valitse vasemmalla **Sovelluksen rekisteröinnit**.
 
 1. Valitse **Uusi rekisteröinti**, anna sovelluksen nimi ja valitse tilityyppi.
- 
+
    Voit lisätä myös uudelleenohjauksen URL-osoitteen (valinnainen). http://localhost on riittävä sovelluksen kehittämiseen paikallisessa tietokoneessa.
 
 1. Valitse uudessa sovellusrekisteröinnissä **Ohjelmointirajapinnan oikeudet**.
 
-<!--   :::image type="content" source="media/app-registration-1.gif" alt-text="How to set API permissions in App registration."::: -->
-
-1. Valitse **Lisää käyttöoikeus** ja valitse sitten sivuruudussa **Customer Insights**.
+1. Valitse sivuruudusta **Lisää oikeus** ja valitse sitten **Dynamics 365 AI for Customer Insights** .
 
 1. Valitse **Oikeustyyppi**-kohdassa **Delegoidut oikeudet**. Valitse lopuksi **user_impersonation**-oikeus.
 
@@ -109,7 +107,7 @@ Lisätietoja ohjelmointirajapintojen käyttämisestä asiakasohjelmakirjastoissa
 
 1. Lopuksi on vielä lisättävä sovellusrekisteröinnin nimi Customer Insightsin käyttäjänä.  
    
-   Avaa Customer Insights, valitse **Hallinta** > **Käyttöoikeudet** ja valitse lopuksi **Lisää käyttäjä**.
+   Avaa Customer Insights, valitse **Järjestelmänvalvoja** > **suojaus** ja valitse **Lisää käyttäjä**.
 
 1. Hae sovellusrekisteröinnin nimi, valitse se hakutuloksissa ja valitse **Tallenna**.
 

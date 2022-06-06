@@ -1,19 +1,19 @@
 ---
 title: Tietolähteen rikastus
 description: Rikasta tietolähteitä ennen kuin käyt läpi tietojen yhdistämisprosessin.
-ms.date: 03/02/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755682"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800277"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Rikastus tietolähteitä varten (esiversio)
 
@@ -27,7 +27,7 @@ Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jotta voit l
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
-1. Valitse rikastettavan tietolähteen vieressä olevat pystysuuntaiset kolme pistettä ja valitse **Rikasta**.
+1. Valitse rikastettavan tietolähteen vieressä olevat pystysuuntaiset kolme pistettä (&vellip;) ja valitse **Rikasta**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Tietolähteiden rikastussivu":::
 
@@ -41,11 +41,12 @@ Tietolähteitä varten on tällä hetkellä saatavissa seuraavat rikastukset. Op
 
 - [Parannetut osoitteet](enrichment-enhanced-addresses.md)
 - [Parannetut yritystiedot](enrichment-enhanced-company-data.md)
+- [LiveRamp-kohteen käyttäjätiedot](enrichment-liveramp.md)
 
 ## <a name="manage-existing-data-source-enrichments"></a>Aiemmin luotujen tietolähteiden rikastusten hallinta
 
 Siirry **Omat rikastamiset** -välilehteen, jos haluat nähdä kaikki määritetyt rikastamiset.
 
-Valitse rikastus, jos haluat nähdä käytettävissä olevat vaihtoehdot. Voit myös valita luettelokohteesta kolme pistettä (...), kun haluat nähdä vaihtoehdot. Jos olet määrittänyt useita rikasteita, voit etsiä sen nopeasti hakuruudun avulla.
+Valitse rikastus, jos haluat nähdä käytettävissä olevat vaihtoehdot. Voit myös valita kolme pystysuuntaista pistettä (&vellip;) luettelokohteesta, kun haluat nähdä vaihtoehdot. Jos olet määrittänyt useita rikasteita, voit etsiä sen nopeasti hakuruudun avulla.
 
 Tietolähteen rikastuksen voi tarkastella, muokata, suorittaa tai poistaa. Lisätietoja on ohjeaiheessa [Aiemmin luotujen rikastusten hallinta](enrichment-hub.md).

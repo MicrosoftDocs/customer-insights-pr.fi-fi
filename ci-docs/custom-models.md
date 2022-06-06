@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646093"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800416"
 ---
 # <a name="custom-machine-learning-models"></a>Mukautetut koneoppimisen mallit
 
@@ -92,7 +92,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 
 ## <a name="edit-a-workflow"></a>Työnkulun muokkaaminen
 
-1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä aiemmin luodun työnkulun vieressä ja valitse **Muokkaa**.
+1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä(&vellip;) aiemmin luodun työnkulun vieressä ja valitse **Muokkaa**.
 
 1. Vaikka voit päivittää työnkulun tunnistettavan nimen **Näyttönimi**-kentässä, et voi muuttaa määritettyä verkkopalvelua tai jaksoa. Valitse **Seuraava**.
 
@@ -108,7 +108,7 @@ Ennusteiden ominaisuuksilla voi luoda parempia asiakaskokemuksia sekä parantaa 
 
 ## <a name="run-a-workflow"></a>Työnkulun suorittaminen
 
-1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä aiemmin luodun työnkulun vieressä ja valitse Muokkaa.
+1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä (&vellip;) aiemmin luodun työnkulun vieressä.
 
 1. Valitse **Suorita**.
 
@@ -116,7 +116,7 @@ Työnkulku suoritetaan myös automaattisesti jokaisen ajoitetun päivityksen yht
 
 ## <a name="delete-a-workflow"></a>Työnkulun poistaminen
 
-1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä aiemmin luodun työnkulun vieressä ja valitse Muokkaa.
+1. Valitse **Mukautetut mallit** -sivulla **Toiminnot**-sarakkeen pystysuorat kolme pistettä (&vellip;) aiemmin luodun työnkulun vieressä.
 
 1. Valitse **Poista** ja vahvista poistaminen.
 

@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740715"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800646"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Osittaisten tietojen täydentäminen ennusteilla (vanhentunut)
 
@@ -95,7 +95,7 @@ Tämän prosessin osana valitaan tietty määrite, johon segmentti perustuu. Se 
 
 2. Valitse ennuste, jota haluat tarkastella.
 
-3. Valitse **Toiminnot**-sarakkeen kolme pistettä ja valitse sitten **Tarkastele**.
+3. Valitse **Toiminnot**-sarakkeesta kolme pystysuuntaista pistettä (&vellip;) ja valitse sitten **Näkymä**.
 
 4. Näkyviin tulee arvopisteiden määrä ennustenäkymässä.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ Kun olet luonut ennusteen, voit mukauttaa mallia AI Builderilla parantaaksesi ma
 
 2. Valitse ennuste, jota haluat muokata.
 
-3. Valitse **Toiminnot**-sarakkeen kolme pistettä ja valitse sitten **Tarkastele**.
+3. Valitse **Toiminnot**-sarakkeesta kolme pystysuuntaista pistettä (&vellip;) ja valitse sitten **Näkymä**.
 
 4. Valitse **Mukauta AI Builderissa**.
 
@@ -139,7 +139,7 @@ Ennusteen seuraava suoritus käyttää luomaasi päivitettyä mallia.
 
 2. Valitse poistettava ennuste.
 
-3. Valitse **Toiminnot**-sarakkeen kolme pistettä ja valitse sitten **Poista**.
+3. Valitse **Toiminnot**-sarakkeesta kolme pystysuuntaista pistettä (&vellip;) ja valitse sitten **Poista**.
 
 4. Vahvista poisto.
 
@@ -153,7 +153,7 @@ Jos Dataversen liittämisprosessia ei voi suorittaa virheen vuoksi, voit yrittä
 - Sovellusoikeuksia ei myönnetä.
     1. Siirry [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)en.
     1. Valitse **Ympäristöt**.
-    1. Valitse sen ympäristön vieressä oleva kolme pistettä, johon haluat lisätä oikeudet, ja valitse sitten **Asetukset**.
+    1. Valitse kolme pystysuuntaista pistettä (&vellip;) sen ympäristön vierestä, johon haluat lisätä oikeudet, ja valitse **Asetukset**.
     1. Laajenna **Käyttäjät ja oikeudet** ja valitse **Käyttäjät**.
     1. Valitse **+ Uusi** ja valitse sitten **Käyttäjä**.
     1. Valitse **Sovelluksen käyttäjä**, jos sitä ei ole jo valittu, ja anna seuraavat tiedot:

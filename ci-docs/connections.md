@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 2a3175737ac95e10d75fad4a69db303b0564c6cc
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755305"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800368"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
@@ -69,9 +69,9 @@ Kun määrität tai muokkaat vientiyhteyttä, valitse käyttäjät, joilla on oi
 
 1. Siirry **Yhteydet**-välilehteen.
 
-1. Valitse muokattavan yhteyden kohdalla kolme allekkaista pistettä.
+1. Valitse muokattavan yhteyden kohdalla kolme allekkaista pistettä (&vellip;).
 
-1. Valitse **muokkaa**.
+1. Valitse **Muokkaa**.
 
 1. Muuta päivitettävät arvot ja valitse **Tallenna**.
 
@@ -85,7 +85,7 @@ irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uude
 
 1. Siirry **Yhteydet**-välilehteen.
 
-1. Valitse poistettavan yhteyden kohdalla kolme allekkaista pistettä.
+1. Valitse poistettavan yhteyden kohdalla kolme allekkaista pistettä (&vellip;).
 
 1. Valitse avattavassa valikossa **Poista**. Vahvistusvalintaikkuna avautuu.
 

@@ -13,12 +13,12 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: c8e9e4976ade36c1c3c4f688a667b329bfde6e3e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e1a9cd0e3c0347285026d937ca7d951a602e7160
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646283"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800092"
 ---
 # <a name="create-segments"></a>Segmenttien luominen
 
@@ -134,8 +134,9 @@ Luodessasi segmenttiä voit tallentaa luonnoksen. Luonnosvaiheessa segmentti tal
 > - Segmentin muodostin ei ehdota entiteeteille kelvollisia arvoja, kun operaattorit määritetään ehdoille. Voit tarkastella käytettävissä olevia arvoja siirtymällä kohtaan **Tieto** > **Entiteetit** ja lataamalla entiteettitiedot.
 > - Päivämääriin perustuvien ehtojen avulla voit siirtyä kiinteän päivämäärän ja liukuvan päivämäärävälin välillä.
 > - Jos segmentille on useita sääntöjä, muokattavan säännön vieressä on pystysuuntainen sininen viiva.
-> - Voit siirtää sääntöjä ja ehtoja muihin kohtiin segmentin määrityksessä. Valitse säännön tai ehdon vierestä [...] ja valitse, miten ja mihin se siirretään.
+> - Voit siirtää sääntöjä ja ehtoja muihin kohtiin segmentin määrityksessä. Valitse säännön tai ehdon vierestä kolme pystysuuntaista pistettä (&vellip;) ja valitse, miten ja mihin se siirtää.
 > - Komentopalkin **Kumoa**- ja **Tee uudelleen** -ohjausobjektien avulla voit perua muutoksia.
+> - Kun olet luonut segmentin, joidenkin segmenttien avulla voit [seurata segmentin käyttöä](segments.md#track-usage-of-a-segment).
 
 ## <a name="quick-segments"></a>Pikasegmentit
 

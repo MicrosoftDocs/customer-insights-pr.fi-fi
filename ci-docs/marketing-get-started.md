@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 45c59465771e4ad25ed36d5da1568e67b94cf994
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653717"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833304"
 ---
 # <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Yhtenäisten asiakasprofiilien käyttäminen Dynamics 365 Marketingissa
 
@@ -23,7 +23,6 @@ Yhdistämällä Customer Insights -tiedot Marketingiin voit:
 - Käyttää sähköpostien, tekstiviestien ja palveluilmoitusten dynaamisen sisällön (kuten mukautettujen tunnusten) perustana kanta-asiakkuuden tilaa, tilauksen uusimispäivämäärää, pääasiakasta tai mitä tahansa muuta mittaa, jonka olet tallentanut yhdistettyyn Customer Insights -profiiliin.
 - Ladata tietoja Marketingista Customer Insightsiin ja yhdistää ne muista lähteistä saatuihin asiakastietoihin.
 - Käyttää Customer Insights -tietojen puhdistusta, rikastamista ja epätarkkojen vastaavuuksien työkaluja.
-
 
 ## <a name="use-rich-customer-profiles-in-real-time-marketing"></a>Monipuolisten asiakasprofiilien käyttö reaaliaikaisessa markkinoinnissa
 
@@ -41,4 +40,4 @@ Lue lisää: [Käytä Dynamics 365 Customer Insightsin segmenttejä Dynamics 365
 
 Pilvitallennustila ei ole ainoa vaihtoehtosi, jos haluat käyttää Customer Insights -tietoja Marketing-palvelun kanssa. Jos olet jo määrittänyt oman Azure Data Lake Storage -säiliösi, voit yhdistää sen Customer Insightsiin ja jakaa tiedot sitten Marketing-sovelluksen kanssa samalla tavalla kuin pilvipohjaista kokoonpanoa käytettäessä.
 
-Lue lisää: [Tietojen jakamisen ottaminen käyttöön Dataversen kanssa omasta Azure Data Lake Storagesta](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)
+Lue lisää: [Tietojen jakamisen ottaminen käyttöön Dataversen kanssa omasta Azure Data Lake Storagesta](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview)

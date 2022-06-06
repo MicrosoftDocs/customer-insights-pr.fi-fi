@@ -1,7 +1,7 @@
 ---
 title: Segmentit Customer Insightsissa
 description: Yleiskatsaus segmenteistä ja niiden luomisesta ja hallinnasta.
-ms.date: 03/30/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 9791e971387eb7db91ed7c4e4fe76552656013ba
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d616ec8273115203dddb59334a348c66e72fa678
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646278"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800738"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -75,6 +75,7 @@ Seuraavat toiminnot ovat käytettävissä, kun valitset segmentin:
 ## <a name="refresh-segments"></a>Päivitä segmentit
 
 Voit päivittää kaikki segmentit kerralla valitsemalla **Päivitä kaikki** **Segmentit**-sivulla. Halutessasi voit päivittää yhden tai useita segmenttejä, kun valitset ne ja valitse sitten **Päivitä** asetuksista. Voit myös määrittää toistuvan päivityksen kohdassa **Järjestelmänvalvoja** > **Järjestelmä** > **Ajoita**. Kun toistuva päivitys määritetään, seuraavat säännöt ovat voimassa:
+
 - Kaikki **Dynaaminen**- tai **Laajennus**-tyyppiset segmentit päivittyvät automaattisesti määritetyllä välillä. Kun päivitys on valmis, **Tila** ilmaisee, onko segmentin päivityksessä ongelmia. **Päivitetty viimeksi** näyttää edellisen onnistuneen päivityksen aikaleiman. Jos tapahtuu virhe, saat näkyviin tiedot siitä, mitä tapahtui, valitsemalla virheen.
 - Segmenttejä, joiden tyyppinä on **Staattinen**, *ei* päivitetä automaattisesti. **Päivitetty viimeksi** -kentässä näkyy staattisten segmenttien edellisen suorituksen tai manuaalisen päivityksen aikaleima.
 
@@ -86,7 +87,7 @@ Voit viedä segmentin segmenttisivulta tai [vientisivulta](export-destinations.m
 
 1. Siirry **Segmentit**-sivulle.
 
-1. Valitse **Näytä lisää [...]** segmentistä, jonka haluat viedä.
+1. Valitse vietävän segmentin kohdalla kolme allekkaista pistettä (&vellip;).
 
 1. Valitse **Hallitse vientejä** toimintojen avattavasta luettelosta.
 
@@ -97,6 +98,26 @@ Voit viedä segmentin segmenttisivulta tai [vientisivulta](export-destinations.m
    1. Jos haluat luoda uuden viennin valitulla segmentillä, valitse **Lisää vienti**. Lisätietoja viennin luomisesta on ohjeaiheessa [Uuden viennin luominen](export-destinations.md#set-up-a-new-export).
 
 1. Palaa segmenttien pääsivulle valitsemalla **Takaisin**.
+
+## <a name="track-usage-of-a-segment"></a>Segmentin käytön seuranta
+
+Jos käytät sovelluksissa segmenttejä, jotka perustuvat samaan Microsoft Dataverse -organisaatioon, joka on yhteydessä Customer Insights -asiakkaaseen, voit seurata segmentin käyttöä. [Dynamics 365 Marketingin asiakassiirtymissä käytettävien Customer Insights -segmenttien osalta](/dynamics365/marketing/real-time-marketing-ci-profile) järjestelmä ilmoittaa sinulle segmentin käytöstä.
+
+Kun muokkaat segmenttiä, jota käytetään Customer Insights -ympäristössä tai joka on asiakassiirtymä markkinointisivulla, [segmentin muodostimen](segment-builder.md) mainospalkki ilmoittaa sinulle riippuvuudet. Voit tarkastaa riippuvuustiedot suoraan mainospalkin avulla tai valitsemalla segmentin muodostimessa **Käyttö**.
+
+**Segmentin käyttö** -ruudussa näkyvät tiedot tämän segmentin käytöstä Dataverse-pohjaisissa sovelluksissa. Asiakassiirtymissä käytetyissä segmenteissä on linkki, jolla voit tarkastaa, missä markkinointisegmentissä tätä segmenttiä käytetään. Jos sinulla on markkinointisovelluksen käyttöoikeus, voit tarkastella siellä lisätietoja.
+
+:::image type="content" source="media/segment-usage-pane.png" alt-text="Sivuruutu, jossa on segmentin käytön tiedot segmentin muodostimessa.":::
+
+Järjestelmä ilmoittaa seuratun segmentin käytöstä, kun yrität poistaa sen. Jos poistettavaa segmenttiä käytetään markkinoinnin asiakassiirtymässä, se pysähtyy kaikille segmentin käyttäjille. Jos siirtymä kuuluu markkinointikampanjaan, poisto vaikuttaa itse kampanjaan. Voit kuitenkin poistaa segmentin varoituksesta huolimatta.
+
+:::image type="content" source="media/segment-usage-delete.png" alt-text="Valintaikkuna, jossa vahvistetaan segmentin poisto, kun segmenttiä käytetään Dataverse- sovelluksessa.":::
+
+### <a name="supported-apps"></a>Tuetut sovellukset
+
+Käyttöä seurataan tällä hetkellä seuraavissa Dataverse-pohjaisissa sovelluksissa:
+
+- [Dynamics 365 Marketingin asiakassiirtymät](/dynamics365/marketing/real-time-marketing-ci-profile)
 
 ## <a name="view-processing-history-and-segment-members"></a>Tarkastele käsittelyhistoriaa ja segmentin jäseniä
 
@@ -117,6 +138,5 @@ Alaosassa on luettelo segmentin jäsenistä.
 > Tässä luettelossa näkyvät kentät perustuvat segmentin entiteettien määritteisiin.
 >
 >Luettelo on täsmäävien segmentin jäsenten esikatselu. Siinä näkyvät segmentin ensimmäiset 100 tietuetta, joten voit nopeasti arvioida segmentin ja tarkistaa sen määritykset tarpeen mukaan. Jos haluat nähdä kaikki täsmäävät tietueet, sinun on [vietävä segmentti](export-destinations.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

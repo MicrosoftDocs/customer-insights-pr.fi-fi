@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 8022563f8994400b88389c20d7d661d9ea82bab1
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740899"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833718"
 ---
 # <a name="user-permissions"></a>Käyttäjien käyttöoikeudet
 
@@ -41,7 +41,7 @@ Roolityyppejä on kolme:
 
 - Kaikki katselijan oikeudet.
 - Lataa ja muunna tietoja **Tietolähteet**-sivun avulla.
-- Täytä ***Tietojen yhdistäminen**, joka johtaa unified customer profile -profiilientiteettiin.
+- Täytä **Tietojen yhdistäminen**, joka johtaa unified customer profile -profiilientiteettiin.
 - Määritä **suhteet** ja **aktiviteetit**.
 - Luo segmenttejä **Segmentit**-sivun avulla.
 - Luo mittareita **Mittarit**-sivun avulla.
@@ -65,11 +65,11 @@ Roolityyppejä on kolme:
 ## <a name="admin-owner"></a>Järjestelmänvalvoja (omistaja)
 
 - Kaikki järjestelmänvalvojan käytettävissä olevat oikeudet.
-- [Nollaa ja poista](manage-environments.md#reset-an-existing-environment) ympäristö.
+- [Nollaa ja poista](manage-environments.md#reset-an-existing-environment-preview) ympäristö.
 
 ## <a name="assign-roles-and-permissions"></a>Delegoi roolit ja oikeudet
 
-1. Valitse **Järjestelmänhallinta** > **Tietoturva** > **Käyttäjät***.
+1. Valitse **Järjestelmänhallinta** > **Tietoturva** > **Käyttäjät**.
 
 1. Avaa **Lisää tai muokkaa oikeuksia** -ruutu valitsemalla **Lisää käyttäjiä**.
 

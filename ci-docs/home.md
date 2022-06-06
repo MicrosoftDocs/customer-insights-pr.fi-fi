@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
-ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
+ms.openlocfilehash: 621977068dc49b55f50f00e9762a4a5952d7b453
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/12/2022
-ms.locfileid: "8743409"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768346"
 ---
 # <a name="explore-customer-insights"></a>Tutustu Customer Insightsiin
 
@@ -28,9 +28,9 @@ Voit käyttää [Dynamics 365 Customer Insightsia](https://home.ci.ai.dynamics.c
 
 ## <a name="left-side-pane"></a>Vasemmanpuoleinen ruutu
 
-Vasemmassa ruudussa voit siirtyä eri Customer Insights -alueiden välillä. 
+Vasemmassa ruudussa voit siirtyä eri Customer Insights -alueiden välillä.
 
-Jos käytät yritystilejä ja yksittäisiä kuluttajia, voit valita ensisijaisen käyttäjäryhmän ja määrittää kohdistuksen sen mukaan. 
+Jos käytät yritystilejä ja yksittäisiä kuluttajia, voit valita ensisijaisen käyttäjäryhmän ja määrittää kohdistuksen sen mukaan.
 
 ## <a name="application-header"></a>Sovelluksen otsikko
 
@@ -38,7 +38,7 @@ Jos käytät yritystilejä ja yksittäisiä kuluttajia, voit valita ensisijaisen
 
 Hymyilevät kasvot -kuvake on **Palaute**-ohjausobjekti. Valitsemalla sen voit kertoa meille Customer Insights -käyttökokemuksestasi. Kuuntelemme aktiivisesti palautettasi ja kiitämme etukäteen kiittää siitä, että kerrot meille, mistä pidät ja miten voimme parantaa toimintaamme.
 
-Hammaspyöräkuvakkeena näkyvän **Asetukset**-ohjausobjektin avulla voit kerätä istuntojen tietoja Customer Insightsia varten ja määrittää yleisiä asetuksia Microsoft 365 -profiiliasi varten. 
+Hammaspyöräkuvakkeena näkyvän **Asetukset**-ohjausobjektin avulla voit kerätä istuntojen tietoja Customer Insightsia varten ja määrittää yleisiä asetuksia Microsoft 365 -profiiliasi varten.
 
 **Ohjevaihtoehdot**, jotka visualisoidaan kysymysmerkkikuvakkeella, tarjoavat kontekstiin sopivia ohjelinkkejä ja muita hyödyllisiä resursseja.
 
@@ -46,7 +46,7 @@ Profiilikuvasi avaa **asiakaspäällikön** Microsoft 365 -profiilillesi. Valits
 
 ## <a name="getting-started-with-customer-insights-section"></a>Customer Insights -osan aloittaminen
 
-Tässä osassa on kortteja, jotka auttavat sinua käymään läpi Customer Insights -ympäristön määrittämisen. 
+Tässä osassa on kortteja, jotka auttavat sinua käymään läpi Customer Insights -ympäristön määrittämisen.
 
 1. **Lisää tietoja** -kortti auttaa tietojen tuonnissa. Customer Insights tukee [useita vaihtoehtoja, joilla voi tuoda tietoja asiakkaistasi](data-sources.md). Aloita valitsemalla **Lisää tietolähteitä**.
 1. Kun tietojen tuonti on onnistunut, voit käyttää **Yhtenäistä tiedot** -korttia tietojen yhdenmukaistamiseen ja [luodaksesi unified customer profiles -profiileja](data-unification.md) eri lähteistä. 

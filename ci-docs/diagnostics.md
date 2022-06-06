@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755258"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807577"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
 
@@ -38,7 +38,7 @@ Jotta diagnostiikka voidaan määrittää Customer Insightsissa, seuraavien edel
 
 - Sinulla on aktiivinen [Azure-tilaus](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet Customer Insightsissa.
-- Sinulla on **Osallistuja**- ja **Käyttäjän käyttöoikeuksien järjestelmänvalvoja** -rooli Azuren kohderesurssissa. Resurssi voi olla Azure Storage account, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal).
+- Sinulla on **Osallistuja**- ja **Käyttäjän käyttöoikeuksien järjestelmänvalvoja** -rooli Azuren kohderesurssissa. Resurssi voi olla Azure Data Lake Storage -tili, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal). Tämä oikeus on pakollinen määritettäessä vianmääritysasetuksia Customer Insightsissa, mutta sitä voidaan muuttaa onnistuneen asennuksen jälkeen.
 - Azure Storagen, Azure-tapahtumakeskuksen tai Azure Log Analyticsin [kohdevaatimukset](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) pitää olla täytettynä.
 - Sinulla on vähintään **Lukija**-rooli resurssiryhmässä, johon resurssi kuuluu.
 

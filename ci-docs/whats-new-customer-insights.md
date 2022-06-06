@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 386198c838929a20e136288fffb1015707654d8d
-ms.sourcegitcommit: 9f256af5c4f7e99305bf09087f7ec05eebeae6a0
+ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "8700933"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833626"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -58,6 +58,7 @@ LiveRamp mahdollistaa tunnistetietojen ratkaisun ja asiakastietojen yhdistämise
 Lisätietoja on ohjeaiheessa [Täydennä asiakasprofiileja LiveRamp-tunnistetietojen avulla (esiversio)](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Segmenttien ja mittareiden järjestäminen tunnisteilla ja suodattimilla
+
 Jos organisaatiossa ylläpidetään useita segmenttejä tai mittareita, oikean segmentin tai mittarin löytäminen voi joskus olla hankalaa. Tämän uuden ominaisuuden avulla luettelot voidaan järjestää tunnisteiden ja sarakkeiden avulla. Sen avulla tietojen löytäminen ja näkymien mukauttaminen on nopeaa ja helppoa.
 
 Lisätietoja on kohdassa [Tunnisteiden ja sarakkeiden käsitteleminen](work-with-tags-columns.md).
@@ -65,9 +66,9 @@ Lisätietoja on kohdassa [Tunnisteiden ja sarakkeiden käsitteleminen](work-with
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Tietojen jakamisen käyttöönotto Dataversen kanssa oman tallennustilin käyttämisen yhteydessä
 
 Jos ympäristösi käyttää Azure Data Lake Storagea Customer Insights -tietojen tallentamiseen, tietojen jakaminen Microsoft Dataversen kanssa edellyttää lisämäärityksiä.
-Aiemmin tietojen jakaminen Dataversen kanssa voitiin ottaa käyttöön vain, kun tiedot oli tallennettu omaan hallittuun Data Lake -tallennustilaan. 
+Aiemmin tietojen jakaminen Dataversen kanssa voitiin ottaa käyttöön vain, kun tiedot oli tallennettu omaan hallittuun Data Lake -tallennustilaan.
 
-Lisätietoja on kohdassa [Tietojen jakamisen käyttöönotto Dataversen kanssa omasta Azure Data Lake Storage (esiversio) -ratkaisusta](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
+Lisätietoja on kohdassa [Tietojen jakamisen käyttöönotto Dataversen kanssa omasta Azure Data Lake Storage (esiversio) -ratkaisusta](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
 
 ### <a name="new-export-destinations-iterable-and-braze"></a>Uudet vientikohteet: Iterable ja Braze
 
@@ -81,7 +82,6 @@ Kun yhdistettyjen palveluiden ohjelmointirajapintoja muutetaan, yhdistimien päi
 
 - Google Ads: Google Ads -palvelun viennin yhdistin yksinkertaistaa todennuskokemusta. Se myös mahdollistaa uusien Google Ads -käyttäjäryhmien luomisen automaattisesti. 
 - Marketo: Marketo-palvelun viennin yhdistin tukee Marketo-tunnusta. Sen avulla on mahdollista välttää tietojen kaksoiskappaleet, päivittää olemassa olevat tietueet ja luoda uusia tietueita Marketossa. 
-
 
 ## <a name="february-2022-updates"></a>Helmikuun 2022 päivitykset
 
