@@ -1,7 +1,7 @@
 ---
 title: Yhtenäisten asiakasprofiilien rikastaminen
 description: Asiakastietojen rikastaminen ominaisuuksien avulla.
-ms.date: 03/29/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: abc1b6af80e8854ee3bc930453634ef67376c4af
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800601"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954037"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
 
@@ -35,29 +35,29 @@ Löydät **Löydä**-välilehdestä kaikki tuetut rikastamisvaihtoehdot.
 
 # <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 
+- [AbiliTec-käyttäjätiedot](enrichment-liveramp.md) toimittaa LiveRamp AbiliTec
 - [Tuotemerkit](enrichment-microsoft.md), jotka toimittaa Microsoft
-- [Kiinnostuksen kohteet](enrichment-microsoft.md), jotka toimittaa Microsoft
-- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md) 
 - Experianin tarjoamat [demografiatiedot](enrichment-experian.md)
-- [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP) 
-- Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
-- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md) 
-- [Käyttäjätiedot](enrichment-liveramp.md), jotka tarjoaa LiveRamp AbiliTec
+- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md)
+- [Kiinnostuksen kohteet](enrichment-microsoft.md), jotka toimittaa Microsoft
+- [Sijaintitiedot](enrichment-azure-maps.md) toimittaa Microsoft Azure -kartat
+- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md)
+- [Mukautetut SFTP-tiedot](enrichment-SFTP-custom-import.md) suojatun tiedostonsiirtoprotokollan (SFTP) avulla
 
 # <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
-- Leadspacen toimittamat [yritystiedot](enrichment-leadspace.md)
-- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md) 
-- Microsoftin tuottamat [laajennetut yritystiedot](enrichment-enhanced-company-data.md)
-- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md) 
-- [Tietojen mukauttaminen ](enrichment-SFTP-custom-import.md) suojatulla tiedostonsiirtoprotokollalla (SFTP) 
-- Microsoftin toimittama [Azure Maps](enrichment-azure-maps.md)
-- [Yritystiedot](enrichment-dnb.md) toimittajalta Dun & Bradstreet
 - Microsoftin toimittamat [tilien seurantatiedot](enrichment-office.md)
+- [Yritystiedot](enrichment-dnb.md) toimittajalta Dun & Bradstreet
+- Leadspacen toimittamat [yritystiedot](enrichment-leadspace.md)
+- Microsoftin toimittamat [Parannetut osoitteet](enrichment-enhanced-addresses.md)
+- Microsoftin tuottamat [laajennetut yritystiedot](enrichment-enhanced-company-data.md)
+- [Sijaintitiedot](enrichment-azure-maps.md) toimittaa Microsoft Azure -kartat
+- HERE Technologiesin toimittamat [sijaintitiedot](enrichment-here.md)
+- [Mukautetut SFTP-tiedot](enrichment-SFTP-custom-import.md) suojatun tiedostonsiirtoprotokollan (SFTP) avulla
 
 ---
 
-**Omat täydennykset** -välilehdessä voit tarkastella määrittämiäsi täydennyksiä ja muokata niiden ominaisuuksia.
+**Omat täydennykset** -välilehdessä voit tarkastella määrittämiäsi täydennyksiä ja muokata niiden ominaisuuksia. Rikastuksista voi luoda myös [segmenttejä](segments.md) tai [mittareita](measures.md).
 
 ## <a name="manage-existing-enrichments"></a>Aiemmin luotujen rikastusten hallinta
 
@@ -81,36 +81,45 @@ Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](con
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
 
-Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Esimerkiksi vain tietyn segmentin tietojen rikastaminen on mahdollista. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajoitukset ja nykyinen käyttö näkyy **Rikastus**-sivulla.
+Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Esimerkiksi vain tietyn segmentin tietojen rikastaminen on mahdollista. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajat ja nykyinen käyttö on nähtävillä jokaisessa **Rikastaminen**-sivun **Tutustu**-välilehden ruudussa.
 
 ## <a name="enrich-data-sources-before-unification"></a>Tietolähteiden rikastus ennen yhdistämistä
 
 Voit rikastaa asiakastietoja ennen tietojen yhdistämistä, mikä parantaa tietojen vastaavuuden laatua. Lisätietoja: [tietolähteiden rikastus](data-sources-enrichment.md).
 
-## <a name="see-the-progress-of-the-enrichment-process"></a>Rikastusprosessin edistymisen katsominen
+## <a name="run-or-refresh-enrichments"></a>Rikastusten suorittaminen tai päivittäminen
+
+1. Rikastamisprosessi aloitetaan valitsemalla **Suorita**. Järjestelmä voi myös suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika riippuu asiakastietojen koosta.
+
+1. Vaihtoehtoisesti voit [tarkastella rikastamisprosessin etenemistä](#see-the-progress-of-the-enrichment-process).
+
+1. Valitse rikastamisprosessin päättymisen jälkeen **Omat rikastukset**. Voit tarkastella juuri rikastettujen asiakasprofiilien tietoja, viimeisimmän päivityksen ajankohtaa ja rikastettujen profiilien määrää.
+
+1. Tarkastele [rikastustuloksia](#enrichment-results) valitsemalla rikastus.
+
+### <a name="see-the-progress-of-the-enrichment-process"></a>Rikastusprosessin edistymisen katsominen
 
 Voit etsiä tietoja rikastuksen käsittelystä, mukaan lukien sen tilan ja mahdolliset ongelmat päivityksen aikana tai päivityksen jälkeen. Tietoja siitä, mitkä prosessit liittyvät rikastusten päivittämiseen ja miten kauan prosessien suoritus kestää. Experian, Leadspace, HERE Technologies, SFTP-tuonti ja Azure Maps tukevat rikastamistilaa.
 
-Rikastamistilan tarkistaminen
-
-1. Siirry kohtaan **Tiedot** > **Täydentäminen**. 
-1. Avaa sivuruutu valitsemalla **Omat rikastukset** -välilehdessä rikastuksen tila. 
-1. Laajenna **Edistymisen tiedot** -ruudussa **Rikastukset**-osa. 
-1. Valitse **Näytä tiedot** haluamasi rikastuksen alta tarkastellaksesi edistymistä. 
-1. Valitse **Tehtävän tiedot** -ruudussa **Näytä tiedot**, kun haluat nähdä prosessit, jotka liittyvät rikastusten päivittämiseen ja niiden tilaan. 
+1. Siirry kohtaan **Tiedot** > **Täydentäminen**.
+1. Avaa sivuruutu valitsemalla **Omat rikastukset** -välilehdessä rikastuksen tila.
+1. Laajenna **Edistymisen tiedot** -ruudussa **Rikastukset**-osa.
+1. Valitse **Näytä tiedot** haluamasi rikastuksen alta tarkastellaksesi edistymistä.
+1. Valitse **Tehtävän tiedot** -ruudussa **Näytä tiedot**, kun haluat nähdä prosessit, jotka liittyvät rikastusten päivittämiseen ja niiden tilaan.
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
-Kun rikastaminen on suoritettu loppuun, voit tarkastella rikastamisen tuloksia.
+Tutustu rikastamisen tuloksiin, kun rikastaminen on suoritettu loppuun.
 
-1. Siirry kohtaan **Tiedot** > **Täydentäminen**. 
-1. Valitse rikastaminen, josta haluat tietoja.
+1. Siirry kohtaan **Tiedot** > **Täydentäminen**.
+1. Valitse **Omat rikastukset** -välilehdessä ympäristö, josta haluat tietoja.
 
-Kaikki rikastamiset näyttävät perustietoja, kuten lisättyjen profiilien määrän, luodun rikastusentiteetin esikatselun ja rikastettujen profiilien määrän ajan mittaan. Jos mahdollista, **Rikastettujen asiakkaiden määrä kentän mukaan** tarjoaa porautumisen kunkin rikastetun kentän kattavuuteen.
+Kaikissa rikastamisissa on näkyvissä perustiedot, kuten lisättyjen profiilien määrä ja rikastettujen profiilien määrän ajan mittaan. **Rikastettujen asiakkaiden esikatselu** -ruudussa näkyy esimerkki luodusta rikastusentiteetistä. Yksityiskohtaista näkymää voi tarkastella valitsemalla ensin **Näytä lisää** ja sitten **Tiedot**-välilehti.
 
 :::image type="content" source="media/enrichments-results.png" alt-text="Rikastusten tulossivu.":::
 
-Jotkin rikastukset näyttävät myös tiedot, jotka liittyvät rikastuksen tyyppiin. Lisätietoja on asiaa koskevien rikastamisen ohjeissa.
+Jos mahdollista, **Rikastettujen asiakkaiden määrä kentän mukaan** tarjoaa porautumisen kunkin rikastetun kentän kattavuuteen.
 
+Jotkin rikastukset näyttävät myös tiedot, jotka liittyvät rikastuksen tyyppiin. Lisätietoja on liittyvissä ohjeissa.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

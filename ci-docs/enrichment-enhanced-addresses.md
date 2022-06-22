@@ -1,7 +1,7 @@
 ---
 title: Osoitteen parannusten rikastus (sisältää videon)
 description: Rikasta ja normalisoi asiakasprofiilien osoitetietoja Microsoftin malleilla.
-ms.date: 01/19/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b4fef3b5e30e1cac4e5cb4401498f2f0981a409e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645988"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953807"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Asiakasprofiilien rikastaminen parannetuilla osoitteilla
 
@@ -53,17 +53,17 @@ Osoitetiedot voivat olla muussa kuin standardimuodossa. Niissä voi myös olla k
 
 ### <a name="limitations"></a>Rajoitukset
 
-Parannetut osoitteet toimivat vain niiden arvojen kanssa, joka ovat jo olemassa käsitellyissä osoitetiedoissa. Malli ei: 
+Parannettuja osoitteita voi käyttää vain käsitellyissä tiedoissa jo olevien arvojen kanssa. Malli ei:
 
 1. Tarkista, onko osoite kelvollinen osoite.
 2. Tarkista, onko mitkään arvoista, kuten postinumerot tai katujen nimet, kelvollisia.
 3. Muuta arvoja, joita se ei tunnista.
 
-Malli käyttää koneoppimiseen perustuvia tekniikoita osoitteiden parantamiseen. Käytössä on korkea luotettavuusraja. Se tarkoittaa sitä, että kun mallin syöttöarvo muuttuu, kuten missä tahansa koneoppimiseen perustuvassa mallissa, 100 prosentin tarkkuutta ei taata.
+Malli käyttää koneoppimiseen perustuvia tekniikoita osoitteiden parantamiseen. Samoin kuin muissa koneoppimiseen perustuvissa malleissa, täydellistä tarkkuutta ei voi taata.
 
 ## <a name="supported-countries-or-regions"></a>Tuetut maat tai alueet
 
-Tuemme tällä hetkellä rikastavia osoitteita näissä maissa tai näillä alueilla: 
+Tuemme tällä hetkellä rikastavia osoitteita näissä maissa tai näillä alueilla:
 
 - Australia
 - Kanada
@@ -74,50 +74,46 @@ Tuemme tällä hetkellä rikastavia osoitteita näissä maissa tai näillä alue
 - Yhdistynyt kuningaskunta
 - Yhdysvallat
 
-Osoitteissa on oltava maa- tai aluearvo. Emme käsittele osoitteita maille tai alueille, joita ei tueta, eikä osoitteille, joille ei ole annettu maata tai aluetta.
-
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 
-1. Siirry kohtaan **Tiedot** > **Täydentäminen**.
+1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
 
 1. Valitse **Rikasta tietojani** **Rikasta osoitteita** -ruudussa.
 
    :::image type="content" source="media/enhanced-addresses-tile.png" alt-text="Näyttökuva Parannetut osoitteet -ruudusta.":::
 
-1. Valitse **Asiakkaan tietojoukko** ja valitse entiteetti, joka sisältää rikastettavat osoitteet. Voit valita *Asiakas*-entiteetin rikastaaksesi kaikkien asiakasprofiiliesi osoitteita, tai valita segmenttientiteetin rikastaaksesi osoitteita vain segmentin sisältämissä asiakasprofiileissa.
+1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
+
+1. Valitse ensin **Asiakkaan tietojoukko** ja sitten rikastettava profiili tai segmentti. *Asiakas*-entiteetti rikastaa kaikkia asiakasprofiileja, kun taas segmentti rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
 1. Valitse, kuinka osoitteet muotoillaan tietojoukossa. Valitse **Yksimääritteinen osoite**, jos tietojen osoitteet käyttävät yhtä kenttää. Valitse **Monimääritteinen osoite**, jos tietojen osoitteet käyttävät useampaa kuin yhtä kenttää.
+
+1. Valitse **Seuraava** ja yhdistä yhtenäisestä asiakasentiteetistä saadut osoitekentät.
+
+    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Parannetun osoitteen kenttien yhdistämissivu.":::
 
    > [!NOTE]
    > Maa ja alue ovat pakollisia sekä yhden määritteen että useiden määritteiden osoitteissa. Osoitteita, jotka eivät sisällä kelvollisia tai tuettuja maan tai alueen arvoja, ei rikasteta.
 
-1.  Yhdistä yhdistetyn asiakasentiteetin osoitekentät.
-
-    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Parannetun osoitteen kenttien yhdistämissivu.":::
-
 1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
-1. Anna rikastuksen ja tulosentiteetin nimi.
+1. Anna **Nimi** rikastusta ja **Tulosentiteettiä** varten.
 
 1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
-Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös antaa järjestelmän suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika riippuu asiakastietojen koosta.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
-
-**Rikastetut asiakkaat -esikatseluruudussa** näkyy näyte rikastetuista tiedoista. Valitse **Näytä lisää** ja valitse **Tiedot**-välilehti, jos haluat tarkastella kunkin rikastetun profiilin yksityiskohtaista näkymää.
+**Rikastettujen asiakkaiden määrä kentän mukaan** antaa mahdollisuuden porautua kuhunkin rikastettuun kenttään.
 
 ### <a name="overview-card"></a>Yleiskatsauskortti
 
-Yleiskatsauskortissa on tietoja rikastamisen kattavuudesta. 
+**Asiakkaiden muutosten yleiskuvaus** -kortissa on tietoja rikastamisen kattavuudesta:
 
-* **Käsitellyt ja muuttuneet osoitteet**: niiden asiakasprofiilien määrä osoitteilla, joiden rikastaminen onnistui.
-
-* **Käsitellyt mutta muuttumattomat osoitteet**: Niiden asiakasprofiilien määrä osoitteilla, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
-
-* **Osoitteet, joita ei ole käsitelty eikä muutettu**: Niiden asiakasprofiilien määrä osoitteilla, joita ei tunnistettu. Kyse on yleensä siitä, että syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
+- **Käsitellyt ja muuttuneet osoitteet**: niiden asiakasprofiilien määrä osoitteilla, joiden rikastaminen onnistui.
+- **Käsitellyt mutta muuttumattomat osoitteet**: Niiden asiakasprofiilien määrä osoitteilla, jotka tunnistettiin mutta joita ei muutettu. Tämä tapahtuu yleensä, kun syötetiedot ovat kelvolliset eikä niitä voi parantaa rikastamalla.
+- **Osoitteet, joita ei ole käsitelty eikä muutettu**: Niiden asiakasprofiilien määrä osoitteilla, joita ei tunnistettu. Kyse on yleensä siitä, että syötetiedot eivät kelpaa tai niiden rikastamista ei tueta.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 

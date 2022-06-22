@@ -1,7 +1,7 @@
 ---
 title: Asiakasprofiilien näyttäminen
 description: Yhtenäisten asiakastietojen yhdistelmänäkymän hakeminen.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755778"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947042"
 ---
 # <a name="customer-profiles"></a>Asiakasprofiilit
 
@@ -55,9 +55,9 @@ Voit suodattaa asiakkaita *Asiakas*-entiteetin kenttien mukaan. Kuten haussa, j�
 
 Avaa **Asiakastiedot-sivu** valitsemalla jokin asiakasruuduista. Tässä näkymässä on valitun asiakkaan yhdistetyt tiedot. Asiakkaan tiedoissa on seuraava sisältö:
 
-**Asiakasprofiilin ruutu**: Tämä ruutu näyttää eri arvot yhtenäisestä *Asiakas*-entiteetistä. Jos kentällä ei ole arvoa valitulle asiakasprofiilille, se ei näy. Ruudun rakenne koostuu osista:
+**Asiakasprofiilin ruutu**: Tämä ruutu näyttää eri arvot yhtenäisestä *Asiakas*-entiteetistä. Jos kentällä ei ole arvoa valitulle asiakasprofiilille, näkyvissä on vain osoitekenttä. Ruudun rakenne koostuu osista:
 
-- Ensimmäisessä osassa näkyy ennalta määritetty kenttäjoukko, jota seuraavat kaikki haku- ja suodatinindeksiin kuuluvat kentät. Kaikki osoitteeseen liittyvät kentät yhdistetään yksittäiseksi riviksi, jos profiili sisältää tällaisia kenttiä.
+- Ensimmäisessä osassa näkyy ennalta määritetty kenttäjoukko, jota seuraavat kaikki haku- ja suodatinindeksiin kuuluvat kentät. Kaikki osoitteeseen liittyvät kentät yhdistetään yksittäiseksi riviksi, joka näkyy myös silloin, jos profiilissa ei ole osoitetietoja.
 - **Tämän asiakkaan yhteyshenkilöt**: Yritystiliympäristöissä asiakkaan kaikki liittyvät yhteyshenkilöt näkyvät toisena osana. Kukin yhteyshenkilö näytetään kenttiensä kanssa. Tyhjät kentät piilotetaan.
 - **Lisäkentät**: Näyttää valitun asiakkaan jäljellä olevat kentät tunnuksia lukuun ottamatta.
 - **Tunnukset**: Luetteloi kaikki tunnukset vastaavaan entiteetin nimen alla. Kentät tunnistetaan tunnuksiksi semantiikan mukaan, koska semantiikka luokittelee ne tunnuksiksi.

@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: c0db75afdde91bbd60fbece77eb2660a38b84860
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 46a67e58f79029246029e2d06789525c2131f100
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833764"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011883"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Dynamics 365 Customer Insights -kokeiluversion usein kysytyt kysymykset
 
@@ -68,7 +68,7 @@ Kun olet kirjautunut maksullisen Customer Insights -esiintymääsi ensimmäistä
 
 ### <a name="what-are-the-trial-limits-and-quotas"></a>Mitkä rajoitukset ja kiintiöt koskevat kokeiluversiota?
 
-- Et voi käyttää omaa Azure Data Lake storage -tiliä tulostetietojesi tallentamiseen Customer Insightsin kokeiluversion aikana. Data Laken tallennustililtä voi kuitenkin saada tietoja.
+- Omaa Azure Data Lake Storage -tiliä ei voi käyttää tulostetietojesi tallentamiseen Customer Insightsin kokeiluversion aikana. Data Lake Storage -tilin tietoja voidaan kuitenkin käsitellä.
 - Voit tallentaa Dataverse-ympäristöön enintään kolme gigatavua tietoja, jotka valmistellaan automaattisesti, kun käynnistät Customer Insights -kokeiluversion.
 
 ## <a name="customer-insights-specific-questions"></a>Customer Insightsia koskevat kysymykset
@@ -83,7 +83,7 @@ Useimmat Customer Insights -ominaisuudet ovat käytettävissä kokeilun aikana.
 
 Seuraavat ominaisuudet **eivät ole käytössä**:
 
-- Et voi luoda uusia ympäristöjä, jotka käyttävät omaa Azure Data Lake -tallennustiliäsi.
+- Omaa Azure Data Lake Storage -tiliä käyttäviä uusia ympäristöjä ei voida luoda.
 - Nykyistä kokeiluympäristöä ei voi poistaa.
 
 ### <a name="how-long-does-the-trial-last"></a>Miten kauan kokeiluversio kestää?

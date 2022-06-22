@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 3848e143bc7cb2f345bc698a274b92148ef00669
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833672"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011516"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
 Customer Insights -vaihtoehdon avulla tulosentiteetit voidaan ottaa käyttöön [Microsoft Dataversessä](/powerapps/maker/data-platform/data-platform-intro). Tämä integrointi mahdollistaa helpon tietojen jakamisen ja mukautetun kehittämisen matalan tason koodin tai koodittoman menetelmän avulla. [Tulosentiteetit](#output-entities) ovat käytettävissä tauluina Dataverse-ympäristössä. Voit käyttää minkä tahansa muun sovelluksen tietoja Dataverse-taulukoiden perusteella. Näiden taulujen avulla voidaan käyttää skenaarioita, kuten automatisoidut työnkulut Power Automatessa tai sovellusten luominen Power Appsissa.
 
-Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja paikallisista tietolähteistä Power Platform -tietovirtojen ja -yhdyskäytävien avulla](data-sources.md#add-data-from-on-premises-data-sources).
+Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja paikallisista tietolähteistä Power Platform -tietovirtojen ja -yhdyskäytävien avulla](connect-power-query.md#add-data-from-on-premises-data-sources).
 
 ## <a name="prerequisites"></a>edellytykset
 
@@ -57,7 +57,7 @@ Tietojen jakamisen ottaminen käyttöön Microsoft Dataversen kanssa, kun ympär
 Käyttäessäsi Dataverseä omalla Azure Data Lake Storage -tililläsi käytössä on kaksi rajoitusta:
 
 - Dataverse-organisaation ja Azure Data Lake Storage -tilin välillä on yksi yhteen -yhdistämismääritys . Kun Dataverse-organisaatio on yhdistetty tallennustiliin, se ei voi muodostaa yhteyttä toiseen tallennustiliin. Tämä rajoitus estää sen, että Dataverse ei täytä useita tallennustilejä.
-- Tietojen jakaminen ei toimi, jos Azuren yksityinen linkki -määritystä tarvitaan Azure Data Lake storage -tilin käyttöön, koska se on palomuurin takana. Dataverse ei tällä hetkellä tue yksityisten päätepisteiden yhteyttä yksityisen linkin kautta.
+- Tietojen jakaminen ei toimi, jos Azuren yksityinen linkki -määritystä tarvitaan Azure Data Lake Storage -tilin käyttämiseen, koska se on palomuurin takana. Dataverse ei tällä hetkellä tue yksityisten päätepisteiden yhteyttä yksityisen linkin kautta.
 
 ### <a name="set-up-powershell"></a>PowerShellin määrittäminen
 

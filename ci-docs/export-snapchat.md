@@ -1,19 +1,19 @@
 ---
 title: Customer Insights -tietojen vieminen Snapchatiin
 description: Tietoja yhteyden määrittämisestä ja viennistä Snapchatiin.
-ms.date: 10/08/2021
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 171b8bf0f4a034c78e872b671602ae7653271da7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d64b482c322af8632e29ec41d6e34c390c5e646c
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646310"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947272"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Segmenttien vieminen Snapchatiin (esiversio)
 
@@ -21,7 +21,8 @@ Vie yhtenäisten asiakasprofiilien segmentit Snapchatiin ja käytä niitä maino
 
 ## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
 
--   Sinulla on [Snapchat-yritystili](https://business.snapchat.com/), [Snapchat-mainostili](https://ads.snapchat.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
+-   Sinulla on [Snapchat-yritystili](https://business.snapchat.com/), [Snapchat-mainostili](https://ads.snapchat.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot. Ainakin organisaatiotilin jäsenyys ja tietyn mainostilin tietojen hallinta. 
+-   Vähintään yksi käyttäjäryhmä Snapchatin käyttäjäryhmän hallinnassa, ja sen tyypin on oltava SAM (Snap Audience Match). 
 -   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
 -   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
@@ -60,7 +61,7 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys Snapchat-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
 
-1. Anna [**Snapchat-kohdeyleisön tunnus**](https://businesshelp.snapchat.com/s/article/custom-audiences).
+1. Anna [**Snapchat-segmentin tai käyttäjäryhmän tunnus**](https://businesshelp.snapchat.com/s/article/custom-audiences). Käyttäjäryhmän tunnus löytyy URL-osoitteesta sen jälkeen, kun käyttäjäryhmä on valittu Snapchatin käyttäjäryhmän hallinnassa. 
 
 1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Snapchatiin pitää viedä segmenttejä.
 

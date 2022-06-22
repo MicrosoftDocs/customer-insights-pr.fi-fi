@@ -1,7 +1,7 @@
 ---
 title: Tietojen käsittely Azure Synapse Analyticsista
 description: Käytä Azure Synapsen tietokantaa tietolähteenä Dynamics 365 Customer Insightsissa.
-ms.date: 02/24/2022
+ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 7c758dccf7ea34dd7b8f80d05eff1ed12030526f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646173"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011423"
 ---
-# <a name="connect-an-azure-synapse-data-source-preview"></a>Yhteyden muodostaminen Azure Synapse -tietolähteeseen (esiversio)
+# <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Yhteyden muodostaminen Azure Synapse Analytics -tietolähteeseen (esiversio)
 
 Azure Synapse Analytics on yritysanalyysipalvelu, joka nopeuttaa tietovarastojen ja suurien tietojärjestelmien tuottamia oivalluksia. Azure Synapse Analytics tuo yhteen parhaat SQL-tekniikat, joita käytetään yrityksen tietojen tallennustilassa, Spark-tekniikat Big Datalle, Data Explorer loki- ja aikasarjojen analysoinnissa, tietojen integrointiputkia ja ETL/ELT-teknologioita sekä syvällistä integrointia muiden Azure-palveluiden, kuten Power BI, Cosmos DB ja AzureML, kanssa.
 
@@ -24,16 +24,14 @@ Lisätietoja on kohdassa [Azure Synapsen yleiskatsaus](/azure/synapse-analytics/
 
 ## <a name="prerequisites"></a>edellytykset
 
-Seuraavien edellytysten on täytyttävä yhteyden määrittämiseksi Dynamics 365 Customer Insightsista Azure Synapseen.
-
 > [!IMPORTANT]
 > Varmista, että määrität kaikki **roolimääritykset** kuvatulla tavalla.  
 
-## <a name="prerequisites-in-customer-insights"></a>Edellytykset Customer Insightsissa
+**Customer Insightsissa**:
 
 * Sinulla on **Järjestelmänvalvoja**-rooli Customer Insightsissa. Lisätietoja [käyttöoikeuksista ja Customer Insightsista](permissions.md#assign-roles-and-permissions).
 
-Azuressa: 
+**Azuressa**:
 
 - Aktiivinen Azure-tilaus.
 
@@ -47,7 +45,7 @@ Azuressa:
 
 - Azure Synapse workspacessa *Customer Insightsin palvelun päänimelle* on määritettävä **Synapse-järjestelmänvalvojan** rooli. Lisätietoja on kohdassa [Käytönvalvonnan määrittäminen Synapse-työtilaa varten](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
-## <a name="connect-to-data-lake-databases-in-azure-synapse-analytics"></a>Yhdistäminen Data Lake -tietokantoihin Azure Synapse Analyticsissa
+## <a name="connect-to-the-data-lake-database-in-azure-synapse-analytics"></a>Yhdistäminen Data Lake -tietokantaan Azure Synapse Analyticsissa
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
@@ -55,14 +53,16 @@ Azuressa:
 
 1. Valitse **Azure Synapse Analytics (esiversio)** -menetelmä.
 
-1. Anna tietolähteelle **nimi** ja luo tietolähde valitsemalla **Seuraava**. 
+   :::image type="content" source="media/data_sources_synapse.png" alt-text="Synapse Analytics -tietojen yhteydenmuodostusikkuna":::
+  
+1. Anna tietolähteelle **nimi** ja valinnainen **kuvaus**
 
 1. Valitse [käytettävissä oleva yhteys](connections.md) Azure Synapse Analyticsiin tai luo uusi yhteys.
 
-1. Valitse valittuun Azure Synapse Analytics -yhteyteen yhdistetystä työtilasta **Lake-tietokanta** ja valitse sitten **Seuraava**.
+1. Valitse valittuun Azure Synapse Analytics -yhteyteen yhdistetystä työtilasta **Tietokanta** ja valitse sitten **Seuraava**.
 
-1. Valitse yhdistetystä tietokannasta entiteetit, jotka käsitellään. 
+1. Valitse yhdistetystä tietokannasta käsiteltävät entiteetit ja valitse **Seuraava**.
 
-1. Voit myös valita tietoentiteetit, joille tietojen profilointi sallitaan. 
+1. Voit myös valita tietoentiteetit, joille tietojen profilointi sallitaan.
 
-1. Valitse **Tallenna**, jos haluat ottaa valintasi käyttöön ja aloittaa tietojen käsittelyn juuri luomastasi tietolähteestä, joka on linkitetty Lake-tietokantatauluihin Azure Synapse Analyticsissa.
+1. Valitse **Tallenna**, jos haluat ottaa valintasi käyttöön ja aloittaa tietojen käsittelyn juuri luomastasi tietolähteestä, joka on linkitetty Lake-tietokantatauluihin Azure Synapse Analyticsissa. Avautuvalla **Tietolähteet**-sivulla on näkyy uusi tietolähde, jonka tilana on **Päivitetään**.

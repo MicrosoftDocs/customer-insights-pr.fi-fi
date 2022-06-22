@@ -1,19 +1,19 @@
 ---
 title: Rikastaminen mukautetun SFTP-tuonnin avulla
 description: Yleisiä tietoja mukautetusta SFTP-tuonnin rikastamisesta.
-ms.date: 04/09/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f52d24cbe793bee7948ad2af31059cd3edf40f94
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645998"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953715"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Asiakasprofiilien rikastaminen mukautetuilla tiedoilla (esiversio)
 
@@ -21,54 +21,13 @@ Mukautetun SFTP (Secure File Transfer Protocol) -tuonnin avulla voidaan tuoda ti
 
 ## <a name="prerequisites"></a>edellytykset
 
-Mukautetun SFTP-tuonnin määritykselle on seuraavat edellytykset:
+- SFTP-isännässä tuotavan tiedoston tiedostonimi ja sijainti (polku) tiedetään.
 
-- Tiedossa on SFTP-isäntään tuotavan tiedoston nimi ja sijainti (polku).
-- *model.json*-tiedosto määrittää tuotavien tietojen [Common Data Model -rakenteen](/common-data-model/). Tiedoston on oltava samassa kansiossa kuin tuotava tiedosto.
-- Järjestelmänvalvoja on jo määrittänyt SFTP-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#admin) käyttöoikeudet. Tarvitset sen SFTP-sijainnin käyttäjän tunnistetiedot, URL-osoitteen ja portin numeron, josta haluat tuoda tietoja.
+- Tuotavien tietojen Common Data Model -rakenteen määrittävä *model.json*-tiedosto on käytettävissä. Tiedoston on oltava samassa kansiossa kuin tuotava tiedosto.
 
+- SFTP-[yhteys](connections.md) on [määritetty](#configure-the-connection-for-sftp-custom-import).
 
-## <a name="configure-the-import"></a>Määritä tuonti
-
-1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
-
-1. Valitse **Mukautettu SFTP-tuonti** -ruudussa **Rikasta tietojani** ja valitse **Aloita**.
-
-   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Mukautettu SFTP-tuonti -ruutu.":::
-
-1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** -kohdan ja valitsemalla sitten avattavasta luettelosta **Mukautettu SFTP-tuonti** -kohdan.
-
-1. Vahvista valittu yhteys valitsemalla **Yhdistä mukautettuun tuontiin**.
-
-1.  Valitse **Seuraava** ja syötä tuotavan datatiedoston **polku** ja **tiedostonimi**.
-
-    :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Näyttökuva tietojen sijainnin syöttämisestä.":::
-
-1. Valitse **Seuraava** ja valitse asiakastietojoukko. Se voi sisältää joko kaikki asiakasprofiilit tai segmentin.
-
-1. Valitse **Seuraava** ja anna rikastuksen ja tulosentiteetin nimi. 
-
-1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
-
-## <a name="configure-the-connection-for-sftp-custom-import"></a>Yhteyden määrittäminen mukautettua SFTP-tuontia varten 
-
-Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse rikastusta määritettäessä **Lisää yhteys** *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse Mukautettu tuonti -ruudussa **Määritä**.
-
-1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
-
-1. Anna sen SFTP-palvelimen sallittu käyttäjänimi, salasana ja isännän URL-osoite, jossa tuotavat tiedot ovat.
-
-1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu.
-
-1. Tarkista määritys valitsemalla **Tarkista**.
-
-1. Kun tarkistus on tehty, yhteys tallennetaan valitsemalla **Tallenna**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Experian-yhteyden määrityssivu.](media/enrichment-SFTP-connection.png "Experian-yhteyden määrityssivu")
-
-
-## <a name="defining-field-mappings"></a>Kenttien yhdistämismääritysten määrittäminen 
+## <a name="file-schema-example"></a>Tiedoston rakenne-esimerkki
 
 SFTP-palvelimeen tuotavan tiedoston sisältävässä hakemistossa on oltava myös *model.json*-tiedosto. Tämä tiedosto määrittää rakenteen, jota käytetään tietojen tuontiin. Rakenteessa on oltava käytössä [Common Data Model](/common-data-model/), jotta voidaan määrittää kentän vastaavuusmääritys. Yksinkertainen esimerkki model.json-tiedostosta:
 
@@ -82,12 +41,12 @@ SFTP-palvelimeen tuotavan tiedoston sisältävässä hakemistossa on oltava myö
             "attributes": [
                 {
                     "name": "CustomerId",
-                    "friendlyName": "Client id",
+                    "friendlyName": "Client ID",
                     "dataType": "string"
                 },
                 {
                     "name": "PreferredCity",
-                    "friendlyName": "Preferred City for vacation",
+                    "friendlyName": "Preferred city for vacation",
                     "dataType": "string"
                 },
                 {
@@ -114,13 +73,56 @@ SFTP-palvelimeen tuotavan tiedoston sisältävässä hakemistossa on oltava myö
 }
 ```
 
+## <a name="configure-the-connection-for-sftp-custom-import"></a>Yhteyden määrittäminen mukautettua SFTP-tuontia varten
+
+Määrittäjällä on oltava Customer Insightsin [järjestelmänvalvoja](permissions.md#admin), jolla on sen SFTP-sijainnin käyttäjän tunnistetiedot, URL-osoite ja portin numero, josta tiedot tuodaan.
+
+1. Valitse rikastusta määritettäessä **Lisää yhteys** tai valitse **Järjestelmänvalvoja** > **Yhteydet** ja valitse siten Mukautettu tuonti -ruudussa **Määritä**.
+
+   :::image type="content" source="media/enrichment-SFTP-connection.png" alt-text="Mukautetun tuontiyhteyden määrittämissivu":::
+
+1. Anna yhteyden nimi.
+
+1. Anna sen SFTP-palvelimen sallittu käyttäjänimi, salasana ja isännän URL-osoite, jossa tuotavat tiedot ovat.
+
+1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+
+1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
+
+### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
+
+Kun tietojen lähetys mukautetun tuonnin avulla otetaan käyttöön Dynamics 365 Customer Insightsissa, tietojen siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeiden mukaisesti, mutta olet vastuussa siitä, että tiedot vastaavat tietosuoja- ja tietoturvavaatimuksia. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
+Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+## <a name="configure-the-import"></a>Määritä tuonti
+
+1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
+
+1. Valitse **Rikasta tiedot** **Mukautetut SFTP-tiedot** -ruudussa.
+
+   :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="Mukautettu SFTP-tuonti -ruutu.":::
+
+1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
+
+1. Valitse yhteys. Jos yhteyttä ei ole, ota yhteys järjestelmänvalvojaan.
+
+1. Valitse ensin **Asiakkaan tietojoukko** ja sitten rikastettava profiili tai segmentti. *Asiakas*-entiteetti rikastaa kaikkia asiakasprofiileja, kun taas segmentti rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+1. Valitse **Seuraava**.
+
+1. Anna tuotavan datatiedoston **polku** ja **tiedostonimi**.
+
+1. Valitse **Seuraava**.
+
+1. Anna **Nimi** rikastamista varten ja **Tulosentiteetin nimi**.
+
+1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
+
+1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
+
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
-Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös antaa järjestelmän suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika määräytyy tuotavien tietojen koon ja SFTP-palvelimen yhteyden mukaan.
-
-Kun rikastamisprosessi valmistuu, voit tarkistaa juuri tuodut mukautetut rikastamistiedot **Omat rikastukset** -kohdassa. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
-
-Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 

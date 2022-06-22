@@ -1,101 +1,92 @@
 ---
 title: Rikastaminen kolmannen osapuolen Experian-rikastamisen avulla
 description: Yleisiä tietoja kolmannen osapuolen Experian-rikastamisesta.
-ms.date: 04/09/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 6f5aa45316b9e0e99c7ba4389353063e9d3ce06c
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 735da18e584b0d9db76b557f4d16dbdf1757f33c
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645978"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8954083"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Rikasta asiakasprofiileja Experian-ratkaisun demografisten tietojen avulla (esiversio)
 
 Experian on maailmanlaajuinen johtaja asiakas- ja yritysluottojen raportointi- ja markkinointipalveluiden tarjoamisessa. Experian-ratkaisun tietojen rikastamisen palvelujen avulla voit parantaa tietämystä asiakkaista rikastamalla asiakasprofiileja käyttämällä demografisia tietoja, kuten talouden kokoa ja tuloja.
 
-## <a name="prerequisites"></a>Edellytykset
-
-Jotta voit määrittää Experian-ratkaisun, seuraavien edellytysten on täytyttävä:
-
-- Tarvitset aktiivisen Experian-tilauksen. Jos haluat tehdä tilauksen, [ota yhteyttä suoraan Experian-ratkaisuun](https://www.experian.com/marketing-services/contact). [Lisätietoja Experian-ratkaisun tietojen rikastamisesta](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-
-- Järjestelmänvalvoja on jo määrittänyt Experian-yhteyden *tai* sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet. Experian-ratkaisun luomaa SSH:ta käyttävää Secure Transport (ST) -tiliä varten tarvitaan käyttäjätunnus, osapuolen tunnus ja mallinumero.
-
 ## <a name="supported-countriesregions"></a>Tuetut maat ja alueet
 
 Tällä hetkellä tuemme asiakasprofiilien rikastamista vain Yhdysvalloissa.
+
+## <a name="prerequisites"></a>edellytykset
+
+- Aktiivinen Experian-tilaus. Jos haluat tehdä tilauksen, [ota yhteyttä suoraan Experian-ratkaisuun](https://www.experian.com/marketing-services/contact). [Lisätietoja Experian-ratkaisun tietojen rikastamisesta](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
+
+- Järjestelmänvalvoja on [määrittänyt](#configure-the-connection-for-experian) Experian-[yhteyden](connections.md).
+
+- Experianin luoman SSH-valmiin ST (suojattu siirto) -tilin Experian-käyttäjätunnus, -osapuolitunnus ja -mallinumero.
+
+## <a name="configure-the-connection-for-experian"></a>Yhteyden määrittäminen Experianiin
+
+Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permissions.md#admin), jolla on Experianin käyttäjätunnus, osapuolitunnus ja mallinumero.
+
+1. Valitse **Lisää yhteys**, kun rikastamista määritetään, tai valitse ensin **Järjestelmänvalvoja** > **Yhteydet** ja valitse **Määritä** Experian-ruudussa.
+
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Experian-yhteyden määritysruutu.":::
+
+1. Anna yhteyden nimi sekä Experianin ST-tilin käyttäjätunnus, osapuolitunnus ja mallinumero.
+
+1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+
+1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
+
+### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
+
+Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Experianiin, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää nämä tiedot pyyntösi mukaisesti, mutta olet vastuussa siitä, että Experian täyttää kaikki liiketoimintaasi koskevat tietosuoja- tai tietoturvavelvoitteet. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732). Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 
 1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
 
-1. Valitse **Rikasta omat tiedot** Experian-ruudussa.
+1. Valitse Experian-ruudun **Demografiatiedot**-kohdassa **Rikasta tiedot**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian-ruutu.](media/experian-tile.png "Experian tile")
-   > 
+   :::image type="content" source="media/experian-tile.png" alt-text="Experian-ruutu rikastamisen yleiskatsaussivulla":::
 
-1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä. Jos olet järjestelmänvalvoja, voit luoda yhteyden valitsemalla **Lisää yhteys** ja valitsemalla sitten avattavasta luettelosta Experian-kohdan. 
+1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
 
-1. Valitse **Muodosta yhteys Experianiin**, jos haluat vahvistaa yhteyden valinnan.
+1. Valitse yhteys. Jos yhteyttä ei ole, ota yhteys järjestelmänvalvojaan.
 
-1.  Valitse **Seuraava** ja valitse sitten **Asiakkaan tietojoukko**, jos haluat rikastaa Experianin demografisia tietoja. Voit valita **asiakasentiteetin**, joka rikastaa kaikkia asiakasprofiileja, tai segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+1. Valitse **Seuraava**.
+
+1. Valitse ensin **Asiakkaan tietojoukko** ja sitten Experianin demografiatietojen avulla rikastettava profiili tai segmentti. *Asiakas*-entiteetti rikastaa kaikkia asiakasprofiileja, kun taas segmentti rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 
     :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Näyttökuva asiakastietojoukon valitsemisesta.":::
 
-1. Valitse **Seuraava** ja määritä, mitkä kenttätyyppejä yhdistetyistä profiileista käytetään etsittäessä vastaavia demografisia tietoja Experianista. Vähintään yksi kenttä seuraavista vaaditaan: **Nimi ja osoite**, **Puhelin** tai **Sähköposti**. Jotta vastineen tarkkuus olisi suurempi, voit lisätä enintään kaksi muuta kenttää. Valinta vaikuttaa seuraavassa vaiheessa käytettävissä oleviin yhdistämiskenttiin.
+1. Määritä, mitä yhdistettyjen profiilien kenttätyyppejä käytetään vastaavien Experianin demografiatietojen etsimiseen. Vähintään yksi kenttä seuraavista vaaditaan: **Nimi ja osoite**, **Puhelin** tai **Sähköposti**. Vastaavuutta voi parantaa lisäämällä muita kenttiä. Valitse **Seuraava**.
 
-    > [!TIP]
-    > Lisää Experianiin lähetetyt avaimen tunnisteen määritteet, jotka todennäköisesti tuottavat parhaan tuloksen.
+1. Yhdistä kentät Experianin demografiatietoihin.
 
-1. Aloita kentän vastaavuusmääritys valitsemalla **Seuraava**.
+1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
 
-1. Määritä, mitkä kenttätyyppejä yhdistetyistä profiileista käytetään etsittäessä vastaavia demografisia tietoja Experianista. Pakolliset kentät on merkitty.
-
-1. Anna rikastuksen ja tulosentiteetin nimi.
+1. Anna **Nimi** rikastamista varten ja **Tulosentiteetin nimi**.
 
 1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
 
-## <a name="configure-the-connection-for-experian"></a>Yhteyden määrittäminen Experianiin 
-
-Yhteyksien määrittämiseen tarvitaan järjestelmänvalvojan oikeudet. Valitse **Lisää yhteys**, kun rikastamista määritetään, *tai* siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse **Määritä** Experian-ruudussa.
-
-1. Valitse **Aloita**.
-
-1. Kirjoita yhteyden nimi **Näyttönimi**-ruutuun.
-
-1. Anna sallittu käyttäjätunnus, osapuolen tunnus ja mallinumero Experianin Secure Transport -tiliä varten.
-
-1. Tarkista **Tietojen yksityisyys ja vaatimustenmukaisuus** -kohta ja hyväksy se valitsemalla **Hyväksyn**.
-
-1. Tarkista määritys valitsemalla **Tarkista**.
-
-1. Kun tarkistus on suoritettu, valitse **Tallenna**.
-   
-   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Experian-yhteyden määritysruutu.":::
+1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
-Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös antaa järjestelmän suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika riippuu asiakastietojen koosta ja Experianin tilille määrittämistä rikastusprosesseista.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Kun rikastamisprosessi on valmis, voit tarkastella juuri rikastettujen asiakasprofiilien tietoja valitsemalla **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
-
-Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+**Rikastettujen asiakkaiden määrä kentän mukaan** antaa mahdollisuuden porautua kuhunkin rikastettuun kenttään.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Experianiin, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää nämä tiedot pyyntösi mukaisesti, mutta olet vastuussa siitä, että Experian täyttää kaikki liiketoimintaasi koskevat tietosuoja- tai tietoturvavelvoitteet. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

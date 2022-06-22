@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 36ad957f59b23df6ee83d9d90898ef03ddfd320a
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833381"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011837"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Yhteyden muodostaminen Azure Data Lake Storage -tiliin Azure-palvelun päätunnuksen avulla
 
@@ -51,7 +51,13 @@ Ennen kuin luot uuden palvelun päänimen Customer Insightsille, tarkista, onko 
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Tallennustilin käyttöön tarvittavien oikeuksien myöntäminen palveluobjektille
 
-Siirry Azure-portaaliin, jos haluat myöntää käyttöoikeudet palvelun pääasiakastilille, jota haluat käyttää Customer Insightsissa.
+Siirry Azure-portaaliin, jos haluat myöntää käyttöoikeudet palvelun pääasiakastilille, jota haluat käyttää Customer Insightsissa. Tallennustilatilille tai säilölle on määritettävä jokin seuraavista rooleista:
+
+|Tunnistetiedot|Edellytykset|
+|----------|------------|
+|Kirjautuneena oleva käyttäjä|**Rooli**: tallennuksen blob-tietojen lukija, tallennuksen blob-objektin osallistuja tai tallennuksen blob-objektin omistaja.<br>**Taso**: oikeudet voidaan myöntää tallennustilille tai säilölle.</br>|
+|Customer Insightsin palvelun päänimi –<br>Azure Data Lake Storagen käyttäminen tietolähteenä</br>|Asetus 1<ul><li>**Rooli**: tallennuksen blob-tietojen lukija, tallennuksen blob-tietojen osallistuja tai tallennuksen blob-tietojen omistaja.</li><li>**Taso**: oikeudet on myönnettävä tallennustilille.</li></ul>Vaihtoehto 2 *(palvelun päänimen käyttöoikeutta ei jaeta tallennustilille)*<ul><li>**Rooli 1**: tallennuksen blob-tietojen lukija, tallennuksen blob-tietojen osallistuja tai tallennuksen blob-tietojen omistaja.</li><li>**Taso**: oikeudet on myönnettävä säilölle.</li><li>**Rooli 2**: tallennuksen blob-tietojen delegoija.</li><li>**Taso**: oikeudet on myönnettävä tallennustilille.</li></ul>|
+|Customer Insightsin palvelun päänimi – <br>Azure Data Lake Storagen käyttäminen tuloksena tai kohteena</br>|Asetus 1<ul><li>**Rooli**: tallennuksen blob-objektin osallistuja tai tallennuksen blob-objektin omistaja.</li><li>**Taso**: oikeudet on myönnettävä tallennustilille.</li></ul>Vaihtoehto 2 *(palvelun päänimen käyttöoikeutta ei jaeta tallennustilille)*<ul><li>**Rooli**: tallennuksen blob-objektin osallistuja tai tallennuksen blob-objektin omistaja.</li><li>**Taso**: oikeudet on myönnettävä säilölle.</li><li>**Rooli 2**: tallennuksen blob-objektin delegoija.</li><li>**Taso**: oikeudet on myönnettävä tallennustilille.</li></ul>|
 
 1. Siirry [Azure-hallintaportaaliin](https://portal.azure.com) ja kirjaudu organisaatioon.
 
@@ -62,7 +68,7 @@ Siirry Azure-portaaliin, jos haluat myöntää käyttöoikeudet palvelun pääas
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Näyttökuva, jossa näkyy Azure-portaali, kun lisätään roolimääritystä.":::
 
 1. Määritä **Lisää roolien määritys** -ruudussa seuraavat ominaisuudet:
-   - Rooli: **Tallennustilan BLOB-tietojen osallistuja**
+   - Rooli: tallennuksen blob-tietojen lukija, tallennuksen blob-objektin osallistuja tai tallennuksen blob-objektin omistaja edellä mainittujen tunnistetietojen perusteella.
    - Käyttöoikeuden delegointi: **Käyttäjä, ryhmä tai palveluobjekti**
    - Valitse jäsenet: **Dynamics 365 AI for Customer Insights** (tässä ohjeessa aiemmin katsomasi [palvelun pääasiakas](#create-a-new-service-principal))
 

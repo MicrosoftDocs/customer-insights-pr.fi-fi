@@ -1,19 +1,19 @@
 ---
 title: Customer Insights -tietojen vieminen Azure Blob Storage -säilöön
 description: Tietoja yhteyden määrittämisestä ja viennistä Blob-säilöön.
-ms.date: 10/06/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
-author: pkieffer
-ms.author: philk
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 3d573a6c83b7f0b0c33e656eb383e20a96856b0b
-ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
+ms.openlocfilehash: 623926bf520b19ee4156b7a05e953241cd819e9e
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/15/2022
-ms.locfileid: "8757382"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947134"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Segmenttiluettelon ja muiden tietojen vieminen Azure Blob Storage -säilöön (esiversio)
 
@@ -58,16 +58,19 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.     
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.
 
-Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand).
 
 Viedyt tiedot tallennetaan määritettyyn Blob-tallennussäilöön. Säilöön luodaan automaattisesti seuraavat kansiopolut:
 
 - Lähde-entiteetit ja järjestelmän luomat entiteetit:   
   `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`  
   - Esimerkki: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`
- 
+  
+  > [!TIP]
+  > Suuren määrän tietoja sisältävien entiteettien vienti voi aiheuttaa sen, että samassa kansiossa on useita CSV-tiedostoja kunkin viennin osalta. Viennit jaetaan suorituskykysyistä, sillä näin kunkin viennin suorittamiseen kuluva aika voidaan pitää mahdollisimman lyhyenä.
+
 - Vietyjen entiteettien model.json-arvo on tasolla %ExportDestinationName%.  
   - Esimerkki: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`
 

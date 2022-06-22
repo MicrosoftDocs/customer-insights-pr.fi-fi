@@ -1,19 +1,19 @@
 ---
 title: Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan | Microsoft Docs
 description: Dynamics 365 Customer Insightsin rekisteröityjen pyyntöihin vastaaminen.
-ms.date: 08/11/2021
+ms.date: 05/23/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808542"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947364"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>Rekisteröityjen oikeuksien (DSR) pyynnöt GDPR:n mukaan
 
@@ -77,11 +77,5 @@ Vuokraajan järjestelmänvalvoja voi viedä tiedot seuraavasti:
 1. Lähetä osoitteeseen D365CI@microsoft.com sähköposti, jossa määritetään käyttäjän pyynnössä oleva sähköpostiosoite. Customer Insights -ryhmä lähettää sähköpostin rekisteröidyn vuokraajan järjestelmänvalvojan sähköpostiosoitteeseen ja pyytää vahvistamaan tietojen viennin.
 2. Kuittaa pyydetyn käyttäjän tietojen vientivahvistus.
 3. Saat viedyt tiedot vuokraajan järjestelmänvalvojan sähköpostiosoitteen kautta.
-
-## <a name="consent-management-preview"></a>Hyväksynnän hallinta (esiversio)
-
-Hyväksynnän hallinnan ominaisuus ei kerää käyttäjätietoja suoraan. Se tuo ja käsittelee vain muiden sovellusten käyttäjien toimittamat tiedot.
-
-Jos haluat poistaa tiettyjä käyttäjiä koskevat hyväksyntätiedot, poista ne tietolähteistä, joiden tiedot on siirretty hyväksynnän hallintaominaisuuteen. Kun tietolähde on päivitetty, myös poistetut tiedot poistetaan hyväksyntäkeskuksesta. Hyväksyntäentiteettiä käyttävät sovellukset poistavat myös tiedot, jotka on poistettu lähteestä [päivityksen](system.md#refresh-processes) jälkeen. Tietolähteet kannattaa päivittää nopeasti sen jälkeen, kun on vastattu rekisteröidyn henkilön pyyntöön, jotta käyttäjän tiedot voidaan poistaa muista prosesseista ja sovelluksista.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

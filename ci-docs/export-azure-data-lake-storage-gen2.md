@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 8b14992f8312d333d8a12501e8a28496c8434779
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646123"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947226"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Segmenttiluettelon ja muiden tietojen vieminen Azure Data Lake Storage Gen2:een (esiversio)
 
@@ -21,11 +21,9 @@ Tallenna Customer Insights -tietosi Data Lake Storage Gen2 -tilille tai käytä 
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-1. Azure Data Lake Storage Gen2:ta varten voit valita joko [Standard-suorituskyvyn tai Premium-suorituskykytason](/azure/storage/blobs/create-data-lake-storage-account), kun luot tallennustiliä data lake -tallennustilaan. Jos valitset Premium-suorituskykytason, valitse tilityypiksi premium block blobs. 
+1. Azure Data Lake Storage Gen2:ta varten voit valita joko [Standard-suorituskyvyn tai Premium-suorituskykytason](/azure/storage/blobs/create-data-lake-storage-account), kun luot tallennustiliä data lake -tallennustilaan. Jos valitset Premium-suorituskykytason, valitse tilityypiksi premium block blobs.
 
-
-## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Määritä yhteys Azure Data Lake Storage Gen2:een 
-
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Määritä yhteys Azure Data Lake Storage Gen2:een
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
@@ -39,7 +37,7 @@ Tallenna Customer Insights -tietosi Data Lake Storage Gen2 -tilille tai käytä 
     - Lisätietoja tallennustilin luomisesta Azure Data Lake Storage Gen2:ssa on kohdassa [Tallennustilin luominen](/azure/storage/blobs/create-data-lake-storage-account). 
     - Lisätietoja Azure Data Lake Gen 2 -tallennustilatilin nimestä ja tiliavaimesta on ohjeaiheessa [Azure-portaalin tallennustilatilin asetusten hallinta](/azure/storage/common/storage-account-manage).
 
-1. Viimeistele yhteys valitsemalla **Tallenna**. 
+1. Viimeistele yhteys valitsemalla **Tallenna**.
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
@@ -57,8 +55,12 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand).
 
-Viedyt tiedot tallennetaan määritettyyn Azure Data Lake Gen 2 -tallennussäilöön. 
+Viedyt tiedot tallennetaan määritettyyn Azure Data Lake Gen 2 -tallennussäilöön.
+
+> [!TIP]
+> Suuren määrän tietoja sisältävien entiteettien vienti voi aiheuttaa sen, että samassa kansiossa on useita CSV-tiedostoja kunkin viennin osalta. Viennit jaetaan suorituskykysyistä, sillä näin kunkin viennin suorittamiseen kuluva aika voidaan pitää mahdollisimman lyhyenä.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 68c26eb0ad0da787a9f594b4aebe679588b0d6bf
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 1c925110f40319df77940d1c32f24a99504d6ec6
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833535"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011975"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin käytön aloittaminen
 
@@ -39,7 +39,7 @@ Kun kirjaudut Customer Insights -tiliin ensimmäisen kerran, määritä asetukse
 
 Yhtenäiset profiilit ovat perusteita tietojen tarkastelemiseen ja käyttöön. Tuo tietoja eri lähteistä ja suorita tietojen yhdistäminen luodaksesi yhtenäiset profiilit. Määritä suhteet käsiteltyjen entiteettien välillä ja lisää tiedot profiileihin rikastusominaisuuksien avulla.
 
-1. Voit käyttää tietoja luomalla tietolähteitä useista vaihtoehdoista. Valitse [Power Query -yhdistimet](connect-power-query.md), [Common Data Model -kansio](connect-common-data-model.md) tai [Microsoft Dataverse](connect-dataverse-managed-lake.md).
+1. Voit käyttää tietoja luomalla tietolähteitä useista vaihtoehdoista. Valitse joko [Azure Data Lake Storage, mukaan lukien Common Data Model](connect-common-data-model.md), [Azure Synapse Analytics](connect-synapse.md), [Microsoft Dataverse](connect-dataverse-managed-lake.md) tai [Power Query -yhdistimet](connect-power-query.md).
 
 1. Suorita tietojen [yhdistämisprosessi](data-unification.md) etsimällä [lähdekentät](map-entities.md), poistamalla [kaksoiskappaleet](remove-duplicates.md), [yhdistämällä ehdot](match-entities.md) ja [yhdistämällä kentät](merge-entities.md).
 

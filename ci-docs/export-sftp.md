@@ -1,19 +1,19 @@
 ---
 title: Customer Insights -tietojen vieminen SFTP-palvelimiin (sisältää videon)
 description: Tietoja yhteyden määrittämisestä ja viennistä SFTP-sijaintiin.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646113"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947180"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Segmenttien ja muiden tietojen vieminen SFTP-sijaintiin (esiversio)
 
@@ -28,8 +28,8 @@ Käytä asiakastietojasi kolmansien osapuolten sovelluksissa viemällä ne Secur
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Palomuurin takana olevia SFTP-kohteita ei tueta tällä hetkellä. 
-- Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia. 
-- Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia. 
+- Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia.
+- Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia.
 
 ## <a name="set-up-connection-to-sftp"></a>Määritä SFTP-yhteydet
 
@@ -64,13 +64,17 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 1. Valitse vietävät entiteetit, esimerkiksi segmentit.
 
    > [!NOTE]
-   > Kukin valittu kohde jaetaan enintään viiteen tulostiedostoon vietäessä. 
+   > Kukin valittu kohde jaetaan enintään viiteen tulostiedostoon vietäessä.
 
 1. Valitse **Tallenna**.
 
 Viennin tallentaminen ei suorita vientiä heti.
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
+Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa.
+Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> Suuren määrän tietoja sisältävien entiteettien vienti voi aiheuttaa sen, että samassa kansiossa on useita CSV-tiedostoja kunkin viennin osalta. Viennit jaetaan suorituskykysyistä, sillä näin kunkin viennin suorittamiseen kuluva aika voidaan pitää mahdollisimman lyhyenä.
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 

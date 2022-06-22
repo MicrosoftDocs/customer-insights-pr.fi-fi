@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: b34b83d7a73dbdf21984f626174524188f0f1dc1
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800277"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011469"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Rikastus tietolähteitä varten (esiversio)
 
@@ -29,9 +29,11 @@ Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jotta voit l
 
 1. Valitse rikastettavan tietolähteen vieressä olevat pystysuuntaiset kolme pistettä (&vellip;) ja valitse **Rikasta**.
 
-   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Tietolähteiden rikastussivu":::
+   :::image type="content" source="media/data_sources_enrich.png" alt-text="Tietolähdesivu, jossa Rikasta korostettuna":::
 
    **Etsi**-välilehti näyttää [tuetut tietolähteiden rikastusasetukset](#supported-data-source-enrichments).
+
+   :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="Tietolähteiden rikastussivu":::
 
 1. Määritä tietolähteen rikastus valitsemalla **Rikasta tiedot**. Tulosentiteetin nimi täytetään automaattisesti.
 

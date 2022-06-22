@@ -1,19 +1,19 @@
 ---
-title: Uudet ja tulevat ominaisuudet
+title: Uudet ja päivitetyt toiminnot
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 05/03/2022
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: d06f8be114f558d7adadf2913107c5fd69686875
+ms.sourcegitcommit: 9dd767051014e06d8d9f2f616e248573f24df4cb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833626"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8843343"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -24,6 +24,37 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+## <a name="may-2022-updates"></a>Toukokuun 2022 päivityksey
+
+Toukokuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="updated-data-unification-experience"></a>Päivitetty tietojen yhdistämiskokemus
+
+ Tietojen yhdistämisen avulla voit yhdistää aiemmin erilliset tietolähteet yhdeksi päätietojoukoksi, joka tarjoaa yhtenäisen näkymän kyseisistä tiedoista. Tiedot voidaan yhtenäistää yhdessä entiteetissä tai useassa entiteetissä. Ensin [valitaan entiteetit ja lähdekentät](map-entities.md), [poistetaan tietueiden kaksoiskappaleet](remove-duplicates.md), määritetään [vastaavuusehtojen](match-entities.md) säännöt sekä määritetään, mitkä [kentät sisällytetään yhdistettyihin asiakasprofiileihin](merge-entities.md).
+
+Lisätietoja on kohdassa [Tietojen yhdistämisen yleiskatsaus](data-unification.md).
+
+### <a name="refreshed-home-page-in-customer-insights"></a>Customer Insightsin päivitetty aloitussivu
+
+**Aloitussivu** opastaa tärkeiden ominaisuuksien määritysprosessissa sekä antaa yleiskuvan segmenttien, toimenpiteiden ja täydennystietojen määrityksestä. Kokemus on päivitetty sisältämään entistä enemmän olennaisia tietoja kerralla nähtäväksi.
+
+Lisätietoja on kohdassa [Customer Insightsiin tutustuminen](home.md).
+
+### <a name="track-usage-of-a-segment"></a>Segmentin käytön seuranta
+
+[Segmenttien käyttöä voi nyt seurata](segments.md#track-usage-of-a-segment) sovelluksissa, jotka perustuvat Customer Insightsiin yhdistettyyn Dataverse-organisaatioon. [Dynamics 365 Marketingin asiakassiirtymissä käytettävien Customer Insights -segmenttien osalta](/dynamics365/marketing/real-time-marketing-ci-profile) järjestelmä ilmoittaa sinulle segmentin käytöstä.
+
+### <a name="export-to-criteo"></a>Vienti Criteoon
+
+Criteo on verkkoympäristön, jonka avulla käyttäjät voivat hallita digitaalista markkinointia. Yhdistetyistä asiakasprofiileista voidaan nyt viedä Criteon avulla segmenttejä, joilla voidaan luoda kampanjoita, tehdä sähköpostimarkkinointia ja käyttää tiettyjä asiakasryhmiä.
+
+Lisätietoja on kohdassa [Segmenttien vienti Criteoon (esiversio)](export-criteo.md).
+
+### <a name="refined-documentation-structure-for-environment-creation"></a>Ympäristön luonnin tarkennettu ohjerakenne
+
+Ympäristöjen luontiin ja hallintaan Customer Insightsissa liittyviä ohjeasiakirjoja on korjattu. Artikkelit ryhmitellään nyt sisällysluettelossa ympäristösolmun mukaan. Rakenteeltaan uudistetuissa artikkeleissa on enemmän erilaisia ympäristöjen määrittämistä koskevia ohjeita. Lisäksi artikkelien rakennetta on selkeytetty. Voit antaa meille palautetta ohjeartikkelien loppupuolella olevien ohjausobjektien avulla.
+
+Lisätietoja on kohdassa [Toimintaohje: Uuden ympäristön luominen](create-environment.md).
 
 ## <a name="april-2022-updates"></a>Huhtikuun 2022 päivitykset
 

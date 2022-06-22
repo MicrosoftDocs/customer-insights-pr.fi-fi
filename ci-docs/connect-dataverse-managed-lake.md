@@ -7,20 +7,20 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: c470956b0453ac2558ed85acdeebba120a0ca55d
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800166"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011699"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
 
-Tässä artikkelissa on tietoja siitä, miten Dataverse-käyttäjät voivat muodostaa nopeasti yhteyden Microsoft Dataversen hallitun data laken analyysientiteetteihin. 
+Microsoft Dataverse -käyttäjät voivat muodostaa nopeasti yhteyden Microsoft Dataversen hallitun Data Lake -tallennustilan analyysientiteetteihin.
 
 > [!NOTE]
 > Sinun täytyy olla Dataverse-organisaation järjestelmänvalvoja, jotta voit jatkaa ja tarkastella hallitussa data lakessa käytettävissä olevien entiteettien luetteloa.
@@ -32,40 +32,34 @@ Tässä artikkelissa on tietoja siitä, miten Dataverse-käyttäjät voivat muod
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Yhteyden muodostaminen Dataversen hallittuun tallennustilaan
 
-1. Valitse Customer Insightsissa **Tiedot** > **Tietolähteet**.
+1. Valitse **Tiedot** > **Tietolähteet**.
 
-2. Valitse **Lisää tietolähde**.
+1. Valitse **Lisää tietolähde**.
 
-3. Valitse **Microsoft Dataverse** ja valitse sitten **Seuraava**.
+1. Valitse **Microsoft Dataverse**.
 
-4. Anna tietolähteen **nimi** ja valitse **Seuraava**. 
+1. Anna tietolähteelle **nimi** ja valinnainen **kuvaus**
 
-5. Anna Dataverse-organisaation **palvelinosoite** ja valitse **Kirjaudu sisään**.
+1. Anna Dataverse-organisaation **palvelinosoite** ja valitse **Kirjaudu sisään**.
 
-   :::image type="content" source="media/ingest-dataverse-server-address.png" alt-text="Näyttö tietojenkäsittelyvaiheessa, jossa käyttäjä voi syöttää Dataverse-ympäristön URL-osoitteen.":::
-
-6. Valitse käytettävissä olevasta luettelosta taulukot, joiden entiteettejä haluat käyttää Customer Insightsia varten.    
+1. Valitse käytettävissä olevasta luettelosta taulukot, joiden entiteettejä haluat käsitellä Customer Insightsiin.
 
    > [!NOTE]
    > Jos jotkin taulukot on jo valittu, muut Dynamics 365 -sovellukset (kuten Dynamics 365 Sales Insights tai Customer Service Insights) saattavat käyttää niitä. Tätä valintaa ei voi muuttaa. Nämä taulukot ovat käytettävissä entiteetteinä, kun tietolähde on luotu.
 
-   :::image type="content" source="media/select-dataverse-entities.png" alt-text="Valintaikkuna, jossa näkyy luettelo Dataverse-ympäristön entiteeteistä.":::
+    :::image type="content" source="media/select-dataverse-entities.png" alt-text="Valintaikkuna, jossa näkyy luettelo Dataverse-ympäristön entiteeteistä.":::
 
-7. Tallenna valinta, jos haluat aloittaa valittujen taulukoiden synkronoinnin Dataversesta. Löydät juuri lisätyn yhteyden **Tietolähteet**-sivulta. Se laitetaan jonoon päivitystä varten ja se näyttää entiteetin määränä 0, kunnes kaikki valitut taulukot on synkronoitu.
+1. Tallenna valinta, jos haluat aloittaa valittujen taulukoiden synkronoinnin Dataversesta. Löydät juuri lisätyn yhteyden **Tietolähteet**-sivulta. Se laitetaan jonoon päivitystä varten ja se näyttää entiteetin määränä 0, kunnes kaikki valitut taulukot on synkronoitu.
 
 Vain yksi ympäristön tietolähde voi käyttää samanaikaisesti samaa Dataversen hallittua Data Lake -tallennustilaa.
 
 ## <a name="edit-a-dataverse-managed-lake-data-source"></a>Dataversen hallitun tallennustilan tietolähteen muokkaaminen
 
-Entiteetin valintaa voi muokata vasta tietolähteen luomisen jälkeen. Esimerkiksi silloin, jos lisäentiteettejä lisättiin Dataverseen ja haluat tuoda myös ne.    
+Entiteetin valintaa voi muokata vasta tietolähteen luomisen jälkeen. Esimerkiksi silloin, jos lisäentiteettejä lisättiin Dataverseen ja haluat tuoda myös ne.
 Jos haluat muodostaa yhteyden toiseen Dataverse-tietojärveen, [luo uusi tietolähde](#connect-to-a-dataverse-managed-lake).
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
-2. Valitse päivitettävän tietolähteen vieressä vertikaalinen kolme pistettä (&vellip;).
+1. Valitse päivitettävän tietolähteen vieressä **Muokkaa**.
 
-3. Valitse luettelossa **Muokkaa**-vaihtoehto.
-
-4. Valitse lisäentiteetit käytettävissä olevien entiteettien luettelosta ja valitse **Tallenna**.
-
-[!INCLUDE [footer-include](includes/footer-banner.md)]
+1. Valitse lisäentiteetit käytettävissä olevien entiteettien luettelosta ja valitse **Tallenna**.

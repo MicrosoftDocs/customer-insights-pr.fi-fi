@@ -1,7 +1,7 @@
 ---
 title: Yhdistysasetusten päivittäminen
 description: Voit päivittää sääntöjen kaksoiskappaleita, vastaavuussääntöjä tai yhtenäisiä kenttiä yhdistämisasetuksissa.
-ms.date: 05/04/2022
+ms.date: 06/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: be399da9b98d8803d7d1a90f44a40e0d638a8d47
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 590a2996cf8b2b1c6def59b78583169ec1910b59
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755586"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844036"
 ---
 # <a name="update-the-unification-settings"></a>Yhdistysasetusten päivittäminen
 
@@ -43,8 +43,9 @@ Voit tarkastella tai muuttaa yhtenäisten profiilien yhdistämisasetuksia toimim
 
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Näyttökuva Tietojen yhdistäminen -sivusta, jossa Yhdistä-vaihtoehdot on korostettu.":::
 
-   - Lisätietoja unified customer profile -profiilin päivittämisestä (riippuvuuksien kanssa tai ilman niitä) on ohjeaiheessa [Asiakasprofiilin päivitysten suoritus](#run-updates-to-the-unified-customer-profile).
-   - Tietoja vastaavuusehtojen laadun arvioinnista päivittämättä yhdistettyjä profiilia on ohjeaiheessa [Vastaavien ehtojen suoritus](#run-matching-conditions). **Suorita vain vastaavuusehdot** -vaihtoehto ei näy yksittäiselle entiteetille.
+   - [Vastaavuuksien haun ehtojen suorittaminen](#run-matching-conditions) antaa mahdollisuuden arvioida nopeasti vastaavuuksien haun ehtojen laatua (kaksoiskappaleiden poiston ja vastaavuussääntöjen) päivittämättä yhdistettyjä profiilia. **Suorita vain vastaavuusehdot** -vaihtoehto ei näy yksittäiselle entiteetille.
+   - [Asiakasprofiilien yhdistäminen](#run-updates-to-the-unified-customer-profile) suorittamaan vastaavuuksien haun ehdot ja päivittämään Unified customer profile -entiteetti vaikuttamatta riippuvuuksiin (kuten rikastuksiin, segmentteihin tai mittareihin). Riippuvaisia prosesseja ei suoriteta, mutta ne päivittyvät [päivitysaikataulun mukaisesti](system.md#schedule-tab).
+   - [Asiakasprofiilien ja riippuvuuksien yhdistäminen](#run-updates-to-the-unified-customer-profile) suorittamaan vastaavuuksien haun ehdot ja päivittämään Unified customer profile -entiteetti ja kaikki riippuvuudet (kuten rikastukset, segmentit tai mittarit). Kaikki prosessit käynnistyvät uudelleen automaattisesti.
 
 ## <a name="edit-source-fields"></a>Muokkaa lähdekenttiä
 
@@ -135,11 +136,13 @@ Voit määrittää ja hienosäätää useimpia vastineparametreja. Et voi lisät
 
 ## <a name="run-matching-conditions"></a>Suorita vastaavuusehdot
 
+Vastaavuuksien haun ehtojen suorittaminen suorittaa vain kaksoiskappaleiden poiston ja vastaavuussäännöt sekä päivittää *Deduplication_*- ja *ConflationMatchPair*-entiteetit.
+
 1. Valitse **Tiedot** > **Yhdistä** -sivulta **Suorita vain vastaavuussäännöt**.
 
-   **Tietueiden kaksoiskappaleet** - ja **Vastaavat ehdot** -ruuduissa näkyy **Jonossa** tai **Päivitä**.
+   **Tietueiden kaksoiskappaleet**- ja **Vastaavuuksien haun ehdot** -ruuduissa tilana on **Jonossa** tai **Päivitä**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
 1. Kun yhdistämisprosessi on valmis, valitse **Muokkaa** **Vastaavuusehdot**-ruudussa.
 
@@ -153,10 +156,12 @@ Voit määrittää ja hienosäätää useimpia vastineparametreja. Et voi lisät
 
 1. Valitse **Tiedot** > **Yhdistä** -sivulta:
 
-   - **Yhdistä asiakasprofiilit**: päivittää unified customer profile -profiilientiteetin vaikuttamatta riippuvuuksiin (kuten rikastuksiin, segmentteihin tai toimenpiteisiin). Riippuvaisia prosesseja ei suoriteta, mutta ne päivittyvät [päivitysaikataulun mukaisesti](system.md#schedule-tab).
+   - **Yhdistä asiakasprofiilit**: Suorittaa vastaavuuksien haun ehdot ja päivittää Unified customer profile -entiteetin vaikuttamatta riippuvuuksiin (kuten rikastuksiin, segmentteihin tai mittareihin). Riippuvaisia prosesseja ei suoriteta, mutta ne päivittyvät [päivitysaikataulun mukaisesti](system.md#schedule-tab).
 
-   - **Yhdistä asiakasprofiileja ja riippuvuuksia**: päivittää yhtenäisen profiilin ja kaikki riippuvuudet. Kaikki prosessit käynnistyvät uudelleen automaattisesti. Kun kaikki jatkoprosessit on tehty, asiakasprofiili vastaa päivitettyjä tietoja.
+   - **Yhdistä asiakasprofiilit ja riippuvuudet**: Suorittaa vastaavuuksien haen ehdot sekä päivittää yhtenäisen profiilin ja kaikki riippuvuudet. Kaikki prosessit käynnistyvät uudelleen automaattisesti. Kun kaikki jatkoprosessit on tehty, asiakasprofiili vastaa päivitettyjä tietoja.
 
-   **Tietueiden kaksoiskappaleet** -, **Yhdistämisehdot**- ja **Yhdistetyt asiakaskentät** -ruuduissä näkyy **Jonossa** tai **Päivitetään**.
+   **Tietueiden kaksoiskappaleet**-, **Vastaavuuksien haun ehdot**- ja **Yhdenmukaistetut asiakaskentät** -ruuduissa tilana on **Jonossa** tai **Päivitetään**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Onnistuneen suorituksen tulokset näkyvät **Yhtenäistä**-sivulla , jossa näkyy unified customer profiles -profiilien määrä.

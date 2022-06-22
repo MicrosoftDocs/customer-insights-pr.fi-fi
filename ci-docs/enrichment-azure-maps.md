@@ -1,95 +1,95 @@
 ---
 title: Täydennä asiakasprofiileja Azure Mapsin sijaintitietojen avulla
 description: Yleisiä tietoja Azure Mapsin ensisijaisesta rikastamisesta.
-ms.date: 08/31/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755350"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953624"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Asiakasprofiilien täydennys Azure Mapsin avulla (esiversio)
 
-Azure Mapsin sijaintikeskeiset tiedot ja palvelut tarjoavat käyttökokemuksia, jotka perustuvat geospatiaalisiin tietoihin ja sisäisiin sijaintitietoihin. Azure Maps -tietojen täydennyspalvelut parantavat asiakkaiden sijaintitietojen tarkkuutta. Se sisältää toimintoja, kuten osoitteen normalisoinnin sekä leveys- ja pituusasteiden purkamisen Dynamics 365 Customer Insightsiin.
+Azure-kartat tuottaa sijaintikeskeisiä tietoja ja palveluja, joilla voidaan toteuttaa geospatiaalisiin tietoihin perustuvia, älykkäitä sijaintitietoja sisältäviä kokemuksia. Azure Maps -tietojen täydennyspalvelut parantavat asiakkaiden sijaintitietojen tarkkuutta. Se sisältää toimintoja, kuten osoitteen normalisoinnin sekä leveys- ja pituusasteiden purkamisen Dynamics 365 Customer Insightsiin.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
-Jotta Azure Mapsin tietojen rikastus voidaan määrittää, seuraavien edellytysten on täytyttävä:
+- Aktiivinen Azure-karttojen tilaus. Tilauksen voi tehdä [rekisteröitymällä tai hakemalla ilmaisen kokeiluversion](https://azure.microsoft.com/services/azure-maps/).
 
-- Tarvitset aktiivisen Azure Maps -tilauksen. Jos haluat saada tilauksen, voit [rekisteröityä tai saada ilmaisen kokeiluversion](https://azure.microsoft.com/services/azure-maps/).
-
-- Azure Maps [-yhteys](connections.md) on käytettävissä *tai* sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet ja aktiivinen Azure Mapsin ohjelmointirajapinnan avain.
-
-## <a name="configure-the-enrichment"></a>Määritä rikastus
-
-1. Siirry kohtaan **Tiedot** > **Täydentäminen**. 
-
-1. Valitse **Rikasta omat tiedot** **Sijainti**-ruudussa.
-
-   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps -ruutu.":::
-
-1. Valitse [yhteys](connections.md) avattavasta luettelosta. Ota yhteyttä järjestelmänvalvojaan, jos Azure Maps -yhteyttä ei ole käytettävissä. Jos olet palvelussa Järjestelmänvalvoja, voit [määrittää yhteyden Azure Mapsiin](#configure-the-connection-for-azure-maps). 
-
-1. Vahvista valinta valitsemalla **Seuraava**.
-
-1. Valitse **asiakas tietojoukko**, jota haluat täydentää Azure Mapsin sijaintitiedoilla. Voit rikastaa kaikkia yhtenäisiä asiakasprofiileja valitsemalla **Asiakas**-entiteetin tai valitsemalla segmenttientiteetin, joka rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
-
-    :::image type="content" source="media/enrichment-azure-maps-configuration-customer-data-set.png" alt-text="Näyttökuva asiakkaan tietojoukon valitsemisesta.":::
-
-1. Valitse, haluatko yhdistää kentät ensisijaiseen ja/tai toissijaiseen osoitteeseen. Voit määrittää kenttien yhdistämismäärityksen sekä osoitteille että täydentää profiileja molemmille osoitteille erikseen&mdash;esimerkiksi koti- ja yritysosoitteelle. Valitse **Seuraava**.
-
-1. Määritä, mitä kenttätyyppejä yhdistetyistä profiileista käytetään etsittäessä vastaavia sijaintitietoja Azure Mapsista. **Katuosoite 1**- ja **Postinumero**-kentät ovat pakollisia valitussa ensisijaisessa tai toissijaisessa osoitteessa. Jotta vastineen tarkkuus olisi suurempi, voit lisätä kenttiä.
-
-   :::image type="content" source="media/enrichment-azure-maps-configuration.png" alt-text="Azure Maps -rikastamisen määrityssivu.":::
-
-1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
-
-1. Tarkista, haluatko muokata **lisäasetuksia**. Näiden asetusten avulla voit käsitellä erikoiskäyttötapauksia mahdollisimman joustavasti, mutta oletusarvot ovat useimmissa tapauksissa riittävät:
-   - **Osoitteiden tyyppi**: Oletusarvo on se, että rikastus palauttaa parhaan vastineen, vaikka osoite olisi puutteellinen. Jos haluat saada vain täydelliset osoitteet&mdash;esimerkiksi osoitteet, joissa on talonnumero&mdash;poista kaikki valintaruudut paitsi **Pisteosoitteet**. 
-   - **Kieli**: Oletusarvon mukaan osoitteet palautetaan sen alueen kielellä, johon osoite on määritetty. Jos haluat käyttää vakiomuotoista osoitekieltä, valitse kieli avattavasta valikosta. Esimerkiksi **englannin** valitseminen palauttaa **København, Danmark** sijasta **Copenhagen, Denmark**.
-
-1. Kirjoita rikastuksen nimi.
-
-1. Tarkista valinnat ja valitse sitten **Tallenna rikastus**.
+- Järjestelmänvalvoja on [määrittänyt](#configure-the-connection-for-azure-maps) Azure-karttojen [yhteyden](connections.md).
 
 ## <a name="configure-the-connection-for-azure-maps"></a>Azure Maps -yhteyden määrittäminen
 
-Yhteyksien määrittämiseen tarvitaan Customer Insightsin järjestelmänvalvoja. Valitse **Lisää yhteys**, kun rikastamista määritetään, tai siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse **Määritä** Azure Maps -ruudussa.
+Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permissions.md#admin), jolla on aktiivinen Azure-karttojen ohjelmointirajapinnan avain.
 
-1. Kirjoita **Näyttönimi**-ruutuun yhteyden nimi.
+1. Valitse **Lisää yhteys**, kun rikastamista määritetään, tai siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja valitse **Määritä** Azure Maps -ruudussa.
 
-1. Anna kelvollinen Azure Maps -ohjelmointirajapinnan avain.
+   :::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Azure Maps -yhteyden määrityssivu.":::
 
-1. Tarkista tiedot ja hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu
+1. Anna yhteydelle nimi ja kelvollisen Azure-karttojen ohjelmointirajapinnan avain.
 
-1. Tarkista määritys valitsemalla **Tarkista**.
+1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
 
-1. Kun tarkistus on suoritettu, valitse **Tallenna**.
+1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
 
-:::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Azure Maps -yhteyden määrityssivu.":::
+### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
+
+Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Azure Maps -ratkaisuun, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Azure Maps täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on kohdassa [Microsoftin tietosuojakäytäntö](https://go.microsoft.com/fwlink/?linkid=396732).
+Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+## <a name="configure-the-enrichment"></a>Määritä rikastus
+
+1. Valitse **Tiedot** > **Rikastaminen** ja valitse sitten **Tutustu**-välilehti.
+
+1. Valitse Microsoft Azure -kartat -ruudun **Sijainti**-kohdassa **Rikasta tiedot**.
+
+   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps -ruutu.":::
+
+1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
+
+1. Valitse yhteys. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
+
+1. Valitse **Seuraava**.
+
+1. Valitse ensin **Asiakkaan tietojoukko** ja sitten Microsoftin tietojen avulla rikastettava profiili tai segmentti. *Asiakas*-entiteetti rikastaa kaikkia asiakasprofiileja, kun taas segmentti rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
+
+1. Määritä vastaavuuksien etsinnässä käytettävien yhdistettyjen profiilien kenttätyypit: ensisijainen ja/tai toissijainen osoite. Voit määrittää kenttien yhdistämismäärityksen molemmille osoitteille että rikastaa profiileja molemmille osoitteille erikseen. Esimerkissä koti- ja työosoite. Valitse **Seuraava**.
+
+1. Yhdistä kentät Azure-karttojen sijaintitietoihin. **Lähiosoite 1** ja **Postinumero** ovat pakollisia kenttiä valitussa ensi- ja/tai toissijaisen osoitteessa. Vastaavuutta voi parantaa lisäämällä muita kenttiä.
+
+   :::image type="content" source="media/enrichment-azure-maps-attributes.png" alt-text="Azure-karttojen määritteen yhdistämismääritys":::
+
+1. Viimeistele kentän vastaavuusmääritys valitsemalla **Seuraava**.
+
+1. Tutustu **lisäasetuksiin**, joiden avulla voi käsitellä joustavasti haastavia käyttötapauksia. Seuraavia oletusarvoja ei kuitenkaan yleensä tarvitse muuttaa.
+
+   - **Osoitteiden tyypit**: Palautetaan paras osoitevastine, vaikka se ei olisi täydellinen. Jos haluat saada vain täydelliset osoitteet&mdash;esimerkiksi osoitteet, joissa on talonnumero&mdash;poista kaikki valintaruudut paitsi **Pisteosoitteet**.
+   - **Kieli**: Osoitteet palautetaan osoitealueeseen perustuvalla kielellä. Jos haluat käyttää vakiomuotoista osoitekieltä, valitse kieli avattavasta valikosta. Jos valinta on esimerkiksi **suomi**, tuloksena on **Kööpenhamina, Tanska** eikä **København, Danmark**.
+   - **Tulosten enimmäismäärä**: osoitekohtaisten tulosten määrä.
+
+1. Valitse **Seuraava**.
+
+1. Anna **Nimi** rikastamista varten ja **Tulosentiteetin nimi**.
+
+1. Valitse **Tallenna rikastus**, kun olet tarkistanut vaihtoehdot.
+
+1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
 ## <a name="enrichment-results"></a>Rikastamisen tulokset
 
-Aloita rikastamisprosessi valitsemalla komentopalkissa **Suorita**. Voit myös antaa järjestelmän suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika määräytyy asiakastietojen koon ja ohjelmointirajapinnan vasteaikojen mukaan.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Kun rikastusprosessi on valmis, voit tarkistaa uudet rikastetun asiakasprofiilin tiedot kohdasta **Omat rikastukset**. Näkyvissä on myös viimeisimmän päivityksen aika ja rikastettujen profiilien määrä.
-
-Voit tarkastella kunkin täydennetyn profiilin yksityiskohtaista näkymää valitsemalla **Näytä täydennetyt tiedot**.
+**Rikastettujen asiakkaiden määrä kentän mukaan** antaa mahdollisuuden porautua kuhunkin rikastettuun kenttään.
 
 ## <a name="next-steps"></a>Seuraavat vaiheet
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Azure Maps -ratkaisuun, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Azure Maps täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on kohdassa [Microsoftin tietosuojakäytäntö](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

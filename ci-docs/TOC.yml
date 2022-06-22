@@ -48,14 +48,14 @@
   items:
     - name: Tietolähteiden yleiskatsaus
       href: data-sources.md
+    - name: Yhdistä Azure Data Lake Storagein tietoihin
+      href: connect-common-data-model.md
+    - name: Yhdistä Azure Synapse Analyticsen
+      href: connect-synapse.md
+    - name: Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
+      href: connect-dataverse-managed-lake.md
     - name: Tietolähteiden lisääminen Power Query -yhdistinten avulla
       href: connect-power-query.md
-    - name: Common Data Model -kansion lisääminen tietolähteenä
-      href: connect-common-data-model.md
-    - name: Hallitun Dataverse Data Lake -tallennustilan lisääminen
-      href: connect-dataverse-managed-lake.md
-    - name: 'Azure Synapse Analytics:n lisääminen'
-      href: connect-synapse.md
     - name: Tietolähteiden rikastukset
       href: data-sources-enrichment.md
     - name: Tietolähteiden lisäävä päivitys
@@ -82,27 +82,27 @@
   items:
     - name: Asiakasprofiilien rikastaminen
       href: enrichment-hub.md
+    - name: Office 365 -tietojen tilit
+      href: enrichment-office.md
     - name: Tuotemerkit ja kiinnostuksen kohteet
       href: enrichment-microsoft.md
+    - name: Dun & Bradstreetin yritystiedot
+      href: enrichment-dnb.md
+    - name: Leadspacen yritystiedot
+      href: enrichment-leadspace.md
+    - name: Experianin demografiatiedot
+      href: enrichment-experian.md
     - name: Parannetut osoitteet
       href: enrichment-enhanced-addresses.md
     - name: Parannetut yritystiedot
       href: enrichment-enhanced-company-data.md
-    - name: Azure Mapsin rikastaminen
-      href: enrichment-azure-maps.md
-    - name: Rikasta Dun & Bradstreetin avulla
-      href: enrichment-dnb.md
-    - name: Tietojen rikastaminen HERE Technologiesin avulla
-      href: enrichment-here.md
-    - name: Täydennä Leadspacen avulla
-      href: enrichment-leadspace.md
-    - name: Rikastus LiveRampin avulla
+    - name: LiveRampin käyttäjätiedot
       href: enrichment-liveramp.md
-    - name: Rikastaminen Experianin avulla
-      href: enrichment-experian.md
-    - name: Rikasta Office 365 -tiedoilla
-      href: enrichment-office.md
-    - name: Rikastaminen mukautetun SFTP-tuonnin avulla
+    - name: Azure-karttojen sijaintitiedot
+      href: enrichment-azure-maps.md
+    - name: HERE Technologiesin sijaintitiedot
+      href: enrichment-here.md
+    - name: Mukautettu SFTP-tuonti
       href: enrichment-SFTP-custom-import.md
 - name: Yhtenäiset profiilit
   items:
@@ -112,6 +112,8 @@
       href: search-filter-index.md
     - name: Määritä asiakasaktiviteetit
       href: activities.md
+    - name: Customer Insightsin suostumuksen hallinta
+      href: consent-management.md
 - name: Segments
   items:
     - name: Segmenttien yleiskatsaus
@@ -294,40 +296,6 @@
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
     - name: OData-näytekyselyt
       href: odata-examples.md
-- name: Hyväksynnän hallinta (esiversio)
-  items:
-    - name: Ohjekeskus
-      href: consent-management/index.yml
-    - name: Ominaisuuksien yleiskatsaus
-      href: consent-management/overview.md
-    - name: Aloita
-      items:
-        - name: Aloita
-          href: consent-management/get-started.md
-        - name: Käsitteet ja terminologia
-          href: consent-management/glossary.md
-    - name: Tuo hyväksyntätiedot
-      items:
-        - name: Tuo hyväksyntätiedot
-          href: consent-management/import-consent-data.md
-        - name: Hyväksyntätietojen määrittäminen ja suostumusasetusten käyttäminen
-          href: consent-management/set-consent-rules.md
-    - name: Suostumustietojen hallinta
-      items:
-        - name: Suostumussääntöjen ottaminen käyttöön Customer Insightsissa
-          href: activate-consent.md
-        - name: Hallitse hyväksynnän oletussääntöjä Customer Insightsin segmenttien avulla
-          href: change-default-consent-rules.md
-    - name: Käyttäjien ja asetusten hallinta
-      items:
-        - name: Järjestelmäasetusten määrittäminen
-          href: consent-management/system-settings.md
-        - name: Käyttäjien ja oikeuksien hallinta
-          href: consent-management/manage-users.md
-    - name: Suostumustietojen käyttö
-      items:
-        - name: Ennusteiden luominen hyväksyntätietojen avulla
-          href: consent-management/predictions-consent-data.md
 - name: Palvelurajoitukset
   href: service-limits.md
 - name: DSR-oikeudet ja -pyynnöt
