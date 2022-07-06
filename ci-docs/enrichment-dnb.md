@@ -1,5 +1,5 @@
 ---
-title: Yritysprofiilien rikastaminen Dun & Bradstreetin avulla
+title: Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
 description: Yleisiä tietoja Dun & Bradstreetin kolmannen osapuolen rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953887"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081084"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
+# <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
 
 Dun & Bradstreet tarjoaa liikeyrityksille merkityksellisiä kaupallisia tietoja, analyyseja ja oivalluksia. Sen avulla voidaan täydentää niiden asiakkaiden tietoja, joilla on yhtenäiset asiakasprofiilit yrityksissä. Rikastamiseen sisältyy määritteitä, kuten DUNS-numerolla, yrityksen koolla, sijainnilla, toimialalla ja muilla tiedoilla.
 
@@ -102,7 +102,7 @@ Tällä hetkellä tuetaan seuraavia maita tai alueita: Kanada (englanti) tai Yhd
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

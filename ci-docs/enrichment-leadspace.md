@@ -1,5 +1,5 @@
 ---
-title: Yritysprofiilien rikastaminen kolmannen osapuolen Leadspace-rikastamisella
+title: Yritysprofiilien rikastaminen Leadspacen avulla (esiversio)
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: ca53f15bd7c71b3b4acb396c4daf52d7c7aff9eb
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954175"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081039"
 ---
-# <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Yritysprofiilien täydentäminen Leadspacen avulla (esikatselu)
+# <a name="enrich-company-profiles-with-leadspace-preview"></a>Yritysprofiilien rikastaminen Leadspacen avulla (esiversio)
 
 Leadspace on datatiedeyritys, joka tarjoaa yritystenvälisen asiakastietoympäristön. Sen avulla ympäristöt, joilla on asiakkaisiin perustuvat yhtenäiset asiakasprofiilit, voivat rikastaa tietojaan. Rikasta *Asiakasprofiilit* määritteillä kuten yrityksen koko, sijainti tai toimiala. Rikasta *Yhteishenkilöprofiilit* määritteillä kuten titteli, henkilötyyppi tai sähköpostin vahvistus.
 
@@ -82,7 +82,7 @@ Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toim
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

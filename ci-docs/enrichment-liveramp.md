@@ -1,5 +1,5 @@
 ---
-title: LiveRamp-tunnistetietojen rikastus
+title: Asiakasprofiilien rikastaminen LiveRamp-tunnistetietojen avulla (esiversio)
 description: Täydennä asiakasprofiileja LiveRamp-tietojen avulla.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953991"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9080999"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Asiakasprofiilien rikastaminen LiveRamp-tunnistetietojen avulla (esiversio)
 
@@ -79,7 +79,7 @@ Kun tietojen lähetys LiveRampiin otetaan käyttöön Dynamics 365 Customer Insi
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -1,21 +1,21 @@
 ---
-title: Customer Insights -tietojen vieminen Azure Synapse Analytics -ratkaisuun
+title: Tietojen vienti Azure Synapse Analyticsiin (esiversio)
 description: Tietoja Azure Synapse Analytics -yhteyden määrittämisestä.
-ms.date: 04/11/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741499"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081145"
 ---
-# <a name="export-data-to-azure-synapse-analytics-preview"></a>Vie tietoja Azure Synapse Analyticsiin (esiversio)
+# <a name="export-data-to-azure-synapse-analytics-preview"></a>Tietojen vienti Azure Synapse Analyticsiin (esiversio)
 
 Azure Synapse on analytiikkapalvelu, joka nopeuttaa merkityksellisten tietojen saamista tietovarastoista ja massadatajärjestelmistä. Voit käsitellä ja käyttää Customer Insights -tietojasi -sivustolla [Azure Synapse](/azure/synapse-analytics/overview-what-is).
 
@@ -72,13 +72,13 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys **Azure Synapse Analytics**-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä [yhteyksiä](connections.md) ei ole käytettävissäsi.
 
-1. Anna viennille tunnistettava **Näyttönimi** ja **Tietokannan nimi**.
+1. Anna viennille tunnistettava **Näyttönimi** ja **Tietokannan nimi**. Vienti luo uuden [Azure Synapsen Data Lake -tietokannan](/azure/synapse-analytics/database-designer/concepts-lake-database) yhteydessä määritettyyn työtilaan.
 
 1. Valitse entiteetit, jotka haluat viedä Azure Synapse Analyticsiin.
    > [!NOTE]
    > [Common Data Model -kansioon](connect-common-data-model.md) perustuvia tietolähteitä ei tueta.
 
-2. Valitse **Tallenna**.
+1. Valitse **Tallenna**.
 
 Viennin tallentaminen ei suorita vientiä heti.
 

@@ -1,5 +1,5 @@
 ---
-title: Rikastaminen kolmannen osapuolen Experian-rikastamisen avulla
+title: Rikasta asiakasprofiileja Experian-ratkaisun demografisten tietojen avulla (esiversio)
 description: Yleisiä tietoja kolmannen osapuolen Experian-rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 735da18e584b0d9db76b557f4d16dbdf1757f33c
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: a30e98b06ed07590ab95cae1d8db8023e49ff7f9
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954083"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053017"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Rikasta asiakasprofiileja Experian-ratkaisun demografisten tietojen avulla (esiversio)
 
@@ -79,7 +79,7 @@ Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Ex
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

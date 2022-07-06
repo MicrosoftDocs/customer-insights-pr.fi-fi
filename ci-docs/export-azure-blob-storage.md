@@ -1,5 +1,5 @@
 ---
-title: Customer Insights -tietojen vieminen Azure Blob Storage -säilöön
+title: Tietojen vienti Azure Blob -säilöön (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä Blob-säilöön.
 ms.date: 06/09/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 623926bf520b19ee4156b7a05e953241cd819e9e
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 059c8364ca0f3740bc0e4ffeeeba94246c9e5696
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947134"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055486"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Segmenttiluettelon ja muiden tietojen vieminen Azure Blob Storage -säilöön (esiversio)
+# <a name="export-data-to-an-azure-blob-storage-preview"></a>Tietojen vienti Azure Blob -säilöön (esiversio)
 
 Tallenna Customer Insights -tietosi Blob-säilöön, tai käytä sitä tietojesi siirtämiseen muihin sovelluksiin.
 

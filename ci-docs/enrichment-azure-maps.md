@@ -1,5 +1,5 @@
 ---
-title: Täydennä asiakasprofiileja Azure Mapsin sijaintitietojen avulla
+title: Asiakasprofiilien rikastaminen Azure-karttojen sijaintitietojen avulla (esiversio)
 description: Yleisiä tietoja Azure Mapsin ensisijaisesta rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953624"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052603"
 ---
-# <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Asiakasprofiilien täydennys Azure Mapsin avulla (esiversio)
+# <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Asiakasprofiilien rikastaminen Azure-karttojen sijaintitietojen avulla (esiversio)
 
 Azure-kartat tuottaa sijaintikeskeisiä tietoja ja palveluja, joilla voidaan toteuttaa geospatiaalisiin tietoihin perustuvia, älykkäitä sijaintitietoja sisältäviä kokemuksia. Azure Maps -tietojen täydennyspalvelut parantavat asiakkaiden sijaintitietojen tarkkuutta. Se sisältää toimintoja, kuten osoitteen normalisoinnin sekä leveys- ja pituusasteiden purkamisen Dynamics 365 Customer Insightsiin.
 
@@ -82,7 +82,7 @@ Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toim
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Asiakkaan merkityksellisten tietojen vieminen ActiveCampaign-ratkaisuun
+title: Segmenttien vieminen ActiveCampaigniin
 description: Lisätietoja yhteyden ja viemisen määrittämisestä ActiveCampaign-ratkaisuun
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5d15b9bf7383d06070ac92d7a729fc6e6e00c9d7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: eb6f2bb69bb30c319e17390562b3f33512f33ff1
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646213"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054704"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Segmenttien vieminen ActiveCampaign-ratkaisuun (esiversio)
 
@@ -21,9 +21,9 @@ Vie yhdistettyjen asiakasprofiilien segmentit ActiveCampaign-ratkaisuun ja käyt
 
 ## <a name="prerequisites"></a>Edellytykset
 
--   Sinulla on [ActiveCampaign-tili](https://www.activecampaign.com/) ja vastaavat järjestelmänvalvojan valtuustiedot.
--   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
--   Viedyissä segmenteissä yhdenmukaistetut asiakasprofiilit sisältävät kentän, jolla on sähköpostiosoite.
+- Sinulla on [ActiveCampaign-tili](https://www.activecampaign.com/) ja vastaavat järjestelmänvalvojan valtuustiedot.
+- Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
+- Viedyissä segmenteissä yhdenmukaistetut asiakasprofiilit sisältävät kentän, jolla on sähköpostiosoite.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 

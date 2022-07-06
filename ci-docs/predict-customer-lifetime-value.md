@@ -13,16 +13,16 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3e1b1ce00eeda1cead9ba05beae65b6903d0b9cf
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646400"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055210"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Asiakkaan elinkaaren arvon (CLV) ennuste
 
-Ennusta mahdollinen arvo (myyntituotto), jonka yksittäiset aktiiviset asiakkaat tuovat yritykselle tiettynä tulevana ajanjaksona. Tämän ominaisuuden avulla voit saavuttaa esimerkiksi seuraavat tavoitteet: 
+Ennusta mahdollinen arvo (myyntituotto), jonka yksittäiset aktiiviset asiakkaat tuovat yritykselle tiettynä tulevana ajanjaksona. Tämän ominaisuuden avulla voit saavuttaa esimerkiksi seuraavat tavoitteet:
 - Korkean lisäarvon asiakkaiden tunnistaminen ja näiden merkityksellisten tietojen käsitteleminen
 - Strategisten asiakassegmenttien luominen niiden mahdollisen arvon perusteella mukautettujen kampanjoiden ja kohdistetun myynnin, markkinoinnin ja tukitoimintojen suorittamiseksi
 - Tuotekehityksen opastaminen keskittymällä asiakkaan arvoa lisääviin ominaisuuksiin

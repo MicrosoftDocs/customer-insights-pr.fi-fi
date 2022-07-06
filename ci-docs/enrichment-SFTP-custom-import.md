@@ -1,5 +1,5 @@
 ---
-title: Rikastaminen mukautetun SFTP-tuonnin avulla
+title: Asiakasprofiilien rikastaminen mukautetun SFTP-tuonnin avulla (esiversio)
 description: Yleisiä tietoja mukautetusta SFTP-tuonnin rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 657afb6fcb68429680eb677734b4115e69769008
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953715"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081029"
 ---
-# <a name="enrich-customer-profiles-with-custom-data-preview"></a>Asiakasprofiilien rikastaminen mukautetuilla tiedoilla (esiversio)
+# <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Asiakasprofiilien rikastaminen mukautetun SFTP-tuonnin avulla (esiversio)
 
 Mukautetun SFTP (Secure File Transfer Protocol) -tuonnin avulla voidaan tuoda tietoja, joille ei tarvitse tehdä tietojen yhtenäistämisprosessia. Se on joustava, turvallinen ja helppo tapa tuoda tietoja. Mukautettua SFTP-tuontia voidaan käyttää yhdessä [SFTP-viennin](export-sftp.md) kanssa. Kyseisellä toiminnolla voi viedä rikastamiseen tarvittavia asiakasprofiilitietoja. Tietoja voidaan käsitellä ja täydentää, ja SFTP:n mukautetun tuonnin avulla rikastetun tiedon voi palauttaa Dynamics 365 Customer Insightsiin.
 
@@ -120,7 +120,7 @@ Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toim
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

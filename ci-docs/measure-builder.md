@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: f3ec86806074a12c1107648303ed2d65e97ebc69
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800322"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081180"
 ---
-# <a name="use-measure-builder-to-create-measures-from-scratch"></a>Mittarin muodostimen avulla voit luoda mittarin alusta
+# <a name="create-new-measures-with-the-measure-builder"></a>Uusien mittareiden luominen mittarin muodostimella
 
 Tässä artikkelissa selostetaan, miten uusi [mittari](measures.md) luodaan alusta. Mittarin muodostimen avulla voit määrittää laskutoimituksia käyttämällä vastaavuusoperaattoreita, koostamistoimintoja ja suodattimia. Voit luoda mittarin, jonka määritteet ovat peräisin entiteeteistä, jotka liittyvät yhdistettyyn *Asiakas*-entiteettiin.
 

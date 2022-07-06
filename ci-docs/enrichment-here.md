@@ -1,5 +1,5 @@
 ---
-title: Rikastaminen kolmannen osapuolen rikastamisen HERE Technologies -ratkaisun avulla
+title: Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 description: Yleisiä tietoja HERE Technologiesin kolmannen osapuolen rikastamisesta.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953669"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052047"
 ---
-# <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
+# <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
 HERE Technologies on sijaintitietoyritys, joka toimittaa sijaintitietoja ja -palveluja. HERE Technologiesin tietojen rikastamispalvelut parantavat asiakkaita koskevien sijaintitietojen tarkkuutta. Se mahdollistaa esimerkiksi osoitteiden normalisoinnin sekä pituus- ja leveysastetietojen poimimisen.
 
@@ -72,7 +72,7 @@ Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toim
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

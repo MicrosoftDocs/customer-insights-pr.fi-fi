@@ -6,14 +6,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 4cc3cbde97d0f9da198652e86c0843476393b646
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 99ec463299a24ea81cfe26bb785e36bdefdcd080
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833304"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054428"
 ---
-# <a name="work-with-unified-customer-profiles-in-dynamics-365-marketing"></a>Yhtenäisten asiakasprofiilien käyttäminen Dynamics 365 Marketingissa
+# <a name="use-unified-customer-profiles-in-dynamics-365-marketing"></a>Yhtenäisten asiakasprofiilien käyttäminen Dynamics 365 Marketingissa
 
 [Dynamics 365 Marketing](/dynamics365/marketing/overview) parantaa asiakaskokemuksia, jolloin voit järjestää yksilöllisiä siirtymiä kaikissa kosketuspisteissä suhteiden vahvistamiseksi ja uskollisuuden ansaitsemiseksi. Dynamics 365 Marketing -sovellus toimii saumattomasti Dynamics 365 Salesin, Dynamics 365 Customer Insightsin, Microsoft Teamsin ja muiden tuotteiden kanssa, ja sen avulla voit tehdä nopeampia ja parempia päätöksiä datan ja tekoälyn avulla.
 

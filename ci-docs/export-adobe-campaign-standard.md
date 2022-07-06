@@ -1,5 +1,5 @@
 ---
-title: Customer Insights -tietojen vieminen Adobe Campaign Standardiin
+title: Customer Insights -segmenttien vienti Adobe Campaign Standardiin (esiversio)
 description: Tietoja Customer Insights -segmenttien käyttämisestä Adobe Campaign Standardissa.
 ms.date: 03/29/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 2a62d2f889f199222eeb8cc969fce62fa89fa6f0
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9915591cd969bf825f5d1669de43ed4f9953f898
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646233"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081034"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Customer Insights -segmenttien käyttö Adobe Campaign Standardissa (esiversio)
+# <a name="export-customer-insights-segments-to-adobe-campaign-standard-preview"></a>Customer Insights -segmenttien vienti Adobe Campaign Standardiin (esiversio)
 
 Dynamics 365 Customer Insights -järjestelmän käyttäjänä olet ehkä luonut segmenttejä, jotka tehostavat markkinointikampanjoita kohdentamalla osuvat kohdeyleisöt. Jos haluat käyttää Customer Insights -segmenttiä Adobe Experience Platformissa ja sovelluksia, kuten Adobe Campaign Standard, sinun on noudatettava tässä artikkelissa kuvattuja vaiheita.
 
@@ -23,9 +23,9 @@ Dynamics 365 Customer Insights -järjestelmän käyttäjänä olet ehkä luonut 
 
 ## <a name="prerequisites"></a>Edellytykset
 
--   Dynamics 365 Customer Insights -lisenssi
--   Adobe Campaign Standard -lisenssi
--   Azure Blob -tallennustili
+- Dynamics 365 Customer Insights -lisenssi
+- Adobe Campaign Standard -lisenssi
+- Azure Blob -tallennustili
 
 ## <a name="campaign-overview"></a>Kampanjan yleiskatsaus
 

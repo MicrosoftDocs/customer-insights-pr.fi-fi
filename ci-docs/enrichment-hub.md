@@ -1,6 +1,6 @@
 ---
-title: Yhtenäisten asiakasprofiilien rikastaminen
-description: Asiakastietojen rikastaminen ominaisuuksien avulla.
+title: Tietojen rikastamisen (esiversio) yleiskatsaus
+description: Asiakastietoja voi rikastaa Microsoftin ja muiden kolmannen osapuolen palvelujen ominaisuuksia käyttämällä.
 ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -14,24 +14,32 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 3bbe8b829a6698da55d84709dbab6c36aa76792a
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954037"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9053860"
 ---
-# <a name="enrichment-for-customer-profiles-preview"></a>Asiakasprofiilien täydentäminen (esikatselu)
+# <a name="data-enrichment-preview-overview"></a>Tietojen rikastamisen (esiversio) yleiskatsaus
 
-Voit täydentää asiakastietoja Microsoftin ja muiden kumppaneiden kaltaisten lähteiden tiedoilla.
+Voit täydentää asiakastietoja Microsoftin ja muiden kumppaneiden kaltaisten lähteiden tiedoilla. Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](connections.md), jotka järjestelmänvalvoja tunnistetiedoilla ja antaa tietojen siirron hyväksynnän. Järjestelmänvalvojat ja osallistujat voivat käyttää yhteyksiä rikastuksien määrittämiseen.  
+
+## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
+
+Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Esimerkiksi vain tietyn segmentin tietojen rikastaminen on mahdollista. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajat ja nykyinen käyttö on nähtävillä jokaisessa **Rikastaminen**-sivun **Tutustu**-välilehden ruudussa.
+
+## <a name="enrich-data-sources-before-unification"></a>Tietolähteiden rikastus ennen yhdistämistä
+
+Voit rikastaa asiakastietoja ennen tietojen yhdistämistä, mikä parantaa tietojen vastaavuuden laatua. Lisätietoja: [tietolähteiden rikastus](data-sources-enrichment.md).
+
+## <a name="create-an-enrichment"></a>Luo rikastus
+
+Rikastamisten luomiseen tai muokkaamiseen tarvitaan osallistujan tai järjestelmänvalvojan [oikeudet](permissions.md).
+
+Siirry kohtaan **Tiedot** > **Täydentäminen**. Kaikki tuetut rikastamisvaihtoehdot näkyvät **Tutustu**-välilehdessä.
 
 :::image type="content" source="media/enrichment-hub-page.png" alt-text="Rikastamiskeskuksen sivu.":::
-
-Siirry kohteeseen **Tiedot** > **Rikastus** käsitelläksesi rikastusvaihtoehtoja.  
-
-Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jos haluat luoda tai muokata täydennyksiä. Lisätietoja on kohdassa [Oikeudet](permissions.md).
-
-Löydät **Löydä**-välilehdestä kaikki tuetut rikastamisvaihtoehdot.
 
 # <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 
@@ -57,45 +65,33 @@ Löydät **Löydä**-välilehdestä kaikki tuetut rikastamisvaihtoehdot.
 
 ---
 
-**Omat täydennykset** -välilehdessä voit tarkastella määrittämiäsi täydennyksiä ja muokata niiden ominaisuuksia. Rikastuksista voi luoda myös [segmenttejä](segments.md) tai [mittareita](measures.md).
-
 ## <a name="manage-existing-enrichments"></a>Aiemmin luotujen rikastusten hallinta
 
-Siirry **Omat rikastamiset** -välilehteen, jos haluat nähdä kaikki määritetyt rikastamiset. Kullakin rikastuksella on rivi, joka sisältää lisätietoja rikastamisesta.
+Siirry kohtaan **Tiedot** > **Täydentäminen**. **Omat rikastukset** -välilehdessä voi tarkastella määritettyjä rikastuksia, niiden tiloja, rikastettujen asiakkaiden määrää ja tietojen viimeisintä rikastamispäivää. Rikastamisluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan rikastamisen voi etsiä myös hakuruutua käyttämällä.
 
-Valitse rikastus, jos haluat nähdä käytettävissä olevat vaihtoehdot. Voit myös valita kolme pystysuuntaista pistettä (&vellip;) luettelokohteesta, kun haluat nähdä vaihtoehdot. Jos olet määrittänyt useita rikasteita, voit etsiä sen nopeasti hakuruudun avulla.
+Voit tarkastella käytettävissä olevia toimintoja valitsemalla rikastuksen.
 
 :::image type="content" source="media/enrichment-hub-options-run.png" alt-text="Rikastusten hallinta-asetukset rikastamisluettelossa.":::
 
 - **Näytä** rikastuksen tiedot sekä rikastettujen asiakasprofiilien määrä.
 - **Muokkaa** rikastusmääritystä.
-- **Suorita** asiakasprofiilien rikastaminen uusimmilla tiedoilla.
-- **Poista aktivointi** aiemmin luodusta rikastuksesta, jolloin se ei enää päivity automaattisesti jokaisen ajoitetun päivityksen yhteydessä. Viimeisimmän onnistuneen päivityksen tiedot ovat edelleen käytettävissä. **Aktivoi** passiivinen rikastus, jolloin automaattinen päivitys kunkin ajoitetun päivityksen yhteydessä aloitetaan uudelleen.
+- Päivitä uusimmat tiedot asiakasprofiileihin [**suorittamalla**](#run-or-refresh-enrichments) rikastus. Suorita useita rikastuksia samanaikaisesti valitsemalla ne luettelossa.
+- **Aktivoi** rikastus tai **poista sen aktivointi**. Passiivisia rikastuksia ei päivitetä [ajoitetun päivityksen](system.md#schedule-tab) aikana.
 - **Poista** rikastus.
 
-Suorita useita rikasteita tai poista niiden aktivointi kerralla valitsemalla ne luettelosta. Näkymä- ja muokkausasetukset eivät ole käytettävissä joukkotoimintoina. Ne toimivat vain yhdessä rikastustyössä kerrallaan.
-
-## <a name="enrichments-and-connections"></a>Rikastukset ja yhteydet
-
-Kolmannen osapuolen rikastukset määritetään käyttämällä [yhteyksiä](connections.md), jotka järjestelmänvalvoja tunnistetiedoilla ja antaa tietojen siirron hyväksynnän. Järjestelmänvalvojat ja osallistujat voivat käyttää yhteyksiä rikastuksien määrittämiseen.  
-
-## <a name="multiple-enrichments-of-the-same-type"></a>Useita samantyyppisiä rikastuksia
-
-Rikastusmäärityksen yhteydessä määritettävä rikastettava entiteetti, joka sallii vain vain profiilien alijoukon rikastamisen. Esimerkiksi vain tietyn segmentin tietojen rikastaminen on mahdollista. Voit määrittää useita samantyyppisiä rikastuksia ja käyttää samaa yhteyttä uudelleen. Joillakin rikastuksilla on rajansa samantyyppisten rikastusten luonnin määrälle. Rajat ja nykyinen käyttö on nähtävillä jokaisessa **Rikastaminen**-sivun **Tutustu**-välilehden ruudussa.
-
-## <a name="enrich-data-sources-before-unification"></a>Tietolähteiden rikastus ennen yhdistämistä
-
-Voit rikastaa asiakastietoja ennen tietojen yhdistämistä, mikä parantaa tietojen vastaavuuden laatua. Lisätietoja: [tietolähteiden rikastus](data-sources-enrichment.md).
+Rikastuksista voi luoda myös [segmenttejä](segments.md) tai [mittareita](measures.md).
 
 ## <a name="run-or-refresh-enrichments"></a>Rikastusten suorittaminen tai päivittäminen
 
-1. Rikastamisprosessi aloitetaan valitsemalla **Suorita**. Järjestelmä voi myös suorittaa rikastamisen automaattisesti [aikataulutetun päivityksen](system.md#schedule-tab) osana. Käsittelyaika riippuu asiakastietojen koosta.
+Suoritetut rikastukset voidaan päivittää automaattisesti aikataulun mukaisesti ja manuaalisesti tarvittaessa.
+
+1. Rikastukset päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Suorita**. [Automaattinen päivitys ajoitetaan](system.md#schedule-tab) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**. Käsittelyaika riippuu asiakastietojen koosta.
 
 1. Vaihtoehtoisesti voit [tarkastella rikastamisprosessin etenemistä](#see-the-progress-of-the-enrichment-process).
 
 1. Valitse rikastamisprosessin päättymisen jälkeen **Omat rikastukset**. Voit tarkastella juuri rikastettujen asiakasprofiilien tietoja, viimeisimmän päivityksen ajankohtaa ja rikastettujen profiilien määrää.
 
-1. Tarkastele [rikastustuloksia](#enrichment-results) valitsemalla rikastus.
+1. Tarkastele [rikastustuloksia](#view-enrichment-results) valitsemalla rikastus.
 
 ### <a name="see-the-progress-of-the-enrichment-process"></a>Rikastusprosessin edistymisen katsominen
 
@@ -107,12 +103,12 @@ Voit etsiä tietoja rikastuksen käsittelystä, mukaan lukien sen tilan ja mahdo
 1. Valitse **Näytä tiedot** haluamasi rikastuksen alta tarkastellaksesi edistymistä.
 1. Valitse **Tehtävän tiedot** -ruudussa **Näytä tiedot**, kun haluat nähdä prosessit, jotka liittyvät rikastusten päivittämiseen ja niiden tilaan.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 Tutustu rikastamisen tuloksiin, kun rikastaminen on suoritettu loppuun.
 
 1. Siirry kohtaan **Tiedot** > **Täydentäminen**.
-1. Valitse **Omat rikastukset** -välilehdessä ympäristö, josta haluat tietoja.
+1. Valitse **Omat rikastukset** -välilehdessä tarkasteltava rikastus.
 
 Kaikissa rikastamisissa on näkyvissä perustiedot, kuten lisättyjen profiilien määrä ja rikastettujen profiilien määrän ajan mittaan. **Rikastettujen asiakkaiden esikatselu** -ruudussa näkyy esimerkki luodusta rikastusentiteetistä. Yksityiskohtaista näkymää voi tarkastella valitsemalla ensin **Näytä lisää** ja sitten **Tiedot**-välilehti.
 

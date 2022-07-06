@@ -1,5 +1,5 @@
 ---
-title: Customer Insights -tietojen vieminen Salesforce Marketing Cloud -sovellukseen
+title: Tietojen vienti Salesforce Marketing Cloudiin (esiversio)
 description: Lisätietoja yhteyden ja viemisen määrittämisestä Salesforce Marketing Cloud -sovellukseen
 ms.date: 07/23/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: aaf5c2607099bbfccf7ed75330267da8c3c5fe1b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c3a6a40d9b9f08c8ebca8cb4a9196a1a79f03afa
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646425"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081097"
 ---
-# <a name="export-segments-and-other-data-to-salesforce-marketing-cloud-preview"></a>Segmenttien ja muiden tietojen vieminen Salesforce Marketing Cloud -sovellukseen (esiversio)
+# <a name="export-data-to-salesforce-marketing-cloud-preview"></a>Tietojen vienti Salesforce Marketing Cloudiin (esiversio)
 
 Käytä Salesforce Marketing Cloud -sovelluksen asiakastietoja viemällä ne suojatun tiedostonsiirtoprotokollan (SFTP) sijainnin kautta.
 

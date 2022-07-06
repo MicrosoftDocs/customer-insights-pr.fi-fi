@@ -1,5 +1,5 @@
 ---
-title: Yritystietojen parantaminen
+title: Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 description: Rikasta ja normalisoi yritystietoja Microsoftin malleilla.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4247d59806468907d93fc7848231ec5a2985580e
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 131ef3d1e123628779609ddec368cfef8f4d607e
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953945"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054244"
 ---
-# <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
+# <a name="enrich-company-profiles-with-enhanced-company-data"></a>Yritysprofiilien rikastaminen parannettujen yritystietojen avulla
 
 Microsoftin mallien ja koottujen yritystietojen avulla voit korjata, täydentää ja standardoida yritysprofiileja. [Common Data Model -muotoa](/common-data-model/schema/core/applicationcommon/account) käytetään saamaan parempi tarkkuus ja oivallukset.
 
@@ -84,7 +84,7 @@ Malli ei:
 
 1. Aloita rikastamisprosessi valitsemalla **Suorita** tai sulje ja palaa **Rikastukset**-sivulle.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

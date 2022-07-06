@@ -1,34 +1,35 @@
 ---
-title: Customer Insights -tietojen vieminen Brazeen
+title: Segmenttien vieminen Brazeen (esiversio)
 description: Tietoja Braze-yhteyden määrittämisestä ja viennistä siihen.
-ms.date: 03/29/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bfc9b34506dc3385b5edf12b31e74d05f2d20655
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 314a61f82c4040a8dbd6dff1dd5d92e20464f82a
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646068"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081108"
 ---
-# <a name="export-segment-lists-to-braze-preview"></a>Segmenttiluetteloiden vieminen Brazeen (esiversio)
+# <a name="export-segments-to-braze-preview"></a>Segmenttien vieminen Brazeen (esiversio)
 
 Vie unified customer profile -profiilien segmentit Brazeen ja käytä niitä markkinointiaktiviteetteihin.
 
 ## <a name="prerequisites"></a>edellytykset
 
--   Sinulla on [Braze-tili](https://www.braze.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
--   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
--   Viedyissä segmenteissä Unified Customer Profile -profiilit sisältävät kentän, joka vastaa sähköpostiosoitetta ja Braze-asiakastunnusta. 
+- Käytössä on [Braze-tili](https://www.braze.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
+- [Brazessa on aiemmin luotuja segmenttejä](https://www.braze.com/docs/user_guide/engagement_tools/segments/creating_a_segment/).
+- [Määritetyt segmentit](segments.md) Customer Insightsissa.
+- Viedyissä segmenteissä Unified Customer Profile -profiilit sisältävät kentän, joka vastaa sähköpostiosoitetta ja Braze-asiakastunnusta.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Vieminen Brazeen rajoittuu segmentteihin.
-- Enintään yhden miljoonan asiakasprofiilin vieminen Brazeen voi kestää 40 minuuttia. 
+- Enintään yhden miljoonan asiakasprofiilin vieminen Brazeen voi kestää 40 minuuttia.
 - Brazeen vietävien asiakasprofiilien määrä riippuu Braze-sopimuksestasi ja sen sisältämistä rajoituksista.
 
 ## <a name="set-up-connection-to-braze"></a>Määritä yhteys Brazeen
@@ -41,7 +42,7 @@ Vie unified customer profile -profiilien segmentit Brazeen ja käytä niitä mar
 
 1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Jatka kirjautumista antamalla [Braze-ohjelmointirajapinnan avain](https://www.braze.com/docs/api/basics/). 
+1. Jatka kirjautumista antamalla [Braze-ohjelmointirajapinnan avain](https://www.braze.com/docs/api/basics/).
 
 1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
 
@@ -59,9 +60,13 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
 
 1. Luo uusi vienti valitsemalla **Lisää kohde**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Braze-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.  
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Braze-osasta. Jos tämä osa ei ole näkyvissä, tämän tyyppisiä yhteyksiä ei ole käytettävissä.  
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta, valitse Asiakastunnus-kentässä kenttä, joka vastaa asiakkaan Braze-tunnusta. Segmenttejä on vietävä Brazeen. Brazen segmentit luodaan samalla nimellä kuin kohteen Dynamics 365 Customer Insights segmenttikin. Voit valita muita valinnaisia kenttiä vastaavia tietoja varten. 
+1. Lisää raportin **näyttönimi**.
+
+1. Lisää vietävän Braze-segmentin ohjelmointirajapinnan tunnus **Braze-segmentin ohjelmointirajapinnan tunnus** -kenttään. Tämä tunnus on segmentin tiedoissa Braze-ympäristössä.
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Valitse **Asiakastunnus**-kentässä kenttä, joka ilmaisee asiakkaan Braze-tunnuksen. Segmenttejä on vietävä Brazeen. Myös muita kenttiä voidaan valita.
 
 1. Valitse **Tallenna**.
 
@@ -72,6 +77,6 @@ Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kan
 
 ## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
 
-Kun tietojen lähetys Brazeen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Braze täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
+Kun tietojen lähetys Brazeen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot annettujen ohjeiden mukaisesti, mutta olet vastuussa siitä, että Braze täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
 
 Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.

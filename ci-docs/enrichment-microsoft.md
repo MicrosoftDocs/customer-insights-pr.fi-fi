@@ -1,5 +1,5 @@
 ---
-title: Asiakasprofiilien rikastaminen Microsoftin tuotemerkkien ja kiinnostuksen kohteiden tiedoilla
+title: Asiakasprofiilien rikastaminen Microsoftin tuotemerkkien ja kiinnostuksen kohteiden tiedoilla (esiversio)
 description: Käytä Microsoftin omistusoikeudellisia tietoja asiakastietojen rikastamisessa merkkimieltymyksillä ja osuudella kirjoituksista.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953761"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081113"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Asiakasprofiilien rikastaminen merkkimieltymyksillä ja osuudella kirjoituksista (esiversio)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Asiakasprofiilien rikastaminen Microsoftin tuotemerkkien ja kiinnostuksen kohteiden tiedoilla (esiversio)
 
 Käytä Microsoftin omistusoikeudellisia tietoja asiakastietojen rikastamisessa tuotemerkkimieltymyksillä, kiinnostuksen kohteilla ja osuudella kirjoituksista. Nämä mieltymykset ja osuus kirjoituksista perustuvat niiden henkilöiden tietoihin, jotka edustavat samanlaista väestöä kuin asiakkaasi. Näiden tietojen avulla saat lisätietoja asiakkaista ja voit segmentoida heidät mieltymysten tai kirjoitusten osuuksien perusteella tiettyihin tuotemerkkeihin ja kiinnostuksen kohteisiin.
 
@@ -104,7 +104,7 @@ Seuraavia maita ja alueita tuetaan tällä hetkellä: Australia, Kanada (englant
 
    Profiileja rikastettaessa rikastetaan kaikki asiakasprofiilit, joihin haetaan tietoja valittuja tuotemerkkejä ja kiinnostuksen kohteita varten. Näihin kuuluvat myös profiilit, jotka eivät kuulu valittuun maahan tai alueeseen. Jos esimerkiksi valitsit Saksa, Yhdysvalloissa sijaitsevat profiilit rikastetaan, jos valituista tuotemerkeistä ja kiinnostuksen merkeistä on saatavilla tietoja Yhdysvalloissa.
 
-## <a name="enrichment-results"></a>Rikastamisen tulokset
+## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

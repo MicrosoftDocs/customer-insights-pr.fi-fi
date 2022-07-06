@@ -1,5 +1,5 @@
 ---
-title: Tietojen käsittely Azure Synapse Analyticsista
+title: Yhteyden muodostaminen Azure Synapse -tietolähteeseen (esiversio)
 description: Käytä Azure Synapsen tietokantaa tietolähteenä Dynamics 365 Customer Insightsissa.
 ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011423"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052695"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Yhteyden muodostaminen Azure Synapse Analytics -tietolähteeseen (esiversio)
 
@@ -59,7 +59,7 @@ Lisätietoja on kohdassa [Azure Synapsen yleiskatsaus](/azure/synapse-analytics/
 
 1. Valitse [käytettävissä oleva yhteys](connections.md) Azure Synapse Analyticsiin tai luo uusi yhteys.
 
-1. Valitse valittuun Azure Synapse Analytics -yhteyteen yhdistetystä työtilasta **Tietokanta** ja valitse sitten **Seuraava**.
+1. Valitse valittuun Azure Synapse Analytics -yhteyteen yhdistetystä työtilasta **Tietokanta** ja valitse sitten **Seuraava**. Tällä hetkellä ainoa tuettu tietokantatyyppi on *Data Lake -tietokanta*.
 
 1. Valitse yhdistetystä tietokannasta käsiteltävät entiteetit ja valitse **Seuraava**.
 

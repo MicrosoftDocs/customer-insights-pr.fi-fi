@@ -1,5 +1,5 @@
 ---
-title: Dynamics 365 -sovellusten asiakaskortin apuohjelma (sisältää videon)
+title: Dynamics 365 -sovellusten asiakaskortin apuohjelma (esiversio) (sisältää videon)
 description: Näytä Customer Insightsin asiakasprofiilitiedot Dynamics 365 -sovelluksissa tämän apuohjelman avulla.
 ms.date: 02/02/2022
 ms.reviewer: mhart
@@ -13,14 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755632"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9080984"
 ---
-# <a name="customer-card-add-in-preview"></a>Asiakaskortin apuohjelma (esiversio)
+# <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Dynamics 365 -sovellusten asiakaskortin apuohjelma (esiversio)
 
 Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa. Kun asiakaskortin apuohjelma on asennettu tuettuun Dynamics 365 -sovellukseen, voit valita, näytetäänkö asiakasprofiilin kentät, tiedot ja aktiviteetin aikajana. Apuohjelma hakee tietoja Customer Insights -sovelluksesta vaikuttamatta yhdistetyn Dynamics 365 -sovelluksen tietoihin.
 
