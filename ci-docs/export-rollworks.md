@@ -1,51 +1,51 @@
 ---
 title: Segmenttien vieminen RollWorksiin (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä RollWorksiin.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 83c3f2437b9822d29d1d2f99ead96815b1b0881a
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: e13aeca4ee5309f85e7de2986cd1a2ba5d2992fb
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055164"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195608"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Segmenttien vieminen RollWorksiin (esiversio)
 
-Vie yhtenäisten asiakasprofiilien segmentit RollWorksiin ja käytä niitä mainontaan. 
+Vie yhtenäisten asiakasprofiilien segmentit RollWorksiin ja käytä niitä mainontaan.
 
-## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
+## <a name="prerequisites"></a>edellytykset
 
--   Sinulla on [RollWorks-tili](https://www.rollworks.com/) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
--   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
--   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
+- [RollWorks-tili](https://www.rollworks.com/) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
+- [RollWorks-mainostajatunnus](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+- [Määritetyt segmentit](segments.md) Customer Insightsissa.
+- Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä vientiä kohden enintään 250 000 asiakasprofiilia RollWorksiin.
-- RollWorksiin ei voi viedä segmenttejä, jotka sisältävät vähemmän kuin 100 asiakasprofiilia. 
-- Vieminen RollWorksiin rajoittuu segmentteihin.
-- Enintään 250 000 asiakasprofiilin vieminen RollWorksiin voi kestää 10 minuuttia. 
-- RollWorksiin vietävien asiakasprofiilien määrä riippuu RollWorks-sopimuksestasi ja sen sisältämistä rajoituksista.
+- Enintään 250 000 asiakasprofiilin vieminen kerrallaan RollWorksiin, mikä voi kestää 10 minuuttia. RollWorksiin vietävien asiakasprofiilien määrä riippuu RollWorksin kanssa tekemästäsi sopimuksesta.
+- Vain segmentit.
 
 ## <a name="set-up-connection-to-rollworks"></a>Määritä yhteys RollWorksiin
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **RollWorks**.
+1. Valitse **Lisää yhteys** ja valitse sitten **RollWorks**.
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä.  Oletusarvoisesti vain järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
-1. Alusta yhteys RollWorksiin valitsemalla **Yhdistä**.
+1. Käynnistä yhteys valitsemalla **Yhdistä**.
 
 1. Valitse **Todenna RollWorksin avulla** ja anna RollWorksin järjestelmänvalvojan tunnistetiedot.
 
@@ -55,29 +55,24 @@ Vie yhtenäisten asiakasprofiilien segmentit RollWorksiin ja käytä niitä main
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
+1. Valitse **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys RollWorks-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys RollWorks-osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
-1. Anna **RollWorks-mainostajatunnus** [RollWorks-mainostettava](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Anna viennin nimi.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. RollWorksiin pitää viedä segmenttejä.
+1. Syötä **RollWorks-mainostajan tunnus**.
 
-1. Valitse segmentit, jotka haluat viedä. Valitse segmentti, jossa on vähintään 100 jäsentä. Pienempiä segmenttejä ei voi viedä. Lisäksi vietävän segmentin enimmäiskoko on 250 000 jäsentä per vienti. 
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta.
+
+1. Valitse segmentit, jotka haluat viedä.
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista RollWorksiin, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää nämä tiedot ohjeesi mukaisesti, mutta olet vastuussa siitä, että RollWorks täyttää mahdolliset tietosuoja- tai tietoturvavelvollisuudet. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

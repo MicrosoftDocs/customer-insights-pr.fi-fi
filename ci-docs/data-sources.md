@@ -1,7 +1,7 @@
 ---
 title: Tietolähteiden yleiskatsaus
 description: Tietoja eri lähteistä peräisin olevien tietojen tuonnista tai käsittelystä.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,20 +12,20 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: fbe44f655bdbc20ef7f0956022395e2dcb570adf
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051449"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207087"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
 Dynamics 365 Customer Insights muodostaa yhteyksiä, joilla voidaan tuoda tietoja monenlaisesta lähdejoukosta. Tietolähteen yhdistämistä kutsutaan usein *tietojen käsittelyprosessiksi*. Tietojen käsittelyn jälkeen, tietoja voidaan [yhdistää](data-unification.md), niistä voidaan saada merkityksellisiä tietoja ja ne voidaan ottaa käyttöön. Tällä tavoin voidaan muodostaa mukautettuja kokemuksia.
 
-## <a name="add-data-sources"></a>Tietolähteiden lisääminen
+## <a name="add-or-edit-data-sources"></a>Tietolähteiden lisääminen tai muokkaaminen
 
-Tietolähteitä voidaan liittää tai tuoda Customer Insightsiin. Seuraavat linkit sisältävät tietolähteiden lisäämisohjeita.
+Tietolähteitä voidaan liittää tai tuoda Customer Insightsiin. Seuraavat linkit sisältävät tietolähteiden lisäämis- ja muokkausohjeita.
 
 **Tietolähteen liittäminen**
 
@@ -50,13 +50,18 @@ Jos ympäristö oli määritetty käyttämään Customer Insights -tallennustila
 
 Jos ympäristö ei käytä Power Platform -tietovoita, **Tietolähteet** -sivulla on ainoastaan kaikki tietolähteet sisältävä luettelo. Erillisiä osia ei ole näkyvissä.
 
-Valitsemalla **Tiedot** > **Tietolähteet** voidaan tarkastella kunkin käsitellyn tietolähteen nimeä, sen tilaa ja ajankohtaa, jolloin kyseisen lähteen tiedot viimeksi päivitettiin. Tietolähdeluettelon voi lajitella kunkin sarakkeen mukaan.
+## <a name="manage-existing-data-sources"></a>Aiemmin luotujen tietolähteiden hallinta
 
-:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Tietolähde lisättiin.":::
+Valitsemalla **Tiedot** > **Tietolähteet** voidaan tarkastella kunkin käsitellyn tietolähteen nimeä, sen tilaa ja ajankohtaa, jolloin kyseisen lähteen tiedot viimeksi päivitettiin. Tietolähdeluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan tietolähteen voi etsiä myös hakuruutua käyttämällä.
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+Voit tarkastella käytettävissä olevia toimintoja valitsemalla tietolähteen.
 
-Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella **Entiteetit**-sivulla. Lisätietoja on kohdassa [Entiteetit](entities.md).
+:::image type="content" source="media/data_sources_showmore.png" alt-text="Tietolähde lisättiin.":::
+
+- [**Muokkaa**](#add-or-edit-data-sources) tietolähdettä, jos haluat muuttaa sen ominaisuuksia.
+- [**Päivitä**](#refresh-data-sources) tietolähde siten, että se sisältää uusimmat tiedot.
+- Tietolähteen [**rikastus**](data-sources-enrichment.md) ennen yhdistämistä.
+- **Poista** tietolähde. Tietolähde voidaan poistaa vain, jos tietoja ei käytetään missään käsittelyssä, kuten yhdistämisessä, merkityksellisissä tiedoissa, aktivoinneissa tai vienneissä.
 
 ## <a name="refresh-data-sources"></a>Tietolähteiden päivittäminen
 
@@ -64,23 +69,12 @@ Tietolähteet voidaan päivittää automaattisen aikataulun mukaan tai manuaalis
 
 Valitsemalla **Hallinta** > **Järjestelmä** > [**Aikataulu**](system.md#schedule-tab) määritetään järjestelmän aikatauluttamat käsiteltyjen tietolähteiden päivitykset.
 
-Tietolähde päivitetään tarvittaessa seuraavasti:
+Tietolähteen päivittäminen pyynnöstä:
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
-1. Valitse tietolähteen vieressä olevat kolme pystysuuntaista pistettä (&vellip;), jos haluat päivittää. Valitse avattavasta luettelosta **Päivitä**. Tietolähde on nyt valmis manuaaliseen päivitykseen. Jos päivität tietolähteen, päivitetään tietolähteessä määritettyjen entiteettien sekä tiedot että entiteettirakenne.
+1. Valitse päivitettävä tietolähde ja valitse sitten **Päivitä**. Tietolähde on nyt valmis manuaaliseen päivitykseen. Jos päivität tietolähteen, päivitetään tietolähteessä määritettyjen entiteettien sekä tiedot että entiteettirakenne.
 
-1. Valitse **Pysäytä päivittäminen**, jos haluat peruuttaa nykyisen päivityksen, jolloin tietolähde palautuu viimeksi päivitettyyn tilaan.
-
-## <a name="delete-a-data-source"></a>Tietolähteen poistaminen
-
-Tietolähde voidaan poistaa vain, jos tietoja ei käytetään missään käsittelyssä, kuten yhdistämisessä, merkityksellisissä tiedoissa, aktivoinneissa tai vienneissä.
-
-1. Valitse **Tiedot** > **Tietolähteet**.
-
-2. Valitse tietolähteen vieressä olevat kolme pystysuuntaista pistettä (&vellip;), jos haluat poistaa kohteen. Valitse avattavasta valikosta **Poista**.
-
-3. Vahvista poisto.
-
+1. Valitse tila, jos haluat avata **Edistymisen tiedot** -ruudun ja tarkastella edistymistä. Peruuta työ valitsemalla ruudun alareunassa **Peruuta työ**.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

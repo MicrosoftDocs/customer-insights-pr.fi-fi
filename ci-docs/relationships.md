@@ -21,12 +21,12 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e622e5fa0b5738e31db1c668d95312adbc4f7d36
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081089"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183551"
 ---
 # <a name="relationships-between-entities-and-entity-paths"></a>Entiteettien entiteettipolkujen väliset suhteet
 
@@ -34,7 +34,7 @@ Suhteet yhdistää entiteetit ja määrittää kaavion tiedoista, kun entiteetei
 
 Suhteita on kolmea tyyppiä: 
 - Ei-muokattavissa olevat järjestelmäsuhteet, jonka järjestelmä luo tietojenyhdistämisprosessin yhteydessä
-- Ei-muokattavissa olevat perityt suhteet, jotka luodaan automaattisesti tietolähteestä 
+- Ei-muokattavissa olevat perityt suhteet, jotka luodaan automaattisesti tietolähteestä
 - Muokattavat mukautetut suhteet, jotka käyttäjät ovat luoneet ja määrittäneet
 
 ## <a name="non-editable-system-relationships"></a>Ei-muokattavissa olevat järjestelmäsuhteet
@@ -67,69 +67,66 @@ Suhde koostuu *lähde-entiteetistä*, joka sisältää viiteavaimen ja *kohde-en
    - **Kuvaus**: Suhteen kuvaus.
    - **Lähde-entiteetti**: Entiteetti, jota käytetään suhteen lähteenä. Esimerkki: SupportCase.
    - **Kohde-entiteetti**: Entiteetti, jota käytetään kohteen lähteenä. Esimerkki: Asiakas.
-   - **Lähteen kardinaliteetti**: Määritä lähde-entiteetin kardinaliteetti. Kardinaliteetti kuvaa joukon mahdollisten elementtien määrää. Se liittyy aina kohdekardinaliteettiin. Voit valita **yhden** tai **usean** välillä. Vain monta yhteen- ja yksi yhteen -suhteita tuetaan.  
+   - **Lähteen kardinaliteetti**: Lähde-entiteetin kardinaliteetti. Kardinaliteetti kuvaa joukon mahdollisten elementtien määrää. Se liittyy aina kohdekardinaliteettiin. Voit valita **yhden** tai **usean** välillä. Vain monta yhteen- ja yksi yhteen -suhteita tuetaan.  
      - Monta yhteen: useat lähdetietueet voivat liittyä yhteen kohdetietueeseen. Esimerkki: yhden asiakkaan tukitapauksia on useita.
      - Yksi yhteen: yksi lähdetietue liittyy yhteen kohdetietueeseen. Esimerkki: yksi uskollisuustunnus yhdelle asiakkaalle.
 
      > [!NOTE]
      > Monta moneen -suhteet voidaan luoda käyttämällä kahta monta-yhteen-suhdetta ja linkitysentiteettiä, joka yhdistää lähde-entiteetin ja kohde-entiteetin.
 
-   - **Kohdekardinaliteetti**: Valitse kohde-entiteettitietueiden kardinaliteetti. 
-   - **Lähdeavainkenttä**: lähde-entiteetin viiteavainkenttä. Esimerkki: SupportCase voi käyttää CaseID-tunnusta viiteavaimena.
-   - **Kohdeavainkenttä**: Kohde-entiteetin avainkenttä. Esimerkiksi Asiakas voi käyttää **CustomerID**-avainkenttä.
+   - **Kohdekardinaliteetti**: Kohde-entiteettitietueiden kardinaliteetti.
+   - **Lähdeavainkenttä**: lähde-entiteetin viiteavainkenttä. Esimerkki: SupportCase käyttää **CaseID**-tunnusta viiteavaimena.
+   - **Kohdeavainkenttä**: Kohde-entiteetin avainkenttä. Esimerkiksi Asiakas voi käyttää **CustomerID**-kenttää avainkenttänä.
 
 4. Valitse **Tallenna** luodaksesi asiakassuhteen.
 
 ## <a name="set-up-account-hierarchies"></a>Tilihierarkioiden määrittäminen
 
-Ympäristöt, jotka on määritetty käyttämään yritystilejä ensisijaisena kohdekäyttäjäryhmänä, voivat määrittää tilihierarkiat liittyviä yritystilejä varten. Esimerkiksi yritys, jolla on erilliset liiketoimintayksiköt. 
+Ympäristöt, jotka on määritetty käyttämään yritystilejä ensisijaisena kohdekäyttäjäryhmänä, voivat määrittää tilihierarkiat liittyviä yritystilejä varten. Esimerkiksi yritys, jolla on erilliset liiketoimintayksiköt.
 
 Organisaatiot luovat tilihierarkioita, joiden avulla voidaan hallita tilejä ja niiden välisiä suhteita paremmin. Customer Insights tukee pääkohde-alikohde-tilihierarkioita, jotka ovat jo olemassa käytettävissä asiakastiedoissa. Esimerkiksi tilit Dynamics 365 Salesista. Nämä hierarkiat voidaan määrittää **Suhteet**-sivulla.
 
 1. Siirry kohtaan **Tiedot** > **Suhteet**.
 1. Valitse **Tilihierarkia**-välilehti.
-1. Valitse **Uusi tilihierarkia**. 
-1. Anna **Tilihierarkia**-ruudussa hierarkian nimi. Järjestelmä luo tuloste-entiteetille nimen. Voit muuttaa tuloste-entiteetin nimeä.
+1. Valitse **Uusi tilihierarkia**.
+1. Anna **Tilihierarkia**-ruudussa hierarkian nimi. Järjestelmä luo tulosentiteetille nimen, mutta voit muuttaa sitä.
 1. Valitse entiteetti, joka sisältää tilihierarkian. Se on yleensä samassa entiteetissä, joka sisältää tilit.
-1. Valitse **Tilin tunnus** ja **Tilin päätunnus** valitusta entiteetistä 
-1. Valitse **Tallenna**, jotta voit ottaa asetukset käyttöön ja viimeistellä tilihierarkian.
+1. Valitse **Tilin UID** ja **Päätunnus-UID** valitusta entiteetistä.
+1. Viimeistele tilin hierarkia valitsemalla **Tallenna**.
 
-## <a name="view-relationships"></a>Tarkastele suhteita
+## <a name="manage-existing-relationships"></a>Olemassa olevien suhteiden hallinta
 
-Tässä Suhteet-sivulla on kaikki luodut suhteet. Kullakin rivillä on suhde, joka sisältää myös tietoja lähde-entiteetistä, kohde-entiteetistä ja suhteesta. 
+Siirry **Suhteet**-sivulle, kun haluat tarkastella kaikkia luotuja suhteita, lähde-entiteettiä, kohde-entiteettiä ja kardinaliteettia.
 
 :::image type="content" source="media/relationships-list.png" alt-text="Luettelo suhteista ja asetuksista suhteet-sivun toimintopalkissa.":::
 
-Tämä sivu tarjoaa joukon vaihtoehtoja nykyisille ja uusille suhteille: 
-- **Uusi suhde**: Valitse [Luo mukautettu suhde](#create-a-custom-relationship).
-- **Visualisointi**: [Tutustu suhteeseen visualisointitehosteen](#explore-the-relationship-visualizer) avulla, niin näet verkkokaavion aiemmin luoduista suhteista ja niiden kardinaliteetista.
-- **Suodatus**: Valitse suhdetyyppi, jonka haluat näyttää luettelossa.
-- **Hae suhteet**: Käytä suhdeominaisuuksien tekstipohjaista hakua.
+Voit etsiä tietyn suhteen **Suodatusmäärite**- tai **Hae suhteita** -vaihtoehtojen avulla. Näet verkkokaavion aiemmin luoduista suhteista ja niiden kardinaliteetista valitsemalla [**Visualisointi**](#explore-the-relationship-visualizer)
+
+Voit tarkastella käytettävissä olevia toimintoja valitsemalla suhteen:
+- **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
+- **Poista**: Poista mukautetut suhteet.
+- **Näkymä**: Näytä järjestelmän luomat ja perityt suhteet.
 
 ### <a name="explore-the-relationship-visualizer"></a>Tutustu suhteeseen visualisointitehosteena
 
 Suhteen visualisointi näyttää verkkokaavion yhdistettyjen entiteettien välisistä suhteista ja niiden kardinaliteetista. Se myös visualisoi suhdepolun.
 
-Jos haluat mukauttaa näkymää, voit muuttaa ruutujen sijaintia vetämällä ne kaavioon.
-
 :::image type="content" source="media/relationship-visualizer.png" alt-text="Näyttökuva suhdevisualisointiverkkokaaviosta, johon on liitetty toisiinsa liittyviä kokonaisuuksia.":::
 
-Käytettävissä olevat asetukset: 
+Jos haluat mukauttaa näkymää, voit muuttaa ruutujen sijaintia vetämällä ne kaavioon. Muut vaihtoehdot ovat: 
 - **Vie kuvana**: Tallenna nykyinen näkymä kuvatiedostona.
 - **Vaihda vaaka- tai pystysuuntaiseksi asetteluksi**: muuta entiteettien ja suhteiden asettelu.
 - **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
 
 ## <a name="relationship-paths"></a>Suhdepolut
 
-Suhdepolku kuvaa entiteettejä, jotka liittyvät lähde-entiteetin ja kohde-entiteetin välisiin suhteisiin. Sitä käytetään luotaessa segmenttiä tai mittayksikköä, joka sisältää muita entiteettejä kuin yhdistetyn profiilin entiteetin, ja yhdistetyn profiilin entiteetin tavoittamisessa on useita vaihtoehtoja. 
-
-Suhdepolku ilmoittaa järjestelmälle mistä suhteesta yhdistettyyn profiilientiteettiin on pääsy. Eri suhdepolut voivat tuottaa erilaisia tuloksia.
+Suhdepolku kuvaa entiteettejä, jotka liittyvät lähde-entiteetin ja kohde-entiteetin välisiin suhteisiin. Sitä käytetään luotaessa segmenttiä tai mittayksikköä, joka sisältää muita entiteettejä kuin yhdistetyn profiilin entiteetin, ja yhdistetyn profiilin entiteetin tavoittamisessa on useita vaihtoehtoja. Eri suhdepolut voivat tuottaa erilaisia tuloksia.
 
 Esimerkiksi entiteetillä *eCommerce_eCommercePurchases* on seuraavat suhteet yhdistettynä *Asiakas*-entiteettiin:
 
 - eCommerce_eCommercePurchases > Asiakas
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > Asiakas
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Asiakas 
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Asiakas
 
 Suhdepolku määrittää entiteetit, joita voi käyttää luotaessa yksiköitä tai segmenttejä koskevia sääntöjä. Jos valitset vaihtoehdon, jolla on pisin suhdepolku, tulokset ovat todennäköisesti pienempiä, koska vastaavien tietueiden on kuuluttava kaikkiin entiteetteihin. Tässä esimerkissä asiakkaan on ostettava tavaroita sähköisen kaupankäynnin (eCommerce_eCommercePurchases) kautta myyntipisteestä (POS_posPurchases) ja osallistuttava kanta-asiakasohjelmaamme (loyaltyScheme_loyCustomers). Kun valitset ensimmäisen vaihtoehdon, saat todennäköisesti enemmän tuloksia, koska asiakkaiden on oltava vain yhdessä lisäentiteetissä.
 
@@ -155,7 +152,7 @@ Suhde luokitellaan **epäsuoraksi suhteeksi**, kun lähde-entiteetti liittyy yht
 
 #### <a name="multi-hop-relationship"></a>Monivaiheinen suhde
 
-*Monivaiheinen suhde* on *epäsuora suhde*, jonka avulla lähde-entiteetti voidaan yhdistää kohde-entiteettiin yhden tai usean muun välittäjäentiteetin kautta.
+**Monivaiheinen suhde** on *epäsuora suhde*, jonka avulla lähde-entiteetti voidaan yhdistää kohde-entiteettiin yhden tai usean muun välittäjäentiteetin kautta.
 
 Jos esimerkiksi *eCommerce_eCommercePurchasesWest*-niminen aktiviteettientiteetti muodostaa yhteyden *eCommerce_eCommercePurchasesEast*-nimiseen välittäjäentiteettiin ja muodostaa sitten yhteyden *eCommerce_eCommerceContacts*-nimiseen kohde-entiteettiin, se on monivaiheinen suhde.
 
@@ -168,16 +165,6 @@ Monivaiheisia ja monipolkuisia suhteita voidaan käyttää yhdessä **monivaihei
 Jos esimerkiksi *eCommerce_eCommercePurchasesWest*-niminen aktiviteettientiteetti muodostaa yhteyden *eCommerce_eCommercePurchasesEast*-nimiseen välittäjäentiteettiin ja muodostaa sitten yhteyden kahteen kohde-entiteettiin, sekä *eCommerce_eCommerceContacts*-nimiseen että *loyaltyScheme_loyCustomers* kohde-entiteettiin, se on monivaiheinen, monipolkuinen suhde.
 
 :::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Lähde-entiteetti muodostaa yhteyden suoraan yhteen kohde-entiteettiin ja muodostaa yhteyden toiseen kohde-entiteettiin välittäjäentiteetin kautta.":::
-
-## <a name="manage-existing-relationships"></a>Olemassa olevien suhteiden hallinta 
-
-Suhteet-sivulla kutakin suhdetta edustaa rivi. 
-
-Valitse suhde ja valitse jokin seuraavista vaihtoehdoista: 
- 
-- **Muokkaa**: Päivitä mukautettuja suhteita muokkausruudussa ja tallenna muutokset.
-- **Poista**: Poista mukautetut suhteet.
-- **Näkymä**: Näytä järjestelmän luomat ja perityt suhteet. 
 
 ## <a name="next-step"></a>Seuraava vaihe
 

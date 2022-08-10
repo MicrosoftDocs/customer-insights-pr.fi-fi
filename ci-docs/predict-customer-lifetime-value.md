@@ -1,7 +1,7 @@
 ---
 title: Asiakkaan elinkaaren arvon (CLV) ennuste
 description: Ennakoi aktiivisten asiakkaiden myyntituoton potentiaali tulevaisuudessa.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,29 +13,30 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055210"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186436"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Asiakkaan elinkaaren arvon (CLV) ennuste
 
 Ennusta mahdollinen arvo (myyntituotto), jonka yksittäiset aktiiviset asiakkaat tuovat yritykselle tiettynä tulevana ajanjaksona. Tämän ominaisuuden avulla voit saavuttaa esimerkiksi seuraavat tavoitteet:
+
 - Korkean lisäarvon asiakkaiden tunnistaminen ja näiden merkityksellisten tietojen käsitteleminen
 - Strategisten asiakassegmenttien luominen niiden mahdollisen arvon perusteella mukautettujen kampanjoiden ja kohdistetun myynnin, markkinoinnin ja tukitoimintojen suorittamiseksi
 - Tuotekehityksen opastaminen keskittymällä asiakkaan arvoa lisääviin ominaisuuksiin
 - Myynti- tai markkinointistrategian optimoiminen ja budjetin kohdistaminen aiempaa tarkemmin asiakkaiden tavoittamiseksi
-- Korkean lisäarvon asiakkaiden tunnistaminen ja palkitseminen kanta-asiakas- ja palkkio-ohjelmien avulla 
+- Korkean lisäarvon asiakkaiden tunnistaminen ja palkitseminen kanta-asiakas- ja palkkio-ohjelmien avulla
 
 ## <a name="prerequisites"></a>Edellytykset
 
 Mieti ennen käytön aloittamista, mitä asiakkaan elinkaaren arvo merkitsee yrityksellesi. Tällä hetkellä tuemme tapahtumiin perustuvia asiakkaan elinkaaren arvon ennusteita. Asiakkaan ennustettu arvo perustuu liiketoimintatapahtumahistoriaan. Jos haluat luoda ennusteen, tarvitset vähintään [osallistujan](permissions.md) käyttöoikeudet.
 
-Koska asiakkaan elinkaaren arvon mallin määrittäminen ja käyttäminen ei vie paljon aikaa, kannattaa luoda useita malleja erilaisilla syöttömäärityksillä ja vertailla mallien tuloksia. Näin näet, mikää malliskenaario vastaa parhaiten liiketoiminnan tarpeita.
+Koska asiakkaan elinkaaren arvon mallin määrittäminen ja käyttäminen ei vie paljon aikaa, kannattaa luoda useita malleja erilaisilla syöttömäärityksillä ja vertailla mallien tuloksia. Näin näet, mikä malliskenaario vastaa parhaiten liiketoiminnan tarpeita.
 
-###  <a name="data-requirements"></a>Tietojen vaatimukset
+### <a name="data-requirements"></a>Tietojen vaatimukset
 
 Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorituskyvyn parantamiseksi. Mitä enemmän tietoja malli voi käsitellä, sitä tarkempi ennuste on. Siksi suosittelemme asiakasaktiviteettitietojen lisäämistä, jos niitä on käytettävissä.
 
@@ -52,11 +53,12 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
     - Verkkoaktiviteetit: Sivuston vierailuhistoria, sähköpostihistoria
     - Kanta-asiakasaktiviteetit: Kanta-asiakkuuden palkkiopisteiden kertymä- ja lunastushistoria
     - Asiakaspalveluloki-, huoltokäynti-, valitus- tai palautushistoria
+    - Asiakkaan profiilitiedot
 - Tietoja asiakkaan aktiviteeteista (valinnainen):
     - Aktiviteetin tunnisteet, joiden avulla saman tyypin aktiviteetit erotetaan toisistaan
     - Asiakastunnisteet, joiden avulla aktiviteetit yhdistetään asiakkaisiin
     - Aktiviteetin tiedot, jotka sisältävät aktiviteetin nimen ja päivämäärän
-    - Aktiviteettien semanttinen tietorakenne sisältää seuraavat tiedot: 
+    - Aktiviteettien semanttinen tietorakenne sisältää seuraavat tiedot:
         - **Perusavain:** Aktiviteetin yksilöivä tunnus
         - **Aikaleima**: Perusavaimen tunnistaman tapahtuman päivämäärä ja aika
         - **Tapahtuma (aktiviteetin nimi)**: Sen tapahtuman nimi, jota haluat käyttää
@@ -66,7 +68,7 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
     - Riittävät historiatiedot: Tapahtumatiedot vähintään vuoden ajalta. Mieluiten 2–3 vuoden transaktiotiedot CLV:n ennustamiseksi vuodeksi.
     - Useita ostoksia asiakasta kohti: Mieluiten vähintään 2–3 tapahtumaa asiakastunnusta kohden, mieluiten useana päivämääränä.
     - Asiakkaiden määrä: Vähintään 100 eri asiakasta, mielellään yli 10 000 asiakasta. Malli epäonnistuu, jos asiakkaita on alle 100 ja historiatiedot ovat puutteellisia
-    - Tietojen täydellisyys: Vähemmän kuin 20 % arvoista puutuu syötetietojen pakollisissa kentissä   
+    - Tietojen täydellisyys: Vähemmän kuin 20 % arvoista puutuu syötetietojen pakollisissa kentissä
 
 > [!NOTE]
 > - Malliin tarvitaan asiakkaiden tapahtumahistoria. Tällä hetkellä voi määrittää vain yhden tapahtumahistorian entiteetin. Jos osto-/tapahtumaentiteettejä on useita, ne voidaan yhdistää Power Queryssä ennen tietojen käsittelyä.
@@ -122,11 +124,11 @@ Seuraavat tiedot ovat pakollisia. Valinnaisia tietoja suositellaan mallin suorit
 
 1. Valitse **Seuraava**.
 
-### <a name="add-optional-data"></a>Lisää valinnaisia tietoja
+### <a name="add-optional-activity-data"></a>Lisää valinnaiset aktiviteettitiedot
 
-Tärkeisiin asiakastapahtumiin (kuten verkko-, asiakaspalvelu- ja tapahtumalokitapahtumat) liittyvät tiedot lisäävät tapahtumatietueisiin kontekstia. Mallien lisääminen asiakkaiden aktiivisuustietoihin voi parantaa ennusteiden tarkkuutta. 
+Tärkeisiin asiakastapahtumiin (kuten verkko-, asiakaspalvelu- ja tapahtumalokitapahtumat) liittyvät tiedot lisäävät tapahtumatietueisiin kontekstia. Mallien lisääminen asiakkaiden aktiivisuustietoihin voi parantaa ennusteiden tarkkuutta.
 
-1. Valitse **Lisätiedot (valinnainen)** -vaiheessa **Lisää tietoja**. Valitse asiakasaktiviteettientiteetti, jossa on asiakasaktiviteetin tiedot [edellytyksissä](#prerequisites) kuvatulla tavalla.
+1. Valitse **Lisätiedot (valinnainen)** -vaiheessa **Lisää tietoja** kohdassa **Tehosta mallin merkityksellisiä tietoja lisäaktiviteettitiedoilla**. Valitse asiakasaktiviteettientiteetti, jossa on asiakasaktiviteetin tiedot [edellytyksissä](#prerequisites) kuvatulla tavalla.
 
 1. Yhdistä semanttiset kentät määritteisiin asiakasaktiviteettientiteetissä ja valitse **Seuraava**.
 
@@ -135,25 +137,44 @@ Tärkeisiin asiakastapahtumiin (kuten verkko-, asiakaspalvelu- ja tapahtumalokit
 1. Valitse aktiviteettityyppi, joka vastaa lisättävän asiakasaktiviteetin tyyppiä. Valitse aiemmin luodut aktiviteettityypit tai lisää uusi aktiviteettityyppi.
 
 1. Määritä asiakasaktiviteettientiteetin suhde *asiakasentiteettiin*.
-    
+
     1. Valitse kenttä, joka määrittää asiakkaan asiakasaktiviteettitaulukossa. Se voi liittyä suoraan *asiakasentiteetin* ensisijaiseen asiakastunnukseen.
     1. Valitse *asiakasentiteetti*, joka vastaa ensisijaista *asiakasentiteettiä*.
     1. Anna suhdetta kuvaava nimi.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Kuva määritystyönkulun siitä vaiheesta, jossa lisätään tietoja ja määritetään aktiviteetti täytetyillä esimerkeillä.":::
 
-1. Valitse **Tallenna**.    
+1. Valitse **Tallenna**.
     Lisää tietoja, jos haluat sisällyttää muita asiakasaktiviteetteja.
+
+1. Lisää valinnaiset asiakastiedot tai valitse **Seuraava**.
+
+### <a name="add-optional-customer-data"></a>Valinnaisten asiakastietojen lisääminen
+
+Valitse 18:sta yleisesti käytetystä asiakasprofiilimääritteestä, jotka sisällytetään mallin syötteenä. Nämä määritteet voivat johtaa yrityksen tarkoituksiin soveltuviin mukautettuihin, olennaisiin ja toimintaan sopiviin mallituloksiin.
+
+Esimerkki: Contoso Coffee haluaa ennustaa asiakkaan elinkaariarvon kohdistaakseen tärkeille asiakkaille mukautetun tarjouksen, joka liittyy uuden espressokoneen lanseeraukseen. Contoso käyttää CLV-mallia ja lisää kaikki 18 asiakasprofiilimääritettä nähdäkseen, mitkä tekijät vaikuttavat sen tärkeimpiin asiakkaisiin. Contoso havaitsee asiakkaiden sijainnin olevan vaikuttavin tekijä näille asiakkaille.
+Näiden tietojen avulla Contoso järjestää paikallisen tapahtuman, joka järjestetään espressokoneen lanseerausta varten, ja tekee yhteistyötä paikallisten toimittajien kanssa erikoistarjouksien ja erikoiskokemuksien tarjoamiseksi tapahtumassa. Ilman näitä tietoja Contoso on ehkä lähettänyt vain yleisiä markkinointisähköposteja eikä ole voinut mukauttaa näitä paikallisia asiakassegmenttejä tärkeimmille asiakkailleen.
+
+1. Valitse **Lisätiedot (valinnainen)** -vaiheessa **Lisää tietoja** kohdassa **Tehosta mallin merkityksellisiä tietoja lisää lisäaktiviteettitiedoilla**.
+
+1. Valitse **entiteetti** **Asiakas : CustomerInsights** ja valitse yhtenäinen asiakasprofiilitaulukko, joka yhdistää asiakasmääritteiden tiedot. Valitse **asiakastunnukseksi** **System.Customer.CustomerId**.
+
+1. Yhdistä lisää kenttiä, jos tiedot ovat yhtenäisten asiakasprofiilien käytettävissä.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Esimerkki asiakasprofiilin tietojen yhdistetyistä kentistä.":::
+
+1. Valitse **Tallenna**, kun olet yhdistämismäärityksen jälkeen valinnut määritteet, joiden avulla mallin tulisi ennustaa asiakkaan elinkaariarvo.
 
 1. Valitse **Seuraava**.
 
 ### <a name="set-update-schedule"></a>Päivitysaikataulun määrittäminen
 
-1. Valitse **Tietojen päivitysaikataulu** -vaiheessa aikaväli, jonka mukaan mallia koulutetaan uudelleen uusimpien tietojen perusteella. Tämä asetus on tärkeä, jotta ennusteiden tarkkuus voidaan päivittää, kun uusia tietoja päivitetään Customer Insightsissa. Useimmat yritykset voivat uudelleenkouluttaa kerran kuukaudessa ja saada hyvän tarkkuuden ennusteille.
+1. Valitse **Tietojen päivitysaikataulu** -vaiheessa aikaväli, jonka mukaan mallia koulutetaan uudelleen uusimpien tietojen perusteella. Tämä asetus on tärkeä, jotta ennusteiden tarkkuus voidaan päivittää, kun uusia tietoja päivitetään Customer Insightsissa. Useimmat yritykset voivat kouluttaa uudelleen kerran kuukaudessa ja saada hyvän tarkkuuden ennusteille.
 
 1. Valitse **Seuraava**.
 
-### <a name="review-and-run-the-model-configuration"></a>Mallimäärityksen tarkasteleminen ja suoritaminen
+### <a name="review-and-run-the-model-configuration"></a>Mallimäärityksen tarkasteleminen ja suorittaminen
 
 1. Voit tarkastella ennusteen määritystä **Tarkastele mallin tietoja** -vaiheessa. Voit palata mihin tahansa ennustemäärityksen osaan valitsemalla **Muokkaa** annetun arvon kohdassa. Voit myös valita määritysvaiheen edistymisen ilmaisimessa.
 
@@ -214,7 +235,7 @@ Tulossivulla on kolme ensisijaista tieto-osaa.
 
   Tekoälymalli priorisoi asiakkaiden tarkan luokittelun sen mukaan, millaista lisäarvoa he tuovat yritykselle. Korkean lisäarvon asiakkaiden ennustamisessa käytetään siis vain onnistumisastetta. Sen avulla johdetaan mallin lopullinen luokka. RMSE-mittari on herkkä poikkeaville arvoille. Skenaarioissa, joissa pieni prosenttiosuus erittäin korkean ostoarvon omaavia asiakkaita, yleinen RMSE-mittari ei ehkä annan todellista kuvaa mallin suorituskyvystä.   
 
-- **Asiakkaiden arvo prosenttipisteen mukaan**: Asiakkaan ryhmitellään korkean lisäarvon asiakkaiden määrityksen mukaan alhaisen lisäarvon ja korkean lisäarvon luokkiin asiakkaan elinkaaren arvon ennusteiden perusteeella. Tiedot näytetään kaaviossa. Jos viet hiiren osoittimen histogrammin pakkien kohdalle, näet kunkin ryhmän asiakkaiden määrän ja kyseisen ryhmän keskimääräisen asiakkaan elinkaaren arvon. Tiedoista on apua, jos haluat [luoda asiakassegmenttejä](segments.md) asiakkaan elinkaaren arvon ennusteiden perusteella.
+- **Asiakkaiden arvo prosenttipisteen mukaan**: Asiakkaan ryhmitellään korkean lisäarvon asiakkaiden määrityksen mukaan alhaisen lisäarvon ja korkean lisäarvon luokkiin asiakkaan elinkaaren arvon ennusteiden perusteella. Tiedot näytetään kaaviossa. Jos viet hiiren osoittimen histogrammin pakkien kohdalle, näet kunkin ryhmän asiakkaiden määrän ja kyseisen ryhmän keskimääräisen asiakkaan elinkaaren arvon. Tiedoista on apua, jos haluat [luoda asiakassegmenttejä](segments.md) asiakkaan elinkaaren arvon ennusteiden perusteella.
 
 - **Vaikuttavimmat tekijät**: Huomioon otetaan eri tekijöitä, kun asiakkaan elinkaaren arvon ennuste luodaan tekoälymallille annettujen syötetietojen perusteella. Kunkin tekijän tärkeys on laskettu mallin luomille yhdistellyille ennusteille. Näiden tekijöiden avulla voit tarkistaa ennusteen tulokset. Nämä tekijät antavat myös enemmän tietoja tekijöistä, jotka vaikuttivat eniten kaikkien asiakkaiden asiakkaan elinkaaren arvon ennustamiseen.
 

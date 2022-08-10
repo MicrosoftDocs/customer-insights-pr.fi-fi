@@ -1,7 +1,7 @@
 ---
 title: Käytä Customer Insights -tietoja Microsoft Dataversessä
 description: Opettele yhdistämään Customer Insights ja Microsoft Dataverse ja ymmärtämään Dataverseen viedyt tulosentiteetit.
-ms.date: 05/30/2022
+ms.date: 07/15/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 89ff629033230de3c6252b6a3a16816d9b3c1287
+ms.sourcegitcommit: 85b198de71ff2916fee5500ed7c37c823c889bbb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011516"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "9153400"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
@@ -31,13 +31,25 @@ Kun muodostat yhteyden Dataverse-ympäristöön, voit myös [käsitellä tietoja
 - Tähän Dataverse-ympäristöön, johon haluat yhdistää, ei ole aiemmin liitetty Customer Insights -ympäristöä. Opettele poistamaan [aiemmin luotu yhteys Dataverse-ympäristöön](#remove-an-existing-connection-to-a-dataverse-environment).
 - Microsoft Dataverse -ympäristö voi muodostaa yhteyden vain yhteen tallennustiliin. Sitä käytetään vain, jos määrität ympäristön käyttämään [Azure Data Lake Storageasi](own-data-lake-storage.md).
 
+## <a name="dataverse-storage-capacity-entitlement"></a>Dataverse tallennustilakapasiteettioikeudet
+
+Customer Insights -tilaus oikeuttaa organisaatiosi olemassa olevan [Dataverse-tallennuskapasiteetin lisäämiseen](/power-platform/admin/capacity-storage). Lisäkapasiteetti määräytyy tilauksesi käytössä olevien profiilien määrän mukaan.
+
+**Esimerkki:**
+
+Oletetaan, että saat 15 gigatavun tietokantatallennustilan ja 20 gigatavun tiedostotallennustilan 100 000:ta asiakasprofiilia kohti. Jos tilauksessa on 300 000 asiakasprofiilia, tallennustilan kokonaiskapasiteetti on 45 Gt (3 x 15 Gt) tietokantatallennustilaa ja 60 Gt tiedostotallennustilaa (3 x 20 Gt). Vastaavasti jos sinulla on yritysten välinen tilaus 30 000 asiakkaan tilillä, tallennustilan kokonaiskapasiteetti on 45 Gt (3 x 15 Gt) tietokantatallennustilaa ja 60 Gt tiedostotallennustilaa (3 x 20 Gt).
+
+Lokikapasiteettia ei lisätä vaan se on kiinteä organisaatiolle.
+
+Lisätietoja tarkoista kapasiteettioikeuksista on kohdassa [Dynamics 365:n käyttöoikeusopas](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 ## <a name="connect-a-dataverse-environment-to-customer-insights"></a>Dataverse -ympäristön yhdistäminen Customer Insights -asiakkaaseen
 
 **Microsoft Dataverse** -vaiheen avulla voit yhdistää Customer Insights -tietoja Dataverse-ympäristöön [luodessasi Customer Insights -ympäristöä](create-environment.md).
 
 :::image type="content" source="media/dataverse-provisioning.png" alt-text="tietojen jakaminen Microsoft Dataversen kanssa automaattisesti käytössä uusissa verkkoympäristöissä.":::
 
-Järjestelmänvalvojat voivat määrittää Customer Insights -tiedot muodostamaan yhteyden olemassa olevaan Dataverse-ympäristöön. Antamalla URL-osoitteen Dataverse-ympäristöön, se liitetään uuteen Customer Insights -ympäristöön.
+Järjestelmänvalvojat voivat määrittää Customer Insights -tiedot muodostamaan yhteyden olemassa olevaan Dataverse-ympäristöön. Antamalla URL-osoitteen Dataverse-ympäristöön, se liitetään uuteen Customer Insights -ympäristöön. Kun olet muodostanut yhteyden Customer Insightsin ja Dataversen välille, älä muuta Dataverse-ympäristön organisaationimeä. Organisaation nimeä käytetään Dataverse-URL-osoitteessa, ja muutettu nimi katkaisee yhteyden Customer Insightsiin.
 
 Jos et halua käyttää olemassa olevaa Dataverse-ympäristöä, järjestelmä luo vuokraajan Customer Insights -tiedoille uuden ympäristön. [Power Platformin järjestelmänvalvojat voivat hallita, kuka voi luoda ja hallita ympäristöjä](/power-platform/admin/control-environment-creation). Kun määrität uutta Customer Insights -ympäristöä ja järjestelmänvalvoja on poistanut Dataverse-ympäristöjen luomisen käytöstä kaikille järjestelmänvalvojille paitsi järjestelmänvalvojille, et ehkä voi luoda uutta ympäristöä.
 
@@ -134,7 +146,7 @@ AlternateKey-taulukko sisältää prosessiin osallistuneiden entiteettien avaime
 |DataSourceName    |String         | Tietolähteen nimi. Esimerkki: `datasource5`        |
 |EntityName        | String        | Entiteetin nimi Customer Insightsissa. Esimerkki: `contact1`        |
 |AlternateValue    |String         |Vaihtoehtoinen tunnus, joka on yhdistetty asiakastunnukseen. Esimerkki: `cntid_1078`         |
-|KeyRing           | Monirivinen teksti        | JSON-arvo  </br> Esimerkki: [{"dataSourceName":" datasource5 ",</br>"entityName":" contact1",</br>"preferredKey":" cntid_1078",</br>"avaimet":[" cntid_1078"]}]       |
+|KeyRing           | Monirivinen teksti        | JSON-arvo  </br> Esimerkki: [{”dataSourceName”:” datasource5 ”,</br>”entityName”:” contact1”,</br>”preferredKey”:” cntid_1078”,</br>”avaimet”:[” cntid_1078”]}]       |
 |CustomerId         | String        | Yhdistetyn asiakasprofiilin tunnus.         |
 |AlternateKeyId     | GUID         |  AlternateKeyn deterministinen GUID-tunnus, joka perustuu msdynci_identifieriin       |
 |msdynci_identifier |   String      |   `DataSourceName|EntityName|AlternateValue`  </br> Näyte: `testdatasource|contact1|cntid_1078`    |

@@ -1,51 +1,53 @@
 ---
 title: Segmenttien vieminen Iterableen (esiversio)
 description: Tietoja Iterable-yhteyden määrittämisestä ja viennistä siihen.
-ms.date: 03/29/2022
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 98d5aeab6b0e932d291213053d509ec72da82e47
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ccf10b6e3a28a75f9d1bd3d8da3bf870ebc2b1b2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052231"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195425"
 ---
 # <a name="export-segments-to-iterable-preview"></a>Segmenttien vieminen Iterableen (esiversio)
 
-Vie unified customer profile -profiilien segmentit Iterableen ja käytä niitä markkinointiaktiviteetteihin.
+Vie yhdistettyjen asiakasprofiilien segmentit Iterableen ja käytä niitä markkinointiaktiviteetteihin.
 
 ## <a name="prerequisites"></a>edellytykset
 
--   Sinulla on [Iterable-tili](https://iterable.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
--   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
--   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
+- [Iterable-tili](https://iterable.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
+- [Iterable-ohjelmointirajapinnan avain](https://support.iterable.com/hc/en-us/articles/360043464871)
+- [Määritetyt segmentit](segments.md) Customer Insightsissa.
+- Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Vieminen Iterableen rajoittuu segmentteihin.
-- Enintään yhden miljoonan asiakasprofiilin vieminen Iterableen voi kestää 30 minuuttia. 
-- Iterableen vietävien asiakasprofiilien määrä riippuu Iterable-sopimuksestasi ja sen sisältämistä rajoituksista.
+- Enintään yhden miljoonan asiakasprofiilin vieminen Iterableen, mikä voi kestää 30 minuuttia. Iterableen vietävien asiakasprofiilien määrä riippuu Iterable-sopimuksestasi.
+- Vain segmentit.
 
 ## <a name="set-up-connection-to-iterable"></a>Määritä yhteys Iterableen
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Iterable**.
+1. Valitse **Lisää yhteys** ja valitse sitten **Iterable**.
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvoisesti vain järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Jatka kirjautumista antamalla [Iterable-ohjelmointirajapinnan avain](https://support.iterable.com/hc/en-us/articles/360043464871). 
+1. Jatka kirjautumista antamalla Iterable-ohjelmointirajapinnan avain.
 
-1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
-1. Valitse **Yhdistä**, jos haluat alustaa yhteyden Iterableen.
+1. Käynnistä yhteys valitsemalla **Yhdistä**.
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
@@ -53,25 +55,22 @@ Vie unified customer profile -profiilien segmentit Iterableen ja käytä niitä 
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
+1. Valitse **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Iterable-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Iterable-osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
-3. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Segmentit on vietävä Iterableen. Iterablessa luotuun luetteloon tulee täsmälleen sama nimi kuin segmentin nimessä kohteessa Dynamics 365 Customer Insights.
+1. Anna viennin nimi.
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Iterablessa luotuun luetteloon tulee täsmälleen sama nimi kuin segmentin nimessä kohteessa Dynamics 365 Customer Insights.
+
+1. Valitse segmentit, jotka haluat viedä.
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys Iterableen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Iterable täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

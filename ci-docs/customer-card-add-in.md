@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: ead18963959f94fd07912384cf61802f83523e2f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080984"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9194919"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Dynamics 365 -sovellusten asiakaskortin apuohjelma (esiversio)
 
@@ -26,23 +26,27 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 - Apuohjelma toimii vain Dynamics 365 - mallipohjaisissa sovelluksissa, kuten Salesissa tai Customer Servicen versiossa 9.0 ja uudemmissa.
-- Dynamics 365 -tietojen yhdistäminen Customer Insightsin asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin yhdistämisvaiheessa](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+- Dynamics 365 -tietojen yhdistäminen Customer Insightsin asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin aikana](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Kaikki asiakaskortin lisäosan Dynamics 365 -käyttäjät on [lisättävä käyttäjinä](permissions.md) Customer Insights -tietoihin, jotta he näkevät tiedot.
-- Customer Insightsin [määritetyt haku- ja suodatusominaisuudet](search-filter-index.md) ovat pakollisia, jotta tietojen valinta toimisi.
+- [Määritetyt haku- ja suodatustoiminnot](search-filter-index.md) Customer Insightsissa.
 - Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin Customer Insightsissa. Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
-  - **Mittarin ohjausobjekti**: Vaatii asiakasmääritetyyppisiä [määritettyjä mittareita](measures.md).
+  - **Mittarin ohjausobjekti**: Vaatii [määritettyjä asiakasmääritetyyppisiä mittareita](measures.md).
   - **Älykkyyden hallinta**: Edellyttää [ennusteiden tai mukautettujen mallien](predictions-overview.md) avulla luotuja tietoja.
-  - **Asiakkaan tietojen ohjausobjekti**: Profiilin kaikki kentät ovat käytettävissä yhtenäisessä asiakasprofiilissa.
+  - **Asiakkaan tietojen ohjausobjekti**: näyttää profiilin kaikki kentät, jotka ovat käytettävissä yhtenäisessä asiakasprofiilissa.
   - **Rikastus-ohjausobjekti**: edellyttää aktiivisia [rikastuksia](enrichment-hub.md), joita käytetään asiakasprofiileihin. Korttilisäosa tukee seuraavia rikastuksia: Microsoftin tuottamat [tuotemerkit](enrichment-microsoft.md), [kiinnostuksen kohteet](enrichment-microsoft.md) ja [Office-vuorovaikutustiedot](enrichment-office.md).
-  - **Yhteyshenkilöiden ohjausobjekti**: Edellyttää yhteyshenkilötyyppisen semanttisen entiteetin määrittelemistä.
+  - **Yhteyshenkilöiden ohjausobjekti**: Edellyttää yhteyshenkilötyyppistä semanttista entiteettiä.
   - **Aikajanan ohjausobjekti**: Edellyttää [määritettyjä aktiviteetteja](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Asiakaskortin apuohjelman asentaminen
 
-Asiakaskortin apuohjelma on Dynamics 365:n Customer Engagement -sovellusten ratkaisu. Jos haluat asentaa ratkaisun, siirry AppSourceen ja hae sanalla **Dynamics Customer Card**. Valitse [Customer Card Add-in AppSourcessa](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) ja sitten **Hanki nyt**.
+Asiakaskortin apuohjelma on Dynamics 365:n Customer Engagement -sovellusten ratkaisu. Ratkaisun asentaminen:
+
+1. Siirry AppSourceen ja hae **Dynamics-asiakaskorttia**.
+
+1. Valitse [Customer Card Add-in AppSourcessa](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview) ja sitten **Hanki nyt**.
 
 Ratkaisun asentaminen voi edellyttää kirjautumista Dynamics 365 -sovelluksen järjestelmänvalvojan tunnistetiedoilla. Ratkaisun asentaminen ympäristöön voi kestää jonkin aikaa.
 
@@ -77,7 +81,7 @@ Ratkaisun asentaminen voi edellyttää kirjautumista Dynamics 365 -sovelluksen j
 
 ## <a name="add-customer-card-controls-to-forms"></a>Asiakaskortin ohjausobjektien lisääminen lomakkeisiin
 
-Skenaariosta riippuen voit valita ohjausobjekteja joko **Yhteyshenkilö**-lomakkeeseen tai **Tili**-lomakkeeseen. Jos Customer Insights -ympäristösi on yritystilejä varten, on suositeltavaa lisätä ohjausobjektit Tili-lomakkeeseen. Korvaa tässä tapauksessa "yhteyshenkilö" alla olevissa vaiheessa tunnuksella "tili".
+Skenaariosta riippuen voit valita ohjausobjekteja joko **Yhteyshenkilö**-lomakkeeseen tai **Tili**-lomakkeeseen. Jos Customer Insights -ympäristösi on yritystilejä varten, on suositeltavaa lisätä ohjausobjektit Tili-lomakkeeseen. Korvaa tässä tapauksessa ”yhteyshenkilö” alla olevissa vaiheessa tunnuksella ”tili”.
 
 1. Voit lisätä Asiakaskortti-ohjausobjekteja Yhteyshenkilö-lomakkeeseen siirtymällä Dynamics 365 -järjestelmässä kohtaan **Asetukset** > **Mukautukset**.
 
@@ -94,7 +98,7 @@ Skenaariosta riippuen voit valita ohjausobjekteja joko **Yhteyshenkilö**-lomakk
 
 1. Valitse juuri lisätty lomakkeen kenttä ja valitse sitten **Muuta ominaisuuksia**.
 
-1. Valitse **Ohjausobjektit**-välilehdessä **Lisää ohjausobjekti**. Valitse jokin käytettävissä olevista mukautetuista ohjausobjekteistä ja valitse sitten **Lisää**.
+1. Valitse **Ohjausobjektit**-välilehdessä **Lisää ohjausobjekti**. Valitse jokin käytettävissä olevista mukautetuista ohjausobjekteista ja valitse sitten **Lisää**.
 
 1. Poista **Kentän ominaisuudet** -valintaikkunassa **Näytä otsikko lomakkeessa** -valintaruudun valinta.
 
@@ -118,7 +122,7 @@ Asiakaskortin apuohjelmaa ei päivitetä automaattisesti. Jos haluat päivittä�
 
    :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Ratkaisun päivittäminen Dynamics 365 -sovellusten Mukauttaminen-alueella.":::
 
-1. Kun olet käynnistänut päivityksen, latausilmaisin näkyy päivityksen valmistumiseen asti. Jos uudempia versioja ei ole, päivitys näyttää virhesanoman.
+1. Kun olet käynnistänyt päivityksen, latausilmaisin näkyy päivityksen valmistumiseen asti. Jos uudempia versioita ei ole, päivitys näyttää virhesanoman.
 
 ## <a name="troubleshooting"></a>Vianmääritys
 

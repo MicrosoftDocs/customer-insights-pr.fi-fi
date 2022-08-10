@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: e98aea3b3f3a2c4788346deab1b7ad7d1167110d
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: df4f5f4b5c9a3ad66d57a6b349e18a0d714aff62
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054336"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170585"
 ---
-# <a name="suggested-segments-based-on-activity-data-preview"></a>Aktiviteettitietojen perusteella ehdotetut segmentit (esiversio)
+# <a name="suggested-segments-based-on-activity-preview"></a>Aktiviteettiin perustuvat ehdotetut segmentit (esiversio)
 
 Löydä mielenkiintoisia asiakassegmenttejä asiakasaktiviteettitietojen perusteella, jota Customer Insights käsittelee. Esimerkkejä aktiviteettitiedoista ovat tapahtumat, tukipuhelun kesto, ostot tai palautukset. Aktiviteettitiedoista analysoidaan segmenttien ehdottamista varten niiden viimeaikaisuutta, toistuvuutta ja rahallista arvoa (tai kestoa). Vaihtoehtoisesti voidaan luoda [ehdotettuja segmenttejä mittarin parantamista varten tai ymmärryksen parantamiseksi siitä, mikä vaikuttaa määritteeseen](suggested-segments.md).
 
@@ -35,33 +35,31 @@ Customer Insightsissa saatavilla olevien [aktiviteettitietojen](activities.md) a
 - asiakkaat, jotka ovat usein vuorovaikutuksessa yrityksesi kanssa  
 
 Jos sinulla on vähittäiskauppa, voit selvittää, mitkä asiakkaat tuovat eniten tuottoa, ja palkita heidät kupongilla. Voit myös tunnistaa satunnaisia asiakkaita ja tarjota heille liittymistä palkinto-ohjelmaan, jotta he vierailisivat yrityksessäsi useammin.
-Jos olet julkisen terveydenhuollon alalla ja tavoitteenasi on minimoida yksittäisten potilaiden kulut. Yksi tapa tehdä se voisi olla toistuvien käyntien vähentäminen tarjoamalla parasta mahdollista hoitoa mahdollisimman harvoilla käynneillä. Tässä tapauksessa tavoitteenasi on pitää käyntitiheys alhaisena ja minimoida potilaiden toistuvat kustannukset. Tai voit tunnistaa sellaisten potilaiden segmentit, joilla on usein toistuvia tapaamisia ja korkeat toistuvat kustannukset ja analysoida näitä tapauksia yksilön hoidon parantamiseksi. 
+Jos tarjoat julkista terveydenhuoltoa ja haluat pienentää yksittäisten sairaanhoitovierailujen kuluja, voit yrittää vähentää toistuvia vierailuja tarjoamalla mahdollisimman hyvää hoitoa mahdollisimman vähillä käynneillä. Tässä tapauksessa tavoitteenasi on pitää käyntitiheys alhaisena ja minimoida potilaiden toistuvat kustannukset. Tai voit tunnistaa sellaisten potilaiden segmentit, joilla on usein toistuvia tapaamisia ja korkeat toistuvat kustannukset ja analysoida näitä tapauksia yksilön hoidon parantamiseksi.
 
 ## <a name="required-data"></a>Pakolliset tiedot
 
-Ehdotukset luodaan valittujen syötetietojen perusteella. 
+Ehdotukset luodaan valittujen syötetietojen perusteella.
 
-- Asiakasprofiilit: Kaikki asiakkaat tai tietyn segmentin jäsenet. 
+- Asiakasprofiilit: Kaikki asiakkaat tai tietyn segmentin jäsenet.
 
 - Ajanjakso: Viime kuussa, viime vuonna tai millä tahansa mukautetulla aikavälillä.
 
 - Aktiviteettityyppi: ostot, vähittäismyyntitapahtumat, verkkotapahtumat, asiakastuen palvelupyynnöt, tilaukset ja niin edelleen.  
 
-- Customer Insights -entiteetti, joka sisältää aktiviteettitiedot: UnifiedActivity-entiteetti tai tietyn aktiviteetin entiteetti. 
+- Customer Insights -entiteetti, joka sisältää aktiviteettitiedot: UnifiedActivity-entiteetti tai tietyn aktiviteetin entiteetti.
 
 - Sisällytettävät dimensiot: Viimeaikaisuus, toistuvuus tai rahallinen dimensio riippuen yrityksesi vaatimuksista.
 
 ## <a name="generate-suggested-segments"></a>Ehdotettujen segmenttien luominen
 
-1. Valitse **Segmentit**.
+1. Siirry kohtaan **Segmentit** ja valitse **Ehdotukset (esiversio)** -välilehti.
 
-1. Valitse **Ehdotukset (esiversio)** -välilehti.
-
-1. Valitse **Etsi uusia ehdotuksia** ja valitse **Näytä tai ennakoi asiakkaan käyttäytymistä**. Suorita ohjattu käyttökokemus valitsemalla **Käynnistä**.
+1. Valitse **Etsi uusia ehdotuksia** ja valitse **Näytä tai ennakoi asiakkaan käyttäytymistä**. Valitse **Aloita**.
 
    :::image type="content" source="media/suggested-segments-activity-wizard.png" alt-text="Ohjatun määritystoiminnon ensimmäinen vaihe ehdotetulle segmentille aktiviteetin perusteella.":::
 
-1. Anna tarvittavat syötetiedot ja valitse **Seuraava** jatkaaksesi.
+1. Anna tarvittavat syötetiedot ja valitse **Seuraava**.
 
    - Valitse asiakkaat: Sisällytä kaikki asiakkaat tai tietty segmentti.
    - Valitse aktiviteetti: Valitse aktiviteettityyppi ja aktiviteettia kuvaavat entiteetit.
@@ -69,32 +67,17 @@ Ehdotukset luodaan valittujen syötetietojen perusteella.
 
 1. Tarkista syötteesi ja valitse **Suorita** suorittaaksesi mallin ja luodaksesi ehdotuksia.
 
-1. Asiakasprofiilien ja valittujen aktiviteettien määrästä riippuen sen suorittamiseen voi mennä muutama minuutti. 
+Asiakasprofiilien ja valittujen aktiviteettien määrästä riippuen sen suorittamiseen voi mennä muutama minuutti.
 
-Ehdotusten luomisen jälkeen niitä voidaan suodattaa kiinnostavimman dimension tai arvon perusteella. 
+Ehdotusten luomisen jälkeen niitä voidaan suodattaa kiinnostavimman dimension tai arvon perusteella.
 
-## <a name="view-details-of-a-suggested-segment"></a>Ehdotetun segmentin tietojen tarkasteleminen
+## <a name="manage-suggested-segments"></a>Hallitse ehdotettuja segmenttejä
 
-Kun ehdotukset on luotu, luettelo niistä näkyy **Segmentit** > **Ehdotukset (esiversio)** **Aktiviteetteihin perustuvat ehdotukset** -osassa.
+Siirry **segmentteihin** ja valitse **Ehdotukset (esikatselu)** -välilehti. Valitse **Aktiviteettiin perustuvat ehdotukset** -osassa ehdotettu segmentti, jotta voit tarkastella käytettävissä olevia toimintoja.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Laajennettu sivuruutu, jossa näkyvät ehdotetun segmentin yksityiskohtaiset tiedot.":::
-
-Valitse **Katso ehdotus** ehdotetusta segmentistä, jos haluat tarkastella segmentin tietoja. Sivuruudussa on tietoja, kuten kunkin dimension laajuus kohderyhmään verrattuna. Segmentin mahdollisten jäsenten määrä ja vastaava prosenttiosuus kaikista asiakkaista näkyvät korostettuina. Jos haluat säilyttää ehdotuksen segmenttinä, valitse **Luo segmentti**.    
-
-## <a name="save-a-suggestion-as-a-segment"></a>Ehdotuksen tallentaminen segmenttinä
-
-1. Siirry kohtaan **Segmentit** > **Ehdotukset (esiversio)**.
-
-1. Valitse segmentti, jonka haluat tallentaa. 
-
-1. Valitse sivuruudussa **Luo segmentti**. 
-
-1. Segmentin tallentamisen jälkeen se näkyy segmenttiluettelossa **Kaikki segmentit** -välilehdellä. Se voidaan nyt [päivittää tai poistaa, kuten mikä tahansa muu segmentti](segments.md). Et voi muokata segmentin tietoja. Voit kuitenkin muuttaa ehdotusten syötteiden ehtoja ja luoda erilaisia ehdotuksia.
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Ehdotusjoukon päivittäminen tai muokkaaminen
-
-1. Siirry kohtaan **Segmentit**  > **Ehdotukset (esiversio)** ja etsi segmenttiä **Aktiviteetteihin perustuvat ehdotukset** -osasta.
-
-1. Valitse **Päivitä ehdotukset**, jos haluat päivittää ehdotukset ja säilyttää määritetyt määritteet. Voit myös valita **Muokkaa ehdotuksia** määritysten muokkaamista varten. Järjestelmä suorittaa prosessin uudelleen, luo segmenttiehdotukset viimeisimpien tietojen perusteella ja korvaa nykyiset ehdotukset.
+- **Katso ehdotus**, niin näet lisätietoja kyseisestä segmentistä, kuten kunkin dimension laajuus kohderyhmään verrattuna. Segmentin mahdollisten jäsenten määrä ja vastaava prosenttiosuus kaikista asiakkaista näkyvät korostettuina.
+- **Luo segmentti**, jotta voit tallentaa ehdotetun segmentin. Se näkyy **Kaikki segmentit** -välilehdessä, ja sen voi [päivittää tai poistaa](segments.md). Et voi muokata segmentin tietoja. Voit kuitenkin muuttaa ehdotusten syötteiden ehtoja ja luoda erilaisia ehdotuksia.
+- **Muokkaa ehdotuksia** nykyiset ehdotukset poistavien määritettyjen ominaisuuksien muokkaamiseksi.
+- **Päivitä ehdotukset**, jos haluat päivittää ehdotukset ja säilyttää määritetyt määritteet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

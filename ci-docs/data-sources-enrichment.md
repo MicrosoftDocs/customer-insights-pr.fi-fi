@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 98e9e330e7ef9cf085caa94a506fa788cebdd67b
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080979"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207179"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Rikastus tietolähteitä varten (esiversio)
 
@@ -21,9 +21,9 @@ Käytä Microsoftin ja muiden kumppanien tietoja asiakastietojen rikastukseen en
 
 ## <a name="enrich-a-data-source"></a>Tietolähteen rikastus
 
-Sinulla on oltava osallistujan tai järjestelmänvalvojan oikeudet, jotta voit luoda tai muokata rikastuksia. Lisätietoja on kohdassa [Oikeudet](permissions.md).  
+Sinulla on oltava osallistujan tai järjestelmänvalvojan [oikeudet](permissions.md), jotta voit luoda tai muokata rikastuksia.  
 
-1. Siirry kohtaan **Tiedot** > **Yhdistä**. Valitse entiteetti, jota haluat rikastaa, ja valitse yksi määrite entiteetin perusavaimeksi. Lisätietoja: [perusavaimen valitseminen](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Siirry kohtaan **Tiedot** > **Yhdistä**. Valitse entiteetti, jota haluat rikastaa, ja valitse yksi määrite entiteetin [perusavaimeksi](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 
 1. Valitse **Tiedot** > **Tietolähteet**.
 
@@ -47,8 +47,8 @@ Tietolähteitä varten on tällä hetkellä saatavissa seuraavat rikastukset. Op
 
 ## <a name="manage-existing-data-source-enrichments"></a>Aiemmin luotujen tietolähteiden rikastusten hallinta
 
-Siirry **Omat rikastamiset** -välilehteen, jos haluat nähdä kaikki määritetyt rikastamiset.
+Siirry kohtaan **Tiedot** > **Täydentäminen**. **Omat rikastukset** -välilehdessä voi tarkastella määritettyjä rikastuksia, niiden tiloja, rikastettujen asiakkaiden määrää ja tietojen viimeisintä rikastamispäivää. Rikastamisluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan rikastamisen voi etsiä myös hakuruutua käyttämällä.
 
-Valitse rikastus, jos haluat nähdä käytettävissä olevat vaihtoehdot. Voit myös valita kolme pystysuuntaista pistettä (&vellip;) luettelokohteesta, kun haluat nähdä vaihtoehdot. Jos olet määrittänyt useita rikasteita, voit etsiä sen nopeasti hakuruudun avulla.
+Valitse rikastus, jos haluat nähdä käytettävissä olevat vaihtoehdot. Voit myös valita kolme pystysuuntaista pistettä (&vellip;) luettelokohteesta, kun haluat nähdä vaihtoehdot.
 
-Tietolähteen rikastuksen voi tarkastella, muokata, suorittaa tai poistaa. Lisätietoja on ohjeaiheessa [Aiemmin luotujen rikastusten hallinta](enrichment-hub.md).
+Tietolähteen rikastuksen voi tarkastella, muokata, suorittaa tai poistaa. Lisätietoja on ohjeaiheessa [Aiemmin luotujen rikastusten hallinta](enrichment-hub.md#manage-existing-enrichments).

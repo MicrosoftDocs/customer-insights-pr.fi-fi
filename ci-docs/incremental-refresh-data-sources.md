@@ -11,18 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: de39743eb8728fac34e417724c5f73bf44309c89
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9012021"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207133"
 ---
 # <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Power Query- ja Azure Data Lake -tietolähteiden lisäävä päivitys
 
-Tässä artikkelissa käsitellään Power Queryyn tai Azure Data Lakeen perustuvien tietolähteiden lisäävän päivityksen määrittämistä.
-
-Tietolähteiden lisäävän päivityksen edut:
+Power Queryyn tai Azure Data Lakeen perustuvissa tietolähteiden lisäävässä päivityksessä on seuraavat edut:
 
 - **Päivitysten nopeutuminen** – Vain muuttuneet tiedot päivitetään. Esimerkiksi historiallisessa tietojoukossa päivitetään vain viisi viimeisintä päivää.
 - **Parantuntu luotettavuus** – koska päivitykset ovat pienempiä, yhteyksiä epävakaisiin lähdejärjestelmiin ei tarvitse ylläpitää yhtä pitkään, mikä vähentää yhteysongelmien riskiä.
@@ -73,6 +71,7 @@ Customer Insights sallii Azure Data Lake Storageen yhdistettyjen tietolähteiden
 
    1. Siirry pääkansioon, joka sisältää täydellisten tietojen, lisäävän tiedon upsert-toiminnon ja lisäävän tiedon poiston .csv- tai .parquet-tiedostot.
    1. Anna sekä täydellisten tietojen että lisäävien tiedostojen tiedostotunniste (\.csv tai \.parquet).
+   1. Jos .csv-tiedosto, valitse sarakkeen erotin ja haluatko tiedoston ensimmäisen rivin sarakeotsikoksi.
    1. Valitse **Tallenna**.
 
 1. Valitse **Päivitetty viimeksi** -kohdassa päivämäärän aikaleimamäärite.

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: e90bdc523c3f8857c150ccba9d81f055d39f9feb
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ccb33594a3a92e87d307f3300c77772ef8b4a82f
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051587"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170999"
 ---
 # <a name="segment-insights-preview"></a>Segmentin merkitykselliset tiedot (esiversio)
 
@@ -43,26 +43,25 @@ Voit myös analysoida, miten päällekkäisyys muuttuu tietyillä määritteill�
 
 ### <a name="view-and-optimize-an-overlap-analysis"></a>Päällekkäisyysanalyysin tarkasteleminen ja optimointi
 
-Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
+1. Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot.":::
+   :::image type="content" source="media/segment-overlap.png" alt-text="Segmentin päällekkäisyysoivallusten tiedot.":::
 
-Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset:
+1. Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset:
 
-- Niiden jäsenten määrä, jotka ovat päällekkäisiä analysoitavaksi valittujen segmenttien kanssa.
-- Niiden jäsenien määrä, jotka sisältyvät yhteen segmentteihin mutta eivät muihin segmentteihin.
-- Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Voit valita minkä tahansa määritteen kiinnostuksen tason suodattimen avattavan valikon avulla. Alla olevassa taulukossa näkyvät vastaavat tiedot.
+   - Niiden jäsenten määrä, jotka ovat päällekkäisiä analysoitavaksi valittujen segmenttien kanssa.
+   - Niiden jäsenien määrä, jotka sisältyvät yhteen segmentteihin mutta eivät muihin segmentteihin.
+   - Jos valitsit kenttiä päällekkäisyyden määrityksen määrittämisen aikana, ne löytyvät vastaavista välilehdistä. Voit valita minkä tahansa määritteen kiinnostuksen tason suodattimen avattavan valikon avulla. Alla olevassa taulukossa näkyvät vastaavat tiedot.
 
 ## <a name="segment-differentiators"></a>Segmentin erottimet
 
-Segmentin erot auttaa sinua saamaan selville, mikä erottaa segmentin muista asiakkaista tai toisesta segmentistä. Sinun täytyy vain valita segmentti, niin järjestelmä tunnistaa profiilimääritteet ja mittarit, jotka erottavat valitun segmentin.
+Segmentin erot auttaa sinua saamaan selville, mikä erottaa segmentin muista asiakkaista tai toisesta segmentistä. Valitse segmentti, niin järjestelmä tunnistaa profiilimääritteet ja mittarit, jotka erottavat valitun segmentin.
 
-### <a name="run-a-differentiator-analysis"></a>Erilaisuussanalyysin suorittaminen
+### <a name="run-a-differentiator-analysis"></a>Erilaisuusanalyysin suorittaminen
 
 1. Siirry kohtaan **Segmentit** ja valitse **Merkitykselliset havainnot (esiversio)** -välilehti.
 
-1. Valitse **Uusi** ja valitse sitten **Päällekkäisyys**-asetus **Valitse merkityksellisten havaintojen tyyppi** -ruudussa.
+1. Valitse **Uusi** ja valitse sitten **Erottimet**-asetus **Valitse merkityksellisten tietojen tyyppi** -ruudussa.
 
 1. Valitse segmentti, jonka haluat analysoida **ensisijaiseksi segmentiksi**, ja valitse **Seuraava**.
 
@@ -70,29 +69,29 @@ Segmentin erot auttaa sinua saamaan selville, mikä erottaa segmentin muista asi
 
 1. Voit vaihtoehtoisesti valita yhden tai useita kiinnostavia kenttiä, jos haluat tarkentaa analyysin tiettyihin määritteisiin ja valita **Seuraava**.
 
-1. Anna nimi päällekkäisyysanalyysille, valinnainen näyttönimi ja kuvaus.
+1. Anna nimi erotinanalyysille, valinnainen näyttönimi ja kuvaus.
 
-1. Aloita analyysi valitsemalla **Tallenna**. Päällekkäisyysanalyysi on valmis, kun tila muuttuu tilasta Päivittää tilaan Onnistui.
+1. Aloita analyysi valitsemalla **Tallenna**. Erotinanalyysi on valmis, kun tila muuttuu tilasta Päivittää tilaan Onnistui.
 
 ### <a name="view-and-optimize-a-differentiators-analysis"></a>Erilaisuusanalyysin tarkasteleminen ja optimointi
 
-Kun analyysi on valmis, etsi tietoja segmenttejä koskevista merkityksellisistä havainnoista kohdassa **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
+1. Kun analyysi on valmis, siirry kohtaan **Segmentit** > **Merkitykselliset tiedot (esiversio)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot.":::
+   :::image type="content" source="media/segment-differentiators.png" alt-text="Segmentin erilaisuusoivallusten tiedot.":::
 
-Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset. Erilaisuusanalyysi sisältää kaksi välilehteä. **Määritteet**-välilehdessä on luettelo profiilimääritteistä, joita pidetään erottavinä tekijöinä. **Mittarit**-välilehdessä on lueteltu erottavat tekijät. Jokaisessa välilehdessä on seuraavat tiedot:
+1. Valitse merkityksellinen tieto, kun haluat nähdä analyysin tulokset. Erilaisuusanalyysi sisältää kaksi välilehteä. **Määritteet**-välilehdessä on luettelo profiilimääritteistä, joita pidetään erottavina tekijöinä. **Mittarit**-välilehdessä on lueteltu erottavat tekijät. Jokaisessa välilehdessä on seuraavat tiedot:
 
-- Paremmuusjärjestykseen jaoteltu luettelo erottavista tekijöistä eropisteiden järjestyksessä.
-- Kun erottavan tekijän **erilaisuuspisteet**. Erilaisuuspisteet edustavat kahden segmentin välisen määritteen eron astetta. Mitä suurempi ero on, sitä enemmän määritteet eroavat toisistaan segmenttien välillä. Valitsemalla pistemäärän voit avata **Erilaisuuspisteet**-ruudun, jossa on kyseisen määritteen arvojen jakaumat.
+   - Paremmuusjärjestykseen jaoteltu luettelo erottavista tekijöistä eropisteiden järjestyksessä.
+   - Kun erottavan tekijän **erilaisuuspisteet**. Erilaisuuspisteet edustavat kahden segmentin välisen määritteen eron astetta. Mitä suurempi ero on, sitä enemmän määritteet eroavat toisistaan segmenttien välillä. Valitsemalla pistemäärän voit avata **Erilaisuuspisteet**-ruudun, jossa on kyseisen määritteen arvojen jakaumat.
 
 ## <a name="manage-segment-insights"></a>Segmentin merkityksellisten tietojen hallinta
 
-Voit käyttää seuraavia vaihtoehtoja komentopalkissa oivallusten käsittelyyn:
+Siirry **Segmentit** > **tiedot (esikatselu)** -kohtaan, kun haluat tarkastella segmentin merkityksellisiä tietoja ja hallita niitä. Voit tarkastella käytettävissä olevia toimintoja valitsemalla segmentin merkityksellisen tiedon.
 
-- **Palaa**, kun haluat palauta mekrkityksellisten tietojen luetteloon
-- **Päivitä**, jos haluat suorittaa analyysin uudelleen
-- **Poista**, jos haluat poistaa tämän merkityksellisen tiedon
-
+- Tietoanalyysin **tarkasteleminen**
+- **Muokkaa** merkityksellistä tietoa, jos haluat muuttaa sen ominaisuuksia.
+- **Päivitä** merkityksellinen tieto, jos haluat suorittaa analyysin uudelleen
+- **Nimeä uudelleen** merkityksellinen tieto.
+- **Poista** merkityksellinen tieto
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

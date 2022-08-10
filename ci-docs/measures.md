@@ -14,43 +14,56 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: 880c06bffcfa269151d96cb4c597eed4832fc61b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081205"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170816"
 ---
 # <a name="measures-overview"></a>Mittarien yleiskatsaus
 
-Mittarien avulla ymmärrät paremmin asiakkaiden käyttäytymistä ja liiketoiminnan suorituskykyä. Ne näyttävät olennaiset arvot [yhtenäisistä profiileista](data-unification.md). Ajatellaan, että yrityksessä halutaan nähdä esimerkiksi *kokonaiskulutus asiakasta kohden* yksittäisen asiakkaan ostohistorian tai *yrityksen kokonaismyynti* koko yrityksen yhdistetyn tason tuoton selvittämiseksi.  
+Mittarien avulla ymmärrät paremmin asiakkaiden käyttäytymistä ja liiketoiminnan suorituskykyä. Ne näyttävät olennaiset arvot [yhtenäisistä profiileista](data-unification.md). Ajatellaan, että yrityksessä halutaan nähdä esimerkiksi *kokonaiskulutus asiakasta kohden* yksittäisen asiakkaan ostohistorian tai *yrityksen kokonaismyynti* koko yrityksen yhdistetyn tason tuoton selvittämiseksi.
 
-Mittarit luodaan käyttämällä [mittareiden luontiohjelmaa](measure-builder.md). Se on tietojen kysely-ympäristö, jossa on useita operaattoreita ja yksinkertaiset yhdistämisvalinnat. Sen avulla voi suodattaa tietoja, ryhmitellä tuloksia, havaita [entiteettisuhteiden polkuja](relationships.md) ja esikatsella tulosta. [Ennalta määritettyjen mallien](measure-templates.md) avulla voit määrittää usein käytettyjä mittareita tehokkaasti.
+Laadi mittareita liiketoiminta-aktiviteettien suunnittelemiseen tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon mutta tekevät myös paljon palautuksia. Voit luoda näiden mittarien perusteella [segmentin](segments.md), joka edistää seuraavia parhaita toimintoja.
 
-Käytä mittarin luontiohjelmaa liiketoiminta-aktiviteettien suunnittelemisessa tekemällä kyselyjä asiakastiedoista ja poimimalla tietoja. Esimerkiksi *asiakaskohtainen kokonaiskulutus*- ja *asiakaskohtainen kokonaispalautus* -mittarin luominen auttaa tunnistamaan asiakkaat, jotka ostavat paljon, mutta tekevät myös paljon palautuksia. Voit luoda näiden mittarien perusteella [segmentin](segments.md), joka edistää seuraavia parhaita toimintoja.
+## <a name="create-a-measure"></a>Luo mittari
 
-## <a name="manage-your-measures"></a>Hallitse mittoja
+Valitse, miten kohdeyleisön perusteella luodaan mittari.
 
-**Mittarit**-sivulla on mittarien luettelo.
+# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
 
-Saat tietoja mittarityypistä, tekijästä, luontipäivästä ja tilasta. Kun valitset mittarin luettelosta, voit esikatsella tulosta ja ladata CSV-tiedoston.
+- Mittarin muodostimen avulla alusta asti: [oman rakentaminen](measure-builder.md).
+- Usein käytetyistä mittareista: [ennalta määritettyjen mallien käyttö](measure-templates.md).
+
+# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
+
+Mittarin muodostimen avulla alusta asti: [oman rakentaminen](measure-builder.md).
+
+---
+
+## <a name="manage-existing-measures"></a>Aiemmin luotujen mittareiden hallinta
+
+Siirry **Mittarit**-sivulle, kun haluat tarkastella luomiasi mittareita, niiden tilaa, mittarin tyyppiä ja tietojen viimeisintä päivittämisaikaa. Mittariluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan mittarin voi etsiä myös hakuruutua käyttämällä.
+
+Voit tarkastella käytettävissä olevia toimintoja valitsemalla mittarin vieressä olevan painikkeen. Kun valitset mittarin nimen, voit esikatsella tulosta ja ladata CSV-tiedoston.
 
 :::image type="content" source="media/measures-actions.png" alt-text="Yksittäisten mittareiden hallintatoiminnot."lightbox="media/measures-actions.png":::
 
-Seuraavat toiminnot ovat käytettävissä, kun valitset mittarin:
-
-- **Muokkaa** mitan määritystä.
-- **Monista** mittari. Voit muokata sen ominaisuuksia heti tai tallentaa kaksoiskappaleen.
-- **Päivitä** mittari uusimpien tietojen perusteella. Jos haluat päivittää kaikki mittarit samanaikaisesti, valitse kaikki mittarit ja valitse sitten **Päivitä**.
+- **Muokkaa** mittaria, jos haluat muuttaa sen ominaisuuksia.
+- **Päivitä** mittari siten, että se sisältää uusimmat tiedot.
 - **Nimeä uudelleen** mitta.
-- **Aktivoi** tai **poista aktivointi**. Passiivisia mittareita ei päivitetä [aikataulutetun päivityksen](system.md#schedule-tab) aikana.
-- **Tunniste** segmentin [tunnisteiden hallintaa varten](work-with-tags-columns.md#manage-tags).
+- **Aktivoi** mittari tai **Poista aktivointi**. Passiiviset mittarit eivät päivity [aikataulutetun päivityksen](system.md#schedule-tab) aikana, ja passiivisten segmenttien **Tila**-arvo on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty.
+- **Tunniste** mittarin [tunnisteiden hallintaa varten](work-with-tags-columns.md#manage-tags).
 - **Poista** mitta.
+- **Sarakkeet** [sarakkeiden mukauttamiseksi](work-with-tags-columns.md#customize-columns) näyttämistä varten.
+- **Suodatin** [tunnisteiden suodattamiseksi](work-with-tags-columns.md#filter-on-tags).
+- **Hae nimi** mittarin nimen mukaan tehtävää hakua varten.
+
+## <a name="refresh-measures"></a>Päivitä mittarit
+
+Mittarit voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. Mittarit päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Päivitä**. [Automaattinen päivitys ajoitetaan](system.md#schedule-tab) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-## <a name="next-step"></a>Seuraava vaihe
-
-Voit luoda [asiakassegmentin](segments.md) olemassa olevien mittareiden avulla.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

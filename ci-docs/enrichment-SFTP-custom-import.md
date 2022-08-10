@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 81ef6c62240e26cb5c9475e6306e08edc7e5eb31
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081029"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195792"
 ---
 # <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Asiakasprofiilien rikastaminen mukautetun SFTP-tuonnin avulla (esiversio)
 
@@ -104,7 +104,7 @@ Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toim
 
 1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
 
-1. Valitse yhteys. Jos yhteyttä ei ole, ota yhteys järjestelmänvalvojaan.
+1. Valitse yhteys. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
 1. Valitse ensin **Asiakkaan tietojoukko** ja sitten rikastettava profiili tai segmentti. *Asiakas*-entiteetti rikastaa kaikkia asiakasprofiileja, kun taas segmentti rikastaa vain segmenttiin sisältyviä asiakasprofiileja.
 

@@ -1,51 +1,54 @@
 ---
 title: Segmenttien vieminen Microsoft Advertisingiin (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä Microsoft Advertisingiin.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ca37159ec6473ad5c331a0ce1aa8424d277529ff
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 44217e7823ffbe14d232b3e33de1b4ea6ed69dcf
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081132"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196528"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Segmenttien vieminen Microsoft Advertisingiin (esiversio)
 
 Vie Customer Insights -segmentit Microsoft Advertisingiin, jotta voit luoda asiakkaiden vastineen kohdeyleisöille. Käytä näitä kohderyhmiä mainoskampanjoissasi.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
--   [Microsoft Advertising -tili](https://ads.microsoft.com/) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
--   Olet hyväksynyt asiakkaan vastineen käyttöehdot. 
--   [Määritetyt segmentit](segments.md) Customer Insightsissa.
--   Viedyissä segmenteissä yhdenmukaistetut asiakasprofiilit sisältävät kentän, jolla on sähköpostiosoite.
+- [Microsoft Advertising -tili](https://ads.microsoft.com/) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
+- Microsoft Advertisingin asiakastunnus ja tilitunnus. URL-osoitteen parametreista löydät asiakastunnuksen (`cid`) ja tilitunnuksen (`aid`), kun kirjaudut Microsoft Advertisingiin.
+- Customer Match -käyttöehdot on hyväksytty.
+- [Määritetyt segmentit](segments.md) Customer Insightsissa.
+- Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä vientiä kohden enintään 500 000 asiakasprofiilia Microsoft Advertisingiin.
-- Vieminen Microsoft Advertisingiin rajoittuu segmentteihin.
-- Enintään 500 000 asiakasprofiilin vieminen Microsoft Advertisingiin voi kestää 10 minuuttia. 
+- Enintään 500 000 asiakasprofiilin vieminen kerrallaan Microsoft Advertisingiin, mikä voi kestää 10 minuuttia.
+- Vain segmentit.
 
+## <a name="set-up-connection-to-microsoft-advertising"></a>Määritä yhteys Microsoft Advertisingiin
 
-## <a name="set-up-the-connection-to-microsoft-advertising"></a>Määritä yhteys Microsoft Advertisingiin
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Microsoft Advertising**.
+1. Valitse **Lisää yhteys** ja valitse sitten **Microsoft Advertising**.
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
 1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvo on järjestelmänvalvoja. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
+1. Anna **Microsoft Advertising -asiakastunnus**.
 
-1. Alusta yhteys Microsoft Advertisingiin valitsemalla **Yhdistä**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
+
+1. Käynnistä yhteys valitsemalla **Yhdistä**.
 
 1. Valitse **Todenna Microsoft Advertisingin avulla** ja anna Microsoft Advertisingin järjestelmänvalvojan tunnistetiedot.
 
@@ -55,29 +58,24 @@ Vie Customer Insights -segmentit Microsoft Advertisingiin, jotta voit luoda asia
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
+1. Valitse **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Microsoft Advertising -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Microsoft Advertising -osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
-1. Valitse vietävät segmentit. Microsoft Advertisingin customer match -kohdeyleisöt luodaan automaattisesti viennissä valittujen segmenttien nimellä. Kustakin segmentistä tulee erillinen Customer Match -yleisö. 
+1. Anna viennin nimi.
 
-1. Anna **Microsoft Advertisingin asiakastunnuksesi ja tilitunnuksesi**. URL-osoitteen parametreista löydät asiakastunnuksen (`cid`) ja tilitunnuksen (`aid`), kun kirjaudut Microsoft Advertisingiin.
+1. Valitse vietävät segmentit. Microsoft Advertisingin asiakkaan vastaavuuden kohdeyleisöt luodaan automaattisesti viennissä valittujen segmenttien nimellä. Kustakin segmentistä tulee erillinen Customer Match -yleisö.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, jossa on asiakkaan sähköpostiosoite. Microsoft Advertisingiin pitää viedä segmenttejä.
+1. Anna **Microsoft Advertisingin asiakastunnuksesi ja tilitunnuksesi**.
+
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, jossa on asiakkaan sähköpostiosoite.
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista Microsoft Advertisingiin, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää nämä tiedot ohjeesi mukaisesti, mutta olet vastuussa siitä, että Microsoft Advertising täyttää mahdolliset tietosuoja- tai tietoturvavelvollisuudet. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Dynamics 365 Customer Insights -järjestelmänvalvojasi voi poistaa tämän vientikohteen milloin tahansa, jos haluat lopettaa tämän toiminnon käytön.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

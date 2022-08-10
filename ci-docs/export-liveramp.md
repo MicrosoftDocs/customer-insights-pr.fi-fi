@@ -1,61 +1,75 @@
 ---
 title: Segmenttien vieminen LiveRampiin (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä LiveRampiin.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 3e30a16dcb276fa6c951ad0b42ed0a4792f87ce3
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 55eacea3af83f46583a3a43797d625479f56586b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050759"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196712"
 ---
 # <a name="export-segments-to-liverampreg-preview"></a>Segmenttien vieminen LiveRampiin&reg; (esiversio)
 
 Aktivoi tiedot LiveRampissa, jotta voit muodostaa yhteyden yli 500 ympäristöön digitaalisissa kanavissa, yhteisöpalveluissa ja televisioissa. Työstä tietojasi LiveRampissa kohdistaaksesi, estääksesi ja yksilöllistääksesi mainoskampanjoita.
 
-## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
+## <a name="prerequisites"></a>edellytykset
 
-- Tämän yhdistimen käyttö edellyttää LiveRamp-tilausta.
-- Hanki tilaus [ottamalla suoraan yhteyttä LiveRampiin](https://liveramp.com/contact/). [Lisätietoja LiveRamp-käyttöönotosta](https://liveramp.com/our-platform/data-onboarding/).
+- Tämän yhdistimen käyttö edellyttää LiveRamp-tilausta. Hanki tilaus [ottamalla suoraan yhteyttä LiveRampiin](https://liveramp.com/contact/). [Lisätietoja LiveRamp-käyttöönotosta](https://liveramp.com/our-platform/data-onboarding/).
+
+## <a name="known-limitations"></a>Tunnetut rajoitukset
+
+- LiveRamp-vienti käyttää SFTP-vientiä. Palomuurin takana olevia SFTP-kohteita ei tueta tällä hetkellä.
+- Jos käytät todentamiseen SSH-avainta, varmista, [että luot yksityisen avaimen](/azure/virtual-machines/linux/create-ssh-keys-detailed#basic-example) PEM- tai SSH.COM muodossa. Jos käytät Putty-sovellusta, muunna yksityinen avain viemällä se avoimena SSH:na Seuraavia yksityisen avaimen muotoja tuetaan:
+  - RSA OpenSSL PEM ssh.com -muodossa
+  - DSA OpenSSL PEM ssh.com -muodossa
+  - ECDSA 256/384/521 OpenSSL PEM -muodossa
+  - ED25519 ja RSA OpenSSH-avainmuodossa
+- Viennin suoritusaika määräytyy järjestelmän suorituskyvyn mukaan. Suosittelemme, että palvelimen käytössä on vähintään kaksi suoritinydintä ja yksi gigatavu muistia.
+- Entiteettien vieminen enintään 100 miljoonalle asiakasprofiilille voi kestää 90 minuuttia, kun käytössä on suositeltu vähimmäismääritys eli kaksi suoritinydintä ja yksi gigatavu muistia.
+- LiveRampiin vietävien profiilien (tai tiedon) määrä riippuu LiveRamp-tilauksestasi.
 
 ## <a name="set-up-connection-to-liveramp"></a>Määritä yhteys LiveRampiin
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **LiveRamp**.
+1. Valitse **Lisää yhteys** ja valitse sitten **LiveRamp**.
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvoisesti vain järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Anna LiveRamp Secure FTP (SFTP) -tilillesi **Käyttäjänimi** ja **Salasana**.
-Nämä tunnistetiedot voivat erota LiveRamp-käyttöönoton tunnistetiedoista.
+1. Valitse, haluatko todentaa yhteyden SSH-tunnuksen tai käyttäjänimen/salasanan kautta ja antaa tarvittavat tiedot.
 
 1. Testaa yhteys LiveRampiin valitsemalla **Tarkista**.
 
-1. Kun yhteys on tarkistettu, hyväksy **Tietosuoja ja vaatimuksenmukaisuus** valitsemalla **Hyväksyn**-valintaruutu.
+1. Onnistuneen vahvistuksen jälkeen lue [tietosuoja ja vaatimustenmukaisuustiedot](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Viimeistele yhteys valitsemalla **Tallenna**.
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
+1. Valitse **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys LiveRamp-osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys LiveRamp-osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
-1. Valitse **Valitse avaintunniste** -kentässä **Sähköposti**, **Nimi ja osoite** tai **Puhelin** lähetettäväksi LiveRampille käyttäjätietojen ratkaisemiseksi.
-   > [!div class="mx-imgBorder"]
-   > ![LiveRamp-yhdistin ja määritteiden yhdistämismääritys.](media/export-liveramp-segments.png "LiveRamp-yhdistin ja määritteiden yhdistämismääritys")
+1. Anna viennin nimi.
+
+1. Valitse **Yhdistämistiedot** -kentässä **Sähköposti**, **Nimi ja osoite** tai **Puhelin** lähetettäväksi LiveRampille käyttäjätietojen ratkaisemiseksi.
+
+   :::image type="content" source="media/export-liveramp-segments.png" alt-text="LiveRamp-yhdistin ja määritteiden yhdistämismääritys.":::
 
 1. Yhdistä vastaavat määritteet *Asiakas*-entiteetistä valittua avaintunnistetta varten.
 
@@ -64,18 +78,10 @@ Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden kä
    > [!TIP]
    > Useiden avaintunnistemääritteiden lähettäminen LiveRampille tuottaa todennäköisesti suuremman vastaavuuden.
 
-1. Valitse segmentit, jotka haluat viedä LiveRampiin.
+1. Valitse segmentit, jotka haluat viedä.
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
-
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys Liverampiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Liveramp noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

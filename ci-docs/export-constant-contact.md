@@ -1,52 +1,53 @@
 ---
 title: Segmenttien vieminen Constant Contactiin (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä Constant Contactiin.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: fe9706a7cd0755412ee18c4b974684bb9aa3f8d3
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4d2ec29c194dc481ee40048b8ecbed813291b4d2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081024"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196482"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Segmenttien vieminen Constant Contactiin (esiversio)
 
-Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niitä markkinointiaktiviteetteihin. 
+Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niitä markkinointiaktiviteetteihin.
 
-## <a name="prerequisites-for-a-connection"></a>Yhteyden edellytykset
+## <a name="prerequisites"></a>edellytykset
 
--   Sinulla on [Constant Contact -tili](https://www.constantcontact.com/account-home) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
--   Olet [määrittänyt segmenttejä](segments.md) Customer Insightsissa.
--   Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
+- [Constant Contact -tili](https://www.constantcontact.com/account-home) ja sitä vastaavat järjestelmänvalvojan tunnistetiedot.
+- [Vakioyhteyshenkilöluettelon tunnus](https://app.constantcontact.com/pages/contacts/ui#lists) Avaa luettelo Constant Contactissa, jotta löydät luettelon tunnuksen URL-osoitteesta.
+- [Määritetyt segmentit](segments.md) Customer Insightsissa.
+- Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
-- Voit viedä vientiä kohden enintään miljoona asiakasprofiilia Constant Contactiin.
-- Vieminen Constant Contactiin rajoittuu segmentteihin.
-- Enintään yhden miljoonan asiakasprofiilin vieminen Constant Contactiin voi kestää tunnin. 
-- Constant Contactiin vietävien asiakasprofiilien määrä riippuu Constant Contact -sopimuksestasi ja sen sisältämistä rajoituksista.
+- Enintään yhden miljoonan asiakasprofiilin vieminen kerrallaan Constant Contactiin, mikä voi kestää tunnin. Constant Contactiin vietävien asiakasprofiilien määrä riippuu Constant Contact -sopimuksestasi ja sen sisältämistä rajoituksista.
+- Vain segmentit.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Constant Contact -yhteyden määrittäminen
 
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
+
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Valitse **Lisää yhteys** ja määritä yhteys valitsemalla **Constant Contact**.
+1. Valitse **Lisää yhteys** ja valitse sitten **Constant Contact**.
 
 1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-1. Valitse, kuka voi käyttää tätä yhteyttä. Jos et tee mitään, oletusarvo on Järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Valitse, kuka voi käyttää tätä yhteyttä. Oletusarvoisesti vain järjestelmänvalvojat. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Valitse **I agree**, jolloin vahvistat **Data privacy and compliance** (tietosuojaehdot).
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
-1. Alusta yhteys Constant Contactiin valitsemalla **Yhdistä**.
+1. Käynnistä yhteys valitsemalla **Yhdistä**.
 
-1. Valitse **Todenna vakioyhteyshenkilöllä** ja anna vakioyhteyshenkilön järjestelmänvalvojan tunnistetiedot. 
+1. Valitse **Todenna vakioyhteyshenkilöllä** ja anna vakioyhteyshenkilön järjestelmänvalvojan tunnistetiedot.
 
 1. Valitse **Lisää itsesi vientikäyttäjäksi** ja anna Customer Insights -tunnistetiedot.
 
@@ -54,31 +55,26 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 ## <a name="configure-an-export"></a>Viennin määrittäminen
 
-Voit määrittää tämän viennin, jos sinulla on tämäntyyppisen yhteyden käyttöoikeus. Lisätietoja on ohjeaiheessa [Viennin määrittämiseen tarvittavat oikeudet](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Siirry kohtaan **Tiedot** > **Viennit**.
 
-1. Luo uusi vienti valitsemalla **Lisää kohde**.
+1. Valitse **Lisää vienti**.
 
-1. Valitse **Yhteys vientiä varten** -kentässä yhteys Constant Contact -osasta. Jos et näe tämän osan nimeä, tämäntyyppisiä yhteyksiä ei ole käytettävissäsi.
+1. Valitse **Yhteys vientiä varten** -kentässä yhteys Constant Contact -osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
-1. Anna [**Constant Contact -luettelon tunnus**](https://app.constantcontact.com/pages/contacts/ui#lists). Avaa luettelo Constant Contactissa, jotta löydät luettelon tunnuksen URL-osoitteesta.
+1. Anna viennin nimi.
 
-1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta. Constant Contactiin pitää viedä segmenttejä.
+1. Anna **Constant Contact** -luettelon tunnus.
 
-1. Vaihtoehtoisesti voit viedä Etunimi- ja Sukunimi-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
+1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta.
+
+1. Vaihtoehtoisesti voit viedä **Etunimi**- ja **Sukunimi**-kentät lisäkenttinä, joiden avulla sähköposteja voidaan mukauttaa. Yhdistä nämä kenttä valitsemalla **Lisää määrite**.
 
 1. Valitse segmentit, jotka haluat viedä.
 
 1. Valitse **Tallenna**.
 
-Viennin tallentaminen ei suorita vientiä heti.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Vienti suoritetaan jokaisen [ajoitetun päivityksen](system.md#schedule-tab) kanssa. Voit myös [viedä tietoja tarvittaessa](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista Constant Contactiin, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää nämä tiedot ohjeesi mukaisesti, mutta olet vastuussa siitä, että Constant Contact täyttää mahdolliset tietosuoja- tai tietoturvavelvollisuudet. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön koska tahansa poistamalla tämän vientikohteen.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

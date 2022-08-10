@@ -1,7 +1,7 @@
 ---
 title: Yhteyden muodostaminen Azure Synapse -tietolähteeseen (esiversio)
 description: Käytä Azure Synapsen tietokantaa tietolähteenä Dynamics 365 Customer Insightsissa.
-ms.date: 03/25/2022
+ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 54247fbcdc27f6ed8314e0755164083eb461aa64
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052695"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206903"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Yhteyden muodostaminen Azure Synapse Analytics -tietolähteeseen (esiversio)
 
@@ -66,3 +66,9 @@ Lisätietoja on kohdassa [Azure Synapsen yleiskatsaus](/azure/synapse-analytics/
 1. Voit myös valita tietoentiteetit, joille tietojen profilointi sallitaan.
 
 1. Valitse **Tallenna**, jos haluat ottaa valintasi käyttöön ja aloittaa tietojen käsittelyn juuri luomastasi tietolähteestä, joka on linkitetty Lake-tietokantatauluihin Azure Synapse Analyticsissa. Avautuvalla **Tietolähteet**-sivulla on näkyy uusi tietolähde, jonka tilana on **Päivitetään**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella [**Entiteetit**](entities.md)-sivulla.
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

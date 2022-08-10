@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081084"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196022"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
 
@@ -80,7 +80,7 @@ Tällä hetkellä tuetaan seuraavia maita tai alueita: Kanada (englanti) tai Yhd
 
 1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
 
-1. Valitse yhteys ja vahvista valinta. Jos yhteyttä ei ole, ota yhteys järjestelmänvalvojaan.
+1. Valitse yhteys ja vahvista valinta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
 1. Valitse **Seuraava**.
 

@@ -13,16 +13,14 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a962f1353b6e25b40c60b39a81ac936873f34d92
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: a75218c996b277e00924f2b7b38ea686a1f4dc38
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740991"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139778"
 ---
 # <a name="select-source-fields-for-data-unification"></a>Valitse lähdekentät tietojen yhdistämistä varten
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 Yhdistämisen ensimmäisessä vaiheessa valitaan tietojoukkojen entiteetit ja kentät, jotka halutaan yhdistää. Valitse entiteetit, jotka sisältävät asiakkaan tietoja, kuten nimen, osoitteen, puhelinnumeron ja sähköpostin. Voit valita yhden tai useampia entiteettejä.
 
@@ -67,7 +65,7 @@ Suorita kullekin entiteetille seuraavat vaiheet.
       - Henkilölle: Person.ProfileImage
       - Organisaatiolle: Organization.LogoImage
 
-   1. Syötä tilin nimi -määritteelle "Organization.Name"**Tyyppi**-kenttään.
+   1. Syötä tilin nimi -määritteelle ”Organization.Name”**Tyyppi**-kenttään.
 
 1. Tarkista määritteet, joiden semanttinen tyyppi tunnistetaan automaattisesti. Nämä määritteet näkyvät **Yhdistettyjen kenttien tarkistaminen** -kohdassa. Vain samantyyppiset määritteet voi yhdistää **Yhdistetyt asiakaskentät** -vaiheessa. Semanttisten tyyppien avulla voidaan automaattisesti ehdottaa merkityksellisiä tietoja. Varmista, että valitsemasi tyypit ovat yhdenmukaiset kaikissa valituissa entiteetissä.
 

@@ -1,7 +1,7 @@
 ---
 title: Common Data Model -kansioon yhdistäminen Azure Data Lake -tilillä
 description: Common Data Model -tietojen käyttäminen Azure Data Lake Storagen avulla.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081014"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206995"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Yhdistä Azure Data Lake Storagein tietoihin
 
@@ -82,7 +82,7 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
    :::image type="content" source="media/ADLS_required.png" alt-text="Valintaikkunassa näkyy Perusavain-valinta Pakollinen":::
 
    > [!TIP]
-   > Entiteettejä voi muokata JSON-muokkausliittymässä valitsemalla **Näytä lisää** > **Muokkaa rakennetiedostoa**. Tee muutokset ja valitse **Tallenna**.
+   > Entiteettiä voi muokata JSON-muokkausliittymässä valitsemalla entiteetin ja **Muokkaa rakennetiedostoa**. Tee muutokset ja valitse **Tallenna**.
 
 1. Jos valituissa entiteeteissä edellytetään lisäävää käsittelyä, **Lisäävä päivitys** -kohdassa näkyy **Pakollinen**. Lisätietoja kustakin entiteetistä on kohdassa [Azure Data Lake Data -lähteiden lisäävän päivityksen määrittäminen](incremental-refresh-data-sources.md).
 
@@ -101,6 +101,10 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
    1. Valitse **Valmis**.
 
 1. Valitse **Tallenna**. Avautuvalla **Tietolähteet**-sivulla on näkyy uusi tietolähde, jonka tilana on **Päivitetään**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella [**Entiteetit**](entities.md)-sivulla.
 
 ### <a name="create-a-new-schema-file"></a>Uuden rakennetiedoston luominen
 
@@ -148,6 +152,9 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
 
 1. Valitse **Tallenna**. Avautuvalla **Tietolähteet**-sivulla on näkyy uusi tietolähde, jonka tilana on **Päivitetään**.
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella [**Entiteetit**](entities.md)-sivulla.
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Azure Data Lake Storage -tietolähteen muokkaaminen
 
@@ -180,7 +187,15 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
       > Jos aiemmin luodussa model.json- tai manifest.json-tiedostossa ja entiteettijoukkossa on riippuvuuksia, näkyviin tulee virhesanoma, eikä toista model.json- tai manifest.json-tiedostoa voi valita. Poista nämä riippuvuudet, ennen kuin muutat model.json- tai manifest.json-tiedostoa, tai luo uusi tietolähde sillä model.json- tai manifest.json-tiedostolla, jota haluat käyttää. Tällöin riippuvuuksia ei tarvitse poistaa.
    - Muuta datatiedoston sijaintia tai perusavainta valitsemalla **Muokkaa**.
    - Lisätietoja tietojen lisäävästä käsittelystä on kohdassa [Azure Data Lake -tietolähteiden lisäävän päivityksen määrittäminen](incremental-refresh-data-sources.md)
+   - Muuta entiteetin nimi vain vastaamaan .json-tiedoston entiteetin nimeä.
+
+     > [!NOTE]
+     > Pidä Customer Insightsissa aina entiteetin nimi samana kuin model.json- tai manifest.json-tiedostossa käsittelyn jälkeen. Customer Insights hyväksyy kaikki entiteettien nimet model.json- tai manifest.json-tiedoston kanssa jokaisen järjestelmäpäivityksen aikana. Jos entiteetin nimeä muutetaan joko Customer Insightsin sisällä tai ulkopuolella, tapahtuu virhe, koska Customer Insights ei löydä uutta entiteetin nimeä .json-tiedostosta. Jos olet vahingossa muuttanut entiteetin nimen, muokkaa Customer Insightsin entiteetin nimeä niin, että se vastaa .json-tiedostossa olevaa nimeä.
 
 1. Lisää tai muuta määritteitä taikka ota tietojen profilointi käyttöön valitsemalla **Määritteet**. Valitse sitten **Valmis**.
 
 1. Ota muutokset käyttöön ja palaa **Tietolähteet**-sivulle valitsemalla **Tallenna**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

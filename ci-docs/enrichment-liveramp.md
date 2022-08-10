@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080999"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196344"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Asiakasprofiilien rikastaminen LiveRamp-tunnistetietojen avulla (esiversio)
 
@@ -59,7 +59,7 @@ Kun tietojen lähetys LiveRampiin otetaan käyttöön Dynamics 365 Customer Insi
 
 1. Tutustu yleiskatsaukseen ja valitse **Seuraava**.
 
-1. Valitse yhteys. Jos yhteyttä ei ole, ota yhteys järjestelmänvalvojaan.
+1. Valitse yhteys. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
 
 1. Valitse **Seuraava**.
 

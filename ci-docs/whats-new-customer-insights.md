@@ -1,19 +1,19 @@
 ---
 title: Dynamics 365 Customer Insightsin uudet ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 06/02/2022
+ms.date: 06/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 4b5b95d1774d22827b3c08c2b6ccbb7858f1b04b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
+ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054014"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "9114242"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -23,6 +23,34 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2022-updates"></a>Kesäkuun 2022 päivitykset
+
+Kesäkuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="updated-user-experience-for-data-sources-and-data-ingestion"></a>Päivitetty tietolähteiden ja tietojen käsittelyn käyttökokemus.
+
+Tietojen tuominen erilaisista tietolähteistä on perusta asiakastietojen koostamiseen Dynamics 365 Customer Insightsissa . Olemme uudistaneet tietolähteiden tuonnin ja yhteyden käyttökokemusta. Tämän päivityksen tarkoituksena on helpottaa tietojen keräämistä Customer Insights -tietoihin.
+
+Lisätietoja on kohdassa [Tietolähteiden yleiskatsaus](data-sources.md).
+
+### <a name="export-to-inmobi"></a>Vie InMobiin
+
+InMobi auttaa tuotemerkkejä ymmärtämään, tunnistamaan, sitouttamaan ja hankkimaan asiakkaita. Voit viedä segmenttejä ja muita tietoja InMobi-palveluun Azure Blob -tallennusvälinetilien kautta.
+
+Lisätietoja on kohdassa [Vienti InMobiin (esiversio)](export-inmobi.md).
+
+### <a name="lockbox-support-in-customer-insights"></a>Customer Insightsin Lockbox-tuki
+
+Asiakkaan Lockbox on liittymä, jossa voi tarkastella ja hyväksyä (tai hylätä) tietojen käyttöoikeuspyyntöjä. Näitä pyyntöjä syntyy, kun tukipalvelupyynnön ratkaiseminen edellyttää asiakastietojen käyttöoikeutta.
+
+Lisätietoja on kohdassa [Asiakastietojen käyttäminen turvallisesti asiakkaan Lockboxin avulla (esiversio)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
+
+### <a name="connect-to-your-data-using-azure-private-link"></a>Muodosta yhteys tietoihin Azure Private -yksityislinkin avulla
+
+Azuren yksityisen linkin ansiosta Customer Insights voi muodostaa näennäisversiossa yhteyden Azure Data Lake Storage -tiliin yksityisen päätepisteen kautta. Jos tallennustilatili ei ole julkisessa verkossa, tämän rajoitetun verkon tietoihin voi muodostaa yhteyden yksityisen linkin kautta.
+
+Lisätietoja on kohdassa [Yksityislinkin käyttö Customer Insightsissa](security-overview.md#private-links-tab).
 
 ## <a name="may-2022-updates"></a>Toukokuun 2022 päivityksey
 

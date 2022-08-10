@@ -11,25 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6dc7fce78d10ba91de4b2abf54c6c6ab1c919d3a
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051679"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170769"
 ---
 # <a name="create-measures-from-templates"></a>Luo mittareita malleista
 
-Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä [mittareita](measures.md). Mallien yksityiskohtaiset kuvaukset ja ohjattu kokemus auttavat mittarien tehokkaassa luomisessa. Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
+Voit luoda niitä käyttämällä ennalta määritettyjä malleja, joissa on usein käytettyjä [mittareita](measures.md). Mallit perustuvat *Yhdistetty aktiviteetti* -entiteetin yhdistettyihin tietoihin. Varmista siis, että olet määrittänyt [asiakasaktiviteetit](activities.md), ennen kuin luot mittarin mallista.
 
-Jos haluat luoda mukautettuja mittareita, katso [Mittareiden luominen tyhjästä mittarien luontitoiminnon avulla](measure-builder.md).
+Mittarimalleja tuetaan vain **yksittäisten asiakkaiden** ympäristöissä. Jos haluat luoda mukautettuja tai yritystenvälisiä mittareita, katso [Mittareiden luontitoiminnon käyttö](measure-builder.md).
 
-# <a name="individual-consumers-b-to-c"></a>[Yksittäiset kuluttajat (kuluttajakauppa)](#tab/b2c)
-
-Käytettävissä olevat mittarimallit: 
+Käytettävissä olevat mittarimallit:
 - Keskimääräinen tapahtuman arvo (ATV)
 - Tapahtuman kokonaisarvo
 - Keskimääräinen päivätuotto
+- Keskimääräinen kuukausituotto
 - Keskimääräinen vuosituotto
 - Tapahtumien määrä
 - Ansaitut kanta-asiakaspisteet
@@ -57,21 +56,22 @@ Käytettävissä olevat mittarimallit:
 
 1. Valitse **Valmis**.
 
-1. Määritä **Määritä ajanjakso** -osassa aikaväli käytettäville tiedoille. Jos haluat uuden mittarin kattavan koko tietojoukon, valitse **Koko ajan**. Valitse **Tietty ajanjakso**, jos haluat mittarin keskittyvän tiettyyn ajanjaksoon.
+1. Määritä **Määritä ajanjakso** -osassa aikaväli tiedoille. Jos haluat uuden mittarin kattavan koko tietojoukon, valitse **Koko ajan**. Valitse **Tietty ajanjakso**, jos haluat mittarin keskittyvän tiettyyn ajanjaksoon.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Näyttökuva, jossa näkyy ajanjakso-osa, kun mittaria määritetään mallista.":::
 
 1. Valitse seuraavassa osassa **Lisää tiedot**, jos haluat valita aktiviteetit ja yhdistää vastaavat *Yhdistetty aktiviteetti* -kohteen tiedot.
 
-    1. Vaihe 1/2: Valitse **Aktiviteettityyppi**-kohdassa haluamasi entiteetin tyyppi. Valitse **Aktiviteetit**-kohdassa entiteetit, jotka haluat yhdistää.
-    1. Vaihe 2/2: Valitse määrite *Yhdistetty aktiviteetti* -entiteetistä komponentille, jota kaava edellyttää. Esimerkiksi Keskimääräinen tapahtuman arvo on määrite, joka vastaa tapahtuman arvoa. Valitse **Aktiviteetin aikaleima** -kohdassa Yhdistetty aktiviteetti -kohteen määrite, joka kuvaa aktiviteetin päivämäärää ja aikaa.
-   
-1. Kun tietojen yhdistäminen on onnistunut, voit nähdä tilan **Valmis** ja yhdistettyjen aktiviteettien ja määritteiden nimen.
+    1. Vaihe 1/2: Valitse **Aktiviteettityyppi**-kohdassa haluamasi entiteetin tyyppi. Valitse **Aktiviteetit**-kohdassa entiteetit, jotka haluat yhdistää ja sitten **Seuraava**.
+    1. Vaihe 2/2: Valitse määrite *Yhdistetty aktiviteetti* -entiteetistä komponentille, jota kaava edellyttää. Esimerkiksi Keskimääräinen tapahtuman arvo on määrite, joka vastaa tapahtuman arvoa. Valitse **Aktiviteetin aikaleima** -kohdassa *Yhdistetty aktiviteetti* -kohteen määrite, joka kuvaa aktiviteetin päivämäärää ja aikaa.
+    1. Valitse **Tallenna**.
 
-1. Nyt voit laskea mittarin tulokset valitsemalla **Suorita**. Jos haluat tarkentaa sitä myöhemmin, valitse **Tallenna luonnos**.
+    Kun tietojen yhdistäminen on onnistunut, voit nähdä tilan **Valmis** ja yhdistettyjen aktiviteettien ja määritteiden nimen.
 
-# <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
+1. Voit laskea mittarin tulokset valitsemalla **Suorita**. Valitse **Tallenna luonnos**, jos haluat pitää nykyisen määrityksen ja suorittaa mittarin myöhemmin. **Mittarit**-sivu avautuu.
 
-Tämä ominaisuus on käytettävissä vain niissä ympäristöissä luoduille yksiköille, joissa yksittäiset asiakkaat ovat ensisijainen kohdeyleisö.
+## <a name="next-step"></a>Seuraava vaihe
 
----
+Voit luoda [asiakassegmentin](segments.md) olemassa olevien mittareiden avulla.
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

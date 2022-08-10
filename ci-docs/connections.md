@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080974"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195170"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
@@ -27,6 +27,12 @@ Luo ja tarkastele yhteyksiä kohdassa **Järjestelmänvalvoja** > **Yhteydet**.
 **Yhteydet**-välilehdessä näkyvät kaikki aktiiviset yhteydet. Luettelossa näkyy rivi kutakin yhteyttä varten.
 
 Saat **Tutustu**-välilehdessä nopean yleiskatsauksen, kuvauksen ja tietoja siitä, mitä kullakin laajennettavuusvaihtoehdolla voi tehdä.
+
+## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
+
+Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista kolmansille osapuolille tai muille Microsoft-tuotteille, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että kolmas osapuoli noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Dynamics 365 Customer Insightsin järjestelmänvalvoja voi poistaa yhteyden milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="exports"></a>Viennit
 
@@ -41,8 +47,6 @@ Vain järjestelmänvalvojat voivat määrittää uusia yhteyksiä, mutta luodut 
 Jotta voit lisätä yhteyksiä, tarvitset [järjestelmänvalvojan käyttöoikeudet](permissions.md). Jos muodostat yhteyden muihin Microsoftin palveluihin, oletamme, että molemmat palvelut ovat samassa organisaatiossa.
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet (esiversio)**.
-
-1. Siirry **Yhteydet**-välilehteen.
 
 1. Luo uusi yhteys valitsemalla **Lisää yhteys**. Valitse avattavasta valikosta luotavan yhteyden tyyppi.
 
@@ -99,3 +103,5 @@ irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uude
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Määritä yhteydet omassa Key Vaultissa hallitsemiesi salaisten koodien avulla
 
 Jotkin yhteydet tarvitsevat salaisia koodeja kuten ohjelmointirajapinnan avaimia tai salasanoja. Jotkin yhteydet tukevat salaisia koodeja, jotka on tallennettu omaan Key Vaultiisi. Lisätietoja tuetuista yhteyksistä ja määrityksistä on kohdassa [oma Key Vaultisi Customer Insightsin tietoja varten](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

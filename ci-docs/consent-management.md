@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 77b09b6eb0a916e724542d503d96d19c5581aca1
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "8947496"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188043"
 ---
 # <a name="use-customer-consent"></a>Asiakkaan suostumuksen käyttäminen
 
@@ -71,3 +71,5 @@ On tärkeää, että asiakkaiden suostumuksen tila pysyy päivitettynä. Custome
 Toisin sanoen on siis varmistettava, että Customer Insightsiin tuotavat lähdetiedot sisältävät aina uusimmat tiedot.
 
 Lisätietoja on kohdissa [Segmenttien manuaalinen päivitys](segments.md#refresh-segments) tai [Aikataulutetun päivityksen määrittäminen](system.md#schedule-tab).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

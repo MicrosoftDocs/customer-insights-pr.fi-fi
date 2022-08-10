@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646475"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171091"
 ---
 # <a name="transaction-churn-prediction"></a>Tapahtuman vaihtuvuuden ennustaminen
 
@@ -82,8 +82,8 @@ Yritystileihin perustuvissa ympäristöissä voidaan ennustaa tilin tapahtumien 
         - **Luontipäivämäärä:** Päivämäärä, jona asiakas alun perin lisättiin.
         - **Osavaltio tai provinssi:** Asiakkaan osavaltio- tai provinssisijainti.
         - **Maa:** asiakkaan maa.
-        - **Toimiala:** asiakkaan toimialatyyppi. Esimerkiksi "Toimiala"-niminen kenttä kahvipaahtimon kohdalla voi ilmaista, onko asiakas vähittäismyyjä.
-        - **Luokitus:** asiakkaan luokitteleminen yrityksesi tarpeiden mukaan. Esimerkiksi "ValueSegment"-niminen kenttä kahvipaahtimon kohdalla voi olla asiakkaan kokoon perustuva asiakastaso.
+        - **Toimiala:** asiakkaan toimialatyyppi. Esimerkiksi ”Toimiala”-niminen kenttä kahvipaahtimon kohdalla voi ilmaista, onko asiakas vähittäismyyjä.
+        - **Luokitus:** asiakkaan luokitteleminen yrityksesi tarpeiden mukaan. Esimerkiksi ”ValueSegment”-niminen kenttä kahvipaahtimon kohdalla voi olla asiakkaan kokoon perustuva asiakastaso.
 
 ---
 
@@ -240,7 +240,7 @@ Lisää luettelo yritysasiakkaistasi ja asiakkaistasi, joita haluat käyttää v
    - **Ennusteen nimi**: Ennusteelle luonnin yhteydessä annettu nimi.
    - **Ennustetyyppi**: Ennusteessa käytetyn mallin tyyppi
    - **Tulosentiteetti**: Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.
-     Tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen otsikko. Oletusraja-arvo ei ehkä toimi skenaariossasi. [Luo uusi segmentti](segments.md#create-a-new-segment), jolla on haluamasi raja-arvo.
+     Tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen otsikko. Oletusraja-arvo ei ehkä toimi skenaariossasi. [Luo uusi segmentti](segments.md#create-a-segment), jolla on haluamasi raja-arvo.
      Kaikki asiakkaat eivät ole välttämättä aktiivisia asiakkaita. Joillakin niistä ei ehkä ole ollut pitkään aikaan mitään aktiviteettia, ja niitä pidetään jo poistuneina perustuen vaihtuvuusmääritykseen. Vaihtuvuusriskin ennustaminen asiakkaille, jotka jo vaihtuivat, ei ole hyödyllistä, koska ne eivät kuulu kiinnostavaan käyttäjäryhmään.
    - **Ennustettu kenttä**: tämä kenttä täytetään vain tietyissä ennustetyypeissä eikä sitä käytetä vaihtuvuusennusteessa.
    - **Tila**: Ennusten suorituksen tila.
