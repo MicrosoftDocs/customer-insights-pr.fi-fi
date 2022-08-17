@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9206995"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245783"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Yhdistä Azure Data Lake Storagein tietoihin
 
@@ -56,8 +56,8 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
 
 1. Valitse jokin seuraavista **Yhdistä omaan tallennustilaan seuraavasti:** -vaihtoehtoista. Lisätietoja on kohdassa [Customer Insightsin liittäminen Azure Data Lake Storage Gen2 -tiliin Azure-palvelun päänimen avulla](connect-service-principal.md).
 
-   - **Azure-resurssi**: Anna **Resurssin tunnus**. Jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta, valitse myös **Ota yksityinen linkki käyttöön**. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#private-links-tab).
-   - **Azure-tilaus**: Valitse ensin **Tilaus** sekä sen jälkeen **Resurssiryhmä** ja **Tallennustili**. Jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta, valitse myös **Ota yksityinen linkki käyttöön**. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#private-links-tab).
+   - **Azure-resurssi**: Anna **Resurssin tunnus**. Jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta, valitse myös **Ota yksityinen linkki käyttöön**. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#set-up-an-azure-private-link).
+   - **Azure-tilaus**: Valitse ensin **Tilaus** sekä sen jälkeen **Resurssiryhmä** ja **Tallennustili**. Jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta, valitse myös **Ota yksityinen linkki käyttöön**. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > Tietolähteen luontia varten säilön tai tallennustilin osalta tarvitaan jokin seuraavista rooleista:
@@ -176,7 +176,7 @@ Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä
         > - Tallennustilan Blob-tietojen omistaja
         > - Tallennustilan Blob-tietojen osallistuja
 
-   - **Ota yksityinen linkki käyttöön**, jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#private-links-tab).
+   - **Ota yksityinen linkki käyttöön**, jos tietoja halutaan käsitellä tallennustililtä Azuren yksityisen linkin kautta. Lisätietoja on kohdassa [Yksityiset linkit](security-overview.md#set-up-an-azure-private-link).
 
 1. Valitse **Seuraava**.
 1. Seuraavia voi muokata:

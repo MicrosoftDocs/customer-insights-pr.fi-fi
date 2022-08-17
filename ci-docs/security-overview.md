@@ -1,68 +1,39 @@
 ---
-title: Customer Insightsin suojausasetukset
+title: Määritä tietoturva-asetukset
 description: Tietoja tietoturva-asetuksista Dynamics 365 Customer Insightsissa.
-ms.date: 06/08/2022
+ms.date: 08/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 163deb9bed4f82d742c46cace27dd128f0aca18b
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947411"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246058"
 ---
-# <a name="security-settings-in-customer-insights"></a>Customer Insightsin suojausasetukset
+# <a name="configure-security-settings"></a>Määritä tietoturva-asetukset
 
-**Tietoturva**-sivulla on vaihtoehtoja, joiden avulla voit määrittää käyttöoikeuksia ja ominaisuuksia, jotka auttavat tekemään Dynamics 365 Customer Insightsista entistä turvallisemman. Vain järjestelmänvalvojat voivat käyttää tätä sivua.
+Hallitse ohjelmointirajapinnan avaimia, käytä asiakastietoja ja määritä Azuren yksityinen linkki.
 
-Määritä asetukset kohdassa **Järjestelmänvalvoja** > **Tietoturva**.
-
-**Tietoturva**-sivu sisältää seuraavat välilehdet:
-
-- [Käyttäjät](#users-tab)
-- [Ohjelmointirajapinnat](#apis-tab)
-- [Yksityisviestit](#private-links-tab)
-- [Key Vault](#key-vault-tab)
-- [Asiakastietojen käyttäminen turvallisesti asiakkaan Lockboxin avulla (esiversio)](#securely-access-customer-data-with-customer-lockbox-preview)
-
-## <a name="users-tab"></a>Käyttäjät-välilehti
-
-Customer Insights -tietojen käyttöoikeus rajoittuu organisaatiosi käyttäjiin, jotka järjestelmänvalvoja on lisännyt sovellukseen. **Käyttäjät**-välilehdessä voit hallita käyttäjien pääsy- ja käyttöoikeuksia. Lisätietoja on kohdassa [käyttäjän oikeudet](permissions.md).
-
-## <a name="apis-tab"></a>Ohjelmointirajapinnat-välilehti
+## <a name="manage-api-keys"></a>Ohjelmointirajapinta-avainten hallinta
 
 Tarkastele ja hallitse avaimia, joilla voit käyttää [Customer Insights -ohjelmointirajapintoja](apis.md) ympäristön tietojen kanssa.
 
-Voit luoda uusia perus- ja toissijaisia avaimia valitsemalla **Luo uudelleen ensisijainen** tai **Luo uudelleen toissijainen**. 
+1. Siirry kohtaan **Järjestelmä** > **Tietoturva** ja valitse **Ohjelmointirajapinnat**-välilehti.
 
-Jos haluat estää ympäristön ohjelmointirajapinnan käytön, valitse **Poista käytöstä**. Jos ohjelmointirajapinnat on poistettu käytöstä, voit valita **Ota käyttöön**, jos haluat myöntää käyttöoikeudet uudelleen.
+1. Jos ympäristön ohjelmointirajapintaa ei ole määritetty, valitse **Ota käyttöön**. Tai, jos haluat estää ympäristön ohjelmointirajapinnan käytön, valitse **Poista käytöstä** ja vahvista.
 
-## <a name="private-links-tab"></a>Yksityiset linkit -välilehti
+1. Hallitse ensisijaisia ja toissijaisia ohjelmointirajapinta-avaimia:
 
-[Azuren yksityisen linkin](/azure/private-link/private-link-overview) ansiosta Customer Insights voi muodostaa näennäisversiossa yhteyden Azure Data Lake Storage -tiliin yksityisen päätepisteen kautta. Jos tallennustilatili ei ole julkisessa verkossa, tämän rajoitetun verkon tietoihin voi muodostaa yhteyden yksityisen linkin kautta.
+   1. Jos haluat näyttää ensisijaisen tai toissijaisen ohjelmointirajapinta-avaimen, valitse **Näytä** symboli.
 
-> [!IMPORTANT]
-> Yksityistä linkkiä käyttävän yhteyden määrittämisen tarvitaan vähimmäisroolivaatimus:
->
-> - Customer Insights: järjestelmänvalvoja
-> - Azuren sisäinen rooli: [tallennustilatilin osallistuja](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
-> - Mukautetun Azure-roolin oikeudet: [Microsoft.Storage/storageAccounts/read ja Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
->
+   1. Jos haluat kopioida ensisijaisen tai toissijaisen ohjelmointirajapinta-avaimen, valitse **Kopioi** symboli.
 
-Yksityinen linkki määritetään Customer Insightsissa kahdessa vaiheessa. Ensin käynnistetään yksityisen linkin luonti valitsemalla Customer Insightsissa **Hallinta** > **Suojaus** > **Yksityiset linkit**. **Lisää yksityinen linkki** -ruudussa on luettelo niistä vuokraajan tallennustilatileistä, joihin katseluoikeudet käyttäjällä on. Valitse tallennustilatili ja hyväksy yksityisen linkin luonti.
-
-Seuraavaksi yksityinen linkki on hyväksyttävä Data Lake Storage -tilillä. Hyväksy uusi yksityinen linkki avaamalla näytössä oleva linkki.
-
-## <a name="key-vault-tab"></a>Key Vault -välilehti
-
-**Key Vault** -välilehdessä voi linkittää oman [Azure Key Vaultin](/azure/key-vault/general/basic-concepts) ympäristöön ja hallita sitä.
-Erillistä key vaultia voidaan käyttää salaisten koodien valmisteluun ja käyttämiseen organisaation vaatimustenmukaisuusrajalla. Customer Insights voi käyttää Azure Key Vaultin salaisia koodeja [yhteyksien määrittämiseen](connections.md) kolmannen osapuolen järjestelmiin.
-
-Lisätietoja on kohdassa [Oman Azure Key Vaultin tuominen](use-azure-key-vault.md).
+   1. Luodaksesi uusia perus- tai toissijaisia ohjelmointirajapinta-avaimia, valitse **Luo uudelleen ensisijainen** tai **Luo uudelleen toissijainen**.
 
 ## <a name="securely-access-customer-data-with-customer-lockbox-preview"></a>Asiakastietojen käyttäminen turvallisesti asiakkaan Lockboxin avulla (esiversio)
 
@@ -72,5 +43,33 @@ Lisätietoja asiakkaan Lockboxista on Power Platformin asiakkaan Lockboxin [yhte
 
 > [!IMPORTANT]
 > Power Platformin yleiset järjestelmänvalvojat tai Power Platform järjestelmänvalvojat voivat hyväksyä Customer Insightsin asiakkaan Lockbox-pyyntöjä.
+
+## <a name="set-up-an-azure-private-link"></a>Azure-yksityislinkin määrittäminen
+
+[Azuren yksityisen linkin](/azure/private-link/private-link-overview) ansiosta Customer Insights voi muodostaa näennäisversiossa yhteyden Azure Data Lake Storage -tiliin yksityisen päätepisteen kautta. Jos tallennustilatili ei ole julkisessa verkossa, tämän rajoitetun verkon tietoihin voi muodostaa yhteyden yksityisen linkin kautta.
+
+> [!IMPORTANT]
+> Yksityistä linkkiä käyttävän yhteyden määrittämisen tarvitaan vähimmäisroolivaatimus:
+>
+> - Customer Insights: järjestelmänvalvoja
+> - Azuren sisäinen rooli: [tallennustilatilin osallistuja](/azure/role-based-access-control/built-in-roles#storage-account-contributor)
+> - Mukautetun Azure-roolin oikeudet: [Microsoft.Storage/storageAccounts/read ja Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action](/azure/role-based-access-control/resource-provider-operations#microsoftstorage)
+
+1. Siirry Customer Insightsissa kohtaan **Järjestelmänvalvoja** > **Tietoturva** ja valitse **Yksityiset linkit** -välilehti.
+
+1. Valitse **Yksityinen linkki**.
+
+   **Lisää yksityinen linkki** -ruudussa on luettelo niistä vuokraajan tallennustilatileistä, joihin katseluoikeudet käyttäjällä on.
+
+1. Valitse tilaus, resurssiryhmä ja tallennustili.
+
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
+
+1. Valitse **Tallenna**.
+
+1. Siirry Data Lake -tallennustilille ja avaa näytössä esitetty linkki.
+
+1. Hyväksy yksityinen linkki.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

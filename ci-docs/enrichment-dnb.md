@@ -1,7 +1,7 @@
 ---
 title: Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
 description: Yleisiä tietoja Dun & Bradstreetin kolmannen osapuolen rikastamisesta.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 71b35e4295e19c13edadc6548ac79715555e8183
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: e89b64774dcb519a071dd3d403473807a50e7f33
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196022"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237900"
 ---
 # <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Yritysprofiilien rikastaminen Dun & Bradstreetin avulla (esiversio)
 
@@ -55,16 +55,11 @@ Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permission
 
 1. Anna kelvolliset Dun & Bradstreet -tunnukset sekä Dun & Bradstreet -projektin tiedot *Alue, pudotuskansiopolku ja pudotuskansion nimi*. [Saat nämä tiedot](#set-up-your-dun--bradstreet-project) Dun & Bradstreet -projektista.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
 
    :::image type="content" source="media/enrichment-dnb-connection.png" alt-text="Dun & Bradstreet -yhteyden määrittämissivu.":::
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys Dun & Bradstreetiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Dun & Bradstreet täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="supported-countries-or-regions"></a>Tuetut maat tai alueet
 

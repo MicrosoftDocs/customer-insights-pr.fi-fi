@@ -1,7 +1,7 @@
 ---
 title: Yhteydet (esiversio) – yleiskuvaus
 description: Yhteydet muihin palveluihin Customer Insightsista.
-ms.date: 04/09/2021
+ms.date: 08/04/2022
 ms.reviewer: nikeller
 ms.subservice: audience-insights
 ms.topic: overview
@@ -11,91 +11,89 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 8580dc7d90c75f66f73efc15f8e38f5e10fbb8a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195170"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245507"
 ---
 # <a name="connections-preview-overview"></a>Yhteydet (esiversio) – yleiskuvaus
 
-Yhteydet ovat avain, joka mahdollistaa tietojen jakamisen Customer Insightsiin ja ulos sieltä. Kukin yhteys muodostaa tietojen jakamisen tietyn palvelun kanssa. Yhteydet ovat perusta [kolmansien osapuolten rikastusten määrittämiselle](enrichment-hub.md) ja [viennin määrittämiselle](export-destinations.md). Samaa yhteyttä voidaan käyttää useita kertoja. Esimerkiksi yksi yhteys Dynamics 365 Marketingiin toimii useaa vientiä varten ja yhtä Leadspace-yhteyttä voi käyttää useisiin rikastuksiin.
+Yhteydet ovat avain, joka mahdollistaa tietojen jakamisen Customer Insightsiin ja ulos sieltä. Kukin yhteys muodostaa tietojen jakamisen tietyn palvelun kanssa. Käytä yhteyksiä [kolmansien osapuolten rikastusten määrittämiselle](enrichment-hub.md) ja [viennin määrittämiselle](export-destinations.md). Samaa yhteyttä voidaan käyttää useita kertoja. Esimerkiksi yksi yhteys Dynamics 365 Marketingiin toimii useaa vientiä varten ja yhtä Leadspace-yhteyttä voi käyttää useisiin rikastuksiin.
 
-Luo ja tarkastele yhteyksiä kohdassa **Järjestelmänvalvoja** > **Yhteydet**.
+## <a name="export-connections"></a>Vie yhteydet
 
-**Yhteydet**-välilehdessä näkyvät kaikki aktiiviset yhteydet. Luettelossa näkyy rivi kutakin yhteyttä varten.
+Vain järjestelmänvalvojat voivat määrittää uusia yhteyksiä, mutta he voivat [myöntää osallistujille käyttöoikeudet](#allow-contributors-to-use-a-connection-for-exports) aiemmin luotujen yhteyksien käyttöön. Järjestelmänvalvojat määrittävät tietojen lähtemisen, osallistujat määrittävät tiedot ja tiheyden, joka vastaa heidän tarpeitaan.
 
-Saat **Tutustu**-välilehdessä nopean yleiskatsauksen, kuvauksen ja tietoja siitä, mitä kullakin laajennettavuusvaihtoehdolla voi tehdä.
-
-## <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista kolmansille osapuolille tai muille Microsoft-tuotteille, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että kolmas osapuoli noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi poistaa yhteyden milloin tahansa poistaa tämän rikastamisen käytöstä.
-
-## <a name="exports"></a>Viennit
-
-Vain järjestelmänvalvojat voivat määrittää uusia yhteyksiä, mutta he voivat myöntää osallistujille käyttöoikeudet aiemmin luotujen yhteyksien käyttöön. Järjestelmänvalvojat määrittävät tietojen lähtemisen, osallistujat määrittävät tiedot ja tiheyden, joka vastaa heidän tarpeitaan. Lisätietoja on ohjeaiheessa [Salli osallistujien käyttää yhteyttä viennissä](#allow-contributors-to-use-a-connection-for-exports).
-
-## <a name="enrichments"></a>Rikastukset
+## <a name="enrichment-connections"></a>Rikastusliitännät
 
 Vain järjestelmänvalvojat voivat määrittää uusia yhteyksiä, mutta luodut yhteydet ovat aina sekä järjestelmänvalvojien että osallistujien käytettävissä. Järjestelmänvalvojat hallinnoivat tunnistetietoja ja antavat hyväksyntänsä tietojen siirroille. Tämän jälkeen sekä järjestelmänvalvojat että osallistujat voivat käyttää yhteyksiä rikastuksiin.
 
 ## <a name="add-a-new-connection"></a>Lisää uusi yhteys
 
-Jotta voit lisätä yhteyksiä, tarvitset [järjestelmänvalvojan käyttöoikeudet](permissions.md). Jos muodostat yhteyden muihin Microsoftin palveluihin, oletamme, että molemmat palvelut ovat samassa organisaatiossa.
+### <a name="prerequisites"></a>edellytykset
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet (esiversio)**.
+- [Järjestelmänvalvojan oikeudet](permissions.md)
+- Muut mahdolliset Microsoftin palvelut ovat samassa organisaatiossa
 
-1. Luo uusi yhteys valitsemalla **Lisää yhteys**. Valitse avattavasta valikosta luotavan yhteyden tyyppi.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Anna **Määritä yhteys** -ruudussa tarvittavat tiedot.
-   1. Yhteyden **Näyttönimi** ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
-   1. Täsmälliset kentät määräytyvät sen mukaan, mihin palveluun muodostat yhteyden. Saat tietoja liittyvästä yhteystyypistä kohdepalvelun artikkelista.
-   1. Jos [käytät omaa Key Vaultiasi](use-azure-key-vault.md) salaisien koodien tallentamiseen, aktivoi **Käytä Key Vaultia** ja valitse sitten salainen koodi luettelosta.
+1. Valitse **Lisää yhteys** ja valitse yhteystyyppi, jonka haluat luoda. Tai, mene **Tutustu**-välilehdelle ja valitse **Määritä** yhteysruudussa.
 
-1. luo yhteys valitsemalla **Tallenna**.
+1. Anna yhteydelle tunnistettava nimi **Näyttönimi**-kentässä. Yhteyden nimi ja tyyppi kuvaavat yhteyttä. On suositeltavaa valita nimi, joka kertoo yhteyden tarkoituksen ja kohteen.
 
-Voit myös valita **Määritä** **Tutustu**-välilehden ruudussa.
+1. Kirjoita tarvittavat tiedot. Täsmälliset kentät määräytyvät sen mukaan, mihin palveluun muodostat yhteyden. Lisätietoja tietystä yhteystyypistä saat kohdepalvelua koskevasta artikkelista.
 
-### <a name="allow-contributors-to-use-a-connection-for-exports"></a>Salli osallistujien käyttää yhteyttä vientiin
+1. Jos [käytät omaa Key Vaultiasi](use-azure-key-vault.md) salaisien koodien tallentamiseen, aktivoi **Käytä Key Vaultia** ja valitse sitten salainen koodi luettelosta.
 
-Kun määrität tai muokkaat vientiyhteyttä, valitse käyttäjät, joilla on oikeus käyttää tätä yhteyttä [vientien](export-destinations.md) määrittämiseen. Yhteys on oletusarvoisesti niiden käyttäjien käytettävissä, joilla on järjestelmänvalvojan rooli. Voit muuttaa tätä asetusta kohdassa **Valitse, kuka voi käyttää tätä yhteyttä** ja sallia osallistujaroolin käyttäjien käyttää tätä yhteyttä.
+1. Tarkista tietojen Tietosuoja ja vaatimustenmukaisuus ja valitse **Hyväksyn**.
+
+1. Valitse **Tallenna** luodaksesi yhteyden.
+
+### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
+
+Kun otat tietojen siirron käyttöön Dynamics 365 Customer Insightsista kolmansille osapuolille tai muille Microsoft-tuotteille, sallit tietojen siirtämisen Dynamics 365 Customer Insightsin vaatimustenmukaisuuden rajojen ulkopuolelle, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilötiedot. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että kolmas osapuoli noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Dynamics 365 Customer Insightsin järjestelmänvalvoja voi poistaa yhteyden milloin tahansa poistaa tämän rikastamisen käytöstä.
+
+## <a name="allow-contributors-to-use-a-connection-for-exports"></a>Salli osallistujien käyttää yhteyttä vientiin
+
+Kun määrität tai muokkaat vientiyhteyttä, valitse käyttäjät, joilla on oikeus käyttää tätä yhteyttä [vientien](export-destinations.md) määrittämiseen. Yhteys on oletusarvoisesti niiden käyttäjien käytettävissä, joilla on järjestelmänvalvojan rooli. Muuta **Valitse, kuka voi käyttää tätä yhteyttä** -asetusta salliaksesi osallistujaroolin käyttäjien käyttää tätä yhteyttä.
 
 - Osallistujat eivät voi tarkastella tai muokata yhteyttä. He näkevät vain näyttönimen ja sen tyypin luodessaan vientiä.
 - Kun jaat yhteyden, osallistujat voivat käyttää yhteyttä. Osallistujat näkevät jaetut yhteydet vientiä määrittäessään. He voivat hallita jokaista tätä yhteyttä käyttävää vientiä.
 - Voit muuttaa tätä asetusta niin, että säilytetään osallistujien jo määrittämät viennit.
 
-## <a name="edit-a-connection"></a>Yhteyden muokkaaminen
+## <a name="manage-existing-connections"></a>Aiemmin luotujen yhteyksien hallinta
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet (esiversio)**.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Siirry **Yhteydet**-välilehteen.
+1. Valitsemalla **Rikastaminen**- tai **Viennit**-välilehden voit tarkastella luetteloa, jossa ovat rikastamisen tai viennin yhteydet, yhteystyyppi, luontipäivämäärä ja käyttöoikeudet. Yhteydet voi lajitella minkä tahansa sarakkeen mukaan.
 
-1. Valitse muokattavan yhteyden kohdalla kolme allekkaista pistettä (&vellip;).
+1. Voit tarkastella käytettävissä olevia toimintoja valitsemalla yhteyden.
 
-1. Valitse **Muokkaa**.
+   - **Muokkaa** yhteyttä.
+   - [**Poista**](#remove-a-connection) yhteys.
 
-1. Muuta päivitettävät arvot ja valitse **Tallenna**.
-
-## <a name="remove-a-connection"></a>Yhteyden poistaminen
+### <a name="remove-a-connection"></a>Yhteyden poistaminen
 
 Jos poistettavaa yhteyttä käytetään rikastuksissa tai vienneissä, ne on ensin irrotettava tai poistettava. Poistoikkuna opastaa sinut liittyviin rikastuksiin tai vienteihin.
 
-irrotetut rikastukset ja viennit muuttuvat passiivisiksi. Voit aktivoida ne uudelleen lisäämällä niihin toisen yhteyden [Rikastus](enrichment-hub.md)- tai [Viennit](export-destinations.md)-sivulla.
+> [!TIP]
+> Deaktivoidut rikastukset ja poistetut viennit muuttuvat passiivisiksi. Voit aktivoida ne uudelleen lisäämällä niihin toisen yhteyden [Rikastus](enrichment-hub.md)- tai [Viennit](export-destinations.md)-sivulla.
 
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet (esiversio)**.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 
-1. Siirry **Yhteydet**-välilehteen.
+1. Valitse **Rikastus**- tai **Viennit**-välilehti.
 
-1. Valitse poistettavan yhteyden kohdalla kolme allekkaista pistettä (&vellip;).
+1. Valitse poistettava yhteys.
 
 1. Valitse avattavassa valikossa **Poista**. Vahvistusvalintaikkuna avautuu.
 
    1. Jos tätä yhteyttä käyttää jokin rikastus tai vienti, valitse painike, kun haluat nähdä, mikä käyttää yhteyttä.
-      - **Viennit:** Voit joko poistaa viennin tai katkaista yhteyden, jos haluat poistaa yhteyden. Järjestelmänvalvojat voivat katkaista viennin yhteyden **Katkaise yhteys** -toiminnon avulla. Tämä toiminto on käytettävissä yksittäisille ja useille valituille viennille. Kun katkaiset yhteyden, säilytät vientimäärityksen, mutta se suoritetaan vasta, kun siihen on lisätty toinen yhteys.
-      - **Rikastukset:** Voit joko poistaa rikastuksen tai passivoida sen, jos haluat poistaa yhteyden.
+      - **Viennit:** Valitse joko **Poista** vienti tai **Poista yhteys**. Poistamalla yhteyden säilytät vientimäärityksen, mutta se suoritetaan vasta, kun siihen on lisätty toinen yhteys.
+      - **Rikasteet:** voit joko **poistaa** rikastuksen tai **poistaa sen aktivoinnin**.
    1. Kun yhteydellä ei ole enää riippuvuuksia, palaa kohtaan **Järjestelmänvalvoja** > **Yhteydet** ja yritä poistaa yhteys uudelleen.
 
 1. Vahvista poisto valitsemalla **Poista**.

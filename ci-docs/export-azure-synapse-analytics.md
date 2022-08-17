@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f9c9ee55f2874ae1dcaf82f2ff17ed0fbbb7804d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0e953cfff12df433d033717d58b28c2834468916
+ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196390"
+ms.lasthandoff: 08/11/2022
+ms.locfileid: "9259840"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Tietojen vienti Azure Synapse Analyticsiin (esiversio)
 
@@ -24,7 +24,7 @@ Azure Synapse on analytiikkapalvelu, joka nopeuttaa merkityksellisten tietojen s
 > [!NOTE]
 > Varmista, että määrität kaikki **roolimääritykset** kuvatulla tavalla.
 
-- Azure Active Directory (AD) -käyttäjätililläsi on oltava [järjestelmänvalvojan](permissions.md#assign-roles-and-permissions) rooli Customer Insightsissa.
+- Azure Active Directory (AD) -käyttäjätililläsi on oltava [järjestelmänvalvojan](permissions.md#add-users) rooli Customer Insightsissa.
 
 Azuressa:
 
@@ -39,6 +39,8 @@ Azuressa:
 - *[Azure Synapse workspacessa hallitulla identiteetillä](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* on **Storage Blob Data Contributor** -oikeudet Azure Data Lake Storage Gen2 tilille, jossa tiedot ovat ja josta ne on linkitetty Azure Synapse workspaceen. Lisätietoja [Azure-portaalin käyttämisestä Azure-roolin määrittämiseen blob- ja jonotiedoille](/azure/storage/common/storage-auth-aad-rbac-portal) sekä [Storage Blob Data Contributor -oikeuksista](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - Azure Synapse workspacessa *Customer Insightsin palvelun päänimellä* on **Synapse-järjestelmänvalvojan** [rooli](/azure/synapse-analytics/security/how-to-set-up-access-control).
+
+- Jos Customer Insights -ympäristö tallentaa tiedot [omaan Azure Data Lake Storageen](own-data-lake-storage.md), Azure Synapse Analytics -yhteyden muodostava käyttäjä tarvitsee vähintään Data Lake -tallennustilatilin sisäänrakennetun **Lukija**-roolin. Lisätietoja on kohdassa [Azure-roolien määrittäminen Azure-portaalin avulla](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="set-up-connection-to-azure-synapse"></a>Määritä Azure Synapse -yhteydet
 

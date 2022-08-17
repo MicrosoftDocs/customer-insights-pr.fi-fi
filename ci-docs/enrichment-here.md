@@ -1,19 +1,19 @@
 ---
 title: Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 description: Yleisiä tietoja HERE Technologiesin kolmannen osapuolen rikastamisesta.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 26de9fce863c9832b70adf3ce39cb2ae0ce43d0e
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 86a070342193dd7afda38823d90f4bd28c8b862e
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196252"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237854"
 ---
 # <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Asiakasprofiilien rikastaminen HERE Technologiesin avulla (esiversio)
 
@@ -33,16 +33,11 @@ Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permission
 
 1. Anna yhteydelle nimi ja kelvollisen HERE Technologiesin ohjelmointirajapinnan avain.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
 
    :::image type="content" source="media/enrichment-HERE-connection.png" alt-text="HERE Technologies -yhteyden määrityssivu.":::
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys HERE Technologiesiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että HERE Technologies noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 

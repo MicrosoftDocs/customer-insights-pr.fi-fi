@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173791"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224291"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>Mukauta käyttökokemustasi tunnettujen ja tuntemattomien käyttäjien tietojen avulla
 
-Asiakastietojen hallinta ei ole uusi asia, mutta siitä on tulossa yhä vaikeampaa, kun käyttäjät käyttävät eri digitaalisten kanavien tuotemerkkejä. Käyttäjästä, joka on tunnettu (todennettu) jossakin kanavassa, tulee tuntematon (todentamaton) toisessa, jos hän ei ole kirjautunut sisään. Ongelmana on usein se, että todentamattomilla (tuntematon) käyttäjillä ei ole yhteistä tunnusta. Sen avulla voidaan liittää merkityksellisiä profiilimääritteitä ja luoda yhtenäisiä asiakasprofiileja. Customer Insights auttaa tämän ongelman ratkaisemisessa keräämällä tietoja lähdejärjestelmien seurantatavoista. Kootut ja tunnetut profiilit antavat organisaatioille täydellisen näkymän uusista profiileista sekä niiden historiatapahtumista, käyttäytymisistä ja demografiasta. Lisäksi siinä tarjotaan tunnistetietojen ratkaisu, jonka avulla voit yhdistää asiakasaktiviteetin useissa kanavissa, kuten verkkosivustossasi, myymälässä tehtävässä ostossa ja kanta-asiakasohjelmissa.
+Asiakastietojen hallinta ei ole uusi asia, mutta siitä on tulossa yhä vaikeampaa, kun käyttäjät käyttävät eri digitaalisten kanavien tuotemerkkejä. Käyttäjästä, joka on tunnettu (todennettu) jossakin kanavassa, tulee tuntematon (todentamaton) toisessa, jos hän ei ole kirjautunut sisään. Ongelmana on usein se, että todentamattomilla (tuntematon) käyttäjillä ei ole yhteistä tunnusta. Sen avulla voidaan liittää merkityksellisiä profiilimääritteitä ja luoda yhtenäisiä asiakasprofiileja. Customer Insights auttaa tämän ongelman ratkaisemisessa keräämällä tietoja lähdejärjestelmien seurantatavoista. Konsolidoidut tuntemattomat ja tunnetut profiilit tarjoavat organisaatioille täydellisen näkymän uusista profiileista sekä niiden historiatapahtumista, käyttäytymisistä ja demografiatiedoista. Lisäksi siinä tarjotaan tunnistetietojen ratkaisu, jonka avulla voit yhdistää asiakasaktiviteetin useissa kanavissa, kuten verkkosivustossasi, myymälässä tehtävässä ostossa ja kanta-asiakasohjelmissa.
 
 ## <a name="sample-scenario"></a>Näyteskenaario
 

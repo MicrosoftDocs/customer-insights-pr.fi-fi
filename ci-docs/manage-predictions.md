@@ -8,12 +8,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: a180f6462452d9830d0daa150a35a9d0acad925a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 42abfb305efaccaeef48e32f2cc69f3d36fbe73d
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081140"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245461"
 ---
 # <a name="manage-predictions"></a>Hallitse ennusteita
 
@@ -58,7 +58,7 @@ Seuraavissa raportin sarakkeissa on hyödyllisiä tietoja mallin tietojen parant
 
 ## <a name="refresh-a-prediction"></a>Ennusteen päivittäminen
 
-Ennusteet päivittyvät automaattisesti saman [aikataulun mukaan kuin tiedot päivitetään](system.md#schedule-tab) asetuksissa määritetyllä tavalla. Voit päivittää ne myös manuaalisesti.
+Ennusteet päivittyvät automaattisesti saman [aikataulun mukaan kuin tiedot päivitetään](schedule-refresh.md) asetuksissa määritetyllä tavalla. Voit päivittää ne myös manuaalisesti.
 
 1. Valitse ensin **Analytiikka** > **Ennusteet** ja sitten **Omat ennusteet** -välilehti.
 

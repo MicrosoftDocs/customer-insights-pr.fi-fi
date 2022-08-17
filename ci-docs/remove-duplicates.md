@@ -2,7 +2,7 @@
 title: Kaksoiskappaleiden poistaminen ennen tietojen yhdistämistä
 description: Toinen vaihe yhdistämisprosessissa on valita tietue, joka tallennetaan, kun kaksoiskappaleita löytyy.
 recommendations: false
-ms.date: 04/22/2022
+ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,16 +13,25 @@ searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: a838fbdabdb3bfffc6d3835a3f0e97306a43964a
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139425"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213623"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Kaksoiskappaleiden poistaminen ennen tietojen yhdistämistä
 
-Tämän yhdistämisvaiheen avulla voit vaihtoehtoisesti määrittää säännöt entiteetin tietueiden kaksoiskappaleiden käsittelyä varten. *Kaksoiskappaleiden poisto* tunnistaa tietueiden kaksoiskappaleet ja yhdistää ne yhteen tietueeseen. Lähdetietueet linkitetään yhdistettyyn tietueeseen vaihtoehtoisilla tunnuksilla. Jos sääntöjä ei ole määritetty, sovelletaan järjestelmän määrittämiä sääntöjä.
+Tämän valinnaisen yhdistämisvaiheen avulla voit määrittää sääntöjä päällekkäisten tietueiden poistamiseksi **entiteetistä**. Kaksoiskappaleiden poisto tunnistaa useita tietueita asiakkaalle ja valitsee parhaan tietueen säilytettäväksi (yhdistämisasetusten perusteella) tai yhdistää tietueet yhdeksi (yhdistämisasetusten lisäasetusten perusteella). Lähdetietueet linkitetään yhdistettyyn tietueeseen vaihtoehtoisilla tunnuksilla. Jos sääntöjä ei ole määritetty, sovelletaan järjestelmän määrittämiä sääntöjä.
+
+## <a name="default-deduplication"></a>Oletuskaksoiskappaleiden poisto
+
+Järjestelmän määrittämiä sääntöjä sovelletaan, jos kaksoiskappaleiden poistamissääntöjä ei ole lisätty.
+
+- Perusavaimen kaksoiskappale poistettu.
+  Jos tietueella on sama perusavain, voittaja on **Eniten täytetty** tietue (joka sisältää vain muutaman tyhjäarvon).
+- Entiteettiä vastaavat ristientiteettiä vastaavat säännöt koskevat entiteettiä.
+  Esimerkki: Jos täsmäytysvaiheessa entiteetti A vastaa entiteettiä B *FullName* ja *DateofBirth* -kohdassa, entiteetistä A poistetaan myös kaksoiskappaleet *FullName* ja *DateofBirth*. Koska *FullName* ja *DateofBirth* ovat kelvollisia avaimia asiakkaan tunnistamiseen entiteetissä A, nämä avaimet kelpaavat myös asiakkaiden kaksoiskappaleiden tunnistamiseen entiteetissä A.
 
 ## <a name="include-enriched-entities-preview"></a>Rikastettujen entiteettien sisällyttäminen (esiversio)
 

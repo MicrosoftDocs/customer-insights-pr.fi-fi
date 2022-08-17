@@ -1,7 +1,7 @@
 ---
-title: Järjestelmän kokoonpano
+title: Tarkastele järjestelmän kokoonpanoa
 description: Lisätietoja Dynamics 365 Customer Insightsin järjestelmän asetuksista.
-ms.date: 04/21/2022
+ms.date: 08/09/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: NimrodMagen
@@ -10,60 +10,98 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-system-status
-- ci-system-schedule
 - ci-system-about
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 0ef84d8e286d8135eb8938e72f1319925e948bed
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050667"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246243"
 ---
-# <a name="system-configuration"></a>Järjestelmän kokoonpano
+# <a name="view-system-configuration"></a>Tarkastele järjestelmän kokoonpanoa
 
-Jos haluat käyttää järjestelmämäärityksiä, siirry kohtaan **Järjestelmänhallinta** > **Järjestelmä** tarkastellaksesi järjestelmätehtävien ja -prosessien luetteloa.
+Tarkastele järjestelmän tietoja, järjestelmän tilaa ja ohjelmointirajapinnan käyttöä.
 
-**Järjestelmä**-sivu sisältää seuraavat välilehdet:
-- [Tila](#status-tab)
-- [Aikatauluta](#schedule-tab)
-- [Ohjelmointirajapinnan käyttö](#api-usage-tab)
-- [Tietoja](#about-tab)
-- [Yhteiset](#general-tab)
+## <a name="view-api-usage"></a>Tarkastele ohjelmointirajapinta käyttöä
 
-:::image type="content" source="media/system-tabs.png" alt-text="Järjestelmäsivun asetusten välilehdet":::
+Tarkastele reaaliaikaisen ohjelmointirajapinnan käyttöä koskevia tietoja ja katso, mitä tapahtumia tiettynä aikavälinä on suoritettu.
 
-## <a name="status-tab"></a>Tila-välilehti
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Ohjelmointirajapinnan käyttö** -välilehti.
 
-**Tila-välilehdessä** voit seurata tehtävien etenemistä, tietojen käyttöä, tietojen vientiä ja monia muita tärkeitä tuoteprosesseja. Tarkista tämän välilehden tiedot ja varmista, että aktiiviset tehtävät ja prosessit ovat täydellisiä.
+1. **Valitse aikaväli**, jota haluat tarkastella.
 
-Tässä välilehdessä on taulukoita, joissa on tila- ja käsittelytietoja eri prosesseja varten. Kukin taulukko seuraa tehtävän **nimeä** ja sen vastaavaa entiteettiä, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**. Voit tarkastella useiden viime suoritusten tietoja valitsemalla tehtävän tai prosessin nimen. 
+   **Ohjelmointirajapinnan käyttö** -sivu sisältää seuraavat kolme osaa:
 
-Valitse tila tehtävän tai prosessin vieressä **Tila**-sarakkeessa, jos haluat avata **Edistymisen tiedot** -ruudun.
+   - **Ohjelmointirajapinnan kutsut** - kaavio, joka visualisoi ohjelmointirajapinnan koostettujen kutsujen määrän valittuna aikavälinä.
+   - **Tietojen siirto** - kaavio, joka näyttää valitun ohjelmointirajapinnan kautta siirrettyjen tietojen määrän valittuna aikavälinä.
+   - **Toiminnot** - taulukko, jossa on rivejä kullekin käytettävissä olevalle ohjelmointirajapinnan toiminnolle sekä toimintojen käyttöä koskevat tiedot. Valitse toiminnon nimi siirtyäksesi [ohjelmointirajapinnan viitteeseen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   [Reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md) käyttävät toiminnot sisältävät reaaliaikaisen ohjelmointirajapinnan käytön kiikarisymbolin.
+
+   1. Valitse kiikari avataksesi **Reaaliaikaiset ohjelmointirajapinnan käyttötiedot** -ruudun, jossa on toiminnon käyttötiedot.
+   1. **Valitse aikaväli**, jota haluat tarkastella.
+   1. Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Ryhmittely**-ruudun avulla. Ryhmittele tiedot ohjelmointirajapinnan **menetelmän**, **entiteetin hyväksytyn nimen** (sisällytetty entiteetti), **luojan** (tapahtuman lähde), **tuloksen** (onnistuminen tai epäonnistuminen) tai **virhekoodien** mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
+
+## <a name="view-system-information"></a>Järjestelmän tietojen näyttäminen
+
+Tarkastele ympäristön näyttönimeä, tunnusta, aluetta, tyyppiä ja istuntotunnusta.
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Tietoja**-välilehti.
+
+1. Voit tarkastella kieltä sekä maata tai aluetta valitsemalla **Yleiset**-välilehden.
+
+### <a name="update-preferred-language-or-countryregion"></a>Ensisijaisen kielen tai maan/alueen päivittäminen
+
+Customer Insights [tukee useita kieliä](/dynamics365/get-started/availability). Sovellus käyttää kieliasetuksia näyttämään elementit, kuten valikon, selitetekstin ja järjestelmän sanomat, ensisijaisella kielellä.
+
+Tuotuja tietoja ja manuaalisesti annettuja tietoja ei käännetä.
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Yleiset**-välilehti.
+
+1. Jos haluat vaihtaa ensisijaista kieltä, valitse **Kieli** avattavasta luettelosta.
+
+1. Jos haluat muuttaa päivämäärien, kellonaikojen ja lukujen muotoilua, käytä avattavaa **Maan/alueen muoto** -valikkoa. Näyttöön tulee muotoilun esiversio. Järjestelmä ehdottaa automaattisesti valintaa, kun valitset uuden kielen.
+
+1. Valitse **Tallenna**.
+
+## <a name="view-system-status"></a>Näytä järjestelmän tila
+
+Seuraa tehtävien etenemistä, tietojen käyttöä, tietojen vientiä ja monia muita tärkeitä tuoteprosesseja. Tarkista tiedot ja varmista, että aktiiviset tehtävät ja prosessit ovat täydellisiä.
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Tila**-välilehti.
+
+   Eri prosessien tila- ja käsittelytiedot näkyvät. Tarkastele tehtävän **nimeä**, **tilaa**, jossa se on useimmiten suoritettu ja sen **edellistä päivityspäivää**.
+
+1. Tarkastellaksesi useiden viime suoritusten tietoja, valitse tehtävän tai prosessin nimi.
+
+1. Jos haluat tarkastella tehtävän edistymistä, valitse tila. Näkyviin tulee **Edistymisen tiedot** -ruutu.
 
    :::image type="content" source="media/system-progress-details.png" alt-text="Järjestelmän Edistymisen tiedot -ruutu":::
+
+1. Jos haluat tarkastella kaikkien tehtävien edistymistä, valitse **Koko työnkulku**.
 
 ### <a name="status-definitions"></a>Tilamääritykset
 
 Järjestelmä käyttää tehtäviä ja prosesseja varten seuraavia tiloja:
 
-|Tila  |Määritelmä  |
+|Status  |Määritelmä  |
 |---------|---------|
-|Peruutettu |Käyttäjä on peruuttanut käsittelyn, ennen kuin se valmistui.   |
-|Epäonnistunut   |Tietojen käsittelyssä havaittiin virheitä.         |
-|Virhe  |Käsittely epäonnistui.  |
-|Ei aloitettu   |Tietolähteessä ei ole vielä käsiteltyjä tietoja tai se on edelleen luonnostilassa.         |
+|Peruutettu |Käyttäjä on peruuttanut tehtävän tai käsittelyn, ennen kuin se valmistui.   |
+|Epäonnistunut   |Tehtävän tai prosessin aikana tapahtui virheitä.         |
+|Virhe  |Tehtävä tai prosessi on epäonnistunut.  |
+|Ei aloitettu   |Tietolähteessä ei ole vielä käsiteltyjä tietoja tai tehtävä on edelleen luonnostilassa.         |
 |Käsittely  |Tehtävä tai prosessi on käynnissä.  |
-|Päivittää    |Tietoja käsittely on meneillään. Voit peruuttaa tämän toiminnon valitsemalla **Pysäytä päivittäminen** **Toiminnot**-sarakkeessa. Tietolähteen päivittämisen pysäyttäminen palauttaa sen tilaan, jossa se on viimeksi päivitetty.       |
+|Päivittää    |Tehtävä tai prosessi on käynnissä. Jos haluat peruuttaa tämän toiminnon, valitse **Päivitys** ja **Peruuta työ**. Tehtävän tai prosessin päivittämisen pysäyttäminen palauttaa sen tilaan, jossa se on viimeksi päivitetty.       |
 |Ohitettu  |Tehtävä tai prosessi ohitettiin. Vähintään yksi palvelimelta siirrettävä prosessi, josta tämä tehtävä on riippuvainen, on epäonnistumassa tai se ohitettiin.|
 |Onnistui  |Tehtävä tai prosessi on suoritettu. Tietolähteiden osalta ilmaisee, että tiedot on käsitelty onnistuneesti, jos **Päivitetty**-sarakkeessa mainitaan aika.|
 |Jonossa | Käsittely asetetaan jonoon, ja se käynnistyy, kun kaikki alkuvaiheen tehtävät ja prosessit on suoritettu. Lisätietoja on aiheessa [Prosessien päivittäminen](#refresh-processes).|
 
 ### <a name="refresh-processes"></a>Prosessien päivittäminen
 
-Tehtävien ja prosessien päivitys suoritetaan [määritetyn aikataulun](#schedule-tab) mukaisesti. 
+Tehtävien ja prosessien päivitys suoritetaan [määritetyn aikataulun](schedule-refresh.md) mukaisesti.
 
 |Prosessi  |Kuvaus  |
 |---------|---------|
@@ -86,58 +124,6 @@ Tehtävien ja prosessien päivitys suoritetaan [määritetyn aikataulun](#schedu
 |Käyttäjä  |Suoritetaan manuaalisesti (yksittäinen päivitys). Riippuu entiteeteistä.  |
 
 Valitse prosessin tila, jos haluat nähdä koko työn edistymistiedot. Yllä olevien päivitysprosessien avulla saat tietoja siitä, miten voit käsitellä **ohitettua** tai **jonoon määritettyä** tehtävää tai prosessia.
-
-## <a name="schedule-tab"></a>Aikataulut-välilehti
-
-**Ajoitus**-välilehdessä voi ajoittaa kaikkien [käsiteltyjen tietolähteiden](data-sources.md) automaattiset päivitykset. Automaattisten päivitysten avulla voit varmistaa, että tietolähteiden päivitykset näkyvät yhtenäisessä asiakasprofiilissa.
-
-> [!NOTE]
-> Hallitsemasi tietolähteet päivittyvät omien aikataulujensa mukaan. Voit ajoittaa hallitsemiesi tietolähteiden päivitykset määrittämällä päivitysasetukset kyseiselle tietolähteelle **Tietolähteet**-sivulla.
-> :::image type="content" source="media/PPDF-edit-refresh.png" alt-text="Power Platform – tietovuon päivitysasetukset.":::
-
-1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Aikataulu**-välilehti.
-
-2. Ajoitetun päivityksen oletustila on **Ei käytössä**. Jos haluat ottaa ajoitetut päivitykset käyttöön, vaihda näytön yläreunassa olevan kohdan arvoksi **Käytössä**.
-
-3. Valitse päivitysväliksi **Viikoittain** (oletusarvo) tai **Päivittäin**. Jos aiot aikatauluttaa viikoittaiset päivitykset, valitse vähintään yksi päivä, jolloin haluat suorittaa päivityksen.
-
-4. Määritä **Aikavyöhyke** ja määritä sitten avattava **Aika**-luettelo, jos haluat määrittää päivityksen ajoituksen. Kun olet valmis, valitse **Määritä**. Jos haluat aikatauluttaa useita päivityksiä yhdelle päivälle, valitse **Lisää toinen aika**.
-
-5. Ota muutokset käyttöön valitsemalla **Tallenna**.
-
-## <a name="about-tab"></a>Tietoja-välilehti
-
-**Tietoja**-välilehdessä on tietoja organisaation **näyttönimestä**, aktiivisen **ympäristön tunnuksesta**, **alueesta** ja **istunnon tunnuksesta**. Jos työympäristöjä on useita, kullekin on annettava helposti tunnistettava näyttönimi.
-
-## <a name="general-tab"></a>Yleiset-välilehti
-
-Kieltä ja maa- tai aluemuotoa voi vaihtaa **Yleiset**-välilehdessä.
-
-Customer Insights [tukee useita kieliä](/dynamics365/get-started/availability). Sovellus käyttää kieliasetuksia näyttämään elementit, kuten valikon, selitetekstin ja järjestelmän sanomat, ensisijaisella kielellä.
-
-Tuotuja tietoja ja manuaalisesti annettuja tietoja ei käännetä.
-
-### <a name="update-the-settings"></a>Asetusten päivittäminen
-
-Jos haluat vaihtaa ensisijaista kieltä, valitse **Kieli** avattavasta luettelosta.
-
-Jos haluat muuttaa päivämäärien, kellonaikojen ja lukujen muotoilua, käytä avattavaa **Maan/alueen muoto** -valikkoa. Tämän kentän alapuolella näkyy muotoilun esikatselu. Järjestelmä ehdottaa automaattisesti valintaa, kun valitset uuden kielen.
-
-Valitse **Tallena** valintojen vahvistamiseksi.
-
-## <a name="api-usage-tab"></a>Ohjelmointirajapinnan käyttö -välilehti
-
-Etsi reaaliaikaisen ohjelmointirajapinnan käyttöä koskevat tiedot ja katso, mitä tapahtumia tiettynä aikavälinä on suoritettu. Valitse aikaväli avattavasta **Valitse aikaväli** -valikosta. 
-
-**Ohjelmointirajapinnan käyttö** sisältää seuraavat kolme osaa: 
-- **Ohjelmointirajapinnan kutsut** - kaavio, joka visualisoi ohjelmointirajapinnan koostettujen kutsujen määrän valittuna aikavälinä.
-
-- **Tietojen siirto** - kaavio, joka näyttää valitun ohjelmointirajapinnan kautta siirrettyjen tietojen määrän valittuna aikavälinä.
-
--  **Toiminnot** - taulukko, jossa on rivejä kullekin käytettävissä olevalle ohjelmointirajapinnan toiminnolle sekä toimintojen käyttöä koskevat tiedot. Voit valita toiminnon nimen ja siirtyä [ohjelmointirajapinnan viitteeseen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   [Reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md) käyttävät toiminnot sisältävät painikkeen, jolla näkyy reaaliaikaisen ohjelmointirajapinnan käytön kiikarisymboli. Painikkeen valitseminen avaa sivuruudun, jossa on reaaliaikaisen ohjelmointirajapinnan käyttötiedot nykyisessä ympäristössä.   
-   Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Reaaliaikainen ohjelmointirajapinnan käyttö** -ruudun **Ryhmittely**-ruudun avulla. Voit ryhmitellä tiedot ohjelmointirajapintamenetelmän, entiteetin hyväksytyn nimen (sisällytetty entiteetti), luojan (tapahtuman lähde), tuloksen (onnistuminen tai epäonnistuminen) tai virhekoodien mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

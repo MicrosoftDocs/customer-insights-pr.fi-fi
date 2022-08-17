@@ -1,19 +1,19 @@
 ---
 title: Asiakasprofiilien rikastaminen LiveRamp-tunnistetietojen avulla (esiversio)
 description: Täydennä asiakasprofiileja LiveRamp-tietojen avulla.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0aa6dc144602741b87843a5373779855ee3e334c
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196344"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237808"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Asiakasprofiilien rikastaminen LiveRamp-tunnistetietojen avulla (esiversio)
 
@@ -41,13 +41,9 @@ Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permission
 
 1. Anna yhteyden nimi sekä kelvollinen LiveRamp-asiakastunnus ja salainen koodi.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys LiveRampiin otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että LiveRamp täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja: [Microsoft-tietosuojatiedot](https://go.microsoft.com/fwlink/?linkid=396732). Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 

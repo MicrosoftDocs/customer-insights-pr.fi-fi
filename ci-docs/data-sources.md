@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207087"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245645"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -67,7 +67,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla tietolähteen.
 
 Tietolähteet voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. [Paikalliset tietolähteet](connect-power-query.md#add-data-from-on-premises-data-sources) päivitetään oman, tietojen käsittelyn aikana määritettävän aikataulun mukaan. Liitettyjen tietolähteiden osalta tietojen käsittelyssä käytetään kyseisen tietolähteen viimeisimpiä saatavana olevia tietoja.
 
-Valitsemalla **Hallinta** > **Järjestelmä** > [**Aikataulu**](system.md#schedule-tab) määritetään järjestelmän aikatauluttamat käsiteltyjen tietolähteiden päivitykset.
+Valitsemalla **Hallinta** > **Järjestelmä** > [**Aikataulu**](schedule-refresh.md) määritetään järjestelmän aikatauluttamat käsiteltyjen tietolähteiden päivitykset.
 
 Tietolähteen päivittäminen pyynnöstä:
 

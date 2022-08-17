@@ -1,7 +1,7 @@
 ---
-title: Käyttöoikeuksien hallinta
+title: Delegoidaan käyttöoikeuksia
 description: Tietoja käyttöoikeuksista ja käyttäjärooleista.
-ms.date: 02/09/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -12,20 +12,16 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 30b37645cad4e795ef20579e20e3f2bbdb2afbf6
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: a59a672b6f7e1e67c2162ea14bb9860df0d551aa
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054856"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245415"
 ---
-# <a name="manage-user-permissions"></a>Käyttöoikeuksien hallinta
+# <a name="assign-user-permissions"></a>Delegoidaan käyttöoikeuksia
 
-**Oikeudet**-sivulla voit määrittää rooleja ja oikeuksia Customer Insights -tietojen käyttöön.
-
-Sivun näyttämiseen tarvitaan järjestelmänvalvojan käyttöoikeudet. Jos haluat käyttää käyttöoikeussivua, siirry sivulle **Järjestelmänhallinta** > **Tietoturva** > **Käyttäjät**.
-
-Roolityyppejä on kolme:
+Customer Insights -tietojen käyttöoikeus rajoittuu organisaatiosi käyttäjiin, jotka järjestelmänvalvoja on lisännyt sovellukseen. Järjestelmänvalvoja voi lisätä, muokata tai poistaa käyttäjiä. Käyttäjä voi olla yksittäinen käyttäjä, ryhmä tai sovellus. Käyttäjällä voi olla kolmentyyppisiä rooleja:
 
 ## <a name="viewer"></a>Katselija
 
@@ -41,18 +37,18 @@ Roolityyppejä on kolme:
 
 - Kaikki katselijan oikeudet.
 - Lataa ja muunna tietoja **Tietolähteet**-sivun avulla.
-- Täytä **Tietojen yhdistäminen**, joka johtaa unified customer profile -profiilientiteettiin.
+- Täysi **Tietojen yhdistäminen**, joka johtaa yhtenäiseen profiilientiteettiin.
 - Määritä **suhteet** ja **aktiviteetit**.
 - Luo segmenttejä **Segmentit**-sivun avulla.
 - Luo mittareita **Mittarit**-sivun avulla.
 - Hallitse määrityksiä ja täydennä asiakasprofiilit **Täydennä**-sivulla (vain ensimmäisen osapuolen täydennykset).
-- Hallitse ja luo vientejä osallistujien kanssa jaettujen yhteyksien perusteella. [Lisätietoja siitä, miten järjestelmänvalvojat voivat sallia osallistujien käyttää yhteyttä vienneissä.](connections.md#allow-contributors-to-use-a-connection-for-exports)
+- Hallitse ja luo vientejä [osallistujien kanssa jaettujen yhteyksien perusteella](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="admin"></a>Järjestelmänvalvoja
 
 - Kaikki osallistujan oikeudet.
-- Muuta asetuksia **Järjestelmä**-sivulla, myös työskentelykieli, ja päivitä järjestelmäprosessien aikataulut.
-- Tarkastele ja lisää oikeuksia **Käyttöoikeudet**-sivulla.
+- Muuta asetuksia **Järjestelmä**-sivulla, myös työskentelykieli, järjestelmäprosessien päivitysaikataulut ja diagnostiikkalokien vienti.
+- Muuta **Suojaus**-sivun asetuksia, kuten käyttäjiä, ohjelmointirajapinnan avaimia, yksityislinkkejä ja avainsäilöä.
 - Määritä Asiakkaat-sivun haku- ja suodatusmääritelmät **Hae ja suodata indeksi** -sivulla (käytettävissä **Asiakkaat**-sivulla).
 - Voit hallita yhteyksiä ja sallia niitä muille käyttäjärooleille **Yhteydet**-sivulla.
 - Hallitse määrityksiä ja täydennä asiakasprofiilit **Täydennä**-sivulla (kaikki täydennykset).
@@ -67,24 +63,27 @@ Roolityyppejä on kolme:
 - Kaikki järjestelmänvalvojan käytettävissä olevat oikeudet.
 - [Nollaa ja poista](manage-environments.md#reset-an-existing-environment-preview) ympäristö.
 
-## <a name="assign-roles-and-permissions"></a>Delegoi roolit ja oikeudet
+## <a name="add-users"></a>Lisää käyttäjiä
 
-1. Valitse **Järjestelmänhallinta** > **Tietoturva** > **Käyttäjät**.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Suojaus** ja valitse **Käyttäjät**-välilehti.
 
 1. Avaa **Lisää tai muokkaa oikeuksia** -ruutu valitsemalla **Lisää käyttäjiä**.
 
-1. Etsi **Hae**-kentän avulla Azure Active Directoryn käyttäjä tai ryhmä, jonka käyttöoikeuksia haluat muokata. Valitse **Rooli**, joka liitetään käyttäjälle tai ryhmälle.
+1. Etsi **Hae**-kentän avulla Azure Active Directoryn käyttäjä tai ryhmä, jonka käyttöoikeudet haluat lisätä. Valitse **Rooli**, joka liitetään käyttäjälle tai ryhmälle.
 
-1. Valitse **Tallenna**. Nykyinen ympäristö jaetaan automaattisen sen käyttäjän tai niiden ryhmän jäsenten kanssa, joiden käyttöoikeuksia on muutettu. Käyttäjät voivat käyttää Customer Insights -sovellusta ja käyttää sitä määritetyn roolinsa mukaisesti.
+1. Valitse **Tallenna**. Nykyinen ympäristö jaetaan automaattisesti käyttäjän tai ryhmän jäsenten kanssa. Käyttäjät voivat käyttää Customer Insights -sovellusta ja käyttää sitä määritetyn roolinsa mukaisesti.
 
 ## <a name="view-current-permissions"></a>Tarkastele nykyisiä oikeuksia
 
-Siirry kohtaan **Järjestelmänvalvoja** > **Tietoturva** > **Käyttäjät** ja katso, mitkä roolimääritykset ovat tällä hetkellä aktiivisia.
+Siirry kohtaan **Järjestelmänvalvoja** > **Suojaus** ja valitse **Käyttäjät**-välilehti, kun haluat tarkastella aktiivisten käyttäjien luetteloa ja heidän roolimäärityksiään. Voit lajitella käyttäjäluettelon minkä tahansa sarakkeen mukaan tai etsiä tietyn käyttäjän hakukentän avulla.
 
-- **Tyyppi**-sarake määrittää yhden käyttäjän, ryhmän tai sovelluksen. Järjestelmä tukee yksittäisiä käyttäjiä ja ryhmiä.
-- Roolit määritetään **Rooli**-sarakkeessa.
-- Valitse sarakkeen otsikko, jos haluat lajitella tulokset kyseisen sarakkeen arvon mukaan.
-- Etsi tietyt käyttäjät sivun yläosassa olevan **Hae**-kentän avulla.
+## <a name="manage-current-users"></a>Nykyisten käyttäjien hallinta
 
+Siirry kohtaan **Järjestelmänvalvoja** > **Suojaus** ja valitse **Käyttäjät**-välilehti. Voit lajitella käyttäjäluettelon minkä tahansa sarakkeen mukaan tai etsiä hallinnoitavan käyttäjän hakukentän avulla.
+
+Voit tarkastella käytettävissä olevia toimintoja valitsemalla käyttäjän.
+
+- **Muokkaa**, jos haluat muokata käyttäjän roolia Customer Insightsissa. Vahvista muutos valitsemalla **Tallenna**.
+- **Poista**, jos haluat poistaa käyttäjältä Customer Insightsin käytön. Vahvista poisto valitsemalla **Poista**.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

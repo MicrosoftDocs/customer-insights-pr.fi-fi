@@ -1,7 +1,7 @@
 ---
 title: Bring your own Azure key vault (esiversio)
 description: Tietoja Customer Insightsin määrittämisestä siten, että salaisia koodeja voidaan hallita oman Azure Key Vaultin avulla.
-ms.date: 10/06/2021
+ms.date: 08/02/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -11,58 +11,63 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 8fdb131de35c7d936d2921265f03faa5682db6f6
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 229fb5698a02d1d73c30442f61c7b1b5fce918bf
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081100"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246151"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Bring your own Azure key vault (esiversio)
 
 Erillisen [Azure key vaultin](/azure/key-vault/general/basic-concepts) linkittäminen Customer Insights -ympäristöön auttaa organisaatioita täyttämään vaatimustenmukaisuuden.
-Erillistä key vaultia voidaan käyttää salaisten koodien valmisteluun ja käyttämiseen organisaation vaatimustenmukaisuusrajalla. Customer Insights voi käyttää Azure Key Vaultin salaisia koodeja [yhteyksien määrittämiseen](connections.md) kolmannen osapuolen järjestelmiin.
 
 ## <a name="link-the-key-vault-to-the-customer-insights-environment"></a>Linkitä key vault Customer Insights -ympäristöön
 
+Määritä erillinen key vault salaisten koodien valmisteluun ja käyttämiseen organisaation vaatimustenmukaisuusrajalla.
+
 ### <a name="prerequisites"></a>edellytykset
 
-Jotta key vault voidaan määrittää Customer Insightsissa, seuraavien edellytysten on täytyttävä:
+- Aktiivinen Azure-tilaus.
 
-- Sinulla on aktiivinen Azure-tilaus.
+- [Järjestelmänvalvoja](permissions.md#admin)-rooli [määritetty](permissions.md#add-users) Customer Insightsissa.
 
-- Sinulla on [Järjestelmänvalvoja](permissions.md#admin)-rooli Customer Insightsissa. Lisätietoja [käyttöoikeuksista ja Customer Insightsista](permissions.md#assign-roles-and-permissions).
-
-- Sinulla on [Osallistuja](/azure/role-based-access-control/built-in-roles#contributor)- ja [Käyttäjän käyttöoikeuksien järjestelmänvalvoja](/azure/role-based-access-control/built-in-roles#user-access-administrator) -roolit key vaultissa tai resurssiryhmässä, jolle key vault kuuluu. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal). Jos sinulla ei ole Käyttäjän käyttöoikeuksien järjestelmänvalvoja -roolia key vaultissa, sinun on määritettävä roolipohjaiset käyttöoikeuksien valvontaoikeudet Dynamics 365 Customer Insightsin Azure-palveluobjektille erikseen. Seuraa vaiheita [Azure-palveluobjektin käyttämiseksi](connect-service-principal.md) linkitettävää key vaultia varten.
+- [Osallistuja](/azure/role-based-access-control/built-in-roles#contributor)- ja [Käyttäjän käyttöoikeuksien järjestelmänvalvoja](/azure/role-based-access-control/built-in-roles#user-access-administrator) -roolit key vaultissa tai resurssiryhmässä, jolle key vault kuuluu. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal). Jos sinulla ei ole Käyttäjän käyttöoikeuksien järjestelmänvalvoja -roolia key vaultissa, määritä roolipohjaiset käyttöoikeuksien valvontaoikeudet Dynamics 365 Customer Insightsin Azure-palveluobjektille erikseen. Seuraa vaiheita [Azure-palveluobjektin käyttämiseksi](connect-service-principal.md) linkitettävää key vaultia varten.
 
 - Key vaultissa on Key Vault -palomuurin oltava **poissa käytöstä**.
 
-- Key vault on samassa [Azure-sijainnissa](https://azure.microsoft.com/global-infrastructure/geographies/#overview) kuin Customer Insights -ympäristö. Customer Insights -ympäristön alue on luetteloituna kohdassa **Järjestelmänvalvoja** > **Järjestelmä** > **Tietoja** > **Alue**.
+- Key vault on samassa [Azure-sijainnissa](https://azure.microsoft.com/global-infrastructure/geographies/#overview) kuin Customer Insights -ympäristö. Siirry Customer Insightsissa kohtaan **Järjestelmänhallinta** > **Järjestelmä** ja **Tietoja**-välilehti halutessasi tarkastella ympäristön aluetta.
+
+### <a name="recommendations"></a>Suosituksia
+
+- [Käytä erillistä key vaultia](/azure/key-vault/general/best-practices#why-we-recommend-separate-key-vaults), joka sisältää vain ne salaiset koodit, jotka tarvitaan Customer Insightsia varten.
+
+- Seuraa [Key Vault -käytön parhaita käytäntöjä](/azure/key-vault/general/best-practices#turn-on-logging) liittyen käyttöoikeuksien hallintaan, varmuuskopiointiin ja seurantaan.
 
 ### <a name="link-a-key-vault-to-the-environment"></a>Linkitä key vault ympäristöön
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Tietoturva** ja valitse sitten **Key Vault** -välilehti.
 1. Valitse **Key Vault** -ruudussa **Määritys**.
 1. Valitse **Tilaus**.
-1. Valitse key vault avattavasta **Key Vault** -luettelosta. Jos liian monta key vaultia on näkyvissä, valitse resurssiryhmä hakutulosten rajoittamiseksi.
-1. Valitse **Tietosuoja ja vaatimustenmukaisuus** -lauseke.
+1. Valitse key vault avattavasta **Key Vault** -luettelosta. Jos liian monta key vaultia on saatavilla, valitse resurssiryhmä hakutulosten rajoittamiseksi.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 1. Valitse **Tallenna**.
 
-:::image type="content" source="media/set-up-azure-key-vault.png" alt-text="Vaiheet linkitetyn key vaultin määrittämiseksi Customer Insightsissa.":::
-
-**Key Vault** -ruutu näyttää nyt linkitetyn key vaultin nimen, resurssiryhmän ja tilauksen. Se on valmis käytettäväksi yhteysasetuksissa.
-Jos haluat lisätietoja siitä, mitä oikeuksia Customer Insightsille annetaan key vaultissa, siirry tämän artikkelin myöhempään kohtaan [annetut oikeudet key vaultissa](#permissions-granted-on-the-key-vault).
+**Key Vault** -ruutu näyttää linkitetyn key vaultin nimen, tilauksen ja resurssiryhmän. Se on valmis käytettäväksi yhteysasetuksissa.
+Jos haluat lisätietoja siitä, mitä oikeuksia Customer Insightsille annetaan key vaultissa, siirry kohtaan [annetut oikeudet key vaultissa](#permissions-granted-on-the-key-vault).
 
 ## <a name="use-the-key-vault-in-the-connection-setup"></a>Key vaultin käyttö yhteysasetuksissa
 
-Kun [yhteyksiä määritetään](connections.md) kolmannen osapuolen järjestelmiin, linkitetyn Key Vaultin salaisia koodeja voidaan käyttää yhteyksien määrittämiseen.
+Kun [yhteyksiä määritetään](connections.md) [tuetun kolmannen osapuolen](#supported-connection-types) järjestelmiin, linkitetyn Key Vaultin salaisia koodeja käytetään yhteyksien määrittämiseen.
 
 1. Siirry kohtaan **Järjestelmänvalvoja** > **Yhteydet**.
 1. Valitse **Lisää yhteys**.
 1. Tuetuissa yhteystyypeissä **Käytä Key Vaultia** -käyttöpainike on käytettävissä, jos key vault on linkitetty.
-1. Salaisen koodin manuaalisen syöttämisen sijaan voit valita salaisen koodin nimen, joka osoittaa salaisen koodin arvoon key vaultissa.
+1. Salaisen koodin manuaalisen syöttämisen sijaan valitse salaisen koodin nimi, joka osoittaa salaisen koodin arvoon key vaultissa.
 
-:::image type="content" source="media/use-key-vault-secret.png" alt-text="Yhteysruutu ja SFTP-yhteys, joka käyttää Key Vaultin salaista koodia.":::
+   :::image type="content" source="media/use-key-vault-secret.png" alt-text="Yhteysruutu ja SFTP-yhteys, joka käyttää Key Vaultin salaista koodia.":::
+
+1. Valitse **Tallenna** luodaksesi yhteyden.
 
 ## <a name="supported-connection-types"></a>Tuetut yhteystyypit
 
@@ -97,19 +102,13 @@ Edelliset arvot ovat luetteloinnin ja lukemisen vähimmäisarvot suorituksen aik
 
 ### <a name="azure-role-based-access-control"></a>Azuren roolipohjainen käyttöoikeuksien valvonta
 
-Key Vault -lukija- ja Key Vault -salaisten koodien käyttäjä -roolit lisätään Customer Insightsia varten. Lisätietoja näistä rooleista löytyy kohdasta [Azuren sisäiset roolit Key Vaultin tietotaso-operaatioita varten](/azure/key-vault/general/rbac-guide?tabs=azure-cli).
-
-## <a name="recommendations"></a>Suosituksia
-
-- Käytä erillistä key vaultia, joka sisältää vain ne salaiset koodit, jotka tarvitaan Customer Insightsia varten. Lisätietoja siitä, miksi [erillisiä key vaulteja suositellaan](/azure/key-vault/general/best-practices#why-we-recommend-separate-key-vaults).
-
-- Seuraa [Key Vault -käytön parhaita käytäntöjä](/azure/key-vault/general/best-practices#turn-on-logging) liittyen käyttöoikeuksien hallintaan, varmuuskopiointiin ja seurantaan.
+[Key Vault -lukija- ja Key Vault -salaisten koodien käyttäjä -roolit](/azure/key-vault/general/rbac-guide?tabs=azure-cli) lisätään Customer Insightsia varten.
 
 ## <a name="frequently-asked-questions"></a>Usein kysyttyjä kysymyksiä
 
 ### <a name="can-customer-insights-write-secrets-or-overwrite-secrets-into-the-key-vault"></a>Voiko Customer Insights kirjoittaa tai korvata salaisia koodeja key vaultiin?
 
-Ei. Vain luku- ja luettelo-oikeudet, jotka kuvattiin tämän artikkelin aiemmassa [myönnetyt käyttöoikeudet](#permissions-granted-on-the-key-vault) -osassa, myönnetään Customer Insightsille. Järjestelmä ei voi lisätä, poistaa tai korvata salaisia koodeja key vaultissa. Siksi valtuustietoja ei voi syöttää, kun yhteys käyttää Key Vaultia.
+Ei. Vain luku- ja luettelo-oikeudet, jotka kuvattiin [myönnetyt käyttöoikeudet](#permissions-granted-on-the-key-vault) -osassa, myönnetään Customer Insightsille. Järjestelmä ei voi lisätä, poistaa tai korvata salaisia koodeja key vaultissa. Siksi valtuustietoja ei voi syöttää, kun yhteys käyttää Key Vaultia.
 
 ### <a name="can-i-change-a-connection-from-using-key-vault-secrets-to-default-authentication"></a>Voinko vaihtaa yhteyden Key Vaultin salaisten koodien käyttämisestä oletustodentamiseen?
 
@@ -117,7 +116,7 @@ Ei. Et voi vaihtaa takaisin oletusyhteyteen sen jälkeen, kun olet määrittäny
 
 ### <a name="how-can-i-revoke-access-to-a-key-vault-for-customer-insights"></a>Miten voin kumota Customer Insightsin käyttöoikeudet key vaultiin?
 
-Riippuen siitä, onko [Key Vault -käyttöoikeuskäytäntö](/azure/key-vault/general/assign-access-policy?tabs=azure-portal) vai [Azuren roolipohjainen käyttöoikeuksien valvonta](/azure/key-vault/general/rbac-guide?tabs=azure-cli) otettu käyttöön, sinun on poistettava oikeudet palveluobjektilta `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` nimeltä `Dynamics 365 AI for Customer Insights`. Kaikki key vaultia käyttävät yhteydet lakkaavat toimimasta.
+Jos [Key Vault -käyttöoikeuskäytäntö](/azure/key-vault/general/assign-access-policy?tabs=azure-portal) tai [Azuren roolipohjainen käyttöoikeuksien valvonta](/azure/key-vault/general/rbac-guide?tabs=azure-cli) on otettu käyttöön, sinun on poistettava oikeudet palveluobjektilta `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` nimeltä `Dynamics 365 AI for Customer Insights`. Kaikki key vaultia käyttävät yhteydet lakkaavat toimimasta.
 
 ### <a name="a-secret-thats-used-in-a-connection-got-removed-from-the-key-vault-what-can-i-do"></a>Salainen koodi, jota käytetään yhteydessä, poistettiin key vaultista. Mitä voin tehdä?
 

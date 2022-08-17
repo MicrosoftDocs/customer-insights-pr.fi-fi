@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a70aadda4fc0eff3ddb4c89665506762613c291a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194964"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245323"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
@@ -79,7 +79,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla viennin.
 
 ## <a name="schedule-and-run-exports"></a>Aikatauluta ja suorita useita vientejä
 
-Jokaisella määritetyllä viennillä on päivitysaikataulu. Päivityksen aikana järjestelmä etsii uusia tai päivitettyjä tietoja, jotka sisällytetään vientiin. Vieminen suoritetaan oletusarvoisesti jokaisen [ajoitetun järjestelmän päivityksen](system.md#schedule-tab) yhteydessä. Voit mukauttaa päivitysaikataulua tai poistaa sen käytöstä, jos haluat suorittaa viennit manuaalisesti.
+Jokaisella määritetyllä viennillä on päivitysaikataulu. Päivityksen aikana järjestelmä etsii uusia tai päivitettyjä tietoja, jotka sisällytetään vientiin. Vieminen suoritetaan oletusarvoisesti jokaisen [ajoitetun järjestelmän päivityksen](schedule-refresh.md) yhteydessä. Voit mukauttaa päivitysaikataulua tai poistaa sen käytöstä, jos haluat suorittaa viennit manuaalisesti.
 
 Vientiaikataulut määräytyvät ympäristön tilan mukaan. Jos [riippuvuuksilla](system.md#refresh-processes) on käynnissä olevia päivityksiä ajoitetun viennin käynnistymisen aikana, järjestelmä tekee päivityksen valmiiksi ennen viennin suorittamista. Voit nähdä, milloin vienti on viimeksi päivitetty sarakkeessa **Päivitetty**.
 

@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 4bcfbb50b893ca7e6ec4607d3c156a3c6979f775
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170677"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246289"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
@@ -58,7 +58,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla segmentin.
 - **Muokkaa** segmenttiä, jos haluat muuttaa sen ominaisuuksia.
 - Luo segmentin **kaksoiskappale**. Voit muokata sen ominaisuuksia heti tai tallentaa kaksoiskappaleen.
 - [**Päivitä**](#refresh-segments) segmentti siten, että se sisältää uusimmat tiedot.
-- **Aktivoi** segmentti tai **Poista aktivointi**. Passiiviset segmentit eivät päivity [aikataulutetun päivityksen](system.md#schedule-tab) aikana, ja passiivisten segmenttien **Tila**-arvo on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty. Aktiiviset segmentit päivittyvät tyypin mukaan: staattiset tai dynaamiset.
+- **Aktivoi** segmentti tai **Poista aktivointi**. Passiiviset segmentit eivät päivity [aikataulutetun päivityksen](schedule-refresh.md) aikana, ja passiivisten segmenttien **Tila**-arvo on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty. Aktiiviset segmentit päivittyvät tyypin mukaan: staattiset tai dynaamiset.
 - **Tee staattinen** tai **tee dynaaminen** segmenttityyppi. Staattiset segmentit pitää päivittää manuaalisesti. Dynaamiset segmentit päivitetään järjestelmän päivityksen aikana automaattisesti.
 - [**Etsi samanlaisia asiakkaita**](find-similar-customer-segments.md) segmentistä.
 - **Nimeä uudelleen** segmentti.
@@ -88,7 +88,7 @@ Alaosassa on luettelo segmentin jäsenistä.
 
 Segmentit voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. Segmentit päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Päivitä**.
 
-[Automaattinen päivitys ajoitetaan](system.md#schedule-tab) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**. Seuraavat säännöt pätevät:
+[Automaattinen päivitys ajoitetaan](schedule-refresh.md) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**. Seuraavat säännöt pätevät:
 
 - Kaikki **Dynaaminen**- tai **Laajennus**-tyyppiset segmentit päivittyvät automaattisesti määritetyllä välillä. Kun päivitys on valmis, **Tila** ilmaisee, onko segmentin päivityksessä ongelmia. **Päivitetty viimeksi** näyttää edellisen onnistuneen päivityksen aikaleiman. Jos tapahtuu virhe, saat näkyviin tiedot siitä, mitä tapahtui, valitsemalla virheen.
 - Segmenttejä, joiden tyyppinä on **Staattinen**, *ei* päivitetä automaattisesti. **Päivitetty viimeksi** -kentässä näkyy staattisen segmentin edellisen suorituksen tai manuaalisen päivityksen aikaleima.

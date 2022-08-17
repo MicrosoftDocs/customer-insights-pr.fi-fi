@@ -1,19 +1,19 @@
 ---
 title: Yritysprofiilien rikastaminen Leadspacen avulla (esiversio)
 description: Yleisiä tietoja kolmannen osapuolen Leadspace-rikastamisesta.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 3f23fe7177f931db3e3179970915d0cd3c736f87
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: f45fabc036775e11fc439f69513678d0607729d0
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196206"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237946"
 ---
 # <a name="enrich-company-profiles-with-leadspace-preview"></a>Yritysprofiilien rikastaminen Leadspacen avulla (esiversio)
 
@@ -35,14 +35,9 @@ Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permission
 
 1. Anna yhteydelle nimi ja kelvollinen Leadspace-tunnus.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys Leadspaceen otetaan käyttöön Dynamics 365 Customer Insightsissa, tietoja siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää kyseiset tiedot annettujen ohjeiden mukaan, mutta vastaat siitä, että Leadspace noudattaa kaikkia käyttämiäsi tietosuoja- ja tietoturvavelvoitteita. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 

@@ -1,7 +1,7 @@
 ---
-title: Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
+title: Diagnostiikkalokien vieminen (esiversio)
 description: Tietoja lokien lähettämisestä Microsoft Azure Monitoriin.
-ms.date: 12/14/2021
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: article
@@ -11,87 +11,56 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 8c72df7054a682244215bbee54968d6aef4bbf59
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052649"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245921"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Lokien edelleenlähetys Dynamics 365 Customer Insightsissa Azure Monitorin avulla (esiversio)
+# <a name="export-diagnostic-logs-preview"></a>Diagnostiikkalokien vieminen (esiversio)
 
-Dynamics 365 Customer Insights tarjoaa suoran integroinnin Azure Monitorin kanssa. Azure Monitorin resurssilokien avulla voit valvoa ja lähettää lokeja [Azure Storageen](https://azure.microsoft.com/services/storage/), [Azure Log Analyticsiin](/azure/azure-monitor/logs/log-analytics-overview) tai virtauttaa se [Azure-tapahtumakeskukseen](https://azure.microsoft.com/services/event-hubs/).
+Lähetä lokit Customer Insightsista Azure Monitorin avulla. Azure Monitorin resurssilokien avulla voit valvoa ja lähettää lokeja [Azure Storageen](https://azure.microsoft.com/services/storage/), [Azure Log Analyticsiin](/azure/azure-monitor/logs/log-analytics-overview) tai virtauttaa se [Azure-tapahtumakeskukseen](https://azure.microsoft.com/services/event-hubs/).
 
 Customer Insights lähettää seuraavat tapahtumalokit:
 
 - **Tarkistustapahtumat**
-  - **APIEvent** – ottaa käyttöön Dynamics 365 Customer Insights -käyttöliittymän kautta tehtyjen muutosten seurannan.
+  - **APIEvent** – ottaa käyttöön muutosten seurannan Dynamics 365 Customer Insights -käyttöliittymän kautta.
 - **Operatiiviset tapahtumat**
-  - **WorkflowEvent** – Työnkulun avulla voi määrittää [tietolähteitä](data-sources.md), [yhdistää](data-unification.md), [rikastaa](enrichment-hub.md) sekä lopuksi [viedä](export-destinations.md) tietoja muihin järjestelmiin. Kaikki nämä vaiheet voidaan tehdä yksitellen (esimerkiksi käynnistää yksittäinen vienti). Voi suorittaa niitä myös orkestroituina (esimerkiksi päivittää tiedot tietolähteistä, mikä käynnistää yhdistäminenprosessin, joka hakee rikastukset ja vie tiedot toiseen järjestelmään valmistuttuaan). Katso lisätietoja [WorkflowEvent-rakenteesta](#workflow-event-schema).
-  - **APIEvent** – kaikki ohjelmointirajapinnan kutsut asiakkaiden ilmentymään Dynamics 365 Customer Insightsiin. Katso lisätietoja [APIEvent-rakenteesta](#api-event-schema).
+  - **WorkflowEvent** – Sen avulla voi määrittää [tietolähteitä](data-sources.md), [yhdistää](data-unification.md), [rikastaa](enrichment-hub.md) sekä [viedä](export-destinations.md) tietoja muihin järjestelmiin. Nämä vaiheet voidaan tehdä yksitellen (esimerkiksi käynnistää yksittäinen vienti). Ne voi suorittaa niitä myös orkestroituina (esimerkiksi päivittää tiedot tietolähteistä, mikä käynnistää yhdistämisprosessin, joka hakee rikastukset ja vie tiedot toiseen järjestelmään). Katso lisätietoja [WorkflowEvent-rakenteesta](#workflow-event-schema).
+  - **APIEvent** – lähettää kaikki ohjelmointirajapinnan kutsut asiakkaiden ilmentymään Dynamics 365 Customer Insightsiin. Katso lisätietoja [APIEvent-rakenteesta](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Diagnostiikka-asetusten määrittäminen
 
 ### <a name="prerequisites"></a>edellytykset
 
-Jotta diagnostiikka voidaan määrittää Customer Insightsissa, seuraavien edellytysten on täytyttävä:
-
-- Sinulla on aktiivinen [Azure-tilaus](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Sinulla on [järjestelmänvalvojan](permissions.md#admin) oikeudet Customer Insightsissa.
-- Sinulla on **Osallistuja**- ja **Käyttäjän käyttöoikeuksien järjestelmänvalvoja** -rooli Azuren kohderesurssissa. Resurssi voi olla Azure Data Lake Storage -tili, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Jos haluat lisätietoja, siirry kohtaan [Lisää tai poista Azure-roolimäärityksiä käyttäen Azure-portaalia](/azure/role-based-access-control/role-assignments-portal). Tämä oikeus on pakollinen määritettäessä vianmääritysasetuksia Customer Insightsissa, mutta sitä voidaan muuttaa onnistuneen asennuksen jälkeen.
+- Aktiivinen [Azure-tilaus](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- [Järjestelmänvalvojan](permissions.md#admin) oikeudet Customer Insightsissa.
+- [Osallistuja- ja Käyttäjän käyttöoikeuksien järjestelmänvalvoja -rooli](/azure/role-based-access-control/role-assignments-portal) Azuren kohderesurssissa. Resurssi voi olla Azure Data Lake Storage -tili, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Tämä oikeus on pakollinen määritettäessä vianmääritysasetuksia Customer Insightsissa, mutta sitä voidaan muuttaa onnistuneen asennuksen jälkeen.
 - Azure Storagen, Azure-tapahtumakeskuksen tai Azure Log Analyticsin [kohdevaatimukset](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) pitää olla täytettynä.
-- Sinulla on vähintään **Lukija**-rooli resurssiryhmässä, johon resurssi kuuluu.
+- Vähintään **Lukija**-rooli resurssiryhmässä, johon resurssi kuuluu.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnostiikan määritykset Azure Monitorin avulla
 
-1. Valitse Customer Insightsissa **Järjestelmä** > **Diagnostiikka**, kun haluat nähdä tämän ilmentymän määritetyt diagnostiikkakohteet.
+1. Siirry Customer Insightsissa kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Diagnostiikka**-välilehti.
 
 1. Valitse **Lisää kohde**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Diagnostiikkayhteys](media/diagnostics-pane.png "Diagnostiikkayhteys")
+   :::image type="content" source="media/diagnostics-pane.png" alt-text="Diagnostiikkayhteys.":::
 
 1. Kirjoita nimi **Diagnostiikkakohteen nimi** -kenttään.
 
-1. Valitse kohderesurssin sisältävän Azure-tilauksen **Vuokraaja** ja valitse sitten **Kirjaudu sisään**.
-
 1. Valitse **Resurssityyppi** (tallennustilan tili, tapahtumakeskus tai Log Analytics).
 
-1. Valitse kohderesurssin **Tilaus**.
+1. Valitse kohderesurssin **Tilaus**, **Resurssi-ryhmä** ja **Resurssi**. Käyttöoikeuksia ja lokitietoja on ohjeaiheessa [Kohderesurssin määritykset](#configuration-on-the-destination-resource).
 
-1. Valitse kohderesurssin **Resurssiryhmä**.
-
-1. Valitse **Resurssi**.
-
-1. Vahvista **Tietosuoja ja vaatimustenmukaisuus** -lauseke.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Muodosta yhteys kohderesurssiin valitsemalla **Yhdistä järjestelmään**. Lokit alkavat näkyä kohteessa 15 minuutin kuluttua, jos ohjelmointirajapinta on käytössä ja luo tapahtumia.
 
-### <a name="remove-a-destination"></a>Kohteen poistaminen
-
-1. Siirry kohtaan **Järjestelmä** > **Diagnostiikka**.
-
-1. Valitse diagnostiikkakohde luettelosta.
-
-1. Valitse **Toiminnot**-sarakkeen **Poista**-kuvake.
-
-1. Vahvista poisto, jotta lokin edelleenlähetys voidaan pysäyttää. Azure-tilauksen resurssia ei poisteta. Voit valita **Toiminnot**-sarakkeen linkin, kun haluat avata valitun resurssin Azure-portaalissa ja poistaa resurssin siellä.
-
-## <a name="log-categories-and-event-schemas"></a>Lokien luokat ja tapahtumarakenteet
-
-[API-tapahtumia](apis.md) ja työnkulkutapahtumia tuetaan tällä hetkellä, ja seuraavat luokat ja rakenteet ovat käytössä.
-Lokirakenne noudattaa [Azure Monitorin yleistä rakennetta](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
-
-### <a name="categories"></a>Luokat
-
-Customer Insights sisältää kaksi luokkaa:
-
-- **Tarkistustapahtumat**: [API-tapahtumat](#api-event-schema), jotka seuraavat palvelun määritysmuutoksia. `POST|PUT|DELETE|PATCH`-toiminnot kuuluvat tähän luokkaan.
-- **Operatiiviset tapahtumat**: [API-tapahtumat](#api-event-schema) tai [työnkulun tapahtumat](#workflow-event-schema), jotka luodaan palvelua käytettäessä.  Esimerkiksi työnkulun `GET`-pyynnöt tai suoritustapahtumat.
-
 ## <a name="configuration-on-the-destination-resource"></a>Kohderesurssin määritys
 
-Seuraavat vaiheet tulevat automaattisesti käyttöön resurssityypin valinnan mukaan:
+Resurssityypin valinnan perusteella seuraavat muutokset tapahtuvat automaattisesti:
 
 ### <a name="storage-account"></a>Storage account
 
@@ -116,9 +85,34 @@ Customer Insights -palvelun päänimi saa **Log Analytics -osallistuja** -oikeud
 
 Laajenna **Kyselyt**-ikkunan **Seuranta**-ratkaisu ja etsi `CIEvents`-haun avulla löytäneet esimerkkikyselyt.
 
+## <a name="remove-a-diagnostics-destination"></a>Poista diagnostiikkakohde
+
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Järjestelmä** ja valitse **Diagnostiikka**-välilehti.
+
+1. Valitse diagnostiikkakohde luettelosta.
+
+   > [!TIP]
+   > Kun kohde poistetaan, lokin edelleenlähetys keskeytyy, mutta resurssia ei poisteta Azure-tilauksesta. Valitse **Toiminnot**-sarakkeen linkki, kun haluat avata valitun resurssin Azure-portaalissa ja poistaa resurssin siellä. Poista sitten diagnostiikkakohde luettelosta.
+
+1. Valitse **Toiminnot**-sarakkeen **Poista**-kuvake.
+
+1. Vahvista poisto, jos haluat poistaa kohteen ja pysäyttää lokin edelleenlähetyksen.
+
+## <a name="log-categories-and-event-schemas"></a>Lokien luokat ja tapahtumarakenteet
+
+[API-tapahtumia](apis.md) ja työnkulkutapahtumia tuetaan tällä hetkellä, ja seuraavat luokat ja rakenteet ovat käytössä.
+Lokirakenne noudattaa [Azure Monitorin yleistä rakennetta](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
+
+### <a name="categories"></a>Luokat
+
+Customer Insights sisältää kaksi luokkaa:
+
+- **Tarkistustapahtumat**: [API-tapahtumat](#api-event-schema), jotka seuraavat palvelun määritysmuutoksia. `POST|PUT|DELETE|PATCH`-toiminnot kuuluvat tähän luokkaan.
+- **Operatiiviset tapahtumat**: [API-tapahtumat](#api-event-schema) tai [työnkulun tapahtumat](#workflow-event-schema), jotka luodaan palvelua käytettäessä.  Esimerkiksi työnkulun `GET`-pyynnöt tai suoritustapahtumat.
+
 ## <a name="event-schemas"></a>Tapahtumarakenteet
 
-API-tapahtumilla ja työnkulun tapahtumilla on yhteinen rakenne. Eriävät tiedot löytyvät kohdista [API-tapahtumarakenne](#api-event-schema) tai [Työnkulku-tapahtumarakennetta](#workflow-event-schema).
+Ohjelmointirajapinnan tapahtumilla ja työnkulun tapahtumilla on yhteinen rakenne, mutta joitakin eroja. Katso lisätietoja [ohjelmointirajapintatapahtuman rakenteesta](#api-event-schema) tai [työnkulkutapahtuman rakenteesta](#workflow-event-schema).
 
 ### <a name="api-event-schema"></a>API-tapahtumarakenne
 
@@ -220,7 +214,6 @@ Työnkulku sisältää useita vaiheita. [Kerää tietolähteet](data-sources.md)
 | `durationMs`    | Long      | Valinnainen          | Toiminnon kesto millisekunteina.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valinnainen          | JSON-objekti, jossa on enemmän ominaisuuksia tiettyyn tapahtumaluokkaan.                                                                                        | Katso aliosa [Työnkulun ominaisuudet](#workflow-properties-schema)                                                                                                       |
 | `level`         | String    | Pakollinen          | Tapahtuman suojaustaso.                                                                                                                                  | `Informational`, `Warning` tai `Error`                                                                                                                                   |
-|                 |
 
 #### <a name="workflow-properties-schema"></a>Työnkulun ominaisuusrakenne
 
@@ -247,3 +240,5 @@ Työnkulkutapahtumilla on seuraavat ominaisuudet.
 | `properties.additionalInfo.AffectedEntities` | No       | Kyllä  | Valinnainen. Vain OperationType-tyyppiä `Export` varten. Sisältää viennin määritettyjen entiteettien luettelon.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | No       | Kyllä  | Valinnainen. Vain OperationType-tyyppiä `Export` varten. Viennin yksityiskohtainen sanoma.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | No       | Kyllä  | Valinnainen. Vain OperationType-tyyppiä `Segmentation` varten. Osoittaa segmentin jäsenten kokonaismäärän.                                                                                                                                                    |
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

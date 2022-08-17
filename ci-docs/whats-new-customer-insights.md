@@ -1,19 +1,19 @@
 ---
 title: Dynamics 365 Customer Insightsin uudet ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 06/30/2022
+ms.date: 08/03/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
-ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
+ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "9114242"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246007"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -23,6 +23,28 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="july-2022-updates"></a>Heinäkuun 2022 päivitykset
+
+Heinäkuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="export-to-moengage"></a>Vie MoEngageen
+
+Vie yhdistettyjen asiakasprofiilien segmentit MoEngageen ja käytä niitä MoEngagen sähköpostimarkkinoinnissa.
+
+Lisätietoja on ohjeaiheessa [Segmenttien vieminen MoEngageen](export-moengage.md).
+
+### <a name="ssh-support-for-sftp-based-exports"></a>SSH-tuki TSATP-pohjaisille vienneille
+
+Valitse, haluatko todentaa SSH- vai käyttäjänimi/salasana-tunnuksen kautta yhteyksille SFTP:n vientikohteisiin.
+
+Lisätietoja on aiheessa [Tietojen vieminen SFTP-isäntiin](export-sftp.md).
+
+### <a name="personalize-experiences-with-data-about-known-and-unknown-users"></a>Mukauta käyttökokemuksia tunnettujen ja tuntemattomien käyttäjien tiedoista
+
+Asiakastietojen hallinta ei ole uusi asia, mutta siitä on tulossa yhä vaikeampaa, kun käyttäjät käyttävät eri digitaalisten kanavien tuotemerkkejä. Käyttäjästä, joka on tunnettu (todennettu) jossakin kanavassa, tulee tuntematon (todentamaton) toisessa, jos hän ei ole kirjautunut sisään. Ongelmana on usein se, että todentamattomilla (tuntematon) käyttäjillä ei ole yhteistä tunnusta. Sen avulla voidaan liittää merkityksellisiä profiilimääritteitä ja luoda yhtenäisiä asiakasprofiileja. Customer Insights auttaa tämän ongelman ratkaisemisessa keräämällä tietoja lähdejärjestelmien seurantatavoista.
+
+Lisätietoja on ohjeaiheessa [Mukauta käyttökokemuksia tunnettujen ja tuntemattomien käyttäjien tiedoista](unknown-to-known.md).
 
 ## <a name="june-2022-updates"></a>Kesäkuun 2022 päivitykset
 
@@ -50,7 +72,7 @@ Lisätietoja on kohdassa [Asiakastietojen käyttäminen turvallisesti asiakkaan 
 
 Azuren yksityisen linkin ansiosta Customer Insights voi muodostaa näennäisversiossa yhteyden Azure Data Lake Storage -tiliin yksityisen päätepisteen kautta. Jos tallennustilatili ei ole julkisessa verkossa, tämän rajoitetun verkon tietoihin voi muodostaa yhteyden yksityisen linkin kautta.
 
-Lisätietoja on kohdassa [Yksityislinkin käyttö Customer Insightsissa](security-overview.md#private-links-tab).
+Lisätietoja on kohdassa [Yksityislinkin käyttö Customer Insightsissa](security-overview.md#set-up-an-azure-private-link).
 
 ## <a name="may-2022-updates"></a>Toukokuun 2022 päivityksey
 

@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195654"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246104"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Reaaliaikainen tietojen käsittely (esiversio)
 
 Lähes reaaliaikaisen toiminnon ansiosta voit nähdä muutamassa sekunnissa asiakkaiden vuorovaikutukset tuotteiden tai palveluiden kanssa.
 
-[Ajoitetut päivitykset](system.md#schedule-tab) sisältävät suuren määrän tietueita ja useita monimutkaisia toimintoja. Tiedot noudetaan ensin tietolähteestä. Seuraavaksi tiedot on yhdistetään ja täydennetään lisätiedoilla. Prosessin jokainen suoritus voi kestää minuuteista tunteihin.
+[Ajoitetut päivitykset](schedule-refresh.md) sisältävät suuren määrän tietueita ja useita monimutkaisia toimintoja. Tiedot noudetaan ensin tietolähteestä. Seuraavaksi tiedot on yhdistetään ja täydennetään lisätiedoilla. Prosessin jokainen suoritus voi kestää minuuteista tunteihin.
 
 Reaaliaikaisista toiminnoista saadaan heti tietoja käyttöön siihen saakka, että seuraava ajoitettu päivitys hakee nämä tiedot tietolähteestä.
 
@@ -85,7 +85,7 @@ Tietoja tästä ohjelmointirajapinnasta, kuten parametrit ja vastaukset, on **En
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Tietoja reaaliaikaisesta käytöstä telemetriatietojen avulla
 
-Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#api-usage-tab). 
+Yleiskatsaus reaaliaikaiseen ohjelmointirajapintaan tehtyjen pyyntöjen määrästä ja tietoja järjestelmässä mahdollisesti esiintyvistä ongelmista. Voit [käyttää reaaliaikaista telemetriaa](system.md#view-api-usage). 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

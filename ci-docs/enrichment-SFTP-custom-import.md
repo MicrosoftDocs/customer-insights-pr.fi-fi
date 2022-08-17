@@ -1,19 +1,19 @@
 ---
 title: Asiakasprofiilien rikastaminen mukautetun SFTP-tuonnin avulla (esiversio)
 description: Yleisiä tietoja mukautetusta SFTP-tuonnin rikastamisesta.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 81ef6c62240e26cb5c9475e6306e08edc7e5eb31
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 831d1d3d3045379bbc5bcdcd4b05b8a147221f31
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195792"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237762"
 ---
 # <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Asiakasprofiilien rikastaminen mukautetun SFTP-tuonnin avulla (esiversio)
 
@@ -85,14 +85,9 @@ Määrittäjällä on oltava Customer Insightsin [järjestelmänvalvoja](permiss
 
 1. Anna sen SFTP-palvelimen sallittu käyttäjänimi, salasana ja isännän URL-osoite, jossa tuotavat tiedot ovat.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun tietojen lähetys mukautetun tuonnin avulla otetaan käyttöön Dynamics 365 Customer Insightsissa, tietojen siirtäminen sallitaan silloin Dynamics 365 Customer Insightsin säännöstenmukaisuusrajan ulkopuolelle, mikä voi mahdollisesti koskea myös arkaluonteisia tietoja, kuten henkilötietoja. Microsoft siirtää tällaiset tiedot ohjeiden mukaisesti, mutta olet vastuussa siitä, että tiedot vastaavat tietosuoja- ja tietoturvavaatimuksia. Lisätietoja on [Microsoftin tietosuojalausekkeessa](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-import"></a>Määritä tuonti
 

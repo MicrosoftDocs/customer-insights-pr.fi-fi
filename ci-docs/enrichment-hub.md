@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053860"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245875"
 ---
 # <a name="data-enrichment-preview-overview"></a>Tietojen rikastamisen (esiversio) yleiskatsaus
 
@@ -76,7 +76,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla rikastuksen.
 - **Näytä** rikastuksen tiedot sekä rikastettujen asiakasprofiilien määrä.
 - **Muokkaa** rikastusmääritystä.
 - Päivitä uusimmat tiedot asiakasprofiileihin [**suorittamalla**](#run-or-refresh-enrichments) rikastus. Suorita useita rikastuksia samanaikaisesti valitsemalla ne luettelossa.
-- **Aktivoi** rikastus tai **poista sen aktivointi**. Passiivisia rikastuksia ei päivitetä [ajoitetun päivityksen](system.md#schedule-tab) aikana.
+- **Aktivoi** rikastus tai **poista sen aktivointi**. Passiivisia rikastuksia ei päivitetä [ajoitetun päivityksen](schedule-refresh.md) aikana.
 - **Poista** rikastus.
 
 Rikastuksista voi luoda myös [segmenttejä](segments.md) tai [mittareita](measures.md).
@@ -85,7 +85,7 @@ Rikastuksista voi luoda myös [segmenttejä](segments.md) tai [mittareita](measu
 
 Suoritetut rikastukset voidaan päivittää automaattisesti aikataulun mukaisesti ja manuaalisesti tarvittaessa.
 
-1. Rikastukset päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Suorita**. [Automaattinen päivitys ajoitetaan](system.md#schedule-tab) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**. Käsittelyaika riippuu asiakastietojen koosta.
+1. Rikastukset päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Suorita**. [Automaattinen päivitys ajoitetaan](schedule-refresh.md) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**. Käsittelyaika riippuu asiakastietojen koosta.
 
 1. Vaihtoehtoisesti voit [tarkastella rikastamisprosessin etenemistä](#see-the-progress-of-the-enrichment-process).
 
@@ -102,6 +102,8 @@ Voit etsiä tietoja rikastuksen käsittelystä, mukaan lukien sen tilan ja mahdo
 1. Laajenna **Edistymisen tiedot** -ruudussa **Rikastukset**-osa.
 1. Valitse **Näytä tiedot** haluamasi rikastuksen alta tarkastellaksesi edistymistä.
 1. Valitse **Tehtävän tiedot** -ruudussa **Näytä tiedot**, kun haluat nähdä prosessit, jotka liittyvät rikastusten päivittämiseen ja niiden tilaan.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Rikastamisen tulosten tarkasteleminen
 

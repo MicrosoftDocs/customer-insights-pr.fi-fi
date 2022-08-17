@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139653"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213578"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Tietojen yhdistämisen yhtenäisten asiakaskenttien avulla
 
@@ -58,6 +58,9 @@ Valitse yhdistämisprosessin tässä vaiheessa yhdistetyn profiilin entiteettiin
 
 1. Määritä, miten kentät yhdistetään kolmesta vaihtoehdosta:
     - **Tärkeys**: määrittää voittajan arvon osallistuvien kenttien tärkeyden mukaan. Se on yhdistämisen oletusasetus. Määritä tärkeysjärjestys valitsemalla **Siirrä ylöspäin/alaspäin**.
+
+      > [!NOTE]
+      > Customer Insights käyttää ensimmäistä arvoa, joka ei ole tyhjäarvo. Jos esimerkiksi järjestys on entiteetit A, B ja C, A.Name ja B.Name ovat tyhjäarvoja, käytetään C.Name-arvoa.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Tärkeysasetus yhdistämiskenttien valintaikkunassa.":::
 

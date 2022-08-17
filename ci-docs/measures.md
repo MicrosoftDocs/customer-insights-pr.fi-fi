@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170816"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245369"
 ---
 # <a name="measures-overview"></a>Mittarien yleiskatsaus
 
@@ -53,7 +53,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla mittarin vieres
 - **Muokkaa** mittaria, jos haluat muuttaa sen ominaisuuksia.
 - **Päivitä** mittari siten, että se sisältää uusimmat tiedot.
 - **Nimeä uudelleen** mitta.
-- **Aktivoi** mittari tai **Poista aktivointi**. Passiiviset mittarit eivät päivity [aikataulutetun päivityksen](system.md#schedule-tab) aikana, ja passiivisten segmenttien **Tila**-arvo on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty.
+- **Aktivoi** mittari tai **Poista aktivointi**. Passiiviset mittarit eivät päivity [aikataulutetun päivityksen](schedule-refresh.md) aikana, ja passiivisten segmenttien **Tila**-arvo on **Ohitettu**, mikä osoittaa, että päivitystä ei edes yritetty.
 - **Tunniste** mittarin [tunnisteiden hallintaa varten](work-with-tags-columns.md#manage-tags).
 - **Poista** mitta.
 - **Sarakkeet** [sarakkeiden mukauttamiseksi](work-with-tags-columns.md#customize-columns) näyttämistä varten.
@@ -62,7 +62,7 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla mittarin vieres
 
 ## <a name="refresh-measures"></a>Päivitä mittarit
 
-Mittarit voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. Mittarit päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Päivitä**. [Automaattinen päivitys ajoitetaan](system.md#schedule-tab) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**.
+Mittarit voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. Mittarit päivitetään manuaalisesti valitsemalla ensin ne ja sitten **Päivitä**. [Automaattinen päivitys ajoitetaan](schedule-refresh.md) valitsemalla **Hallinta** > **Järjestelmä** > **Aikatauluta**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

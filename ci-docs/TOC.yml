@@ -284,18 +284,20 @@
       href: connect-service-principal.md
 - name: Hallinta
   items:
-    - name: Järjestelmämääritysten määrittäminen
-      href: system.md
-    - name: Määritä tietoturva-asetukset
-      href: security-overview.md
     - name: Delegoidaan käyttöoikeuksia
       href: permissions.md
     - name: Tuo oma Key Vault -avainsäilösi
       href: use-azure-key-vault.md
+    - name: Määritä tietoturva-asetukset
+      href: security-overview.md
     - name: Diagnostiikkalokien vieminen
       href: diagnostics.md
-    - name: Yhteyksien yleiskuvaus
+    - name: Yhteyksien hallinta
       href: connections.md
+    - name: Aikatauluta järjestelmän päivitys
+      href: schedule-refresh.md
+    - name: Tarkastele järjestelmän kokoonpanoa
+      href: system.md
 - name: Ohjelmointirajapinnat
   items:
     - name: Ohjelmointirajapintojen käsitteleminen

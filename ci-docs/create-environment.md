@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142815"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245553"
 ---
 # <a name="how-to-create-a-new-environment"></a>Ohje: Luo uusi ympäristö
 
@@ -48,7 +48,7 @@ Valitse **Perustiedot**-vaiheessa, haluatko luoda ympäristön alusta asti vai [
 
 Anna seuraavat tiedot:
 
-- **Nimi**: Ympäristön nimi. Tämä kenttä on jo täytetty, jos kopioit tietoja aiemmin luodusta ympäristöstä, mutta voit muuttaa sitä.
+- **Nimi**: Ympäristön nimi. Tämä kenttä on jo täytetty, jos kopioit tietoja aiemmin luodusta ympäristöstä, mutta voit muuttaa sitä. Jos työympäristöjä on useita, kullekin on annettava helposti tunnistettava nimi.
 - **Valitse yritys**: Valitse uuden ympäristön ensisijainen käyttäjäryhmä. Kyse voi yksittäistä kuluttajista (kuluttajakauppa) tai [yritystilistä](work-with-business-accounts.md) (yritystenvälinen kauppa). Jos organisaatiosi tekee kauppaa pääasiassa yksityishenkilöiden, kuten vähittäismyyjän tai kahvilan, kanssa, valitse yksittäiset kuluttajat. Jos yrityksesi pääkäyttäjäryhmä ovat muut yritykset, kuten autotehdas tai paperiyhtiö, valitse yritystilit.
 - **Tyyppi**: Määritä, haluatko luoda tuotanto- vai eristysympäristön. Eristysympäristöt eivät salli ajoitettua tietojen päivittämistä, ja ne on tarkoitettu esikäyttöä ja testausta varten. Eristysympäristöt käyttävät samaa ensisijaista käyttäjäryhmää kuin valittu tuotantoympäristö.
 - **Alue**: Alue, jossa palvelu otetaan käyttöön ja jossa sitä isännöidään. Jotta [voit käyttää omaa Azure Data Lake Storage -tiliäsi](own-data-lake-storage.md) tai [muodostaa yhteyden olemassa olevaan Microsoft Dataverse -organisaatioon](customer-insights-dataverse.md), Customer Insights -ympäristön on oltava samalla alueella.

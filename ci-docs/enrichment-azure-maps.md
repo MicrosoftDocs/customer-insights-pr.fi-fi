@@ -1,19 +1,19 @@
 ---
 title: Asiakasprofiilien rikastaminen Azure-karttojen sijaintitietojen avulla (esiversio)
 description: Yleisiä tietoja Azure Mapsin ensisijaisesta rikastamisesta.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f14b4fc20a9a1d8842f42f9e0e656b3d8dcddcf4
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052603"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238038"
 ---
 # <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Asiakasprofiilien rikastaminen Azure-karttojen sijaintitietojen avulla (esiversio)
 
@@ -35,14 +35,9 @@ Määrittäjän on oltava Customer Insightsin [järjestelmänvalvoja](permission
 
 1. Anna yhteydelle nimi ja kelvollisen Azure-karttojen ohjelmointirajapinnan avain.
 
-1. Tarkista [Tietojen yksityisyys ja vaatimustenmukaisuus](#data-privacy-and-compliance) -kohta ja hyväksy se valitsemalla **Hyväksyn**.
+1. Tarkista tietojen [Tietosuoja ja vaatimustenmukaisuus](connections.md#data-privacy-and-compliance) ja valitse **Hyväksyn**.
 
 1. Tarkista määritys valitsemalla **Vahvista** ja valitse sitten **Tallenna**.
-
-### <a name="data-privacy-and-compliance"></a>Tietojen yksityisyys ja vaatimustenmukaisuus
-
-Kun otat käyttöön Dynamics 365 Customer Insightsin tietojen siirtämiseksi Azure Maps -ratkaisuun, sallit tietojen siirtämisen säännöstenmukaisuuden rajan ulkopuolelle Dynamics 365 Customer Insightsissa, mukaan lukien mahdollisesti luottamukselliset tiedot, kuten henkilökohtaiset tiedot. Microsoft siirtää tällaiset tiedot ohjeittesi mukaisesti, mutta olet vastuussa siitä, että Azure Maps täyttää tietosuoja- ja tietoturvavaatimukset. Lisätietoja on kohdassa [Microsoftin tietosuojakäytäntö](https://go.microsoft.com/fwlink/?linkid=396732).
-Dynamics 365 Customer Insightsin järjestelmänvalvoja voi lopettaa tämän toiminnon käytön milloin tahansa poistaa tämän rikastamisen käytöstä.
 
 ## <a name="configure-the-enrichment"></a>Määritä rikastus
 
