@@ -1,7 +1,7 @@
 ---
 title: Segmenttien yleiskatsaus
 description: Yleiskatsaus segmenteistä ja niiden luomisesta ja hallinnasta.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246289"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304791"
 ---
 # <a name="segments-overview"></a>Segmenttien yleiskatsaus
 
 Segmenttien avulla asiakkaita ryhmitellä demografia-, tapahtuma- tai toimintamääritteiden perusteella. Segmenttejä käyttämällä voit kohdistaa markkinointikampanjoita, myyntiaktiviteetteja ja asiakastukitoimintoja liiketoiminnan tavoitteiden saavuttamiseksi.
 
-Segmenttimäärityksen suodattimia vastaavia asiakasprofiileita kutsutaan segmentin *jäseniksi*. Käytössä on jotakin [palvelurajoituksia](/dynamics365/customer-insights/service-limits).
+Segmenttimäärityksen suodattimia vastaavia asiakas- tai yhteyshenkilöprofiileita kutsutaan segmentin *jäseniksi*. Käytössä on jotakin [palvelurajoituksia](/dynamics365/customer-insights/service-limits).
 
 ## <a name="create-a-segment"></a>Luo segmentti
 
@@ -41,13 +41,19 @@ Valitse, miten kohdeyleisön perusteella luodaan segmentti.
 
 # <a name="business-accounts-b-to-b"></a>[Yritystilit (yritysten väliset)](#tab/b2b)
 
-- Yksinkertaiset tai monimutkaiset segmentit segmentin muodostimen avulla: [Luo oma](segment-builder.md)
+Asiakassegmentti tai yhteyshenkilösegmentti (esiversio) segmentin muodostimella: [Luo oma](segment-builder.md)
+
+> [!NOTE]
+> Useimmat vientikohteet edellyttävät yhteystietoja markkinointia varten. Luo siksi yhteyshenkilösegmentit, joita käytetään näissä vienneissä.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Aiemmin luotujen segmenttien hallinta
 
-Siirry **Segmentit**-sivulle, kun haluat tarkastella luomiasi segmenttejä, niiden asemaa ja tilaa, jäsenten lukumäärää ja tietojen viimeisintä päivittämisaikaa. Segmenttiluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan segmentin voi etsiä myös hakuruutua käyttämällä.
+Siirry **Segmentit**-sivulle, kun haluat tarkastella luomiasi segmenttejä, niiden tilaa ja vaihetta sekä tietojen viimeisintä päivitysaikaa. Segmenttiluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan segmentin voi etsiä myös hakuruutua käyttämällä.
+
+> [!TIP]
+> B2B-ympäristöissä **Kohdeyleisön tyyppi** -sarakkeessa määritetään, perustuuko segmentti tileihin vai yhteyshenkilöihin.
 
 Voit tarkastella käytettävissä olevia toimintoja valitsemalla segmentin.
 
@@ -82,7 +88,7 @@ Alaosassa on luettelo segmentin jäsenistä.
 > [!NOTE]
 > Tässä luettelossa näkyvät kentät perustuvat segmentin entiteettien määritteisiin.
 >
->Luettelo on täsmäävien segmentin jäsenten esikatselu. Siinä näkyvät segmentin ensimmäiset 100 tietuetta, joten voit nopeasti arvioida segmentin ja tarkistaa sen määritykset tarpeen mukaan. Jos haluat nähdä kaikki täsmäävät tietueet, sinun on [vietävä segmentti](export-destinations.md).
+> Luettelo on täsmäävien segmentin jäsenten esikatselu. Siinä näkyvät segmentin ensimmäiset 100 tietuetta, joten voit nopeasti arvioida segmentin ja tarkistaa sen määritykset tarpeen mukaan. Jos haluat nähdä kaikki vastaavat tietueet, valitse **Näytä lisää**, joka avaa [**Entiteetit**](entities.md)-sivun tai [vie segmentti](export-destinations.md).
 
 ## <a name="refresh-segments"></a>Päivitä segmentit
 

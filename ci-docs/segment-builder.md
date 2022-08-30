@@ -1,7 +1,7 @@
 ---
 title: Luo monimutkaisia segmenttejä segmentin muodostintyökalun avulla
 description: Monimutkaisia asiakassegmenttejä luodaan ryhmittelemällä niitä erilaisten määritteiden perusteella käyttämällä segmentin muodostinta.
-ms.date: 03/25/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
@@ -13,19 +13,19 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: cde373cd65e296675e1b3c92f3024e1093853842
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 7f691fd0b2ea76a2960d5adf766a4b166f02ebb4
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170631"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304745"
 ---
 # <a name="create-complex-segments-with-segment-builder"></a>Luo monimutkaisia segmenttejä segmentin muodostintyökalun avulla
 
-Määritä yhdistetyn asiakasentiteetin ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen joukon asiakastietueita, joita voit viedä ja joihin voit tehdä toimintoja.
+Määritä yhdistetyn asiakasentiteetin tai yhdistetyn yhteyshenkilön ja siihen liittyvien entiteettien monimutkaiset suodattimet. Kukin segmentti luo käsittelyn jälkeen asiakas- tai yhteyshenkilötietuejoukon, jonka voi viedä ja jota voi käsitellä.
 
 > [!TIP]
-> Segmentit, jotka perustuvat **yksittäisiin asiakkaisiin**, sisältävät automaattisesti käytössä olevat segmentin jäsenten yhteystiedot. Ympäristöissä, jotka perustuvat **yritystileihin**, segmentit perustuvat asiakkaisiin (yrityksiin tai tytäryrityksiin). Jos haluat sisällyttää yhteyshenkilötiedot segmenttiin, käytä **Projektin määritteet** -toimintoa segmentin muodostimessa. Varmista, että yhteyshenkilön tietolähteet on [yhdistetty semanttisesti ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping)-entiteettiin.
+> Segmentit, jotka perustuvat **yksittäisiin asiakkaisiin**, sisältävät automaattisesti käytössä olevat segmentin jäsenten yhteystiedot. Jos **yritystileillä** [yhdenmukaistat](data-unification.md) sekä tilit ja yhteyshenkilöt, valitse, perustuuko segmentti tileihin vai yhteyshenkilöihin. Jos haluat viedä tietoja kohteeseen, joka odottaa yhteystietoja, käytä yhteyshenkilöiden segmenttiä. Jos haluat viedä tietoja kohteeseen, joka odottaa tilitietoja, käytä tilien segmenttiä.
 
 ## <a name="segment-builder"></a>Segmentin muodostin
 
@@ -57,6 +57,11 @@ Yllä olevassa esimerkissä on kuvattu segmentointiominaisuudet. Olemme määrit
 
 1. Valitse **Uusi** > **Luo oma**. Segmentin muodostin -sivulla voit määrittää tai luoda sääntöjä. Sääntö koostuu yhdestä tai useasta asiakasjoukon määrittävästä ehdosta.
 
+   > [!NOTE]
+   > Jos ympäristöt perustuvat yritystileihin, valitse **Uusi** > **Tilisegmentti** tai **Yhteyshenkilösegmentti (esiversio)** luotavan segmentin tyypin perusteella. Jos [tilihierarkia](relationships.md#set-up-account-hierarchies) on määritetty ja haluat luoda sääntöjä, joiden avulla suodatetaan pois tietoja ali- ja ylätason suhteen perusteella, valitse **Käytetäänkö hierarkiaa? (esiversio)**, valitse hierarkia ja valitse sitten **Käytä**.
+   >
+   > :::image type="content" source="media/segment_acct_hierarchy.png" alt-text="Segmentin valinnan tilihierarkian ruutu.":::
+
 1. Valitse nimettömän segmentin vieressä oleva **Muokkaa tietoja** -kohta. Anna segmentille nimi ja päivitä segmentin ehdotetun **Tulos-entiteetin nimi**. Vaihtoehtoisesti voit lisätä segmenttiin kuvauksen ja [tunnisteet](work-with-tags-columns.md#manage-tags).
 
    :::image type="content" source="media/segments_edit_details.png" alt-text="Muokkaa tietoja -valintaikkuna.":::
@@ -65,11 +70,11 @@ Yllä olevassa esimerkissä on kuvattu segmentointiominaisuudet. Olemme määrit
    - Tarkista **Lisää sääntöön** -ruudun käytettävissä olevien entiteettien ja määritteiden luettelo ja valitse lisättävän määritteen vieressä oleva **+**-kuvake. Valitse, haluatko lisätä määritteen aiemmin luotuun sääntöön vai luoda sen avulla uuden säännön.
    - Kun kirjoitat määritteen nimen sääntöosaan, näet vastaavat ehdotukset.
 
-1. Valitse operaattorit, jotka määrittävät ehdon vastaavat arvot. Määritteen arvo voi olla jokin neljästä tietotyypistä: numeerinen, merkkijono, päivämäärä tai totuusarvo. Määritteen tietotyypistä riippuen eri operaattorit ovat käytettävissä määrittämään ehdon. Jos segmentillä on yritystilejä, käytettävissä on kaksi erityistä operaattoria, jotka voivat sisällyttää mahdollisia hierarkkisia tietoja käytettyjen tilien välillä. Käytä *seuraavan lapsi*- ja *seuraavan vanhempi* -operaattoreita liittyvien tilien sisällyttämiseen.
+1. Valitse operaattorit, jotka määrittävät ehdon vastaavat arvot. Määritteen arvo voi olla jokin neljästä tietotyypistä: numeerinen, merkkijono, päivämäärä tai totuusarvo. Määritteen tietotyypistä riippuen eri operaattorit ovat käytettävissä määrittämään ehdon.
 
 1. Valitse **Lisää ehto**, jos haluat lisätä sääntöön lisää ehtoja. Jos haluat luoda säännön nykyisen säännön alle, valitse **Lisää alisääntö**.
 
-1. Jos sääntö käyttää muita entiteettejä kuin *Asiakas*-entiteettiä, yhdistä valittu entiteetti yhdistettyyn asiakasentiteettiin valitsemalla **Määritä suhdepolku**. Jos mahdollisia suhdepolkuja on vain yksi, järjestelmä valitsee sen automaattisesti. Eri [suhdepolut](relationships.md#relationship-paths) voivat tuottaa erilaisia tuloksia. Jokaisella säännöllä voi olla oma suhdepolkunsa.
+1. Jos sääntö käyttää muita entiteettejä kuin *Asiakas*-entiteettiä (tai B2B:n *ContactProfile*-entiteettiä), yhdistä valittu entiteetti yhdistettyyn asiakasentiteettiin valitsemalla **Määritä suhdepolku**. Jos mahdollisia suhdepolkuja on vain yksi, järjestelmä valitsee sen automaattisesti. Eri [suhdepolut](relationships.md#relationship-paths) voivat tuottaa erilaisia tuloksia. Jokaisella säännöllä voi olla oma suhdepolkunsa.
 
    :::image type="content" source="media/relationship-path.png" alt-text="Mahdollinen suhdepolku luotaessa sääntöä, joka perustuu yhdistettyyn asiakasentiteettiin yhdistettyyn entiteettiin.":::
 
@@ -92,24 +97,22 @@ Yllä olevassa esimerkissä on kuvattu segmentointiominaisuudet. Olemme määrit
       - **Leikkaa** asettaa kaksi ryhmää päällekkäin. Vain molemmille ryhmille *yhteiset* tiedot säilyvät yhdistetyssä ryhmässä.
       - **Lukuun ottamatta** yhdistää kaksi ryhmää. Vain ne ryhmän A tiedot, jotka *eivät ole yhteisiä* ryhmän B tietojen kanssa, säilytetään.
 
-1. Tulosentiteetti sisältää automaattisesti kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin, voit lisätä näistä entiteeteistä lisämääritteitä tulosentiteettiin valitsemalla **Projektin määritteet**.
-
-   > [!IMPORTANT]
-   > Jos segmentti perustuu yritystileihin, segmenttiin on sisällytettävä jokaisesta *ContactProfile*-entiteetin tilistä vähintään yhden yhteyshenkilön tiedot, jotta segmentti voidaan aktivoida tai viedä kohteisiin, jotka vaativat yhteyshenkilöiden tietoja. Lisätietoja *ContactProfile*-entiteetistä on kohdassa [Semanttiset yhdistämismääritykset](semantic-mappings.md).
-   > Yhteyshenkilöiden projisoituja määritteitä sisältäviin yritystileihin perustuvan segmentin esimerkkitulos voi olla seuraavan kaltainen:
-   >
-   > |Tunnus  |Asiakkaan nimi  |Tuotto  |Yhteyshenkilön nimi  | Yhteyshenkilön rooli|
-   > |---------|---------|---------|---------|---|
-   > |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [Toimitusjohtaja, hankintapäällikkö]
-
-   :::image type="content" source="media/segments-project-attributes.png" alt-text="Esimerkki sivuruudussa valituista ennustetuista määritteistä, jotka lisätään tulosentiteettiin.":::
-  
+1. Tulosentiteetti sisältää automaattisesti kaikki määritettyjä suodattimia vastaavat asiakasprofiilien määritteet. Kun B2B-tilanteessa käytetään *ContactProfile*-entiteettiä, lisätään automaattisesti tilitunnus. Jos segmentti perustuu muihin entiteetteihin kuin *Asiakas*-entiteettiin tai jos haluat sisällyttää enemmän *ContactProfile*-määritteitä, valitse **Projektin määritteet**, jos haluat lisätä näistä entiteeteistä enemmän määritteitä tulosentiteettiin.
+ 
    Esimerkki: Segmentti perustuu entiteettiin, joka sisältää ostotietoja, jotka liittyvät *Asiakas*-entiteettiin. Segmentti etsii Espanjasta kaikkia asiakkaita, jotka ostivat tavaroita kuluvana vuonna. Voit liittää määritteitä, kuten tuotteiden hinnan, tai ostopäivämäärän kaikkiin tulosentiteetin vastaaviin asiakastietueisiin. Nämä tiedot voivat olla hyödyllisiä analysoitaessa kokonaismenojen kausittaisia korrelaatioita.
 
+   :::image type="content" source="media/segments-project-attributes.png" alt-text="Esimerkki sivuruudussa valituista ennustetuista määritteistä, jotka lisätään tulosentiteettiin.":::
+ 
+   Yhteyshenkilöiden projisoituja määritteitä sisältäviin yritystileihin perustuvan segmentin esimerkkitulos voi olla seuraavan kaltainen:
+
+   |Tunnus  |Asiakkaan nimi  |Tuotto  |Yhteyshenkilön nimi  | Yhteyshenkilön rooli|
+   |---------|---------|---------|---------|---|
+   |10021     | Contoso | 100 000 | [Abbie Moss, Ruth Soto]  | [Toimitusjohtaja, hankintapäällikkö]
+
    > [!NOTE]
-   > - **Projektin määritteet** toimivat vain entiteeteille, joilla on yksi moneen -suhde asiakasentiteettiin. Esimerkiksi yhdellä asiakkaalla voi olla useita tilauksia.
-   > - Jos määrite, jonka haluat projisoida, on enemmän kuin yhden siirtymisen päässä *Asiakas*-entiteetistä suhteen määrityksen perusteella, tätä määritettä tulee käyttää tekemäsi segmenttikyselyn jokaisessa säännössä.
-   > - Jos määrite, jonka haluat projisoida, on vain yhden siirtymisen päässä *Asiakas*-entiteetistä, tämän määritteen ei tarvitse olla mukana tekemäsi segmenttikyselyn jokaisessa säännössä.
+   > - **Projektin määritteet** toimivat vain entiteeteille, joilla on yksi moneen -suhde *Asiakas*- tai *ContactProfile*-entiteettiin. Esimerkiksi yhdellä asiakkaalla voi olla useita tilauksia.
+   > - Jos määrite, jonka haluat projisoida, on enemmän kuin yhden siirtymisen päässä *Asiakas*- tai *ContactProfile*-entiteetistä suhteen määrityksen perusteella, tätä määritettä tulee käyttää tekemäsi segmenttikyselyn jokaisessa säännössä.
+   > - Jos määrite, jonka haluat projisoida, on vain yhden siirtymisen päässä *Asiakas*- tai *ContactProfile*-entiteetistä, tämän määritteen ei tarvitse olla mukana tekemäsi segmenttikyselyn jokaisessa säännössä.
    > - **Projisoidut määritteet** otetaan huomioon, kun joukko-operaattoreita käytetään.
 
 1. Luo segmentti valitsemalla **Suorita**. Valitse **Tallenna**, jos haluat pitää nykyisen määrityksen ja suorittaa segmentin myöhemmin. **Segmentit**-sivu avautuu.

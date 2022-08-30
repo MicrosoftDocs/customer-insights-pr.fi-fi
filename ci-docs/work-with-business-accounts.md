@@ -4,21 +4,21 @@ description: Tietoja yritystileistä ensisijaisena kohdekäyttäjäryhmänä Dyn
 ms.date: 10/19/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.custom: intro-internal
 ms.author: wimohabb
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9bf91671b744198b2f37391edc7abf58eca3c820
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: abb77a720ab737520a905b0c93b65573e669109f
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053109"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303912"
 ---
 # <a name="work-with-business-accounts"></a>Yritystilien käsitteleminen
 
@@ -30,7 +30,7 @@ Järjestelmänvalvojat voivat [luoda ympäristön aiemmin luotuun organisaatioon
 
 Voit sitten [käyttää tietoja](data-sources.md) yritystilien ja liittyvien yhteyshenkilöiden tietolähteinä kaikista tuetuista lähteistä.
 
-Kun olet yhtenäistänyt tiedot, [määritä tilihierarkiat](relationships.md#set-up-account-hierarchies) osana suhteiden määritystä. Voit myös tehdä [semanttiset yhdistämismääritykset](semantic-mappings.md) yhdistääksesi yhteyshenkilö- ja tilientiteetit. 
+ Yhdistä yhteyshenkilö - ja tilientiteetit [yhtenäistämällä](data-unification.md) tilitiedot ja yhteyshenkilötiedot.
 
 ## <a name="switch-between-primary-target-audience"></a>Vaihtaminen ensisijaisen kohdekäyttäjäryhmän välillä
 
@@ -43,11 +43,12 @@ Jos organisaatiosi ylläpitää yksittäisten asiakkaiden ja yritystilien ympär
 - [Aktiviteetit](activities.md): Tuki tileille ja liittyville yhteyshenkilöille aktiviteettien luomista varten ja niiden aikajanalla näyttämistä varten.
 - [Suhteet](relationships.md): Aktiviteettien ohjattu toiminto auttaa luomaan suhteita entiteettien välille, jotta tilinäkymässä voidaan näyttää yhteyshenkilöiden kaikki aktiviteetit. Yhteyshenkilöt voivat porautua ylöspäin yhteyshenkilönäkymään, ja hierarkioita voidaan käyttää tilin aktiviteettien koostamista varten.
 - [Mittarit](measures.md): Tukee mittareita, jotka on luotu mittarin muodostimella yhdellä laskutoimituksella. Valinnainen asetus sallii alitilien kokoamisen, kun luodaan mittareita.
-- [Segmentit](segments.md): Tukee segmenttejä, jotka on luotu alusta asti segmenttien muodostimella. Uudet operaattorit sallivat tilihierarkian sisällyttämisen, kun segmenttejä muodostetaan.
+- [Segmentit](segments.md): Tukee segmenttejä, jotka on luotu alusta asti segmenttien muodostimella. Segmentit voivat perustua tileihin tai yhteyshenkilöihin.
 - [Tietojen käsittely](data-sources.md): Tämän alueen kaikki ominaisuudet ovat samat yritystileille ja yksittäisille asiakkaille.
-- [Tietojen yhtenäistäminen](data-unification.md): Tämän alueen kaikki ominaisuudet ovat samat yritystileille ja yksittäisille asiakkaille.
+- Tietojen B2B-yhdistäminen muistuttaa hyvin paljon tietojen B2C-yhdistämistä, mutta sillä on lisävaihe yhteyshenkilöiden yhdistämiseksi tilien yhdistämisen jälkeen. Katso [Yritystilit (yritysten väliset)](data-unification.md).
 - [Rikastaminen](enrichment-hub.md): Jotkin rikastustyypit ovat käytössä vain yksittäisille asiakkaille, kun taas jotkin ovat käytössä vain yritystileille.
 - [Ennusteet ja valmiit mallit](predictions-overview.md): Tapahtumien vaihtuvuuden ennusteet sisältävät lisävaiheita yritystileille. Muut ennusteet ovat käytettävissä vain yksittäisille asiakkaille.
 - [Aktivointi ja vienti](export-destinations.md): Vienti on mahdollista yritystileille ja yksittäisille asiakkaille. Jotkin viennit edellyttävät, että taustalla olevien segmenttien lisämääritys- ja yhteyshenkilötiedot ovat voimassa yritystilien osalta.
 - [Järjestelmän asetukset](system.md) ja [käyttäjien hallinta](permissions.md): Tämän alueen kaikki ominaisuudet ovat samat yritystileille ja yksittäisille asiakkaille.
 
+[!INCLUDE [footer-include](includes/footer-banner.md)]

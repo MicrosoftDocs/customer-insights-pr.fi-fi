@@ -6,19 +6,19 @@ ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
-ms.author: mukeshpo
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 3f84c1c149f0befcbe489ccdd8a666ce6d5d798a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213623"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304469"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Kaksoiskappaleiden poistaminen ennen tietojen yhdistämistä
 
@@ -47,7 +47,7 @@ Jos olet rikastanut entiteetit tietolähteen tasolla parantaaksesi yhdistämisen
 
 1. Valitse **Tietueiden kaksoiskappaleet** -sivulla entiteetti ja määritä kaksoiskappaleiden poistamissäännöt valitsemalla **Lisää sääntö**.
 
-   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Näyttökuva Tietueiden kaksoiskappaleet -sivuista, jossa Näytä lisää on korostettu":::
+   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Näyttökuva Tietueiden kaksoiskappaleet -sivusta, jossa entiteetti on korostettu ja Lisää sääntö -kohta on näkyvissä"  lightbox="media/m3_duplicates_showmore.png":::
 
    1. Syötä **Lisää sääntö** -ruutuun seuraavat tiedot:
       - **Valitse kenttä**: Valitse sen entiteetin käytettävissä olevien kenttien luettelosta, jonka kaksoiskappaleita haluat tarkistaa. Valitse kentät, jotka ovat todennäköisesti yksilöllisiä jokaiselle asiakkaalle. Esimerkiksi sähköpostiosoite tai nimen, postiosoitteen ja puhelinnumeron yhdistelmä.
@@ -80,9 +80,9 @@ Jos olet rikastanut entiteetit tietolähteen tasolla parantaaksesi yhdistämisen
       - **Useimmat täytetyt**: Määrittää voittavaksi tietueeksi tietueen, jossa on eniten täytettyjä määritekenttiä. Se on yhdistämisen oletusasetus.
       - **Uusin**: Määrittää voittajatietueeksi uusimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
       - **Vähiten viimeaikaiset**: Määrittää voittajatietueeksi vähiten viimeaikaisimman tietueen. Viimeaikaisuuden määrittämiseen tarvitaan päivämäärä- tai numerokenttä.
-      
+
       Jos arvo on tasapeli, voittajatietue on se, jolla on MAX(PK) tai suurempi perusavaimen arvo.
-      
+
    1. Jos haluat määrittää yhdistämisen asetukset entiteetin yksittäisille määritteille, valitse ruudun alaosasta **Lisäasetukset**. Voit esimerkiksi säilyttää uusimman sähköpostiviestin JA täydellisimmän osoitteen eri tietueista. Laajenna entiteettiä, kun haluat nähdä sen kaikki määritteet, ja määritä, mitä asetusta käytetään yksittäisissä määritteissä. Jos valitset viimeaikaisuuteen perustuvan vaihtoehdon, sinun täytyy myös määrittää päivämäärä-/aikakenttä, joka määrittää viimeaikaisuuden.
 
       :::image type="content" source="media/m3_adv_merge.png" alt-text="Yhdistämisasetusten lisäasetukset, joissa näkyvät uusin sähköposti ja täydellinen osoite":::
@@ -96,18 +96,5 @@ Jos olet rikastanut entiteetit tietolähteen tasolla parantaaksesi yhdistämisen
 
 > [!div class="nextstepaction"]
 > [Useiden entiteettien seuraava vaihe: Vastaavuusehdot](match-entities.md)
-
-## <a name="deduplication-output-as-an-entity"></a>Kaksoiskappaleiden poiston tulos entiteettinä
-
-Kaksoiskappaleiden poistoprosessi luo uuden entiteetin, josta kaksoiskappaleet on poistettu kullekin lähde-entiteetille. Nämä entiteetit löytyvät yhdessä **ConflationMatchPairs:CustomerInsights**-entiteetin kanssa **Järjestelmä**-osasta **Entiteetit**-sivulta nimellä **Deduplication_DataSource_Entity**.
-
-Kaksoiskappaleiden poiston tulosentiteetti sisältää seuraavat tiedot:
-
-- Tunnukset/avaimet
-  - Perusavaimen ja vaihtoehtoisen tunnuksen kentät. Vaihtoehtoinen tunnuskenttä sisältää kaikki tietueelle tunnistetut vaihtoehtoiset tunnukset.
-  - Deduplication_GroupId-kentässä on ryhmä tai klusteri, joka sellainen entiteetti määrittää, joka ryhmittelee kaikki samanlaiset tietueet määritettyjen kaksoiskappaleiden poiston kenttien perusteella. Sitä käytetään järjestelmän käsittelyssä. Jos manuaalisia kaksoiskappaleiden poiston sääntöjä ei ole määritetty, ja järjestelmän määrittämät kaksoiskappaleiden poiston säännöt on otettu käyttöön, tätä kenttää ei ehkä löydy kaksoiskappaleiden poiston tulosentiteetistä.
-  - Deduplication_WinnerId: Tämä kenttä sisältää määritettyjen ryhmien tai klustereiden voittaneen tunnuksen. Jos Deduplication_WinnerId on sama kuin tietueen ensisijaisen avaimen arvo, tietue on voittanut tietue.
-- Kenttiä käytetään kaksoiskappaleiden poiston sääntöjen määrittämisessä.
-- Sääntö- ja Pistemäärä-kentät määrittävät, mitä kaksoiskappaleiden poiston sääntöjä noudatetaan. Ne määrittävät myös vastaavan algoritmin palauttaman pistemäärän.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

@@ -76,6 +76,8 @@
       href: merge-entities.md
     - name: Tietojen yhdistämisen tarkistaminen
       href: review-unification.md
+    - name: Yhtenäisen yhteyshenkilöprofiilin luominen
+      href: data-unification-contacts.md
     - name: Yhdistysasetusten päivittäminen
       href: data-unification-update.md
 - name: Tietojen rikastaminen

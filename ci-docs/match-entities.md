@@ -2,7 +2,7 @@
 title: Tietojen yhdistämisen ehtojen vastaavuuden avulla
 description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden avulla.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139695"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304653"
 ---
 # <a name="match-conditions-for-data-unification"></a>Tietojen yhdistämisen ehtojen vastaavuuden avulla
 
@@ -27,6 +27,8 @@ Tämä yhdistämisen vaihe määrittää täsmäytysjärjestyksen ja entiteettie
 
 > [!NOTE]
 > Kun olet luonut vastaavuusehdot ja valinnut **Seuraava**, et voi poistaa valittua entiteettiä tai määritettä. Tarkista valitut entiteetit ja määritteet tarvittaessa valitsemalla **Takaisin**, ennen kuin jatkat.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Rikastettujen entiteettien sisällyttäminen (esiversio)
 
@@ -43,14 +45,14 @@ Jos olet rikastanut entiteetit tietolähteen tasolla parantaaksesi yhdistämisen
 Kukin vastine yhdistää vähintään kaksi entiteettiä yhdeksi konsolidoiduksi entiteetiksi. Samalla se säilyttää yksilölliset asiakastietueet. Vastinejärjestys ilmaisee järjestyksen, jossa järjestelmä yrittää yhdistää tietueet.
 
 > [!IMPORTANT]
-> Luettelon ensimmäistä entiteettiä kutsutaan ensisijaiseksi entiteetiksi. Ensisijainen entiteetti toimii yhtenäisten profiilien tietojoukon perustana. Entiteettiin lisätään lisää valittuja entiteettejä.
+> Ensimmäistä entiteettiä kutsutaan ensisijaiseksi entiteetiksi, joka toimii yhtenäisen profiilin pohjana. Entiteettiin lisätään lisää valittuja entiteettejä.
 >
 > Tärkeitä huomioon otettavia seikkoja:
 >
 > - Valitse entiteetti, jossa on täydellisimmät ja luotettavat profiilitiedot asiakkaistasi ensisijaiseksi entiteetiksi.
 > - Valitse ensisijaiseksi entiteetiksi entiteetti, jolla on useita yhteisiä määritteitä muiden entiteettien kanssa (esimerkiksi nimi, puhelinnumero tai sähköpostiosoite).
 
-1. Siirrä **Vastaavuusehdot**-sivulla ylä- ja alanuolien avulla entiteetit haluamaasi järjestykseen ylä- ja alanuolen avulla tai vedä ja pudota ne. Valitse esimerkiksi **Contacts:eCommerce** ensisijaiseksi entiteetiksi ja **CustomerLoyalty:Loyalty** toiseksi entiteetiksi.
+1. Siirrä **Vastaavuusehdot**-sivulla ylä- ja alanuolien avulla entiteetit haluamaasi järjestykseen ylä- ja alanuolen avulla tai vedä ja pudota ne. Valitse esimerkiksi **eCommerceCustomers** ensisijaiseksi entiteetiksi ja **loyCustomers** toiseksi entiteetiksi.
 
 1. Valitse **sisällytä kaikki tietueet**, jos haluat jokaisesta entiteetin tietueesta yksilöidyn asiakkaan riippumatta siitä, löytyykö vastinetta. Kaikki tämän entiteetin tietueet, jotka eivät vastaa muiden entiteettien tietueita, sisällytetään yhdistettyyn profiiliin. Tietueita, joilla ei ole vastinetta, kutsutaan singleton-tietueiksi.
   
@@ -70,7 +72,7 @@ Entiteetin nimen vieressä on varoitus, jonka mukaan vastineparille ei ole mää
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Näyttökuva Lisää sääntö -ruudusta.":::
 
-   - **Valitse Entiteetti/kenttä (ensimmäinen rivi)**: Valitse liittyvä entiteetti ja määrite, jos haluat määrittää tietueen ominaisuuden, joka on todennäköisesti yksilöllinen asiakkaalle. Esimerkiksi puhelinnumero tai sähköpostiosoite. Vältä yhdistämistä aktiviteettityyppisten määritteiden mukaan. Esimerkiksi ostotunnus ei todennäköisesti vastaa muita tietuetyyppejä.
+   - **Valitse Entiteetti/kenttä (ensimmäinen rivi)**: Valitse entiteetti ja määrite, joka on todennäköisesti yksilöllinen asiakkaalle. Esimerkiksi puhelinnumero tai sähköpostiosoite. Vältä yhdistämistä aktiviteettityyppisten määritteiden mukaan. Esimerkiksi ostotunnus ei todennäköisesti vastaa muita tietuetyyppejä.
 
    - **Valitse entiteetti/kenttä (toinen rivi)**: Valitse määrite, joka liittyy ensimmäisellä rivillä määritetyn entiteetin määritteeseen.
 
@@ -116,7 +118,7 @@ Vastinesäännöt edustavat ehtojen joukkoja. Lisää sääntöjä täsmäyttä�
 
 ### <a name="add-exceptions-to-a-rule"></a>Poikkeuksien lisääminen sääntöön
 
-Useimmissa tapauksissa entiteettien vastaavuus johtaa yksilöllisiin asiakasprofiileihin, joissa on yhdistettyjä tietoja. Jos haluat käsitellä dynaamisesti harvinaisia virheellisiä esiintymiä, voit määrittää vastaavuussäännölle poikkeuksia. Poikkeuksia sovelletaan vastaavuussääntöjen käsittelyn jälkeen, eikä kaikkia tietueita, jotka täyttävät poikkeusehdot, täsmäytetä.
+Useimmissa tapauksissa entiteettien vastaavuus johtaa yksilöllisiin asiakasprofiileihin, joissa on yhdistettyjä tietoja. Jos haluat käsitellä harvinaisia virheellisiä esiintymiä, voit määrittää vastaavuussäännölle poikkeuksia. Poikkeuksia sovelletaan vastaavuussääntöjen käsittelyn jälkeen, eikä kaikkia tietueita, jotka täyttävät poikkeusehdot, täsmäytetä.
 
 Jos esimerkiksi vastaavuussäännössä on sukunimi, kaupunki ja syntymäpäivä, järjestelmä tunnistaa kaksoset, joilla on sama sukunimi, jotka asuvat samassa kaupungissa kuin sama profiili. Voit määrittää poikkeuksen, joka ei täsmäytä profiileja, jos yhdistettävien entiteettien etunimi ole sama.
 
@@ -134,7 +136,7 @@ Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettäv
 |---------|---------|---------|
 |Vastaavat aina toisiaan     | Määrittää arvot, joiden vastaavuutta aina haetaan.         |  Hae aina vastaavuudet merkkijonoille *Mike* ja *MikeR*.       |
 |Eivät vastaa toisiaan koskaan     | Määrittää arvot, joiden vastaavuutta ei koskaan haeta.        | Älä koskaan hae vastaavuutta merkkijonoille *John* ja *Jonathan*.        |
-|Mukautettu ohitus     | Määrittää arvot, jotka järjestelmän on aina ohitettava vastaavuushaun vaiheessa. |  Ohita arvot *11111* ja *Tuntematon* vastaavuushaun aikana.        |
+|Ohita            | Määrittää arvot, jotka järjestelmän on aina ohitettava vastaavuushaun vaiheessa. |  Ohita arvot *11111* ja *Tuntematon* vastaavuushaun aikana.        |
 |Aliaksen yhdistämismääritys    | Määritetään arvot, jotka järjestelmän tulisi ottaa huomioon samana arvona.         | Ota huomioon *Joe* samana kuin *Joseph*.        |
 
 1. Valitaan **Mukautettu**.

@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+ms.openlocfilehash: 0c8edfd8f45ce7770d568811df2b38be1b04e73a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188089"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303779"
 ---
 # <a name="view-customer-profiles"></a>Asiakasprofiilien näyttäminen
 
@@ -78,7 +78,7 @@ Asiakastietoja ovat esimerkiksi seuraavat:
 **Asiakasprofiilin ruutu** näyttää eri arvot yhtenäisestä *Asiakas*-entiteetistä. Jos kentällä ei ole arvoa valitulle asiakasprofiilille, näkyvissä on vain osoitekenttä. Ruudun rakenne koostuu osista:
 
 - Ensimmäisessä osassa näkyy ennalta määritetty kenttäjoukko, jota seuraavat kaikki haku- ja suodatinindeksiin kuuluvat kentät. Kaikki osoitteeseen liittyvät kentät yhdistetään yksittäiseksi riviksi, joka näkyy myös silloin, jos profiilissa ei ole osoitetietoja.
-- **Tämän asiakkaan yhteystiedot** näkyvät yritystiliympäristöissä. Kukin yhteyshenkilö näytetään kenttiensä kanssa. Tyhjät kentät piilotetaan.
+- **Tämän asiakkaan yhteyshenkilöt** näkyvät yritystilien ympäristöissä (B2B). Kukin yhteyshenkilö näytetään kenttiensä kanssa. Tyhjät kentät piilotetaan.
 - **Lisäkentät** näyttää valitun asiakkaan jäljellä olevat kentät tunnuksia lukuun ottamatta.
 - **Tunnukset**: Luetteloi kaikki tunnukset vastaavaan entiteetin nimen alla. Kentät tunnistetaan tunnuksiksi semantiikkansa perusteella.
 

@@ -1,9 +1,9 @@
 ---
-title: Asiakasaktiviteetit
-description: Määritä asiakasaktiviteetit ja tarkastele niitä asiakasprofiilien aikajanalla.
-ms.date: 07/22/2022
+title: Asiakkaan tai työyhteyshenkilön aktiviteetit
+description: Määritä asiakkaan tai työyhteyshenkilön aktiviteetit ja tarkastele niitä asiakasprofiilien aikajanalla.
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -16,19 +16,19 @@ searchScope:
 - ci-activities-wizard
 - ci-measures
 - ci-segment-suggestions
-- customerInsight
-ms.openlocfilehash: cc21b0eeb368156437e60d851c2d144f3974c066
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+- customerInsights
+ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188135"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304101"
 ---
-# <a name="customer-activities"></a>Asiakasaktiviteetit
+# <a name="customer-or-business-contact-activities"></a>Asiakkaan tai työyhteyshenkilön aktiviteetit
 
-Asiakasaktiviteetit ovat asiakkaiden suorittamia toimintoja tai tapahtumia. Esimerkkejä aktiviteettitiedoista ovat tapahtumat, tukipuhelun kesto, verkkotarkastelut, ostot tai palautukset. Nämä aktiviteetit sisältyvät yhteen tai useampiin tietolähteisiin. Yhdistä Customers Insightsin avulla asiakasaktiviteetit näistä [tietolähteistä](data-sources.md) ja liitä ne asiakasprofiileihin. Nämä aktiviteetit näkyvät aikajärjestyksessä asiakasprofiilin aikajanalla. Sisällytä aikajana Dynamics 365 -sovelluksiin [Asiakaskortit-apuohjelmaratkaisun](customer-card-add-in.md) avulla.
+Asiakasaktiviteetit ovat asiakkaiden tai työyhteyshenkilöiden suorittamia toimintoja tai tapahtumia. Esimerkkejä aktiviteettitiedoista ovat tapahtumat, tukipuhelun kesto, verkkotarkastelut, ostot tai palautukset. Nämä aktiviteetit sisältyvät yhteen tai useampiin tietolähteisiin. Yhdistä Customers Insightsin avulla asiakasaktiviteetit näistä [tietolähteistä](data-sources.md) ja liitä ne asiakasprofiileihin. Nämä aktiviteetit näkyvät aikajärjestyksessä asiakasprofiilin aikajanalla. Sisällytä aikajana Dynamics 365 -sovelluksiin [Asiakaskortit-apuohjelmaratkaisun](customer-card-add-in.md) avulla.
 
-## <a name="define-an-activity"></a>Aktiviteetin määrittäminen
+## <a name="define-a-customer-activity"></a>Määritä asiakasaktiviteetti
 
 Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäärä**, jotta se voidaan sisällyttää asiakkaan aikajanaa. **Lisää aktiviteetti** -ohjausobjekti poistetaan käytöstä, jos kyseistä entiteettiä ei löydy.
 
@@ -39,7 +39,7 @@ Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäär�
 1. Kirjoita **Aktiviteettitiedot**-toiminnossa seuraavat tiedot:
 
    - **Aktiviteetin nimi**: Valitse aktiviteetille nimi.
-   - **Aktiviteetin entiteetti**: valitse tapahtuma-tai aktiviteettitietoja sisältävä entiteetti.
+   - **Activity entity**: valitse tapahtuma- tai aktiviteettitietoja sisältävä entiteetti.
    - **Perusavain**: Valitse kenttä, joka yksilöi tietueen. Siinä ei saa olla arvojen kaksoiskappaleita, tyhjiä arvoja eikä puuttuvia arvoja.
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Määritä aktiviteettitiedot: nimi, entiteetti ja perusavain.":::
@@ -48,9 +48,9 @@ Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäär�
 
 1. Valitse **Suhde**-vaiheessa **Lisää suhde**, jonka avulla aktiviteetin tiedot yhdistetään vastaavaan asiakastietueeseen. Tässä vaiheessa visualisoidaan entiteettien väliset yhteydet.  
 
-   - **Entiteetin viiteavain**: Aktiviteettientiteetin viitekenttä, jonka avulla luodaan suhde toiseen entiteettiin.
+   - **Viiteavain**: Aktiviteettientiteetin viitekenttä, jonka avulla luodaan suhde toiseen entiteettiin.
    - **Vastaanottajaentiteetin nimi**: Vastaava lähdeasiakasentiteetti, johon aktiviteettientiteetti on suhteessa. Voit liittää tietoja vain lähdeasiakasentiteetteihin, joita käytetään tietojen yhdistämisprosessissa.
-   - **Suhteen nimi**: entiteettien välisen suhteen osoittava nimi. Jos tämän aktiviteettientiteetin ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa.
+   - **Suhteen nimi**: Jos tämän aktiviteettikohteen ja valitun lähdeasiakasentiteetin välinen suhde on jo olemassa, suhteen nimi on vain luku -tilassa. Jos tällaista suhdetta ei ole, luodaan uusi suhde. Sen nimeksi tulee tähän ruutuun määritetty nimi.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Entiteettisuhteen määrittäminen.":::
 
@@ -90,7 +90,7 @@ Entiteetissä on oltava ainakin yksi määrite, jonka tyyppi on **Päivämäär�
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 
-## <a name="manage-existing-activities"></a>Aiemmin luotujen aktiviteettien hallinta
+## <a name="manage-existing-customer-activities"></a>Aiemmin luotujen asiakasaktiviteettien hallinta
 
 Siirry kohtaan **Tieto** > **Aktiviteetit**, kun haluat tarkastella tallennettuja aktiviteettejasi, niiden lähde-entiteettiä ja aktiviteettityyppiä ja sitä, sisältyvätkö ne asiakkaan aikajanalle. Aktiviteettiluetteloa voi lajitella minkä tahansa sarakkeen perustella. Hallittavan aktiviteetin voi etsiä myös hakuruutua käyttämällä.
 
@@ -116,9 +116,43 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla aktiviteetin.
 
      :::image type="content" source="media/Activity_Timeline3.PNG" alt-text="Määritä suodatusehdot suodatinpaneelin avulla.":::
 
-1. Voit poistaa suodattimia valitsemalla **Poista suodattimet** tai valitsemalla **Suodata** ja poistamalla suodattimen valintaruudun valinta.
-
 > [!NOTE]
 > Aktiviteettisuodattimet poistetaan, kun lähdet asiakasprofiilista. Ne on otettava käyttöön aina, kun avaat asiakasprofiilin.
+
+## <a name="define-a-contact-activity"></a>Määritä yhteyshenkilöaktiviteetti
+
+Yritystileille (B2B) yhteyshenkilöiden aktiviteetit voi siepata *ContactProfile*-entiteetin avulla. Näet tilin aktiviteetin aikajanalla sen yhteyshenkilön, joka oli vastuussa kustakin aktiviteetista. Useimmat vaiheet noudattavat asiakasaktiviteettien yhdistämismääritystä.
+
+   > [!NOTE]
+   > Yhteyshenkilötason aktiviteetin määrittämiseksi on luotava *ContactProfile*-entiteetti joko [yhtenäisenä yhteyshenkilöprofiilina ](data-unification-contacts.md)tai [semanttisen yhdistämismäärityksen](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping) kautta.
+   >
+   > Aktiviteettitietojen jokaiselle tietueelle on oltava sekä **AccountID**- että **ContactID**-määritteet.
+  
+1. Siirry kohtaan **Tiedot** > **Aktiviteetit**.
+
+1. Valitse **Lisää aktiviteetti**.
+
+1. Anna aktiviteetille nimi, valitse lähdeaktiviteettientiteetti ja valitse aktiviteettientiteetin perusavain.
+
+1. Luo **Suhteet**-vaiheessa epäsuora suhde aktiviteetin lähdetietojen ja asiakkaiden välille käyttämällä yhteyshenkilötietojasi välittävänä entiteettinä. Lisätietoja löytyy kohdasta [suorat ja epäsuorat suhdepolut](relationships.md#relationship-paths).
+   - Esimerkkinä *Ostot*-nimisen aktiviteetin suhde:
+      - **Ostojen lähdeaktiviteettitiedot** > **Yhteyshenkilötiedot** määritteessä **ContactID**
+      - **Yhteyshenkilön tiedot** > **Asiakkaan tiedot** määritteessä **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Esimerkki suhteen määrityksestä.":::
+
+1. Kun olet määrittänyt suhteet, valitse **Seuraava** ja viimeistele aktiviteettien yhdistämismääritykset. Aktiviteettien luonnin yksityiskohtaiset vaiheet ovat ohjeaiheessa [asiakasaktiviteetin määritteleminen](#define-a-customer-activity).
+
+1. Suorita aktiviteettien yhdistämismääritykset.
+
+1. Yhteyshenkilötason aktiviteettisi näkyvät nyt asiakkaan aikajanalla.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Lopullinen tulos yhteyshenkilöaktiviteettien määrittämisen jälkeen":::
+
+## <a name="contact-level-activity-timeline-filtering"></a>Yhteyshenkilötason aktiviteettiaikajanan suodatus
+
+Kun olet määrittänyt yhteyshenkilötason aktiviteettien yhdistämismäärityksen ja suorittanut sen, asiakkaiden aktiviteettiaikajana päivittyy. Se sisältää yhteyshenkilöiden tunnukset tai nimet *ContactProfile*-määritysten mukaisesti aktiviteetteja varten, joissa he ovat toimineet. Voit suodattaa aktiviteetteja aikajanan yhteyshenkilöiden mukaan nähdäksesi tietyt yhteyshenkilöt, joista olet kiinnostunut. Voit myös tarkastella kaikkia aktiviteetteja, joita ei ole delegoitu tietylle yhteyshenkilölle, valitsemalla **Aktiviteetit, joita ei ole yhdistetty yhteyshenkilöön.**
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="Yhteyshenkilötason aktiviteetteja varten käytettävissä olevat suodatusvaihtoehdot.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

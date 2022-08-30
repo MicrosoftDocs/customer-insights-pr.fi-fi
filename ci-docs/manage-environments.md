@@ -1,7 +1,7 @@
 ---
-title: 'Ohje: Ympäristöjen hallinta'
+title: Ympäristöjen hallinta
 description: Opettele hallitsemaan aiemmin luotuja Customer Insights -ympäristöjä järjestelmänvalvojana.
-ms.date: 05/31/2022
+ms.date: 08/15/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 ms.reviewer: mhart
@@ -11,20 +11,20 @@ manager: shellyha
 searchScope:
 - ci-system-about
 - customerInsights
-ms.openlocfilehash: fc3b3f404cf0ac84c782778414494289c803babe
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8b4a88bdb75c6e638a76c39d18647681ad4556d7
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081190"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304276"
 ---
-# <a name="how-to-manage-environments"></a>Ohje: Ympäristöjen hallinta
+# <a name="manage-environments"></a>Ympäristöjen hallinta
 
-Järjestelmänvalvojat [luovat](create-environment.md) ja hallitsevat ympäristöjä. He voivat muuttaa joitakin asetuksia nykyisissä ympäristöissä. Liiketoiminta-, tyyppi-, alue-, tallennusvaihtoehto- ja Dataverse-asetukset korjataan ympäristön luomisen jälkeen. Jos haluat muuttaa näitä asetuksia, palauta ympäristö alkutilaan tai luo uusi ympäristö.
+Järjestelmänvalvojat [luovat](create-environment.md) ja hallitsevat ympäristöjä. He voivat muuttaa joitakin asetuksia nykyisissä ympäristöissä. Liiketoiminta-, tyyppi-, alue-, tallennusvaihtoehto- ja Dataverse-asetukset korjataan ympäristön luomisen jälkeen. Jos haluat muuttaa näitä asetuksia, [palauta ympäristö alkutilaan](#reset-an-existing-environment-preview) tai [luo uusi ympäristö](create-environment.md).
 
 ## <a name="edit-an-existing-environment"></a>Aiemmin luodun ympäristön muokkaaminen
 
-Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
+Muokkaa aiemmin luodun ympäristön tietoja, kuten nimeä tai oletusympäristön asetusta.
 
 1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 
@@ -34,7 +34,7 @@ Voit muokata joitakin aiemmin luotujen ympäristöjen tietoja.
 
 1. Voit päivittää ympäristön asetuksia **Muokkaa ympäristöä** -ruudussa.
 
-Aloittaaksesi uuden ympäristön, katso kohtaa [Uuden ympäristön luominen](create-environment.md).
+1. Valitse **Tarkasta ja viimeistele** ja sitten **Päivitä** ottaaksesi muutokset käyttöön.
 
 ## <a name="change-the-owner-of-an-environment"></a>Ympäristön omistajan muuttaminen
 
@@ -52,19 +52,19 @@ Useilla käyttäjillä voi olla järjestelmänvalvojan oikeudet, mutta vain yksi
 
 ## <a name="claim-ownership-of-an-environment"></a>Ympäristön omistajuuden vaatiminen
 
-Jos ympäristön omistaja poistetaan tai peruutetaan, ympäristöllä ei ole omistajaa. Kuka tahansa, jolla on järjestelmänvalvojan oikeudet, voi vaatia omistajuuden ja hänestä voi tulla uusi omistaja. Hän voi jatkaa ympäristön omistajana tai [vaihtaa omistuksen toiselle järjestelmänvalvojalle](#change-the-owner-of-an-environment).
+Jos ympäristön omistaja poistetaan tai peruutetaan, ympäristöllä ei ole omistajaa. Kuka tahansa, jolla on järjestelmänvalvojan oikeudet, voi vaatia omistajuuden ja hänestä voi tulla uusi omistaja. Omistava järjestelmänvalvoja voi jatkaa ympäristön omistajana tai [vaihtaa omistuksen toiselle järjestelmänvalvojalle](#change-the-owner-of-an-environment).
 
 Vaadi omistus valitsemalla **Ota omistus** -painike, joka näkyy jokaisen Customer Insights -sivun yläosassa, kun alkuperäinen omistaja on lähtenyt organisaatiosta.
 
 ## <a name="reset-an-existing-environment-preview"></a>Nollaa aiempi ympäristö (esiversio)
 
-Ympäristön omistajana voit nollata ympäristön tyhjään tilaan, jos haluat poistaa kaikki määritykset ja poistaa käytetyt tiedot.
+Ympäristön omistajana voit nollata ympäristön tyhjään tilaan, jos haluat poistaa kaikki määritykset ja poistaa sisäänotetut tiedot.
 
 1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 
 1. Valitse ympäristö, jonka haluat palauttaa, ja valitse kolme pystysuuntaista pistettä (&vellip;).
 
-1. Valitse **Palauta**-vaihtoehto.
+1. Valitse **Nollaa (esiversio)**.
 
    :::image type="content" source="media/reset-environment.png" alt-text="Ympäristön palauttaminen ohjausta varten.":::
 
@@ -74,19 +74,19 @@ Ympäristön omistajana voit nollata ympäristön tyhjään tilaan, jos haluat p
 
 ## <a name="delete-an-existing-environment"></a>Olemassa olevan ympäristön poistaminen
 
-Ympäristön omistajana voit poistaa ympäristön, jonka järjestelmänvalvoja olet.
+Ympäristön omistajana voit poistaa sen.
+
+> [!IMPORTANT]
+> Ympäristön poistaminen ei poista yhteyttä Dataverse-ympäristöön. Jos aiot yhdistää saman Dataverse-ympäristön uuteen Customer Insights -ympäristöön tulevaisuudessa, sinun täytyy [poistaa tämä yhteys Dataverse-ympäristöön](customer-insights-dataverse.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 1. Valitse sovelluksen otsikossa **Ympäristö**-valitsin.
 
-1. Valitse ympäristö, jonka haluat palauttaa, ja valitse kolme pystysuuntaista pistettä (&vellip;). 
+1. Valitse ympäristö, jonka haluat poistaa, ja valitse kolme pystysuuntaista pistettä (&vellip;). 
 
-1. Valitse **Poista**-vaihtoehto.
+1. Valitse **Poista**.
 
    :::image type="content" source="media/delete-environment.png" alt-text="Poistettavan ympäristön ohjausobjekti.":::
 
 1. Vahvista poisto antamalla ympäristön nimi ja valitsemalla **Poista**.
-
-> [!IMPORTANT]
-> Ympäristön poistaminen ei poista yhteyttä Dataverse-ympäristöön. Jos aiot yhdistää saman Dataverse-ympäristön uuteen Customer Insights -ympäristöön tulevaisuudessa, sinun täytyy poistaa tämä yhteys. Lisätietoja [Aiemmin luodun Dataverse-ympäristön yhteyden poistamisesta](customer-insights-dataverse.md#remove-an-existing-connection-to-a-dataverse-environment).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

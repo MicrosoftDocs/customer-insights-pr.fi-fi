@@ -1,7 +1,7 @@
 ---
 title: Viennit (esiversio) – yleiskatsaus
 description: Jaa tietoja hallitsemalla vientejä.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245323"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304055"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
@@ -28,7 +28,7 @@ ms.locfileid: "9245323"
 Vienneissä on kaksi päätyyppiä:  
 
 - **Lähtevät tiedot -vientien** avulla voit viedä kaikkien tyyppien entiteettejä, jotka ovat käytössä Customer Insightsissa. Vietäväksi valittujen entiteettien mukana viedään kaikki tietokentät, metatiedot, rakenteet ja yhdistämistiedot.
-- **Segmenttivientien** avulla voit viedä segmenttientiteettejä Customer Insightsista. Segmentit edustavat asiakasprofiilien luetteloa. Kun määrität vientiä, valitse sisältyvät tietokentät sen mukaan, mihin kohdejärjestelmään tiedot viedään.
+- **Segmenttivientien** avulla voit viedä segmenttientiteettejä Customer Insightsista. Yksittäisille kuluttajille (B2C) segmentit edustavat luetteloa asiakasprofiileista. Yrityksille (B2B) [segmentit voivat edustaa tili- tai yhteyshenkilöluetteloa](segment-builder.md#create-a-new-segment-with-segment-builder). Kun määrität vientiä, valitse sisältyvät tietokentät sen mukaan, mihin kohdejärjestelmään tiedot viedään.
 
 ### <a name="export-segments"></a>Segmenttien vienti
 
@@ -39,13 +39,14 @@ Useimmat vientivaihtoehdot tukevat molempia ympäristöjä. Segmenttien viemisel
 - Yksittäisten asiakkaiden ympäristöissä segmentit perustuvat *yhtenäinen asiakasprofiili* -entiteettiin. Kaikki segmentit, jotka vastaavat kohdejärjestelmien vaatimuksia (esimerkiksi sähköpostiosoite), voidaan viedä.
 
 **Segmenttien vienti yritystiliympäristöissä (yritystenvälinen)**  
-- Yritystilien ympäristöjen segmentit perustuvat *Asiakas*-entiteettiin. Jotta tilin segmenttejä voidaan viedä sellaisenaan, kohdejärjestelmän on tuettava puhtaita tilin segmenttejä. Näin on [LinkedIn](export-linkedin-ads.md)issä, kun valitset **yritys**-vaihtoehdon määrittäessäsi vientiä.
-- Kaikki muut kohdejärjestelmät edellyttävät yhteyshenkilöentiteetin kenttiä. Jotta tilin segmentit voivat hakea tietoja liittyvistä yhteyshenkilöistä, segmentin määrityksen on projisoitava yhteyshenkilöentiteetin määritteet. Lisätietoja [segmenttien ja projektimääritteiden määrittämisestä](segment-builder.md).
+- Yritystilien ympäristöjen segmentit perustuvat *tili*-entiteettiin tai *yhteyshenkilö*-entiteettiin. Jotta tilin segmenttejä voidaan viedä sellaisenaan, kohdejärjestelmän on tuettava puhtaita tilin segmenttejä. Näin on [LinkedIn](export-linkedin-ads.md)issä, kun valitset **yritys**-vaihtoehdon määrittäessäsi vientiä.
+- Kaikki muut kohdejärjestelmät edellyttävät yhteyshenkilöentiteetin kenttiä.
+- Kun segmenttityyppejä (yhteyshenkilöitä ja tilejä) on kaksi, Customer Insights määrittää automaattisesti, minkä tyyppisiä segmenttejä voidaan viedä kohdejärjestelmän perusteella. Esimerkiksi yhteyshenkilöihin kohdistavassa kohdejärjestelmässä, kuten Mailchimp-järjestelmässä, Customer Insights sallii vain yhteyshenkilösegmenttien valitsemisen vietäväksi.
 
 **Segmenttien viennin rajoitukset**  
 - Kolmannen osapuolen kohdejärjestelmät voivat rajoittaa vietävien asiakasprofiilien määrää. 
 - Yksittäisten asiakkaiden kohdalla näytetään segmentin jäsenten todellinen määrä, kun valitset segmentin vietäväksi. Jos segmentti on liian suuri, näyttöön tulee varoitus. 
-- Yritystilien kohdalla näet segmentin tilien määrän. Mahdollisesti projisoitavien yhteyshenkilöiden määrää ei kuitenkaan näy. Joissakin tapauksissa tämä voi johtaa siihen, että vietävässä segmentissä on enemmän asiakasprofiileja kuin mitä kohdejärjestelmä sallii. Jos kohdejärjestelmän rajoitukset ylittyvät, vienti ohitetaan.
+- Yritystileille näet tilien tai yhteyshenkilöiden määrän segmentin mukaan. Jos segmentti on liian suuri, näyttöön tulee varoitus. Jos kohdejärjestelmän rajoitukset ylittyvät, vienti ohitetaan.
 
 ## <a name="set-up-a-new-export"></a>Määritä uusi vienti
 
@@ -110,6 +111,20 @@ Jos haluat viedä tietoja odottamatta ajoitettua päivitystä, siirry kohtaan **
 
 - Jos haluat suorittaa kaikki viennit, valitse komentopalkissa **Suorita kaikki**. Toiminto suorittaa vain viennit, joilla on aktiivisia aikatauluja. Jos haluat suorittaa viennin, joka ei ole aktiivinen, suorita yksi vienti.
 - Jos haluat suorittaa yksittäisen viennin, valitse se luettelosta ja valitse komentopalkissa **Suorita**.
+
+## <a name="troubleshooting"></a>Vianmääritys
+
+### <a name="segment-not-eligible-for-export"></a>Segmentti ei ole vientikelpoinen
+
+**Ongelma** Yritystilien ympäristössä vienti epäonnistuu ja näyttöön tulee seuraava virhesanoma: "Seuraava segmentti ei ole kelpaa seuraavaan vientikohteeseen: {segmentin nimi}. Valitse vain ContactProfile-tyypin segmentit ja yritä uudelleen."
+
+**Ratkaisu** Tilisegmenttien lisäksi päivitettiin yritystilien Customer Insights -ympäristöt tukemaanyhteyshenkilösegmenttejä. Tämän muutoksen vuoksi yhteyshenkilötietoja tarvitsevat viennit toimivat vain yhteyshenkilöihin perustuvien segmenttien kanssa.
+
+1. [Luo yhteyshenkilöihin perustuva segmentti](segment-builder.md), joka vastaa aiemmin käytettyä segmenttiä.
+
+1. Kun yhteyshenkilösegmentti on suoritettu, muokkaa vastaavaa vientiä ja valitse uusi segmentti.
+
+1. Valitse **Tallenna**, jos haluat tallentaa määrityksen tai **Tallenna ja suorita** tämän viennin testaamiseksi heti.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

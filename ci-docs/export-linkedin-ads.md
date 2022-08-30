@@ -1,19 +1,19 @@
 ---
 title: Segmenttien vieminen LinkedIniin (esiversio)
 description: Tietoja yhteyden määrittämisestä ja viennistä LinkedIniin.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 4c3928e05db0ebda262b4ad3e928ce85f70035b9
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196804"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304699"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Segmenttien vieminen LinkedIniin (esiversio)
 
@@ -24,7 +24,7 @@ Vie yhdistettyjen asiakasprofiilien segmentit LinkedIn Adsiin ja luo vastaavat k
 - [LinkedIn Campaign Manager -tili](https://business.linkedin.com/marketing-solutions/ads) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 - [LinkedIn Campaign Manager -tilitunnus](https://www.linkedin.com/help/lms/answer/a424270).
 - [Määritetyt segmentit](segments.md) Customer Insightsissa.
-- Vietyjen segmenttien yhtenäistetyissä asiakasprofiileissa on sähköpostiosoitetta vastaava kenttä.
+- Viedyt segmentit tarvitsevat vähintään yhden tietyn kentän sen mukaan, valitsetko [yhteyshenkilöön kohdistamisen](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) vai [yritykseen kohdistamisen](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) LinkedInissä. Mahdolliset kentät näkyvät [viennin määrittämisen](#configure-an-export) yhteydessä **Tietojen vastaavuus** -vaiheessa.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 

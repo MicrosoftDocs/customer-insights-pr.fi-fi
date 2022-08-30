@@ -2,7 +2,7 @@
 title: Tietojen yhdistämisen yhtenäisten asiakaskenttien avulla
 description: Yhtenäisten asiakasprofiilien luominen yhdistämällä entiteettejä.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213578"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304009"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Tietojen yhdistämisen yhtenäisten asiakaskenttien avulla
+# <a name="unify-customer-fields"></a>Yhdenmukaista asiakaskentät
 
-Valitse yhdistämisprosessin tässä vaiheessa yhdistetyn profiilin entiteettiin yhdisteltävat määritteet tai sulje niitä pois. Jos esimerkiksi kolmella entiteetillä on sähköpostitietoja, haluat ehkä säilyttää kaikki kolme erillistä sähköpostikenttää tai yhdistää ne yhdeksi yhdistetyn profiilin sähköpostikentäksi. Järjestelmä yhdistää automaattisesti jotkin määritteet. Voit luoda vakaita ja yksilöllisiä asiakastunnuksia ja ryhmitellä toisiinsa liittyviä profiileja klusteriksi.
+Valitse yhdistämisprosessin tässä vaiheessa yhdistetyn profiilin entiteettiin yhdisteltävat määritteet tai sulje niitä pois. Jos esimerkiksi kolmella entiteetillä on sähköpostitietoja, haluat ehkä säilyttää kaikki kolme erillistä sähköpostikenttää tai yhdistää ne yhdeksi yhdistetyn profiilin sähköpostikentäksi. Järjestelmä yhdistää automaattisesti jotkin määritteet. Voit luoda vakaita ja yksilöllisiä asiakastunnuksia. Yksittäisille asiakkaille voit ryhmitellä liittyvät profiilit klusteriksi.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Tietojen yhdistämisprosessin yhdistämissivu, jossa on taulukossa yhdistettyjä kenttiä, jotka määrittävät yhtenäisen asiakasprofiilin.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Tietojen yhtenäistämisprosessin Yhdenmukaista asiakaskentät -sivu, jossa on taulukossa yhdistettyjä kenttiä, jotka määrittävät yhtenäisen asiakasprofiilin.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Tarkista ja päivitä asiakasprofiilin kenttiä
 
@@ -47,7 +47,7 @@ Valitse yhdistämisprosessin tässä vaiheessa yhdistetyn profiilin entiteettiin
 
 1. Voit myös [luoda asiakastunnuksen määrityksen](#configure-customer-id-generation).
 
-1. Vaihtoehtoisesti voit [ryhmitellä profiileja kotitalouksiksi tai klustereiksi](#group-profiles-into-households-or-clusters).
+1. Vaihtoehtoisesti voit B2C-tilanteessa [ryhmitellä profiileja kotitalouksiksi tai klustereiksi](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Seuraava vaihe: Tarkista yhdistäminen](review-unification.md)
@@ -161,7 +161,7 @@ Määrittämällä vakaan asiakastunnuksen voit välttää tämän käyttäytymi
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Profiilien ryhmitteleminen kotitalouksiksi tai klustereiksi
 
-Voit määrittää sääntöjä, jotka ryhmittelevät liittyvät profiilit klusteriksi. Käytettävissä on tällä hetkellä kahdentyyppisiä klustereita: kotitalousklusterit ja mukautetut klusterit. Järjestelmä valitsee automaattisesti kotitalouden ennalta määritetyin säännöin, jos *Asiakas*-entiteetti sisältää semanttiset kentät *Person.LastName* ja *Location.Address*. Voit myös luoda klusterin omilla säännöilläsi ja ehdoillasi, samoin kuin [vastaavuussäännöissä](match-entities.md#define-rules-for-match-pairs).
+Yksittäisille asiakkaille voit määrittää sääntöjä, jotka ryhmittelevät liittyvät profiilit klusteriksi. Käytettävissä on tällä hetkellä kahdentyyppisiä klustereita: kotitalousklusterit ja mukautetut klusterit. Järjestelmä valitsee automaattisesti kotitalouden ennalta määritetyin säännöin, jos *Asiakas*-entiteetti sisältää semanttiset kentät *Person.LastName* ja *Location.Address*. Voit myös luoda klusterin omilla säännöilläsi ja ehdoillasi, samoin kuin [vastaavuussäännöissä](match-entities.md#define-rules-for-match-pairs).
 
 1. Valitse **Lisäasetukset** > **Luo klusteri**.
 
