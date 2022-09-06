@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea21163d7dd05370de28ca8340ae9583846adb26
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d20d57e9b7724e9921f9341eeaa39141b4555ff1
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246058"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387245"
 ---
 # <a name="configure-security-settings"></a>Määritä tietoturva-asetukset
 
@@ -23,7 +23,7 @@ Hallitse ohjelmointirajapinnan avaimia, käytä asiakastietoja ja määritä Azu
 
 Tarkastele ja hallitse avaimia, joilla voit käyttää [Customer Insights -ohjelmointirajapintoja](apis.md) ympäristön tietojen kanssa.
 
-1. Siirry kohtaan **Järjestelmä** > **Tietoturva** ja valitse **Ohjelmointirajapinnat**-välilehti.
+1. Siirry kohtaan **Järjestelmänvalvoja** > **Suojaus** ja valitse **Ohjelmointirajapinnat**-välilehti.
 
 1. Jos ympäristön ohjelmointirajapintaa ei ole määritetty, valitse **Ota käyttöön**. Tai, jos haluat estää ympäristön ohjelmointirajapinnan käytön, valitse **Poista käytöstä** ja vahvista.
 

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245921"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352797"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Diagnostiikkalokien vieminen (esiversio)
 
@@ -36,8 +36,8 @@ Customer Insights lähettää seuraavat tapahtumalokit:
 
 - Aktiivinen [Azure-tilaus](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - [Järjestelmänvalvojan](permissions.md#admin) oikeudet Customer Insightsissa.
+- Kelvollinen resurssi Azuressa, joka noudattaa Azure Storagen, Azuren tapahtumakeskuksen tai Azure Log Analyticsin [kohdevaatimuksia](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements).
 - [Osallistuja- ja Käyttäjän käyttöoikeuksien järjestelmänvalvoja -rooli](/azure/role-based-access-control/role-assignments-portal) Azuren kohderesurssissa. Resurssi voi olla Azure Data Lake Storage -tili, Azure-tapahtumakeskus tai Azure Log Analytics -työtila. Tämä oikeus on pakollinen määritettäessä vianmääritysasetuksia Customer Insightsissa, mutta sitä voidaan muuttaa onnistuneen asennuksen jälkeen.
-- Azure Storagen, Azure-tapahtumakeskuksen tai Azure Log Analyticsin [kohdevaatimukset](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) pitää olla täytettynä.
 - Vähintään **Lukija**-rooli resurssiryhmässä, johon resurssi kuuluu.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Diagnostiikan määritykset Azure Monitorin avulla

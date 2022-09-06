@@ -1,19 +1,19 @@
 ---
 title: Dynamics 365 Customer Insightsin uudet ominaisuudet
 description: Tietoja uusista ominaisuuksista, parannuksista ja virheiden korjauksista.
-ms.date: 08/03/2022
+ms.date: 08/31/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246007"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387290"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -23,6 +23,24 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2022-updates"></a>Elokuun 2022 päivitykset
+
+Elokuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="contact-unification-in-b-to-b-environments"></a>Yhteyshenkilöiden yhdistäminen B2B-ympäristöissä
+
+Customer Insightsin B2B-ympäristöt tukevat nyt parannettua tietojen yhdistämiskokemusta.
+
+Nyt voit yhdistää yhteyshenkilöitä tilien lisäksi, jotta saat kokonaisnäkymän liiketoiminnan yhteyshenkilöistäsi. Yhdistetyt yhteyshenkilöt liitetään yhdistettyihin tileihin, ja ne näkyvät nyt asiakaskortissa. 
+
+Lisätietoja on kohdassa [Yhdistetyn yhteyshenkilöprofiilin luonti](data-unification-contacts.md).
+
+### <a name="create-and-export-of-segments-based-on-unified-contacts"></a>Yhdistettyihin yhteyshenkilöihin perustuvien segmenttien luominen ja vieminen
+
+Uuden yhteyshenkilön yhdistymisen ansiosta voit luoda yhteyshenkilöiden segmenttejä joko yhteyshenkilöiden, tilien tai molempien perusteella. Nämä segmentit voidaan viedä aktivointia varten muihin palveluihin.
+
+Lisätietoja on kohdassa [Vientien yleiskatsaus](export-destinations.md).
 
 ## <a name="july-2022-updates"></a>Heinäkuun 2022 päivitykset
 
