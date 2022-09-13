@@ -1,7 +1,7 @@
 ---
 title: Asiakkaan, tilin tai yhteyshenkilön yhtenäistämisasetusten päivittäminen
 description: Voit päivittää sääntöjen kaksoiskappaleita, vastaavuussääntöjä tai yhtenäisiä kenttiä asiakkaan tai tilin yhdistämisasetuksissa.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304331"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392467"
 ---
 # <a name="update-unification-settings"></a>Yhdistysasetusten päivittäminen
 
@@ -38,7 +38,7 @@ Voit tarkastella tai muuttaa yhtenäisten profiilien yhdistämisasetuksia toimim
    > **Vastaavat ehdot** -ruutu näkyy vain, jos valittuna on useita entiteettejä.
 
 1. Valitse, mitä haluat päivittää:
-   - [Lähdekentät](#edit-source-fields), joiden avulla voit lisätä entiteettejä tai määritteitä tai muuttaa määritetyyppejä.
+   - [Lähdekentät](#edit-source-fields), joiden avulla voit lisätä entiteettejä tai määritteitä tai muuttaa määritetyyppejä. Lisätietoja määritteen poistamisesta on ohjeaiheessa [Yhtenäisen kentän poistaminen ](#remove-a-unified-field). Lisätietoja entiteetin poistamisesta on ohjeaiheessa [Yhtenäisen entiteetin poistaminen](#remove-a-unified-entity).
    - [Tietueiden kaksoiskappaleet](#manage-deduplication-rules) kaksoiskappaleiden poistosääntöjen tai yhdistämisasetusten hallintaa varten.
    - [Ehtojen täsmäytäminen](#manage-match-rules) kahden tai usean entiteettien vastaavuussääntöjen päivittämiseksi.
    - [Yhdistettyjen asiakaskenttien](#manage-unified-fields) yhdisteleminen tai poissulkeminen. Voit myös ryhmitellä toisiinsa liittyviä profiileja klusteriksi.
@@ -53,8 +53,6 @@ Voit tarkastella tai muuttaa yhtenäisten profiilien yhdistämisasetuksia toimim
 
 ## <a name="edit-source-fields"></a>Muokkaa lähdekenttiä
 
-Määritettä tai entiteettiä ei voi poistaa, jos se on jo yhdistetty.
-
 1. Valitse **Muokkaa** **Lähdekentät**-ruudussa.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Näyttökuva lähdekenttien sivusta, jossa näkyy perusavaimien, yhdistettyjen ja yhdistämättömien kenttien määrä":::
@@ -66,6 +64,80 @@ Määritettä tai entiteettiä ei voi poistaa, jos se on jo yhdistetty.
 1. Vaihtoehtoisesti voit muuttaa entiteetin perusavainta, määritetyyppejä ja ottaa **älykkään yhdistämismäärityksen** käyttöön tai poistaa sen käytöstä. Lisätietoja on kohdassa [Lähdekenttien valinta](map-entities.md).
 
 1. Valitse **Seuraava**, jos haluat tehdä muutoksia kaksoiskappaleiden poistosääntöihin, tai valitse **Tallenna ja sulje** ja palaa kohtaan [Päivitä yhdistämisasetukset](#update-unification-settings).
+
+### <a name="remove-a-unified-field"></a>Poista yhdistetty kenttä
+
+Jos haluat poistaa yhtenäisen kentän, kenttä on poistettava riippuvuuksista, kuten segmenteistä, mittareista, rikastuksista tai suhteista.
+
+1. Kun kaikki kentän riippuvuudet on poistettu, siirry kohtaan **Tiedot** > **Yhdistä**.
+
+1. Valitse **Muokkaa** **Yhdistetyt asiakaskentät**-ruudussa.
+
+1. Valitse kaikki kentän esiintymät ja valitse sitten **Jätä pois**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Näyttökuva Yhdistetyt kentät -sivusta, jossa näkyvät valitut kentät ja Jätä pois -painike":::
+
+1. Vahvista valitsemalla **Valmis** ja sitten **Tallenna ja sulje**.
+
+   > [!TIP]
+   > Jos näyttöön tulee teksti "Ei voi tallentaa yhdistämistä. Määritettyä resurssia ei voi muokata tai poistaa myöhempien riippuvuuksien vuoksi", kenttää käytetään edelleen prosessin loppupään riippuvuudessa.
+
+1. Jos kenttää käytetään tietueiden kaksoiskappaleiden tai toisiaan vastaavien ehtojen säännössä, suorita seuraavat vaiheet. Muussa tapauksessa siirry seuraavaan vaiheeseen.
+   1. Valitse **Muokkaa** **Kaksoiskappaleet**-ruudussa.
+   1. Poista kenttä kaikista säännöistä, joissa sitä käytetään, jos niitä on, ja valitse sitten **Seuraava**.
+   1. Poista **Vastaavuusehdot**-sivulla kenttä kaikista säännöistä, joissa sitä käytetään, jos niitä on, ja valitse sitten **Tallenna ja sulje**.
+   1. Valitse **Yhdistä** > **Yhdistä asiakasprofiilit ja riippuvuudet**. Odota, että yhdistäminen on valmis, ennen kuin siirryt seuraavaan vaiheeseen.
+
+1. Valitse **Muokkaa** **Lähdekentät**-ruudussa.
+
+1. Valitse **Valitse entiteetit ja kentät** ja tyhjennä kunkin kentän esiintymän vieressä olevat valintaruudut.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Näyttökuva Entiteettien ja kenttien valinta -valintaikkunasta, jossa näkyvät tyhjät valintaruudut":::
+
+1. Valitse **Käytä**.
+
+1. Valitse **Tallenna ja sulje**.
+
+1. Valitse **Yhdistä** > **Yhdistä asiakasprofiileja ja riippuvuuksia**, jotta voit päivittää yhtenäisen profiilin.
+
+### <a name="remove-a-unified-entity"></a>Poista yhdistetty entiteetti
+
+Jos haluat poistaa yhtenäisen entiteetin, entiteetti on poistettava riippuvuuksista, kuten segmenteistä, mittareista, rikastuksista tai suhteista.
+
+1. Kun kaikki entiteetin riippuvuudet on poistettu, siirry kohtaan **Tiedot** > **Yhdistä**.
+
+1. Valitse **Muokkaa** **Yhdistetyt asiakaskentät**-ruudussa.
+
+1. Valitse entiteetin kaikki kentät ja valitse sitten **Jätä pois**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Näyttökuva Yhdistetyt kentät -sivusta, jossa näkyvät kaikki entiteetin kentät valittuna ja Jätä pois -painike":::
+
+1. Vahvista valitsemalla **Valmis** ja sitten **Tallenna ja sulje**.
+
+   > [!TIP]
+   > Jos näyttöön tulee teksti "Ei voi tallentaa yhdistämistä. Määritettyä resurssia ei voi muokata tai poistaa myöhempien riippuvuuksien vuoksi", entiteettiä käytetään edelleen prosessin loppupään riippuvuudessa.
+
+1. Valitse **Muokkaa** **Kaksoiskappaleet**-ruudussa.
+
+1. Poista kaikki entiteetin mahdolliset säännöt ja valitse sitten **Seuraava**.
+
+1. Valitse **Vastaavuusehdot**-sivulla entiteetti ja valitse sitten **Poista**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Näyttökuva vastaavuusehdoista ja entiteetistä valittuna ja Poista-painike":::
+
+1. Valitse **Tallenna ja sulje**.
+
+1. Valitse **Muokkaa** **Lähdekentät**-ruudussa.
+
+1. Valitse **Valitse entiteetit ja kentät** ja tyhjennä entiteetin vieressä oleva valintaruutu.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Näyttökuva Entiteettien ja kenttien valinta -valintaikkunasta, jossa näkyvät entiteetin valintaruutu tyhjänä":::
+
+1. Valitse **Käytä**.
+
+1. Valitse **Tallenna ja sulje**.
+
+1. Valitse **Yhdistä** > **Yhdistä asiakasprofiileja ja riippuvuuksia**, jotta voit päivittää yhtenäisen profiilin.
 
 ## <a name="manage-deduplication-rules"></a>Kaksoiskappaleiden poistamissääntöjen hallinta
 

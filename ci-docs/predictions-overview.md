@@ -8,12 +8,12 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: a87af80fa713a1ac70493345c0c920e416692b0f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 32240c8c43751d8514d38b392f23ef4138d50ee2
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081200"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411827"
 ---
 # <a name="predictions-overview"></a>Ennusteiden yleiskatsaus
 
@@ -39,14 +39,11 @@ Helpoin tapa aloittaa tietojen ennustaminen on esimääritetyt mallit, joita kut
 
 > [!TIP]
 > On suositeltavaa päivittää vakiomallit säännöllisesti päivitetyillä tiedoilla, jotta ne ilmoittavat yrityksen käyttötapauksen tarkasti. Tiedot päivittyvät tilapäisinä, kun järjestelmä käyttää uusia tai päivitettyjä tietolähteitä. Mallit kuitenkin vain päivittävät pisteet tässä tapauksessa ja jatkavat nykyisten koulutustietojen käyttöä.
-> 
+>
 > Voit määrittää **päivitysaikataulun** määrittämällä mallin uudelleenkoulutusaikataulun määrityskokemuksessa. Malli uudelleenkouluttaa ja uudelleenpisteyttää tämän aikataulun mukaan, jota voit muuttaa milloin tahansa.
-
 
 ## <a name="azure-machine-learning-integration"></a>Azuren automaattianalyysipalvelujen integraatio
 
 Jos organisaatio käyttää jo koneoppimisen skenaarioita, jotka perustuvat Azure-koneoppimisen kokeiluihin, Customer Insightsin mukautetut mallit -ominaisuus auttaa yhdistämään pisteet. Luo työnkulkuja, jotka auttavat valitsemaan tiedot, joista haluat saada tietoja, ja yhdistä tulokset yhtenäisiksi asiakasprofiileiksi. Lisätietoja on aiheessa [Mukautetut koneoppimismallit](custom-models.md).
 
-## <a name="ai-builder-prediction"></a>AI Builder -ennuste
-
-Joskus tietojoukot ovat puutteellisia ja joitakin arvoja puuttuu. Customer Insights voi auttaa ennustamaan puuttuvat arvot Asiakas-entiteetistä ja segmentistä. Lisätietoja on ohjeaiheessa [Osittaisten tietojen täydentäminen ennusteilla](predictions.md).
+[!INCLUDE [footer-include](includes/footer-banner.md)]

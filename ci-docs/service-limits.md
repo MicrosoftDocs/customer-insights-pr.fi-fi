@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 421e1aa41a54a4b8c34ac27fc7c02e510d2bb588
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387152"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411736"
 ---
 # <a name="service-limits-in-customer-insights"></a>Palvelun rajoitukset Customer Insightsissa
 
@@ -23,7 +23,7 @@ ms.locfileid: "9387152"
 
 | Area  | Rajoitukset  | Huomautuksia |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](segments.md), [mittareiden](measures.md) ja [ennusteiden](predictions.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
+| Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](segments.md), [mittareiden](measures.md) ja [ennusteiden](predictions-overview.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
 | Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](segments.md) tai [mittareita](measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
 
 ## <a name="fair-scheduling-of-jobs"></a>Töiden oikeudenmukainen aikatauluttaminen

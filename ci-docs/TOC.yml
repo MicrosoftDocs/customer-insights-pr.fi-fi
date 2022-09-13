@@ -160,8 +160,6 @@
           href: sentiment-analysis.md
         - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
           href: custom-models.md
-        - name: Osittain puuttuvien tietojen täydentäminen
-          href: predictions.md
     - name: Esimerkkioppaat
       items:
         - name: CLV-ennusteen malliopas

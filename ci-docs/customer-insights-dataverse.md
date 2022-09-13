@@ -1,7 +1,7 @@
 ---
 title: Käytä Customer Insights -tietoja Microsoft Dataversessä
 description: Opettele yhdistämään Customer Insights ja Microsoft Dataverse ja ymmärtämään Dataverseen viedyt tulosentiteetit.
-ms.date: 08/15/2022
+ms.date: 08/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 0d536259f310b41fe12922baeebdc4569937db08
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
+ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9303825"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9424305"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
@@ -136,6 +136,7 @@ Jos yhteyden poistaminen epäonnistuu riippuvuuksien vuoksi, myös riippuvuudet 
 Jotkin Customer Insightsin tulosentiteetit ovat käytettävissä taulukoina Dataversessä. Alla olevat osat kuvaavat näiden taulukoiden odotettua rakennetta.
 
 - [CustomerProfile](#customerprofile)
+- [ContactProfile](#contactprofile)
 - [AlternateKey](#alternatekey)
 - [UnifiedActivity](#unifiedactivity)
 - [CustomerMeasure](#customermeasure)
@@ -145,21 +146,46 @@ Jotkin Customer Insightsin tulosentiteetit ovat käytettävissä taulukoina Data
 
 ### <a name="customerprofile"></a>CustomerProfile
 
-Tämä taulukko sisältää Customer Insightsin yhtenäisen asiakasprofiilin. Unified customer profile -rakenne määräytyy tietojenyhdistämisprosessissa käytettyjen entiteettien ja määritteiden mukaan. Asiakasprofiilirakenne sisältää yleensä [CustomerProfilen Common Data Model](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) -määrityksen määritteiden alijoukon.
+Tämä taulukko sisältää Customer Insightsin yhtenäisen asiakasprofiilin. Unified customer profile -rakenne määräytyy tietojenyhdistämisprosessissa käytettyjen entiteettien ja määritteiden mukaan. Asiakasprofiilirakenne sisältää yleensä [CustomerProfilen Common Data Model](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile) -määrityksen määritteiden alijoukon. B2B-skenaariossa asiakasprofiili sisältää yhtenäisiä tilejä, ja rakenne sisältää yleensä [Asiakkaan Common Data Model -määrityksen](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/account) määritteiden alijoukon.
+
+### <a name="contactprofile"></a>ContactProfile
+
+ContactProfile sisältää yhteyshenkilöä koskevat yhtenäiset tiedot. Yhteyshenkilöt ovat [yksityishenkilöitä, jotka on yhdistetty tiliin](data-unification-contacts.md) B2B-skenaariossa.
+
+| Column                       | Type                | Description     |
+| ---------------------------- | ------------------- | --------------- |
+|  BirthDate            | DateTime       |  Yhteyshenkilön syntymäaika               |
+|  City                 | Viesti |  Yhteyshenkilön osoitteen paikkakunta               |
+|  ContactId            | Viesti |  Yhteyshenkilöprofiilin tunnus               |
+|  ContactProfileId     | Yksilöivä tunniste   |  Yhteyshenkilön GUID               |
+|  CountryOrRegion      | Viesti |  Yhteyshenkilön osoitteen maa/alue               |
+|  CustomerId           | Viesti |  Sen tilin tunnus, johon yhteyshenkilö on yhdistetty               |
+|  EntityName           | Viesti |  Entiteetti, josta tiedot ovat peräisin                |
+|  FirstName            | Viesti |  Yhteyshenkilön etunimi               |
+|  Sukupuoli               | Viesti |  Yhteyshenkilön sukupuoli               |
+|  Id                   | Viesti |  Deterministinen GUID-tunnus, joka perustuu `Identifier`-tunnukseen               |
+|  Identifier           | Viesti |  Yhteyshenkilöprofiilin sisäinen tunnus: `ContactProfile|CustomerId|ContactId`               |
+|  JobTitle             | Viesti |  Yhteyshenkilön työnimike               |
+|  LastName             | Viesti |  Yhteyshenkilön sukunimi               |
+|  PostalCode           | Viesti |  Yhteyshenkilön osoitteen postinumero               |
+|  PrimaryEmail         | Viesti |  Yhteyshenkilön sähköpostiosoite               |
+|  PrimaryPhone         | Viesti |  Yhteyshenkilön puhelinnumero               |
+|  StateOrProvince      | Viesti |  Yhteyshenkilön osoitteen osavaltio tai provinssi               |
+|  StreetAddress        | Viesti |  Yhteyshenkilön osoitteen katuosoite               |
 
 ### <a name="alternatekey"></a>AlternateKey
 
 AlternateKey-taulukko sisältää prosessiin osallistuneiden entiteettien avaimet.
 
-|Column  |Laji  |Kuvaus  |
+|Column  |Type  |Description  |
 |---------|---------|---------|
-|DataSourceName    |String         | Tietolähteen nimi. Esimerkki: `datasource5`        |
-|EntityName        | String        | Entiteetin nimi Customer Insightsissa. Esimerkki: `contact1`        |
-|AlternateValue    |String         |Vaihtoehtoinen tunnus, joka on yhdistetty asiakastunnukseen. Esimerkki: `cntid_1078`         |
-|KeyRing           | Monirivinen teksti        | JSON-arvo  </br> Esimerkki: [{”dataSourceName”:” datasource5 ”,</br>”entityName”:” contact1”,</br>”preferredKey”:” cntid_1078”,</br>”avaimet”:[” cntid_1078”]}]       |
-|CustomerId         | String        | Yhdistetyn asiakasprofiilin tunnus.         |
-|AlternateKeyId     | GUID         |  AlternateKeyn deterministinen GUID-tunnus, joka perustuu msdynci_identifieriin       |
-|msdynci_identifier |   String      |   `DataSourceName|EntityName|AlternateValue`  </br> Näyte: `testdatasource|contact1|cntid_1078`    |
+|DataSourceName    |Viesti         | Tietolähteen nimi. Esimerkki: `datasource5`        |
+|EntityName        | Viesti        | Entiteetin nimi Customer Insightsissa. Esimerkki: `contact1`        |
+|AlternateValue    |Viesti         |Vaihtoehtoinen tunnus, joka on yhdistetty asiakastunnukseen. Esimerkki: `cntid_1078`         |
+|KeyRing           | Viesti        | JSON-arvo  </br> Esimerkki: [{”dataSourceName”:” datasource5 ”,</br>”entityName”:” contact1”,</br>”preferredKey”:” cntid_1078”,</br>”avaimet”:[” cntid_1078”]}]       |
+|CustomerId         | Viesti        | Yhdistetyn asiakasprofiilin tunnus.         |
+|AlternateKeyId     | Yksilöivä tunniste        |  Deterministinen (AlternateKey) GUID-tunnus, joka perustuu `Identifier`-tunnukseen      |
+|Identifier |   Viesti      |   `DataSourceName|EntityName|AlternateValue`  </br> Näyte: `testdatasource|contact1|cntid_1078`    |
 
 ### <a name="unifiedactivity"></a>UnifiedActivity
 
@@ -167,43 +193,42 @@ Tämä taulukko sisältää käyttäjien aktiviteetit, jotka ovat käytettäviss
 
 | Column            | Type        | Description                                                                              |
 |-------------------|-------------|------------------------------------------------------------------------------------------|
-| CustomerId        | String      | Asiakkaan profiilin tunnus                                                                      |
-| ActivityId        | String      | Asiakasaktiviteetin sisäinen tunnus (perusavain)                                       |
-| SourceEntityName  | String      | Lähde-entiteetin nimi                                                                |
-| SourceActivityId  | String      | Lähde-entiteetin perusavain                                                       |
-| ActivityType      | String      | Semanttinen aktiviteettityyppi tai mukautetun aktiviteetin nimi                                        |
-| ActivityTimeStamp | päivämäärä/aika    | Aktiviteetin aikaleima                                                                      |
-| Title             | String      | Aktiviteetin otsikko tai nimi                                                               |
-| Description       | String      | Aktiviteetin kuvaus                                                                     |
-| URL               | String      | Linkitä aktiviteettia varten tiettyyn ulkoiseen URL-osoitteeseen                                         |
-| SemanticData      | JSON-merkkijono | Sisältää luettelon avainarvopareista toiminnan tyypille ominaisten semanttisten kartoituskenttien osalta |
-| RangeIndex        | String      | Unix-aikaleima, jota käytetään aktiviteetin aikajanan ja tehokkaiden aluekyselyiden lajittelemiseen |
-| mydynci_unifiedactivityid   | GUID | Asiakasaktiviteetin sisäinen tunnus (ActivityId) |
+| CustomerId        | Viesti      | Asiakkaan profiilin tunnus                                                                      |
+| ActivityId        | Viesti      | Asiakasaktiviteetin sisäinen tunnus (perusavain)                                       |
+| SourceEntityName  | Viesti      | Lähde-entiteetin nimi                                                                |
+| SourceActivityId  | Viesti      | Lähde-entiteetin perusavain                                                       |
+| ActivityType      | Viesti      | Semanttinen aktiviteettityyppi tai mukautetun aktiviteetin nimi                                        |
+| ActivityTimeStamp | DateTime    | Aktiviteetin aikaleima                                                                      |
+| Title             | Viesti      | Aktiviteetin otsikko tai nimi                                                               |
+| Description       | Viesti      | Aktiviteetin kuvaus                                                                     |
+| URL               | Viesti      | Linkitä aktiviteettia varten tiettyyn ulkoiseen URL-osoitteeseen                                         |
+| SemanticData      | Viesti | Sisältää luettelon avainarvopareista toiminnan tyypille ominaisten semanttisten kartoituskenttien osalta |
+| RangeIndex        | Viesti      | Unix-aikaleima, jota käytetään aktiviteetin aikajanan ja tehokkaiden aluekyselyiden lajittelemiseen |
+| UnifiedActivityId   | Yksilöivä tunniste | Asiakasaktiviteetin sisäinen tunnus (ActivityId) |
 
 ### <a name="customermeasure"></a>CustomerMeasure
 
 Tässä taulukossa on asiakasmääritteeseen perustuvien toimenpiteiden tulostiedot.
 
-| Column             | Laji             | Kuvaus                 |
+| Column             | Type             | Description                 |
 |--------------------|------------------|-----------------------------|
-| CustomerId         | String           | Asiakkaan profiilin tunnus        |
-| Mittarit           | JSON-merkkijono      | Sisältää luettelon avainarvojen pareista tietyn asiakkaan mittayksikön nimelle ja arvoille | 
-| msdynci_identifier | String           | `Customer_Measure|CustomerId` |
-| msdynci_customermeasureid | GUID      | Asiakkaan profiilin tunnus |
-
+| CustomerId         | Viesti           | Asiakkaan profiilin tunnus        |
+| Mittarit           | Viesti      | Sisältää luettelon avainarvojen pareista tietyn asiakkaan mittayksikön nimelle ja arvoille |
+| Identifier | Viesti           | `Customer_Measure|CustomerId` |
+| CustomerMeasureId | Yksilöivä tunniste     | Asiakkaan profiilin tunnus |
 
 ### <a name="enrichment"></a>Rikastus
 
 Tämä taulukko sisältää täydennysprosessin tulostiedot.
 
-| Column               | Laji             |  Kuvaus                                          |
+| Column               | Type             |  Description                                          |
 |----------------------|------------------|------------------------------------------------------|
-| CustomerId           | String           | Asiakkaan profiilin tunnus                                 |
-| EnrichmentProvider   | String           | Kirjoita rikastuksen antajan nimi                                  |
-| EnrichmentType       | String           | Rikastuksen tyyppi                                      |
-| Arvot               | JSON-merkkijono      | Täydennysprosessin tuottama lisämääritteiden luettelo |
-| msdynci_enrichmentid | GUID             | Msdynci_identifierista luotu deterministinen GUID-tunnus |
-| msdynci_identifier   | String           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
+| CustomerId           | Viesti           | Asiakkaan profiilin tunnus                                 |
+| EnrichmentProvider   | Viesti           | Kirjoita rikastuksen antajan nimi                                  |
+| EnrichmentType       | Viesti           | Rikastuksen tyyppi                                      |
+| Arvot               | Viesti      | Täydennysprosessin tuottama lisämääritteiden luettelo |
+| EnrichmentId | Yksilöivä tunniste            | Deterministinen GUID, joka on luotu kohteesta `Identifier` |
+| Identifier   | Viesti           | `EnrichmentProvider|EnrichmentType|CustomerId`         |
 
 ### <a name="prediction"></a>Ennuste
 
@@ -211,12 +236,12 @@ Tämä taulukko sisältää malliennusteen tulostiedot.
 
 | Column               | Type        | Description                                          |
 |----------------------|-------------|------------------------------------------------------|
-| CustomerId           | String      | Asiakkaan profiilin tunnus                                  |
-| ModelProvider        | String      | Kirjoita mallin antajan nimi                                      |
-| Malli                | String      | Mallin nimi                                                |
-| Arvot               | JSON-merkkijono | Mallin tuottama lisämääritteiden luettelo |
-| msdynci_predictionid | GUID        | Msdynci_identifierista luotu deterministinen GUID-tunnus | 
-| msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
+| CustomerId           | Viesti      | Asiakkaan profiilin tunnus                                  |
+| ModelProvider        | Viesti      | Kirjoita mallin antajan nimi                                      |
+| Malli                | Viesti      | Mallin nimi                                                |
+| Arvot               | Viesti | Mallin tuottama lisämääritteiden luettelo |
+| PredictionId | Yksilöivä tunniste       | Deterministinen GUID, joka on luotu kohteesta `Identifier` |
+| Identifier   | Viesti      |  `Model|ModelProvider|CustomerId`                      |
 
 ### <a name="segment-membership"></a>Segmentin jäsenyys
 
@@ -224,12 +249,11 @@ Tämä taulukko sisältää asiakasprofiilien segmenttien jäsenyystiedot.
 
 | Column        | Type | Description                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Asiakkaan profiilin tunnus        |
-| SegmentProvider      | String       | Sovellus, joka julkaisee segmentit.      |
-| SegmentMembershipType | String       | Tämän segmentin jäsenyystietueen asiakkaan tyyppi. Tukee useita tyyppejä, kuten asiakasta, yhteyshenkilöä tai asiakkuutta. Oletus: Asiakas  |
-| Segmentit       | JSON-merkkijono  | Niiden yksilöllisten segmenttien luettelo, joihin asiakasprofiili kuuluu      |
-| msdynci_identifier  | String   | Segmentin jäsenyystietueen yksilöllinen tunnus. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministinen GUID, joka on luotu kohteesta `msdynci_identifier`          |
-
+| CustomerId        | Viesti       | Asiakkaan profiilin tunnus        |
+| SegmentProvider      | Viesti       | Sovellus, joka julkaisee segmentit.      |
+| SegmentMembershipType | Viesti       | Tämän segmentin jäsenyystietueen asiakkaan tyyppi. Tukee useita tyyppejä, kuten asiakasta, yhteyshenkilöä tai asiakkuutta. Oletus: Asiakas  |
+| Segments       | Viesti  | Niiden yksilöllisten segmenttien luettelo, joihin asiakasprofiili kuuluu      |
+| Identifier  | Viesti   | Segmentin jäsenyystietueen yksilöllinen tunnus. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| SegmentMembershipId | Yksilöivä tunniste      | Deterministinen GUID, joka on luotu kohteesta `Identifier`          |
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

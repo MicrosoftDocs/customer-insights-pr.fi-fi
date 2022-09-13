@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
+ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387290"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "9409353"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -41,6 +41,14 @@ Lisätietoja on kohdassa [Yhdistetyn yhteyshenkilöprofiilin luonti](data-unific
 Uuden yhteyshenkilön yhdistymisen ansiosta voit luoda yhteyshenkilöiden segmenttejä joko yhteyshenkilöiden, tilien tai molempien perusteella. Nämä segmentit voidaan viedä aktivointia varten muihin palveluihin.
 
 Lisätietoja on kohdassa [Vientien yleiskatsaus](export-destinations.md).
+
+### <a name="deployment-regions-aligned-with-microsoft-dataverse"></a>Käyttöönottoalueet, jotka on kohdistettu Microsoft Dataversen kanssa
+
+Luodessasi uutta Customer Insights -ympäristöä voit valita alueen, jossa haluat palvelun ottaa käyttöön ja isännöidä sitä. Aluevalinta on päivitetty vastaamaan Microsoft Dataversea ja Power Platformia.
+
+Nyt voit helposti valita saman alueen kuin nykyisellä Microsoft Dataverse -ympäristölläsi tai Azure Data Lake Storage -tililläsi (jos valitset tämän vaihtoehdon), jos Customer Insights on saatavilla kyseisellä alueella.
+
+Lisätietoja on ohjeaiheessa [Uuden ympäristön luominen](create-environment.md) ja [Tuotteen saatavuus maantiet. sijainnin mukaan](https://dynamics.microsoft.com/availability-reports/).
 
 ## <a name="july-2022-updates"></a>Heinäkuun 2022 päivitykset
 

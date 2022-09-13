@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246243"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9395997"
 ---
 # <a name="view-system-configuration"></a>Tarkastele järjestelmän kokoonpanoa
 
@@ -38,12 +38,6 @@ Tarkastele reaaliaikaisen ohjelmointirajapinnan käyttöä koskevia tietoja ja k
    - **Ohjelmointirajapinnan kutsut** - kaavio, joka visualisoi ohjelmointirajapinnan koostettujen kutsujen määrän valittuna aikavälinä.
    - **Tietojen siirto** - kaavio, joka näyttää valitun ohjelmointirajapinnan kautta siirrettyjen tietojen määrän valittuna aikavälinä.
    - **Toiminnot** - taulukko, jossa on rivejä kullekin käytettävissä olevalle ohjelmointirajapinnan toiminnolle sekä toimintojen käyttöä koskevat tiedot. Valitse toiminnon nimi siirtyäksesi [ohjelmointirajapinnan viitteeseen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   [Reaaliaikaista tietojen käsittelyä](real-time-data-ingestion.md) käyttävät toiminnot sisältävät reaaliaikaisen ohjelmointirajapinnan käytön kiikarisymbolin.
-
-   1. Valitse kiikari avataksesi **Reaaliaikaiset ohjelmointirajapinnan käyttötiedot** -ruudun, jossa on toiminnon käyttötiedot.
-   1. **Valitse aikaväli**, jota haluat tarkastella.
-   1. Voit valita parhaan esitystavan reaaliaikaiselle vuorovaikutukselle **Ryhmittely**-ruudun avulla. Ryhmittele tiedot ohjelmointirajapinnan **menetelmän**, **entiteetin hyväksytyn nimen** (sisällytetty entiteetti), **luojan** (tapahtuman lähde), **tuloksen** (onnistuminen tai epäonnistuminen) tai **virhekoodien** mukaan. Tiedot ovat käytettävissä historiakaaviona ja taulukkona.
 
 ## <a name="view-system-information"></a>Järjestelmän tietojen näyttäminen
 
