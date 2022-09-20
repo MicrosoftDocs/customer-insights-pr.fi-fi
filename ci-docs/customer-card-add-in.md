@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 65fd80cc563b8b3b8c8874b66f179f8b0c7a19f0
+ms.sourcegitcommit: fe33cc76d015232ff8737f77193f44f2b884bb6b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194919"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "9473638"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Dynamics 365 -sovellusten asiakaskortin apuohjelma (esiversio)
 
@@ -32,7 +32,8 @@ Saat kokonaisvaltainen näkymän asiakkaista suoraan Dynamics 365 -sovelluksissa
 - Dynamics 365 -tietojen yhdistäminen Customer Insightsin asiakasprofiileihin kannattaa tehdä [käsittelemällä ne Dynamics 365 -sovelluksessa Microsoft Dataverse -yhdistimen avulla](connect-power-query.md). Jos Dynamics 365 -yhteystietoja (tai -asiakkaita) käsitellään jollain muulla tavalla, on varmistettava, että `contactid`- (tai `accountid`) -kenttä on määritetty [kyseisen tietolähteen perusavaimeksi tietojen yhtenäistämisprosessin aikana](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Kaikki asiakaskortin lisäosan Dynamics 365 -käyttäjät on [lisättävä käyttäjinä](permissions.md) Customer Insights -tietoihin, jotta he näkevät tiedot.
 - [Määritetyt haku- ja suodatustoiminnot](search-filter-index.md) Customer Insightsissa.
-- Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin Customer Insightsissa. Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
+- Jotkin tiedot ja ohjausobjektit ovat käytettävissä vain tietyntyyppisissä ympäristöissä. Apuohjelman kokoonpano antaa ilmoituksen, jos jokin ohjausobjekti ei ole käytettävissä valitun ympäristötyypin vuoksi. Tämä virhe näkyy ohjausobjektissa hahmonnettaessa sitä. Lisätietoja [ympäristön käyttötapauksista](work-with-business-accounts.md).
+- Kukin apuohjelman ohjausobjekti perustuu tiettyihin tietoihin Customer Insightsissa.
   - **Mittarin ohjausobjekti**: Vaatii [määritettyjä asiakasmääritetyyppisiä mittareita](measures.md).
   - **Älykkyyden hallinta**: Edellyttää [ennusteiden tai mukautettujen mallien](predictions-overview.md) avulla luotuja tietoja.
   - **Asiakkaan tietojen ohjausobjekti**: näyttää profiilin kaikki kentät, jotka ovat käytettävissä yhtenäisessä asiakasprofiilissa.

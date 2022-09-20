@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 44f58d694b9bd35a8d8c04d487d40743291e0566
+ms.sourcegitcommit: ef3e17134d44d2731605381ea0385dbc5aef6120
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304055"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9460186"
 ---
 # <a name="exports-preview-overview"></a>Viennit (esiversio) – yleiskatsaus
 
@@ -81,6 +81,11 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla viennin.
 ## <a name="schedule-and-run-exports"></a>Aikatauluta ja suorita useita vientejä
 
 Jokaisella määritetyllä viennillä on päivitysaikataulu. Päivityksen aikana järjestelmä etsii uusia tai päivitettyjä tietoja, jotka sisällytetään vientiin. Vieminen suoritetaan oletusarvoisesti jokaisen [ajoitetun järjestelmän päivityksen](schedule-refresh.md) yhteydessä. Voit mukauttaa päivitysaikataulua tai poistaa sen käytöstä, jos haluat suorittaa viennit manuaalisesti.
+
+> [!TIP]
+> Minimoi segmentin viennin käsittelyaika seuraavien parhaiden käytäntöjen mukaisesti:
+> - Jaa segmenttientiteetit useisiin vienteihin.
+> - Vältä kaikkien vientien aikataulutusta samanaikaisesti. Jätä 30 minuuttia tai tunti kunkin viennin aikataulutettujen aikojen välille.
 
 Vientiaikataulut määräytyvät ympäristön tilan mukaan. Jos [riippuvuuksilla](system.md#refresh-processes) on käynnissä olevia päivityksiä ajoitetun viennin käynnistymisen aikana, järjestelmä tekee päivityksen valmiiksi ennen viennin suorittamista. Voit nähdä, milloin vienti on viimeksi päivitetty sarakkeessa **Päivitetty**.
 

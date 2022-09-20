@@ -8,12 +8,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7f38b7d9985368fc38107f1f360f0603a7fcc8e6
-ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
+ms.openlocfilehash: c3863b1a72fd92ddc87755699feda11371ec9214
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "9411736"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463215"
 ---
 # <a name="service-limits-in-customer-insights"></a>Palvelun rajoitukset Customer Insightsissa
 
@@ -25,6 +25,7 @@ ms.locfileid: "9411736"
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
 | Segmentit, mittarit ja ennusteet | 300  | [Segmenttien](segments.md), [mittareiden](measures.md) ja [ennusteiden](predictions-overview.md) yhdistetty kokonaismäärä ei voi olla yli 300.  |
 | Suhteet | 20 syvyystasoa suhteiden entiteettipoluilla. | Kun luot [segmenttejä](segments.md) tai [mittareita](measures.md) muodostinkäyttöliittymän avulla, entiteettipoluilla voi olla enintään 20 suhdehyppyä aloitusentiteetin ja kohde-entiteetin välillä.  |
+|Tietojen käsittely| Power Query -tietolähteiden samanaikaisia arviointeja on rajoitettu. | Customer Insights sisältää samat [päivitysrajoitukset kuin tietovuot PowerBI.comissa](/power-query/power-query-online-limits#refresh-limits). |
 
 ## <a name="fair-scheduling-of-jobs"></a>Töiden oikeudenmukainen aikatauluttaminen
 

@@ -5,19 +5,19 @@ ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
-author: adkuppa
-ms.author: matgos
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 7af51ed04fbd28149ea501c58e6fe71b5fa6d4b6
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
+ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9207041"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9463261"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhdistäminen Power Query -tietolähteeseen
 
@@ -63,7 +63,9 @@ Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleens�
 Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä tietoja voi tarkastella [**Entiteetit**](entities.md)-sivulla.
 
 > [!CAUTION]
-> Power Query -pohjainen tietolähde tuottaa [tietovuon järjestelmässä Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Älä muuta Customer Insightsissa käytetyn tietovuon nimeä Power Platform -hallintakeskuksessa. Työvuon uudelleennimeäminen aiheuttaa ongelmia Customer Insightsin tietolähteen ja Dataverse -tietovuon välisissä viittauksissa.
+>
+> - Power Query -pohjainen tietolähde tuottaa [tietovuon järjestelmässä Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Älä muuta Customer Insightsissa käytetyn tietovuon nimeä Power Platform -hallintakeskuksessa. Työvuon uudelleennimeäminen aiheuttaa ongelmia Customer Insightsin tietolähteen ja Dataverse -tietovuon välisissä viittauksissa.
+> - Customer Insightsin samanaikaisten Power Query -tietolähteiden arvioinnilla on samat [päivitysrajoitukset kuin tietovuolla PowerBI.comissa](/power-query/power-query-online-limits#refresh-limits). Jos tietojen päivitys epäonnistuu, koska se on saavuttanut arviointirajoituksen, on suositeltavaa muuttaa kunkin tietovirran päivitysaikataulua, jotta tietolähteitä ei käsitellä samanaikaisesti.
 
 ### <a name="available-power-query-data-sources"></a>Käytettävissä olevat Power Query -tietolähteet
 
@@ -77,7 +79,7 @@ Tiedon keräämistä paikallisista tietolähteistä tuetaan Microsoft Power Plat
 
 Tietolähteet, jotka luodaan, kun Dataverse-ympäristö on liitetty Customer Insightsiin, käyttävät oletusarvoisesti [Power Platform -tietovirtoja](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Tietovuot tukevat paikallisia yhteyksiä tietoyhdyskäytävän avulla. Voit poistaa ja luoda uudelleen tietolähteitä, jotka olivat olemassa ennen Dataverse-ympäristön liittämistä, [paikallisten tietoyhdyskäytävien avulla](/data-integration/gateway/service-gateway-app).
 
-Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä, ja voit käyttää niitä uudelleen Customer Insightsissa. Tietolähteiden sivulla on linkki, jonka avulla voi siirtyä Microsoft Power Platform -ympäristöön paikallisten tietoyhdyskäytävien tarkastelemista ja määrittämistä varten.
+Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat näkyvissä ja voit käyttää niitä uudelleen Customer Insightsissa, jos tietoyhdyskäytävä ja Customer Insights -ympäristö ovat samalla Azure-alueella. Tietolähteiden sivulla on linkki, jonka avulla voi siirtyä Microsoft Power Platform -ympäristöön paikallisten tietoyhdyskäytävien tarkastelemista ja määrittämistä varten.
 
 > [!IMPORTANT]
 > Varmista, että yhdyskäytävät on päivitetty uusimpaan versioon. Voit asentaa päivityksen ja määrittää yhdyskäytävän uudelleen yhdyskäytävän näytössä näkyvästä kehotteesta tai [ladata uusimman version](https://powerapps.microsoft.com/downloads/). Jos et käytä uusinta yhdyskäytäväversiota, tietovirran päivitys epäonnistuu ja näyttöön tulee virhesanomia, kuten **Avainsanaa ei tueta: määritysominaisuudet. Parametrin nimi: avainsana**.
