@@ -1,156 +1,141 @@
 ---
-title: Tilauksen vaihtuvuusennuste (sisältää videon)
+title: Tilauksen vaihtuvuuden ennustaminen (sisältää videon)
 description: Ennusta riski sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja.
-ms.date: 08/19/2020
+ms.date: 09/30/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 72aa38242df21181f142833db03c825574455986
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 7464707864c418bfcc625ddfd245622131434b33
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9171045"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610232"
 ---
-# <a name="subscription-churn-prediction"></a>Tilauksen vaihtuvuusennuste
+# <a name="predict-subscription-churn"></a>Ennakoi tilausten vaihtuvuus
 
-Tilausten vaihtuvuusennuste auttaa ennustamaan riskin sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja. Voit luoda uuden tilausten vaihtuvuusennusteen valitsemalla **Älykäs toiminto** > **Ennusteet**-sivu. Valitse **Omat ennusteet**, kun haluat nähdä muita luomiasi ennusteita.
+Ennusta riski sille, että asiakas ei enää käytä yrityksesi tilaustuotteita tai -palveluja. Tilauksen tiedot sisältävät kunkin asiakkaan aktiiviset ja passiiviset tilaukset, joten kullakin asiakastunnuksella on useita merkintöjä.
+
+Liiketoiminnan tietämystä tarvitaan, jotta voidaan hahmottaa, mitä vaihtuvuus merkitsee yritykselle. Aikaperustaisia vaihtuvuusmäärityksiä tuetaan. Tämä tarkoittaa sitä, että asiakasta pidetään menetettynä, kun tilauksen päättymisestä on kulunut tietty aika.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOKNQ]
 
 > [!TIP]
-> Kokeile tilauksen vaihtuvuusennusteen opasohjelmaa näytetietojen avulla: [Tilauksen vaihtuvuusennusteen näyteopas](sample-guide-predict-subscription-churn.md).
+> Tilauksen vaihtuvuusennustetta voi kokeilla näytetietojen avulla: [Tilauksen vaihtuvuusennusteen näyteopas](sample-guide-predict-subscription-churn.md).
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 - Ainakin [osallistujan käyttöoikeudet](permissions.md).
-- Liiketoiminnan tietämys, jonka avulla tiedät, mitä vaihtuvuus merkitsee yrityksellesi. Aikaperustaisia vaihtuvuusmäärityksiä tuetaan. Tämä tarkoittaa sitä, että asiakasta pidetään menetettynä, kun tilauksen päättymisestä on kulunut tietty aika.
-- Tietoja tilauksistasi ja tilaushistoriasta:
-    - Tilaustunnisteet, joiden avulla tilaukset erotetaan toisistaan.
-    - Asiakastunnisteet, jotka vastaavat asiakkaiden tilauksia.
-    - Tilaustapahtuman päivämäärät, jotka määrittävät alkamis- ja päättymispäivät sekä tilaustapahtumien päivämäärät.
-    - Tilauksen tiedot, jotka määrittävät tilauksen toistuvuuden ja uusimisvälin.
-    - Tilausten semanttinen tietorakenne edellyttää seuraavien tietojen määrittämistä:
-        - **Tilauksen tunnus:** Tilauksen yksilöivä tunniste.
-        - **Tilauksen päättymispäivä:** Päivämäärä, jona asiakkaan tilaus päättyy.
-        - **Tilauksen alkamispäivä:** Päivämäärä, jona asiakkaan tilaus alkaa.
-        - **Tapahtumapäivä:** Tilauksen muutoksen päivämäärä. Esimerkiksi tapahtuma, jossa asiakas ostaa tai peruuttaa tilauksen.
-        - **Onko kyseessä toistuva tilaus:** Totuusarvon Tosi/epätosi-kenttä, joka määrittää, uusitaanko tilaus samalla tilaustunnuksella ilman asiakkaan toimia
-        - **Toistumisväli (kuukausina):** Toistuvien tilausten kausi, jonka jälkeen tilaus uusitaan. Se ilmaistaan kuukausina. Esimerkiksi asiakkaalle automaattisesti vuosittain uusittavan tilauksen arvo on 12.
-        - (Valinnainen) **Tilausmäärä:** Summa, jonka asiakas maksaa tilauksen uusimisesta. Sen avulla voidaan määrittää tilausten eri tasojen mallit.
-- Tietoja asiakasaktiviteeteista:
-    - Aktiviteetin tunnisteet, joiden avulla saman tyypin aktiviteetit erotetaan toisistaan.
-    - Asiakastunnisteet, joiden avulla aktiviteetit yhdistetään asiakkaisiin.
-    - Aktiviteetin tiedot, jotka sisältävät aktiviteetin nimen ja päivämäärän.
-    - Asiakasaktiviteettien semanttinen tietorakenne sisältää seuraavat tiedot:
-        - **Perusavain:** Aktiviteetin yksilöllinen tunniste. Esimerkiksi verkkosivustokäynti tai käyttötietue, jossa näkyy asiakkaan katsoma TV-sarjan jakso.
-        - **Aikaleima:** Ensisijaisen avaimen tunnistaman tapahtuman päivämäärä ja aika.
-        - **Tapahtuma:** Sen tapahtuman nimi, jota haluat käyttää. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Käyttäjän toiminto, voi saada arvon Katsottu.
-        - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Ohjelman nimi, voi saada arvoksi asiakkaan katsoman videon.
-- Ehdotetut tietojen ominaisuudet:
-    - Riittävät historiatiedot: Tilaustiedot vähintään kaksinkertainen määrä valittuun aikaikkunaan verrattuna. Tilaustietoja ovat mielellään 2–3 vuoden ajalta.
-    - Tilauksen tila: Tiedot sisältävät kunkin asiakkaan aktiiviset ja passiiviset tilaukset, joten kutakin asiakastunnusta kohti on useita merkintöjä.
-    - Asiakkaiden määrä: vähintään 10 asiakasprofiilia, mielellään yli 1 000 yksilöllistä asiakasta. Malli epäonnistuu, jos asiakkaita on alle 10 ja historiatiedot ovat puutteellisia.
-    - Tietojen täydellisyys: Puuttuvia arvoja alle 20 % määritetyn entiteetin tietokentässä.
-   
-   > [!NOTE]
-   > Tarvitset vähintään kaksi aktiviteettitietuetta 50 prosentille asiakkaista, joiden vaihtuvuuden haluat laskea.
+- Vähintään 10 asiakasprofiilia, mielellään yli 1 000 yksilöllistä asiakasta.
+- Asiakastunniste on yksilöivä asiakkaiden tilauksia vastaava tunniste.
+- Tilaustiedot vähintään kaksinkertaisena valittuun aikaikkunaan verrattuna. Tilaustietoja ovat mielellään 2–3 vuoden ajalta. Tilaushistorian on sisällettävä seuraavat tiedot:
+  - **Tilauksen tunnus:** tilauksen yksilöivä tunniste.
+  - **Tilauksen päättymispäivä:** päivämäärä, jona asiakkaan tilaus päättyy.
+  - **Tilauksen alkamispäivä:** päivämäärä, jona asiakkaan tilaus alkaa.
+  - **Tapahtumapäivä:** Tilauksen muutoksen päivämäärä. Esimerkiksi tapahtuma, jossa asiakas ostaa tai peruuttaa tilauksen.
+  - **Onko kyseessä toistuva tilaus:** Totuusarvon Tosi/epätosi-kenttä, joka määrittää, uusitaanko tilaus samalla tilaustunnuksella ilman asiakkaan toimia.
+  - **Toistumisväli (kuukausina):** Toistuvien tilausten kuukausi, jolloin tilaus uusitaan. Esimerkiksi asiakkaalle automaattisesti vuosittain uusittavan tilauksen arvo on 12.
+  - **Tilausmäärä:** Summa, jonka asiakas maksaa tilauksen uusimisesta. Sen avulla voidaan määrittää tilausten eri tasojen mallit.
+- Vähintään kaksi aktiviteettitietuetta 50 prosentille asiakkaista, joiden vaihtuvuus halutaan laskea. Asiakkaan aktiviteettien on sisällettävä seuraavat tiedot:
+  - **Perusavain:** Aktiviteetin yksilöivä tunnus. Esimerkiksi verkkosivustokäynti tai käyttötietue, jossa näkyy asiakkaan katsoma TV-sarjan jakso.
+  - **Aikaleima:** perusavaimen tunnistaman tapahtuman päivämäärä ja aika.
+  - **Tapahtuma:** Käytettävän tapahtuman nimi. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Käyttäjän toiminto, voi saada arvon Katsottu.
+  - **Tiedot:** Tapahtuman yksityiskohtaiset tiedot. Esimerkiksi suoratoistovideopalvelussa kenttä, jonka nimi on Ohjelman nimi, voi saada arvoksi asiakkaan katsoman videon.
+- Puuttuvia arvoja alle 20 % annetun entiteetin tietokentässä.
 
 ## <a name="create-a-subscription-churn-prediction"></a>Tilausten vaihtuvuusennusteen luominen
 
+Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Ennusteluonnos näkyy **Omat ennusteet** -välilehdessä.
+
 1. Siirry kohteeseen **Tiedustelu** > **Ennusteet**.
-1. Valitse **Tilauksen poistumismalli** -ruutu ja valitse **Käytä tätä mallia**.
-   > [!div class="mx-imgBorder"]
-   > ![Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike.](media/subscription-churn-usethismodel.PNG "Tilauksen vaihtuvuusmalli -ruutu ja Käytä tätä mallia -painike")
 
-### <a name="name-model"></a>Nimimalli
+1. Valitse **Luo**-välilehden **Asiakasvaihtuvuusmalli**-ruudussa **Käytä mallia**.
 
-1. Anna mallille nimi, joka erottaa sen muista malleista.
-1. Anna tulosentiteetille nimi käyttämällä vain kirjaimia ja numeroita. Välilyöntejä ei voi käyttää. Se on nimi, jota mallientiteetti käyttää. Valitse sitten **Seuraava**.
+1. Valitse vaihtuvuuden tyypiksi **Tilaus** ja valitse sitten **Aloita**.
 
-### <a name="define-customer-churn"></a>Määritä asiakasvaihtuvuus
+1. **Anna tälle mallille** ja **tulosentiteetille nimi**, jotta ne voidaan erottaa muista malleista tai entiteeteistä.
+
+1. Valitse **Seuraava**.
+
+### <a name="define-customer-churn"></a>Määritä asiakasvaihtuma
 
 1. Anna **Päivät tilauksen päättymisestä** -kohtaan arvo, jonka jälkeen yritys pitää asiakasta menetettynä. Tämä kausi linkittyy yleensä yrityksen aktiviteetteihin, kuten tarjouksiin tai muihin markkinointitoimintoihin, joiden avulla yritetään estää asiakkaiden menettäminen.
-1. Määritä **Vaihtuvuuden ennustamisessa huomioon otettavat päivät** -määrä määrittääksesi aikavälin vaihtuvuuden ennustamiselle. Voit esimerkiksi ennustaa asiakkaiden vaihtuvuusriskin seuraavan 90 päivän aikana, jotta voit mukauttaa asiakkaiden säilyttämiseen tähtääviä markkinointiponnistelujasi. Asiakaspoistuman riskin ennustaminen pitkällä tai lyhyemmällä ajanjaksolla voi vaikeuttaa riskiprofiilin tekijöiden käsittelyä yrityksesi tarpeista riippuen. Jatka valitsemalla **Seuraava**
-   >[!TIP]
-   > Ennuste voidaan tallentaa koska tahansa luonnoksena valitsemalla **Tallenna luonnos**. Näkyviin tulee ennusteluonnos **Omat ennusteet** -välilehdessä.
+
+1. Anna **Tulevaisuuden päivien määrä vaihtuvuuden ennustamista varten**. Ennustetaan esimerkiksi asiakkaiden vaihtuvuusriski seuraavan 90 päivän aikana siten, että se on linjassa markkinoinnin säilyttämispyrkimysten kanssa. Asiakaspoistuman riskin ennustaminen pitkällä tai lyhyemmällä ajanjaksolla voi vaikeuttaa riskiprofiilin tekijöiden käsittelyä yrityksesi tarpeista riippuen.
+
+1. Valitse **Seuraava**.
 
 ### <a name="add-required-data"></a>Lisää pakolliset tiedot
 
-1. Valitse **Lisää tiedot** **Tilaushistoria**-kohtaan ja valitse entiteetti, joka sisältää tilaushistorian [edellytyksissä](#prerequisites) kerrotulla tavalla.
-1. Jos alla olevia kenttiä ei ole täytetty, määritä suhde tilaushistoriasta asiakasentiteettiin.
-    1. Valitse **Tilaushistoriaentiteetti**.
-    1. Valitse **kenttä**, joka määrittää asiakkaan tilaushistoriaentiteetissä. Sen on liityttävä ensisijaisen asiakkaan tunnukseen asiakasentiteetissä.
-    1. Valitse **Asiakasentiteetti**, joka vastaa ensisijaista asiakasentiteettiä.
-    1. Anna suhdetta kuvaava nimi.
-       > [!div class="mx-imgBorder"]
-       > ![Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Tilaushistoria-sivu, joka sisältää suhteen luomisen asiakkaaseen")
+1. Valitse **Lisää tiedot** **Tilaushistoria**-kohdassa.
+
+1. Valitse semanttinen aktiviteettityyppi **Subscription**, joka sisältää tilaushistoriatiedot. Jos aktiviteettia ei ole määritetty, valitse **täällä** ja luo se.
+
+1. Jos aktiviteetin määritteet on yhdistetty semanttisesti aktiviteettia luotaessa, valitse **Aktiviteetit**- kohdassa määritteet tai entiteetti, joihin laskelma keskittyy. Jos semanttista yhdistämismääritystä ei tehty, valitse **Muokkaa** ja yhdistä tiedot.
+  
+   :::image type="content" source="media/subscription-churn-required.png" alt-text="Asiakkaan tilauksen vaihtuvuusmalliin tarvittavien tietojen lisääminen":::
+
+1. Valitse **Seuraava** ja tarkista mallissa tarvittavat määritteet.
+
+1. Valitse **Tallenna**.
+
+1. Valitse **Lisää tiedot** **Asiakasaktiviteetit**-kohdassa.
+
+1. Valitse semanttinen aktiviteettityyppi, jolla asiakasaktiviteetin tiedot saadaan. Jos aktiviteettia ei ole määritetty, valitse **täällä** ja luo se.
+
+1. Jos aktiviteetin määritteet on yhdistetty semanttisesti aktiviteettia luotaessa, valitse **Aktiviteetit**- kohdassa määritteet tai entiteetti, joihin laskelma keskittyy. Jos semanttista yhdistämismääritystä ei tehty, valitse **Muokkaa** ja yhdistä tiedot.
+
+1. Valitse **Seuraava** ja tarkista mallissa tarvittavat määritteet.
+
+1. Valitse **Tallenna**.
+
+1. Lisää enemmän aktiviteetteja ja valitse **Seuraava**.
+
+### <a name="set-update-schedule"></a>Päivitysaikataulun määrittäminen
+
+1. Valitse mallin uudelleenkouluttamistiheys. Tämä asetus on tärkeä, jotta ennusteiden tarkkuus voidaan päivittää, kun uusia tietoja päivitetään Customer Insightsissa. Useimmat yritykset voivat kouluttaa uudelleen kerran kuukaudessa ja saada hyvän tarkkuuden ennusteille.
+
 1. Valitse **Seuraava**.
-1. Yhdistä semanttiset kentät määritteisiin tilaushistoriaentiteetissä ja valitse **Tallenna**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet.](media/subscription-churn-subscriptionhistorymapping.PNG "Tilausten historia -sivu, jolla näkyvät valitun tilauksen historian entiteetin kenttiin yhdistetyt semanttiset määritteet")
-1. Valitse **Lisää tiedot** **Asiakkaan aktiviteetit** -kohdassa ja valitse entiteetti, joka sisältää asiakkaan aktiviteetin tiedot edellytyksissä kerrotulla tavalla.
-1. Valitse aktiviteettityyppi, joka vastaa määrittämiesi asiakkaan aktiviteetin tyyppiä.  Valitse **Luo uusi** ja anna nimi, jos et näe tarvittavaa aktiviteettityyppiä vastaavaa vaihtoehtoa.
-1. Sinun täytyy määrittää suhde asiakkaan aktiviteetin entiteetistä asiakasentiteettiin.
-    1. Valitse kenttä, joka määrittää asiakkaan asiakkaan aktiviteetin taulukossa. Se voi liittyä suoraan asiakasentiteetin ensisijaisen asiakkaan tunnukseen.
-    1. Valitse asiakasentiteetti, joka vastaa ensisijaista asiakasentiteettiä.
-    1. Anna suhdetta kuvaava nimi.
-1. Valitse **Seuraava**.
-1. Yhdistä semanttiset kentät määritteisiin asiakkaan aktiviteetin entiteetissä ja valitse **Tallenna**. Lisätietoja kentistä on [edellytyksissä](#prerequisites).
-1. (Valinnainen) Jos tiedossa on muita asiakkaan aktiviteetteja, jotka haluat sisällyttää, toista edellä olevat vaiheet.
-   > [!div class="mx-imgBorder"]
-   > ![Entiteettisuhteen määrittäminen.](media/subscription-churn-customeractivitiesmapping.PNG "Asiakkaan aktiviteetit -sivu, jolla näkyvät valitun asiakkaan aktiviteetin entiteetin kenttiin yhdistetyt semanttiset määritteet")
-1. Valitse **Seuraava**.
 
-### <a name="set-schedule-and-review-configuration"></a>Määritä aikataulu ja tarkista määritys
+### <a name="review-and-run-the-model-configuration"></a>Mallimäärityksen tarkasteleminen ja suorittaminen
 
-1. Määritä mallin uudelleenkouluttamistiheys. Tämä asetus on tärkeä, jotta ennusteiden tarkkuus voidaan päivittää, kun uusia tietoja päivitetään Customer Insightsissa. Useimmat yritykset voivat uudelleenkouluttaa kerran kuukaudessa ja saada hyvän tarkkuuden ennusteille.
-1. Valitse **Seuraava**.
-1. Tarkista määritys. Voit palata mihin tahansa ennustemäärityksen osaan valitsemalla **Muokkaa** annetun arvon kohdassa. Voit myös valita määritysvaiheen edistymisen ilmaisimesta.
-1. Jos kaikki arvot on määritetty oikein, aloita ennusteprosessi valitsemalla **Tallenna ja suorita**. **Omat ennusteet** -välilehdessä voit tarkastella ennusteiden tilaa. Prosessin valmistumiseen voi kulua useita tunteja ennusteessa käytettyjen tietojen määrästä riippuen.
+**Tarkistus ja suoritus** -vaiheessa näkyy määritysten yhteenveto. Siinä on myös mahdollista tehdä muutoksia ennen ennusteen luontia.
 
-## <a name="review-a-prediction-status-and-results"></a>Ennusteen tilan ja tulosten tarkasteleminen
+1. Tee tarkistukset ja tarvittavat muutokset valitsemalla **Muokkaa**.
 
-1. Siirry **Omat ennusteet** -välilehteen kohdassa **Älykäs toiminto** > **Ennusteet**.
-   > [!div class="mx-imgBorder"]
-   > ![Omat ennusteet -sivun tarkasteleminen.](media/subscription-churn-mypredictions.PNG "Omat ennusteet -sivun tarkasteleminen")
-1. Valitse ennuste, jota haluat tarkastella.
-   - **Ennusteen nimi:** Ennusteelle luomisen yhteydessä annettu nimi.
-   - **Ennustetyyppi:** Ennusteessa käytetyn mallin tyyppi.
-   - **Tulosentiteetti:** Sen entiteetin nimi, johon ennusteen tulos tallennetaan. Tämänniminen entiteetti löytyy kohdasta **Tiedot** > **Entiteetit**.    
-     Tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen otsikko. Oletusraja-arvo ei ehkä toimi skenaariossasi. [Luo uusi segmentti](segments.md#create-a-segment), jolla on haluamasi raja-arvo.
-   - **Ennustettu-kenttä:** Tämä kenttä täytetään vain tietyn tyyppisille ennusteille. Sitä ei käytetä tilausten vaihtuvuusennusteessa.
-   - **Tila:** Ennusteen suoritumisen nykyinen tila.
-        - **Jonossa:** Ennuste odottaa parhaillaan muiden prosessien suorittamista.
-        - **Päivitys:** Ennusteessa suoritetaan parhaillaan käsittelyn tulosvaihetta. Sen avulla saadaan tulokset, jotka siirretään tulosentiteettiin.
-        - **Epäonnistui:** Ennuste on epäonnistunut. Jos haluat lisätietoja, valitse **Lokit**.
-        - **Onnistui:** Ennuste on onnistunut. Valitse allekkaisten pisteiden alla oleva **Tarkastele**-kohta, jos haluat tarkastella ennustetta.
-   - **Muokattu:** Ennusteen määrityksen muutospäivämäärä.
-   - **Viimeinen päivitys:** Päivämäärä, jona ennuste päivitti tulokset tulosentiteettiin.
-1. Valitse sen ennusteen vieressä olevat allekkaiset pisteet, jonka tuloksia haluat tarkastella, ja valitse **Näytä**.
-   > [!div class="mx-imgBorder"]
-   > ![Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista.](media/subscription-churn-verticalellipses.PNG "Tarkastele allekkaisten pisteiden valikon vaihtoehtoja, esimerkiksi muokkausta, päivittämistä, tarkastelemista, lokeja ja poistamista")
-1. Tulossivulla on seuraavat kolme ensisijaista tieto-osaa:
-    1. **Opetusmallin suorituskyky:** A, B ja C ovat mahdollisia pistemääriä. Tämä pistemäärä osoittaa ennusteen suorituskyvyn. Sen avulla voit tehdä päätöksen tulosentiteettiin tallennettujen tulosten käyttämisestä.
-        - Pistemäärät määritetään seuraavien sääntöjen perusteella:
-            - **A** – Kun malli on oikein ennustettu vähintään 50 prosentissa kaikista ennusteista, ja kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on vähintään 10 % suurempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
-            - **B** – Kun malli on oikein ennustettu vähintään 50 prosentissa kaikista ennusteista, ja kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on korkeintaan 10 % suurempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
-            - **C** – Kun malli on oikein ennustettu vähintään 50 prosentissa kaikista ennusteista, tai kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on pienempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
-               > [!div class="mx-imgBorder"]
-               > ![Tarkastele mallin suorituskyvyn tulosta.](media/subscription-churn-modelperformance.PNG "Tarkastele mallin suorituskyvyn tulosta")
-    1. **Vaihtuvuuden todennäköisyys (asiakkaiden määrä):** Asiakasryhmät ennustetun vaihtuvuusriskin perusteella. Nämä tiedot auttavat myöhemmin, jos haluat luoda asiakassegmentin, jolla on suuri vaihtuvuusriski. Tällaiset segmentit auttavat ymmärtämään, missä segmentin jäsenyyden rajan on oltava.
-       > [!div class="mx-imgBorder"]
-       > ![Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %.](media/subscription-churn-resultdistribution.PNG "Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %")
-    1. **Tärkeimmät tekijät:** Ennusteen luomisessa otetaan huomioon useita tekijöitä. Kunkin tekijän tärkeys on laskettu mallin luomille yhdistellyille ennusteille. Näiden tekijöiden avulla voit tarkistaa ennusteen tulokset. Tai voit käyttää näitä tietoja myöhemmin ja [luoda segmenttejä](segments.md), joiden avulla voit vaikuttaa asiakkaiden vaihtuvuusriskiin.
-       > [!div class="mx-imgBorder"]
-       > ![Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa.](media/subscription-churn-influentialfactors.PNG "Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa")
+1. Jos olet tyytyväinen valintoihin, aloita mallin suorittaminen valitsemalla **Tallenna ja suorita**. Valitse **Valmis**. **Omat ennusteet** -välilehti on näkyvissä, kun ennustetta luodaan. Prosessin valmistumiseen voi kulua useita tunteja ennusteessa käytettyjen tietojen määrästä riippuen.
 
-## <a name="manage-predictions"></a>Hallitse ennusteita
+[!INCLUDE [progress-details](includes/progress-details-pane.md)]
 
-Voit optimoida, tehdä vianmäärityksen, päivittää tai poistaa ennusteita. Käytettävyysraportissa on tietoja siitä, miten tehdä ennusteista nopeampia ja luotettavampia. Lisätietoja on kohdassa [Ennusteiden hallinta](manage-predictions.md).
+## <a name="view-prediction-results"></a>Ennusteen tulosten näyttäminen
 
+1. Siirry kohteeseen **Tiedustelu** > **Ennusteet**.
+
+1. Valitse **Omat ennusteet** -välilehdessä tarkasteltava ennuste.
+
+Tulossivulla on seuraavat kolme ensisijaista tieto-osaa:
+
+- **Koulutusmallin suorituskyky**: Luokka A, B tai C osoittaa ennusteen suorituskyvyn. Sen avulla voit päättää, käytetäänkö tulosentiteettiin tallennettuja tuloksia.
+  
+  :::image type="content" source="media/subscription-churn-modelperformance.PNG" alt-text="Kuva mallin pisteiden tietoruudusta, jossa luokka on A.":::
+
+  Luokat määritetään seuraavien sääntöjen perusteella:
+  - **A**, kun mallin tarkkuudeksi on ennustettu vähintään 50 % ennusteesta yhteensä ja kun vaihtuvuusasiakkaiden tarkka ennusteprosentti on ainakin 10 % suurempi kuin historiallinen vaihtuvuusprosentti.
+  - **A**, kun mallin tarkkuudeksi on ennustettu vähintään 50 % ennusteesta yhteensä ja kun vaihtuvuusasiakkaiden tarkka ennusteprosentti on enintään 10 % suurempi kuin historiallinen vaihtuvuusprosentti.
+  - **C**, kun malli on ennustettu oikein enintään 50 prosentissa kaikista ennusteista tai kun prosenttiosuus tarkoille vaihtuneiden asiakkaiden ennusteille on pienempi kuin historiallisen vaihtuvuusprosentin keskiarvo.
+  
+- **Vaihtuvuuden todennäköisyys (asiakkaiden määrä)**: Asiakasryhmät ennustetun vaihtuvuusriskin perusteella. Valinnaisesti voidaan [luoda asiakassegmentti](prediction-based-segment.md) asiakkaista, joilla on korkea vaihtuvuusriski. Tällaiset segmentit auttavat ymmärtämään, missä segmentin jäsenyyden rajan on oltava.  
+
+  :::image type="content" source="media/subscription-churn-resultdistribution.PNG" alt-text="Kaavio, jossa näkyvät vaihtuvuuden tulosten jakelu eriteltynä välille 0 - 100 %":::
+
+- **Tärkeimmät tekijät:** Ennusteen luomisessa otetaan huomioon useita tekijöitä. Kunkin tekijän tärkeys lasketaan mallin luomille kooste-ennusteille. Näiden tekijöiden avulla voidaan tarkistaa ennusteen tulokset. Näitä tietoja voi käyttää myös myöhemmin sellaisten [segmenttien luontiin](.//prediction-based-segment.md), joilla voi olla vaikutusta asiakkaiden vaihtuvuusriskiin.
+
+  :::image type="content" source="media/subscription-churn-influentialfactors.PNG" alt-text="Luettelo, jossa on vaikuttavat tekijät ja niiden tärkeys vaihtuuvuustulosten ennustamisessa.":::
+
+> [!NOTE]
+> Tämän mallin tulosentiteetissä *ChurnScore* on poistuman ennustettu todennäköisyys ja *IsChurn* on *ChurnScore*-raja-arvoon 0,5 perustuva binaarinen selite. Jos tämä oletusraja-arvo ei toimi omassa skenaariossa, ensisijaisen raja-arvon sisältävä [uusi segmentti voidaan luoda](segments.md). Vaihtuvuuden pistemäärää voi tarkastella valitsemalla **Tiedot** > **Entiteetit** ja tarkastelemalla malliin määritetyn tulosentiteetin tietovälilehteä.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

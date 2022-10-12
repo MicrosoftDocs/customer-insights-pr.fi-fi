@@ -1,7 +1,7 @@
 ---
 title: Tietolähteiden yleiskatsaus
 description: Tietoja eri lähteistä peräisin olevien tietojen tuonnista tai käsittelystä.
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f89da3cf5b56e367bd673740f80cd82ec0907b28
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245645"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610048"
 ---
 # <a name="data-sources-overview"></a>Tietolähteiden yleiskatsaus
 
@@ -65,7 +65,9 @@ Voit tarkastella käytettävissä olevia toimintoja valitsemalla tietolähteen.
 
 ## <a name="refresh-data-sources"></a>Tietolähteiden päivittäminen
 
-Tietolähteet voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. [Paikalliset tietolähteet](connect-power-query.md#add-data-from-on-premises-data-sources) päivitetään oman, tietojen käsittelyn aikana määritettävän aikataulun mukaan. Liitettyjen tietolähteiden osalta tietojen käsittelyssä käytetään kyseisen tietolähteen viimeisimpiä saatavana olevia tietoja.
+Tietolähteet voidaan päivittää automaattisen aikataulun mukaan tai manuaalisesti tarvittaessa. [Paikalliset tietolähteet](connect-power-query.md#add-data-from-on-premises-data-sources) päivitetään oman, tietojen käsittelyn aikana määritettävän aikataulun mukaan. Vianmääritysvihjeitä on kohdassa [PPDF Power Query -pohjaisten tietolähteen päivitysongelmien vianmääritys](connect-power-query.md#troubleshoot-ppdf-power-query-based-data-source-refresh-issues).
+
+Liitettyjen tietolähteiden osalta tietojen käsittelyssä käytetään kyseisen tietolähteen viimeisimpiä saatavana olevia tietoja.
 
 Valitsemalla **Hallinta** > **Järjestelmä** > [**Aikataulu**](schedule-refresh.md) määritetään järjestelmän aikatauluttamat käsiteltyjen tietolähteiden päivitykset.
 
@@ -76,5 +78,37 @@ Tietolähteen päivittäminen pyynnöstä:
 1. Valitse päivitettävä tietolähde ja valitse sitten **Päivitä**. Tietolähde on nyt valmis manuaaliseen päivitykseen. Jos päivität tietolähteen, päivitetään tietolähteessä määritettyjen entiteettien sekä tiedot että entiteettirakenne.
 
 1. Valitse tila, jos haluat avata **Edistymisen tiedot** -ruudun ja tarkastella edistymistä. Peruuta työ valitsemalla ruudun alareunassa **Peruuta työ**.
+
+## <a name="corrupt-data-sources"></a>Vioittuneet tietolähteet
+
+Käsiteltävissä tiedoissa voi olla vioittuneita tietueita, joiden vuoksi tietojen käsittelyprosessi kyllä valmistuu mutta tuloksena on virheitä tai varoituksia.
+
+> [!NOTE]
+> Jos tietojen käsittely valmistuu mutta tuloksena on virheitä, tämän jälkeen kyseistä tietolähdettä hyödyntävä käsittely (kuten yhdistäminen tai aktiviteetin luonti) ohitetaan. Jos käsittely valmistuu mutta tuloksena on varoituksia, tämän jälkeen jatketaan käsittelyjä mutta joitakin tietueita ei ehkä sisällytetä.
+
+Näitä virheitä voi tarkastella tehtävän tiedoissa.
+
+:::image type="content" source="media/corrupt-task-error.png" alt-text="Tehtävän tiedoissa näkyy vioittuneista tiedoista ilmoittava virhe":::
+
+Vioittuneet tietueet näytetään järjestelmän luomissa entiteeteissä.
+
+### <a name="fix-corrupt-data"></a>Vioittuneiden tietojen korjaaminen
+
+1. Vioittuneita tietoja voi tarkastella valitsemalla **Tiedot** > **Entiteetit** ja etsimällä vioittuneet entiteetit **Järjestelmä**-osassa. Vioittuneiden entiteettien nimeämisrakenne: DataSourceName_EntityName_corrupt.
+
+1. Valitse ensin vioittunut entiteetti ja sitten **Tiedot**-välilehti.
+
+1. Selvitä tietueen vioittuneet kentät ja niiden syy.
+
+   :::image type="content" source="media/corruption-reason.png" alt-text="Vioittumisen syy." lightbox="media/corruption-reason.png":::
+
+   > [!NOTE]
+   > **Tiedot** > **Entiteetit** -kohdassa näkyy vain osa vioittuneista tietueista. Kaikkia vioittuneita tietueita voi tarkastella viemällä tiedostot tallennustilillä olevaan säilöön [Customer Insightsin vientiprosessin](export-destinations.md) mukaisesti. Jos käytössä on oma tallennustili, myös Customer Insights -kansiota voidaan tarkastella tallennustilillä.
+
+1. Korjaa vioittuneet tiedot. Esimerkiksi Azure Data Lake -tietolähteissä [tiedot korjataan Data Lake Storagessa tai tietotyypit päivitetään manifest- tai model.json-tiedostossa](connect-common-data-model.md#common-reasons-for-ingestion-errors-or-corrupt-data). Power Query -tietolähteissä tiedot korjataan lähdetiedostossa ja [tietotyyppi korjataan muunnosvaiheessa](connect-power-query.md#data-type-does-not-match-data) **Power Query – Muokkaa kyselyjä** -sivulla.
+
+Tietolähteen seuraavan päivityksen yhteydessä korjatut tietueet päivitetään Customer Insightsiin ja välitetään jatkoprosesseihin.
+
+Esimerkiksi syntymäpäiväsarakkeen tietotyypiksi on määritetty päivämäärä. Asiakasrekisterin syntymäpäiväksi on merkitty "1.1.19777". Järjestelmä merkitsee tämän tietueen vioittuneeksi. Vaihda syntymäpäiväksi lähdejärjestelmässä 1977. Tietolähteiden automaattisen päivityksen jälkeen kentän muoto on nyt kelvollinen ja tietue poistetaan vioittuneesta entiteetistä.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

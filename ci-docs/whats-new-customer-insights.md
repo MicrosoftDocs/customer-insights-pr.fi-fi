@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
-ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
+ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "9409353"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609588"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -228,9 +228,9 @@ Lisätietoja: [Ympäristön omistajan vaihtaminen](manage-environments.md#change
 
 ### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Tietojen valmistelun prosessi luetteloi virheellisten tietueiden virheiden syyn
 
-Tietojen valmistelu näyttää nyt kaikkien virheellisiä tietoja sisältävien kenttien virheen syyn. Tiedot on annettu yksittäisen tietueen tasolla tunnistamisen helpottamiseksi. 
+Tietojen valmistelu näyttää nyt kaikkien virheellisiä tietoja sisältävien kenttien virheen syyn. Tiedot on annettu yksittäisen tietueen tasolla tunnistamisen helpottamiseksi.
 
-Lisätietoja: [Virheelliset tietolähteet](entities.md#corrupted-data-sources).
+Lisätietoja on kohdassa [Virheelliset tietolähteet](data-sources.md#corrupt-data-sources).
 
 ### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Vuorovaikutuksen merkityksellisten tietojen raportointiominaisuuden esiversion lopettaminen
 

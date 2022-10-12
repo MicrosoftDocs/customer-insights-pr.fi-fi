@@ -1,7 +1,7 @@
 ---
 title: Yhteyden muodostaminen Power Query -tietolähteeseen (sisältää videon)
 description: Tietojen käsitteleminen Power Query -yhdistimen kautta (sisältää videon).
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
-ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
+ms.openlocfilehash: 4cc7e57dfb0f8d050e91adc441c24e849882f5d8
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "9463261"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609886"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Yhdistäminen Power Query -tietolähteeseen
 
@@ -43,16 +43,17 @@ Tietolähteiden lisääminen Power Query -yhdistimien perusteella etenee yleens�
 
 1. Valitse **Muunna tiedot**.
 
-1. **Power Query - Muokkaa kyselyitä** -dialogi mahdollistaa tietojen tarkistuksen ja tarkennuksen. Vasemmassa ruudussa näkyvät ne entiteetit, jotka järjestelmät tunnistivat valitussa tietolähteessä.
+1. Tarkista ja tarkenna tiedot **Power Query - Muokkaa kyselyitä** -sivulla. Vasemmassa ruudussa näkyvät ne entiteetit, jotka järjestelmät tunnistivat valitussa tietolähteessä.
 
    :::image type="content" source="media/data-manager-configure-edit-queries.png" alt-text="Muokkaa kyselyjä -ikkuna":::
 
-1. Voit myös muuntaa tietoja. Valitse muokattava tai muunnettava entiteetti. Ota muunnokset käyttöön Power Query -ikkunassa vaihtoehtojen avulla. Kukin muunto on mainittu luettelossa **Käytössä olevat vaiheet** -kohdassa. Power Query sisältää runsaasti [valmiiksi luotuja muunnosvaihtoehtoja](/power-query/power-query-what-is-power-query#transformations).
+1. Muunna tiedot. Valitse muokattava tai muunnettava entiteetti. Ota muunnokset käyttöön Power Query -ikkunassa vaihtoehtojen avulla. Kukin muunto on mainittu luettelossa **Käytössä olevat vaiheet** -kohdassa. Power Query sisältää runsaasti [valmiiksi luotuja muunnosvaihtoehtoja](/power-query/power-query-what-is-power-query#transformations).
 
-   On suositeltavaa käyttää seuraavia muunnoksia:
-
-   - Jos käsiteltävät tiedot saadaan CSV-tiedostosta, ensimmäisellä rivillä on usein otsikoita. Siirry kohtaan **Muunna** ja valitse **Käytä ensimmäistä riviä otsikoina**.
-   - Varmista, että tietotyyppi on määritetty oikein. Valitse esimerkiksi päivämääräkentille päivämäärätyyppi.
+   > [!IMPORTANT]
+   > On suositeltavaa käyttää seuraavia muunnoksia:
+   >
+   > - Jos käsiteltävät tiedot saadaan CSV-tiedostosta, ensimmäisellä rivillä on usein otsikoita. Siirry kohtaan **Muunna** ja valitse **Käytä ensimmäistä riviä otsikoina**.
+   > - Varmista, että tietotyyppi on määritetty oikein ja että se vastaa tietoja. Valitse esimerkiksi päivämääräkentille päivämäärätyyppi.
 
 1. Voit lisätä entiteettejä tietolähteeseen **Muokkaa kyselyjä** -dialogissa kohdassa **Aloitussivu** valitsemalla **Hae tiedot**. Toista vaiheet 5–10, kunnes kaikki tämän tietolähteen entiteetit on lisätty. Jos tietokannassa on useita tietojoukkoja, kukin tietojoukko on oma entiteetti.
 
@@ -102,5 +103,51 @@ Aiemmin luodun Power BI- tai Power Apps -ympäristön tietoyhdyskäytävät ovat
 1. Ota muutokset käyttöön ja palaa **Tietolähteet**-sivulle valitsemalla **Tallenna**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Käsittelyvirheiden tai vioittuneiden tietojen yleisiä syitä
+
+### <a name="data-type-does-not-match-data"></a>Tietotyyppi ei vastaa tietoja
+
+Yleisin tietotyyppiristiriita esiintyy, kun päivämääräkenttään ei ole määritetty oikeaa päivämäärämuotoa.
+
+Tiedot voidaan korjata lähteessä ja käsitellä uudelleen. Vaihtoehtoisesti muunnos voidaan korjata Customer Insightsissa. Muunnoksen korjaaminen:
+
+1. Valitse **Tiedot** > **Tietolähteet**.
+
+1. Valitse vioittuneet tiedot sisältävän tietolähteen vieressä **Muokkaa**.
+
+1. Valitse **Seuraava**.
+
+1. Valitse kukin kysely ja etsi Käytetyt vaiheet -kohdassa tehtyjä virheellisiä muunnoksia tai etsi sarakkeita, joissa ei ole päivämäärän muodon muunnosta.
+
+   :::image type="content" source="media/PQ_corruped_date.png" alt-text="Power Query – Muokkaa -kohdassa näkyy virheellinen päivämäärämuoto":::
+
+1. Muuta tietotyyppi vastaamaan tietoja oikein.
+
+1. Valitse **Tallenna**. Tietolähde päivitetään.
+
+## <a name="troubleshoot-ppdf-power-query-based-data-source-refresh-issues"></a>PPDF Power Query -pohjaisten tietolähteen päivitysongelmien vianmääritys
+
+Jos tiedot ovat vanhentuneita tai saadaan virheitä tietolähteen päivityksen jälkeen, toimitaan seuraavasti:
+
+1. Siirry osoitteeseen [Power Platform](https://make.powerapps.com).
+
+1. Valitse Customer Insights -esiintymään **Ympäristö**.
+
+1. Siirry **Tietovuot**-kohtaan.
+
+1. Valitse Customer Insightsin tietolähdettä vastaavassa tietovuossa kolme pystysuuntaista pistettä (&vellip;) ja valitse sitten **Näytä päivityshistoria**.
+
+1. Jos tietovuon **Tila** on **Onnistui**, Power Query -pohjaisen tietolähteen omistus on voinut muuttua:
+
+   1. Tarkastele päivitysaikatauluta päivityshistoriassa.
+   1. Määritä uuden omistajan aikataulu ja tallenna asetukset.
+
+1. Jos tietovuon **Tila** on **Epäonnistui**:
+
+   1. Lataa päivityshistoriatiedosto.
+   1. Etsi epäonnistumisen syy tarkastelemalla ladattua tiedostoa.
+   1. Jos virhettä ei voi ratkaista, valitse **?** Tukipalvelupyyntö avautuu. Sisällytä ladattu päivityshistoriatiedosto.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

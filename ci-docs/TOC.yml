@@ -162,6 +162,8 @@
           href: sentiment-analysis.md
         - name: Azuren automaattianalyysipalveluiden mukautettujen mallien käyttäminen
           href: custom-models.md
+        - name: Ennusteisiin perustuvien segmenttien luominen
+          href: prediction-based-segment.md
     - name: Esimerkkioppaat
       items:
         - name: CLV-ennusteen malliopas
@@ -174,10 +176,6 @@
           href: sample-guide-predict-product-recommendation.md
         - name: Azuren automaattianalyysipalvelujen kokeileminen
           href: azure-machine-learning-experiments.md
-    - name: Hallitse ennusteita
-      href: manage-predictions.md
-    - name: Ennusteisiin perustuvien segmenttien luominen
-      href: prediction-based-segment.md
 - name: Vientiasetukset
   items:
     - name: Viennit

@@ -1,7 +1,7 @@
 ---
 title: Customer Insightsin entiteetit
 description: Tietojen näyttäminen Entiteetit-sivulla.
-ms.date: 12/06/2021
+ms.date: 08/04/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-entities
 - customerInsight
-ms.openlocfilehash: 0beaa46d47545ac195ced876b509dfc57821bfaf
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: e365945b27e7c985ca5371c6b72619610b6f3af1
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183542"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610094"
 ---
 # <a name="entities-in-customer-insights"></a>Customer Insightsin entiteetit
 
@@ -61,27 +61,5 @@ Siirry kohtaan **Tieto** > **Entiteetit**, kun haluat tarkastella entiteettiluet
   - **Luotu**: entiteetin luontipäivä ja -aika.
   - **Muokannut**: entiteettiä muokanneen henkilön nimi.
   - **Muokattu**: entiteetin muokkauspäivä ja -aika.
-
-## <a name="entity-specific-information"></a>Entiteettikohtainen tieto
-
-Seuraavassa osassa on tietoja joistakin järjestelmän luomista entiteeteistä.
-
-### <a name="corrupted-data-sources"></a>Vioittuneet tietolähteet
-
-Käsiteltyjen tietolähteiden kentät voivat sisältää vioittuneita tietoja. Tietueet, joissa on vioittuneita kenttiä, paljastetaan järjestelmän luomissa entiteeteissä. Vioittuneista tietueista tietäminen auttaa sinua tunnistamaan lähdejärjestelmän tarkistettavat ja päivitettävät tiedot. Tietolähteen seuraavan päivityksen yhteydessä korjatut tietueet päivitetään Customer Insightsiin ja välitetään jatkoprosesseihin. 
-
-Esimerkiksi syntymäpäiväsarakkeen tietotyypiksi on määritetty päivämäärä. Asiakasrekisterin syntymäpäiväksi on merkitty "1.1.19777". Järjestelmä merkitsee tämän tietueen vioittuneeksi. Joku voi nyt muuttaa lähdejärjestelmän syntymäpäiväksi '1977'. Tietolähteiden automaattisen päivityksen jälkeen kentän muoto on nyt kelvollinen ja tietue poistetaan vioittuneesta entiteetistä.
-
-Siirry kohtaan **Tieto** > **Entiteetit** ja etsi vioittuneet entiteetit **Järjestelmä**-osasta. Vioittuneiden entiteettien rakenteen nimeäminen: "DataSourceName_EntityName_corrupt". Valitse vioittunut entiteetti tunnistaaksesi kaikki vialliset kentät ja syyn yksittäisen tietueen tasolla.
-
-   :::image type="content" source="media/corruption-reason.png" alt-text="Vioittumisen syy.":::
-
-Customer Insights käsittelee edelleen vioittuneita tietueita. Ne saattavat kuitenkin aiheuttaa ongelmia yhtenäisten tietojen kanssa toimittaessa.
-
-Seuraavat tarkistukset suoritetaan, jotta näytetyt tiedot voidaan paljastaa vioittuneille tietueille:
-
-- Kentän arvo ei vastaa sen sarakkeen tietotyyppiä.
-- Kentissä on merkkejä, joiden vuoksi sarakkeet eivät vastaa odotettua rakennetta. Esimerkiksi: väärin muotoiltuja lainausmerkkejä, virheellisiä lainausmerkkejä tai uuden linjan merkkejä.
-- Jos on päivämäärä ja aika / päivämäärä / päivämääräsiirtymä-sarakkeita, niiden muoto on määritettävä mallissa, jos se ei noudata ISO-vakiomuotoa.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

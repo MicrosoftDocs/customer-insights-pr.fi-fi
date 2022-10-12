@@ -1,7 +1,7 @@
 ---
 title: Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
 description: Tietojen tuominen Microsoft Dataversen hallitusta Data Lake -tallennustilasta.
-ms.date: 07/26/2022
+ms.date: 08/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,12 +11,12 @@ ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: b21150a1c51bdad35250cae7fde7f38a014ec876
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: 0d9612525344c8ac99b6e3edfe33a426dc0a474b
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9206949"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609791"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Yhteyden muodostaminen hallinnoidun Microsoft Dataverse Data Lake -tallennustilan tietoihin
 
@@ -70,5 +70,93 @@ Jos haluat muodostaa yhteyden toiseen Dataverse-tietojärveen, [luo uusi tietol�
 1. Ota muutokset käyttöön ja palaa **Tietolähteet**-sivulle valitsemalla **Tallenna**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupted-data"></a>Käsittelyvirheiden tai vioittuneiden tietojen yleisiä syitä
+
+Seuraavat tarkistukset suoritetaan, jotta näytetyt tiedot voidaan paljastaa vioittuneille tietueille:
+
+- Kentän arvo ei vastaa sen sarakkeen tietotyyppiä.
+- Kentissä on merkkejä, joiden vuoksi sarakkeet eivät vastaa odotettua rakennetta. Esimerkiksi: väärin muotoiltuja lainausmerkkejä, virheellisiä lainausmerkkejä tai uuden linjan merkkejä.
+- Mahdollisten päivämäärä ja aika-, päivämäärä- tai päivämääräsiirtymäsarakkeiden muoto on määritettävä mallissa, jos se ei noudata ISO-vakiomuotoa.
+
+### <a name="schema-or-data-type-mismatch"></a>Rakenteen tai tietotyypin ristiriita
+
+Jos tiedot eivät ole rakenteen mukaisia, tietueet luokitellaan vioittuneiksi. Korjaa joko lähdetiedot tai rakenne ja käsittele tiedot uudelleen.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Päivämäärä- ja aika kenttien muoto väärä
+
+Entiteetin päivämäärä- ja aikakentät eivät ole ISO- tai en-US-muotoisia. Päivämäärän ja ajan oletusmuoto Customer Insightsissa on en-US. Kaikissa entiteetin päivämäärä- ja aikakentissä on oltava sama muoto. Customer Insights tukee muita muotoja, kunhan huomautukset tai ominaisuudet tehdään mallin tai manifest.json-tiedoston lähde- tai entiteettitasolla. Esimerkki:
+
+**Model.json**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  Manifest.json-tiedostossa päivämäärä- ja aikamuoto voidaan määrittää entiteetti- tai määritetasolla. Määritä päivämäärä- ja aikamuoto käyttämällä entiteettitasolla entiteetissä exhibitsTraits-ominaisuutta *.manifest.cdm.json-tiedostossa. Käytä määritetasolla appliedTraits-ominaisuutta entityname.cdm.json-tiedoston määritteessä.
+
+**Manifest.json entiteettitasolla**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json määritetasolla**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

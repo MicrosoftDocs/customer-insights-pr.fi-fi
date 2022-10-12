@@ -1,7 +1,7 @@
 ---
 title: Tuotesuositusten ennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tuotesuosituksen ennustemallia.
-ms.date: 05/16/2022
+ms.date: 09/19/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -12,35 +12,34 @@ searchScope:
 - ci-predictions
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: cc72cce15fa0c9e92dbf202c803e99514c9ce2b1
-ms.sourcegitcommit: 82f417cfb0a16600e9f552d7a21d598cc8f5a267
+ms.openlocfilehash: 2b42a89e3f4ec8cf4f0769128b8536973365f1cb
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/16/2022
-ms.locfileid: "8762682"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610140"
 ---
 # <a name="product-recommendation-prediction-sample-guide"></a>Tuotesuositusten ennusteen näyteopas
 
-Aiheessa käsitellään kattavasti tuotesuosituksen ennusteen esimerkkiä käyttämällä alla olevia näytetietoja.
+Tässä oppaassa käsitellään kattavasti tuotesuositusennusteen esimerkkiä käyttämällä näytetietoja. Tätä ennustetta kannattaa kokeilla [uudessa ympäristössä](manage-environments.md).
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Tavoitteena on ymmärtää, mitä tuotteita tulisi suositella toistuville asiakkaille. Jos tiedetään, mitä asiakkaat **todennäköisesti ostavat**, markkinointiponnisteluissa voidaan keskittyä näihin tiettyihin nimikkeisiin.
+Contoso on yritys, joka tuottaa laadukkaita kahveja ja kahvikoneita. He myyvät tuotteita Contoso Coffeen verkkosivuston kautta. Tavoitteena on ymmärtää, mitä tuotteita tulisi suositella toistuville asiakkaille. Jos tiedetään, mitä asiakkaat **todennäköisesti ostavat**, markkinointiponnisteluissa voidaan keskittyä näihin tiettyihin nimikkeisiin.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
-- Seuraavat vaiheet on suositeltavaa toteuttaa [uudessa ympäristössä](manage-environments.md).
 
 ## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
 
-Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisesta Power Query -yhdistinten avulla](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua.
+Tutustu [tietojen käsittelyä](data-sources.md) ja [tietolähteiden yhdistämistä Power Query -tietolähteeseen](connect-power-query.md) käsitteleviin artikkeleihin. Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Asiakas tietojen käsitteleminen sähköisen kaupankäynnin ympäristössä
 
-1. Luo **eCommerce**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **eCommerce**-niminen Power Query -tietolähde ja valitse sitten **Text/CSV**-yhdistin.
 
-1. Anna eCommerce-yhteyshenkilöiden URL-osoite: [https://aka.ms/ciadclasscontacts](https://aka.ms/ciadclasscontacts).
+1. Sähköisen kaupankäynnin yhteyshenkilöiden URL-osoitteen antaminen: https://aka.ms/ciadclasscontacts.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -50,7 +49,7 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommerceContacts**
+1. Vaihda oikean ruudun **Nimi**-kenttään tietolähteen nimeksi **eCommerceContacts**
 
 1. **Tallenna** tietolähde.
 
@@ -58,7 +57,7 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
 
 1. Lisää toinen tietojoukko samaan **eCommerce**-tietolähteeseen. Valitse **Text/CSV**-yhdistin uudelleen.
 
-1. Syötä **Verkko-ostojen** tietojen URL-osoite [https://aka.ms/ciadclassonline](https://aka.ms/ciadclassonline).
+1. Anna verkko-ostojen tietojen URL-osoitteeksi https://aka.ms/ciadclassonline.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -66,15 +65,15 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
    - **PurchasedOn**: päivämäärä ja aika
    - **TotalPrice**: valuutta
 
-1. Vaihda sivuruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **eCommercePurchases**.
+1. Vaihda sivuruudun **Nimi**-kenttään tietolähteen nimeksi **eCommercePurchases**.
 
 1. **Tallenna** tietolähde.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Asiakastietojen käyttäminen kanta-asiakasrakenteesta
 
-1. Luo **LoyaltyScheme**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **LoyaltyScheme**-niminen tietolähde ja valitse **Text/CSV**-yhdistin.
 
-1. Anna eCommerce-yhteyshenkilöiden URL-osoite [https://aka.ms/ciadclasscustomerloyalty](https://aka.ms/ciadclasscustomerloyalty).
+1. Kanta-asiakkaiden URL-osoitteeksi annetaan https://aka.ms/ciadclasscustomerloyalty.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
@@ -83,81 +82,84 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
+1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimeksi **loyCustomers**.
 
 1. **Tallenna** tietolähde.
 
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
+Tutustu [tietojen yhdistämistä](data-unification.md) käsittelevään artikkeliin. Seuraavissa tiedoissa oletetaan, että tietojen yhdistäminen on yleisesti ottaen tuttua.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-product-recommendation-prediction"></a>Tehtävä 3 – tuotesuositusennusteen määrittäminen
+## <a name="task-3---create-transaction-history-activity"></a>Tehtävä 3 – tapahtumahistorian aktiviteetin luominen
 
-Unified customer profiles -profiilien avulla voidaan nyt suorittaa tuotesuositusennuste.
+Tutustu [asiakkaan aktiviteetteja](activities.md) käsittelevään artikkeliin. Seuraavissa tiedoissa oletetaan, että aktiviteettien luominen on yleisesti ottaen tuttua.
 
-1. Siirry kohtaan **Analytiikka** > **Ennuste** ja valitse sitten **Tuotesuositus**.
+1. Luo **eCommercePurchases**-niminen aktiviteetti, jossa on *eCommercePurchases:eCommerce*-entiteetti ja pääavain **PurchaseId**.
+
+1. Luo kohteiden *eCommercePurchases:eCommerce* ja *eCommerceContacts:eCommerce* välille suhde siten, että **ContactID** on kaksi entiteettiä yhdistävä viiteavain.
+
+1. Valitse **TotalPrice** **Aikaleima**-kohdan **EventActivity**- ja **PurchasedOn**-kohdissa.
+
+1. Valitse **Aktiviteetin tyyppi** -kohdassa **SalesOrderLine** ja yhdistä aktiviteetin tiedot semanttisesti.
+
+1. Suorita aktiviteetti.
+
+## <a name="task-4---configure-product-recommendation-prediction"></a>Tehtävä 4 – tuotesuositusennusteen määrittäminen
+
+Yhdistettyjen asiakasprofiilien ja luodun aktiviteetin avulla voidaan nyt suorittaa tuotesuositusennuste.
+
+1. Siirry kohteeseen **Tiedustelu** > **Ennusteet**.
+
+1. Valitse **Luo**-välilehden **Tuotesuositukset (esiversio)** -ruudussa **Käytä mallia**.
 
 1. Valitse **Aloita**.
 
 1. Anna mallille nimi **OOB - tuotesuositusmallin ennuste** ja tulosentiteetille nimi **OOBProductRecommendationModelPrediction**.
 
-1. Määritä mallille kolme ehtoa seuraavasti:
+1. Valitse **Seuraava**.
 
-   - **Tuotteiden määrä**: Määritä arvoksi **5**. Tämä asetus määrittää, miten montaa tuotetta haluat suositella asiakkaillesi.
-
-   - **Toista odotetut ostot**: Valitse **Kyllä**, jos haluat sisällyttää tuotteet asiakkaiden aiemmin ostamaan suositukseen.
-
-   - **Katso taaksepäin -ikkuna:** Valitse vähintään **365 päivää**. Tämä asetus määrittää, miten pitkälle menneisyyteen asiakkaan aktiviteetteja tarkastellaan, kun sitä käytetään suositusten syötteenä.
+1. Malliasetusten määrittäminen:
+   - **Tuotteiden määrä**: **5** määrittää, miten monta tuotetta halutaan suositella asiakkaille.
+   - **Toistuvia ostoja odotetaan**: **Kyllä** sisällyttää aiemmin ostetut tuotteet suositukseen.
+   - **Katso taaksepäin -ikkuna:** **365 päivää** määrittää, miten kauas malli katsoo taaksepäin, ennen kuin tuotetta suositellaan uudelleen.
 
    :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Tuotesuositusmallin mallin määritykset.":::
 
-1. Valitse **Lisää pakolliset tiedot** -vaiheessa **Lisää tiedot**.
+1. Valitse **Seuraava**.
 
-1. Valitse **Lisää tiedot** - ruudussa **SalesOrderLine** ostohistoriaentiteetiksi. Tässä vaiheessa sitä ei todennäköisesti ole vielä määritetty. Avaa ruudussa linkki, jolla voit luoda aktiviteetin seuraavien vaiheiden mukaisesti:
-   1. Syötä **Aktiviteetin nimi** ja valitse *eCommercePurchases:eCommerce* **Aktiviteetin entiteetiksi**. **Perusavain** on *PurchaseId*.
-   1. Määritä ja anna nimi suhteelle *eCommerceContacts:eCommerce entity* ja valitse **ContactId** viiteavaimeksi.
-   1. Määritä Aktiviteetin yhdistämiselle **Tapahtuman aktiviteetiksi** *TotalPrice* ja aikaleimaksi *PurchasedOn*. Voit määrittää lisää kenttiä [Asiakas-aktiviteettien](activities.md) mukaisesti.
-   1. Valitse **Aktiviteettityypiksi** *SalesOrderLine*. Yhdistä seuraavat aktiviteettikentät:
-      - Tilausrivin tunnus: PurchaseId
-      - Tilauksen tunnus: PurchaseId
-      - Tilaustiedot: PurchasedOn
-      - Tuotetunnus: ProductId
-      - Summa: TotalPrice
-   1. Tarkista aktiviteetti ja viimeistele se, ennen kuin palaat mallimääritykseen.
+1. Valitse **Lisää ostohistoria** -vaiheessa **Lisää tiedot**.
 
-1. Valitse uudelleen **Valitse aktiviteetit** -vaiheessa uusi luotu aktiviteetti **Aktiviteetit**-osassa. Valitse **Seuraava**, jossa määritteen yhdistämismääritys on jo täytetty. Valitse **Tallenna**.
+1. Valitse ensin **SalesOrderLine** ja eCommercePurchases-entiteetti sekä sitten **Seuraava**. Pakolliset tiedot täytetään automaattisesti aktiviteetista. Valitse ensin **Tallenna** ja sitten **Seuraava**.
 
-1. Tässä esimerkkioppaassa ohitetaan **Tuotetietojen lisääminen** ja **Tuotesuodattimet** -tietojoukko, koska tuotetietoja ei ole.
+1. Ohita **Tuotetietojen lisääminen**- ja **Tuotesuodattimet**-vaiheet, koska tuotetietoja ei ole.
 
-1. Määritä **Tietojen päivitykset** - vaiheessa mallin aikataulu.
+1. Määritä **Tietojen päivitykset** -vaiheessa mallin aikatauluksi **Kuukausittain**.
 
-   Mallia on koulutettava säännöllisesti, jotta se oppii uusia malleja, kun uusia tietoja käsitellään. Valitse tässä esimerkissä **Kuukausittain**.
+1. Valitse **Seuraava**.
 
-1. Kun tiedot on tarkistettu, valitse **Tallenna ja suorita**. Mallin ensimmäinen suoritus kestää muutaman minuutin.
+1. Kun tiedot on tarkistettu, valitse **Tallenna ja suorita**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Tehtävä 4 – mallin tulosten ja selitysten tarkistaminen
+## <a name="task-5---review-model-results-and-explanations"></a>Tehtävä 5 – mallin tulosten ja selitysten tarkistaminen
 
-Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Voit nyt tarkastella tuotesuositusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-transactional-churn.md#review-a-prediction-status-and-results).
+Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Tarkista [tuotesuositusmallin selitykset](predict-transactional-churn.md#view-prediction-results).
 
-## <a name="task-5---create-a-segment-of-high-purchased-products"></a>Tehtävä 5 – eniten ostettujen tuotteiden segmentin luominen
+## <a name="task-6---create-a-segment-of-high-purchased-products"></a>Tehtävä 6 – eniten ostettujen tuotteiden segmentin luominen
 
-Tuotantomallin suorittaminen luo uuden entiteetin, jonka saa näkyviin valitsemalla **Tiedot** > **Entiteetit**.
+Mallin käyttö luo uuden entiteetin, joka näkyy **Tieto** > **Entiteetit** -kohdassa. Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 
-Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
+1. Valitse tulossivulla **Luo segmentti**.
 
-1. Valitse **Segmentit**. Valitse **Uusi** ja sitten **Luo kohteesta Analytiikka**.
+1. Luo sääntö **OOBProductRecommendationModelPrediction**-entiteetin avulla ja määritä segmentti:
+   - **Kenttä**: ProductID
+   - **Arvo**: Valitse kolme suosituinta tuotetunnusta
 
-   ![Segmentin luominen mallin tulosteen avulla](media/segment-intelligence.png)
+1. Valitse **Tallenna** ja **suorita** segmentti.
 
-1. Valitse **OOBProductRecommendationModelPrediction**-päätepiste ja määritä segmentti:
+Nyt on käytössä dynaamisesti päivitetty segmentti, joka määrittää viisi suosituinta tuotetta mahdollisesti ostamaan kiinnostunutta asiakasta. Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
 
-   - Kenttä: ProductID
-   - Arvo: Valitse kolme suosituinta tuotetunnusta
-
-   :::image type="content" source="media/product-recommendation-quick-segment.png" alt-text="Luo segmentti mallin tuloksista.":::
-
-Nyt sinulla on dynaamisesti päivitetty segmentti, joka määrittää asiakkaat, jotka saattaisivat olla kiinnostuneita ostamaan kolme suositeltua tuotetta.
-
-Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
+> [!TIP]
+> Ennustemallin segmentti voidaan luoda myös **Segmentit**-sivulla valitsemalla ensin **Uusi** ja sitten **Luominen kohteesta** > **Älykäs toiminto**. Lisätietoja on kohdassa [Uuden segmenttien luominen pikasegmenttien avulla](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

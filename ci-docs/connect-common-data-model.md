@@ -1,7 +1,7 @@
 ---
 title: Common Data Model -kansioon yhdistäminen Azure Data Lake -tilillä
 description: Common Data Model -tietojen käyttäminen Azure Data Lake Storagen avulla.
-ms.date: 07/27/2022
+ms.date: 09/29/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
-ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
+ms.openlocfilehash: c12603b9ed8a814356a0f8d0137e97afc749b87c
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/02/2022
-ms.locfileid: "9396042"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609938"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Yhdistä Azure Data Lake Storagein tietoihin
 
@@ -43,6 +43,10 @@ Tietojen käsittely Dynamics 365 Customer Insightsiin Azure Data Lake Storage Ge
 - Käyttäjä, joka määrittää tietolähteen yhteyden, tarvitsee vähiten Tallennustilan Blob-tietojen osallistuja -käyttöoikeudet tallennustilille.
 
 - Data Lake Storagen tietojen on noudatettava tietojen Common Data Model -tallennusstandardia ja niillä on oltava datatiedostojen rakenteen (*.csv tai *.parquet) ilmaiseva Common Data Model -luettelotiedosto. Luettelotiedostossa on oltava entiteettien, kuten entiteetin sarakkeiden ja tietotyyppien; tiedot sekä datatiedoston sijainti ja tiedostotyyppi. Lisätietoja on kohdassa [Common Data Model -luettelotiedosto](/common-data-model/sdk/manifest). Jos luettelotiedostoa ei ole, järjestelmänvalvojat, joilla on tallennustilan blob-tietojen omistajan tai osallistujan oikeudet, voivat määrittää rakenteen tietoja käsiteltäessä.
+
+## <a name="recommendations"></a>Suosituksia
+
+Optimaalisen suorituskyvyn kannalta Customer Insights suosittelee osion koon olevan enintään 1 gigatavu ja kansiossa olevien osiotiedostojen enimmäismäärä on 1 000.
 
 ## <a name="connect-to-azure-data-lake-storage"></a>Yhdistä Azure Data Lake Storageen
 
@@ -199,5 +203,101 @@ Tietojen lataaminen voi viedä aikaa. Kun päivitys on onnistunut, käsiteltyjä
 1. Ota muutokset käyttöön ja palaa **Tietolähteet**-sivulle valitsemalla **Tallenna**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Käsittelyvirheiden tai vioittuneiden tietojen yleisiä syitä
+
+Yleisiä syitä tietueen vaurioitumiselle tietojen käsittelyn aikana:
+
+- Tietotyypit ja kentän arvot eivät ole samat lähdetiedostossa ja rakenteessa
+- Lähdetiedoston sarakkeiden määrä ei ole sama kuin rakenteessa
+- Kentissä on merkkejä, joiden vuoksi sarakkeet vinoutuvat odotettuun rakenteeseen verrattuna. Esimerkkejä: väärin muotoillut lainausmerkit, virheellisiä lainausmerkit, uuden rivin merkit tai sarkainmerkit.
+- Osiotiedostot puuttuvat
+- Mahdollisten päivämäärä ja aika-, päivämäärä- tai päivämääräsiirtymäsarakkeiden muoto on määritettävä rakenteessa, jos se ei noudata vakiomuotoa.
+
+### <a name="schema-or-data-type-mismatch"></a>Rakenteen tai tietotyypin ristiriita
+
+Jos tiedot eivät ole rakenteen mukaisia, käsittelyprosessi valmistuu mutta siinä on virheitä. Korjaa joko lähdetiedot tai rakenne ja käsittele tiedot uudelleen.
+
+### <a name="partition-files-are-missing"></a>Osiotiedostot puuttuvat
+
+- Jos käsittely onnistui ilman vioittuneita tietueita mutta mitään tietoja ei ole näkyvissä, varmista, että osiot on määritetty muokkaamalla model.json- tai manifest.json-tiedostoa. [Päivitä tielähde](data-sources.md#refresh-data-sources) sitten.
+
+- jos tietoja käsitellään samanaikaisesti tietojen automaattisesti aikataulutetun päivityksen aikana, osiotiedostot voivat olla tyhjiä tai niitä ei voi käsitellä Customer Insightsissa. Kohdistus yläpuoliseen päivitysaikatauluun voidaan tehdä muuttamalla [järjestelmän päivitysaikataulua](schedule-refresh.md) tai tietolähteen päivitysaikataulua. Ajoitus kohdistetaan siten, että kaikki päivitykset eivät tapahdu samanaikaisesti ja että päivityksessä saadaan uusimmat tiedot Customer Insightsissa käsiteltäviksi.
+
+### <a name="datetime-fields-in-the-wrong-format"></a>Päivämäärä- ja aika kenttien muoto väärä
+
+Entiteetin päivämäärä- ja aikakentät eivät ole ISO 8601- tai en-US-muotoisia. Päivämäärän ja ajan oletusmuoto Customer Insightsissa on en-US. Kaikissa entiteetin päivämäärä- ja aikakentissä on oltava sama muoto. Customer Insights tukee muita muotoja, kunhan huomautukset tai ominaisuudet tehdään mallin tai manifest.json-tiedoston lähde- tai entiteettitasolla. Esimerkki:
+
+**Model.json**
+
+   ```json
+      "annotations": [
+        {
+          "name": "ci:CustomTimestampFormat",
+          "value": "yyyy-MM-dd'T'HH:mm:ss:SSS"
+        },
+        {
+          "name": "ci:CustomDateFormat",
+          "value": "yyyy-MM-dd"
+        }
+      ]   
+   ```
+
+  Manifest.json-tiedostossa päivämäärä- ja aikamuoto voidaan määrittää entiteetti- tai määritetasolla. Määritä päivämäärä- ja aikamuoto käyttämällä entiteettitasolla entiteetissä exhibitsTraits-ominaisuutta *.manifest.cdm.json-tiedostossa. Käytä määritetasolla appliedTraits-ominaisuutta entityname.cdm.json-tiedoston määritteessä.
+
+**Manifest.json entiteettitasolla**
+
+```json
+"exhibitsTraits": [
+    {
+        "traitReference": "is.formatted.dateTime",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd'T'HH:mm:ss"
+            }
+        ]
+    },
+    {
+        "traitReference": "is.formatted.date",
+        "arguments": [
+            {
+                "name": "format",
+                "value": "yyyy-MM-dd"
+            }
+        ]
+    }
+]
+```
+
+**Entity.json määritetasolla**
+
+```json
+   {
+      "name": "PurchasedOn",
+      "appliedTraits": [
+        {
+          "traitReference": "is.formatted.date",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-dd"
+            }
+          ]
+        },
+        {
+          "traitReference": "is.formatted.dateTime",
+          "arguments" : [
+            {
+              "name": "format",
+              "value": "yyyy-MM-ddTHH:mm:ss"
+            }
+          ]
+        }
+      ],
+      "attributeContext": "POSPurchases/attributeContext/POSPurchases/PurchasedOn",
+      "dataFormat": "DateTime"
+    }
+```
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

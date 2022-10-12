@@ -1,7 +1,7 @@
 ---
 title: Tilauksen vaihtuvuusennusteen näyteopas
 description: Tämän näyteoppaan avulla voi kokeilla valmista tilauksen vaihtuvuusennustemallia.
-ms.date: 03/31/2022
+ms.date: 09/19/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,77 +11,73 @@ manager: shellyha
 searchScope:
 - ci-create-prediction
 - customerInsights
-ms.openlocfilehash: 5a8eeafecacef3d0bb4a798b698cf490423ca98d
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 7e754be9a2cb9450949c6b3667bbd37aa39cf0bf
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741407"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610002"
 ---
 # <a name="subscription-churn-prediction-sample-guide"></a>Tilauksen vaihtuvuusennusteen näyteopas
 
-Aiheessa käsitellään kattavasti tilauksen vaihtuvuusennuste-esimerkki käyttämällä alla olevia näytetietoja. 
+Tässä oppaassa käsitellään kattavasti tilauksen vaihtuvuusennuste-esimerkkiä, jossa käytetään näytetietoja. Tätä ennustetta kannattaa kokeilla [uudessa ympäristössä](manage-environments.md).
 
 ## <a name="scenario"></a>Skenaario
 
-Contoso on yritys, joka tuottaa laadukasta kahvia ja laadukkaita kahvinkeittimiä. Se myy näitä tuotteita Contoso Coffee -sivustossa. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
+Contoso on yritys, joka tuottaa laadukkaita kahveja ja kahvikoneita. He myyvät tuotteita Contoso Coffeen verkkosivuston kautta. Yritys aloitti äskettäin tilaustoiminnan asiakkaille, jotka hakevat kahvia säännöllisesti. Yrityksen tavoitteena on selvittää, ketkä tilauksen tehneet asiakkaat saattavat peruuttaa tilauksensa seuraavien kuukausien aikana. Sen tietäminen, ketkä asiakkaat **todennäköisesti vaihtuvat**, voi auttaa yritystä säästämään markkinointitoimia keskittymällä kyseisten asiakkaiden säilyttämiseen.
 
-## <a name="prerequisites"></a>Edellytykset
+## <a name="prerequisites"></a>edellytykset
 
 - Vähintään [osallistujan oikeudet](permissions.md) Customer Insightsissa.
-- Seuraavat vaiheet on suositeltavaa toteuttaa [uudessa ympäristössä](manage-environments.md).
 
 ## <a name="task-1---ingest-data"></a>Tehtävä 1 – Tietojen käsitteleminen
 
-Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähteiden tuomisesta Power Query -yhdistinten avulla](connect-power-query.md). Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua. 
+Tutustu [tietojen käsittelyä](data-sources.md) ja [tietolähteiden yhdistämistä Power Query -tietolähteeseen](connect-power-query.md) käsitteleviin artikkeleihin. Seuraavissa tiedoissa oletetaan, että tietojen käsittely on yleisesti ottaen tuttua.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Asiakas tietojen käsitteleminen sähköisen kaupankäynnin ympäristössä
 
-1. Luo **eCommerce**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **eCommerce**-niminen Power Query -tietolähde ja valitse sitten **Text/CSV**-yhdistin.
 
 1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadclasscontacts.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
 1. Päivitä seuraavien sarakkeiden tietotyyppi:
-
    - **DateOfBirth**: päivämäärä
    - **CreatedOn**: päivämäärä, aika ja aikavyöhyke
 
    :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Syntymäpäivän muuntaminen päivämääräksi.":::
 
-1. Anna tietolähteelle uusi nimi määrittämällä oikeanpuoleisen ruudun **Nimi**-kenttään **Query**-arvon sijaan **eCommerceContacts**-arvo
+1. Vaihda oikean ruudun **Nimi**-kenttään tietolähteen nimeksi **eCommerceContacts**
 
 1. Tallenna tietolähde.
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Asiakastietojen käyttäminen kanta-asiakasrakenteesta
 
-1. Luo **LoyaltyScheme**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **LoyaltyScheme**-niminen tietolähde ja valitse **Text/CSV**-yhdistin.
 
-1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadclasscustomerloyalty.
+1. Anna kanta-asiakkaiden URL-osoitteeksi https://aka.ms/ciadclasscustomerloyalty.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
 1. Päivitä seuraavien sarakkeiden tietotyyppi:
-
    - **DateOfBirth**: päivämäärä
    - **RewardsPoints**: kokonaisluku
    - **CreatedOn**: päivämäärä, aika
 
-1. Vaihda oikeanpuoleisen ruudun **Nimi**-kentässä tietolähteen nimi **Query** nimeksi **loyCustomers**.
+1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimeksi **loyCustomers**.
 
 1. Tallenna tietolähde.
 
 ### <a name="ingest-subscription-information"></a>Tilaustietojen käsitteleminen
 
-1. Luo **SubscriptionHistory**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **SubscriptionHistory**-niminen tietolähde ja valitse **Text/CSV**-yhdistin.
 
-1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadchurnsubscriptionhistory.
+1. Anna tilauksille URL-osoite https://aka.ms/ciadchurnsubscriptionhistory.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
 1. Päivitä seuraavien sarakkeiden tietotyyppi:
-
    - **SubscriptioID**: kokonaisluku
    - **SubscriptionAmount**: valuutta
    - **SubscriptionEndDate**: päivämäärä, aika
@@ -91,92 +87,107 @@ Tutustu artikkeleihin [tietojen käsittelystä](data-sources.md) ja [tietolähte
    - **Is_auto_renew**: tosi, epätosi
    - **RecurringFrequencyInMonths**: kokonaisluku
 
-1. Vaihda oikean ruudun **Nimi**-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **SubscriptionHistory**.
+1. Vaihda oikeassa ruudussa **Nimi**-kenttään tietolähteen nimeksi **SubscriptionHistory**.
 
 1. Tallenna tietolähde.
 
 ### <a name="ingest-customer-data-from-website-reviews"></a>Sivustoarvioista saatujen asiakastietojen käsitteleminen
 
-1. Luo **Website**-niminen tietolähde, valitse tuontivaihtoehto ja valitse sitten **Text/CSV**-yhdistin.
+1. Luo **Website**-niminen tietolähde ja valitse **Text/CSV**-yhdistin.
 
-1. Anna sähköisen kaupankäynnin yhteyshenkilöiden URL-osoite https://aka.ms/ciadclasswebsite.
+1. Anna sivuston arvioille URL-osoite https://aka.ms/ciadclasswebsite.
 
 1. Valitse tietoja muokatessa **Muunna** ja valitse sitten **Käytä ensimmäistä riviä otsikkoina**.
 
 1. Päivitä seuraavien sarakkeiden tietotyyppi:
-
    - **ReviewRating**: kokonaisluku
    - **ReviewDate**: päivämäärä
 
-1. Vaihda oikean ruudun Nimi-kentän tietolähteen nimi. Vanha nimi on **Query** ja uusi on **webReviews**.
+1. Vaihda oikean ruudun **Nimi**-kentässä tietolähteen nimeksi **webReviews**.
 
 ## <a name="task-2---data-unification"></a>Tehtävä 2 – tietojen yhtenäistäminen
 
+Tutustu [tietojen yhdistämistä](data-unification.md) käsittelevään artikkeliin. Seuraavissa tiedoissa oletetaan, että tietojen yhdistäminen on yleisesti ottaen tuttua.
+
 [!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
-## <a name="task-3---configure-the-subscription-churn-prediction"></a>Tehtävä 3 – tilauksen vaihtuvuusennusteen määrittäminen
+## <a name="task-3---create-transaction-history-activity"></a>Tehtävä 3 – tapahtumahistorian aktiviteetin luominen
 
-Kun asiakasprofiilit on yhtenäistetty, tilauksen vaihtuvuusennusteet voidaan nyt suorittaa. Yksityiskohtaiset ohjeet ovat [Tilauspoistuman ennuste](predict-subscription-churn.md) -artikkelissa. 
+Tutustu [asiakkaan aktiviteetteja](activities.md) käsittelevään artikkeliin. Seuraavissa tiedoissa oletetaan, että aktiviteettien luominen on yleisesti ottaen tuttua.
 
-1. Valitse **Analytiikka** > **Tutustu** ja valitse sitten **Asiakasvaihtuvuusmalli**.
+1. Luo **SubscriptionHistory**-niminen aktiviteetti, jossa on *Tilaus*-entiteetti ja pääavain **CustomerId**.
 
-1. Valitse ensin **Tilaus**-vaihtoehto ja sitten **Aloita**.
+1. Luo kohteiden *SubscriptionHistory:Subscription* ja *eCommerceContacts:eCommerce* välille suhde siten, että **CustomerID** on kaksi entiteettiä yhdistävä viiteavain.
+
+1. Valitse **SubscriptionType** **Aikaleima**-kohdan **EventActivity**- ja **SubscriptionEndDate**-kohdissa.
+
+1. Valitse **Aktiviteetin tyyppi** -kohdassa **Tilaus** ja yhdistä aktiviteetin tiedot semanttisesti.
+
+1. Suorita aktiviteetti.
+
+1. Lisää toinen aktiviteetti ja yhdistä sen kenttien nimet vastaaviin kenttiin:
+   - Asiakasaktiviteettientiteetti: Arviot:Verkkosivusto
+   - Perusavain: Website.Reviews.ReviewId
+   - Aikaleima: Website.Reviews.ReviewDate
+   - Tapahtuma (aktiviteetin nimi): Website.Reviews.ActivityTypeDisplay
+   - Tiedot (summa tai arvo): Website.Reviews.ReviewRating
+
+1. Suorita aktiviteetti.
+
+## <a name="task-4---configure-the-subscription-churn-prediction"></a>Tehtävä 4 – tilauksen vaihtuvuusennusteen määrittäminen
+
+Kun asiakasprofiilit on yhtenäistetty ja aktiviteetti luotu, suorita tilauksen vaihtuvuusennuste. Lisätietoja on kohdassa [Tilauksen vaihtuvuusennuste](predict-subscription-churn.md).
+
+1. Siirry kohteeseen **Tiedustelu** > **Ennusteet**.
+
+1. Valitse **Luo**-välilehden **Asiakasvaihtuvuusmalli**-ruudussa **Käytä mallia**.
+
+1. Valitse vaihtuvuuden tyypiksi **Tilaus** ja valitse sitten **Aloita**.
 
 1. Valitse **OOB-tilauksen vaihtuvuusennuste** ja tuloste-entiteetti **OOBSubscriptionChurnPrediction**.
 
-1. Määritä vaihtuvuusmallille kaksi ehtoa:
+1. Malliasetusten määrittäminen:
+   - **Päiviä tilauksen päättymisestä**: **60** päivää ilmaisee, että asiakas katsotaan vaihtuneeksi, jos tilausta ei uusita tänä aikana tilauksen päättymisen jälkeen.
+   - **Päivät, joista tulevaisuuteen ennustetaan vaihtuvuus**: **93** päivää ilmaisee keston, jonka aikana malli ennustaa tietyn asiakkaan mahdollisen vaihtuvuuden. Mitä pidemmälle tulevaisuuteen tarkastelu ulottuu, sitä epätarkemmat tulokset ovat.
 
-   * **Päiviä tilauksen päättymisestä**: **vähintään 60** päivää. Jos asiakas ei ole uusinut tilaustaan tänä aikana tilauksen päättymisen jälkeen, sitä pidetään vaihtuneena. 
+   :::image type="content" source="media/model-subs-levers.PNG" alt-text="Mallin asetusten ja vaihtuvuusmääritelmän valitseminen":::
 
-   * **Vaihtuvuusmääritelmä**: **vähintään 93** päivää. Kesto, jonka malli ennustaa asiakkaiden vaihtuvuudelle. Mitä pidemmälle tulevaisuuteen tarkastelu ulottuu, sitä epätarkemmat tulokset ovat.
+1. Valitse **Seuraava**.
 
-     :::image type="content" source="media/model-subs-levers.PNG" alt-text="Mallin ennusteikkunan ja vaihtuvuusmääritelmän valitseminen":::
+1. Anna tilaushistoria valitsemalla **Pakolliset tiedot** -vaiheessa **Lisää tietoja**.
 
-1. Valitse **Lisää pakolliset tiedot** ja valitse tilaushistorian osalta **Lisää tiedot**.
+1. Valitse ensin **Tilaus** ja SubscriptionHistory-entiteetti ja sitten **Seuraava**. Pakolliset tiedot täytetään automaattisesti aktiviteetista. Valitse **Tallenna**.
 
-1. Lisää **Subscription : SubscriptionHistory** -entiteetti ja yhdistä eCommercen kentät vastaaviin mallin edellyttämiin kenttiin.
+1. Valitse Asiakasaktiviteetit-kohdassa **Lisää tiedot**.
 
-1. Liitä **Subscription : SubscriptionHistory** -entiteetti **eCommerceContacts : eCommerce** -entiteettiin ja anna suhteen nimeksi **eCommerceSubscription**.
+1. Tässä esimerkissä lisätään verkkoarviointiaktiviteetti.
 
-   :::image type="content" source="media/model-subscription-join.PNG" alt-text="eCommerce-entiteettien liittäminen":::
+1. Valitse **Seuraava**.
 
-1. Lisää **webReviews : Website** -entiteetti asiakasaktiviteeteissa ja yhdistä webReviews-kentät vastaaviin mallin edellyttämiin kenttiin. 
-   - Perusavain: ReviewId
-   - Aikaleima: ReviewDate
-   - Tapahtuma: ReviewRating
-
-1. Määritä sivustoarvioaktiviteetti. Valitse **Arvio**-aktiviteetti ja liitä **webReviews : Website** -entiteetti ja **eCommerceContacts : eCommerce**.
-
-1. Määritä mallin aikataulu valitsemalla **Seuraava**.
-
-   Mallia on koulutettava säännöllisesti, jotta se oppii uusia malleja, kun uusia tietoja käsitellään. Valitse tässä esimerkissä **Kuukausittain**.
+1. Määritä **Tietojen päivitykset** -vaiheessa mallin aikatauluksi **Kuukausittain**.
 
 1. Kun tiedot on tarkistettu, valitse **Tallenna ja suorita**.
 
-## <a name="task-4---review-model-results-and-explanations"></a>Tehtävä 4 – mallin tulosten ja selitysten tarkistaminen
+## <a name="task-5---review-model-results-and-explanations"></a>Tehtävä 5 – mallin tulosten ja selitysten tarkistaminen
 
-Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Voit nyt tarkastella tilauksen vaihtuvuusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tilan ja tulosten tarkasteleminen](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Anna mallin suorittaa tietojen kouluttaminen ja pisteyttäminen. Tarkastele tilauksen vaihtuvuusmallin selityksiä. Lisätietoja on kohdassa [Ennusteen tulosten näyttäminen](predict-subscription-churn.md#view-prediction-results).
 
-## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Tehtävä 5 – Suuren vaihtuvuusriskin asiakkaiden segmentin luominen
+## <a name="task-6---create-a-segment-of-high-churn-risk-customers"></a>Tehtävä 6 – Suuren vaihtuvuusriskin asiakkaiden segmentin luominen
 
-Tuotantomallin suorittaminen luo uuden entiteetin, jonka saa näkyviin valitsemalla **Tiedot** > **Entiteetit**.   
+Mallin käyttö luo uuden entiteetin, joka näkyy **Tieto** > **Entiteetit** -kohdassa. Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
 
-Voit luoda uuden segmentin mallin luoman entiteetin perusteella.
+1. Valitse tulossivulla **Luo segmentti**.
 
-1.  Valitse **Segmentit**. Valitse ensin **Uusi** ja sitten **Luominen kohteesta** > **Analytiikka**. 
+1. Luo sääntö **OOBSubscriptionChurnPrediction**-entiteetin avulla ja määritä segmentti:
+   - **Kenttä**: ChurnScore
+   - **Operaattori**: suurempi kuin
+   - **Arvo**: 0,6
 
-   :::image type="content" source="media/segment-intelligence.PNG" alt-text="Segmentin luominen mallin tulosteen avulla":::
+1. Valitse **Tallenna** ja **suorita** segmentti.
 
-1. Valitse **OOBSubscriptionChurnPrediction**-päätepiste ja määritä segmentti: 
-   - Kenttä: ChurnScore
-   - Operaattori: suurempi kuin
-   - Arvo: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Tilauksen vaihtuvuussegmentin määrittäminen":::
+Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat. Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
 
-Käytössä on nyt dynaamisesti päivitettävä segmentti, joka määrittää tämän tilausliiketoiminnan suuren vaihtuvuusriskin asiakkaat.
-
-Saat lisätietoja ohjeartikkelista [Segmenttien luominen ja hallinta](segments.md).
-
+> [!TIP]
+> Ennustemallin segmentti voidaan luoda myös **Segmentit**-sivulla valitsemalla ensin **Uusi** ja sitten **Luominen kohteesta** > **Älykäs toiminto**. Lisätietoja on kohdassa [Uuden segmenttien luominen pikasegmenttien avulla](segment-quick.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]
