@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
-ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
+ms.openlocfilehash: dcee60a73e0c32278553253040478c31e45237ae
+ms.sourcegitcommit: 618ef15b434de0a68213383b6521ce2a60753afb
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/30/2022
-ms.locfileid: "9609588"
+ms.lasthandoff: 10/07/2022
+ms.locfileid: "9638347"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Dynamics 365 Customer Insightsin uudet ominaisuudet
 
@@ -23,6 +23,28 @@ Julkaisemme päivitykset alueittain. Näin siis jotkin alueet saattavat nähdä 
 
 > [!TIP]
 > Jos haluat lähettää ominaisuuspyyntöjä ja tuote-ehdotuksia tai äänestää niistä, siirry [Dynamics 365 Application Ideas -portaaliin](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2022-updates"></a>Syyskuun 2022 päivitykset
+
+Syyskuun 2022 päivitykset sisältävät uudet ominaisuudet, suorituskykypäivitykset ja ohjelmavirheiden korjaukset.
+
+### <a name="export-data-to-hubspot"></a>Tietojen vieminen HubSpotiin
+
+Vie yhtenäisten asiakasprofiilien segmenttejä HubSpotiin ja käytä niitä sähköpostimarkkinoinnissa.
+
+Lisätietoja on ohjeaiheessa [Segmenttien vieminen HubSpotiin](export-hubspot.md).
+
+### <a name="remove-a-unified-field-or-entity-from-data-unification"></a>Yhtenäisen kentän tai entiteetin poistaminen tietojen yhdistämisestä
+
+Voit poistaa kenttiä ja entiteettejä tietojen yhdistämisprosessista.
+
+Lisätietoja on kohdassa [Yhdistetyn kentän poistaminen](data-unification-update.md#remove-a-unified-field).
+
+### <a name="manage-unknown-customer-profiles"></a>Hallitse tuntemattomia asiakasprofiileita
+
+Mieleenjäävä mukauttaminen riippuu asiakastietojen kattavuudesta ja täydellisyydestä, ja Customer Insights auttaa saavuttamaan nämä tavoitteet. Voit hallita asiakasprofiileja käyttäjille, joille sinulla ei ole muita tietoja kuin tunnus.
+
+Lisätietoja on kohdassa [Tuntemattomien profiilien hallinta Customer Insightsin avulla](manage-unknown-profiles.md).
 
 ## <a name="august-2022-updates"></a>Elokuun 2022 päivitykset
 

@@ -1,19 +1,19 @@
 ---
 title: Segmenttien vieminen Brazeen (esiversio)
 description: Tietoja Braze-yhteyden määrittämisestä ja viennistä siihen.
-ms.date: 07/25/2022
+ms.date: 10/06/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 84dc7f13f30e0334d431fe5b5866c7f87e82ab27
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2f52eb8196e057f934c8d2b5ac0518ce121606b6
+ms.sourcegitcommit: 003c1929f730d7d505c108aba84f6269f4c98978
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195103"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9655271"
 ---
 # <a name="export-segments-to-braze-preview"></a>Segmenttien vieminen Brazeen (esiversio)
 
@@ -23,6 +23,7 @@ Vie unified customer profile -profiilien segmentit Brazeen ja käytä niitä mar
 
 - Käytössä on [Braze-tili](https://www.braze.com/) ja vastaavat järjestelmänvalvojan tunnistetiedot.
 - [Braze-ohjelmointirajapinta-avain](https://www.braze.com/docs/api/basics/)
+- [Braze REST -päätepiste](https://www.braze.com/docs/api/basics/#api-definitions) 
 - [Määritetyt segmentit](segments.md) Customer Insightsissa.
 - Viedyissä segmenteissä Unified Customer Profile -profiilit sisältävät kentän, joka vastaa sähköpostiosoitetta ja Braze-asiakastunnusta.
 
@@ -30,6 +31,7 @@ Vie unified customer profile -profiilien segmentit Brazeen ja käytä niitä mar
 
 - Enintään yhden miljoonan asiakasprofiilin vieminen Brazeen voi kestää 40 minuuttia. Omnisendiin vietävien asiakasprofiilien määrä määräytyy Brazen kanssa tekemäsi sopimuksen mukaan.
 - Vain segmentit.
+- Braze-vienti ei tue Azure Private Link -linkkiä.
 
 ## <a name="set-up-connection-to-braze"></a>Määritä yhteys Brazeen
 
@@ -62,6 +64,8 @@ Vie unified customer profile -profiilien segmentit Brazeen ja käytä niitä mar
 1. Valitse **Lisää vienti**.
 
 1. Valitse **Yhteys vientiä varten** -kentässä yhteys Braze-osasta. Ota yhteyttä järjestelmänvalvojaan, jos yhteyttä ei ole käytettävissä.
+
+1. Kirjoita REST-päätepiste **Hostname**-kenttään seuraavassa muodossa: `rest.iad-03.braze.com`.
 
 1. Anna viennin nimi.
 
