@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
-ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
+ms.openlocfilehash: 9433c411a2c7eb0db137c6392578993d47be82a2
+ms.sourcegitcommit: 8559ca47a22d1d7cd9be13531c2eaf0c1083942b
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "9424305"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9671247"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Käytä Customer Insights -tietoja Microsoft Dataversessä
 
@@ -63,6 +63,9 @@ Lisätietoja tarkoista kapasiteettioikeuksista on kohdassa [Dynamics 365:n käyt
 ## <a name="enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview"></a>Tietojen jakamisen ottaminen käyttöön Dataversen kanssa omasta Azure Data Lake Storagesta (esiversio)
 
 Varmista [omassa Azure Data Lake Storage -tilissä](own-data-lake-storage.md), että Customer Insights-ympäristön määrittävällä käyttäjällä on vähintään **Storage Blob Data Reader** -oikeudet `customerinsights`-säilössä tallennustilissä.
+
+> [!NOTE]
+> Tietojen jakaminen on mahdollista vain, jos käytät omaa Azure Data Lake Storage -tiliäsi. Tämä asetus ei ole käytettävissä, jos Customer Insights -ympäristö käyttää Dataverse-oletustallennustilaa.
 
 ### <a name="limitations"></a>Rajoitukset
 
