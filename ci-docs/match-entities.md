@@ -2,7 +2,7 @@
 title: Tietojen yhdistämisen ehtojen vastaavuuden avulla
 description: Yhtenäisten asiakasprofiilien luominen entiteettien vastaavuuden avulla.
 recommendations: false
-ms.date: 07/27/2022
+ms.date: 10/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: bbd2c5f441b85460250c11f02358ea67260278d6
+ms.sourcegitcommit: 52ea58c872b10f1e6f9d120be93df93cca1a12dd
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304653"
+ms.lasthandoff: 10/26/2022
+ms.locfileid: "9721517"
 ---
 # <a name="match-conditions-for-data-unification"></a>Tietojen yhdistämisen ehtojen vastaavuuden avulla
 
@@ -130,12 +130,12 @@ Jos esimerkiksi vastaavuussäännössä on sukunimi, kaupunki ja syntymäpäivä
 
 ### <a name="specify-custom-match-conditions"></a>Mukautettujen täsmäytysehtojen määritteleminen
 
-Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettävissä on neljä vaihtoehtoa:
+Määritä ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettävissä on neljä vaihtoehtoa:
 
 |Asetus  |Description |Esimerkki:  |
 |---------|---------|---------|
-|Vastaavat aina toisiaan     | Määrittää arvot, joiden vastaavuutta aina haetaan.         |  Hae aina vastaavuudet merkkijonoille *Mike* ja *MikeR*.       |
-|Eivät vastaa toisiaan koskaan     | Määrittää arvot, joiden vastaavuutta ei koskaan haeta.        | Älä koskaan hae vastaavuutta merkkijonoille *John* ja *Jonathan*.        |
+|Vastaavat aina toisiaan     | Määrittää ensisijaisille avaimille arvot, joiden vastaavuutta aina haetaan.         |  Yhdistä rivi, jonka perusavain on *12345* aina rivin kanssa, jonka perusavain on *54321*.       |
+|Eivät vastaa toisiaan koskaan     | Määrittää ensisijaisille avaimille arvot, joille ei löydy osumia.        | Älä koskaan yhdistä riviä, jonka perusavain on *12345*, rivin kanssa, jonka perusavain on *54321*.        |
 |Ohita            | Määrittää arvot, jotka järjestelmän on aina ohitettava vastaavuushaun vaiheessa. |  Ohita arvot *11111* ja *Tuntematon* vastaavuushaun aikana.        |
 |Aliaksen yhdistämismääritys    | Määritetään arvot, jotka järjestelmän tulisi ottaa huomioon samana arvona.         | Ota huomioon *Joe* samana kuin *Joseph*.        |
 
@@ -143,17 +143,18 @@ Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettäv
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Mukautettu painike":::
 
-1. Valitse **Mukautettu tyyppi** ja valitse **Lataa malli**. Jokaiselle vastinevaihtoehdolle on oltava oma malli.
+1. Valitse **Mukautettu tyyppi** ja valitse **Lataa malli**. Nimeä malli uudelleen ilman välilyöntejä. Jokaiselle vastinevaihtoehdolle on oltava oma malli.
 
-1. Avaa ladattu mallitiedosto ja täytä tiedot. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Jos esimerkiksi haluat, että *Myynti*-kohteen perusavain *12345* vastaa aina *Yhteyshenkilö*-kohteen perusavainta *34567*, täytä malli:
-    - Entiteetti1: Myynti
-    - Entiteetti1Avain: 12345
-    - Entiteetti2: Yhteyshenkilö
-    - Entiteetti2avain: 34567
+1. Avaa ladattu mallitiedosto ja täytä tiedot. Malli sisältää kenttiä, jotka määrittävät entiteetin ja entiteetin ensisijaisen avaimen arvot. Niitä käytetään mukautetussa täsmäytyksessä. Kirjainkoolla on merkitystä entiteettien nimissä. Jos esimerkiksi haluat, että *Myynti*-kohteen perusavain *12345* vastaa aina *Yhteyshenkilö*-kohteen perusavainta *34567*, täytä malli:
+   - Entiteetti1: Myynti
+   - Entiteetti1Avain: 12345
+   - Entiteetti2: Yhteyshenkilö
+   - Entiteetti2avain: 34567
 
    Sama mallitiedosto voi määrittää mukautetut täsmäytystietueet useista entiteeteistä.
 
-   Jos haluat määrittää mukautetun vastaavuuden entiteetin kaksoiskappaleiden poistolle, määritä sama entiteetti sekä kohtaan Entiteetti1 ja Entiteetti2 ja määritä erilaisetn ensisijaisen avaimen arvot.
+   > [!NOTE]
+   > Jos haluat määrittää mukautetun vastaavuuden entiteetin kaksoiskappaleiden poistolle, määritä sama entiteetti sekä kohtaan Entiteetti1 ja Entiteetti2 ja määritä erilaisetn ensisijaisen avaimen arvot. Entiteetille on määritettävä vähintään yksi kaksoiskappaleiden poistosääntö, jotta mukautettua vastaavuutta voi käyttää.
 
 1. Kun olet lisännyt kaikki ohitukset, tallenna mallitiedosto.
 
@@ -169,6 +170,8 @@ Voit määrittää ehtoja, jotka korvaavat oletusvastaavuuslogiikan. Käytettäv
    - Valitse **Ohitus**- tai **Alias-yhdistämismääritys**-määritystä varten **Muokkaa** aiemmin luodussa vastaavuussäännössä tai luo uusi sääntö. Valitse normalisoinnin avattavasta luettelosta **Mukautettu ohitus**- tai **Alias-yhdistämismääritys** -asetus ja valitse **Valmis**.
 
 1. Valitse **Valmis** **Mukauta**-ruudussa ottaaksesi käyttöön mukautetun yhdistämismäärityksen määritykset.
+
+   Kukin käsitelty mallitiedosto on oma tietolähteensä. Jos havaitaan tietueita, jotka tarvitsevat erityistä vastaavuuskäsittelyä, päivitä soveltuva tietolähde. Päivitystä käytetään seuraavan yhdistämisprosessin aikana. Voit esimerkiksi tunnistaa kaksoset, joilla on lähes sama nimi ja asuvat samassa osoitteessa, jotka oli yhdistetty yhdeksi henkilöksi. Päivitä tietolähde ja määritä kaksoset erillisiksi, yksilöllisiksi tietueiksi.
 
 > [!div class="nextstepaction"]
 > [Seuraava vaihe: Kenttien yhtenäistäminen](merge-entities.md)
