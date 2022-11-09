@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ffc591c01a5a9434cde41f2da25fa930a515b8c1
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: df38e9e88a9c116252fba26983b5f3711b46f051
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9199113"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725258"
 ---
 # <a name="export-segments-to-moengage-preview"></a>Segmenttien vieminen MoEngage-sovellukseen (esiversio)
 
@@ -27,6 +27,7 @@ Vie yhdistettyjen asiakasprofiilien segmentit MoEngageen ja käytä niitä MoEng
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään 100 000 asiakasprofiilin vieminen kerrallaan MoEngageen, mikä voi kestää 15 minuuttia. MoEngageen vietävien asiakasprofiilien määrä riippuu MoEngage-sopimuksestasi.
 - Vain segmentit.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 4d2ec29c194dc481ee40048b8ecbed813291b4d2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c0affd3ed45f462696850813bd50331061dde780
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196482"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724497"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Segmenttien vieminen Constant Contactiin (esiversio)
 
@@ -28,6 +28,7 @@ Vie yhtenäisten asiakasprofiilien segmentit Constant Contactiin ja käytä niit
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään yhden miljoonan asiakasprofiilin vieminen kerrallaan Constant Contactiin, mikä voi kestää tunnin. Constant Contactiin vietävien asiakasprofiilien määrä riippuu Constant Contact -sopimuksestasi ja sen sisältämistä rajoituksista.
 - Vain segmentit.
 

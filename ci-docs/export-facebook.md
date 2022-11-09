@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195010"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724584"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Segmenttien vienti Facebook Ads Manageriin (esiversio)
 
@@ -25,11 +25,13 @@ Voit luoda kampanjoita Facebookissa ja Instagramissa viemällä yhdistettyjen as
 
 - [Facebook Ads -tili](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), joka sisältää [Facebookin yritystilin](https://business.facebook.com/).
 - [Facebook Ads-tilin](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account) järjestelmänvalvojan oikeudet.
+- Sen käyttäjän, joka määrittää yhteyden Customer Insightsissa on hyväksyttävä Mukautetun käyttäjäryhmän ehdot.
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
 - Vientiä kohden voi viedä enintään 10 miljoonaa asiakasprofiilia Facebook Ads Manageriin, mikä voi kestää 90 minuuttia.
 - Vain segmentit.
+- Facebook Ads -integrointi ei tue käyttäjiä, joilla on yli 25 mainostiliä.
 - Facebook *-asiakasluettelon* tyyppi vain [mukautetuille kohderyhmille](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
   > [!NOTE]
   > Joissakin tapauksissa avattavassa luettelossa voi olla eri tyyppisiä mukautettuja käyttäjäryhmiä. Jos valitset jonkin toisen tyypin kuin *asiakasluettelo*, vienti epäonnistuu.

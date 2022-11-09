@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0281be288b2c4d9e5da7ad8e2ed25f7b51b8498e
-ms.sourcegitcommit: f959c85871777e5f4eab289e91b2fd114cd72153
+ms.openlocfilehash: b34f1d54fa499f6c6b80fa547a8aaf61af3b35a1
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "9588903"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725350"
 ---
 # <a name="export-segments-to-hubspot-preview"></a>Segmenttien vieminen HubSpotiin (esiversio)
 
@@ -27,6 +27,7 @@ Vie yhtenäisten asiakasprofiilien segmenttejä HubSpotiin ja käytä niitä sä
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään 100 000 asiakasprofiilia per vienti HubSpotiin, mikä voi kestää 15 minuuttia. HubSpotiin vietävien asiakasprofiilien määrä riippuu HubSpot-sopimuksestasi ja sen sisältämistä rajoituksista.
 - Vain segmentit.
 

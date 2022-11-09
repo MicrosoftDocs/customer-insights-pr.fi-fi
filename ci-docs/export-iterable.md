@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ccf10b6e3a28a75f9d1bd3d8da3bf870ebc2b1b2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 69e2bd207c98fc2530620018bf95dd869d1798f6
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195425"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724478"
 ---
 # <a name="export-segments-to-iterable-preview"></a>Segmenttien vieminen Iterableen (esiversio)
 
@@ -28,6 +28,7 @@ Vie yhdistettyjen asiakasprofiilien segmentit Iterableen ja käytä niitä markk
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään yhden miljoonan asiakasprofiilin vieminen Iterableen, mikä voi kestää 30 minuuttia. Iterableen vietävien asiakasprofiilien määrä riippuu Iterable-sopimuksestasi.
 - Vain segmentit.
 

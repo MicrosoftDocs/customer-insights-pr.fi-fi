@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d7c8d6f0121fe18a6c886ba3776109a1a592ef33
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 61435030254638965fbeb7980312e73695416aa2
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195332"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724785"
 ---
 # <a name="export-segments-to-criteo-preview"></a>Segmenttien vieminen Criteoon (esiversio)
 
@@ -27,6 +27,7 @@ Vie segmenttejä yhdistetyistä asiakasprofiileista luodaksesi kampanjoita, tarj
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Vientiä kohden voi viedä enintään miljoona asiakasprofiilia Criteoon, mikä voi kestää 30 minuuttia. Criteoon vietävien asiakasprofiilien määrä määräytyy Criteo-sopimuksesi mukaan.
 - Vain segmentit.
 
@@ -65,8 +66,6 @@ Vie segmenttejä yhdistetyistä asiakasprofiileista luodaksesi kampanjoita, tarj
 1. Anna viennin nimi.
 
 1. Valitse **Tietojen vastaavuus** -osan **Sähköposti**-kentässä kenttä, joka edustaa asiakkaan sähköpostiosoitetta.
-
-1. Vaihtoehtoisesti voit viedä **mainostajan tunnuksen** ja **nimen**
 
 1. Valitse segmentit, jotka haluat viedä.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8110eab199920ab8fc2ea15678139faf264a242a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 81adad4caf2d4c6f792bf920b29fc7c67eef42b0
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195746"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724674"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Segmenttien vieminen AdRolliin (esiversio)
 
@@ -28,6 +28,7 @@ Vie yhtenäisten asiakasprofiilien segmentit AdRolliin ja käytä niitä mainost
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään 250 000 asiakasprofiilin vieminen kerrallaan AdRolliin, mikä voi kestää 10 minuuttia. AdRolliin vietävien asiakasprofiilien määrä riippuu AdRollin kanssa tekemästäsi sopimuksesta.
 - Vain segmentit. Segmentissä on oltava vähintään 100 asiakasprofiilia.
 

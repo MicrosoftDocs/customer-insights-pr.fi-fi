@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f2990ad410dda0cbf952f82f3fc30b3a53a7bcd4
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 855e77055eeb24a2c6cff0d45cd23edf93cc0581
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196988"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724844"
 ---
 # <a name="export-segments-to-sendgrid-preview"></a>Segmenttien vieminen SendGridiin (esiversio)
 
@@ -29,6 +29,7 @@ Vie yhdistettyjen asiakasprofiilien segmentit SendGridin yhteyshenkilöluetteloi
 
 ## <a name="known-limitations"></a>Tunnetut rajoitukset
 
+- Yksityistä linkkiä, joka on yhdessä Oman tallennustilan (BYOS) kanssa, ei tueta.
 - Enintään yhteensä 100 000 asiakasprofiilin vieminen SendGridiin, mikä voi kestää muutaman tunnin. SendGridiin vietävien asiakasprofiilien lukumäärä määräytyy SendGridin kanssa tekemäsi sopimuksen mukaan.
 - Vain segmentit.
 
