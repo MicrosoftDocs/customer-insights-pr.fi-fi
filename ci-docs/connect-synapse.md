@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 7bc0c3614e6dd39fbd65ae098ed679d95d09de9d
-ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
+ms.openlocfilehash: 675fd03c44a7a7a492b111895d79c2e77f93a5b5
+ms.sourcegitcommit: 4ba74816ebfa46412c64c40a61e1f31c4ccc40f2
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 08/11/2022
-ms.locfileid: "9259794"
+ms.lasthandoff: 11/03/2022
+ms.locfileid: "9738152"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Yhteyden muodostaminen Azure Synapse Analytics -tietolähteeseen (esiversio)
 
@@ -45,7 +45,7 @@ Lisätietoja on kohdassa [Azure Synapsen yleiskatsaus](/azure/synapse-analytics/
 
 - *[Azure Synapse -työtilassa hallittu identiteetti](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* tarvitsee **Storage Blob Data Contributor** -oikeudet Azure Data Lake Storage Gen2 tilille, jossa tiedot ovat ja josta ne on linkitetty Azure Synapse -työtilaan. Lisätietoja [Azure-portaalin käyttämisestä Azure-roolin määrittämiseen blob- ja jonotiedoille](/azure/storage/common/storage-auth-aad-rbac-portal) sekä [Storage Blob Data Contributor -oikeuksista](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
-- Azure Synapse workspacessa *Customer Insightsin palvelun päänimelle*, joka on Dynamics 365 AI for Customer Insights, on määritettävä **Synapse-järjestelmänvalvojan** rooli. Lisätietoja on kohdassa [Käytönvalvonnan määrittäminen Synapse-työtilaa varten](/azure/synapse-analytics/security/how-to-set-up-access-control).
+- Azure Synapse workspacessa *Customer Insightsin palvelun päänimelle*, joka on Dynamics 365 AI for Customer Insights, on määritettävä **Synapse-järjestelmänvalvojan** rooli. **Käyttäjä** tarvitsee vähintään työtilalle määritetyn **Synapse-osallistuja** -roolin. Lisätietoja on kohdassa [Käytönvalvonnan määrittäminen Synapse-työtilaa varten](/azure/synapse-analytics/security/how-to-set-up-access-control).
 
 - Jos Customer Insights -ympäristö tallentaa tiedot [omaan Azure Data Lake Storageen](own-data-lake-storage.md), Azure Synapse Analytics -yhteyden muodostava käyttäjä tarvitsee vähintään Data Lake -tallennustilatilin sisäänrakennetun **Lukija**-roolin. Lisätietoja on kohdassa [Azure-roolien määrittäminen Azure-portaalin avulla](/azure/role-based-access-control/role-assignments-portal).
 
