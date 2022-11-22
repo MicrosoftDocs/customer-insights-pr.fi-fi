@@ -8,22 +8,22 @@ ms.topic: conceptual
 author: andtapia
 ms.author: andreatapia
 manager: shellyha
-ms.openlocfilehash: d7e5050ee5832df5ecf40a352f7ea8d42830fa45
-ms.sourcegitcommit: f6b6a4c4ce9cf12e449488b24aab80a2cbfe0c47
+ms.openlocfilehash: 0e12f64a22b93d117009fb8aee76d02a7583e699
+ms.sourcegitcommit: 24627d53dcdf607baaab1cc3c299a3584c386173
 ms.translationtype: HT
 ms.contentlocale: fi-FI
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "9556392"
+ms.lasthandoff: 11/15/2022
+ms.locfileid: "9776817"
 ---
 # <a name="manage-unknown-profiles-with-customer-insights"></a>Hallitse tuntemattomia profiileja Customer Insightsin avulla
 
-Internetin käyttäjät ovat usein tunnistamattomia ja nimettömiä online-tilassa. Jos he eivät ole kirjautuneet sisään, koska he käyttävät eri laitteita tai kanavia, se koskee jopa uskollisimpia asiakkaita. Koska kolmansien osapuolten evästeet todennäköisesti poistuvat pian, käyttäjien mieltymysten hallinta ensimmäisen osapuolen tietojen perusteella on erittäin tärkeää, jotta yksilölliset käyttökokemukset voidaan erottaa toisistaan. Monissa tuotemerkeissä tunnetut tai todennetut käyttäjät ovat vähemmistö, vaikka asiakkaiden yksilöllistyminen on kasvamassa. Yritysten on hyvä tuntea asiakkaansa luotettavan, yksityiskohtaisen ja yhtenäisen tiedon perusteella.
+Internetin käyttäjät ovat usein tunnistamattomia tai nimettömiä online-tilassa. Jopa uskollisimmat asiakkaat saattavat näyttää olevan "tuntemattomia", jos he eivät ole kirjautuneina eri laitteisiin. Monissa tuotemerkeissä tunnetut tai todennetut käyttäjät ovat vähemmistö, vaikka asiakkaiden yksilöllistyminen on kasvamassa. Koska kolmansien osapuolten evästeiden tulevaisuus on apävarma, käyttäjien mieltymysten hallinta ensimmäisen osapuolen tietojen perusteella niiden sijaan on erittäin tärkeää, jotta yksilölliset käyttökokemukset voidaan saavuttaa.
 
-Mieleenjäävä mukauttaminen riippuu asiakastietojen kattavuudesta ja täydellisyydestä, ja Customer Insights auttaa saavuttamaan nämä tavoitteet. Sinun ei tarvitse rajoittaa tai lopettaa niiden tietojen käyttöä, joka on kerätty asiakassiirtymän alussa. Customer Insightsin avulla voit tuoda omia tietojasi ja luoda asiakasprofiilin tuntemattomille käyttäjille. Profiilia voi käyttää lisätoimintoja varten puuttuvista yhteystiedoista huolimatta. Tuo ensimmäisen osapuolen tietoja esimerkiksi verkko-, mobiili- tai CRM-järjestelmistä Customer Insights -tietoihin, jotta asiakasprofiileja voi täydentää jatkuvasti. Kun yhdenmukaistat useampia vuorovaikutuksia, [muuta *tuntematon* asiakas *tunnetuksi* asiakkaaksi](unknown-to-known.md).
+Muistettava mukauttaminen määräytyy sen mukaan, miten hyvin asiakas ja Customer Insights auttavat tekemään sen seuraamalla kaikkia asiakkaitasi.  Sinun ei tarvitse rajoittaa tai lopettaa niiden tietojen käyttöä, joka on kerätty asiakassiirtymän alussa. Customer Insightsin avulla voit tuoda omia tietojasi ja luoda asiakasprofiilin tuntemattomille käyttäjille. Profiilia voi käyttää lisätoimintoja varten puuttuvista yhteystiedoista huolimatta. Tuo ensimmäisen osapuolen tietoja esimerkiksi verkko-, mobiili- tai CRM-järjestelmistä Customer Insights -tietoihin, jotta asiakasprofiileja voi täydentää jatkuvasti. Kun yhdenmukaistat useampia vuorovaikutuksia, [muuta *tuntematon* asiakas *tunnetuksi* asiakkaaksi](unknown-to-known.md).
 
 ## <a name="sample-scenario"></a>Näyteskenaario
 
-Sähköinen kaupankäynti on nopeimmin kasvava kanava viime vuosikymmeninä. Oletetaan, että käyttäjä selaa sähköisen kaupankäynnin sivustoa mobiililaitteen avulla. Verkkosivusto määrittää vierailijalle yksilöllisen “mobile_guest123”-tunnisteen, ja aloitat käyttäytymisaktiviteettien keräämisen verkkoaktiviteettien perusteella. Esimerkiksi millä sivuilla he kävivät, kuinka paljon aikaa he käyttivät kyseisillä sivuilla tai mitä linkkejä he napsauttivat. Et tiedä heidän nimeään tai sähköpostiosoitettaan, mutta näiden tietojen avulla tuotemerkit saavat merkityksellistä tietoa tästä tietystä käyttäjästä. Voit puolestaan määrittää nämä tiedot toimimaan seuraavan kerran, kun käyttäjä käy sivustossa. Suorita kysely Customer Insightsissa “mobile_guest123”-käyttäjälle saadaksesi käyttäjän segmenttiluettelon, kuten "orgaaninen", "mobiilit esitilausasiakkaat", "korkean arvon asiakkaat" jne tai nouda profiili luodaksesi personoituja verkkokokemuksia. Voit myös viedä tiedot mihin tahansa aktivointijärjestelmään, jotta voit tehdä samoin.
+Oletetaan, että käyttäjä selaa sähköisen kaupankäynnin sivustoa mobiililaitteen avulla. Verkkosivusto määrittää vierailijalle yksilöllisen “mobile_guest123”-tunnisteen, ja aloitat käyttäytymisaktiviteettien keräämisen verkkoaktiviteettien perusteella. Esimerkiksi millä sivuilla he kävivät, kuinka paljon aikaa he käyttivät kyseisillä sivuilla tai mitä linkkejä he napsauttivat. Et tiedä heidän nimeään tai sähköpostiosoitettaan, mutta näiden tietojen avulla tuotemerkit saavat merkityksellistä tietoa tästä tietystä käyttäjästä. Voit puolestaan määrittää nämä tiedot toimimaan seuraavan kerran, kun käyttäjä käy sivustossa. Suorita kysely Customer Insightsissa “mobile_guest123”-käyttäjälle saadaksesi käyttäjän segmenttiluettelon, kuten "orgaaninen", "mobiilit esitilausasiakkaat", "korkean arvon asiakkaat" jne tai nouda profiili luodaksesi personoituja verkkokokemuksia. Voit myös viedä tiedot mihin tahansa aktivointijärjestelmään, jotta voit tehdä samoin.
 
 ## <a name="prerequisites"></a>edellytykset
 
